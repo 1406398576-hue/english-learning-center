@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>At the Gym — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 25 · 8/19 Wed</div>
+    <h2>At the Gym & Working Out</h2>
+    <div class="zh">健身房与运动健身 · 从热身到收工的真实表达</div>
+    <div class="en">"I'm just trying to get back into it, you know? Baby steps."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm trying to get back into shape.</span>
+        <span class="cn-meaning">我想恢复锻炼/恢复身材</span>
+      </div>
+      <div class="scene">好久不运动，重新开始健身时的标准开场白。get back into shape = 恢复（原来的）体型/状态。shape 在口语里常指身体状况，in good shape = 身体状态好。比说 I want to do exercise 自然一百倍，也不显得你在找借口。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I haven't been to the gym in like six months. I'm just trying to get back into shape before my sister's wedding — don't want to look like a potato in the photos."<div class="src">— Monica Geller, Friends S06E02 / 向 Rachel 解释为什么突然开始疯狂健身</div></div>
+        <div class="quote-item">"New Year's resolution — I'm trying to get back into shape. So far I've been to the gym twice and eaten four cheeseburgers. The math isn't working."<div class="src">— Andy Bernard, The Office S04E10 / 新年决心后的自嘲</div></div>
+        <div class="quote-item">"The doctor said my cholesterol is through the roof, so I'm trying to get back into shape. I bought a treadmill. It's currently being used as a coat rack."<div class="src">— Jay Pritchett, Modern Family S05E08 / 向 Gloria 半开玩笑地解释健身动机</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Could you give me a spot?</span>
+        <span class="cn-meaning">能帮我保护一下吗？</span>
+      </div>
+      <div class="scene">在健身房做卧推、深蹲等需要保护的重量训练时，请人帮忙看着。spot = 在旁边保护，防止你举不起来时被砸到。give me a spot 是最简洁自然的说法，也可以说 Could you spot me? 注意千万别说 protect me——那是"保护我免受伤害"的意思，不是健身搭话的用语。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Hey, could you give me a spot? I'm going for a personal best today — 225. If I die, tell my mother I loved her."<div class="src">— Chandler Bing, Friends S05E04 / 在健身房请 Ross 帮忙保护卧推</div></div>
+        <div class="quote-item">"Dwight, could you give me a spot? And by 'spot' I mean stand there silently and don't make it weird."<div class="src">— Jim Halpert, The Office S03E20 / 请 Dwight 帮忙时的经典 sarcasm</div></div>
+        <div class="quote-item">"Excuse me, could you spot me real quick? I just need someone to hand me the weights — my arms are basically noodles right now."<div class="src">— Phil Dunphy, Modern Family S07E15 / 练到力竭后礼貌求助陌生人</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm feeling the burn.</span>
+        <span class="cn-meaning">我感受到燃烧感了（练到位了）</span>
+      </div>
+      <div class="scene">锻炼中肌肉发酸、发热，说明练到位了。the burn = 那种肌肉在"燃烧"的酸胀感。这个词在健身文化里几乎是通用语，既可以认真说"我练到了"，也可以半开玩笑地喊"要死了"。Jane Fonda 当年靠这词火遍健身界，到现在美国人还天天说。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Oh, I'm feeling the burn. And by 'the burn' I mean my entire body is on fire and I regret every life choice that led me here."<div class="src">— Chandler Bing, Friends S04E12 / 在 Ross 监督下做俯卧撑时的吐槽</div></div>
+        <div class="quote-item">"Pam, you feeling the burn? Good. Embrace the burn. The burn is your friend. The burn means you're alive."<div class="src">— Michael Scott, The Office S02E11 / 带着员工做办公室"健身"时的激情喊话</div></div>
+        <div class="quote-item">"I'm feeling the burn, Dad! Is this what you feel every day? No wonder you're so grumpy before coffee."<div class="src">— Alex Dunphy, Modern Family S06E10 / 第一次跟 Jay 晨跑时的喘气吐槽</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I think I overdid it.</span>
+        <span class="cn-meaning">我觉得练过头了</span>
+      </div>
+      <div class="scene">练得太猛，第二天浑身酸痛走不动路时的经典感慨。overdo = 过度/做过头，overdid 是过去式。it 指代今天的锻炼。也可以说 I went too hard today 或 I pushed myself too hard。健身新手最容易犯的错就是第一天太兴奋练过量，这句话你大概率用得上。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I think I overdid it at the gym. I can't lift my arms. I had to brush my teeth with my elbow this morning."<div class="src">— Ross Geller, Friends S03E08 / 向 Monica 描述练过头后的惨状</div></div>
+        <div class="quote-item">"I went for a five-mile run on my first day. I think I overdid it. My legs are sending me hate mail."<div class="src">— Pam Beesly, The Office S05E06 / 对着镜头展示走路一瘸一拐</div></div>
+        <div class="quote-item">"Dad made me do his 'light workout.' I think I overdid it. I can't feel my legs. Is this what being old feels like?"<div class="src">— Haley Dunphy, Modern Family S04E18 / 跟 Jay 练完后瘫在沙发上</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Let's call it a day.</span>
+        <span class="cn-meaning">今天就到这儿吧</span>
+      </div>
+      <div class="scene">练得差不多了，决定结束今天的训练。call it a day = 到此为止、收工。原本是工作场景用语（下班了），但在健身房也很常用——毕竟锻炼也是一种"work"。比说 I want to stop 或 I don't want to do it anymore 积极得多，带着"今天已经够努力了"的满足感。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Alright, three sets of everything, I'm drenched, and I can barely walk. Let's call it a day. Shower, couch, Netflix — in that order."<div class="src">— Joey Tribbiani, Friends S06E14 / 练完后跟 Chandler 提议收工</div></div>
+        <div class="quote-item">"We've been here two hours. Let's call it a day. My body is 80% water and 20% regret right now."<div class="src">— Jim Halpert, The Office S04E15 / 跟 Dwight 结束午间锻炼</div></div>
+        <div class="quote-item">"Okay, I did ten minutes. That's basically a marathon for me. Let's call it a day and get smoothies."<div class="src">— Cameron Tucker, Modern Family S03E22 / 以奖励自己的方式结束极短锻炼</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周三傍晚，Alex 在健身房器械区犹豫地看着哑铃架。Jordan 是这里的常客，刚做完一组训练，注意到 Alex 有点不知所措，主动搭话。</div>
+
+      <div class="msg">
+        <div class="speaker b">Jordan</div>
+        <div class="en">Hey, you look a little lost. First time here?</div>
+        <div class="cn">嘿，你看起来有点茫然。第一次来？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Kind of. I used to work out all the time, but I stopped for almost a year. I'm just trying to get back into shape.</div>
+        <div class="cn">算是吧。我以前经常锻炼，但停了快一年了。就是想恢复一下身材。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jordan</div>
+        <div class="en">I feel you. I did the same thing after the pandemic. Took me three months just to get back into a routine. Don't go too hard on day one.</div>
+        <div class="cn">我懂。疫情后我也这样。花了三个月才恢复规律。第一天别太猛。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Yeah, that's what I'm afraid of. I'm actually about to do some bench press — could you give me a spot?</div>
+        <div class="cn">是啊，我就是怕这个。我正要做卧推——能帮我保护一下吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jordan</div>
+        <div class="en">Sure, no problem. What are you aiming for?</div>
+        <div class="cn">没问题。你打算推多少？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Just 135 for now. I used to do 185, but... baby steps, right?</div>
+        <div class="cn">先推135吧。我以前能推185，但……循序渐进嘛，对吧？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jordan</div>
+        <div class="en">Smart. Alright, I'll be right here. Go for it.</div>
+        <div class="cn">明智。好，我就在旁边。来吧。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">*pushes through the set* Okay, wow. I'm feeling the burn already. That was only eight reps and my arms are shaking.</div>
+        <div class="cn">*做完一组* 好吧，哇。已经有燃烧感了。才做了八个，手臂就在抖。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jordan</div>
+        <div class="en">That's a good sign. But seriously — don't do more today. I think you overdid it your first week, and you won't come back for a month.</div>
+        <div class="cn">这是好现象。但说真的——今天别再做了。我怕你第一周就练过头，然后一个月都不来了。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">You're probably right. Let's call it a day. Thanks for the spot — I owe you one.</div>
+        <div class="cn">你说得对。今天就到这儿吧。谢谢帮忙保护——欠你一次。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">A coworker asks, "Do you work out?" Tell them about your current fitness routine — or lack of one — using "I'm trying to get back into shape."</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"I do, kind of. I was really consistent last year, but I fell off the wagon. Now I'm trying to get back into shape — I started going to the gym twice a week, just trying to build the habit again."</div>
+      <div class="sample-answer"><strong>B：</strong>"Not really, to be honest. I keep saying I'm trying to get back into shape, but then I find excuses. This month I finally bought a gym membership, so we'll see how long that lasts."</div>
+      <div class="sample-answer"><strong>C：</strong>"Yeah, I do yoga and some light cardio. Nothing crazy — I'm not trying to get back into shape for a marathon or anything. I just want to feel less tired by 3 PM."</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">You're at the gym and want to ask a stranger to spot you on the bench press. How do you approach them politely?</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Excuse me, would you mind giving me a spot? Just for one set — I won't take much of your time. I'll only need help if I can't get the bar back up."</div>
+      <div class="sample-answer"><strong>B：</strong>"Hey, sorry to bother you. Could you give me a quick spot? I'm going pretty light today, so it should be easy — just need someone there in case."</div>
+      <div class="sample-answer"><strong>C：</strong>"Hi, could you spot me real quick? I'll return the favor if you need one later. Just stand behind me and grab the bar if my arms give out."</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">It's the day after an intense workout, and your friend asks why you're walking like a robot. Explain that you overdid it at the gym.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Oh man, I think I overdid it at the gym yesterday. My trainer made me do squats until my legs turned to jelly. Today I can't even sit down without making a noise."</div>
+      <div class="sample-answer"><strong>B：</strong>"I got way too motivated and did leg day for the first time in months. I think I overdid it — my quads are so sore that walking down stairs is basically a horror movie."</div>
+      <div class="sample-answer"><strong>C：</strong>"I tried to keep up with this guy who was benching twice my weight. Bad idea. I think I overdid it, and now my everything hurts. Let's just say I'm not going back tomorrow."</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ I do exercise every day. / I make exercise.</div>
+      <div class="right">✅ I work out every day. / I exercise every day.</div>
+      <div class="why">do exercise 不是地道说法，make exercise 更是中式直译。日常说"锻炼"用 work out（动词短语）或 exercise（动词）。I work out 是最自然的表达，美国人说健身几乎都用这个词。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ I want to lose my weight.</div>
+      <div class="right">✅ I'm trying to lose weight. / I'm trying to get in shape.</div>
+      <div class="why">lose weight 中间不加 my——weight 在这里是抽象概念，不是"你的体重数字"。另外 I'm trying to get in shape 比直说"减肥"更积极自然，老外健身很少说 lose weight，更多是 get in shape / get fit / stay healthy。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ My muscle is painful. / My body is painful.</div>
+      <div class="right">✅ I'm sore. / My muscles are sore. / I'm aching all over.</div>
+      <div class="why">painful = 造成疼痛的（如 a painful wound），不是"感到疼痛"。人感到痛要说 sore / aching。健身后的肌肉酸痛最地道的说法就是 I'm sore 或 My [body part] is sore。也可以说 I have sore muscles。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ I go to gym. / I go to the GYM.</div>
+      <div class="right">✅ I go to the gym. / I hit the gym.</div>
+      <div class="why">gym 是可数名词，前面要加 the——I go to the gym。口语里更酷的说法是 I hit the gym，hit = 去（某地），类似 hit the road（出发）。这是健身房场景最高频的表达之一。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Can you protect me? / Please help me lift.</div>
+      <div class="right">✅ Could you give me a spot? / Could you spot me?</div>
+      <div class="why">protect me 是"保护我免受攻击"的意思，健身时完全不对。请人帮忙"保护"（防止杠铃砸下来）要用 spot / give me a spot。help me lift 听起来像你要偷懒让人帮你举，也不对。spot 是健身专属动词，记住它。</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

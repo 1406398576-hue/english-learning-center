@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Dentist I Almost Didn't Go To</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="topic-banner">
+<h2>The Dentist I Almost Didn't Go To</h2>
+<div class="zh">那个我差点没勇气走进去的牙医诊所</div>
+<div class="en">"The worst part wasn't the drill. It was the three months I spent pretending the pain wasn't real."</div>
+<div class="meta">
+<span>📅 Day 35 · 2026-09-01</span>
+<span>🎯 B1–B2</span>
+<span>🏷 People &amp; Society</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>Lena had been ignoring the ache in her back tooth since June. It started as a small sensitivity to cold water, then became a dull pressure she could feel when she lay down at night. By August, she was chewing only on the left side of her mouth and avoiding ice cream entirely. She told herself it was stress. That it would go away. That dentists were expensive and dramatic and always found something wrong.</p>
+<p>The truth was simpler: she was scared. As a child, she had a dentist who never explained anything, who moved too fast and talked too little. The sound of the drill had stayed in her body like a memory she couldn't shake.</p>
+<p>On the first Saturday of September, the pain woke her up at 4 a.m. She lay in the dark, hand pressed against her cheek, and finally opened her phone. She found a small clinic two blocks away with a photo of a smiling woman in blue scrubs. The reviews mentioned the same word over and over: gentle.</p>
+<p>Dr. Park was younger than Lena expected. She didn't rush. She showed Lena the X-ray, pointed to the dark spot, and said, "This is a cavity. It's deep, but it's fixable. The sooner we do it, the better." Lena nodded, her heart pounding. When the local anesthetic took hold and her gum went numb, she realized the dread had already been worse than anything the drill could do.</p>
+<p>The whole thing took thirty-two minutes. Afterward, Dr. Park handed her a mirror. "See? Still your tooth. Just a little stronger now." Lena looked at her reflection and laughed — a small, tired, relieved sound. "I should've done this months ago," she said. "Most people say that," Dr. Park replied, not unkindly. "The hard part is almost never the appointment. It's the walking in."</p>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I've been putting it off.</div><button aria-label="收藏表达" class="expr-fav" data-en="I've been putting it off." data-example="I've been putting it off for weeks, but I really need to schedule that dentist appointment. 我已经拖了好几个星期了,但我真的得预约牙医了。" data-zh="我一直在拖延这件事。" type="button">☆</button></div>
+<div class="zh-expr">我一直在拖延这件事。</div>
+<div class="example">
+        I've been putting it off for weeks, but I really need to schedule that dentist appointment.
+        <span class="zh-trans">我已经拖了好几个星期了,但我真的得预约牙医了。</span>
+</div>
+<div class="note">"put off" = 推迟、拖延。用现在完成进行时强调“从过去持续到现在还在拖”，语气自然，适合解释自己为什么一直没做某件事。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">The sooner, the better.</div><button aria-label="收藏表达" class="expr-fav" data-en="The sooner, the better." data-example="If we have to do this, then the sooner, the better. I don't want to spend the whole week worrying. 反正要做,那就越早越好。我不想整周都悬着心。" data-zh="越早越好。" type="button">☆</button></div>
+<div class="zh-expr">越早越好。</div>
+<div class="example">
+        If we have to do this, then the sooner, the better. I don't want to spend the whole week worrying.
+        <span class="zh-trans">反正要做,那就越早越好。我不想整周都悬着心。</span>
+</div>
+<div class="note">"the + 比较级, the + 比较级" 结构，表示“越……越……”。这句在建议别人尽快处理事情时非常地道、简洁。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">It's not as bad as I thought.</div><button aria-label="收藏表达" class="expr-fav" data-en="It's not as bad as I thought." data-example="The interview wasn't as bad as I thought. I was nervous for nothing. 面试没我想的那么糟。我白紧张了。" data-zh="没我想的那么糟。" type="button">☆</button></div>
+<div class="zh-expr">没我想的那么糟。</div>
+<div class="example">
+        The interview wasn't as bad as I thought. I was nervous for nothing.
+        <span class="zh-trans">面试没我想的那么糟。我白紧张了。</span>
+</div>
+<div class="note">"not as... as I thought" 是表达“预想比现实更糟”的常用句型，适合描述做完一件害怕的事之后的释然。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I worked myself up over nothing.</div><button aria-label="收藏表达" class="expr-fav" data-en="I worked myself up over nothing." data-example="I worked myself up over nothing. The test was hard, but I passed it easily. 我白白紧张了半天。考试是挺难,但我轻松过了。" data-zh="我白白紧张了半天。" type="button">☆</button></div>
+<div class="zh-expr">我白白紧张了半天。</div>
+<div class="example">
+        I worked myself up over nothing. The test was hard, but I passed it easily.
+        <span class="zh-trans">我白白紧张了半天。考试是挺难,但我轻松过了。</span>
+</div>
+<div class="note">"work oneself up" = 让自己越来越紧张/激动。"over nothing" 表示“根本不值得”。整句带着自嘲和释然后的轻松。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I should've done this sooner.</div><button aria-label="收藏表达" class="expr-fav" data-en="I should've done this sooner." data-example="I should've done this sooner. The relief is immediate, and now I just regret waiting so long. 我早该这么做了。轻松感立竿见影,我现在只后悔拖了这么久。" data-zh="我早该这么做了。" type="button">☆</button></div>
+<div class="zh-expr">我早该这么做了。</div>
+<div class="example">
+        I should've done this sooner. The relief is immediate, and now I just regret waiting so long.
+        <span class="zh-trans">我早该这么做了。轻松感立竿见影,我现在只后悔拖了这么久。</span>
+</div>
+<div class="note">"should have + 过去分词" 表示“过去本应该做但没做”。这句话是事后后悔时的经典表达，语气真诚。</div>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">— Saturday morning, a small dental clinic. Lena is sitting in the chair, gripping the armrests. Dr. Park washes her hands —</div>
+<div class="conv-line">
+<span class="speaker friend">Dr. Park:</span>
+<span class="en">(softly) Hi, Lena. I can see you're a little tense. Is this your first time here?</span>
+<span class="zh">(轻声)嗨,Lena。我看你有点紧张。你是第一次来这儿吗?</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Lena:</span>
+<span class="en">(small laugh) First time in... about three years. Maybe four. I've been putting it off.</span>
+<span class="zh">(轻笑)第一次来……大概三年没来了。也许四年。我一直在拖。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Dr. Park:</span>
+<span class="en">That's more common than you'd think. Most people who walk in here have been putting it off. So — tell me what happened. What made you come in today?</span>
+<span class="zh">这比你想象的更常见。大多数走进这里的人都在拖。那——跟我说说怎么回事。是什么让你今天来了?</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Lena:</span>
+<span class="en">(pause) I couldn't sleep. The pain woke me up at 4 a.m. And I just... I couldn't lie to myself anymore that it would go away.</span>
+<span class="zh">(停顿)我睡不着。凌晨四点疼醒了。我就……我再也骗不了自己说它会好了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Dr. Park:</span>
+<span class="en">Okay. That's honest. Let's take a look. Open for me — just a little. Good.</span>
+<span class="zh">好。这很诚实。我们看看。帮我张开——一点点。很好。</span>
+</div>
+<div class="stage">— Dr. Park taps the tooth gently. Lena flinches —</div>
+<div class="conv-line">
+<span class="speaker you">Lena:</span>
+<span class="en">Sorry. That one. That's the one.</span>
+<span class="zh">抱歉。就是那颗。就是那颗疼。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Dr. Park:</span>
+<span class="en">No need to apologize. Your body is telling us the truth. Let me show you the X-ray. See this dark area? That's a cavity. It's deep, but it's fixable. The sooner we do it, the better.</span>
+<span class="zh">不用道歉。你的身体在告诉我们真相。我给你看 X 光。看到这块阴影了吗?是蛀牙。很深,但能治。越早处理越好。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Lena:</span>
+<span class="en">(quieter) Will it hurt?</span>
+<span class="zh">(更轻)会疼吗?</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Dr. Park:</span>
+<span class="en">We'll numb the area first. You'll feel pressure, but not pain. And if anything feels off, you raise your hand. Anytime. You're in control.</span>
+<span class="zh">我们会先麻醉这个区域。你会觉得有压力,但不疼。如果有什么不对劲,你就举手。任何时候都可以。你说了算。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Lena:</span>
+<span class="en">(long breath) Okay. Let's just... get it over with.</span>
+<span class="zh">(长舒一口气)好。我们……赶紧弄完吧。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Dr. Park:</span>
+<span class="en">(smiling) That's the spirit. And Lena? The hard part is almost never the appointment. It's the walking in.</span>
+<span class="zh">(微笑)这就对了。还有 Lena?最难得从来不是看诊本身。是走进来那一步。</span>
+</div>
+<div class="stage">— Thirty-two minutes later. Lena touches her cheek, surprised —</div>
+<div class="conv-line">
+<span class="speaker you">Lena:</span>
+<span class="en">That's it? It wasn't as bad as I thought.</span>
+<span class="zh">这就完了?没我想的那么糟。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Dr. Park:</span>
+<span class="en">Most things aren't. Just take care of it from now on, okay?</span>
+<span class="zh">大部分事情都没那么糟。以后好好照顾它,好吗?</span>
+</div>
+<div class="stage">— Lena nods, still touching her cheek, half-laughing with relief —</div>
+</div>
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the story 复述故事 (60 seconds)</div>
+<div class="task-prompt">用你自己的话,复述 Lena 看牙医的故事。提示句:<br/><em>"So there's this woman named Lena who..."</em></div>
+<ul class="samples">
+<li>So there's this woman named Lena who had a toothache for months. She kept ignoring it because she was scared of dentists from childhood. One night the pain woke her up, so she finally booked an appointment. The dentist, Dr. Park, was gentle and explained everything. The procedure only took about half an hour, and Lena realized she had worked herself up over nothing.
+          <span class="zh">有个叫 Lena 的女人,牙疼了好几个月。她因为小时候怕牙医,一直拖着。有天晚上疼醒了她,她终于预约了。牙医 Park 医生很温柔,什么都解释。治疗只花了半小时,Lena 意识到自己是白紧张了。</span>
+</li>
+<li>The story is about Lena, who had a cavity but avoided the dentist for years. She made excuses — stress, money, fear. Then the pain became unbearable. She found a small clinic nearby and went in. Dr. Park showed her the X-ray and told her it was fixable. After the treatment, Lena laughed and said she should have done it sooner.
+          <span class="zh">故事讲的是 Lena,她有蛀牙但好几年躲着牙医。她找各种借口——压力、钱、害怕。后来疼痛变得难以忍受。她找到附近一家小诊所去了。Park 医生给她看 X 光,说能治。治疗后 Lena 笑了,说她早该来了。</span>
+</li>
+<li>It's a short story about fear and relief. Lena ignored a toothache until she couldn't sleep. She was terrified of the drill, but the dentist was kind and patient. The anesthetic worked, the cavity was filled, and Lena left wondering why she had waited so long. The dentist told her the hardest part was walking in.
+          <span class="zh">这是个关于恐惧与释然的短篇。Lena 一直忍着牙疼,直到睡不着。她害怕钻头,但牙医很和善、很有耐心。麻醉起效了,蛀牙补好了,Lena 离开时在想自己为什么等这么久。牙医告诉她,最难的是走进诊所那一步。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Share your opinion 表达观点</div>
+<div class="task-prompt">Why do you think people often put off going to the doctor or dentist? Is it fear, cost, time, or something else? Use at least 3 sentences.</div>
+<ul class="samples">
+<li>I think it's usually a mix of fear and denial. People tell themselves "it's not that bad" because admitting something is wrong means they have to deal with it. And dealing with it might mean pain, money, or just inconvenience. So they wait — until the problem makes the decision for them.
+          <span class="zh">我觉得通常是恐惧加否认。人们跟自己说“没那么糟”,因为承认有问题就意味着要处理。而处理可能意味着疼痛、花钱或者麻烦。所以他们等——等到问题替他们做决定。</span>
+</li>
+<li>In my opinion, cost is a huge factor, especially for people without good insurance. But even when it's affordable, fear plays a big role. A bad experience as a child can stay with you for years. I think the best dentists are the ones who understand that fear and explain every step.
+          <span class="zh">在我看来,费用是个很大的因素,尤其对没有好保险的人来说。但即使负担得起,恐惧也很重要。小时候的糟糕经历可以跟随你好多年。我觉得最好的牙医是那些理解这种恐惧、并把每一步都解释清楚的人。</span>
+</li>
+<li>I'm convinced it's mostly about losing control. At the dentist, you're lying down, someone is doing things inside your mouth, and you can't really talk. That feeling of helplessness is uncomfortable. That's why I appreciate dentists who say things like "raise your hand if you need a break."
+          <span class="zh">我坚信主要是因为失控感。看牙医时你躺着,有人在你嘴里操作,你几乎没法说话。这种无助感让人不舒服。所以我欣赏那些会说“需要休息就举手”的牙医。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Role-play a real situation 模拟真实场景</div>
+<div class="task-prompt">You finally decide to call a dental clinic to make an appointment. You haven't been in years and you feel nervous. Make the phone call — greet the receptionist, explain your situation, and ask questions.</div>
+<ul class="samples">
+<li>Hi, um, I'd like to make an appointment. It's been a while since I last saw a dentist — maybe three or four years. I've been putting it off, but I have some pain in my back tooth. Do you have anything this week? And... is the doctor good with nervous patients?
+          <span class="zh">嗨,嗯,我想预约一下。我上次看牙医已经很久了——大概三四年。我一直在拖,但我有颗后牙疼。这周有空位吗?还有……医生对紧张的病人有经验吗?</span>
+</li>
+<li>Hello, I'd like to book a check-up. Actually, it's not just a check-up — I think I might have a cavity. I've been having pain when I drink cold water. Is it possible to get an X-ray during the first visit? And how much does that usually cost?
+          <span class="zh">您好,我想预约检查。其实不只是检查——我想我可能有蛀牙。我喝冷水的时候会疼。第一次就诊能做 X 光吗?通常多少钱?</span>
+</li>
+<li>Hi there. This is a little embarrassing, but I haven't been to the dentist in a long time. I know I should've done this sooner. I have some discomfort on the left side of my mouth. Could I come in sometime tomorrow or the day after? The sooner, the better.
+          <span class="zh">您好。这有点不好意思,但我好久没看牙医了。我知道我早该来了。我嘴巴左边有点不舒服。明天或后天能来吗?越早越好。</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">cavity</span><span class="ipa">/ˈkævəti/</span>
+<div class="meaning">n. 蛀牙;龋齿</div>
+<div class="sample">The dentist pointed to a dark spot on the X-ray and said it was a cavity.
+          <span class="zh-trans">牙医指着 X 光上的一块阴影说那是蛀牙。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">drill</span><span class="ipa">/drɪl/</span>
+<div class="meaning">n. (牙医用的)钻头;v. 钻</div>
+<div class="sample">The sound of the drill made her hands tighten on the armrests.
+          <span class="zh-trans">钻头的声音让她双手抓紧了扶手。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">numb</span><span class="ipa">/nʌm/</span>
+<div class="meaning">adj. 麻木的;失去知觉的</div>
+<div class="sample">After the injection, her gum went numb and she could only feel pressure.
+          <span class="zh-trans">打针后,她的牙龈麻了,只能感觉到压力。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">dread</span><span class="ipa">/dred/</span>
+<div class="meaning">v./n. 非常害怕;恐惧</div>
+<div class="sample">She had spent months dreading the appointment, but it was over quickly.
+          <span class="zh-trans">她几个月来一直害怕这次预约,但很快就结束了。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">appointment</span><span class="ipa">/əˈpɔɪntmənt/</span>
+<div class="meaning">n. 预约;约定</div>
+<div class="sample">She finally made a dental appointment after the pain kept her awake all night.
+          <span class="zh-trans">在疼痛让她整晚睡不着之后,她终于预约了牙医。</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Speaking Practice · Day 35 · 2026-09-01 · Built for your English muscle memory.
+  </div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-09-01',title:"The Dentist I Almost Didn't Go To"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

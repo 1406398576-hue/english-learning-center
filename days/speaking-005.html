@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | 机场值机与行李</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e2ddd6;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+  }
+  .kicker {
+    font-size: 12.5px;
+    letter-spacing: .08em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 6px;
+  }
+  .header .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .header .date { color: var(--text-dim); font-size: 14px; margin-top: 8px; }
+
+  .topic-banner {
+    background: #eaf0f5;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 40px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin-bottom: 4px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-src {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--accent-3);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.s { color: var(--accent); }
+  .speaker.m { color: var(--accent-3); }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<span class="kicker">每日口语 · No.005</span>
+<span class="day-badge">DAY 5</span>
+<h1>机场值机与行李</h1>
+<div class="en">Airport Check-in &amp; Luggage</div>
+<div class="date">2026年7月30日（周四） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>旅行 · 机场值机与行李</h2>
+<div class="en">Airport Check-in &amp; Luggage</div>
+<p>到了机场，值机柜台前该怎么开口？托运行李、问座位、申报物品、担心误机——这5个高频表达+1段真实对话，练完下次出行就能直接说。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 句美剧原声例句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "I'm going to / I'm off to [place]."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I'm going to / I'm off to [place].&quot;" data-scene="使用场景 告诉别人你要飞去哪儿，或在机场确认行程" data-zh="我打算去 / 我要去[某地]（出发前说明目的地）" type="button">☆</button></div>
+<div class="expr-cn">我打算去 / 我要去[某地]（出发前说明目的地）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>告诉别人你要飞去哪儿，或在机场确认行程</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S04E23「The One with Ross's Wedding: Part 1」</span>"We're going to London, Baby!"（乔伊兴奋地说要飞伦敦）</div>
+<div class="tv-line"><span class="tv-src">《Friends》S10E15「The One Where Estelle Dies」</span>"The job is in Paris."（瑞秋说自己要去巴黎工作）</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S1E22「Airport 2010」</span>"Could you make it a double? I'm traveling with my family."（杰伊在机场酒吧点酒，说明和家人同行）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "I've got (a lot of) baggage / I have [luggage]."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I've got (a lot of) baggage / I have [luggage].&quot;" data-scene="使用场景 谈论托运或随身携带的箱子、包等行李" data-zh="我有很多行李 / 我有[行李]" type="button">☆</button></div>
+<div class="expr-cn">我有很多行李 / 我有[行李]</div>
+<div class="expr-meta"><span class="tag">使用场景</span>谈论托运或随身携带的箱子、包等行李</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Modern Family》S1E22「Airport 2010」</span>"I know I got a lot of baggage, but don't worry, I'm seeing a therapist. Just kidding. I'm fine."（菲尔拿"行李"双关自嘲）</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S1E3「The Sweet Taste of Liberty」</span>"You have a wheelie bag? Well, I have a wheelie bag!"（巴尼用带轮行李箱搭讪）</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S1E3「The Sweet Taste of Liberty」</span>"he does this thing where he goes to airports with fake luggage to pick up girls..."（泰德吐槽巴尼拿假行李箱去机场搭讪）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "We're heading to the airport / going to catch a flight."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;We're heading to the airport / going to catch a flight.&quot;" data-scene="使用场景 说要去机场，或赶某一班飞机" data-zh="我们要去机场 / 赶飞机" type="button">☆</button></div>
+<div class="expr-cn">我们要去机场 / 赶飞机</div>
+<div class="expr-meta"><span class="tag">使用场景</span>说要去机场，或赶某一班飞机</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S1E3「The Sweet Taste of Liberty」</span>"We're going to the airport."（泰德被巴尼拉去机场）</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S2E15「Lucky Penny」</span>"Ted and Robin are running through the airport, trying to catch a plane to Chicago..."（两人狂奔赶去芝加哥的航班）</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S1E22「Airport 2010」</span>"Ladies and gentlemen, preboarding for our flight to Maui will begin in the next few minutes."（机场广播预告飞往毛伊岛的航班登机）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "I might miss my flight / the flight leaves in..."</div><button aria-label="收藏表达" class="expr-fav" data-en='"I might miss my flight / the flight leaves in..."' data-scene="使用场景 担心误机，或确认起飞、登机时间" data-zh="我可能赶不上飞机 / 飞机[几点]飞" type="button">☆</button></div>
+<div class="expr-cn">我可能赶不上飞机 / 飞机[几点]飞</div>
+<div class="expr-meta"><span class="tag">使用场景</span>担心误机，或确认起飞、登机时间</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Modern Family》S8E1「The Long Honeymoon」</span>"Get upstairs and pack, or else you might miss your flight."（克莱尔催孩子收拾行李，不然赶不上飞机）</div>
+<div class="tv-line"><span class="tv-src">《Friends》S04E23「The One with Ross's Wedding: Part 1」</span>"The flight leaves in four hours."（莫妮卡提醒大家飞机4小时后起飞）</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S2E15「Lucky Penny」</span>"their flight has already left" / "they cannot get on the flight"（地勤说航班已飞走、两人没赶上）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "Have a good trip / Goodbye / We'll miss you."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;Have a good trip / Goodbye / We'll miss you.&quot;" data-scene="使用场景 在机场送别朋友或家人时说的话" data-zh="一路顺风 / 再见 / 会想你的（机场送别）" type="button">☆</button></div>
+<div class="expr-cn">一路顺风 / 再见 / 会想你的（机场送别）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>在机场送别朋友或家人时说的话</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S10E16「The One with Rachel's Going Away Party」</span>"Have a, have a good time in Paris."（罗斯在瑞秋欢送派对上道别）</div>
+<div class="tv-line"><span class="tv-src">《The Office》S7E21「Goodbye, Michael」</span>"Goodbye."（迈克尔在机场与纪录片团队最后道别）</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S8E1「The Long Honeymoon」</span>"We'll miss you!" / "- Bye! - Bye, guys!"（全家在机场送别时的告别）</div>
+</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 8轮真实值机柜台对话</h3>
+<div class="dialogue">
+<div class="scene">✈️ 场景：Alex 在机场值机柜台办理登机，和地勤 Agent 对话。</div>
+<div class="line">
+<span class="speaker m">Agent:</span>
+<span class="text">Good morning! May I see your passport and ticket, please?</span>
+<div class="translation">早上好！请出示您的护照和机票好吗？</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">Sure, here you go. I'm flying to Tokyo.</span>
+<div class="translation">当然，给您。我要飞往东京。</div>
+</div>
+<div class="line">
+<span class="speaker m">Agent:</span>
+<span class="text">Window or aisle seat?</span>
+<div class="translation">靠窗还是靠走道的座位？</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">An aisle seat, please. And I'd like to check this bag.</span>
+<div class="translation">请给我靠走道的座位。另外我想托运这个包。</div>
+</div>
+<div class="line">
+<span class="speaker m">Agent:</span>
+<span class="text">Certainly. Did you pack your suitcase yourself? Do you have anything to declare?</span>
+<div class="translation">好的。行李是您自己收拾的吗？有什么需要申报的物品吗？</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">Yes, I packed it myself. No, nothing to declare. Is it over the weight limit?</span>
+<div class="translation">是我自己收拾的。没有，没什么要申报的。它超重了吗？</div>
+</div>
+<div class="line">
+<span class="speaker m">Agent:</span>
+<span class="text">It's just under. Here's your boarding pass—gate 22, boarding starts at 10:40. Have a good trip!</span>
+<div class="translation">刚好没超。这是您的登机牌——22号登机口，10:40开始登机。一路顺风！</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">Thank you so much! I'd better hurry—I don't want to miss my flight.</span>
+<div class="translation">太谢谢了！我得赶紧了——可不想误机。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>Describe a time you almost missed a flight (or any ride).</strong> What happened, and how did you make it?
+          <div class="hint">💡 用到今天的 "I might miss my flight" 和过去时描述经过。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Last summer I overslept and almost missed my flight to Shanghai. I ran to the gate and made it just before boarding closed."</span>
+<span class="s">"I once got stuck in traffic and thought I'd miss the train, but it was delayed by ten minutes—lucky me."</span>
+<span class="s">"My friend packed too slowly and we nearly missed our flight. We had to skip breakfast to make it."</span>
+</div>
+</li>
+<li>
+<strong>What do you always pack when you travel?</strong> Name three things you never forget to bring.
+          <div class="hint">💡 用上 "I've got a lot of baggage" 思路，但更自然地说 "I always pack..."。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"I always pack my charger, a book, and a jacket. I hate being on a cold plane without one."</span>
+<span class="s">"Three things I never forget: my passport, my earphones, and snacks. I get hungry on long flights."</span>
+<span class="s">"I usually bring a neck pillow, my camera, and medicine—just in case I get sick."</span>
+</div>
+</li>
+<li>
+<strong>If you could fly anywhere this weekend, where would you go?</strong> Tell your partner why, as if you're heading to the airport.
+          <div class="hint">💡 用上 "I'm going to / I'm off to [place]" 和 "We're heading to the airport"。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"I'm off to Kyoto this weekend—I've heard the food is amazing and it's finally cool there."</span>
+<span class="s">"If I could, I'd fly to Bali. We're heading to the airport right now because I need a beach break."</span>
+<span class="s">"I'm going to visit my cousin in Sydney. It's been years, and I really miss the harbor there."</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：先把对话大声朗读 2–3 遍，感受值机柜台的节奏。再回答 3 个练习题并录音回听，重点练 "check this bag / nothing to declare / over the weight limit" 这几个短语。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"I will check my luggage."</td>
+<td class="right">"I'd like to check this bag, please."<br/>"Can I check this?"</td>
+<td class="note">口语里"托运行李"习惯说 check a bag / check this bag，比 "check my luggage" 地道。</td>
+</tr>
+<tr>
+<td class="wrong">"My baggage is too heavy."</td>
+<td class="right">"Is it over the weight limit?"<br/>"It's a little overweight."</td>
+<td class="note">问/说超重，用 weight limit / overweight 最准确自然。</td>
+</tr>
+<tr>
+<td class="wrong">"Give me a window seat."</td>
+<td class="right">"Could I get a window seat, please?"<br/>"An aisle seat, please."</td>
+<td class="note">对工作人员用祈使句 "give me" 太生硬，用 could / please 更礼貌。</td>
+</tr>
+<tr>
+<td class="wrong">"I have not anything to declare."</td>
+<td class="right">"No, nothing to declare."</td>
+<td class="note">海关申报的标准回答就是 "Nothing to declare."，短而自然。</td>
+</tr>
+<tr>
+<td class="wrong">"Where is my gate?"</td>
+<td class="right">"Which gate is my flight?"<br/>"Where's the gate for flight XX?"</td>
+<td class="note">问登机口，说 which gate / the gate for flight 比 "my gate" 更清楚。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话2遍 → ② 背5个核心表达（含美剧原句）→ ③ 回答3个练习题（录音）→ ④ 回顾纠正表，值机别再说错。
+    </div>
+<p>坚持每天15分钟，开口比完美更重要。See you tomorrow! 🌙</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'9999-0005-00',title:"旅行 · 机场值机与行李"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

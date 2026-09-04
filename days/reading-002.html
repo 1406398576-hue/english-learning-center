@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily English Reading · When AI Writes Poetry · 2026-07-30</title>
+<style>
+  :root{
+    --bg:#faf7f2; --card:#ffffff; --ink:#2b2b2b; --muted:#8a8378;
+    --line:#ece6dc; --accent:#0f766e; --accent2:#c08a2d; --soft:#eef5f3;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#eef5f3,#fbf2e0);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:var(--soft); border:1px solid #bfe0da; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  h1 .en{display:block; font-size:18px; color:var(--accent2); margin-top:4px; font-weight:600;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .sec-head h2 .en{color:var(--muted); font-weight:500; font-size:13px; margin-left:6px;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent); background:var(--soft);
+    border:1px solid #bfe0da; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fbf0dd; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .ph{font-weight:700; color:var(--accent); font-size:15.5px;}
+  .kp .zh{color:var(--accent2); font-weight:600; margin-left:6px; font-size:14px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .quote{border-left:3px solid var(--accent2); background:var(--soft);
+    padding:8px 14px; margin:6px 0; border-radius:0 8px 8px 0; font-style:italic; font-size:14.5px;}
+  .quote .src{display:block; margin-top:4px; font-style:normal; font-size:12.5px; color:var(--muted);}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:var(--soft); border:1px dashed #bfe0da; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:var(--soft); border:1px solid #bfe0da; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} h1 .en{font-size:16px;} article.read{font-size:16px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="badge">每日阅读 · No.002</span>
+    <h1>当 AI 开始写诗：创造力，还是高级模仿？<span class="en">When AI Writes Poetry: Creation or Imitation?</span></h1>
+    <p class="sub">科技与未来 · AI 特辑——如果一首打动你的诗，作者是一台机器，那它"创造"了吗？</p>
+    <div class="meta">
+      <span>📅 <b>2026-07-30</b></span>
+      <span>🎯 主题桶：<b>科技与未来 · AI (25%)</b></span>
+      <span>📏 难度：<b>IELTS R7 / 媒体评论文风</b></span>
+      <span>⏱ 时长：<b>约 15 分钟</b></span>
+    </div>
+  </header>
+
+  <!-- 0:00–2:00 -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+    <p style="margin:0 0 0;color:var(--muted);font-size:14px;">过去十年，AI 从下围棋、画图，一路走到了写诗。它能生成押韵、有意象、甚至"读起来很真诚"的句子。于是我们被迫面对一个古老又新鲜的问题：当机器产出让我们动容的文字，这算"创造"，还是一种精密到以假乱真的"模仿"？今天读一篇科技文化评论，我们不急着下结论，而是把"创作"这件事拆开来看。</p>
+    <div class="tip">💡 读前小思考：你有没有读过一首诗/一段文字，后来才发现是 AI 写的？那一刻你的感受变了吗？</div>
+  </section>
+
+  <!-- 2:00–10:00 -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+    <article class="read">
+      <p>In the spring of 2023, a poem generated by a large language model was accepted into a literary magazine that had, until then, published only humans. The editors later admitted they had not known the author was a machine. Readers praised the poem's "aching sincerity." Nobody, it seemed, could tell.</p>
+
+      <p>That small episode captures a question we have been circling for years, and now it sits squarely on our desk: when a machine writes a poem that moves us, is it creating, or merely <span class="hl">imitating at a level so refined</span> that the difference simply collapses?</p>
+
+      <p>The honest answer begins with what these systems actually do. A modern model is trained on a colossal archive of human writing—every poem, every song lyric, every late-night post it can legally ingest. It learns, statistically, which words tend to follow which others, and in what emotional weather. When you ask it for a sonnet about grief, it does not feel grief. It computes the most probable arrangement of words that, given its training, has historically co-occurred with "sonnet" and "grief." What emerges can be <span class="hl">startlingly fluent</span>. But fluency is not the same as feeling.</p>
+
+      <p>Critics are quick to say this is imitation, and they are not wrong. As Oscar Wilde once observed, "Life imitates Art far more than Art imitates life"—and a model imitates art, exhaustively, without having lived anything at all. The machine has read every poem about death and can recombine them; it has never watched anyone die. Its output is, in a sense, <span class="hl">the sincerest form of flattery</span>, borrowed from a million authors who did the actual living.</p>
+
+      <p>And yet the line is not so clean. Human poets, too, are trained. We learn meter by reading, steal rhythms from our heroes, and rewrite what we have absorbed. No one writes from a vacuum. The difference, defenders of AI argue, is one of degree, not kind: the model simply absorbs faster and forgets nothing. Margaret Wolfe Hungerford's old line—"Beauty is in the eye of the beholder"—reminds us that the value of a poem has always depended on the reader, not on the author's biography. If a machine's poem makes you feel seen, does its lack of a nervous system <span class="hl">disqualify the feeling</span>?</p>
+
+      <p>There is a danger in answering too quickly. The technology is, as William Gibson noted, "already here—it's just not evenly distributed," and it is improving faster than our norms can keep pace. Schools worry about essays; newsrooms worry about floods of synthetic content; artists worry about being ingested without consent or credit. Arthur C. Clarke's warning that "any sufficiently advanced technology is <span class="hl">indistinguishable from magic</span>" cuts both ways: what looks like creation may be computation wearing a poet's clothes.</p>
+
+      <p>Consider what we mean by "original." When a human poet writes, we credit them with intention: a choice to break a rule, to echo a predecessor, to say the unsayable. The model makes no such choices; it samples. But sampling, done at scale, can stumble into combinations no single human would have planned—happy accidents that feel authored. Some researchers call this "alien intelligence," not because it is conscious, but because its failures and surprises do not map onto human ones. Whether that counts as creation is <span class="hl">less a technical question than a cultural one</span>, and culture, notoriously, changes its mind.</p>
+
+      <p>The practical stakes are easier to feel than to theorize. A student who leans on a model to draft every essay may never learn the discomfort of a blank page, which is also where original thought is born. A reader flooded with fluent, weightless prose may lose the taste for writing that risks being wrong, strange, or unpopular. We already see it in how people talk about books they have not read and songs they have not really heard: the experience is summarized, the sensation skipped. When the interface between us and culture gets smoother, the friction that makes meaning stick is the first thing to go.</p>
+
+      <p>What gets lost, if we confuse the two, is the point of making art in the first place. Picasso's line that "every act of creation is first an act of destruction" hints at something machines cannot easily do: they do not risk themselves, do not break their own forms in order to say something that was not there before. A model optimizes for plausibility. A human artist, at their best, aims for truth—even when truth is awkward, unmarketable, or strange.</p>
+
+      <p>None of this means AI poetry is worthless. Used as a tool—a spasm of prompts to loosen a stuck writer, a mirror to hold up to your own habits—it can be genuinely useful. Marshall McLuhan's dictum that "the medium is the message" suggests the real story is not the poem but the relationship: we are changing, quietly, in how we make and consume meaning. The question is not "can a machine write a good poem?" It can. The better question is what we lose if we stop needing the human behind it.</p>
+
+      <p>We are, in Vonnegut's phrase, "what we pretend to be," and we should be careful about what we pretend to be. If we pretend a fluent machine is a feeling one, we may slowly forget what feeling sounds like. That, more than any single poem, is the risk worth naming.</p>
+    </article>
+  </section>
+
+  <!-- 10:00–13:00 -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+
+    <span class="kp"><span class="ph">indistinguishable from</span><span class="zh">与…难以区分</span>
+      <span class="sc">使用场景：描述两者相似到无法分辨，常用于技术、现象或品质的类比。</span>
+      <span class="quote">"Any sufficiently advanced technology is indistinguishable from magic."
+        <span class="src">— Arthur C. Clarke, <i>Profiles of the Future</i> (1962)</span></span></span>
+
+    <span class="kp"><span class="ph">imitation is the sincerest form of flattery</span><span class="zh">模仿是最真诚的恭维</span>
+      <span class="sc">使用场景：讽刺或宽容地说"被模仿＝被认可"，指没有原创力却最推崇前人。</span>
+      <span class="quote">"Imitation is the sincerest form of flattery."
+        <span class="src">— Charles Caleb Colton, <i>Lacon</i> (1820)</span></span></span>
+
+    <span class="kp"><span class="ph">in the eye of the beholder</span><span class="zh">仁者见仁（美在观者眼中）</span>
+      <span class="sc">使用场景：强调美丑、价值是主观的，取决于观看者而非对象本身。</span>
+      <span class="quote">"Beauty is in the eye of the beholder."
+        <span class="src">— Margaret Wolfe Hungerford, <i>Molly Bawn</i> (1878)</span></span></span>
+
+    <span class="kp"><span class="ph">life imitates art</span><span class="zh">生活模仿艺术</span>
+      <span class="sc">使用场景：说现实反而被艺术作品塑造、被其预言，比"艺术模仿生活"更进一层。</span>
+      <span class="quote">"Life imitates Art far more than Art imitates life."
+        <span class="src">— Oscar Wilde, "The Decay of Lying" (1889)</span></span></span>
+
+    <span class="kp"><span class="ph">the medium is the message</span><span class="zh">媒介即讯息</span>
+      <span class="sc">使用场景：强调载体/形式本身比内容更深刻地塑造我们的感知与关系。</span>
+      <span class="quote">"...the medium is the message."
+        <span class="src">— Marshall McLuhan, <i>Understanding Media</i> (1964)</span></span></span>
+
+    <span class="kp"><span class="ph">pretend to be</span><span class="zh">假装是…／以…自居</span>
+      <span class="sc">使用场景：说一个人/事物"装作某种身份"，常带警醒意味（当心你扮演的角色）。</span>
+      <span class="quote">"We are what we pretend to be, so we must be careful about what we pretend to be."
+        <span class="src">— Kurt Vonnegut, <i>Mother Night</i> (1961)</span></span></span>
+
+    <span class="kp"><span class="ph">tell oneself a story</span><span class="zh">跟自己讲故事（初稿是与自己对话）</span>
+      <span class="sc">使用场景：形容写作初稿不是给读者，而是作者先理清自己的想法。</span>
+      <span class="quote">"The first draft is just you telling yourself the story."
+        <span class="src">— Terry Pratchett, <i>A Slip of the Keyboard</i> (2014)</span></span></span>
+
+    <span class="kp"><span class="ph">an act of creation</span><span class="zh">一种创造的行为</span>
+      <span class="sc">使用场景：把"创作"描述成先破坏再新生的过程，强调创作者要敢于打破形式。</span>
+      <span class="quote">"Every act of creation is first an act of destruction."
+        <span class="src">— Pablo Picasso (widely attributed)</span></span></span>
+
+    <span class="kp"><span class="ph">quite useless</span><span class="zh">相当无用（反讽地说"无用却有价"）</span>
+      <span class="sc">使用场景：故意用"无用"反衬艺术超越功利的价值，是评论里的高级反语。</span>
+      <span class="quote">"All art is quite useless."
+        <span class="src">— Oscar Wilde, preface to <i>The Picture of Dorian Gray</i> (1890)</span></span></span>
+
+    <span class="kp"><span class="ph">easy reading is hard writing</span><span class="zh">易读必出于苦写</span>
+      <span class="sc">使用场景：说明流畅自然的文字背后，是作者艰难的打磨与删改。</span>
+      <span class="quote">"Easy reading is damned hard writing."
+        <span class="src">— Nathaniel Hawthorne (attributed)</span></span></span>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Tech &amp; Future Vocabulary · 科技未来词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题是 AI 与未来，补上读科技评论时高频出现的词块（对应规范里的「Celebrity / Culture Vocabulary」模块，这里换成科技向）：</p>
+    <div class="vocab">
+      <div class="v"><b>large language model (LLM)</b><span>大语言模型——生成式 AI 的核心，靠海量文本训练</span></div>
+      <div class="v"><b>trained on an archive</b><span>在语料库上训练——模型"吃过"哪些数据决定它能写什么</span></div>
+      <div class="v"><b>co-occur with</b><span>与…共现——统计上"常一起出现"，是模型预测词的核心逻辑</span></div>
+      <div class="v"><b>recombine</b><span>重新组合——把学来的元素拼出新句子，模仿的本质动作</span></div>
+      <div class="v"><b>synthetic content</b><span>合成内容——由机器生成、非人类原创的文字/图像/音视频</span></div>
+      <div class="v"><b>optimize for plausibility</b><span>为"像那么回事"而优化——追求可信而非真实</span></div>
+      <div class="v"><b>alien intelligence</b><span>异质智能——指 AI 的失误与惊喜不对应人类思维</span></div>
+      <div class="v"><b>without consent or credit</b><span>未经同意也未署名——艺术家对"被喂数据"的核心不满</span></div>
+      <div class="v"><b>fluency vs. feeling</b><span>流畅 vs. 感受——文章的核心对立：会写≠有感情</span></div>
+      <div class="v"><b>the human behind it</b><span>背后的那个人——强调创作离不开具体的人与经历</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+
+    <div class="sb">
+      <p class="q">"In the spring of 2023, a poem generated by a large language model was accepted into a literary magazine that had, until then, published only humans."</p>
+      <p class="a"><b>句型：</b>主句（被动语态 was accepted）+ 定语从句 that had… published only humans，其中 generated by… 是过去分词短语作后置定语修饰 poem。<b>逻辑：</b>用一件真实小事引出宏大问题，开门见山。<b>表达：</b>① <i>generated by</i> 比 written by 更"非人"，暗设悬念；② <i>until then</i> 强调"此前 exclusively 人类"，反差制造新闻感。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"It computes the most probable arrangement of words that, given its training, has historically co-occurred with 'sonnet' and 'grief.'"</p>
+      <p class="a"><b>句型：</b>主句 computes the… arrangement + 定语从句 that has co-occurred，插入语 given its training 表"鉴于/基于"。<b>逻辑：</b>把"写诗"拆成"算概率"，去浪漫化。<b>表达：</b>① <i>given + 名词</i> 是极常用的"鉴于"结构；② <i>co-occur with</i> 是科技评论高频词，比 appear with 更精确。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"Its output is, in a sense, the sincerest form of flattery, borrowed from a million authors who did the actual living."</p>
+      <p class="a"><b>句型：</b>主系表 + 插入语 in a sense + 后置定语 borrowed from…，再嵌套 who 定语从句。<b>逻辑：</b>用 idiom 点出 AI 是"借来的赞美"，而活过的人才是源头。<b>表达：</b>① <i>in a sense</i> 软化断言；② <i>did the actual living</i> 用"真正活过"对照机器的"只读过"，对比锋利。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"Whether that counts as creation is less a technical question than a cultural one, and culture, notoriously, changes its mind."</p>
+      <p class="a"><b>句型：</b>Whether 主语从句 + 系动词 + <i>less A than B</i> 平行结构 + 并列句。<b>逻辑：</b>把问题从"技术能否"转移到"文化如何定义"，并提醒定义会变。<b>表达：</b>① <i>less A than B</i>（与其说 A 不如说 B）是评论利器；② <i>notoriously</i> 这里作"出了名地（善变）"，带轻微反讽。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"If we pretend a fluent machine is a feeling one, we may slowly forget what feeling sounds like."</p>
+      <p class="a"><b>句型：</b>If 条件状语从句 + 主句，主句宾语是 what 引导的名词性从句。<b>逻辑：</b>收尾把风险从"诗好不好"升到"我们会不会丧失感受力"，余味悠长。<b>表达：</b>① <i>fluent machine vs. feeling one</i> 头韵对照（fluent/feeling），节奏漂亮；② <i>forget what X sounds like</i> 用"听起来的样子"具象化抽象的"感受"，适合套用：<i>we forget what honesty sounds like.</i></p>
+    </div>
+  </section>
+
+  <!-- 13:00–15:00 -->
+  <section class="sum">
+    <div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+    <p><b>核心内容：</b>2023 年一首 AI 诗混进只发人类作者的文学杂志，读者盛赞其"真诚的痛感"却无人识破——这把我们逼到问题面前：机器写出打动我们的诗，算创造还是高级模仿？文章先讲清模型本质：它在海量人类文本上训练，统计"哪些词常一起出现"，算出最像诗的排列；它不悲伤，只是"流畅"（fluency），而流畅不等于感受（feeling）。反对者说这是模仿——Wilde 说"生活模仿艺术远多于艺术模仿生活"，机器则把艺术模仿到了极致却毫无生活。但界限不清：人类诗人也是被训练、偷节奏、再重写，区别只在"程度"而非"种类"。Hungerford 的"美在观者眼中"提醒我们，诗的价值从来取决于读者。文章也警告：Clarke 说"足够先进的科技与魔法难分"，看着像创造的可能只是披着诗人外衣的计算。最终落点：创作需要先"破坏"自我（Picasso），AI 只优化"像那么回事"（plausibility）；问题不是机器能不能写诗，而是若我们不再需要"背后那个人"，会失去什么。</p>
+    <p><b>背后文化现象：</b>① "原创"被重新定义——当采样在规模上撞出人类没计划过的组合，creation 与 imitation 的边界开始模糊；② 注意力与信任危机——学校怕代写、媒体怕合成内容泛滥、艺术家怕"被白嫖数据"；③ "感受力通胀"风险：习惯了流畅却无心的文字，我们可能慢慢忘记"有感受的文字"长什么样。</p>
+    <p><b>值得思考的问题：</b>如果一首诗让你真正被看见，作者有没有神经系统，还重要吗？当 AI 把"写"变得唾手可得，人类创作独特的"风险、破形、说不可说之事"是否反而更稀缺、更值钱？——这和你做内容创作其实同频：当所有人都能一键生成"像那么回事"的文字，你作为具体之人的经历、判断与真诚，才是最难被模仿、也最该被珍惜的东西。</p>
+  </section>
+
+  <section class="ask">
+    <div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+    <div class="prompt">🗣 <b>Discussion question：</b> The article argues that AI can produce fluent, moving text without feeling, and warns we may "forget what feeling sounds like." Do you think using AI to help with writing makes us better or worse writers? Write about 200 words giving your view, with one concrete example from your own study or work.</div>
+    <div class="model">
+      <span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think AI helps writers in the same way a good editor helps—but only if you stay in the driver's seat. When I'm stuck on an opening paragraph, I'll sometimes ask a model for three different angles. It doesn't write the piece for me; it shows me shapes I hadn't considered, and then I pick the one that actually sounds like me. That's genuinely useful, and it has made my drafts faster.
+      The danger is real, though. Last semester a classmate submitted an essay that read as perfectly fluent and completely empty—every sentence plausible, none of it felt earned. The teacher spotted it immediately, not because of a fact error, but because the voice was weightless. That's exactly the "fluency without feeling" the article names.
+      So my rule is: use AI to loosen a stuck mind, never to outsource the thinking. The part that makes writing worth reading—the specific experience, the risk, the awkward truth—has to come from me. A model can suggest; it can't live. If I remember that, the tool makes me better. If I forget it, I become fluent and forgettable at the same time.
+    </div>
+    <div class="tip">✍️ 写法提示：用 I think AI helps… in the same way… 先立一个平衡立场；中间用 Last semester a classmate… 给出题目要求的"one concrete example"，用 weightless / fluency without feeling 扣回文章词；结尾用 So my rule is… 落到可执行的个人准则，是母语者议论文的标准收束。</div>
+  </section>
+
+  <footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计回到「人类与社会」）</footer>
+
+</div>
+</body>
+</html>

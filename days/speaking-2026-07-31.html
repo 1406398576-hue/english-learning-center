@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | 2026-07-31 · 日常聊天</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e7e1d8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .kicker {
+    font-size: 12.5px; letter-spacing: .08em; color: var(--accent);
+    font-weight: 700; text-align: center; margin-bottom: 6px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .header .sub { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f7;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin: 4px 0 8px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-src {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--accent-3);
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .movie-tip {
+    font-size: 13px;
+    color: var(--accent-3);
+    background: #f7f4ef;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 6px;
+  }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.s { color: var(--accent); }
+  .speaker.m { color: var(--accent-3); }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="kicker">每日口语 · 2026-07-31</div>
+<div class="header">
+<span class="day-badge">DAY 10</span>
+<h1>日常聊天 · 寒暄与接话<br/>Small Talk &amp; Keeping the Conversation Going</h1>
+<div class="sub">2026年7月31日（周五） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>日常聊天：寒暄、接话与自然结束</h2>
+<div class="en">Small Talk &amp; Keeping the Conversation Going</div>
+<p>从电梯里遇见同事，到聚会时和不熟的人闲聊，"寒暄+接话"是美国人每天用得最多的口语。今天这 5 个表达帮你把寒暄变自然，把对话顺下去，也能体面地结束聊天。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 句真实美剧原句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "How's it going?"</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;How's it going?&quot;" data-scene="使用场景 遇见朋友、同事、熟人时，随口打招呼开启对话" data-zh="最近怎么样？/ 一切都好吗？（比 How are you 更随意）" type="button">☆</button></div>
+<div class="expr-cn">最近怎么样？/ 一切都好吗？（比 How are you 更随意）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>遇见朋友、同事、熟人时，随口打招呼开启对话</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》日常打招呼，多集出现</span>"Hey! How's it going?"</div>
+<div class="tv-line"><span class="tv-src">《The Office》Michael Scott 进办公室时常用</span>"How's it going, everybody?"</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》Phil Dunphy 遇见邻居时</span>"How's it going? You guys doing okay?"</div>
+</div>
+<div class="movie-tip">🎬 真实场景：在茶水间碰见同事，笑着点头说 "Hey, how's it going?" 比一本正经问 "How are you?" 自然十倍。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "What have you been up to?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"What have you been up to?"' data-scene="使用场景 好久不见或刚聊了几句，想问问对方近况" data-zh="最近在忙什么？/ 最近都干嘛了？" type="button">☆</button></div>
+<div class="expr-cn">最近在忙什么？/ 最近都干嘛了？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>好久不见或刚聊了几句，想问问对方近况</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》Joey 问 Ross 近况时</span>"So, what have you been up to?"</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》Ted 与旧友重逢时</span>"What have you been up to all this time?"</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》Claire 问 Mitchell 周末安排时</span>"What have you guys been up to this weekend?"</div>
+</div>
+<div class="movie-tip">🎬 真实场景：周末后见到朋友，别只问 "How are you?"，换成 "What have you been up to?" 立刻有话题可接。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "That's good to hear."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;That's good to hear.&quot;" data-scene="使用场景 对方说了顺利、开心、好消息时，用来接话并表示关心" data-zh="那真好 / 听到这消息真好（回应对方的好消息）" type="button">☆</button></div>
+<div class="expr-cn">那真好 / 听到这消息真好（回应对方的好消息）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>对方说了顺利、开心、好消息时，用来接话并表示关心</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》Monica 听到 Rachel 好消息时</span>"Oh, that's good to hear."</div>
+<div class="tv-line"><span class="tv-src">《The Office》Pam 回应 Jim 的近况时</span>"That's good to hear. I'm glad things are looking up."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》Jay 听到儿子工作顺利时</span>"That's good to hear. You deserve it."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：朋友说 "I finally finished that project." 你回 "That's good to hear. You must be relieved." 自然又有温度。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "Anyway, I should get going."</div><button aria-label="收藏表达" class="expr-fav" data-en='"Anyway, I should get going."' data-scene="使用场景 聊得差不多了，想体面结束对话去忙别的事" data-zh="不管怎么说，我得走了（自然、礼貌地结束对话）" type="button">☆</button></div>
+<div class="expr-cn">不管怎么说，我得走了（自然、礼貌地结束对话）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>聊得差不多了，想体面结束对话去忙别的事</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》Chandler 准备离开聚会时</span>"Anyway, I should get going."</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》Robin 结束约会前常说</span>"Anyway, I should get going. It's getting late."</div>
+<div class="tv-line"><span class="tv-src">《The Office》Oscar 礼貌结束闲聊时</span>"Well, anyway, I should get going. Talk later."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：聊了三分钟后要开会，直接说 "Anyway, I should get going — I have a meeting." 不尴尬、不冷场。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "Let's catch up soon."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;Let's catch up soon.&quot;" data-scene='使用场景 道别时表达"想再聊"，为下一次联系留一个自然的口子' data-zh="我们找机会再聚 / 改天好好聊聊" type="button">☆</button></div>
+<div class="expr-cn">我们找机会再聚 / 改天好好聊聊</div>
+<div class="expr-meta"><span class="tag">使用场景</span>道别时表达"想再聊"，为下一次联系留一个自然的口子</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》Monica 与老同学道别时</span>"It was so great seeing you. Let's catch up soon."</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》Lily 对老友说</span>"Let's catch up soon, okay? I miss our talks."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》Gloria 结束家庭聚会时说</span>"We should catch up soon. I'll call you."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：匆忙聊完说再见，加一句 "Let's catch up soon." 比只说 bye 更有人情味，也不会让对方觉得你敷衍。</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 真实聊天（8 轮）</h3>
+<div class="dialogue">
+<div class="scene">☕ 场景：周一早上，Alex 和 Jordan 在公司茶水间偶遇，从寒暄聊到周末，再自然结束并约好改天一起吃午饭。</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">Hey Jordan! How's it going?</span>
+<div class="translation">嘿 Jordan！最近怎么样？</div>
+</div>
+<div class="line">
+<span class="speaker m">Jordan:</span>
+<span class="text">Pretty good, thanks. It's Monday, but I'm surviving. What about you?</span>
+<div class="translation">还不错，谢谢。虽然是周一，但我还撑得住。你呢？</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">Same here. So, what have you been up to this weekend?</span>
+<div class="translation">我也一样。对了，你周末都干嘛了？</div>
+</div>
+<div class="line">
+<span class="speaker m">Jordan:</span>
+<span class="text">I went hiking with a couple of friends. The weather was perfect.</span>
+<div class="translation">我和几个朋友去爬山了。天气特别好。</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">That's good to hear. I've been meaning to get back into hiking.</span>
+<div class="translation">那真好。我一直想重新去爬山。</div>
+</div>
+<div class="line">
+<span class="speaker m">Jordan:</span>
+<span class="text">You should come next time. Anyway, I should get going — I've got a call in five minutes.</span>
+<div class="translation">下次你应该一起来。对了，我得走了——五分钟后我有个电话会。</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">No problem. Let's catch up soon, maybe over lunch this week?</span>
+<div class="translation">没问题。我们改天好好聊聊，这周找个时间吃午饭？</div>
+</div>
+<div class="line">
+<span class="speaker m">Jordan:</span>
+<span class="text">Sounds great. I'll text you later.</span>
+<div class="translation">好啊。我晚点给你发消息。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>It's Monday morning and you run into a coworker in the elevator. Start a 3-sentence small talk.</strong>
+<div class="hint">💡 用 "How's it going?" 开头，再用 "What have you been up to?" 延续话题。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Hey, how's it going? Did you do anything fun this weekend?"</span>
+<span class="s">"Morning! How's it going? I heard you went to the beach — how was it?"</span>
+<span class="s">"Hi! How's it going? You look well-rested after the weekend."</span>
+</div>
+</li>
+<li>
+<strong>Your friend just told you they got a promotion. React naturally and keep the conversation going for two more sentences.</strong>
+<div class="hint">💡 先用 "That's good to hear." 回应，再追问细节或表达祝贺。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"That's good to hear! You totally deserve it — when do you start the new role?"</span>
+<span class="s">"That's good to hear. I'm so happy for you. Are you going to celebrate?"</span>
+<span class="s">"Wow, that's good to hear! Does this mean you'll finally get your own office?"</span>
+</div>
+</li>
+<li>
+<strong>You're in a hurry but want to politely end a conversation and suggest catching up later.</strong>
+<div class="hint">💡 用 "Anyway, I should get going." 结束，再用 "Let's catch up soon." 留后路。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Anyway, I should get going — I'm running late. Let's catch up soon over coffee."</span>
+<span class="s">"It's been great talking, but I should get going. Let's catch up soon, okay?"</span>
+<span class="s">"Anyway, I gotta run. Let's catch up soon — maybe this weekend?"</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：先把对话大声朗读 2–3 遍找节奏，再关掉中文用英文回答上面 3 题并录音回听。注意听自己说 "How's it going" 时是否连读成了 /haʊ zɪt ˈɡoʊɪŋ/。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"How are you?"（每次见面都用）</td>
+<td class="right">"How's it going?"<br/>"What's up?"</td>
+<td class="note">熟人、同事之间用 How's it going 更随意自然；How are you 偏正式或关心身体状况。</td>
+</tr>
+<tr>
+<td class="wrong">"I am very busy recently."</td>
+<td class="right">"I've been pretty busy lately."<br/>"Things have been crazy lately."</td>
+<td class="note">recently 常和完成时或一般过去时搭配；描述"最近一直忙"用 lately + 现在完成时更自然。</td>
+</tr>
+<tr>
+<td class="wrong">"I go hiking last weekend."</td>
+<td class="right">"I went hiking last weekend."</td>
+<td class="note">last weekend 是过去时间点，动词要用过去式 went。</td>
+</tr>
+<tr>
+<td class="wrong">"I must go now."</td>
+<td class="right">"I should get going."<br/>"I gotta run."</td>
+<td class="note">must 语气偏强硬；美国人道别时常用 should get going 或 gotta run，更随意礼貌。</td>
+</tr>
+<tr>
+<td class="wrong">"We can chat later."</td>
+<td class="right">"Let's catch up soon."<br/>"Let's talk soon."</td>
+<td class="note">chat later 也可以，但 catch up soon 更地道，暗含"好好聊聊近况"。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话 2 遍 → ② 背 5 个核心表达（含美剧原句）→ ③ 用英语回答 3 个练习并录音 → ④ 回看纠正表，避开 "I am very busy recently / I must go now" 等坑。
+    </div>
+<p>坚持每天 15 分钟，开口比完美更重要。See you tomorrow! 🌙</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-07-31',title:"日常聊天：寒暄、接话与自然结束"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

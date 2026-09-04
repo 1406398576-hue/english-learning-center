@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Day I Said "I Hate This Coffee" Out Loud — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 30px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .9; margin-bottom: 8px;}
+  .topic-banner .en{font-size: 15px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 21px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 23px; line-height: 1;}
+
+  /* ── Short Story ── */
+  .story-box{
+    background: linear-gradient(135deg, #fbfaf7, #f2f6fa);
+    border-left: 4px solid var(--primary);
+    border-radius: 12px;
+    padding: 22px 24px;
+    font-size: 16px; line-height: 1.85; color: var(--ink);
+  }
+  .story-box p{margin-bottom: 13px;}
+  .story-box p:last-child{margin-bottom: 0;}
+  .story-box .lead::first-letter{font-size: 34px; font-weight: 700; color: var(--primary); float: left; line-height: 1; padding-right: 6px; padding-top: 2px;}
+
+  /* ── Key Expressions ── */
+  .kx-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 14px;
+  }
+  .kx-card .expr{
+    font-size: 19px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); display: inline-block;
+    padding: 3px 12px; border-radius: 6px; margin-bottom: 6px;
+  }
+  .kx-card .cn{font-size: 14px; color: var(--muted); margin-bottom: 12px;}
+  .kx-card .blk{margin-bottom: 10px;}
+  .kx-card .blk .lab{
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--accent); margin-bottom: 3px;
+  }
+  .kx-card .blk .val{font-size: 14px; color: var(--ink); line-height: 1.6;}
+  .kx-card .usage{
+    background: var(--warm-l); border-left: 3px solid var(--warm);
+    padding: 9px 12px; border-radius: 6px; font-size: 13px; color: var(--ink); line-height: 1.6;
+  }
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 10px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center; line-height: 1.5;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .speaker.c{color: var(--accent);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+  .msg em{color: var(--warm); font-style: italic;}
+
+  /* ── Speaking Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .task-num{
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    color: var(--warm); background: var(--warm-l);
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 8px;
+  }
+  .practice-card .task-title{
+    font-size: 17px; font-weight: 700; color: var(--accent); margin-bottom: 6px;
+  }
+  .practice-card .prompt{
+    font-size: 14px; color: var(--muted); font-style: italic;
+    padding: 8px 0 10px; border-bottom: 1px dashed var(--line); margin-bottom: 12px;
+  }
+  .practice-card .examples .ex-title{
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--primary); margin-bottom: 8px;
+  }
+  .practice-card .examples .ex-item{
+    position: relative; padding-left: 18px; margin-bottom: 10px;
+    font-size: 14px; line-height: 1.6; color: var(--ink);
+  }
+  .practice-card .examples .ex-item:last-child{margin-bottom: 0;}
+  .practice-card .examples .ex-item::before{
+    content: ""; position: absolute; left: 0; top: 9px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--primary);
+  }
+
+  /* ── Vocabulary ── */
+  .vocab-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .vocab-card{
+    background: var(--card); border-radius: var(--radius);
+    border: 1px solid var(--line); padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .vocab-card .head{
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;
+  }
+  .vocab-card .head .word{
+    font-size: 17px; font-weight: 700; color: var(--primary);
+  }
+  .vocab-card .head .pos{
+    font-size: 11px; font-style: italic; color: var(--warm);
+    text-transform: uppercase; letter-spacing: .04em;
+  }
+  .vocab-card .pron{
+    font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px;
+  }
+  .vocab-card .def{
+    font-size: 13px; color: var(--ink); line-height: 1.5;
+  }
+  .vocab-card .ex{
+    margin-top: 8px; padding-top: 8px;
+    border-top: 1px dashed var(--line);
+    font-size: 12.5px; color: var(--muted); font-style: italic; line-height: 1.55;
+  }
+
+  /* ── Footer note ── */
+  .footer-note{
+    margin-top: 30px; padding: 14px 16px;
+    background: var(--warm-l); border-radius: 10px;
+    font-size: 12px; color: var(--warm); text-align: center; line-height: 1.6;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<!-- ════════ TOPIC BANNER ════════ -->
+<div class="topic-banner">
+<div class="day">DAY 31 · 2026-08-25 · Tuesday · 15 min</div>
+<h2>The Day I Said "I Hate This Coffee" Out Loud</h2>
+<div class="zh">那天我当众说出"我讨厌这杯咖啡"</div>
+<div class="en">A small confession in a crowded coffee shop, and the family I didn't know I had.</div>
+</div>
+<!-- ════════ A · SHORT STORY ════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">📖</span> A · Short Story</div>
+<div class="story-box">
+<p class="lead">Six months after moving to Portland, Mark had a routine but not a life.</p>
+<p>Every weekday at 8:15 a.m., he walked into Birch &amp; Brew, ordered a honey oat latte, and settled into the same window table. He brought his laptop, opened spreadsheets he didn't need to open, and stayed until the lunch crowd thinned out. He never said more than "thanks" to anyone.</p>
+<p>The baristas knew his order; nobody knew his name. He envied the elderly couple arguing over crossword puzzles in the corner, the college kid reading aloud to his grandmother on speakerphone, the woman in the green coat who knew every regular by their drink. They belonged somewhere. He was passing through his own life.</p>
+<p>One Tuesday, after the third burned-tasting latte in a row, Mark looked down at the cup and muttered — half to himself, half to nobody — <em>"I actually hate this coffee."</em></p>
+<p>A gray-haired woman at the next table laughed out loud. <em>"Oh thank God. I thought I was the only one."</em> She leaned over. <em>"I'm Ruth. You look like you could use a friend. So... what's your story?"</em></p>
+<p>By the time his second cup — decaf, this time — was empty, Mark had met four people. Ruth had been coming to Birch &amp; Brew since her husband died. Aiden, the kid on speakerphone, was terrified of failing his thesis. Priya, in the green coat, ran the bookshop next door and just wanted someone to complain to about foot traffic.</p>
+<p>He went back the next morning. And the morning after that. By Friday, he had a seat saved with a coat thrown on it, a phone full of new numbers, and a weekly coffee date with people who called him <em>"sweetie."</em></p>
+<p>He never switched to the regular roast. But every morning, when he ordered the honey oat latte, he added, with a wink at Ruth: <em>"The terrible one, please."</em></p>
+</div>
+</div>
+<!-- ════════ B · KEY EXPRESSIONS ════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">🔑</span> B · Key Expressions</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">I actually hate [this].</div><button aria-label="收藏表达" class="expr-fav" data-en="I actually hate [this]." data-example='"I actually hate that playlist. Can we put on literally anything else?"' data-scene='Usage note · 用法提示： actually 比 really 更口语，语气里带着一点"说出来有点不好意思／与表面印象相反"。在美式口语里几乎等于"说真的"。常见搭配 I actually hate mornings / I actually hate networking events / I actually hate this coffee. 说的时候眼神往往躲一下，自嘲地把话轻轻丢出去——这正是 Mark 故事里那一声嘟囔的味道。' data-zh="其实我真的讨厌……（用来承认某种不好意思说出口的真心话）" type="button">☆</button></div>
+<div class="cn">其实我真的讨厌……（用来承认某种不好意思说出口的真心话）</div>
+<div class="blk">
+<div class="lab">Natural example</div>
+<div class="val">"I actually hate that playlist. Can we put on literally anything else?"</div>
+</div>
+<div class="usage"><strong>Usage note · 用法提示：</strong><br/>
+<em>actually</em> 比 <em>really</em> 更口语，语气里带着一点"说出来有点不好意思／与表面印象相反"。在美式口语里几乎等于"说真的"。常见搭配 I actually hate mornings / I actually hate networking events / I actually hate this coffee. 说的时候眼神往往躲一下，自嘲地把话轻轻丢出去——这正是 Mark 故事里那一声嘟囔的味道。</div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">You look like you could use a [X].</div><button aria-label="收藏表达" class="expr-fav" data-en="You look like you could use a [X]." data-example='"You look like you could use a hug. Long week?"' data-scene='Usage note · 用法提示： 一句典型的"美式长辈关心语"，既陌生人间也能用，又熟人间也能用。意思是"你看起来不太好，要不要点儿什么"。后接 a coffee / a hand / a break / some cheering up / a drink。半虚拟语气 could use 比 need 委婉得多，听着像关心而不像命令。' data-zh="你看起来需要点儿……（委婉关心对方的开场白）" type="button">☆</button></div>
+<div class="cn">你看起来需要点儿……（委婉关心对方的开场白）</div>
+<div class="blk">
+<div class="lab">Natural example</div>
+<div class="val">"You look like you could use a hug. Long week?"</div>
+</div>
+<div class="usage"><strong>Usage note · 用法提示：</strong><br/>
+      一句典型的"美式长辈关心语"，既陌生人间也能用，又熟人间也能用。意思是"你看起来不太好，要不要点儿什么"。后接 a coffee / a hand / a break / some cheering up / a drink。半虚拟语气 <em>could use</em> 比 <em>need</em> 委婉得多，听着像关心而不像命令。</div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">Oh thank God.</div><button aria-label="收藏表达" class="expr-fav" data-en="Oh thank God." data-example="&quot;Oh thank God — you're finally awake. I've been calling for ten minutes.&quot;" data-scene='Usage note · 用法提示： 比 Thank goodness 出现得更频繁、更"现代"。前面常跟一个短促的 Oh 表示"突然松了一口气"。意思不是感谢上帝本身，而是"终于等到了某事发生"。带一点点戏谑，使用范围很广：从找了半天钥匙到听到排队的人说"前面还有三个"，都能用。' data-zh="谢天谢地（脱口而出的松口气）" type="button">☆</button></div>
+<div class="cn">谢天谢地（脱口而出的松口气）</div>
+<div class="blk">
+<div class="lab">Natural example</div>
+<div class="val">"Oh thank God — you're finally awake. I've been calling for ten minutes."</div>
+</div>
+<div class="usage"><strong>Usage note · 用法提示：</strong><br/>
+      比 <em>Thank goodness</em> 出现得更频繁、更"现代"。前面常跟一个短促的 <em>Oh</em> 表示"突然松了一口气"。意思不是感谢上帝本身，而是"终于等到了某事发生"。带一点点戏谑，使用范围很广：从找了半天钥匙到听到排队的人说"前面还有三个"，都能用。</div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">I'm terrified of [doing X].</div><button aria-label="收藏表达" class="expr-fav" data-en="I'm terrified of [doing X]." data-example="&quot;I'm terrified of public speaking. I get shaky hands every single time.&quot;" data-scene="Usage note · 用法提示： 比 I'm scared of 更地道，更&quot;成人口语&quot;。常用于主动承认弱点：I'm terrified of heights / failing / disappointing my parents / being alone on stage。把 terrified 用在演讲、考试这种&quot;理性上不该怕但真的怕&quot;的事情上，听感最自然。" data-zh="我特别害怕做……（承认某种具体的恐惧）" type="button">☆</button></div>
+<div class="cn">我特别害怕做……（承认某种具体的恐惧）</div>
+<div class="blk">
+<div class="lab">Natural example</div>
+<div class="val">"I'm terrified of public speaking. I get shaky hands every single time."</div>
+</div>
+<div class="usage"><strong>Usage note · 用法提示：</strong><br/>
+      比 <em>I'm scared of</em> 更地道，更"成人口语"。常用于主动承认弱点：I'm terrified of heights / failing / disappointing my parents / being alone on stage。把 <em>terrified</em> 用在演讲、考试这种"理性上不该怕但真的怕"的事情上，听感最自然。</div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">I never said more than [X].</div><button aria-label="收藏表达" class="expr-fav" data-en="I never said more than [X]." data-example="&quot;I never said more than 'good morning' to my neighbor — for two whole years.&quot;" data-scene="Usage note · 用法提示： 反向强调&quot;沉默&quot;的实用句型。比 &quot;I almost never spoke to him&quot; 更具体、更具画面感。引出某种转折非常好用： I never said more than 'thanks.' And then one day, ... ——这正是今天这篇故事的叙事入口。" data-zh="我最多只说过……（描述一段沉默寡言的日子）" type="button">☆</button></div>
+<div class="cn">我最多只说过……（描述一段沉默寡言的日子）</div>
+<div class="blk">
+<div class="lab">Natural example</div>
+<div class="val">"I never said more than 'good morning' to my neighbor — for two whole years."</div>
+</div>
+<div class="usage"><strong>Usage note · 用法提示：</strong><br/>
+      反向强调"沉默"的实用句型。比 "I almost never spoke to him" 更具体、更具画面感。引出某种转折非常好用：<em>I never said more than 'thanks.' And then one day, ...</em>——这正是今天这篇故事的叙事入口。</div>
+</div>
+</div>
+<!-- ════════ C · REAL CONVERSATION ════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">💬</span> C · Real Conversation</div>
+<div class="dialogue-box">
+<div class="setting">
+      📍 <span>Birch &amp; Brew, Portland — Tuesday morning, around 8:40 a.m.</span><br/>
+      Mark is by the window, hiding behind a too-large laptop. The woman at the next table has been pretending to read the same page of a novel for fifteen minutes.
+    </div>
+<div class="msg">
+<div class="speaker a">Mark <em>(muttering, half into his cup)</em></div>
+<div class="en">"I actually hate this coffee."</div>
+<div class="cn">（小声嘟囔）"我其实真的讨厌这杯咖啡。"</div>
+</div>
+<div class="msg">
+<div class="speaker b">Ruth <em>(without looking up)</em></div>
+<div class="en">"Oh thank God." <em>(looks up, laughs)</em> "I thought I was the only one."</div>
+<div class="cn">"谢天谢地。" <em>（抬头，笑了）</em>"我还以为只有我这么觉得。"</div>
+</div>
+<div class="msg">
+<div class="speaker a">Mark</div>
+<div class="en">"... Sorry?"</div>
+<div class="cn">"……啊？"</div>
+</div>
+<div class="msg">
+<div class="speaker b">Ruth</div>
+<div class="en">"The coffee. You're right. It's burnt today." <em>(slight smile)</em> "Honey, you've been muttering into that cup for ten minutes."</div>
+<div class="cn">"咖啡这事儿。你说得对，今天是焦的。" <em>（微微一笑）</em>"亲爱的，你已经对着杯子嘟囔十分钟了。"</div>
+</div>
+<div class="msg">
+<div class="speaker a">Mark <em>(awkward laugh)</em></div>
+<div class="en">"Yeah... I guess I have. I — uh — thought I was just talking to myself."</div>
+<div class="cn">"还真是……我，我呃，还以为我就是在自言自语。"</div>
+</div>
+<div class="msg">
+<div class="speaker b">Ruth</div>
+<div class="en">"Don't be sorry. Honestly, it's the most honest thing anyone's said at this table in months." <em>(small laugh)</em> "So... are you new around here?"</div>
+<div class="cn">"别道歉。说真的，这是这张桌子上这几个月最诚实的一句话。" <em>（小声笑）</em>"那……你是新来的？"</div>
+</div>
+<div class="msg">
+<div class="speaker a">Mark</div>
+<div class="en">"Uh — sort of. Six months?" <em>(pause)</em> "Still feels like week one, honestly."</div>
+<div class="cn">"呃——算是吧。半年？" <em>（停顿）</em>"说实话，跟第一周的感觉差不多。"</div>
+</div>
+<div class="msg">
+<div class="speaker b">Ruth</div>
+<div class="en">"Six months is nothing. I moved here thirty years ago and I still don't know where to buy good paprika."</div>
+<div class="cn">"半年算什么。我搬来都三十年了，连哪儿能买到像样的 paprika 都不知道。"</div>
+</div>
+<div class="msg">
+<div class="speaker a">Mark <em>(half-smile)</em></div>
+<div class="en">"Is that... a thing? Good paprika?"</div>
+<div class="cn">"那是个……东西吗？像样的 paprika？"</div>
+</div>
+<div class="msg">
+<div class="speaker b">Ruth</div>
+<div class="en">"It is if you're me." <em>(beat)</em> "You look like you could use a friend, kid."</div>
+<div class="cn">"对我就是很重要。" <em>（停一下）</em>"小子，你看起来需要交个朋友。"</div>
+</div>
+<div class="msg">
+<div class="speaker a">Mark <em>(long pause)</em></div>
+<div class="en">"... That's — wow. That's a really direct thing to say to a stranger."</div>
+<div class="cn">"……这——哇。这对陌生人来说挺直接的啊。"</div>
+</div>
+<div class="msg">
+<div class="speaker b">Ruth <em>(shrug)</em></div>
+<div class="en">"That's because I'm old and I've run out of small talk."</div>
+<div class="cn">"那是因为我老了，寒暄已经聊光了。"</div>
+</div>
+<div class="msg">
+<div class="speaker a">Mark <em>(small, surprised laugh)</em></div>
+<div class="en">"So... uh... what's yours, then? The paprika story."</div>
+<div class="cn">"那……呃……你的呢？那个 paprika 的故事。"</div>
+</div>
+<div class="msg">
+<div class="speaker b">Ruth <em>(smiling now)</em></div>
+<div class="en">"Sit down, honey. This might take a while."</div>
+<div class="cn">"坐下吧，亲爱的。这事儿说来话长。"</div>
+</div>
+</div>
+</div>
+<!-- ════════ D · SPEAKING PRACTICE ════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">🎤</span> D · Speaking Practice</div>
+<div class="practice-card">
+<div class="task-num">TASK 1 · 复述故事</div>
+<div class="task-title">Tell a friend what Mark's morning was like.</div>
+<div class="prompt">Your friend asks, "What did you read about today?" Tell them the story in about 60 seconds. You don't need to say everything — just the heart of it.</div>
+<div class="examples">
+<div class="ex-title">你可以这样说：</div>
+<div class="ex-item"><span class="quote">"</span>So there's this guy, Mark, who just moved to Portland for a job. He'd been going to the same coffee shop every morning for like six months — same latte, same table, never really talking to anyone. <em>(pause)</em> And then one Tuesday, the coffee was burnt, and he just... muttered "I actually hate this coffee" out loud. And this older woman at the next table just laughed and went "Oh thank God." And that was kind of it. That was the start of his whole friend group."</div>
+<div class="ex-item"><span class="quote">"</span>It's basically about this guy in Portland who's been going to a coffee shop alone for six months — same seat, same latte, never says more than "thanks." One day he finally complains about the burnt coffee out loud, and an older woman named Ruth basically says, "Oh thank God, I thought I was the only one." They end up becoming best friends. <em>(laugh)</em> It's funny because the whole thing started with him being accidentally honest."</div>
+<div class="ex-item"><span class="quote">"</span>Okay so — there's this short story I read. A guy moves to a new city, doesn't know anyone, ends up spending six months sitting in the same coffee shop every day, just kind of... watching people. <em>(beat)</em> And then one morning he accidentally says out loud that the coffee is terrible. And the lady next to him turns around and goes, "You look like you could use a friend." <em>(pause)</em> Long story short, that one small moment of honesty turned into, like, his whole social life."</div>
+</div>
+</div>
+<div class="practice-card">
+<div class="task-num">TASK 2 · 表达观点</div>
+<div class="task-title">Is it actually harder to make friends as an adult?</div>
+<div class="prompt">Your coworker says, "I feel like making friends gets harder every year." Agree, disagree, or change the subject — but say something real. Aim for 4–6 sentences.</div>
+<div class="examples">
+<div class="ex-title">你可以这样说：</div>
+<div class="ex-item"><span class="quote">"</span>Honestly, I think you're half right. We don't get thrown into rooms with strangers the way we did in college, so the opportunities kind of dry up. But I also think we've gotten pickier. <em>(pause)</em> Like, I don't need twenty friends — I just need like two people who actually know me. The bar is higher, not the difficulty."</div>
+<div class="ex-item"><span class="quote">"</span>I'd actually push back on that a little. I don't think adults are worse at making friends — I think adults are terrified of being annoying. <em>(laugh)</em> Like, nobody wants to be the person who says, "Hey, want to grab coffee?" three times in a row. But if you survive the awkward phase, it usually works out."</div>
+<div class="ex-item"><span class="quote">"</span>Yeah — totally agree, but I'm going to add something. The hard part isn't meeting people, it's giving them permission to be real with you. <em>(pause)</em> The story this morning was kind of about that. Mark didn't make friends because he was charming — he made a friend because he said something true out loud for once."</div>
+</div>
+</div>
+<div class="practice-card">
+<div class="task-num">TASK 3 · 模拟真实场景</div>
+<div class="task-title">"Haven't I seen you here before?" — the regular finally speaks.</div>
+<div class="prompt">You've been going to the same bakery every Saturday for two months without ever talking to anyone. Today, the woman at the counter finally says, "Haven't I seen you here before?" What do you say?</div>
+<div class="examples">
+<div class="ex-title">你可以这样说：</div>
+<div class="ex-item"><span class="quote">"</span><em>(laugh)</em> Yeah — uh, every Saturday for like two months. I always get the almond croissant and then sit by the window. <em>(pause)</em> I'm sorry, I never said hi. I'm Jess. I think I've been kind of a ghost. <em>(small laugh)</em> You're clearly better at this than I am."</div>
+<div class="ex-item"><span class="quote">"</span>Probably! I'm pretty sure I've been the worst regular ever. <em>(beat)</em> I'm Lukas. I keep meaning to introduce myself but — I don't know — it always felt weird. <em>(half-smile)</em> Anyway. What's good today? You probably know better than I do."</div>
+<div class="ex-item"><span class="quote">"</span>Oh — definitely. <em>(pause)</em> Same corner table, same order, every Saturday. <em>(laugh)</em> I owe you an introduction at this point. I'm Sam. <em>(beat)</em> And honestly, thank you for breaking the ice. I never quite figured out how to start that conversation."</div>
+</div>
+</div>
+</div>
+<!-- ════════ E · USEFUL VOCABULARY ════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">📚</span> E · Useful Vocabulary</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="head">
+<span class="word">mutter</span>
+<span class="pos">verb</span>
+</div>
+<div class="pron">/ˈmʌt̬.ɚ/</div>
+<div class="def">低声抱怨；嘟囔（尤其是不想让别人听到时）</div>
+<div class="ex">"He muttered something under his breath and walked out."</div>
+</div>
+<div class="vocab-card">
+<div class="head">
+<span class="word">regular</span>
+<span class="pos">noun</span>
+</div>
+<div class="pron">/ˈreɡ.jə.lɚ/</div>
+<div class="def">常客；老主顾（形容词义为"定期的"）</div>
+<div class="ex">"The barista knew every regular's name by heart."</div>
+</div>
+<div class="vocab-card">
+<div class="head">
+<span class="word">envy</span>
+<span class="pos">verb</span>
+</div>
+<div class="pron">/ˈen.vi/</div>
+<div class="def">羡慕；眼红（带点苦涩的那种）</div>
+<div class="ex">"I envy people who actually like mornings."</div>
+</div>
+<div class="vocab-card">
+<div class="head">
+<span class="word">burnt</span>
+<span class="pos">adj.</span>
+</div>
+<div class="pron">/bɝːnt/</div>
+<div class="def">（咖啡／面包）烤过头的、烧焦的</div>
+<div class="ex">"This coffee tastes burnt — did they change the beans?"</div>
+</div>
+<div class="vocab-card">
+<div class="head">
+<span class="word">settle into</span>
+<span class="pos">phrasal v.</span>
+</div>
+<div class="pron">/ˈset̬.l ˈɪn.tuː/</div>
+<div class="def">慢慢适应；舒服地进入某种状态／地方</div>
+<div class="ex">"Give it a week — you'll settle into the new job."</div>
+</div>
+</div>
+</div>
+<div class="footer-note">
+  Day 31 · "The Day I Said 'I Hate This Coffee' Out Loud" · 15 分钟口语训练<br/>
+  风格参考：The New York Times short stories / TED interview / Longform podcast. CEFR B1–B2.
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-25',title:"The Day I Said \"I Hate This Coffee\" Out Loud"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

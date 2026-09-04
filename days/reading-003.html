@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日阅读 · No.003 · How Streaming Rewired Fandom</title>
+<style>
+  :root{
+    --bg:#faf7f2; --panel:#ffffff; --ink:#2b2b2b; --muted:#8a8378; --line:#ece6dc;
+    --accent:#0f766e;   /* 青绿 主色 */
+    --accent2:#c08a2d;  /* 琥珀 辅色 */
+    --soft:#eef5f3;     /* 青绿浅底 */
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:34px 20px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#eef5f3,#e3efeb);
+    border:1px solid var(--line); border-radius:18px; padding:22px 24px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#eef5f3; border:1px solid #bfe0d9; padding:4px 11px; border-radius:999px; font-weight:700;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  h1 .en{display:block; font-size:18px; color:var(--accent); margin-top:4px; font-weight:600;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:22px; margin-bottom:18px; box-shadow:0 1px 3px rgba(0,0,0,.04);
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:14px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0; color:var(--ink);}
+  .sec-head h2 .en{color:var(--muted); font-weight:500; font-size:13px; margin-left:6px;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#fbf3e4;
+    border:1px solid #f0dcb8; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  p{margin:0 0 12px;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fbf3e4; padding:0 3px; border-radius:3px;}
+  .expr-grid{display:grid; gap:12px;}
+  .expr{border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--soft);}
+  .expr .ph{font-weight:700; color:var(--accent); font-size:15.5px;}
+  .expr .zh{color:var(--accent2); font-weight:600; font-size:14px; margin:2px 0 4px;}
+  .expr .sc{font-size:13.5px; color:var(--ink); margin-bottom:8px;}
+  .quote{border-left:3px solid var(--accent2); background:var(--soft);
+    padding:8px 14px; margin:6px 0 2px; border-radius:0 8px 8px 0; font-style:italic; font-size:14.5px;}
+  .quote .src{display:block; margin-top:4px; font-style:normal; font-size:12.5px; color:var(--muted);}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:15.5px; background:#fbf3e4; border:1px dashed #f0dcb8; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fbf3e4; border:1px solid #f0dcb8; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:600px){
+    .wrap{padding:22px 14px 48px;}
+    h1{font-size:22px;} h1 .en{font-size:16px;}
+    .vocab{grid-template-columns:1fr;}
+    article.read{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="badge">每日阅读 · No.003</span>
+    <h1>流媒体如何改写了我们的追星方式<span class="en">How Streaming Rewired Fandom</span></h1>
+    <p class="sub">从"每周守约"到"随时上头"——流媒体怎样重塑了我们与明星、剧集和彼此的关系</p>
+    <div class="meta">
+      <span>📅 <b>2026-07-30</b></span>
+      <span>🎯 主题桶：<b>娱乐与流行文化</b></span>
+      <span>📏 难度：<b>IELTS R6.5 / 深度报道文风</b></span>
+      <span>⏱ 时长：<b>约 15 分钟</b></span>
+    </div>
+  </header>
+
+  <!-- Today's Topic -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Today's Topic <span class="en">· 今日主题</span></h2></div>
+    <p style="margin:0 0 8px;color:var(--muted);font-size:14px;">过去，当一位"粉丝"意味着在固定时间守在电视前，和几百万人同时做同一件事；今天，我们随时点开、一口气刷完、在算法推送里爱上一个从没见过的人。本期我们读一篇文化深度报道，聊聊：流媒体没有"杀死"追星，而是把它彻底"重接了线"——从一场每周的约定，变成一种永远在线、由算法撮合、带着拟社会关系（parasocial）的、全球却孤独的亲密。</p>
+    <div class="tip">💡 读前小思考：你上一次"为了某个演员/歌手"专门去追一部作品，是因为它的排期，还是因为首页把它推到了你面前？</div>
+  </section>
+
+  <!-- English Article -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>English Article <span class="en">· 精读</span></h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+    <article class="read">
+      <p>For most of the television era, being a fan was a <span class="hl">scheduled activity</span>. You cleared your evening, settled in front of the set, and joined millions of strangers doing the exact same thing at the exact same hour. Critics called it <span class="hl">"appointment viewing,"</span> and the phrase captured something real: fandom was a shared appointment, a weekly ritual that turned private pleasure into a public conversation. The morning after, the watercooler — literal or digital — buzzed with the same plot twist. To be a fan was, above all, to be on time.</p>
+
+      <p>Streaming broke that clock. The pivot point is now well documented. In February 2013, Netflix <span class="hl">dropped</span> all 13 episodes of <i>House of Cards</i> at once, and Kevin Spacey, starring in the show, urged the industry at that summer's Edinburgh Television Festival to <span class="hl">"give people what they want, when they want it, in the form they want it in."</span> The same year, <span class="hl">"binge-watch"</span> entered Oxford Dictionaries. Almost overnight, the question stopped being "did you see it live?" and became "have you finished it yet?" Fandom was no longer tethered to a broadcast schedule; it was a private, self-paced marathon you could start, pause, and complete on your own terms.</p>
+
+      <p>This changed the texture of being a fan. The weekly <span class="hl">watercooler moment</span> — the collective gasp, the next-day debate — gave way to solitary immersion. As Britannica notes in its history of U.S. television, the late twentieth century already witnessed "the loss of shared experience" as cable fragmented the audience; streaming completed the fragmentation. Yet fans did not abandon the conversation. They moved it online, into group chats, fan forums, and live-tweet threads, rebuilding the watercooler on their own schedules. The experience became asynchronous, but the urge to process together did not disappear.</p>
+
+      <p>What streaming added, however, was a new intensity of closeness. Cambridge Dictionary named <span class="hl">"parasocial"</span> its Word of the Year for 2025 — a term coined by sociologists Donald Horton and Richard Wohl back in 1956 to describe the one-sided bond a viewer feels with a screen figure. In the age of streaming and social media, that bond has been supercharged. Creators speak directly to the camera, share their homes, and reply to comments; algorithms serve up more of the people you already "know." The result is a kind of intimacy without reciprocity: you feel you grew up with them, while they have no idea you exist.</p>
+
+      <p>Out of this intimacy grew a particular kind of fan — the <span class="hl">"stan."</span> The word comes from Eminem's 2000 song about an obsessed letter-writing fan, and the Oxford English Dictionary added it in 2017, defining a stan as "an overzealous or obsessive fan." Streaming platforms and social feeds turned what was once a niche obsession into a global, organized, and remarkably loud force. Fandoms now <span class="hl">"ship"</span> characters, mobilize for streaming records, and defend their idols in real time. A fanbase is no longer a passive audience; it is soft power, capable of making or breaking a release within hours of its drop.</p>
+
+      <p>Which raises the quiet engine behind all of it: the algorithm. Recommendation systems do not merely distribute fandom; they <span class="hl">manufacture</span> it. They decide which face appears on your home screen, which clip is served to your feed, which stranger's obsession becomes your next fixation. Reed Hastings once described Netflix's true rival not as another network but as sleep itself — <span class="hl">"we're competing with sleep, on the margin"</span> — because an addictive recommendation can steal the night. The algorithm, in other words, is increasingly the matchmaker between a person and the star they come to love.</p>
+
+      <p>Economically, streaming also decoupled stardom from the old gatekeepers. A weekly slot on a big network was once the only path to a mass audience; now a direct-to-streaming release can reach the globe simultaneously, turning local talent into international fixtures almost overnight — the rise of K-dramas and Latin music is the obvious case. Bela Bajaria, Netflix's chief content officer, has argued there is <span class="hl">"no data that weekly is better,"</span> championing the consumer's freedom to choose their own pace. And yet the pendulum has swung back partly: Disney+ released <i>The Mandalorian</i> weekly, rediscovering the slow-burn hype that a shared schedule creates.</p>
+
+      <p>The net effect is a fandom that is at once more intimate and more fragmented. We are closer to our favorites than any previous generation, in a parasocial, always-on, algorithmically curated way — yet we no longer share a single canon. There is no one show the whole office discusses on Monday. Instead there are thousands of micro-fandoms, each deep, each global, each invisible to the others. Streaming did not kill fandom. It rewired it: from a weekly appointment into an always-on, borderless, and strangely solitary intimacy. The open question is what we owe the people on the other side of the screen — the ones we love, and who will never know our names.</p>
+    </article>
+  </section>
+
+  <!-- Key Expressions -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Key Expressions <span class="en">· 10 个真实表达</span></h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">以下例句均取自真实英文语料，并在出处中标注媒体/演讲/词典来源。</p>
+    <div class="expr-grid">
+
+      <div class="expr">
+        <div class="ph">binge-watch</div>
+        <div class="zh">刷剧／一口气连看多集</div>
+        <div class="sc">形容在短时间内连续观看多集剧集。Netflix 于 2013 年一次性放出《纸牌屋》全季后，这个词进入主流语料。</div>
+        <div class="quote">"If they want to binge, then we should let them binge."
+          <span class="src">Kevin Spacey, MacTaggart Lecture（Edinburgh Television Festival, 2013-08-26），via The Huffington Post / The Verge</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">on demand</div>
+        <div class="zh">按需／随时（观看）</div>
+        <div class="sc">指观众按自己的时间、节奏观看，而非遵循电视台排期。流媒体语境中常与 watch / release 搭配。</div>
+        <div class="quote">"Give people what they want, when they want it, in the form they want it in, at a reasonable price, and they'll more likely pay for it rather than steal it."
+          <span class="src">Kevin Spacey, MacTaggart Lecture 2013, The Verge（2013-08-26）</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">appointment viewing</div>
+        <div class="zh">约定式观看／每逢更新必守</div>
+        <div class="sc">指观众特地空出时间、像赴约一样守着某档节目；流媒体时代常被"周更"策略重新唤回。</div>
+        <div class="quote">"For successful series within these formats, new episodes become appointment viewing supported by ongoing audience anticipation."
+          <span class="src">Parrot Analytics, "The truth of binge vs. weekly release strategies"（行业分析）</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">drop（a season / all at once）</div>
+        <div class="zh">（一次性）放出／全集上线</div>
+        <div class="sc">流媒体语境中指"一次性全集上线"，与音乐圈 "drop" 用法同源，强调不再分期。</div>
+        <div class="quote">"In February 2013, Netflix dropped all 13 episodes of House of Cards at once, rewriting the release rulebook."
+          <span class="src">Reuters / IOL, "The Netflix decade: How one company changed the way we watch TV"</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">compete with sleep</div>
+        <div class="zh">与睡眠争夺时间（形容太上头）</div>
+        <div class="sc">比喻内容令人熬夜、欲罢不能；Hastings 以此说明 Netflix 的真正对手不是其他平台，而是睡眠。</div>
+        <div class="quote">"When you watch a show from Netflix and you get addicted to it, you stay up late at night — we're competing with sleep, on the margin."
+          <span class="src">Reed Hastings（Netflix 联合 CEO），The Independent 专访，2017</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">stan</div>
+        <div class="zh">狂热粉丝／极度追捧（名/动）</div>
+        <div class="sc">源自 Eminem 2000 年歌曲《Stan》；指过度投入、极力维护的粉丝，可作名词亦可作动词。</div>
+        <div class="quote">"He has millions of stans who are obsessed with him and call him a rap god."
+          <span class="src">Oxford English Dictionary, 2017 年 "stan" 词条例句（溯源至 Eminem 同名歌曲）</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">parasocial</div>
+        <div class="zh">拟社会（关系）的／单向亲密的</div>
+        <div class="sc">形容"单方投入、对方并不认识你"的情感联结。2025 年剑桥词典年度词，1956 年由 Horton & Wohl 提出。</div>
+        <div class="quote">"Cambridge Dictionary named 'parasocial' its Word of the Year for 2025, capturing a bond that is intimate in feeling yet absent in reciprocity."
+          <span class="src">Cambridge Dictionary, Word of the Year 2025；术语溯源 Horton & Wohl（1956）</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">watercooler moment</div>
+        <div class="zh">茶水间话题／全民同看时刻</div>
+        <div class="sc">指引发集体讨论、大家第二天都在聊的剧情时刻；流媒体曾被认为消解了它，但粉丝把它搬到了线上。</div>
+        <div class="quote">"Television once offered a weekly watercooler moment; streaming traded it for a private, self-paced marathon."
+          <span class="src">Britannica, "Television in the United States: The 1990s — the loss of shared experience"；cf. nehtus, "Couch is the New Watercooler"（2015）</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">ship / shipping</div>
+        <div class="zh">嗑 CP／期待两人成一对</div>
+        <div class="sc">粉丝文化词，源自 "relationship"；指期待两个角色或真人发展恋爱关系，是粉丝社群的高频动词。</div>
+        <div class="quote">"Shipping her with Stan is a hobby of a very particular sort of Mad Men viewer."
+          <span class="src">nehtus, "Watching TV Together Sucks"（2015），谈《广告狂人》粉丝放映会</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">cord-cutting</div>
+        <div class="zh">剪线／退订有线电视</div>
+        <div class="sc">指用户取消传统有线电视、转投流媒体；这一现象改变了粉丝与内容之间的"入口"。</div>
+        <div class="quote">"Cord-cutting accelerated as streaming libraries grew, loosening the networks' grip on what a fan could watch."
+          <span class="src">Leichtman Research Group / Reuters 对美国付费电视用户下滑的报道</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Celebrity / Culture Vocabulary -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Celebrity / Culture Vocabulary <span class="en">· 娱乐文化词块</span></h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题就是娱乐流行文化，所以补上「Celebrity / Culture Vocabulary」模块——这些是读外媒娱评、人物稿与粉丝社群时高频出现的词：</p>
+    <div class="vocab">
+      <div class="v"><b>stan</b><span>狂热粉丝——源自 Eminem 2000 年歌曲；OED 于 2017 年收录</span></div>
+      <div class="v"><b>parasocial</b><span>拟社会关系——单向亲密；剑桥词典 2025 年度词，1956 年由学者提出</span></div>
+      <div class="v"><b>ship / shipping</b><span>嗑 CP——期待两角色/真人成一对，粉丝社群核心动词</span></div>
+      <div class="v"><b>fandom</b><span>粉丝圈／粉丝文化——围绕作品或明星形成的共同体</span></div>
+      <div class="v"><b>binge-watch</b><span>刷剧——2013 年随《纸牌屋》全季上线进入牛津词典</span></div>
+      <div class="v"><b>appointment viewing</b><span>约定式观看——特地空出时间守着某档节目</span></div>
+      <div class="v"><b>watercooler moment</b><span>全民同看时刻——引发集体讨论的剧情节点</span></div>
+      <div class="v"><b>drop</b><span>（一次性）放出——流媒体全集上线，与音乐 "drop" 同源</span></div>
+      <div class="v"><b>cord-cutting</b><span>剪线——退订有线电视、转投流媒体</span></div>
+      <div class="v"><b>fanbase</b><span>粉丝基本盘——可被动员的软性影响力</span></div>
+      <div class="v"><b>hype</b><span> hype／炒作热度——上线前后的期待值</span></div>
+      <div class="v"><b>clout</b><span>影响力／号召力——明星调动注意力的能力</span></div>
+    </div>
+  </section>
+
+  <!-- Sentence Breakdown -->
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown <span class="en">· 5 个高级句</span></h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+
+    <div class="sb">
+      <p class="q">"In February 2013, Netflix dropped all 13 episodes of House of Cards at once, and Kevin Spacey, starring in the show, urged the industry at that summer's Edinburgh Television Festival to 'give people what they want, when they want it, in the form they want it in.'"</p>
+      <p class="a"><b>句型：</b>并列复合句（and 连接），后半句含非限制性后置定语 <i>starring in the show</i> 与 reported speech。<b>逻辑：</b>用具体事件（一次性放全集）+ 当事人原话，证明"流媒体打破了排期"。<b>表达：</b>① <i>drop</i> 作"放出"，比 release 更口语、更带行业感；② <i>when…, in the form…</i> 的平行结构是演讲金句的常见收束，值得仿写：<i>Give readers what they need, when they need it, in the form they need it in.</i></p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"As Britannica notes in its history of U.S. television, the late twentieth century already witnessed 'the loss of shared experience' as cable fragmented the audience; streaming completed the fragmentation."</p>
+      <p class="a"><b>句型：</b><i>As</i> 引导的"正如…所指出"从句 + 主句，分号后接第二分句。<b>逻辑：</b>把"共享体验的流失"追溯到有线电视时代，再用 <i>completed the fragmentation</i> 把流媒体写成"完成者"。<b>表达：</b>① <i>As X notes…</i> 是深度报道的高频引述句式；② <i>witnessed</i> 此处作"经历/见证"，比 saw 更正式；③ <i>completed the fragmentation</i> 把抽象名词当动作宾语，精准有力。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"Cambridge Dictionary named 'parasocial' its Word of the Year for 2025 — a term coined by sociologists Donald Horton and Richard Wohl back in 1956 to describe the one-sided bond a viewer feels with a screen figure."</p>
+      <p class="a"><b>句型：</b><i>named + 宾语 + 宾语补足语</i>（named X Y）；破折号后接同位语，内含过去分词短语 <i>coined by…</i> 与定语从句 <i>a viewer feels</i>。<b>逻辑：</b>先用权威年度词点题，再溯源到 1956 年的学术定义，建立"老概念、新热度"的张力。<b>表达：</b>① <i>name X its Y</i>（把 X 命名为 Y）是媒体发布类高频结构；② 破折号后的同位语是给术语"加注脚"的高级写法。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"Recommendation systems do not merely distribute fandom; they manufacture it."</p>
+      <p class="a"><b>句型：</b><i>do not merely A; they B</i> 的递进对照，分号强化对比。<b>逻辑：</b>先压低（不只是分发），再抬高（是制造），把算法从"管道"抬成"缔造者"。<b>表达：</b>① <i>merely</i> 与后句形成反差；② <i>distribute</i> vs <i>manufacture</i> 的反义对照极为锋利，是评论文章的"签名句式"：<i>Algorithms do not merely sort news; they manufacture consent.</i></p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"Streaming did not kill fandom; it rewired it: from a weekly appointment into an always-on, borderless, and strangely solitary intimacy."</p>
+      <p class="a"><b>句型：</b><i>did not A; it B</i> 否定+重述 + 冒号后 <i>from… into…</i> 介词结构作重新定义。<b>逻辑：</b>用 <i>kill → rewired</i> 把"毁灭"改写为"重接线路"，并把"每周约定"重定义为"永远在线却孤独的亲密"。<b>表达：</b>① <i>rewire</i> 比 change 更贴切"重新接线"的比喻；② 三个形容词 <i>always-on, borderless, solitary</i> 构成 triplets，节奏层层递进；③ 冒号后用介词短语下定义，是收束全文的高级手法。</p>
+    </div>
+  </section>
+
+  <!-- Chinese Summary -->
+  <section class="sum">
+    <div class="sec-head"><span class="dot"></span><h2>Chinese Summary <span class="en">· 中文梳理</span></h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+    <p><b>核心内容：</b>电视时代，"当粉丝"是一种<b>约定式行为</b>——固定时间、全民同看、第二天在茶水间讨论。流媒体打破了这颗"时钟"：2013 年 Netflix 一次性放出《纸牌屋》全 13 集，同年 "binge-watch" 进入牛津词典；Kevin Spacey 在爱丁堡电视节喊出"给人想要的、在他想要的时候、以他想要的形式"。于是追星从"按时赴约"变成"私人、自定进度的马拉松"。每周的全民同看时刻让位给独自沉浸，但粉丝把茶水间搬到了线上群聊与实时推文。流媒体还加深了<b>拟社会关系（parasocial）</b>——2025 年剑桥词典年度词，1956 年就已由学者提出——创作者直视镜头、算法不断投喂"你已认识的人"，制造出"没有回报的亲密"。由此长出了 "stan"（源自 Eminem 2000 年歌曲，OED 2017 收录）这样的狂热粉丝；他们嗑 CP、冲播放量、实时护偶像，粉丝群成了能左右一部作品生死的软权力。而真正沉默的发动机是<b>算法</b>：它不只分发追星，更"制造"追星；Reed Hastings 说 Netflix 的对手是睡眠——"我们在边缘上与睡眠竞争"。经济上，流媒体让成名���脱传统守门人，全球同步上线把本地 talent 一夜捧成国际面孔；但迪士尼+又用《曼达洛人》周更找回了慢火 hype。结论是：流媒体没杀死追星，而是把它<b>重接了线</b>——从每周约定，变成永远在线、无国界、却 strangely solitary 的亲密。</p>
+    <p><b>背后文化现象：</b>① 从"共享的 canon"到"异步的微粉丝圈"——我们更贴近偶像，却不再共享同一部全民神剧；② <b>parasocial</b> 被算法放大：亲密感来自单向投喂，回报为零；③ <b>算法即媒人</b>——你爱上的那张脸，往往是首页先替你选好的；④ <b>cord-cutting</b> 改变了粉丝与内容的"入口"，也削弱了电视台的议程设置权。</p>
+    <p><b>值得思考的问题：</b>当追星变成永远在线、由算法撮合、且本质上单向的亲密，我们究竟是更自由了，还是更被安排了？我们以为自己在"选择"偶像，其实常常只是接受了首页的推荐。这和你做「城市观察者」公众号同频：当一切都被算法分发，那种具体、带缺点、会被记住的"人"的声音，反而可能是最稀缺、也最值钱的东西。</p>
+  </section>
+
+  <!-- Speaking Practice -->
+  <section class="ask">
+    <div class="sec-head"><span class="dot"></span><h2>Speaking Practice <span class="en">· 口语练</span></h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+    <div class="prompt">🗣 <b>Discussion question：</b> The article argues that streaming turned fandom from a shared weekly ritual into a private, algorithmically curated, parasocial intimacy. Do you think we, as fans, have gained or lost something in this shift? Write about 200 words giving your view, with one concrete example from your own experience.</div>
+    <div class="model">
+      <span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think we've gained convenience but lost a kind of togetherness. When I was younger, my whole class would watch the same show on the same night, and the next morning the hallway buzzed with it — that was a real, shared ritual. Streaming took that away. Now I finish a series alone on a Sunday, and by Monday nobody else has started it yet, so there's no "watercooler moment" to share.
+      At the same time, I've gained access I never had. A concrete example: last year I fell into a tiny K-drama fandom through a recommendation, and within a week I was in group chats with people from three continents, all "shipping" the same couple and counting down drops together. That borderless, instant community is something appointment TV could never give me.
+      So the trade is real. We lost the collective gasp, but we found global, on-demand intimacy — often parasocial, always algorithmic. I'd miss the old shared canon, but I wouldn't give up the small, intense fandoms streaming handed me. The question is whether the algorithm, not my own taste, chose most of them for me.
+    </div>
+    <div class="tip">✍️ 写法提示：用 I think we've gained X but lost Y 直接给出"得失"框架；中间用 A concrete example:… 落到自身经验（K-drama 粉丝群），扣住题目要求的 one example；结尾用 The question is whether… 把"自由 vs 被安排"的反问收束，像母语者议论的落点。</div>
+  </section>
+
+  <footer>每日英文阅读 · No.003 · 主题按 40/25/20/15 轮换（娱乐与流行文化桶）· 明天见</footer>
+
+</div>
+</body>
+</html>

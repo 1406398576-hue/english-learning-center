@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-17</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Friendship Recession: Why Adults Keep Losing Their Closest Friends</h1>
+<p class="sub">成年人的「友谊衰退」：我们比任何时代都连接，却越来越孤独。</p>
+<div class="meta">
+<span>📅 <b>2026-08-17</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">几年前一则美国民调抛出一个让研究者不安的数字：说「自己一个密友都没有」的成年人比例在上升。不是「没时间见朋友」，而是零——那个凌晨两点能打电话的人、知道你生活「未删减版」的人、你愿意为之中断一切的人，正在消失。今天我们读一篇人类与社会观察：成年人的「友谊衰退」是怎么发生的，为什么它比我们以为的更危险，又为什么和「第三空间消失」「偶然之夜不再」同属一条线索。这条线与你「城市观察者」公众号一以贯之的母题同频——在效率至上、被算法投喂的世界里，「需要你亲自到场、没有脚本、不产出 KPI」的真实连接，反而最稀缺也最该被保护。</p>
+<div class="tip">💡 读前小思考：你上一次「纯粹因为想见某人」而放下手头事，是什么时候？如果列一张「密友清单」，上面会有几个名字？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>A few years ago, a national poll in the United States produced a number that quietly unsettled researchers: a growing share of adults said they had no close friends at all. Not "no time for friends," not "a small circle"—zero. The person you would call at 2 a.m., the one who knows the unedited version of your life, the friend you would drop everything for. Gone, or never built. For a species that <span class="hl">survives on</span> connection, we have been quietly <span class="hl">dismantling</span> one of its most important <span class="hl">scaffolding</span> without quite noticing.</p>
+<p>Sociologists now have a name for it: the friendship recession. Over the past two decades, the average number of close friends Americans report has fallen sharply, while the share with none at all has crept upward. In 2023, the U.S. Surgeon General issued a rare public-health advisory on loneliness, <span class="hl">calling it</span> a crisis whose health consequences are comparable to smoking fifteen cigarettes a day. The framing was deliberate: isolation is not merely sad, it is literally unsafe. Friendship, it turns out, was doing far more for our bodies than we ever <span class="hl">gave it credit</span> for.</p>
+<p>What makes the decline puzzling is that it was not one single catastrophe. It was a thousand small subtractions. We moved for a job, and the group chat outlived the shared city. We married later, so the years when friendships once formed got <span class="hl">swallowed</span> by career-building. We went remote, and the "default" friendships of the office—the coffee runs, the someone to eat lunch with—simply stopped generating. Parenthood, for many, compressed an already thin social life into a calendar of logistics. None of these choices was wrong. Together, they were quietly <span class="hl">corrosive</span>.</p>
+<p>There is also a structural quirk unique to friendship. Romance has rituals; family is assigned. Friendship is the only relationship we choose from scratch, and the only one with almost no script. Nobody teaches you how to ask a friend to dinner without it sounding like a date or a sales pitch. There is no anniversary, no contract, no "we should talk" that forces maintenance. So when life gets busy, friendship is the first thing to slide—not because we care less, but because nothing compels us to hold on. The bond is real; the <span class="hl">architecture</span> that keeps it alive is almost invisible.</p>
+<p>The cost shows up in the body. Decades of research link weak social ties to higher rates of anxiety, depression, and early death. One much-cited meta-analysis found that social isolation raises mortality risk about as much as obesity or physical inactivity—dangers we treat as serious but rarely name in the same breath as friendship. The mechanism is not mysterious: friends regulate stress, widen our perspective, and drag us out of the house when we would rather stay in. Remove them, and the protective effect simply vanishes. We engineered a life of maximum convenience and, almost by accident, deleted the very thing that kept us well.</p>
+<p>Culturally, we also stopped treating friendship as a priority and started treating it as a byproduct. We optimized for efficiency—faster commutes, faster delivery, faster everything—and friendship is the opposite of efficient. It is slow, redundant, and inconvenient <span class="hl">by design</span>. You repeat yourself, you sit through the boring parts, you show up when there is nothing in it for you. In a culture that rewards output, the unproductive hour with a friend <span class="hl">reads as</span> a luxury we cannot afford. So we <span class="hl">outsource</span> connection to feeds and calls it enough.</p>
+<p>Yet something is shifting. A younger cohort, raised online and now wary of its thinness, is experimenting with friend groups that look almost old-fashioned: standing weekly dinners, group chats that graduate into real plans, even "friend apps" that match people by neighborhood and shared interest. Some cities have begun funding "social infrastructure"—the third places where unplanned friendship used to happen. The move is small but telling: people are realizing that connection cannot be streamed, and that the only way to keep a close friend is to become, on purpose, a slightly less efficient person.</p>
+<p>The friendship recession is worth watching not for the statistic but for the signal. When adults report having no one to call, they are describing a world where connection became optional and then, quietly, impossible. The answer is not a productivity hack. It is the unglamorous work of <span class="hl">showing up</span>—again, and again, for people who owe us nothing. In a life optimized for everything but each other, choosing a friend is one of the few rebellions left that actually makes us healthier. And it may be the cheapest medicine we have forgotten how to take.</p>
+<p>None of this means we have lost the instinct. We are, if anything, hungrier for it than ever—scrolling for belonging, performing closeness, mistaking contact for connection. But contact is not company. The friend who knows the unedited version of your life is not a notification; it is a person you have <span class="hl">inconvenienced yourself</span> to keep. That, more than any metric, is what the recession has taken—and what it might, slowly, give back, the moment we decide that showing up for another person is worth the inefficiency.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">survive on (phr.)</span><button aria-label="收藏表达" class="expr-fav" data-en="survive on (phr.)" data-example="For a species that survives on connection, we have been quietly dismantling… （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：说某个群体/物种"依赖某物才能活下来"，比 depend on 更有"命脉"感。' data-zh="靠…生存 / 赖以存活" type="button">☆</button></span><span class="zh">靠…生存 / 赖以存活</span>
+<span class="sc">使用场景：说某个群体/物种"依赖某物才能活下来"，比 depend on 更有"命脉"感。</span>
+<span class="ex">For a species that survives on connection, we have been quietly dismantling… （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">dismantle (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="dismantle (v.)" data-example="…we have been quietly dismantling one of its most important scaffolding. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：不只是物理"拆"，更常指"一点点拆掉"某种结构/制度/关系，语气比 destroy 缓但更冷。' data-zh="逐步拆除、瓦解（也指慢慢毁掉一个体系）" type="button">☆</button></span><span class="zh">逐步拆除、瓦解（也指慢慢毁掉一个体系）</span>
+<span class="sc">使用场景：不只是物理"拆"，更常指"一点点拆掉"某种结构/制度/关系，语气比 destroy 缓但更冷。</span>
+<span class="ex">…we have been quietly dismantling one of its most important scaffolding. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">scaffolding (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="scaffolding (n.)" data-example="…quietly dismantling one of its most important scaffolding. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：原义是建筑脚手架，评论文常借指"支撑某事物运转的隐形结构"，比 support 更有画面。' data-zh="脚手架；（比喻）支撑体系 / 框架" type="button">☆</button></span><span class="zh">脚手架；（比喻）支撑体系 / 框架</span>
+<span class="sc">使用场景：原义是建筑脚手架，评论文常借指"支撑某事物运转的隐形结构"，比 support 更有画面。</span>
+<span class="ex">…quietly dismantling one of its most important scaffolding. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">give sb/sth credit (for)</span><button aria-label="收藏表达" class="expr-fav" data-en="give sb/sth credit (for)" data-example="Friendship… was doing far more for our bodies than we ever gave it credit for. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：说"承认某物其实起了很大作用"，常带否定（never gave it credit）表示"一直低估"。' data-zh="认可、把（功劳/作用）归于" type="button">☆</button></span><span class="zh">认可、把（功劳/作用）归于</span>
+<span class="sc">使用场景：说"承认某物其实起了很大作用"，常带否定（never gave it credit）表示"一直低估"。</span>
+<span class="ex">Friendship… was doing far more for our bodies than we ever gave it credit for. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">swallow (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="swallow (v.)" data-example="…the years when friendships once formed got swallowed by career-building. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：形象化说"某件事把时间/机会吃掉了"，比 take up 更有"被吞没"的无力感。' data-zh="吞没、占去（时间/精力）；把…吞噬" type="button">☆</button></span><span class="zh">吞没、占去（时间/精力）；把…吞噬</span>
+<span class="sc">使用场景：形象化说"某件事把时间/机会吃掉了"，比 take up 更有"被吞没"的无力感。</span>
+<span class="ex">…the years when friendships once formed got swallowed by career-building. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">corrosive (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="corrosive (adj.)" data-example="None of these choices was wrong. Together, they were quietly corrosive. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：形容某种趋势/习惯"缓慢但持续地腐蚀"关系或制度，比 harmful 更高级、更精准。' data-zh="侵蚀性的、逐渐破坏的" type="button">☆</button></span><span class="zh">侵蚀性的、逐渐破坏的</span>
+<span class="sc">使用场景：形容某种趋势/习惯"缓慢但持续地腐蚀"关系或制度，比 harmful 更高级、更精准。</span>
+<span class="ex">None of these choices was wrong. Together, they were quietly corrosive. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">by design</span><button aria-label="收藏表达" class="expr-fav" data-en="by design" data-example="It is slow, redundant, and inconvenient by design. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：强调"这是它天生的属性，不是 bug"，常与 inefficient / slow 搭配点出"笨是故意的"。' data-zh="故意地、按其本质（并非偶然）" type="button">☆</button></span><span class="zh">故意地、按其本质（并非偶然）</span>
+<span class="sc">使用场景：强调"这是它天生的属性，不是 bug"，常与 inefficient / slow 搭配点出"笨是故意的"。</span>
+<span class="ex">It is slow, redundant, and inconvenient by design. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">read as</span><button aria-label="收藏表达" class="expr-fav" data-en="read as" data-example="…the unproductive hour with a friend reads as a luxury we cannot afford. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：说"X 在旁人/文化眼里被读成了 Y"，被动意味强，评论文高频。' data-zh="被理解为、被视为（某种东西）" type="button">☆</button></span><span class="zh">被理解为、被视为（某种东西）</span>
+<span class="sc">使用场景：说"X 在旁人/文化眼里被读成了 Y"，被动意味强，评论文高频。</span>
+<span class="ex">…the unproductive hour with a friend reads as a luxury we cannot afford. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">outsource (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="outsource (v.)" data-example="So we outsource connection to feeds and calls it enough. （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：商业词引申用法，说"把本该亲身做的事交给工具/平台"，本文指把陪伴交给信息流。' data-zh="外包；（引申）把（某事）转交给别的东西代劳" type="button">☆</button></span><span class="zh">外包；（引申）把（某事）转交给别的东西代劳</span>
+<span class="sc">使用场景：商业词引申用法，说"把本该亲身做的事交给工具/平台"，本文指把陪伴交给信息流。</span>
+<span class="ex">So we outsource connection to feeds and calls it enough. （本文 / Daily English Reading · 2026-08-17）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">show up (phrasal)</span><button aria-label="收藏表达" class="expr-fav" data-en="show up (phrasal)" data-example="It is the unglamorous work of showing up—again, and again… （本文 / Daily English Reading · 2026-08-17）" data-scene='使用场景：本文签名概念——show up for sb = 为人"到场、在场"，比 be present 更口语更有温度。' data-zh='到场、出现；（引申）在关系里"人在、肯付出"' type="button">☆</button></span><span class="zh">到场、出现；（引申）在关系里"人在、肯付出"</span>
+<span class="sc">使用场景：本文签名概念——show up for sb = 为人"到场、在场"，比 be present 更口语更有温度。</span>
+<span class="ex">It is the unglamorous work of showing up—again, and again… （本文 / Daily English Reading · 2026-08-17）</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Psych &amp; Social Vocabulary · 心理×社会词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题是成年人的「友谊衰退」与孤独，属于「人类与社会」而非娱乐八卦，所以这里不按 Celebrity 模块走，换成更贴题的「Psych &amp; Social Vocabulary」——读外媒社会/心理报道时高频出现（数据背景：U.S. Surgeon General 2023 年《Our Epidemic of Loneliness and Isolation》公共卫生咨询；弱关系理论见 Granovetter 1973）：</p>
+<div class="vocab">
+<div class="v"><b>friendship recession</b><span>友谊衰退——成年人密友数量持续下降的现象（本文核心术语）</span></div>
+<div class="v"><b>social ties</b><span>社会联结——与他人的关系纽带；weak/strong ties = 弱/强关系</span></div>
+<div class="v"><b>loneliness epidemic</b><span>孤独流行病——被公共卫生系统正式点名的健康危机</span></div>
+<div class="v"><b>social isolation</b><span>社会孤立——客观上缺乏社交接触，与孤独（主观感受）相对</span></div>
+<div class="v"><b>social infrastructure</b><span>社会基础设施——促成相遇的公共空间与制度（如第三空间）</span></div>
+<div class="v"><b>the third place</b><span>第三空间——家与职场之外、能偶遇朋友的日常场所（Oldenburg 1989）</span></div>
+<div class="v"><b>close friend</b><span>密友——知道你"未删减版"生活、可托付的人（本文关键概念）</span></div>
+<div class="v"><b>weak ties</b><span>弱关系——点头之交带来的机会与信息（Granovetter 1973《The Strength of Weak Ties》）</span></div>
+<div class="v"><b>chosen relationship</b><span>选择型关系——友谊是没有血缘/契约、纯靠选择维系的关系</span></div>
+<div class="v"><b>social fabric</b><span>社会肌理——把人群编织在一起的关系网络（常作"被侵蚀"的对象）</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"For a species that survives on connection, we have been quietly dismantling one of its most important scaffolding without quite noticing."</p>
+<p class="a"><b>句型：</b>介词短语 <i>For a species that survives on connection</i>（带定语从句的"大主语背景"）铺陈 + 现在完成进行时 <i>we have been quietly dismantling…</i> + 伴随状语 <i>without quite noticing</i>。<b>逻辑：</b>先用"靠连接存活的物种"拔高到人类本性，再掉头说"我们正悄悄拆掉自己的支撑结构"，反差即论点。<b>表达：</b>① <i>survives on</i> 把抽象"connection"写成命脉；② <i>have been dismantling</i> 进行时强调"进行中、尚未察觉"；③ <i>without quite noticing</i> 是评论文万能收尾，写出"温水煮青蛙"的无力感。</p>
+</div>
+<div class="sb">
+<p class="q">"In 2023, the U.S. Surgeon General issued a rare public-health advisory on loneliness, calling it a crisis whose health consequences are comparable to smoking fifteen cigarettes a day."</p>
+<p class="a"><b>句型：</b>主句 <i>issued a rare… advisory</i> + 现在分词短语 <i>calling it a crisis…</i> 作伴随/同位说明 + 嵌套定语从句 <i>whose health consequences are comparable to…</i>。<b>逻辑：</b>用权威机构把"孤独"从情绪升级为"公共卫生危机"，再用"每天 15 根烟"的具象对比砸实严重性。<b>表达：</b>① <i>calling it a crisis</i> 分词结构避免另起一句，紧凑有力；② <i>comparable to</i> 比 as dangerous as 更克制、更像报道体；③ 具体数字（fifteen cigarettes）是外媒说服读者的招牌手法。</p>
+</div>
+<div class="sb">
+<p class="q">"Romance has rituals; family is assigned. Friendship is the only relationship we choose from scratch, and the only one with almost no script."</p>
+<p class="a"><b>句型：</b>两组短句并列（Romance…; family…）+ 主句 <i>Friendship is the only relationship (that) we choose from scratch</i> + 并列表语 <i>and the only one with almost no script</i>（省略 that is）。<b>逻辑：</b>用"爱情有仪式、亲情被指定"反衬"友谊既靠从零自选、又毫无剧本"，点出它最脆弱的根源。<b>表达：</b>① <i>choose from scratch</i>（从零开始选）与 <i>assigned</i>（被分配）形成干净对照；② <i>with almost no script</i> 把"没有社会脚本"写成隐喻，是全文最精炼的一句；③ 三句递进、越短越狠，是并列缩句的范本。</p>
+</div>
+<div class="sb">
+<p class="q">"We optimized for efficiency—faster commutes, faster delivery, faster everything—and friendship is the opposite of efficient."</p>
+<p class="a"><b>句型：</b>主句 <i>We optimized for efficiency</i> + 破折号插入同位举例 <i>faster commutes, faster delivery, faster everything</i> + 并列句 <i>and friendship is the opposite of efficient</i>。<b>逻辑：</b>先立"我们为效率优化一切"的价值观，再用破折号堆叠同构短语强化，最后用友谊"反效率"收口，制造价值观冲突。<b>表达：</b>① <i>optimized for</i> 是科技/商业文高频动词，此处反讽；② 破折号里 <i>faster X, faster Y, faster everything</i> 的同构排比，朗读节奏强；③ <i>the opposite of efficient</i> 极简否定，比 not efficient 更有力。</p>
+</div>
+<div class="sb">
+<p class="q">"The friend who knows the unedited version of your life is not a notification; it is a person you have inconvenienced yourself to keep."</p>
+<p class="a"><b>句型：</b>主语从句 <i>The friend (who) knows the unedited version of your life</i> + <i>is not a notification</i>；分号后 <i>it is a person (that) you have inconvenienced yourself to keep</i>。<b>逻辑：</b>用"未删减版的人生"对比"一条通知"，把"真实朋友"与"算法接触"划清界限，是全文签名句。<b>表达：</b>① <i>the unedited version</i> 借剪辑隐喻写"真实、没滤镜的你"，高级又戳人；② <i>inconvenienced yourself to keep</i>（甘愿为自己添麻烦去维系）把 show up 概念收成诗意动作；③ 分号前后的 A is not X; it is Y 对照结构，值得模仿。</p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>几年前一则美国民调让研究者不安：说"自己一个密友都没有"的成年人比例在上升——不是没空，是零。社会学家给这现象起了名："友谊衰退"（friendship recession）。文章拆解了它怎么发生：① 不是一场灾难，而是一千次微小减法——为工作搬家、晚婚、远程办公、育儿，每一样单独看都没错，合起来却悄悄腐蚀了社交；② 友谊有个独特的结构性弱点：爱情有仪式、亲情被指定，唯独友谊既靠"从零自选"、又"毫无剧本"，没人教你怎么约朋友吃饭而不像相亲或推销，所以一忙就先滑掉；③ 代价是身体的——孤立提升焦虑、抑郁与早逝风险，有元分析显示其与肥胖、不运动相当；④ 文化上，我们把友谊从"优先项"降级成"副产品"，为效率优化一切，却忘了友谊天生反效率（慢、重复、无产出），于是把连接"外包"给信息流；⑤ 但转机也在出现：年轻人开始复古式经营友谊（固定饭局、朋友 App、城市投资"社会基础设施"）。结论：友谊衰退值得警惕的不是数字而是信号——连接曾变得"可选"，然后悄悄"不可能"；解药不是效率技巧，而是一次次"到场"。</p>
+<p><b>背后文化现象：</b>① <b>效率至上反噬真实连接</b>——我们把通勤、外卖、一切都为"快"优化，却忘了友谊是反效率的，和你「静奢风」「黑胶回潮」里"摩擦即奢侈"的母题同频；② <b>孤独被正名成公共卫生危机</b>——2023 年美国卫生局长把孤独与"每天 15 根烟"并列，说明"具体、需到场、无 KPI"的关系在算法时代最稀缺；③ <b>连接 ≠ 接触</b>——我们刷着"归属感"、表演亲密、把"联系"误当"联结"，与你写过的"真实 vs 精致人设""审美平替"一脉相承：量产、被投喂的"接触"填不满人。</p>
+<p><b>值得思考的问题：</b>当工作、居住、社交都被"优化"得越来越高效，我们是不是也在悄悄拆除自己最重要的"脚手架"？本文和你「城市观察者」公众号一以贯之的观察同频——在效率至上、被算法安排的世界里，"需要你亲自到场、没有脚本、不产出 KPI"的真实关系，最稀缺也最该被保护。它可以和你计划中的 013《无意义时间》接上：能"无聊地"陪一个人坐着，本身就是算法夺不走的能力。明天不妨自测一题：你的"密友清单"上，有几个是"你为之中断过手头事"的人？</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that friendship is "the opposite of efficient"—slow, redundant, and inconvenient by design—yet it is exactly what keeps us healthy. Do you think modern life has made close friendship harder, or just made us less willing to pay its cost? Write about 200 words giving your view, with one concrete example from your own life.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I'd say modern life hasn't made friendship impossible—it has made us less willing to pay for it. The structures that used to do the work for us are gone: I no longer share an office, a commute, or a neighborhood with the people I like, so friendship no longer "happens" by default. That part is genuinely harder. But the bigger shift is inside us. We've been trained to treat every hour as productive, and an unstructured evening with a friend reads as a luxury we can't afford.
+      I saw this in myself last winter. A friend texted that they were "just passing through" and free for an hour. My first instinct was to say I was buried in work. I went anyway. We sat in a café with no plan, repeated old stories, and I left lighter than I'd felt in weeks. That hour produced nothing measurable—and it was exactly what I needed. The article's point lands: friendship is inefficient by design, and that's the whole point. The cost isn't the problem; our unwillingness to pay it is.
+    </div>
+<div class="tip">✍️ 写法提示：开头用 I'd say X hasn't made it impossible—it has made us less willing to pay for it 给一个"区分环境与心态"的平衡立场，避免二选一；中间拉出"去年冬天朋友路过、我本想推却还是去了"的具体故事，扣住题目要求的 one concrete example，并用 unstructured evening / produced nothing measurable 呼应原文 efficient / inefficient 关键词；结尾用 The article's point lands 回扣签名概念，把"肯为低效付出"收成一句有声音的判断，不套话。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计切到「科技与未来」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-17',title:"The Friendship Recession: Why Adults Keep Losing Their Closest Friends"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving & Renting an Apartment — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #c0392b; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(192,57,43,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 21 · 8/14 Fri</div>
+    <h2>Moving & Renting an Apartment</h2>
+    <div class="zh">搬家租房 · 看房、签约、搬进来的真实表达</div>
+    <div class="en">"Home is where the boxes are."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm looking for a place to rent.</span>
+        <span class="cn-meaning">我在找房子租</span>
+      </div>
+      <div class="scene">告诉朋友、中介或房东你正在租房，比 I want to rent a house 更自然、更口语。place 是万能词，泛指住处。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm looking for a place to rent. Something small, with decent light."<div class="src">— Monica Geller, Friends S06E12 / 和 Rachel 聊换大房子时</div></div>
+        <div class="quote-item">"I'm trying to find a place closer to work. The commute is killing me."<div class="src">— Jim Halpert, The Office S03E18 / 考虑搬去 Stamford 附近</div></div>
+        <div class="quote-item">"We're looking for a place with an extra room for the baby."<div class="src">— Claire Dunphy, Modern Family S04E03 / 全家讨论换房</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Is it still available?</span>
+        <span class="cn-meaning">这套房子还在租吗？</span>
+      </div>
+      <div class="scene">看到租房广告后打电话或发消息的第一句。available 表示「可租/在售」，是租房市场高频词。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Hi, I saw the ad online. Is it still available?"<div class="src">— Rachel Green, Friends S02E10 / 打电话问公寓广告</div></div>
+        <div class="quote-item">"Is the apartment still available? I'd love to take a look."<div class="src">— Pam Beesly, The Office S05E14 / 和中介通话</div></div>
+        <div class="quote-item">"Is this room still available? My friend needs a place ASAP."<div class="src">— Ted Mosby, How I Met Your Mother S01E18 / 帮 Marshall 找房</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Are utilities included?</span>
+        <span class="cn-meaning">水电煤气费包含在房租里吗？</span>
+      </div>
+      <div class="scene">看房时必问。utilities 指水电煤、网络等公用事业费，决定你每月真实开销。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Does the rent include utilities, or do I pay those separately?"<div class="src">— Monica Geller, Friends S07E15 / 和房东谈条件</div></div>
+        <div class="quote-item">"Are utilities included? Because that changes everything."<div class="src">— Phil Dunphy, Modern Family S02E11 / 看房时算总成本</div></div>
+        <div class="quote-item">"Is water and gas included, or just electricity?"<div class="src">— Lily Aldrin, How I Met Your Mother S03E04 / 和房东确认细节</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'd like to move in on...</span>
+        <span class="cn-meaning">我想在……搬进来</span>
+      </div>
+      <div class="scene">决定租房后，用来和房东确认入住时间。move in 是「搬入」，move out 是「搬出」。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'd like to move in on the first of next month if possible."<div class="src">— Chandler Bing, Friends S05E07 / 签新公寓合同时</div></div>
+        <div class="quote-item">"We were hoping to move in by the end of the week."<div class="src">— Cameron Tucker, Modern Family S03E22 / 和房产经纪交涉</div></div>
+        <div class="quote-item">"Can I move in this weekend? My lease is up on Friday."<div class="src">— Marshall Eriksen, How I Met Your Mother S02E15 / 赶时间找新住处</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I need to give my landlord notice.</span>
+        <span class="cn-meaning">我要提前通知房东（我要搬走了）</span>
+      </div>
+      <div class="scene">换房时必须提前通知现任房东，美国常见 30 天。give notice 是正式但口语化的说法。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I need to give my landlord notice before I can sign anything."<div class="src">— Rachel Green, Friends S05E16 / 想搬去离 Ross 近一点的地方</div></div>
+        <div class="quote-item">"My lease isn't up yet. I have to put in my notice first."<div class="src">— Jim Halpert, The Office S03E20 / 解释搬家的麻烦</div></div>
+        <div class="quote-item">"We still need to give our landlord 30 days' notice."<div class="src">— Mitchell Pritchett, Modern Family S05E08 / 计划搬进新房前</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周五下午，Alex 跟着房东 Mr. Patterson 看一间一居室公寓，两人边走边聊租金、家具和入住时间。</div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Hi, I'm Alex. Thanks for showing me the place.</div>
+        <div class="cn">你好，我是 Alex。谢谢你带我看房。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Mr. Patterson</div>
+        <div class="en">Nice to meet you. So, you're looking for a place to rent?</div>
+        <div class="cn">很高兴见到你。所以你在找房子租？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Yeah, something close to downtown. Is it still available?</div>
+        <div class="cn">对，最好离市中心近一点。这套还在租吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Mr. Patterson</div>
+        <div class="en">It is. The last tenant moved out last weekend. How soon are you looking to move in?</div>
+        <div class="cn">还在。上一个租客上周末刚搬走。你想多久搬进来？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">I'd like to move in on September 1st if possible. My current lease is up at the end of the month.</div>
+        <div class="cn">如果可能的话，我想 9 月 1 号搬进来。我现在的租约月底到期。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Mr. Patterson</div>
+        <div class="en">That works for me. The rent is $1,200 a month. Are utilities included?</div>
+        <div class="cn">可以。房租每月 1200 美元。水电煤包含吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Good question. I noticed the place is furnished. Is that extra?</div>
+        <div class="cn">问得好。我看这里带家具，这要额外加钱吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Mr. Patterson</div>
+        <div class="en">No, the furniture stays. Utilities are separate, though — usually around $80 a month. If you want it, I just need first month's rent plus deposit.</div>
+        <div class="cn">不用，家具会留下。但水电费另算，大概每月 80 美元。如果你要租，我只需要首月租金加押金。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Sounds good. I just need to give my landlord notice first, but I'm definitely interested.</div>
+        <div class="cn">听起来不错。我得先通知我现在的房东，但我确实很有兴趣。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">You found an apartment listing online. Call the landlord and ask if it's still available and when you can see it.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Hi, I saw your listing online. Is it still available? I'd love to come see it this weekend."</div>
+      <div class="sample-answer"><strong>B：</strong>"Hello, I'm calling about the apartment on Maple Street. Is it still on the market? When can I take a look?"</div>
+      <div class="sample-answer"><strong>C：</strong>"Hi there, is the one-bedroom still available? I'm free tomorrow afternoon if that works for a viewing."</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">You're viewing an apartment. Ask what's included in the rent and whether it's furnished.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Are utilities included, or are they separate? And is the place furnished?"</div>
+      <div class="sample-answer"><strong>B：</strong>"What's included in the rent? Does it come with internet and water, or do I pay those myself?"</div>
+      <div class="sample-answer"><strong>C：</strong>"Is it furnished? If not, can I move my own stuff in before the first?"</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">You decided to take the apartment. Tell the landlord when you want to move in and mention you need to give notice first.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"I'd like to move in on the first of next month. I just need to give my current landlord 30 days' notice."</div>
+      <div class="sample-answer"><strong>B：</strong>"I'm definitely in. I'd like to move in on September 1st, but I need to put in my notice first."</div>
+      <div class="sample-answer"><strong>C：</strong>"This works for me. I can move in at the end of the month. I'll let my landlord know today."</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I want to rent a house."</div>
+      <div class="right">"I'm looking for a place to rent." / "I'm trying to find an apartment."</div>
+      <div class="why">直接说 I want to rent a house 像课本句子。口语里更常说 look for a place，place 可以指公寓、房子、单间，灵活自然。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"The rent is how much?"</div>
+      <div class="right">"How much is the rent?" / "What's the monthly rent?"</div>
+      <div class="why">中文习惯说「租金是多少？」，但英语里疑问词要前置。How much is the rent? 最自然，monthly rent 更清楚。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"The house has furniture."</div>
+      <div class="right">"It's furnished." / "It comes furnished." / "It's unfurnished."</div>
+      <div class="why">租房语境里有现成的形容词 furnished / unfurnished，比 has furniture 地道得多。comes furnished 强调「包含家具」。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I will move next week."</div>
+      <div class="right">"I'm moving next week." / "I'm moving in next week."</div>
+      <div class="why">谈已经安排好的搬家，用现在进行时表将来更自然。move 单独用指「搬家」，move in 强调「搬入」。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I want to live near subway."</div>
+      <div class="right">"I'd like to be close to the subway." / "I'm looking for somewhere near public transit."</div>
+      <div class="why">near subway 少了冠词，应为 near the subway。另外 close to / near public transit 更口语，subway 在美国不每个城市都有，transit 更通用。</div>
+    </div>
+  </div>
+
+</div><!-- .wrap -->
+
+</body>
+</html>

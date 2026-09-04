@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-07</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Great Aesthetic Flattening: Why Every City Looks the Same</h1>
+<p class="sub">美学大平替：为什么每个城市在你的首页都长一个样？</p>
+<div class="meta">
+<span>📅 <b>2026-08-07</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">你有没有过这种体验：飞到一座陌生城市，转角那家咖啡馆却像极了你在 Brooklyn 见过的那家；民宿大堂像 Berlin 的共享办公室；连"宝藏小店"都像是同一个 Instagram 账号设计的。过去十年，城市的视觉质感正在悄悄<b>趋同</b>。今天我们读一篇文化观察，聊"美学大平替（aesthetic flattening）"——算法、流量和"出片"逻辑如何把全世界的好地方压成同一套审美模板。这不只关于装修风格，也关于我们这个"看图像多过看世界"的时代。</p>
+<div class="tip">💡 读前小思考：你最近去过的某家"网红店 / 目的地"，是它真的独特，还是它"长得像所有网红店"？你更想遇到意外，还是想要"不出错的好看"？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>A traveler landing in Lisbon, Seoul, or Mexico City for the first time might expect the shock of the unfamiliar. Instead, many report <span class="hl">a strange feeling of déjà vu</span>. The café on the corner could be the one in Brooklyn; the hotel lobby echoes a co-working space in Berlin; the "hidden gem" restaurant was, it turns out, styled by the same Instagram account that styled a thousand others. Somewhere in the past decade, the visual texture of cities began to <span class="hl">converge</span>.</p>
+<p>Call it <span class="hl">the great aesthetic flattening</span>. Across the world, a narrow set of looks—raw wood and rattan, terracotta and beige, the carefully messy bookshelf, the neon-free "clean" palette—has become <span class="hl">the default setting</span> for how pleasant places present themselves. It is not that local character has vanished. It is that the version of a place we are shown online has been filtered through a single, global taste.</p>
+<p>The mechanism is partly algorithmic. Platforms reward content that <span class="hl">keeps people watching</span>, and the safest way to keep them watching is to serve more of what already performed. A photo of a sunlit, minimalist café earns engagement; the next café owner, eyeing the metrics, replicates it. Trends stop being discoveries and become templates. The loop is self-reinforcing: the more a look is shown, the more it is copied, the more it is shown again. Recommendation systems do not set out to make the world monotone; they simply optimize for the next scroll, and sameness is the path of least resistance. The feed, built to surface what is popular, quietly erases what is merely different.</p>
+<p>An economic logic sits underneath. "Instagrammable" stopped being a joke and became <span class="hl">a line item</span>. Developers commission "moments"—a pink staircase, a mirrored hallway—because they know the photo will do the marketing. Cities <span class="hl">court</span> the same aesthetic, funding murals and markets that read well in a square frame. <span class="hl">Authenticity</span>, oddly, becomes a design brief: places are built to look unbuilt, spontaneous, untouched by commerce, while being entirely the product of it.</p>
+<p>Why do we, the audience, keep choosing the same look? Partly comfort. A familiar aesthetic lowers the cost of a new place; you arrive already knowing how to pose, what to order, which corner to photograph. The sameness is a kind of hospitality. It promises that the world is legible, safe, and ready for you—a feeling that, for a generation raised on screens, can feel like home.</p>
+<p>Something similar happens to us as travelers. We have grown used to scrolling a destination before we arrive, bookmarking the same ten viewpoints, the same café, the same overlook. The trip becomes a checklist of images to collect rather than a place to be in. What we call "exploring" is often just queuing for the shot everyone else already took.</p>
+<p>The cost is harder to see but real. When a place is valued mainly for how it photographs, the <span class="hl">unphotogenic</span> parts—the gritty market, the awkward parking lot, the everyday life that does not frame well—get <span class="hl">paved over</span> or hidden. Diversity of appearance becomes <span class="hl">a quiet casualty</span>. We end up with a world where difference survives mostly as a backdrop for someone else's content, not as something lived in for its own sake. The effect reaches beyond cities: the same flattening reshapes how we decorate our homes, what we cook, even how we mark a birthday—each acquires a template, because the template is what photographs, and what photographs is what gets validated.</p>
+<p>There is a deeper irony. The whole apparatus runs on a promise of uniqueness. Travel accounts sell "hidden gems" and "local secrets"; brands promise to help you express individual taste. Yet the pursuit of the distinctive, conducted in public and rewarded by the same metrics, <span class="hl">converges on</span> the identical. Everyone ends up performing their individuality through the exact same tools, to the exact same audience, scored by the exact same number. The more fiercely everyone tries to look different, the more the differences <span class="hl">blur into one another</span>.</p>
+<p>Not everyone is satisfied. A counter-current prizes the imperfect and the specific: the slightly ugly, the handmade, the unoptimized. Some travelers now avoid the "top ten" lists on purpose. A quieter movement treats a place's awkward, unshareable details as the point, not the problem. They go looking for the slightly off—the things algorithms skip because they do not travel well in a thumbnail. It is too early to call it a trend—and trends, as we have seen, have a way of flattening whatever they touch.</p>
+<p>Maybe the flattening is not really about cities. It is about a culture that has learned to value the image of an experience over the experience itself, and to trust the consensus of the feed over the evidence of our own eyes. The world has not run out of difference. We have, for now, agreed to look past it—together, and <span class="hl">in the same direction</span>.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">déjà vu</span><button aria-label="收藏表达" class="expr-fav" data-en="déjà vu" data-example="Instead, many report a strange feeling of déjà vu. （本文 / Daily English Reading · 2026-08-07）" data-scene='使用场景：形容场景、情境或对话让人产生"我好像经历过"的错觉，比 simply "it feels familiar" 更精准、更带文学感。' data-zh='似曾相识（原法语借词，指"明明第一次见却觉得见过"）' type="button">☆</button></span><span class="zh">似曾相识（原法语借词，指"明明第一次见却觉得见过"）</span>
+<span class="sc">使用场景：形容场景、情境或对话让人产生"我好像经历过"的错觉，比 simply "it feels familiar" 更精准、更带文学感。</span>
+<span class="ex">Instead, many report a strange feeling of déjà vu. （本文 / Daily English Reading · 2026-08-07）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">converge</span><button aria-label="收藏表达" class="expr-fav" data-en="converge" data-example="Somewhere in the past decade, the visual texture of cities began to converge. （本文）" data-scene='使用场景：说观点、风格、数据或人群"合流"，比 become similar 更有"多线汇于一处"的画面感。' data-zh="趋同 / 汇合（原本不同的事物逐渐走向一致）" type="button">☆</button></span><span class="zh">趋同 / 汇合（原本不同的事物逐渐走向一致）</span>
+<span class="sc">使用场景：说观点、风格、数据或人群"合流"，比 become similar 更有"多线汇于一处"的画面感。</span>
+<span class="ex">Somewhere in the past decade, the visual texture of cities began to converge. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the default setting</span><button aria-label="收藏表达" class="expr-fav" data-en="the default setting" data-example="A narrow set of looks… has become the default setting for how pleasant places present themselves. （本文）" data-scene='使用场景：把软件术语借来形容人/地方的"默认模样"，评论里常用来点出某种审美或行为已成"出厂设定"。' data-zh='默认设置（引申为"不加思考就采用的常态 / 出厂配置"）' type="button">☆</button></span><span class="zh">默认设置（引申为"不加思考就采用的常态 / 出厂配置"）</span>
+<span class="sc">使用场景：把软件术语借来形容人/地方的"默认模样"，评论里常用来点出某种审美或行为已成"出厂设定"。</span>
+<span class="ex">A narrow set of looks… has become the default setting for how pleasant places present themselves. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">keep (people) watching</span><button aria-label="收藏表达" class="expr-fav" data-en="keep (people) watching" data-example="Platforms reward content that keeps people watching. （本文）" data-scene='使用场景：说内容、平台或创作者"留住观众"，算法语境高频；比 hold attention 更口语、更媒体化。' data-zh="让人持续看下去 / 留住注意力" type="button">☆</button></span><span class="zh">让人持续看下去 / 留住注意力</span>
+<span class="sc">使用场景：说内容、平台或创作者"留住观众"，算法语境高频；比 hold attention 更口语、更媒体化。</span>
+<span class="ex">Platforms reward content that keeps people watching. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a line item</span><button aria-label="收藏表达" class="expr-fav" data-en="a line item" data-example='"Instagrammable" stopped being a joke and became a line item. （本文）' data-scene='使用场景：原指财务报表里的一行，引申为"被正式列入考量的具体事项"；说某件事"从玩笑变成正经条目"很有反差。' data-zh="（预算 / 计划里的）一项具体条目" type="button">☆</button></span><span class="zh">（预算 / 计划里的）一项具体条目</span>
+<span class="sc">使用场景：原指财务报表里的一行，引申为"被正式列入考量的具体事项"；说某件事"从玩笑变成正经条目"很有反差。</span>
+<span class="ex">"Instagrammable" stopped being a joke and became a line item. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">court (something)</span><button aria-label="收藏表达" class="expr-fav" data-en="court (something)" data-example="Cities court the same aesthetic, funding murals and markets that read well in a square frame. （本文）" data-scene='使用场景：court attention / court controversy / court an aesthetic——说某方主动"迎合、讨好"某事物以换取好处。' data-zh='竭力争取 / 讨好（court 作动词，本义"求爱"）' type="button">☆</button></span><span class="zh">竭力争取 / 讨好（court 作动词，本义"求爱"）</span>
+<span class="sc">使用场景：court attention / court controversy / court an aesthetic——说某方主动"迎合、讨好"某事物以换取好处。</span>
+<span class="ex">Cities court the same aesthetic, funding murals and markets that read well in a square frame. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">authenticity</span><button aria-label="收藏表达" class="expr-fav" data-en="authenticity" data-example="Authenticity, oddly, becomes a design brief. （本文）" data-scene='使用场景：品牌、旅行、内容创作里的高频词，指"真不真"；authenticity becomes a design brief 是把"真实"当成了被设计的对象，讽刺感强。' data-zh="真实感 / 本真（未被包装过的状态）" type="button">☆</button></span><span class="zh">真实感 / 本真（未被包装过的状态）</span>
+<span class="sc">使用场景：品牌、旅行、内容创作里的高频词，指"真不真"；authenticity becomes a design brief 是把"真实"当成了被设计的对象，讽刺感强。</span>
+<span class="ex">Authenticity, oddly, becomes a design brief. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">pave over</span><button aria-label="收藏表达" class="expr-fav" data-en="pave over" data-example="The unphotogenic parts… get paved over or hidden. （本文）" data-scene='使用场景：原指用水泥盖掉地面，引申为"用更光鲜的东西盖住、抹去不体面/不便的部分"。' data-zh='把…铺平 / 抹掉（本义"铺路"，引申"掩盖、清除"）' type="button">☆</button></span><span class="zh">把…铺平 / 抹掉（本义"铺路"，引申"掩盖、清除"）</span>
+<span class="sc">使用场景：原指用水泥盖掉地面，引申为"用更光鲜的东西盖住、抹去不体面/不便的部分"。</span>
+<span class="ex">The unphotogenic parts… get paved over or hidden. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a quiet casualty</span><button aria-label="收藏表达" class="expr-fav" data-en="a quiet casualty" data-example="Diversity of appearance becomes a quiet casualty. （本文）" data-scene='使用场景：casualty 本义"伤亡者"，a quiet casualty 指"在热潮里被悄悄牺牲掉的东西"，评论里很好用。' data-zh="无声的牺牲品（被悄悄牺牲、没人注意的损失）" type="button">☆</button></span><span class="zh">无声的牺牲品（被悄悄牺牲、没人注意的损失）</span>
+<span class="sc">使用场景：casualty 本义"伤亡者"，a quiet casualty 指"在热潮里被悄悄牺牲掉的东西"，评论里很好用。</span>
+<span class="ex">Diversity of appearance becomes a quiet casualty. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">blur into one another</span><button aria-label="收藏表达" class="expr-fav" data-en="blur into one another" data-example="The more fiercely everyone tries to look different, the more the differences blur into one another. （本文）" data-scene='使用场景：说线条、风格、区别"糊在一起分不清"，比 become similar 更形象，带"渐变、失去轮廓"的意味。' data-zh="彼此模糊、混为一谈（边界消失）" type="button">☆</button></span><span class="zh">彼此模糊、混为一谈（边界消失）</span>
+<span class="sc">使用场景：说线条、风格、区别"糊在一起分不清"，比 become similar 更形象，带"渐变、失去轮廓"的意味。</span>
+<span class="ex">The more fiercely everyone tries to look different, the more the differences blur into one another. （本文）</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Social &amp; Cultural Vocabulary · 社会与文化词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题是人类与社会（非娱乐），所以沿用"主题词块"模块——换成读外媒城市观察、文化评论、社媒趋势报道时高频出现的词块：</p>
+<div class="vocab">
+<div class="v"><b>aesthetic flattening</b><span>美学趋同——各地视觉风格被压成同一套审美的现象</span></div>
+<div class="v"><b>the default setting</b><span>默认审美——不加思考就被采用的那套"好看"标准</span></div>
+<div class="v"><b>Instagrammable</b><span>出片——适合拍照发圈、能自动带货的视觉特质</span></div>
+<div class="v"><b>a hidden gem</b><span>宝藏小店 / 冷门好去处——被博主当作"独家发现"推荐的地点</span></div>
+<div class="v"><b>local character</b><span>地方特色——一座城独有的、非全球通用的气质</span></div>
+<div class="v"><b>the feed</b><span>（社媒）信息流——你刷到的那一条由算法排好的内容河</span></div>
+<div class="v"><b>unphotogenic</b><span>不上镜的 / 不好拍的——因"拍出来不好看"而被忽略的真实</span></div>
+<div class="v"><b>a design brief</b><span>设计任务书——这里指"被刻意设计出来的真实感"</span></div>
+<div class="v"><b>curated / curation</b><span>策展式筛选——刻意营造的"精选"感（常假借随意）</span></div>
+<div class="v"><b>the small web</b><span>小众网络——反向潮流，避开算法、偏好粗糙具体的角落</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"A traveler landing in Lisbon, Seoul, or Mexico City for the first time might expect the shock of the unfamiliar."</p>
+<p class="a"><b>句型：</b>名词 <i>traveler</i> + 现在分词短语 <i>landing… for the first time</i> 作后置定语 + 情态动词 <i>might expect</i> + 宾语。<b>逻辑：</b>先用"初到者本该有的预期"（对陌生的震撼）铺垫，再在下句用 Instead 反转，制造反差。<b>表达：</b>① <i>landing</i> 分词短语一句话交代"初次抵达"，比用 who lands 更紧凑；② <i>the shock of the unfamiliar</i> 把抽象感受名词化，是评论常用写法，可套：<i>the comfort of the familiar</i>。</p>
+</div>
+<div class="sb">
+<p class="q">"It is not that local character has vanished. It is that the version of a place we are shown online has been filtered through a single, global taste."</p>
+<p class="a"><b>句型：</b><i>It is not that… It is that…</i> 平行结构，两句对举；后半句带定语从句 <i>we are shown online</i> + 现在完成时被动 <i>has been filtered through</i>。<b>逻辑：</b>先否定（不是消失了），再点破本质（是被单一全球审美"过滤"过的线上版本），把锅从"地方"转到"平台审美"。<b>表达：</b>① <i>filtered through a single, global taste</i> 把"审美"比作"滤镜"，地道有力；② It is not that… It is that… 是议论文澄清论点的最稳句型，强烈推荐积累。</p>
+</div>
+<div class="sb">
+<p class="q">"The feed, built to surface what is popular, quietly erases what is merely different."</p>
+<p class="a"><b>句型：</b>主语 <i>the feed</i> + 过去分词短语 <i>built to surface what is popular</i> 作后置定语 + 谓语 <i>erases</i> + 两个 <i>what</i> 从句作宾语。<b>逻辑：</b><i>built to surface what is popular</i>（本为凸显热门而生）与 <i>erases what is merely different</i>（却抹掉只是不同的东西）形成目的—结果的讽刺反差。<b>表达：</b>① <i>surface</i> 作动词"使…浮现 / 被看到"，是媒体高频用法（名词转动词）；② 这种"同一主语的初衷 vs 后果"对撞，是英文评论的高级幽默。</p>
+</div>
+<div class="sb">
+<p class="q">"We end up with a world where difference survives mostly as a backdrop for someone else's content, not as something lived in for its own sake."</p>
+<p class="a"><b>句型：</b><i>end up with + 宾语</i> + <i>where</i> 定语从句；从句内 <i>as…, not as…</i> 平行结构。<b>逻辑：</b>把"差异"降级为"别人内容的背景板"，对比"为自身而被体验"，点出同质化的真正代价。<b>表达：</b>① <i>for its own sake</i> 固定搭配"为了自身 / 本身"；② <i>lived in</i> 把地方拟人化为"被人生活于其中"，比 experienced 更有温度；③ end up with 表"最终落得……的局面"，自带因果收束感。</p>
+</div>
+<div class="sb">
+<p class="q">"The more fiercely everyone tries to look different, the more the differences blur into one another."</p>
+<p class="a"><b>句型：</b><i>The + 比较级…, the + 比较级…</i> 句型（越……越……）。<b>逻辑：</b>用一个悖论收束全篇——越拼命想独特，差异反而越糊；把"求异"与"趋同"拧成同一条绳子。<b>表达：</b>① <i>blur into one another</i> 把"区别消失"写得极活，比 become similar 高级；② <i>fiercely</i> 程度副词强化"拼命"，让悖论更有张力。这个句型可直接套用：<i>The more we optimize, the less we notice.</i></p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>初到 Lisbon、Seoul、Mexico City 的旅人本该被"陌生"震撼，很多人却 report a strange feeling of déjà vu——转角咖啡馆像 Brooklyn 那家，民宿像 Berlin 的共享办公室，"宝藏餐厅"竟是同一个 Instagram 账号设计的。作者把这种现象命名为 the great aesthetic flattening：全球好地方不约而同采用同一套视觉（原木、藤编、陶土米色、刻意凌乱的书架、无霓虹的"干净"配色），成了 pleasant places 的 the default setting。真正消失的不是 local character，而是我们线上看到的"版本"被 single, global taste 过滤过。机制是算法的：平台奖励 keeps people watching 的内容， safest 的做法就是复制已爆款，于是趋势从"发现"变成"模板"，the feed（本为凸显热门而生）反过来 erases what is merely different。其下还有经济逻辑——"Instagrammable"从玩笑变成 a line item，开发商和 cities 都 court 同一套审美，连 authenticity 都成了 a design brief（地方被设计成"未被设计"的样子）。作者也承认观众为何买账：熟悉审美降低陌生成本，sameness 是一种 hospitality。代价则是 unphotogenic 的部分被 paved over，appearance 的多样性成了 a quiet casualty。最深的讽刺在于：整套机器打着"独特"的旗号，结果越公开求异、越 converge on 同一套，differences 反而 blur into one another。结尾点题：平替其实无关城市，而关乎一种文化——我们学会了重视"体验的图像"胜过体验本身，并信任 the feed 的共识胜过自己的眼睛；世界没耗尽差异，是我们暂时约好一起 in the same direction 地略过它。</p>
+<p><b>背后文化现象：</b>① 算法 homogenization——流量奖励"已验证的好看"，把发现变成模板，差异在信息流里被静默抹除；② "真实感"被工业化——authenticity 成了 design brief，地方被设计成"未被设计"，恰好呼应你「城市观察者」母题里"人人都在表演给人看"的观察；③ 求异的悖论——越公开追逐独特（hidden gems / 个人品味），越被同一套指标拉平，blurs into one another。</p>
+<p><b>值得思考的问题：</b>这和你做「城市观察者」其实同频：在算法让每个地方都"长得能出片"的年代，真正有人味、带缺点、不可复制的角落，反而成了最稀缺也最值钱的素材。我们是真的"变一样了"，还是只是"被展示的版本变一样了"？——若你写城市观察，这套"平替 vs 具体"的张力，本身就是一篇清醒观点的好母题。</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that social media has made cities and cultures "converge" into a single global aesthetic, and that the more we chase uniqueness online, the more uniform we become. Do you think this flattening is mostly a loss—or are there upsides to a more "legible," shareable world? Share your view in about 200 words, with one concrete example from your own experience (travel, a city you know, or your feed).</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I'd say the flattening is mostly a loss, though not a total one. The upside the article names is real: a shared aesthetic makes unfamiliar places feel safe and easy to navigate, and it lets small businesses reach travelers they never could before. A café in a small Portuguese town can fill its tables because someone, somewhere, made its look "legible" to a global feed.
+      But the cost is the part that stays with me. A concrete example: on a trip last year, I skipped the lively night market near my hotel—messy, loud, hard to photograph—to queue at a "beautiful" café I'd seen online. The café was fine. The market, I later realized, was the thing I'd actually remember. We traded the unphotogenic, lived-in texture of a place for a version optimized to be shared, and the shared version is always the same version.
+      So I'd push back on calling it progress. Legibility is convenient, but a world where every city offers the identical "experience" isn't more connected—it's just more alike. The interesting stuff is still there; we've agreed, together, to look past it.
+    </div>
+<div class="tip">✍️ 写法提示：开头用 I'd say X is mostly a loss, though not a total one 先立中有转，把"不全是坏事"的克制写在前；中间用 A concrete example: 落实题目要求的"one example"，把宏观现象拉回亲身经历（夜市 vs 网红咖啡馆），制造具体反差；结尾用 So I'd push back on calling it progress 制造论点纵深，再用 The interesting stuff is still there 收束——这是母语者议论常用的"先认、再反、后收"辩证写法，比一味反对更有说服力。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计切到「科技与未来」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-07',title:"The Great Aesthetic Flattening: Why Every City Looks the Same"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

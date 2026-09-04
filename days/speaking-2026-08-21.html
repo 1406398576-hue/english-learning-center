@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opening a Bank Account — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 27 · 8/21 Fri</div>
+    <h2>Opening a Bank Account</h2>
+    <div class="zh">银行开户 · 从办卡到问费用的真实表达</div>
+    <div class="en">"I just need a place to keep my money where I won't spend it all on coffee."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'd like to open a checking account.</span>
+        <span class="cn-meaning">我想开一个活期/支票账户。</span>
+      </div>
+      <div class="scene">走进银行对柜员说的第一句话。checking account 是美国最常用的日常账户（随时存取、可刷卡），savings account 则是储蓄账户。不用 "I want to make a bank card"，老外开户开口会说 open an account，卡只是附带。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'd like to open a checking account. And maybe a savings account, too. You know, for all the money I'm about to have."<div class="src">— Joey Tribbiani, Friends S02E12 / 误以为中了彩票后跑去银行</div></div>
+        <div class="quote-item">"I'd like to open a checking account. A joint one. With my cat. His name is Sprinkles and he has no credit history, so I understand if there's a process."<div class="src">— Angela Martin, The Office S04E04 / 在柜台一本正经地提出离谱需求</div></div>
+        <div class="quote-item">"I'd like to open a checking account for my son. He's ten, but he's already showing signs of fiscal responsibility — mostly because I told him I'll cut off his allowance."<div class="src">— Claire Dunphy, Modern Family S06E08 / 带孩子去银行开户学理财</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">What do I need to bring in?</span>
+        <span class="cn-meaning">我需要带什么材料来？</span>
+      </div>
+      <div class="scene">打电话或线上预约开户前，先问清楚要带什么证件。美国银行通常需要 photo ID（驾照/护照）、Social Security Number（SSN）或 ITIN、proof of address（地址证明，如水电账单）。这个问法比 "What materials do I need?" 自然一万倍。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"What do I need to bring in to open an account? Just my ID? Because my ID photo is from a very dark period in my life and I'd like to prepare you."<div class="src">— Chandler Bing, Friends S05E17 / 打电话咨询开户材料</div></div>
+        <div class="quote-item">"What do I need to bring in? My birth certificate? My firstborn? My soul? Because I've seen how banks work in movies."<div class="src">— Marshall Eriksen, How I Met Your Mother S03E10 / 夸张地问开户材料</div></div>
+        <div class="quote-item">"What do I need to bring in to prove I live here? I have a utility bill, a lease, and a very angry letter from my HOA. Will any of those work?"<div class="src">— Phil Dunphy, Modern Family S05E14 / 询问地址证明要求</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Is there a monthly maintenance fee?</span>
+        <span class="cn-meaning">有月管理费吗？</span>
+      </div>
+      <div class="scene">开户时一定要确认的费用。maintenance fee 是账户月费，很多银行只要保持最低余额（minimum balance）或直接存款（direct deposit）就能免除。还有 overdraft fee（透支费）、ATM fee（跨行取现手续费）也可以顺便问。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Is there a monthly maintenance fee? Because I'm trying to save money, not enter a subscription service I didn't ask for."<div class="src">— Monica Geller, Friends S08E03 / 仔细核对开户费用</div></div>
+        <div class="quote-item">"Is there a monthly maintenance fee? And if so, can I pay it in beets? I have a lot of beets."<div class="src">— Dwight Schrute, The Office S06E12 / 用甜菜试图抵账</div></div>
+        <div class="quote-item">"Is there a monthly maintenance fee on this account? My husband opens things and never reads the fine print, so I'm the one who has to ask."<div class="src">— Claire Dunphy, Modern Family S04E19 / 替家里管钱的人仔细问</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Can I set up online banking?</span>
+        <span class="cn-meaning">我能开通网上银行吗？</span>
+      </div>
+      <div class="scene">开户时或开完户后一定会问。set up 是"设置/开通"，比 open online banking 自然。也可以问 Can I get the mobile app? / How do I enroll in online banking? 现在很多银行开户当天就帮你把网银和手机 App 一起设好。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Can I set up online banking? I don't trust the internet, but I also don't trust myself to remember to go to a physical building."<div class="src">— Ross Geller, Friends S09E14 / 半信半疑地想开通网银</div></div>
+        <div class="quote-item">"Can I set up online banking? I need to be able to check my balance at 3 AM while questioning every decision I've ever made."<div class="src">— Pam Beesly, The Office S05E22 / 半夜查账的真实需求</div></div>
+        <div class="quote-item">"Can I set up online banking, mobile alerts, and maybe an app that yells at me when I spend too much? Does that exist?"<div class="src">— Lily Aldrin, How I Met Your Mother S04E16 / 想开通各类提醒功能</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'd like to deposit / withdraw some cash.</span>
+        <span class="cn-meaning">我想存 / 取点现金。</span>
+      </div>
+      <div class="scene">开户后日常使用银行时的高频句。deposit = 存，withdraw = 取。柜台说法：I'd like to make a deposit / I'd like to make a withdrawal。ATM 也可以直接说 I'm here to deposit some cash。注意 withdraw 的重音在第二个音节。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'd like to deposit some cash. It's all in singles. From tips. I'm a dancer. A tap dancer. Why are you looking at me like that?"<div class="src">— Joey Tribbiani, Friends S06E09 / 拿小费去存钱时的尴尬解释</div></div>
+        <div class="quote-item">"I'd like to withdraw some cash. Enough for a wedding ring. Don't worry, she said yes — I just forgot to get the ring part handled."<div class="src">— Jim Halpert, The Office S03E23 / 取钱买婚戒</div></div>
+        <div class="quote-item">"I'd like to deposit this check. It's from my mother. I'm an adult, yes, but real estate is expensive and she loves me very much."<div class="src">— Mitchell Pritchett, Modern Family S07E05 / 去银行存母亲给的支票</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting">
+        场景：<span>Alex 刚到美国工作，周五午休去银行开户。银行柜员 Sarah 协助办理。</span>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Hi, I'd like to open a checking account, please.</div>
+        <div class="cn">你好，我想开一个活期账户。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">Of course. Do you have an appointment, or are you walking in today?</div>
+        <div class="cn">好的。您有预约吗，还是今天直接来的？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">I'm walking in. I actually called yesterday and asked what I need to bring in — I have my passport, my work visa, and a utility bill with my address.</div>
+        <div class="cn">直接来的。我昨天打电话问过要带什么材料——我有护照、工作签证，还有一张写了地址的水电费账单。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">Perfect, that covers everything. This account has no monthly maintenance fee if you keep a minimum balance of $500, or if you set up direct deposit with your employer.</div>
+        <div class="cn">太好了，材料齐全。这个账户只要保持 500 美元最低余额，或者设置工资直接存入，就没有月管理费。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Great, my company can do direct deposit. And can I set up online banking today too?</div>
+        <div class="cn">太好了，我公司可以直接存工资。那今天能一起开通网上银行吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">Absolutely. I'll help you create your username and set up the mobile app before you leave. You'll also get a debit card in the mail within 5 to 7 business days.</div>
+        <div class="cn">当然可以。您离开前我会帮您创建用户名并设置好手机 App。借记卡会在 5 到 7 个工作日内寄到。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Got it. One more thing — I'd like to deposit $800 in cash to get started.</div>
+        <div class="cn">明白了。还有一件事——我想先存 800 美元现金进去。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">No problem. I'll process the deposit right after we finish the paperwork. You're all set!</div>
+        <div class="cn">没问题。我们填完资料后我马上帮您存。都办好了！</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">1</span>假设你刚搬到一个新城市，去银行开户。用英语说明你想开一个 checking account，并询问需要带什么材料。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">Hi, I'd like to open a checking account. I just moved here last week. What do I need to bring in — just my passport and proof of address?</div>
+      <div class="sample-answer">I need to open a checking account for my salary. Could you tell me what documents I need to bring?</div>
+      <div class="sample-answer">I'd like to open an account, but I'm not a U.S. citizen. What ID do I need to bring in?</div>
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">2</span>柜员向你介绍账户有月管理费，但可以通过 direct deposit 免除。用英语复述你理解了规则，并同意开通。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">So if I set up direct deposit with my employer, there's no monthly fee, right? That works for me.</div>
+      <div class="sample-answer">Got it — no monthly maintenance fee as long as my paycheck goes directly into the account. I'll sign up for that.</div>
+      <div class="sample-answer">Direct deposit sounds good. My company already offers it, so I don't think I'll have to pay the monthly fee.</div>
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">3</span>开户后你想存一笔现金，并开通手机银行。用英语一次性表达这两个需求。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">I'd also like to deposit $500 in cash, and can you help me set up online banking on my phone?</div>
+      <div class="sample-answer">Before I leave, I'd like to make a cash deposit and download the mobile banking app. Is that okay?</div>
+      <div class="sample-answer">I brought some cash to deposit. And could you walk me through setting up the app so I can check my balance?</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">✅</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">I want to make a bank card.</div>
+      <div class="right">I'd like to open a checking account.</div>
+      <div class="why">"办卡" 在中文里很自然，但英文里开户叫 open an account，银行卡只是附带的 debit card。直接说 make a card 老外会愣一下。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">How much is the monthly fee?</div>
+      <div class="right">Is there a monthly maintenance fee?</div>
+      <div class="why">问有没有月费，用 Is there...? 更地道；maintenance fee 是银行术语，"账户维护费"。How much 更适合已经确定有费用后再追问金额。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">I want to save money to the bank.</div>
+      <div class="right">I'd like to make a deposit.</div>
+      <div class="why">"存钱" 不是 save money to the bank（save 指省下/储蓄这个行为）。在银行柜台说 deposit，日常也可以说 put money into my account。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">Please give me my money.</div>
+      <div class="right">I'd like to withdraw some cash, please.</div>
+      <div class="why">取钱时说 give me my money 听起来像抢银行。礼貌说法是 withdraw cash / make a withdrawal，并说明金额。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">Open the online bank.</div>
+      <div class="right">Can I set up online banking?</div>
+      <div class="why">"网上银行" 是 online banking（名词短语），不是 online bank。开通/设置用 set up 或 enroll in。</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

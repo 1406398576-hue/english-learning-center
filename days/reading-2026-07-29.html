@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-07-29</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Quiet Revolution in How We Read</h1>
+<p class="sub">我们阅读方式的静默革命 —— AI 摘要正在如何重塑"读"这件事</p>
+<div class="meta">
+<span>📅 <b>2026-07-29</b></span>
+<span>🎯 主题桶：<b>科技与未来 (25%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">过去二十年，我们"上网阅读"有一套固定节奏；如今 AI 摘要工具正在悄悄改写它。今天读一篇媒体评论风的文章，顺带聊聊：当机器替我们"读"，我们失去的到底是什么？</p>
+<div class="tip">💡 读前小思考（不用写答案，先有个直觉）：你上一次"完整读完"一篇长文，是什么时候？你是不是已经习惯先让 AI 给个摘要再决定读不读？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most of the past two decades, reading on the internet <span class="hl">followed a familiar rhythm</span>. You had a question, you typed a few words into a search box, and a list of blue links appeared. You clicked, skimmed, clicked again, and somewhere in that maze you usually found what you were looking for. The work of reading—following a thread, judging a source, sitting with a long piece of writing—was yours to do.</p>
+<p>That rhythm is quietly breaking. A new generation of AI tools promises to do the reading for us. Paste an article, a PDF, or a hundred-page report into a chatbot, and within seconds you receive a tidy summary: the three takeaways, the verdict, the bullet points you can skim on a phone. Ask a question and the model returns a fluent paragraph that reads as though someone already did the homework. The search bar, for years the front door of the web, is being <span class="hl">nudged aside</span> by the conversation box.</p>
+<p><span class="hl">At first glance</span> this looks like nothing but progress. Who wouldn't want to <span class="hl">reclaim the hours</span> lost to endless scrolling? There is real value in a tool that helps a busy person triangulate a complicated topic or makes a dense academic paper legible to a curious newcomer. For language learners and lifelong readers, a good summary can be <span class="hl">an on-ramp</span>—a way to decide whether a piece is worth the deeper dive.</p>
+<p>But a quieter cost is beginning to show. When a machine consistently hands us the conclusion first, we risk losing the habit of <span class="hl">getting there</span> ourselves. Reading is not only a way to collect information; it is a form of thinking. The slow work of following an argument, feeling its wobble, and arriving at your own judgment is where comprehension actually deepens. <span class="hl">Outsource</span> that work often enough, and the mental muscle atrophies. We may end up knowing more headlines and fewer arguments.</p>
+<p>This is not a new anxiety <span class="hl">dressed in new clothes</span>. When writing first moved from memory to the page, Socrates worried it would weaken the mind. When radio arrived, critics feared it would rot the attention of the young. Each new medium provoked the same dread: that convenience would quietly hollow out the discipline it promised to serve. The difference now is scale and intimacy. The AI does not merely deliver content; it performs the act of understanding on our behalf, inside a chat we mistake for a conversation.</p>
+<p>There is also a subtler shift in what we expect from a text. We are growing impatient with difficulty. A paragraph that does not yield its meaning in the first two sentences feels like a malfunction. We want writing <span class="hl">pre-digested</span>, and writers, chasing clicks and completion rates, are happy to oblige—shorter sentences, flatter claims, fewer digressions. A reading public trained on summaries begins to reward the easily summarized.</p>
+<p>For someone learning a language, the trap is sharper. It is tempting to let a translator or summarizer flatten every difficult passage into something safe. But the very friction you skip is where vocabulary sticks and sentence patterns settle. Comprehension that is handed to you rarely becomes yours.</p>
+<p>None of this means the tools are the enemy. The honest move is not to swear off AI summaries but to use them deliberately. Treat the summary as a map, not the territory. Read it to decide where to walk, then walk the whole path yourself. Let the machine handle the mechanical sorting, but keep the interpretive work—the part that is actually you—firmly in your hands. The readers who <span class="hl">thrive</span> in this new landscape will be the ones who treat AI as a reading companion, not a replacement for reading.</p>
+<p>Perhaps the most useful question is not whether AI will change how we read, but what kind of readers we intend to be. A tool that <span class="hl">removes friction</span> can also remove the friction that makes reading worthwhile. The choice, as always, is ours.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">follow a familiar rhythm</span><button aria-label="收藏表达" class="expr-fav" data-en="follow a familiar rhythm" data-example="For years, my mornings followed a familiar rhythm: coffee, news, then email." data-scene="使用场景：描述某件事长期以来的固定模式 / 习惯，常用于开篇引出变化。" data-zh="遵循一种熟悉的节奏" type="button">☆</button></span><span class="zh">遵循一种熟悉的节奏</span>
+<span class="sc">使用场景：描述某件事长期以来的固定模式 / 习惯，常用于开篇引出变化。</span>
+<span class="ex">For years, my mornings followed a familiar rhythm: coffee, news, then email.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">nudge aside</span><button aria-label="收藏表达" class="expr-fav" data-en="nudge aside" data-example="Traditional bookshops have been nudged aside by online retailers." data-scene="使用场景：表示某事物逐渐被另一事物边缘化，比 replace 更柔和、更有画面感。" data-zh="被轻轻挤到一边 / 被取代" type="button">☆</button></span><span class="zh">被轻轻挤到一边 / 被取代</span>
+<span class="sc">使用场景：表示某事物逐渐被另一事物边缘化，比 replace 更柔和、更有画面感。</span>
+<span class="ex">Traditional bookshops have been nudged aside by online retailers.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">at first glance</span><button aria-label="收藏表达" class="expr-fav" data-en="at first glance" data-example="At first glance the plan looks cheap, but hidden costs make it expensive." data-scene="使用场景：先给出一个表面印象，下文往往转折（at first glance… but…）。" data-zh="乍一看 / 初看起来" type="button">☆</button></span><span class="zh">乍一看 / 初看起来</span>
+<span class="sc">使用场景：先给出一个表面印象，下文往往转折（at first glance… but…）。</span>
+<span class="ex">At first glance the plan looks cheap, but hidden costs make it expensive.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">reclaim the hours</span><button aria-label="收藏表达" class="expr-fav" data-en="reclaim the hours" data-example="Remote work helped her reclaim the two hours she used to spend commuting." data-scene='使用场景：强调从低效活动中夺回时间，reclaim 有"夺回本属于你的东西"的意味。' data-zh="把（被浪费的）时间收回来" type="button">☆</button></span><span class="zh">把（被浪费的）时间收回来</span>
+<span class="sc">使用场景：强调从低效活动中夺回时间，reclaim 有"夺回本属于你的东西"的意味。</span>
+<span class="ex">Remote work helped her reclaim the two hours she used to spend commuting.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">an on-ramp</span><button aria-label="收藏表达" class="expr-fav" data-en="an on-ramp" data-example="Podcasts can be an on-ramp to understanding complex science." data-scene='使用场景：比喻"进入某个领域/话题的起点"，比 a start 更形象。' data-zh="入门途径 / 跳板（原指高速公路入口匝道）" type="button">☆</button></span><span class="zh">入门途径 / 跳板（原指高速公路入口匝道）</span>
+<span class="sc">使用场景：比喻"进入某个领域/话题的起点"，比 a start 更形象。</span>
+<span class="ex">Podcasts can be an on-ramp to understanding complex science.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">get there (yourself)</span><button aria-label="收藏表达" class="expr-fav" data-en="get there (yourself)" data-example="Don't spoon-feed them the answer; let them get there on their own." data-scene='使用场景：get there 在这里是比喻义，指"想通、得出结论"，常与自行思考搭配。' data-zh="自己得出（结论）/ 抵达（理解）" type="button">☆</button></span><span class="zh">自己得出（结论）/ 抵达（理解）</span>
+<span class="sc">使用场景：get there 在这里是比喻义，指"想通、得出结论"，常与自行思考搭配。</span>
+<span class="ex">Don't spoon-feed them the answer; let them get there on their own.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">outsource (the work)</span><button aria-label="收藏表达" class="expr-fav" data-en="outsource (the work)" data-example="We outsource our memory to phones, and our thinking to algorithms." data-scene='使用场景：本指企业外包，引申为"把本该自己做的事交给别人/机器"。' data-zh="把（工作）外包出去" type="button">☆</button></span><span class="zh">把（工作）外包出去</span>
+<span class="sc">使用场景：本指企业外包，引申为"把本该自己做的事交给别人/机器"。</span>
+<span class="ex">We outsource our memory to phones, and our thinking to algorithms.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">dressed in new clothes</span><button aria-label="收藏表达" class="expr-fav" data-en="dressed in new clothes" data-example='The "new" diet is the same old advice dressed in new clothes.' data-scene="使用场景：固定搭配 a wolf in sheep's clothing / dressed in new clothes，指旧事物换了新包装。" data-zh="换汤不换药 / 披着新外衣" type="button">☆</button></span><span class="zh">换汤不换药 / 披着新外衣</span>
+<span class="sc">使用场景：固定搭配 a wolf in sheep's clothing / dressed in new clothes，指旧事物换了新包装。</span>
+<span class="ex">The "new" diet is the same old advice dressed in new clothes.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">pre-digested</span><button aria-label="收藏表达" class="expr-fav" data-en="pre-digested" data-example="Kids fed on pre-digested content lose the taste for hard books." data-scene="使用场景：贬义，形容信息被处理得太碎、太安全，读者无需动脑。" data-zh="被预先消化好的 / 现成无需思考的" type="button">☆</button></span><span class="zh">被预先消化好的 / 现成无需思考的</span>
+<span class="sc">使用场景：贬义，形容信息被处理得太碎、太安全，读者无需动脑。</span>
+<span class="ex">Kids fed on pre-digested content lose the taste for hard books.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">thrive (in a landscape)</span><button aria-label="收藏表达" class="expr-fav" data-en="thrive (in a landscape)" data-example="Writers who adapt to audio will thrive in the podcast landscape." data-scene='使用场景：thrive 强调"不仅生存，而且兴旺"；landscape 喻指大环境。' data-zh="在（某种环境/局面）中蓬勃发展" type="button">☆</button></span><span class="zh">在（某种环境/局面）中蓬勃发展</span>
+<span class="sc">使用场景：thrive 强调"不仅生存，而且兴旺"；landscape 喻指大环境。</span>
+<span class="ex">Writers who adapt to audio will thrive in the podcast landscape.</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Tech &amp; Media Vocabulary · 科技阅读词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题偏向科技/媒介，不涉娱乐八卦，故将「Celebrity / Culture Vocabulary」替换为更贴合的科技阅读词块：</p>
+<div class="vocab">
+<div class="v"><b>search bar</b><span>搜索框——传统网页的"前门"</span></div>
+<div class="v"><b>blue links</b><span>蓝色链接——搜索引擎结果页的经典样式</span></div>
+<div class="v"><b>bullet points</b><span>要点列表——摘要里常见的小圆点条目</span></div>
+<div class="v"><b>conversation box</b><span>对话输入框——替代搜索框的聊天界面</span></div>
+<div class="v"><b>completion rate</b><span>完读率——写作者追逐的指标，驱动"短文化"</span></div>
+<div class="v"><b>dense academic paper</b><span>艰深学术论文——AI 摘要最常被用来"翻译"的对象</span></div>
+<div class="v"><b>reading companion</b><span>阅读伙伴——文中主张把 AI 当作的角色</span></div>
+<div class="v"><b>mechanical sorting</b><span>机械性分拣——适合交给机器的低层任务</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"When a machine consistently hands us the conclusion first, we risk losing the habit of getting there ourselves."</p>
+<p class="a"><b>句型：</b>When 时间状语从句 + 主句（risk doing）。<b>逻辑：</b>先设条件（机器总是先给结论），再推出风险后果。<b>表达：</b>① <i>hands us the conclusion</i> 用 hand 作"递给"，口语又形象；② <i>risk losing the habit of…</i> 把抽象习惯当作可失去之物；③ <i>getting there</i> 比喻"自己得出结论"。整句把"依赖 AI"的危害说得克制而有力量。</p>
+</div>
+<div class="sb">
+<p class="q">"This is not a new anxiety dressed in new clothes."</p>
+<p class="a"><b>句型：</b>主系表 + 过去分词短语作后置定语（dressed in new clothes 修饰 anxiety）。<b>逻辑：</b>用"旧酒新瓶"把当下焦虑和历史焦虑勾连，立刻降调、显深度。<b>表达：</b><i>dressed in new clothes</i> 是英语固定比喻，比 simply repeated 更有文采。模仿：<i>This is not a new idea dressed in new clothes.</i></p>
+</div>
+<div class="sb">
+<p class="q">"The difference now is scale and intimacy."</p>
+<p class="a"><b>句型：</b>极简等值句（A is B），主语和表语都是抽象名词。<b>逻辑：</b>用两个词精准点出"这次不一样在哪"，承上启下。<b>表达：</b>媒体写作常用这种"名词对名词"的短句制造节奏感与权威感。模仿：<i>The problem is trust and timing.</i></p>
+</div>
+<div class="sb">
+<p class="q">"Outsource that work often enough, and the mental muscle atrophies."</p>
+<p class="a"><b>句型：</b>祈使句 + and + 陈述句（= If you…, then…）。<b>逻辑：</b>把"频繁外包"这个动作直接推导到"脑肌萎缩"的后果，因果紧凑。<b>表达：</b>① <i>mental muscle</i> 把思维比作肌肉；② <i>atrophies</i>（萎缩）比 weakens 更精准、更犀利。这是论证金句，值得背诵。</p>
+</div>
+<div class="sb">
+<p class="q">"The readers who thrive in this new landscape will be the ones who treat AI as a reading companion, not a replacement for reading."</p>
+<p class="a"><b>句型：</b>主语带 who 定语从句 + 系动词 + the ones who 定语从句；结尾 <i>not a replacement</i> 与 companion 形成平行对照。<b>逻辑：</b>定义"哪种读者会赢"，并给出核心姿态（伙伴而非替代）。<b>表达：</b>① <i>landscape</i> 喻环境；② <i>treat X as A, not B</i> 是表态金句式结构，可用于任何"工具观"论述。</p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>文章指出，互联网阅读过去二十年遵循"搜索→点链接→自己读"的节奏，而新一代 AI 工具正把"读"这件事替用户做了——贴进去就出摘要。表面是效率进步，但隐性代价是：当我们总先拿到结论，自己"读通、想通"的习惯会退化；阅读本是一种思考训练，外包得多了，"脑肌"会萎缩。作者还提醒，这并非全新焦虑（苏格拉底就担心书写削弱记忆），但 AI 的规模和"拟对话"的亲密感让它更特殊。对语言学习者，陷阱更尖：跳过难点，也就跳过了词汇和句法真正扎根的地方。</p>
+<p><b>背后文化现象：</b>① "摘要经济"崛起——注意力稀缺时代，所有人都在追逐完读率，写作被迫变短变平；② 媒介塑造思维——当我们被训练成"只读摘要的人"，就会奖励"容易被摘要的内容"，形成循环；③ 工具观之争：AI 是"阅读伙伴"还是"阅读替代"，决定我们是更会读，还是更不会读。</p>
+<p><b>值得思考的问题：</b>当"读"越来越被外包，什么才算是"我真正读懂了"？对你这种正在做每日英文阅读、想把英语能力"长在自己身上"的人，AI 摘要该放在流程的哪一步——读前导航，还是读后校验，还是干脆不用？</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that AI summaries can weaken our reading "muscle" if we rely on them too much. Do you agree? In your own learning, have you found AI helpful or harmful for building real reading skill? Write about 200 words sharing your view and one concrete habit you'll keep or change.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I partly agree, but I think the danger depends on <i>when</i> we use the tool. For me, AI summaries are genuinely helpful as a <b>map</b>: before tackling a 1,000-word article, a short summary tells me whether it's worth the deep dive and what to watch for. That saves time without replacing the reading itself. The harm shows up only when I let the summary <i>stand in for</i> the article—skimming three bullet points and calling it "done." I've caught myself doing exactly that, and I notice the vocabulary doesn't stick when I skip the struggle.
+      So the habit I'll keep is using AI <b>after</b> a first full read, to check my understanding, not before it. The habit I'll change is reaching for a translator the moment a sentence feels hard; instead I'll sit with it for two minutes first. Reading is supposed to be a little uncomfortable—that friction is where the learning lives. A tool that removes all of it also removes the point.
+    </div>
+<div class="tip">✍️ 写法提示：用 I partly agree / The harm shows up only when… 这类"限定立场"的句式，比全盘同意/反对更像母语者议论；结尾用 So the habit I'll keep / change… 自然落到"具体行动"，扣住题目要求。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题将按 40/25/20/15 轮换</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-07-29',title:"The Quiet Revolution in How We Read"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

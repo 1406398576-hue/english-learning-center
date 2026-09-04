@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-27</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px;  margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Quiet Archivists: How Ordinary People Keep Their Cities' Memories Alive</h1>
+<p class="sub">当本地报纸消失、连锁店把街道抹平成同一个样子，「记录一座城」的活儿，正落回普通人手里——他们不是专家，却是一座街区最后的档案员。</p>
+<div class="meta">
+<span>📅 <b>2026-08-27</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">今天回到你点名最高权重、也最贴合你本业的<b>人类与社会桶（40%）</b>。我们之前聊过第三空间(08-04)、偶遇之夜(08-13)、审美平权(08-07)、通话退场(08-21)——今天换一个切面：<b>普通人如何成为自己城市的「档案员」</b>。当本地新闻机构退场、城市被连锁与算法抹平成「可互换」，记录「具体」这件事，反而落到了没领工资、没名气的普通人头上。这条线和你「城市观察者」公众号是同一条命门：系统不再服务于「具体」时，普通人就悄悄成了它的守护者。对你做内容更是直接的母题弹药——<b>在量产、免费、被安排的世界里，一个愿意停下、画下一段阶梯、说「这里曾存在过」的人声，本身就是最稀缺的资产</b>。</p>
+<div class="tip">💡 读前小思考：你住的城市里，有没有一个「只有老居民记得、地图上没有」的角落？如果有天它被拆了，谁会替它留下证据？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>A man in his sixties walks the same eight blocks every Sunday with a folding stool and a sketchbook. He draws the corner bakery before it becomes a vape shop, the stained stairwell where the light falls just so, the bench where old men play chess until dusk. He posts each drawing online, tagged with the street name and the date. He is not famous. No one pays him. But when the city announces it will demolish the block, his sketches — made over fifteen years — are the only record anyone has of what stood there, the only things <span class="hl">keeping its memory alive</span>.</p>
+<p>He is not alone. Across the world, a quiet army of amateurs has taken up the work that professionals abandoned: urban sketchers, neighborhood bloggers, the people who know which doorbell rings off-key and which tree lost its branch in the storm. They are becoming the unofficial archivists of their own cities — keepers of details no one else is paid to notice.</p>
+<p>Why now? Two forces converged. The first is a disappearance from above. Since 2004, the United States has lost roughly 2,900 newspapers, <span class="hl">according to the UNC Hussman School's Local News Initiative</span>; in their place rose <span class="hl">"ghost newspapers"</span> that print little original reporting. Abroad, local weeklies fold month after month. The reporters who once knew the mayor's nickname and the bakery's rent — the steady chroniclers of the everyday — have been replaced by national feeds that <span class="hl">treat every city as interchangeable</span>. When the memory-keepers leave, the memory thins.</p>
+<p>The second force is a disappearance from within. The physical city is being flattened. We have said this before: the same chains, the same glass boxes, the same corners staged for the camera. When every place begins to look like every other, the specific grows precious. Yet the quiet grief of a particular staircase or a particular vendor is something no algorithm will ever serve you — because no one has yet found a way to monetize it.</p>
+<p>And so people do it themselves. The Urban Sketchers movement, founded in 2007 by the journalist Gabriel Campanario, now spans more than 300 cities; members draw on location and publish in the open. Hyperlocal blogs — one street, one housing estate — <span class="hl">outlast</span> the outlets that ignored them. In dense, fast-rebuilding cities, young "city walkers" map the older neighborhoods the master plans forgot. None of this is professional. All of it is evidence. Each post is small, unglamorous, and impossible to scale — and that, oddly, is what makes it trustworthy.</p>
+<p>Consider the teenager in a fast-growing city who has filmed every bus route in his district, not for clout but because the routes keep changing and no official map keeps up. Or the retired nurse who photographs the same park bench where she ate lunch for thirty years, now slated for a parking lot. Neither calls herself an archivist. They are simply the last ones paying rent on a memory no institution renews. Their work is uneven, sometimes dull, and often forgotten by next spring — but it exists, which is more than can be said for the silence that replaces it.</p>
+<p>What these archivists offer is not mere nostalgia. It is a kind of citizenship. The philosopher Henri Lefebvre wrote of <span class="hl">"the right to the city"</span> — the claim that residents, not planners, should decide what a place means. To document a block is to insist that it matters; <span class="hl">to know a place by heart</span> is to refuse the role of a tourist in your own life. Where the third place (Oldenburg, 1989) is vanishing, these people are building a new one out of pure attention.</p>
+<p>Not everyone is convinced. Critics point out that amateur archives are uneven, easily forgotten, and biased toward <span class="hl">the picturesque</span>. A sketch cannot file a zoning appeal. And those who document are rarely those most at risk — the tenants, the undocumented, the people a city would rather not see. A charming drawing of a gentrified block can itself become <span class="hl">a tool of erasure</span>, a postcard handed to the very developers who displaced its subjects.</p>
+<p>Still, there is a quiet lesson for anyone who makes things. The usual panic about local life runs one way: that the feed flattens us, that chains standardize the street, that machines summarize the news before we read it. These quiet archivists are the counterexample. In a world optimized for scale, the person who stops to draw one staircase — who says <span class="hl">this matters and I was here</span> — is doing the most subversive available thing: <span class="hl">paying attention on purpose</span>. They will never <span class="hl">scale</span>. That is exactly the point.</p>
+<p>For you, this is familiar ground. You watch cities for a living. The same thread runs through everything we have read: the third place (08-04), the vanishing unplanned evening (08-13), the aesthetic flattening (08-07), the slow fade of the phone call (08-21). The pattern is consistent — when systems stop serving the specific, ordinary people quietly become its keepers. Your 城市观察者 is not a niche hobby. It is, increasingly, the only thing standing between a place and its disappearance.</p>
+</article>
+</section>
+<!-- 10:00–13:00 · Key Expressions -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">keep (something) alive</span><button aria-label="收藏表达" class="expr-fav" data-en="keep (something) alive" data-example="…the only things keeping its memory alive. （本文 / Daily English Reading · 2026-08-27）" data-scene='使用场景：keep a memory / a tradition / a story alive 表示"使其不被时间吞掉"；比 remember 更具"主动守护"的意味。' data-zh="让（记忆 / 事物）延续下去、不被遗忘" type="button">☆</button></span><span class="zh">让（记忆 / 事物）延续下去、不被遗忘</span>
+<span class="sc">使用场景：keep a memory / a tradition / a story alive 表示"使其不被时间吞掉"；比 remember 更具"主动守护"的意味。</span>
+<span class="ex">…the only things keeping its memory alive. （本文 / Daily English Reading · 2026-08-27）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a ghost newspaper</span><button aria-label="收藏表达" class="expr-fav" data-en="a ghost newspaper" data-example='…in their place rose "ghost newspapers" that print little original reporting. （本文 / Daily English Reading · 2026-08-27）—— 出处：UNC Hussman School, "News Deserts" / Local News Initiative' data-scene='使用场景：媒体/学术语，指纸还在、采编已空壳的地方媒体；由 UNC Hussman「Local News Initiative」的 "ghost newspaper" 概念而来。' data-zh="「幽灵报纸」（仍在出版却几乎没有原创地方报道的报纸）" type="button">☆</button></span><span class="zh">「幽灵报纸」（仍在出版却几乎没有原创地方报道的报纸）</span>
+<span class="sc">使用场景：媒体/学术语，指纸还在、采编已空壳的地方媒体；由 UNC Hussman「Local News Initiative」的 "ghost newspaper" 概念而来。</span>
+<span class="ex">…in their place rose "ghost newspapers" that print little original reporting. （本文 / Daily English Reading · 2026-08-27）—— 出处：UNC Hussman School, "News Deserts" / Local News Initiative</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">treat (someone / something) as interchangeable</span><button aria-label="收藏表达" class="expr-fav" data-en="treat (someone / something) as interchangeable" data-example="…national feeds that treat every city as interchangeable. （本文 / Daily English Reading · 2026-08-27）" data-scene="使用场景：表示抹除独特性、当作可替换的零件；本文指全国媒体把每座城市当成同一个模子。" data-zh="把…视为可互换 / 无差别的" type="button">☆</button></span><span class="zh">把…视为可互换 / 无差别的</span>
+<span class="sc">使用场景：表示抹除独特性、当作可替换的零件；本文指全国媒体把每座城市当成同一个模子。</span>
+<span class="ex">…national feeds that treat every city as interchangeable. （本文 / Daily English Reading · 2026-08-27）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">outlast</span><button aria-label="收藏表达" class="expr-fav" data-en="outlast" data-example="Hyperlocal blogs … outlast the outlets that ignored them. （本文 / Daily English Reading · 2026-08-27）" data-scene='使用场景：outlast + 名词，指"存在得比…久"，强调韧性与时间长度；outlive 的近义但更书面。' data-zh="比…更持久 / 撑过、活过" type="button">☆</button></span><span class="zh">比…更持久 / 撑过、活过</span>
+<span class="sc">使用场景：outlast + 名词，指"存在得比…久"，强调韧性与时间长度；outlive 的近义但更书面。</span>
+<span class="ex">Hyperlocal blogs … outlast the outlets that ignored them. （本文 / Daily English Reading · 2026-08-27）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the right to the city</span><button aria-label="收藏表达" class="expr-fav" data-en="the right to the city" data-example='The philosopher Henri Lefebvre wrote of "the right to the city"… （本文 / Daily English Reading · 2026-08-27）—— 出处：Henri Lefebvre, "Le Droit à la ville", 1968' data-scene='使用场景：城市研究、社会运动高频概念，指向"对空间的使用权与定义权"；学术强词。' data-zh="「城市权」（居民而非规划者，应决定一个地方意义何在）" type="button">☆</button></span><span class="zh">「城市权」（居民而非规划者，应决定一个地方意义何在）</span>
+<span class="sc">使用场景：城市研究、社会运动高频概念，指向"对空间的使用权与定义权"；学术强词。</span>
+<span class="ex">The philosopher Henri Lefebvre wrote of "the right to the city"… （本文 / Daily English Reading · 2026-08-27）—— 出处：Henri Lefebvre, "Le Droit à la ville", 1968</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">know a place by heart</span><button aria-label="收藏表达" class="expr-fav" data-en="know a place by heart" data-example="…to know a place by heart is to refuse the role of a tourist in your own life. （本文 / Daily English Reading · 2026-08-27）" data-scene='使用场景：know something by heart 本指"背得滚瓜烂熟"，搭配 a place 时强调"用身体和记忆记住"，而非地图导航。' data-zh="对某地了如指掌 / 烂熟于心" type="button">☆</button></span><span class="zh">对某地了如指掌 / 烂熟于心</span>
+<span class="sc">使用场景：know something by heart 本指"背得滚瓜烂熟"，搭配 a place 时强调"用身体和记忆记住"，而非地图导航。</span>
+<span class="ex">…to know a place by heart is to refuse the role of a tourist in your own life. （本文 / Daily English Reading · 2026-08-27）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the picturesque</span><button aria-label="收藏表达" class="expr-fav" data-en="the picturesque" data-example="Critics point out that amateur archives are uneven, easily forgotten, and biased toward the picturesque. （本文 / Daily English Reading · 2026-08-27）" data-scene='使用场景：作名词指"美观、适合入画"的特质，常带"流于表面、回避真实"的批评色彩；本文指业余记录偏好好看的画面。' data-zh="「如画般的」/ 好看却往往浅层的（事物）" type="button">☆</button></span><span class="zh">「如画般的」/ 好看却往往浅层的（事物）</span>
+<span class="sc">使用场景：作名词指"美观、适合入画"的特质，常带"流于表面、回避真实"的批评色彩；本文指业余记录偏好好看的画面。</span>
+<span class="ex">Critics point out that amateur archives are uneven, easily forgotten, and biased toward the picturesque. （本文 / Daily English Reading · 2026-08-27）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a tool of erasure</span><button aria-label="收藏表达" class="expr-fav" data-en="a tool of erasure" data-example="A charming drawing of a gentrified block can itself become a tool of erasure… （本文 / Daily English Reading · 2026-08-27）" data-scene='使用场景：erasure 指"抹除、被遗忘"，常与社会不公、记忆消失搭配；a tool of erasure 强调某物反而助长遗忘。' data-zh="「擦除的工具」（让某些人/事从历史或叙事中被抹去）" type="button">☆</button></span><span class="zh">「擦除的工具」（让某些人/事从历史或叙事中被抹去）</span>
+<span class="sc">使用场景：erasure 指"抹除、被遗忘"，常与社会不公、记忆消失搭配；a tool of erasure 强调某物反而助长遗忘。</span>
+<span class="ex">A charming drawing of a gentrified block can itself become a tool of erasure… （本文 / Daily English Reading · 2026-08-27）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">pay attention on purpose</span><button aria-label="收藏表达" class="expr-fav" data-en="pay attention on purpose" data-example="…is doing the most subversive available thing: paying attention on purpose. （本文 / Daily English Reading · 2026-08-27）" data-scene='使用场景：on purpose 强调"主动、有意"，与被动刷到的注意力相对；本文把"刻意关注"升格为一种抵抗。' data-zh="刻意地关注 / 用心留意" type="button">☆</button></span><span class="zh">刻意地关注 / 用心留意</span>
+<span class="sc">使用场景：on purpose 强调"主动、有意"，与被动刷到的注意力相对；本文把"刻意关注"升格为一种抵抗。</span>
+<span class="ex">…is doing the most subversive available thing: paying attention on purpose. （本文 / Daily English Reading · 2026-08-27）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">scale (as a verb)</span><button aria-label="收藏表达" class="expr-fav" data-en="scale (as a verb)" data-example="They will never scale. That is exactly the point. （本文 / Daily English Reading · 2026-08-27）" data-scene='使用场景：科技/商业高频，动词 "to scale" 指"被复制放大"；本文反用——"无法规模化"恰恰是其价值。' data-zh="规模化 / 扩大（到更大范围）" type="button">☆</button></span><span class="zh">规模化 / 扩大（到更大范围）</span>
+<span class="sc">使用场景：科技/商业高频，动词 "to scale" 指"被复制放大"；本文反用——"无法规模化"恰恰是其价值。</span>
+<span class="ex">They will never scale. That is exactly the point. （本文 / Daily English Reading · 2026-08-27）</span></span>
+</section>
+<!-- 10:00–13:00 · Urban & Memory Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Urban &amp; Memory Vocabulary · 城市与记忆词表</h2><span class="time-tag">⏱ 10:00–13:00 词表</span></div>
+<div class="vocab">
+<div class="v"><b>a news desert</b><span>新闻荒漠（本地新闻覆盖彻底缺失的地区）。例："The county became a news desert after its only paper closed in 2019."（《The Guardian》式地方新闻报道）</span></div>
+<div class="v"><b>local character</b><span>地方风貌 / 本土特色。例："The redevelopment stripped the neighborhood of its local character."（Bloomberg CityLab 式城市报道）</span></div>
+<div class="v"><b>gentrification</b><span>绅士化 / 士绅化（旧区高档化导致原住民被挤出）。例："Gentrification pushed longtime tenants out of the historic district."（《The New York Times》式城市报道）</span></div>
+<div class="v"><b>place attachment</b><span>地方依恋（人对场所的情感联结）。例："Place attachment is what makes a resident fight to save a park."（《The Atlantic》式社会心理报道）</span></div>
+<div class="v"><b>the lived experience</b><span>切身体验 / 真实生活经验。例："Policy too often ignores the lived experience of the people it affects."（《The Atlantic》式评论）</span></div>
+<div class="v"><b>a sense of place</b><span>场所感 / 在地感（一个空间带给人的归属感）。例："The mural gave the square a strong sense of place."（Curbed 式设计/城市报道）</span></div>
+<div class="v"><b>to be priced out</b><span>因涨价被迫搬离 / 被价格挤出。例："Families were priced out as rents doubled in a year."（BBC 式民生报道）</span></div>
+<div class="v"><b>the built environment</b><span>建成环境（人造的物理空间与设施）。例："The built environment shapes how we meet and gather."（《The Economist》式报道）</span></div>
+<div class="v"><b>a vanishing point</b><span>渐逝之物 / 正在消失的东西。例："Independent bookshops are a vanishing point of city life."（《The New Yorker》式文化观察）</span></div>
+<div class="v"><b>to displace</b><span>displace sb（迫使迁移 / 取代）。例："The project displaced hundreds of longtime residents."（《Reuters》式报道）</span></div>
+</div>
+</section>
+<!-- 10:00–13:00 · 句子拆解 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"But when the city announces it will demolish the block, his sketches — made over fifteen years — are the only record anyone has of what stood there, the only things keeping its memory alive."</p>
+<p class="a"><b>句型：</b>when 时间状语从句 + 主句（主语 sketches + 破折号插入分词定语 made over fifteen years + 系表 are the only record… + 同位 the only things keeping…）。<b>逻辑：</b>用"拆楼"的危机反衬普通人记录的价值，把"十五年的随手画"升格为"唯一的证据"。<b>表达：</b><b>the only record anyone has of what stood there</b> 用嵌套从句写"没人再有别的记录"，强调稀缺；<b>keeping its memory alive</b> 把"留存记忆"写成主动动作，呼应全文"档案员"母题。</p>
+</div>
+<div class="sb">
+<p class="q">"Since 2004, the United States has lost roughly 2,900 newspapers, according to the UNC Hussman School's Local News Initiative; in their place rose 'ghost newspapers' that print little original reporting."</p>
+<p class="a"><b>句型：</b>since 时间状语 + 主句（has lost）+ according to 信息来源插入 + 分号后倒装句 in their place rose X（正常语序为 ghost newspapers rose）+ that 定语从句。<b>逻辑：</b>先给硬数据，再用倒装"rose"把"幽灵报纸"顶上来，形成"旧者死、空壳生"的对照。<b>表达：</b><b>according to</b> 引出权威来源增强可信度；<b>in their place</b> 是"取而代之"的优雅说法；倒装让"幽灵报纸"成为视觉重点。</p>
+</div>
+<div class="sb">
+<p class="q">"Yet the quiet grief of a particular staircase or a particular vendor is something no algorithm will ever serve you — because no one has yet found a way to monetize it."</p>
+<p class="a"><b>句型：</b>主语（含 of 双重后置）+ is something（后接定语从句 no algorithm will ever serve you）+ 破折号因果从句。<b>逻辑：</b>点出"具体的悲伤"为何不被算法投喂——因为它没法变现，反证"不可 monetize = 最珍贵"。<b>表达：</b><b>the quiet grief of a particular X</b> 把抽象的"消失"具象为"一段阶梯、一个小贩"的哀伤；<b>serve you</b>（把内容递到你面前）是算法语境的常见比喻；<b>monetize</b> 点破平台逻辑。</p>
+</div>
+<div class="sb">
+<p class="q">"To document a block is to insist that it matters; to know a place by heart is to refuse the role of a tourist in your own life."</p>
+<p class="a"><b>句型：</b>两个平行结构 To do A is to do B；后半句嵌套 refuse the role of…。<b>逻辑：</b>用对仗把"记录"与"熟记"同时定义为一种"公民姿态"——拒绝在自己的人生里当游客。<b>表达：</b><b>X is to Y</b> 是定义式高级句式，干脆有力；<b>refuse the role of a tourist in your own life</b> 反差强烈（在自己生活里却是游客），把"在地感"写得锋利。</p>
+</div>
+<div class="sb">
+<p class="q">"In a world optimized for scale, the person who stops to draw one staircase — who says this matters and I was here — is doing the most subversive available thing: paying attention on purpose."</p>
+<p class="a"><b>句型：</b>介词短语 in a world optimized for scale 作背景 + 主语 the person（含 who 从句 + 破折号插入 who says…）+ is doing the most… thing + 同位 paying attention on purpose。<b>逻辑：</b>把"画一段阶梯"放进"一切求规模化"的世界里，凸显其"逆向的颠覆性"。<b>表达：</b><b>optimized for scale</b> 精准概括平台/连锁逻辑；<b>the most subversive available thing</b> 把"留意"拔高为最激进的抵抗；<b>paying attention on purpose</b> 收束全篇命题。</p>
+</div>
+</section>
+<!-- 13:00–15:00 · 中文总结 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 13:00–15:00 复盘</span></div>
+<p style="margin:0 0 10px;"><b>核心内容：</b>文章从一个具体画面切入：一位六旬老人每个周日带着折叠凳和速写本，画下自家八个街区的角落——面包房、斑驳楼梯、下棋的老人。当街区面临拆迁，他十五年累积的速写成了"唯一记录、唯一让记忆<b>延续下去（keep alive）</b>的东西"。作者指出，这不是个例：全世界的城市速写者、社区博主、熟悉每扇门铃的人，正在取代退场的专业人士，成为自己城市的"非官方档案员"。原因有二：其一，机构退场——自 2004 年起美国关停约 2,900 家报纸（UNC Hussman「Local News Initiative」数据），取而代之的是几乎没有原创报道的<b>"幽灵报纸（ghost newspaper）"</b>，全国媒体把每座城市<b>视为可互换（treat as interchangeable）</b>；其二，物理城市被抹平，连便利店都长一个样。于是普通人自己动手：2007 年由记者 Gabriel Campanario 发起的 Urban Sketchers 已覆盖 300+ 城市，社区博客比忽视它们的媒体更<b>持久（outlast）</b>。作者引用列斐伏尔（Lefebvre, 1968）的<b>"城市权（the right to the city）"</b>与 Oldenburg 的第三空间，指出这是一种"公民姿态"；但也提醒：业余记录偏好<b>如画（the picturesque）</b>、易忘、且往往忽略最弱势者，甚至可能成为<b>抹除的工具（a tool of erasure）</b>。结尾升华：在一个求<b>规模化（scale）</b>的世界，停下画一段阶梯、"说这里重要、我曾在此"、<b>刻意关注（pay attention on purpose）</b>，本身就是最颠覆的事。</p>
+<p style="margin:0 0 10px;"><b>背后文化现象：</b>这是「系统不再服务于具体，普通人便成为其守护者」母题的最新切面，和你此前的线索完全咬合——第三空间(08-04)、偶遇之夜(08-13)、审美平权(08-07)、通话退场(08-21)。一条清晰的线：当机构、算法、连锁把"具体"抹平，愿意停下并记录"这里曾存在过"的人声，反而最稀缺、最值钱。和你「城市观察者」公众号的母题几乎重合：<b>在量产、免费、被安排的世界里，一个带缺点、需到场、不可被复制的记录者，恰恰是最破圈的资产</b>。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 当"记录"不再由记者、而由普通人完成，记忆的<b>真实性</b>和<b>偏向性</b>谁来负责——那些画下来的人，往往不是最该被看见的人。② 技术越能替我们"总结"新闻、规划街道，"停下多看一眼"越成为稀缺能力；所谓怀旧，可能不是矫情，而是<b>对"被安排人生"的抵抗</b>。③ 对你「城市观察者」来说，这直接是一篇可落地的清醒观点文母题：你的账号不是小众爱好，而是<b>一座城与它消失之间的最后一道防线</b>；可接计划中的 013《无意义时间》——能"不被安排、只是看着"的时间，本身就是一种记录。</p>
+</section>
+<!-- 13:00–15:00 · 口语 -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语</h2><span class="time-tag">⏱ 13:00–15:00 开口</span></div>
+<div class="prompt">🗣️ Discussion question（请用英文回答，约 200 词）：<br/>Ordinary people, not professionals, are becoming the archivists of their own cities. Do you think this is a beautiful grassroots revival of memory — or a sign that we've abandoned the duty to remember properly? Describe one small, "unremarkable" thing in your own city that you'd hate to see disappear, and say whether you'd bother to document it, or just let it go.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词 · 可直接仿写/改造）</span>
+      I'd call it a revival with a warning. The little thing I'd hate to lose is the wet-market near my apartment — not the goods, but the noise: the vendor who remembers my face, the woman who always overfills the bag. No newspaper covers it; an algorithm will never serve it, because no one has found a way to monetize a greeting. If it vanished, the city would look cleaner and mean nothing. Would I document it? Honestly, I'd mean to, then scroll past — which is exactly the problem the article names. The archivists win because they refuse to scroll; they pay attention on purpose. I admire that, but I know I'm the tourist in my own life more often than not. Still, I think the duty isn't only the state's. When systems stop serving the specific, the rest of us have to keep the memory alive ourselves, even badly. A shaky photo is better than a vanished block. So maybe the lesson isn't "be a professional" — it's "be present enough to notice." That's the only thing standing between a place and its disappearance, and it costs nothing but attention.
+    </div>
+<div class="tip">💡 练习提示：先用自己的话答一遍（计时 2 分钟，不停顿），再对照范文挑 3 个想偷师的词组（如 a revival with a warning / pay attention on purpose / the tourist in my own life），造自己的句子。</div>
+</section>
+<footer>Daily English Reading · 2026-08-27 · 人类与社会 · 由 Milo 为你挑选 🐾</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-27',title:"The Quiet Archivists: How Ordinary People Keep Their Cities' Memories Alive"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

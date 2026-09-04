@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Doorman Who Told the Same Joke Every Day</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="topic-banner">
+<h2>The Doorman Who Told the Same Joke Every Day</h2>
+<div class="zh">那个每天都讲同一个笑话的门卫大叔</div>
+<div class="en">"After twelve years, I realized he wasn't really telling me a joke. He was telling me he remembered me."</div>
+<div class="meta">
+<span>📅 Day 37 · 2026-09-03</span>
+<span>🎯 B1–B2</span>
+<span>🏷 People &amp; Society</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>Mr. Gao had been the doorman of my building for as long as I could remember. Twelve years, probably. He wore the same blue uniform every day, and he greeted every resident with the same three sentences: "Good morning. Cold one today, isn't it? Hey, did you hear the one about the chicken?"</p>
+<p>The joke was always the same. A chicken walks into a library, orders a book, the librarian whispers "quiet please," and the chicken says "book, book, book." Mr. Gao told it like it was brand new. He laughed every single time, eyes crinkling above his face mask. Most of us had heard it a hundred times. Most of us laughed anyway.</p>
+<p>I moved into the building during my first job in the city. I was twenty-three, lonely, and terrified. Mr. Gao was the first person who spoke to me like I belonged there. "You must be the new one on the seventh floor," he said that first morning. "Cold one today, isn't it? Hey, did you hear the one about the chicken?" I laughed so hard I almost dropped my coffee.</p>
+<p>Twelve years later, I had a different job, a wife, and a daughter in kindergarten. I still heard the joke every morning. I had stopped really listening to it. It was background, like the elevator music. Something you stepped past.</p>
+<p>Then last winter, Mr. Gao didn't show up for three days. No note. No explanation. The lobby felt strange without him. People walked in faster. They looked at their phones more. Nobody said good morning to anyone.</p>
+<p>On the fourth day, the building manager told us he had had a mild stroke. He was in the hospital. He would be okay, but he wouldn't be coming back to the lobby.</p>
+<p>I went to visit him the following Saturday. He was smaller in the hospital bed, and his laugh was quieter, but the first thing he said to me was: "Cold one today, isn't it? Hey, did you hear the one about the chicken?"</p>
+<p>I cried in the hallway afterward. Not because I would miss the joke. I would miss the fact that for twelve years, a man in a blue uniform had made sure I knew I was seen.</p>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">as long as I could remember</div><button aria-label="收藏表达" class="expr-fav" data-en="as long as I could remember" data-example="Mr. Gao had been our doorman as long as I could remember — twelve years, probably. 高大叔做我们门卫，在我记忆里一直都在——大概十二年。" data-zh="在我的记忆里一直（都是这样）。" type="button">☆</button></div>
+<div class="zh-expr">在我的记忆里一直（都是这样）。</div>
+<div class="example">
+        Mr. Gao had been our doorman as long as I could remember — twelve years, probably.
+        <span class="zh-trans">高大叔做我们门卫，在我记忆里一直都在——大概十二年。</span>
+</div>
+<div class="note">回忆旧事的常用开场。比 "for a very long time" 更有人情味，暗示“那件事好像从来都在”。讲个人故事时非常好用。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">It was background.</div><button aria-label="收藏表达" class="expr-fav" data-en="It was background." data-example="At first I noticed every new notification. After a few months, it was just background. 起初每一条新通知我都会注意。几个月后，它就变成了背景。" data-zh="它已经成了背景/不再被注意。" type="button">☆</button></div>
+<div class="zh-expr">它已经成了背景/不再被注意。</div>
+<div class="example">
+        After a while, the joke became background — something I stepped past every day.
+        <span class="zh-trans">过了一段时间，那个笑话变成了背景——每天被我跳过的东西。</span>
+</div>
+<div class="note">"background" 这里作名词，表示“背景音/不再被聚焦的事物”。可以用来形容习惯、声音、甚至某段关系——曾经鲜活，后来麻木。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">He made sure I knew I was seen.</div><button aria-label="收藏表达" class="expr-fav" data-en="He made sure I knew I was seen." data-example="She didn't try to fix my problems. She just made sure I knew I was seen. 她没想解决我的问题。她只是让我知道我被看见了。" data-zh="他让我知道我被看见了。" type="button">☆</button></div>
+<div class="zh-expr">他让我知道我被看见了。</div>
+<div class="example">
+        She didn't try to fix my problems. She just made sure I knew I was seen.
+        <span class="zh-trans">她没想解决我的问题。她只是让我知道我被看见了。</span>
+</div>
+<div class="note">"to be seen" 在这里是一种情感需求——“被看见、被记住、被认出”。心理咨询和亲密关系里高频表达，非常适合用来描述安静的关怀。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">He laughed every single time.</div><button aria-label="收藏表达" class="expr-fav" data-en="He laughed every single time." data-example="He told the same joke at every family dinner and laughed every single time. 每次家宴他都讲同一个笑话，每次都自己笑。" data-zh="他每次都笑。" type="button">☆</button></div>
+<div class="zh-expr">他每次都笑。</div>
+<div class="example">
+        He told the same joke at every family dinner and laughed every single time.
+        <span class="zh-trans">每次家宴他都讲同一个笑话，每次都自己笑。</span>
+</div>
+<div class="note">"every single time" 比 "every time" 语气更强，强调“每一次，毫无例外”。口语里加 single 是常见的强调小技巧。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">Nobody said good morning to anyone.</div><button aria-label="收藏表达" class="expr-fav" data-en="Nobody said good morning to anyone." data-example="When the receptionist left, nobody said good morning to anyone for weeks. 前台离职后，连续几周没人跟任何人打招呼。" data-zh="没人跟任何人打招呼。" type="button">☆</button></div>
+<div class="zh-expr">没人跟任何人打招呼。</div>
+<div class="example">
+        When the receptionist left, nobody said good morning to anyone for weeks.
+        <span class="zh-trans">前台离职后，连续几周没人跟任何人打招呼。</span>
+</div>
+<div class="note">双重否定（nobody + anyone）制造一种集体失语的氛围。常用来描写一个人离开后，原本由他维系的小社群氛围突然消失。</div>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">— Saturday afternoon, in the hospital corridor outside Mr. Gao's room. I'm calling my wife, Anna —</div>
+<div class="conv-line">
+<span class="speaker you">Me:</span>
+<span class="en">Hey. I'm outside his room. I just... I need a minute.</span>
+<span class="zh">嗨。我在他病房外面。我只是……我需要缓一下。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Anna:</span>
+<span class="en">Are you okay? You sound weird.</span>
+<span class="zh">你还好吗？听起来怪怪的。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Me:</span>
+<span class="en">(quiet) Yeah, I'm okay. It's just — you know that joke he tells every morning? The chicken one?</span>
+<span class="zh">(轻声)嗯，我没事。就是——你记得他每天早上讲的那个笑话吗？鸡那个？</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Anna:</span>
+<span class="en">(laughing) Oh my god. The library one? "Book, book, book"? I have heard that joke probably a hundred times from you.</span>
+<span class="zh">(笑)天哪。图书馆那个？“Book, book, book”？我大概听你复述过一百次了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Me:</span>
+<span class="en">Right. So I walk in, and he looks smaller, right? Like, the bed is swallowing him. And the first thing he says is — Anna, the first thing he says is that joke. Same words. Same laugh. Eyes all crinkled up. Like nothing happened.</span>
+<span class="zh">对。然后我走进去，他看起来小了一圈，懂吗？感觉床都要把他吞了。他说的第一句话是——Anna，他说的第一句话就是那个笑话。一模一样的词。一模一样的笑。眼睛都皱起来。好像什么都没发生。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Anna:</span>
+<span class="en">(pause) Wow. That's... I mean, that's kind of beautiful, isn't it?</span>
+<span class="zh">(停顿)哇。那……我是说，那其实挺美的，对吧？</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Me:</span>
+<span class="en">I didn't think it was beautiful. I thought it was sad. Because I had been hearing that joke every morning for twelve years, and I had stopped... I don't know, hearing it. And I didn't tell him that.</span>
+<span class="zh">我没觉得美。我觉得难过。因为那个笑话我每天早上听，听了十二年，我已经不再……我不知道，已经不再听进去了。但我从来没跟他说过这件事。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Anna:</span>
+<span class="en">You couldn't have known. Nobody goes to a doorman and says "thank you for your morning joke." That's not a thing people do.</span>
+<span class="zh">你也不可能知道。没人会跑去跟一个门卫说“谢谢你每天早上的笑话”。没人会这么做。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Me:</span>
+<span class="en">I know. I know. But I cried in the hallway just now. Like, ugly cried. And a nurse probably thinks I'm crazy.</span>
+<span class="zh">我知道。我知道。但我刚才在走廊哭了。就是，哭得很难看。护士大概觉得我疯了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Anna:</span>
+<span class="en">(softly) You should go back in. Tell him you'll come next Saturday. Bring something. He probably misses his lobby more than he misses anything.</span>
+<span class="zh">(轻声)你应该再进去一下。告诉他你下周六还会来。带点东西。他大概比什么都想念他的门厅。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Me:</span>
+<span class="en">(sniffing) Yeah. Yeah, okay. I'll bring him one of those little cakes from the bakery downstairs. The ones he always said were too sweet.</span>
+<span class="zh">(吸鼻子)嗯。嗯，好。我带一份楼下面包店的那种小蛋糕。他老说那个太甜。</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the story 复述故事 (60 seconds)</div>
+<div class="task-prompt">用你自己的话，复述 Mr. Gao 和那个每天早上同一个笑话的故事。提示句：<br/><em>"So there's this doorman named Mr. Gao who..."</em></div>
+<ul class="samples">
+<li>So there's this doorman named Mr. Gao who worked in my building for twelve years. Every morning, he greeted every resident with the same joke — a chicken walks into a library, orders a book, and says "book, book, book." He laughed every single time, even though we had all heard it a hundred times. Then one winter, he had a stroke. I went to visit him in the hospital, and the first thing he said was that joke again. I cried afterward. Not because I'd miss the joke, but because he'd made sure, every single morning, that I knew I was seen.
+          <span class="zh">有个叫高大叔的门卫，在我家这栋楼做了十二年。每天早上，他都用同一个笑话跟每个住户打招呼——一只鸡走进图书馆，点了一本书，然后说"book, book, book"。他每次都笑，虽然我们都听过一百遍了。后来那年冬天，他中风了。我去医院看他，他说的第一句话又是那个笑话。我后来哭了。不是因为我会想念那个笑话，而是因为他十二年来每天早上都让我知道我被看见了。</span>
+</li>
+<li>It's a story about a doorman and the same joke. Mr. Gao told it every morning for twelve years — a chicken in a library, "book, book, book." I moved in when I was twenty-three and lonely, and his joke was the first thing that made me feel like I belonged there. Over time, the joke became background. I stopped really hearing it. Then he got sick, and suddenly the lobby felt empty. Nobody said good morning. When I visited him in the hospital, he said the joke again. I cried in the hallway.
+          <span class="zh">这是一个关于门卫和同一个笑话的故事。高大叔讲了十二年——一只鸡走进图书馆，"book, book, book"。我二十三岁搬进来，那会儿又孤独又害怕，是他的笑话让我第一次觉得自己属于这里。后来，笑话变成了背景。我不再真正去听。然后他生病了，门厅突然空了。没人说早上好。我去医院看他，他又讲了那个笑话。我在走廊哭了。</span>
+</li>
+<li>The story is about Mr. Gao, the doorman of my building. For twelve years, he opened every morning with the same joke — a chicken in a library, "book, book, book." Most of us laughed out of politeness. Last winter, he had a stroke and stopped showing up. The lobby got quieter, lonelier. I visited him in the hospital, and he told me the joke again, same words, same laugh. I realized I had been hearing a man say "I see you" every morning for twelve years, and I had never said it back.
+          <span class="zh">故事讲的是我家楼里的高大叔。十二年来，他每天早上都用同一个笑话开场——一只鸡走进图书馆，"book, book, book"。我们大多数人出于礼貌在笑。去年冬天，他中风了，不再来了。门厅变得安静又孤独。我去医院看他，他又讲了一遍那个笑话，同样的词，同样的笑。我意识到十二年来，每天早上都有一个男人在对我说"我看见你了"，而我从来没回应过。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Share your opinion 表达观点</div>
+<div class="task-prompt">Do you think small daily rituals — like saying hello to a doorman, a neighbor, a barista — actually matter? Have you ever taken one of those people for granted and then realized too late? Use at least 3 sentences.</div>
+<ul class="samples">
+<li>Honestly, yes, I think they matter more than we admit. A daily hello is a tiny check-in — it says "you exist, I noticed." When those rituals disappear, you notice the absence. I think most of us have someone like Mr. Gao in our lives, and most of us don't say thank you until something goes wrong.
+          <span class="zh">老实讲，是的。我觉得它们比我们承认的更重要。一句日常的问候是一种小小的确认——它在说"你存在，我注意到了"。当这些仪式消失，你会感觉到空缺。我觉得我们大多数人生命里都有个"高大叔"，而大多数人都是等到出事了才说谢谢。</span>
+</li>
+<li>I used to think small rituals were just politeness, but they're more like... anchors. They tie you to a place and to the people around you. When I moved apartments last year, I realized I missed the doorman more than the apartment itself. He didn't know me well, but he knew my face. That was enough.
+          <span class="zh">我以前觉得小仪式只是礼貌，但其实它们更像是……锚。它们把你系在一个地方和周围的人身上。去年我搬家的时候，我意识到我想念门卫的程度超过想念公寓本身。他不算了解我，但他认得我的脸。那就够了。</span>
+</li>
+<li>I think it's easy to take these people for granted. They're part of the scenery. The barista who knows your order, the security guard who nods at you — they're doing emotional labor we don't pay for. And we rarely notice until they're gone. I'd like to be better at noticing before it's too late.
+          <span class="zh">我觉得很容易把这些人当成理所当然。他们成了风景的一部分。那个记得你点单的咖啡师，那个跟你点头的保安——他们做的是我们不付费的情感劳动。我们很少注意到，直到他们不在了。我想在还来得及的时候学会多注意一些。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Role-play a real situation 模拟真实场景</div>
+<div class="task-prompt">You are visiting an older relative or neighbor in the hospital who has been there for two weeks. They keep asking when they can go home, and you don't know what to say. Have the conversation with them.</div>
+<ul class="samples">
+<li>Hey, Auntie Lin. How are you feeling today? Any better? I brought you those tangerines you like. The nurses say you're eating more, that's good. Look, I know you miss home. I miss you being there too. But the doctors just want to make sure you're strong enough. Let's not rush it, okay? We'll take it one day at a time.
+          <span class="zh">嘿，林姨。今天感觉怎么样？好一点了吗？我给你带了你喜欢的那种橘子。护士说你吃得多了，这是好事。听着，我知道你想家。我也想你回来。但医生只是想确保你身体够结实。我们不着急，好不好？我们一天一天来。</span>
+</li>
+<li>I hear you. I know you're bored. I know you want to go home. I'm not going to pretend it's fun here. But can I be honest with you? When I saw you last week, you were tired just from sitting up. So if the doctors say one more week, I'd really like you to give it that week. For me, if not for them.
+          <span class="zh">我懂。我知道这里无聊。我知道你想回家。我不会假装这里舒服。但我能跟你说实话吗？上周我来看你的时候，你光是坐起来就累了。所以如果医生说再待一周，我真的希望你能给我这一周。如果不是为了他们，就当是为了我。</span>
+</li>
+<li>You keep asking when, and I keep saying "soon," and I know that's not enough. Look, I've been talking to the nurses every day. You're doing better — your numbers are better than last week. I think we're getting closer. But I don't want to promise you a date and then have to take it back. So let's just say: soon. Real soon.
+          <span class="zh">你一直在问什么时候，我一直在说"快了"，我知道这不够。听着，我每天都在跟护士聊。你在好转——你的指标比上周好。我觉得我们越来越近了。但我不想给你承诺一个日期，然后又得收回。所以我们就这么说：快了。真的快了。</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">doorman</span><span class="ipa">/ˈdɔːrmæn/</span>
+<div class="meaning">n. 门卫；看门人</div>
+<div class="sample">Mr. Gao had been our doorman for twelve years — every morning, the same blue uniform.
+          <span class="zh-trans">高大叔做我们的门卫十二年了——每天早上，同一件蓝制服。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">greet</span><span class="ipa">/ɡriːt/</span>
+<div class="meaning">v. 打招呼；迎接</div>
+<div class="sample">He greeted every resident with the same three sentences.
+          <span class="zh-trans">他用同样的三句话跟每个住户打招呼。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">crinkle</span><span class="ipa">/ˈkrɪŋkəl/</span>
+<div class="meaning">v. （眼睛）眯起来笑；（纸）起皱</div>
+<div class="sample">His eyes were crinkling above his face mask when he laughed.
+          <span class="zh-trans">他笑的时候，眼睛在口罩上方眯起来。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">stroke</span><span class="ipa">/stroʊk/</span>
+<div class="meaning">n. 中风；（一笔/一划）</div>
+<div class="sample">The building manager told us he had had a mild stroke.
+          <span class="zh-trans">物业经理告诉我们他轻度中风了。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">swallow</span><span class="ipa">/ˈswɒloʊ/</span>
+<div class="meaning">v. 吞下；吞没；咽下（话）</div>
+<div class="sample">He looked smaller, like the hospital bed was swallowing him.
+          <span class="zh-trans">他看起来小了一圈，好像病床要把他吞掉。</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Speaking Practice · Day 37 · 2026-09-03 · Built for your English muscle memory.
+  </div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-09-03',title:"The Doorman Who Told the Same Joke Every Day"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

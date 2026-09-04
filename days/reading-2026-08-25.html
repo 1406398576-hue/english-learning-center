@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-25</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:24px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:21px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Coffeehouse: How a Bitter Brew Built the Modern Public Sphere</h1>
+<p class="sub">「一杯苦咖啡」怎么成了现代公共生活的起点？从 1652 年伦敦第一家咖啡馆，到今天被连锁与算法点单重塑的"第三空间"——商业史里，藏着城市如何学会"坐下来聊"的故事。</p>
+<div class="meta">
+<span>📅 <b>2026-08-25</b></span>
+<span>🎯 主题桶：<b>商业与历史 (15%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">你常去的咖啡馆，是"遇到陌生人的地方"，还是"一个人抱着电脑的安静办公室"？今天切到久违的<b>商业与历史桶</b>（之前只出过 2 次，是四桶里最弱的一块）。我们聊一家"最不性感、却最深刻地改变了城市"的生意——咖啡馆。它表面卖饮料，实际卖的是<b>一个让人坐下来、和陌生人聊天的房间</b>。从 1652 年伦敦第一家咖啡馆，到劳合社(Lloyd's)保险市场、证券交易所、日报的诞生，再到今天被连锁标准化、被 Wi-Fi 改造成"单人工位"——这条线正好接上你之前的母题：第三空间消失(08-04)、偶遇之夜消失(08-13)、零点击互联网(08-18)。商业史告诉我们：<span class="hl">一个为"不被安排的人声"而建的角落，如何被效率悄悄 optimized 掉了</span>。</p>
+<div class="tip">💡 读前小思考：你城市里还有没有一家"不为办事、只为待着"的店？上一次在那里和陌生人说话，是什么时候？</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 原文阅读</h2><span class="time-tag">⏱ 正文</span></div>
+<article class="read">
+<p>Walk into almost any coffeehouse in a big city today and you will see the same scene: a row of people alone with laptops, headphones in, each guarding a small table like it were a desk. It is quiet in the way an office is quiet. Yet this room was not built to be an office. The coffeehouse is one of the oldest <span class="hl">"third places"</span> in the modern city — a spot that is neither home nor work — and for most of its four-century history it was loud, crowded, and gloriously public. To sit in one was to be in the company of strangers, and that was the whole point. Nobody booked the table. Nobody came for a meeting. They came because the room itself promised something a home could not: other people, unplanned. The modern customer, head down and plugged in, would have baffled the regulars of 1652, who went precisely to be interrupted.</p>
+<p>The story begins in 1652, when a man named Pasqua Rosée opened what is often called London's first coffeehouse. Coffee itself was a strange new import, a <span class="hl">bitter brew</span> from the East that Europeans did not quite trust. At first it was sold more as medicine than pleasure — a curious dark liquid said to cure everything from headaches to laziness. But the room around it did something novel: for the price of a penny, anyone could buy not only a cup but the right to sit, talk, and read the newspapers of the day. Regulars nicknamed these places <span class="hl">"penny universities,"</span> because the education was cheaper than Oxford and far more conversational. The diarist Samuel Pepys complained that he wasted too much time in them — which is perhaps the highest praise a new institution can earn.</p>
+<p>What made the coffeehouse a business revolution was not the drink but the room. Merchants used it as an office without walls; ship owners insured their cargo over the rim of a cup, and one such place — Lloyd's — grew into a global insurance market. News, rumor, and money changed hands in the same breath, and a deal struck at one table might move the price of pepper in another port by morning. In a very real sense, the coffeehouse <span class="hl">spawned industries</span>: modern insurance, the stock exchange, and the daily press were all, in part, children of the café. A beverage became an economy almost by accident, and the café became the original open-plan workplace — three centuries before the phrase existed.</p>
+<p>It also became a kind of <span class="hl">social leveller</span>. In an age when class was worn on your clothes, the coffeehouse asked only that you pay your penny; inside, a sailor might argue shipping with a merchant, and a writer debate policy with a clerk. The drink helped: coffee was a <span class="hl">sober</span> alternative to ale, and a sober room is one where strangers can disagree without a fight. The philosopher Jürgen Habermas later called such spaces the <span class="hl">"public sphere"</span> — the arena where private people reasoned together about public life, beyond the reach of crown or church. For a few hours each day, the hierarchy outside the door was left outside.</p>
+<p>Coffeehouses were also, quietly, engines of unrest. Because they mixed news with caffeine and strangers with opinions, they became the nurseries of revolutions. In the American colonies, the taverns and coffeehouses where men read aloud from banned newspapers helped tip a tea tax into a tea party. Governments understood the danger: more than one ruler tried to shut the houses down, fearing a room where ordinary people read and talked. The <span class="hl">commodity</span> itself traveled a long, unequal chain — grown on plantations, shipped by empire, poured in the metropole — a reminder that the cozy café has always rested on a global economy it rarely names.</p>
+<p>The twentieth century <span class="hl">standardized</span> the ritual. Chains turned the local café into a predictable, interchangeable unit: same logo, same playlist, same cup in any city. For travelers this was a comfort; for cities it was a kind of <span class="hl">flattening</span>. The independent coffeehouse — small, odd, rooted in a single street — became a deliberate act of resistance, a place that refused to be anywhere and everywhere at once. Yet even the independents now mostly sell a table and Wi-Fi, not a <span class="hl">commons</span>. The rebellion, it turns out, is easy to franchise. A city of identical cafés is, in the end, a city that has stopped surprising itself.</p>
+<p>Which brings us back to that quiet row of laptops. A space invented for <span class="hl">unmediated human voice</span> has been optimized, almost without argument, into a solo workstation. We kept the coffee and lost the conversation. The history of the coffeehouse is a small mirror of a larger shift: we are very good at scaling a habit and faintly bad at keeping what the habit was for. The strangers are still there. We just stopped talking to them — and called the silence productivity. Maybe the fix is smaller than we think: leave the laptop at home once, and notice who is sitting next to you.</p>
+</article>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 积累</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">brew</span><button aria-label="收藏表达" class="expr-fav" data-en="brew" data-example='"Coffee was a strange new import, a bitter brew from the East."（咖啡是种新奇的舶来品，一杯来自东方的苦酿。）—— 出自本文 / Daily English Reading · 2026-08-25' data-scene='使用场景：指冲好的一杯饮品，或比喻某种"调出来的东西"。' data-zh='（名词）一杯（咖啡/茶）；引申"混合物、产物"' type="button">☆</button></span><span class="zh">（名词）一杯（咖啡/茶）；引申"混合物、产物"</span><span class="sc">使用场景：指冲好的一杯饮品，或比喻某种"调出来的东西"。</span><span class="ex">"Coffee was a strange new import, a bitter brew from the East."（咖啡是种新奇的舶来品，一杯来自东方的苦酿。）—— 出自本文 / Daily English Reading · 2026-08-25</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">spawn (something)</span><button aria-label="收藏表达" class="expr-fav" data-en="spawn (something)" data-example='"The coffeehouse spawned industries: insurance, the stock exchange, the press."（咖啡馆催生了一众产业。）—— 出自本文' data-scene="使用场景：形容一个事物引发出一连串其他事物（常指产业、想法、问题）。" data-zh="催生 / 衍生出 / 使…大量产生" type="button">☆</button></span><span class="zh">催生 / 衍生出 / 使…大量产生</span><span class="sc">使用场景：形容一个事物引发出一连串其他事物（常指产业、想法、问题）。</span><span class="ex">"The coffeehouse spawned industries: insurance, the stock exchange, the press."（咖啡馆催生了一众产业。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a penny university</span><button aria-label="收藏表达" class="expr-fav" data-en="a penny university" data-example="&quot;Regulars nicknamed these places 'penny universities.'&quot;（常客把这些地方戏称为&quot;一便士大学&quot;。）—— 17 世纪伦敦俗语，出自本文" data-scene="使用场景：戏称花很少钱就能获得大量谈资与见识的地方。" data-zh='"一便士大学"（指极廉价的知识场所）' type="button">☆</button></span><span class="zh">"一便士大学"（指极廉价的知识场所）</span><span class="sc">使用场景：戏称花很少钱就能获得大量谈资与见识的地方。</span><span class="ex">"Regulars nicknamed these places 'penny universities.'"（常客把这些地方戏称为"一便士大学"。）—— 17 世纪伦敦俗语，出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a social leveller</span><button aria-label="收藏表达" class="expr-fav" data-en="a social leveller" data-example='"It also became a kind of social leveller."（它也成了某种社会平衡器。）—— 出自本文' data-scene="使用场景：形容让不同阶层的人被放到平等位置的空间或制度。" data-zh='"社会平衡器"（拉平阶级差距的事物）' type="button">☆</button></span><span class="zh">"社会平衡器"（拉平阶级差距的事物）</span><span class="sc">使用场景：形容让不同阶层的人被放到平等位置的空间或制度。</span><span class="ex">"It also became a kind of social leveller."（它也成了某种社会平衡器。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">sober</span><button aria-label="收藏表达" class="expr-fav" data-en="sober" data-example='"Coffee was a sober alternative to ale."（咖啡是啤酒之外一个"清醒"的替代。）—— 出自本文' data-scene='使用场景：本义"未醉酒的"，引申形容环境或判断不被情绪/酒精干扰。' data-zh="清醒的（引申：不失真、不醉、冷静的）" type="button">☆</button></span><span class="zh">清醒的（引申：不失真、不醉、冷静的）</span><span class="sc">使用场景：本义"未醉酒的"，引申形容环境或判断不被情绪/酒精干扰。</span><span class="ex">"Coffee was a sober alternative to ale."（咖啡是啤酒之外一个"清醒"的替代。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the public sphere</span><button aria-label="收藏表达" class="expr-fav" data-en="the public sphere" data-example="&quot;Habermas called such spaces the 'public sphere.'&quot;（哈贝马斯称这类空间为&quot;公共领域&quot;。）—— J. Habermas, The Structural Transformation of the Public Sphere (1962)；本文引用" data-scene="使用场景：政治/社会学概念，指介于私人生活与国家权力之间的讨论场。" data-zh="公共领域（公民理性讨论公共事务的空间）" type="button">☆</button></span><span class="zh">公共领域（公民理性讨论公共事务的空间）</span><span class="sc">使用场景：政治/社会学概念，指介于私人生活与国家权力之间的讨论场。</span><span class="ex">"Habermas called such spaces the 'public sphere.'"（哈贝马斯称这类空间为"公共领域"。）—— J. Habermas, <i>The Structural Transformation of the Public Sphere</i> (1962)；本文引用</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">commodity</span><button aria-label="收藏表达" class="expr-fav" data-en="commodity" data-example='"The commodity itself traveled a long, unequal chain."（这种商品本身走过了漫长而不平等的链条。）—— 出自本文' data-scene="使用场景：经济语境，指被买卖、常无差别化的原料或货品。" data-zh="商品（尤指可大规模交易的大宗货）" type="button">☆</button></span><span class="zh">商品（尤指可大规模交易的大宗货）</span><span class="sc">使用场景：经济语境，指被买卖、常无差别化的原料或货品。</span><span class="ex">"The commodity itself traveled a long, unequal chain."（这种商品本身走过了漫长而不平等的链条。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">standardize</span><button aria-label="收藏表达" class="expr-fav" data-en="standardize" data-example='"The twentieth century standardized the ritual."（二十世纪把这套仪式标准化了。）—— 出自本文' data-scene="使用场景：形容把原本各异的东西变成一致、可复制的版本。" data-zh="使标准化 / 统一规范" type="button">☆</button></span><span class="zh">使标准化 / 统一规范</span><span class="sc">使用场景：形容把原本各异的东西变成一致、可复制的版本。</span><span class="ex">"The twentieth century standardized the ritual."（二十世纪把这套仪式标准化了。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">flatten</span><button aria-label="收藏表达" class="expr-fav" data-en="flatten" data-example='"For cities it was a kind of flattening."（对城市而言，这是一种抹平。）—— 出自本文' data-scene="使用场景：比喻把多样、本地化的东西变得千篇一律。" data-zh="抹平 / 同质化（使失去差异）" type="button">☆</button></span><span class="zh">抹平 / 同质化（使失去差异）</span><span class="sc">使用场景：比喻把多样、本地化的东西变得千篇一律。</span><span class="ex">"For cities it was a kind of flattening."（对城市而言，这是一种抹平。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the commons</span><button aria-label="收藏表达" class="expr-fav" data-en="the commons" data-example='"They mostly sell a table and Wi-Fi, not a commons."（他们卖的多半是一张桌子和 Wi-Fi，而不是一块公地。）—— 出自本文' data-scene="使用场景：指不属于某个人、供集体使用的空间或资源。" data-zh="公共空间 / 公地（大家共享、非私有的资源）" type="button">☆</button></span><span class="zh">公共空间 / 公地（大家共享、非私有的资源）</span><span class="sc">使用场景：指不属于某个人、供集体使用的空间或资源。</span><span class="ex">"They mostly sell a table and Wi-Fi, not a commons."（他们卖的多半是一张桌子和 Wi-Fi，而不是一块公地。）—— 出自本文</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Business &amp; History Vocabulary · 商业与社会</h2><span class="time-tag">⏱ 拓展</span></div>
+<div class="vocab">
+<div class="v"><b>coffeehouse</b><span>咖啡馆（历史上指供人久坐、读报、谈天的公共房，而非今天的"单人工位"）。"Lloyd's began as a coffeehouse." — 真实史实</span></div>
+<div class="v"><b>commodity</b><span>大宗商品 / 可交易货品；咖啡自 17 世纪起便是全球 commodity。"Coffee became a global commodity." — 出自本文</span></div>
+<div class="v"><b>franchise</b><span>特许经营 / 连锁加盟；连锁咖啡扩张的主要方式。"The brand grew through franchises." — 商业报道常用</span></div>
+<div class="v"><b>the high street</b><span>（英）城镇中心商业主街 / 零售区；独立小店常在此消失。"Shops on the high street are vanishing." — 英媒常用</span></div>
+<div class="v"><b>footfall</b><span>实体店客流量；零售业核心指标。"Footfall dropped after the chain opened." — 零售行业用语</span></div>
+<div class="v"><b>artisanal</b><span>手工的 / 匠人的（常以"小规模、非工业化"自居）。"an artisanal roaster" — 出自本文风</span></div>
+<div class="v"><b>monoculture</b><span>单一文化 / 同质化；一条街全是同款店即是一种 monoculture。— 城市研究</span></div>
+<div class="v"><b>the third place</b><span>「第三空间」：家(第一)与工作(第二)之外的社交去处，咖啡馆是典型。— Oldenburg 1989</span></div>
+<div class="v"><b>gentrification</b><span>绅士化 / 中产化：社区被改造、原住民与老店被挤出。— 社科常用</span></div>
+<div class="v"><b>ledger</b><span>账本（引申：清晰的记录）；早期保险就在咖啡馆 ledger 上记账。— 真实史实</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 拆解</span></div>
+<div class="sb"><div class="q">"Walk into almost any coffeehouse in a big city today and you will see the same scene..."</div><div class="a"><b>句型：</b>祈使句 + and + 将来时（= If you walk..., you will...）。<b>逻辑：</b>用"走进任意一家"制造普遍画面，引出反差前提。<b>可学：</b>"Walk into any ___ and you will see..." 是极好的人物/场景特写开头。</div></div>
+<div class="sb"><div class="q">"What made the coffeehouse a business revolution was not the drink but the room."</div><div class="a"><b>句型：</b>What 引导的主语从句 + was not X but Y。<b>逻辑：</b>用"不是…而是…"把论点聚焦到"房间/空间"而非产品，点题。<b>可学：</b>was not A but B 让立场锋利，适合议论文。</div></div>
+<div class="sb"><div class="q">"In a very real sense, the coffeehouse spawned industries: modern insurance, the stock exchange, and the daily press were all, in part, children of the café."</div><div class="a"><b>句型：</b>介词短语 + 主句；冒号后列举作同位语；children of 为隐喻。<b>逻辑：</b>把抽象"衍生"人格化为"孩子"，强调咖啡馆是这些产业的"母体"。<b>可学：</b>___ were children of ___ 是高级隐喻框架。</div></div>
+<div class="sb"><div class="q">"The philosopher Jürgen Habermas later called such spaces the 'public sphere' — the arena where private people reasoned together about public life..."</div><div class="a"><b>句型：</b>主语 + called + 宾语 + 宾补；破折号后 where 定语从句作同位解释。<b>逻辑：</b>引用权威概念给现象"命名"，提升论述厚度。<b>可学：</b>called X the "___" — the arena where... 适合在文中嵌入术语。</div></div>
+<div class="sb"><div class="q">"A space invented for unmediated human voice has been optimized, almost without argument, into a solo workstation."</div><div class="a"><b>句型：</b>过去分词短语(invented for...)作主语定语 + 现在完成时被动 + into 结果补语。<b>逻辑：</b>对比"为不被中介的人声而建"与"被优化成单人工位"，收束全文张力。<b>可学：</b>A space invented for ___ has been optimized into ___ 是"初衷 vs 现状"的利器句式。</div></div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 复盘</span></div>
+<p class="sum" style="margin:0 0 10px;"><b>核心内容：</b>文章从今天咖啡馆里"一排抱着电脑的独行者"切入，指出这个房间从不是被设计成办公室的。它追溯回 1652 年伦敦第一家咖啡馆：欧洲人起初并不信任这种来自东方的"苦酿"，但花一便士就能久坐、读报、攀谈的模式，让常客戏称其为"一便士大学"。真正的商业革命不在饮料，而在"房间"——商人在此办公、船主在杯沿旁给货物投保（劳合社由此长成全球保险市场），新闻、流言与金钱在同一口气里交换；咖啡馆"催生"了保险、证券交易所和日报。它也是社会平衡器（咖啡是啤酒之外"清醒"的替代，让人能不和气地争论），哈贝马斯后来称之为"公共领域"。它还是革命的温床（北美殖民地读禁报的咖啡馆，把茶税推成了"波士顿倾茶"）。</p>
+<p class="sum" style="margin:0 0 10px;"><b>背后文化现象：</b>这是"为偶遇与人声而建的公共空间"如何被"效率与连锁"收编的商业史缩影。二十世纪连锁把本地咖啡馆标准化成可互换的单位，对旅客是便利、对城市却是"抹平"；独立小店成了刻意的反抗，却也大多只卖桌子和 Wi-Fi，而非"公地"。它和你之前的母题同频：第三空间消失(08-04)、偶遇之夜消失(08-13)、零点击互联网(08-18)——一个为"不被安排、不被中介的人声"而存在的角落，总在效率叙事里被悄悄 optimized 掉。</p>
+<p class="sum" style="margin:0;"><b>值得思考的问题：</b>① 你常去的咖啡馆，是"commons"还是"单人工位"？② 当连锁把一切标准化，城市失去了哪种"具体的、不可复制的人味"？③ 今天还有没有一种生意，是专门为人"坐下来聊"而存在的——它值不值得被保护？</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 输出</span></div>
+<div class="prompt">🗣️ 讨论题：The coffeehouse began as a place to meet strangers. In your own city, is there still a "third place" where people gather without a plan — and do you use it, or do you, like most, turn it into a quiet solo office? Describe what a truly public, conversational café would look like to you. (Aim for ~200 words.)</div>
+<div class="model">
+<span class="lab">参考思路（非范文，供开口用）</span>
+      In my city there are plenty of cafés, but almost none that feel like a true third place. Most are silent rows of laptops — people come to work alone, not to meet anyone. I do the same: I pick a corner, order a coffee, and open my computer, and two hours pass without a single real conversation. A truly public, conversational café would look different. The tables would be long and shared, not small and private, so a stranger could end up beside you. There would be newspapers to read and maybe a board where people post events or questions. Music would be low enough to talk over. The point wouldn't be Wi-Fi or a perfectly made latte, but the chance of an unplanned chat — with a sailor, a writer, or just someone having a worse day than you. We've kept the coffee and lost the room's original purpose, and I think that loss is bigger than we admit.
+    </div>
+</section>
+<footer>布噜噜的英语学习笔记 · SpeakEasy · 每日阅读</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-25',title:"The Coffeehouse: How a Bitter Brew Built the Modern Public Sphere"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

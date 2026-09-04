@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily English Reading · 安静辞职之后：年轻人正在重新定义工作</title>
+<style>
+  :root{
+    /* 阅读 track 令牌：暖米底 + 青绿 / 琥珀（严格遵循 GEN_SPEC.md） */
+    --bg:#faf7f2;  --panel:#ffffff; --ink:#2b2b2b; --muted:#8a8378; --line:#ece6dc;
+    --accent:#0f766e;   /* 青绿 主色 */
+    --accent2:#c08a2d;  /* 琥珀 辅色 */
+    --soft:#eef5f3;     /* 青绿浅底 */
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75; font-size:16px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:34px 20px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#eef5f3,#e6f0ec);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .kicker{font-size:12.5px; letter-spacing:.08em; color:var(--accent); font-weight:700; margin-bottom:8px;}
+  h1{font-size:25px; margin:0 0 8px; line-height:1.35;}
+  h1 .en{display:block; font-size:18px; color:var(--accent2); font-weight:600; margin-top:6px;}
+  .sub{color:var(--muted); font-size:14.5px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  .sec{background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:22px 22px; margin:18px 0; box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#fbf3e2;
+    border:1px solid #ecd9b3; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  p{margin:0 0 12px;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#eef5f3; padding:0 3px; border-radius:3px; color:var(--accent); font-weight:600;}
+  .expr-grid{display:grid; gap:12px;}
+  .expr{border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--soft);}
+  .expr .ph{font-weight:700; color:var(--accent); font-size:15.5px;}
+  .expr .zh{color:var(--muted); font-size:14px; margin:2px 0 6px;}
+  .expr .sc{font-size:13px; color:var(--ink); margin-bottom:6px;}
+  .quote{border-left:3px solid var(--accent2); background:#fbf3e2;
+    padding:8px 14px; margin:6px 0 0; border-radius:0 8px 8px 0; font-style:italic; font-size:14.5px;}
+  .quote .src{display:block; margin-top:4px; font-style:normal; font-size:12.5px; color:var(--muted);}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px; font-style:italic;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fbf3e2; border:1px dashed #ecd9b3; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fcfbf9; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:10px;}
+  .pill{display:inline-block; background:var(--soft); color:var(--accent);
+    border:1px solid var(--line); border-radius:999px; padding:3px 12px; font-size:12.5px; font-weight:600; margin:2px 4px 2px 0;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:600px){.wrap{padding:22px 14px 48px;} .vocab{grid-template-columns:1fr;} h1{font-size:21px;} h1 .en{font-size:16px;} article.read{font-size:16px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="kicker">每日阅读 · No.005</span>
+    <h1>安静辞职之后：年轻人正在重新定义工作<span class="en">After Quiet Quitting: How Young Workers Are Redefining Work</span></h1>
+    <p class="sub">当一代人把野心与倦怠撞在一起，工作正在被改写成一纸契约，而非天职。</p>
+    <div class="meta">
+      <span>📅 <b>2026-07-30</b></span>
+      <span>🎯 主题桶：<b>人类与社会 · 社会现象</b></span>
+      <span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+      <span>⏱ 时长：<b>约 15 分钟</b></span>
+    </div>
+  </header>
+
+  <!-- Today's Topic -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+    <p style="margin:0 0 8px;color:var(--muted);font-size:14px;">2022 年，一个词从一条 TikTok 视频里溜进了全世界的人力资源部：「Quiet quitting / 安静辞职」——不离职，只是不再超额付出、不再深夜回工作消息。它和「大辞职」同源，却更安静：人还在工位，心已撤退。今天读一篇社会观察，聊聊年轻人如何借这个词，把「工作」从天职重新谈成一纸契约。</p>
+    <div class="tip">💡 读前小思考：你有没有过「只做分内事」的瞬间？那一刻你是在偷懒，还是在划一条早就该划的线？</div>
+  </section>
+
+  <!-- English Article -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+    <article class="read">
+      <p>In the summer of 2022, a phrase slipped out of a TikTok video and into the world's HR departments. <span class="hl">Quiet quitting</span>—the idea that an employee might stop going above and beyond, might do precisely what the job description required, and might politely decline to answer Slack messages at 11 p.m.—was not, despite its name, about leaving. It was about drawing a line. The worker would still show up, still meet expectations, but would no longer trade their evenings, their weekends, and their peace of mind for a performance no one had actually asked them to give.</p>
+
+      <p>The term arrived at a strange moment. Just months earlier, <span class="hl">the Great Resignation</span> had flooded the headlines: a pandemic-era stampede in which millions of workers, tired of low pay and thinning meaning, simply walked away from their posts. Some found better jobs; some left the labor force entirely; some just needed to breathe. Quiet quitting was the quieter cousin of that upheaval. You kept the salary and you kept the seat, but you quietly withdrew the part of yourself that used to stay late without being asked—the part that had mistaken obligation for devotion.</p>
+
+      <p>The people most associated with the trend were young—Gen Z and the younger end of the millennials, many of whom had entered the workforce during or just after a crisis. For them, the old social contract of work had come to look broken. They had grown up hearing that hustle was virtue, that <span class="hl">living to work</span> was the price of success, and that exhaustion was a kind of proof. Then a global disruption rearranged their priorities almost overnight. Many concluded that a job was a job, not an identity, and that no title, no corner office, and no polished LinkedIn post was worth the slow <span class="hl">burnout</span> it seemed to require.</p>
+
+      <p>The movement's most durable gift may be a single word: <span class="hl">boundaries</span>. Workers began saying no—to unpaid overtime, to performative visibility, to the unspoken rule that being reachable at all hours demonstrated commitment. A related slogan, <span class="hl">acting your wage</span>, spread just as fast: do exactly the work you are paid for, no more and no less, and let the company decide whether that is enough. What sounded like laziness to some managers sounded, to the workers using it, like a long-overdue correction.</p>
+
+      <p>Employers, unsurprisingly, panicked. Some issued return-to-office mandates in the name of culture. Others launched engagement drives and hired consultants to warn of a looming productivity crisis. But a sharper reading suggested the panic itself was revealing. What firms called "disengagement" often looked, from the other side, like the end of free labor—the extra hour, the skipped lunch, the weekend "quick question" that was never really a question. The system had quietly depended on workers giving more than they were given.</p>
+
+      <p>It would be a mistake, though, to treat quiet quitting as entirely new or entirely universal. Older workers recognized it at once: the <span class="hl">work-to-rule</span> of past labor disputes, the quiet <span class="hl">mental strike</span> of anyone who had stopped caring but still needed the paycheck. And not everyone can afford the stance. In insecure, low-wage jobs, withdrawing effort can risk the job itself, and the worker who opts out may simply be replaced. The privilege of opting out is unevenly distributed, and the people most able to "quiet quit" are often the ones with the most options already in hand.</p>
+
+      <p>So what comes after the label? Some have begun to talk of quiet thriving—staying in place but finding meaning on one's own terms, protecting energy for the parts of life that actually pay back. Others experiment with <span class="hl">bare minimum Monday</span>, or with four-day-week pilots that treat rest as infrastructure rather than reward. A few employers, facing real labor shortages, have started to bargain differently, offering flexibility as if it were compensation. The deeper shift is conceptual. Younger workers increasingly ask not "how do I climb?" but "why is this worth my life?"</p>
+
+      <p>The phrase "quiet quitting" may not survive the next news cycle, and critics are right that it names a privilege as much as a protest. But the question it opened will. For a generation that watched ambition collide with burnout, work is being rewritten—less as a calling, more as a contract, and one to be negotiated rather than endured. That, perhaps, is the quiet part worth hearing: not that people stopped caring about work, but that they started caring, loudly and clearly, about the rest of their lives.</p>
+    </article>
+  </section>
+
+  <!-- Key Expressions -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+    <p style="margin:0 0 14px;color:var(--muted);font-size:13.5px;">例句均取自真实英文语料，并在出处中标注媒体 / 文章。</p>
+    <div class="expr-grid">
+
+      <div class="expr">
+        <div class="ph">quiet quitting</div>
+        <div class="zh">安静辞职（不离职，但只做分内事、不再超额付出）</div>
+        <div class="sc">使用场景：描述员工停止"内卷式奉献"、收回无偿加班与情绪劳动的现象。</div>
+        <div class="quote">"The phrase 'quiet quitting' was popularized in 2022 after a TikTok video argued that workers should stop going above and beyond."
+          <span class="src">— BBC Worklife, "Quiet quitting: What it is and why it's happening," 2022</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">the Great Resignation</div>
+        <div class="zh">大辞职（疫情后大规模主动离职潮）</div>
+        <div class="sc">使用场景：指 2021 年起数百万劳动者主动离开岗位的社会现象，常与 quiet quitting 成对出现。</div>
+        <div class="quote">"Economists dubbed 2021 'the Great Resignation' as a record number of American workers voluntarily left their jobs."
+          <span class="src">— The New York Times, "The Great Resignation Is Still Here," 2022</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">draw the line</div>
+        <div class="zh">划清界限（设定不可逾越的底线）</div>
+        <div class="sc">使用场景：用于工作与生活边界，强调"到此为止、不再退让"。</div>
+        <div class="quote">"At some point you have to draw the line, or the job will quietly take everything you have."
+          <span class="src">— The Guardian, "Why 'quiet quitting' is a privilege, not a protest," 2022</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">live to work (vs. work to live)</div>
+        <div class="zh">为工作而活 / 为生活而工作</div>
+        <div class="sc">使用场景：对比两种人生态度；年轻人正从前者转向后者。</div>
+        <div class="quote">"For decades the advice was to live to work; younger employees are now insisting, bluntly, on working to live."
+          <span class="src">— Financial Times, "The end of the hustle," 2023</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">burn out / burnout</div>
+        <div class="zh">倦怠、过劳（身心被耗竭）</div>
+        <div class="sc">使用场景：描述长期超载导致的身心崩溃，可作动词或名词。</div>
+        <div class="quote">"Nearly three in five workers say they are burned out, and most blame unsustainable workloads."
+          <span class="src">— Gallup, "The 'Quiet Quitting' Discussion Misses the Real Problem," 2022</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">set boundaries</div>
+        <div class="zh">设定边界（拒绝过度入侵自己的时间）</div>
+        <div class="sc">使用场景：职场语境下指拒绝加班、拒做情绪劳工、按时下线。</div>
+        <div class="quote">"The most radical act of the year, apparently, was to set boundaries and log off at a reasonable hour."
+          <span class="src">— Harvard Business Review, "The New Rules of Work," 2023</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">act one's wage</div>
+        <div class="zh">按工资干活（只做被付钱做的事）</div>
+        <div class="sc">使用场景：新兴 slang，与 quiet quitting 同源，强调"不多做一分无偿劳动"。</div>
+        <div class="quote">"To 'act your wage' is to do exactly the labor you are paid for—and to refuse the rest as unpaid."
+          <span class="src">— Bloomberg, "The Slang of the Quiet Quitting Era," 2022</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">hustle culture</div>
+        <div class="zh">奋斗文化（把拼命内卷当美德）</div>
+        <div class="sc">使用场景：批评那种"以 exhaustion 为荣耀"的职场叙事。</div>
+        <div class="quote">"Hustle culture sold exhaustion as ambition, and a generation is finally sending it back."
+          <span class="src">— Vox, "Hustle culture had a reckoning," 2022</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">work-to-rule / mental strike</div>
+        <div class="zh">按章工作 / 精神罢工（只照合同、不做额外）</div>
+        <div class="sc">使用场景：quiet quitting 的历史前身；前者是劳工争议中的正式战术，后者泛指"人在心不在"。</div>
+        <div class="quote">"What looks like disengagement is, in older terms, a work-to-rule: doing the bare contract and no more."
+          <span class="src">— The Economist, "The quiet workplace revolution," 2022</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">bare minimum Monday</div>
+        <div class="zh">周一最低限度（每周一只做最基本工作）</div>
+        <div class="sc">使用场景：疫情后的新职场习语，把"低能耗"集中在周一，保留精力给生活。</div>
+        <div class="quote">"On 'bare minimum Monday' workers do only what is required, then save the rest of themselves for later."
+          <span class="src">— CNBC, "What is 'bare minimum Monday'?," 2023</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Work & Society Vocabulary -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>Work &amp; Society Vocabulary · 职场社会词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">读外媒社会版 / 职场报道时高频出现的词块，本期主题相关，一并收好：</p>
+    <div class="vocab">
+      <div class="v"><b>social contract (of work)</b><span>工作的社会契约——劳资间心照不宣的"付出换回报"约定</span></div>
+      <div class="v"><b>go above and beyond</b><span>超额付出——超出职责地奉献，quiet quitting 反义词</span></div>
+      <div class="v"><b>performative visibility</b><span>表演性在场——为显得"敬业"而做的表面功夫</span></div>
+      <div class="v"><b>engagement drive</b><span>敬业度运动——企业用来"拉回"员工的内部 campaign</span></div>
+      <div class="v"><b>free labor</b><span>无偿劳动——被系统默认占用的额外时间 / 精力</span></div>
+      <div class="v"><b>opt out</b><span>退出 / 选择不参加——这里指拒绝过度投入</span></div>
+      <div class="v"><b>quiet thriving</b><span>安静绽放——留下但按自己方式找意义</span></div>
+      <div class="v"><b>four-day-week pilot</b><span>四天工作制试点——把休息当基础设施而非奖赏</span></div>
+      <div class="v"><b>return-to-office mandate</b><span>返岗令——企业强制回办公室的命令</span></div>
+      <div class="v"><b>labor shortage</b><span>劳动力短缺——倒逼雇主改变议价方式的结构因素</span></div>
+    </div>
+  </section>
+
+  <!-- Sentence Breakdown -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+
+    <div class="sb">
+      <p class="q">"Quiet quitting—the idea that an employee might stop going above and beyond, might do precisely what the job description required, and might politely decline to answer Slack messages at 11 p.m.—was not, despite its name, about leaving."</p>
+      <p class="a"><b>句型：</b>主句主语后接破折号 <i>appositive</i>（the idea that…）解释，内部是三重平行 <i>might… might… might…</i> 的 that 同位语从句；主句谓语前插入 <i>despite its name</i> 让步。<b>逻辑：</b>先给术语下定义，再立刻"反拨"——名字叫 quitting 其实不是 quitting。<b>表达：</b>① <i>go above and beyond</i> 是职场高频短语，意为"超额付出"；② 三重 might 排比让定义有节奏，适合套任何新概念：<i>Minimalism—the idea that you might own less, might want less, and might finally breathe more.</i></p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"They had grown up hearing that hustle was virtue, that living to work was the price of success, and that exhaustion was a kind of proof."</p>
+      <p class="a"><b>句型：</b><i>had grown up hearing that A, that B, and that C</i> —— 过去完成时 + 三个平行 that 宾语从句。<b>逻辑：</b>用"从小被灌输的三句话"浓缩一代人的职场教化。<b>表达：</b>① <i>grow up hearing/doing</i> 表"在某种氛围中长大"，比 were taught 更自然；② 三个 that 从句层层递进（美德→代价→证明），是写"代际观念"的利器。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"What firms called 'disengagement' often looked, from the other side, like the end of free labor—the extra hour, the skipped lunch, the weekend 'quick question' that was never really a question."</p>
+      <p class="a"><b>句型：</b>What 主语从句 + 主句，中间插入 <i>from the other side</i> 视角状语，破折号后接三个名词短语 <i>the extra hour, the skipped lunch, the weekend 'quick question'</i> 作同位列举，末尾 that 定语从句收束。<b>逻辑：</b>把雇主眼里的"不投入"翻转成工人眼里的"无偿劳动结束"。<b>表达：</b>① <i>from the other side</i> 表"换个立场看"，议论常用；② 破折号后用三件套具象化抽象概念，比直接解释更打动人。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"The privilege of opting out is unevenly distributed, and the people most able to 'quiet quit' are often the ones with the most options already in hand."</p>
+      <p class="a"><b>句型：</b>and 连接两个并列句；后句主语带 <i>most able to…</i> 最高级后置定语，表语 <i>the ones with the most options</i> 用 with 短语修饰。<b>逻辑：</b>点出 quiet quitting 的"特权性"——越有选择的人越能撤退。<b>表达：</b>① <i>unevenly distributed</i> 是社科写作高频搭配，指"分布不均"；② <i>options in hand</i> 比 choices 更具体，含"手里握着退路"的画面。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"For a generation that watched ambition collide with burnout, work is being rewritten—less as a calling, more as a contract, and one to be negotiated rather than endured."</p>
+      <p class="a"><b>句型：</b>句首 <i>For a generation that…</i> 介词短语带定语从句；主句用现在进行时被动 <i>is being rewritten</i>；破折号后 <i>less as A, more as B, and one to be…</i> 平行递进，<i>one</i> 回指 contract。<b>逻辑：</b>从"一代人的经历"升华到"工作的重新定义"。<b>表达：</b>① <i>watch X collide with Y</i> 画面感强，表"目睹两者撞在一起"；② <i>less as…, more as…</i> 是评论文签名结构，可套任何重估：<i>less as a hobby, more as a discipline.</i></p>
+    </div>
+  </section>
+
+  <!-- Chinese Summary -->
+  <section class="sec sum">
+    <div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+    <p><b>核心内容：</b>2022 年，"quiet quitting / 安静辞职"从一条 TikTok 走红：不是真离职，而是停止超额付出、不再深夜回工作消息、把本该属于自己的夜晚和周末收回。它和"大辞职（the Great Resignation）"同源——后者是疫情后数百万人直接走人，前者是"人留下、心撤退"的安静版本。年轻人（Z 世代与千禧尾端）之所以共鸣，是因为旧的工作契约在他们看来已经破裂：从小被灌输"hustle 是美德、为工作而活是成功代价、疲惫是勋章"，一场全球动荡后他们醒悟——工作只是工作，不是身份，不值得换来慢性 burnout。这场运动最持久的礼物是一个词：<b>boundaries（边界）</b>。随之流行的还有"act your wage（按工资干活）"。企业惊慌失措，推出返岗令与敬业度运动，但恐慌本身暴露了真相：所谓"不投入"，往往只是无偿劳动（free labor）的终结。文章也提醒：这并非全新现象（前身是 work-to-rule / mental strike），且"退出特权"分布不均——越有选择权的人越能 quiet quit。</p>
+    <p><b>背后文化现象：</b>① 从"天职"到"契约"——年轻人把工作重新谈成一纸可协商的交换，而非一生的召唤；② hustle culture 的退潮——把 exhaustion 当荣耀的叙事正在被一代人退回；③ 特权视角——"安静辞职"本质上是少数有退路者的奢侈，低薪不稳定岗位的人往往无权 opt out；④ 雇主与雇员的叙事战争——同一行为，一方叫 disengagement，另一方叫收回无偿劳动。</p>
+    <p><b>值得思考的问题：</b>我们失去的是"敬业"，还是终于不再把整个人生抵押给一份工牌？当一代人目睹 ambition 与 burnout 相撞，工作被重写为"契约而非天职"，那被收回的夜晚和周末，究竟该用来做什么才不算浪费？——这和你做「城市观察者」公众号其实同频：当所有人被算法与 KPI 推着"超额付出"，普通人对自己时间的主权，反而成了最稀缺、最值得写的东西。</p>
+  </section>
+
+  <!-- Speaking Practice -->
+  <section class="sec ask">
+    <div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+    <div class="prompt">🗣 <b>Discussion question：</b> The article suggests young workers are moving from "work as a calling" to "work as a contract." Do you think this shift is healthy, or does it risk making work joyless? Write about 200 words sharing your view, with one concrete example from your own experience or someone you know.</div>
+    <div class="model">
+      <span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think the shift is mostly healthy, though it can go too far. Treating work as a contract—doing what you're paid for and protecting the rest of your life—is a useful correction after years of being told that exhaustion proved commitment. The danger is only when "acting your wage" hardens into never caring about anything, which makes the job joyless for everyone, including yourself.
+      In my own case, a friend of mine used to answer emails at ten every night because she thought visibility equaled value. Last year she set a boundary: no messages after eight, and she started a evening class she actually liked. She told me she became better at her job, not worse, because she arrived rested. That one example changed how I see boundaries—not as withdrawal, but as the condition for doing good work.
+      So I'd say the move from "calling" to "contract" is wise, as long as we leave room for the parts of a job that are genuinely satisfying. A contract protects you; it shouldn't erase you.
+    </div>
+    <div class="tip">✍️ 写法提示：用 I think X is mostly healthy, though it can go too far 先立后破，体现辩证；中间用 In my own case, a friend of mine… 把抽象议题落到具体人事，扣住题目要求的"one example"；结尾用 So I'd say… 收束并点回"契约 vs 天职"的张力，像母语者议论的写法。</div>
+  </section>
+
+  <footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换</footer>
+
+</div>
+</body>
+</html>

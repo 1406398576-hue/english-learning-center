@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telling a Story — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 24 · 8/18 Tue</div>
+    <h2>Telling a Story</h2>
+    <div class="zh">讲故事与分享经历 · 从开场到高潮到收尾</div>
+    <div class="en">"So get this — the craziest thing happened to me this morning."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">You won't believe what happened.</span>
+        <span class="cn-meaning">你绝对想不到发生了什么</span>
+      </div>
+      <div class="scene">跟朋友闲聊时，想抛出一个劲爆故事的开场白。won't believe 制造悬念，让对方好奇"然后呢？"。比说 Let me tell you a story 自然得多——老外讲故事从来不这样开头，而是直接用这句把人拉进来。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"You guys, you won't believe what happened. I just ran into Paolo at the coffeehouse, and he asked me out to dinner!"<div class="src">— Rachel Green, Friends S01E12 / 冲进公寓告诉朋友们遇到前任</div></div>
+        <div class="quote-item">"You won't believe what happened today. The copier caught fire, Dwight tried to put it out with a fire extinguisher, and he broke the glass door."<div class="src">— Jim Halpert, The Office S02E04 / 向镜头描述办公室混乱</div></div>
+        <div class="quote-item">"Okay, you won't believe what happened. I was at the grocery store, and I ran into my old flame from high school — in the cereal aisle."<div class="src">— Phil Dunphy, Modern Family S03E14 / 一回家就兴奋地跟 Claire 讲遭遇</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">And the next thing I know...</span>
+        <span class="cn-meaning">然后下一秒我就……</span>
+      </div>
+      <div class="scene">讲故事时推进到转折或高潮的过渡句。the next thing I know = "等我反应过来的时候"，暗示事情发展很快、出乎意料。后面接一个出人意料的结果。是英语口语里最常用的叙事过渡之一，比 And then 生动得多。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"So I walk in for the audition, and the next thing I know, I'm playing a dead body on a soap opera. I had one line — well, I was dead, so zero lines."<div class="src">— Joey Tribbiani, Friends S03E12 / 向朋友讲试镜的离谱经历</div></div>
+        <div class="quote-item">"I'm sitting at my desk, minding my own business, and the next thing I know, Dwight has challenged me to a sales duel in the parking lot."<div class="src">— Jim Halpert, The Office S04E08 / 对着镜头一脸不可思议</div></div>
+        <div class="quote-item">"I'm at the bar, I have one drink, and the next thing I know, it's 4 AM and I'm on a Greyhound bus to Philadelphia. Don't ask me how."<div class="src">— Barney Stinson, How I Met Your Mother S02E14 / 讲述典型的一夜荒唐</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">To make a long story short...</span>
+        <span class="cn-meaning">长话短说……</span>
+      </div>
+      <div class="scene">当你讲了半天发现太啰嗦，或者想跳过中间细节直奔结局时用。to make a long story short 是完整版；口语里也常说 long story short。后面直接接结论或结局。注意要加冠词 a ——说 long story short 也行，但别漏掉 short。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"To make a long story short, I accidentally told my boss I loved him on a conference call, and now I'm looking for a new job."<div class="src">— Chandler Bing, Friends S04E04 / 压缩一个超长尴尬故事的结局</div></div>
+        <div class="quote-item">"Long story short, the goat got into the conference room, ate Kevin's chili, and we had to evacuate the building. It was a whole thing."<div class="src">— Jim Halpert, The Office S05E14 / 跳过混乱中间段直达结尾</div></div>
+        <div class="quote-item">"To make a long story short, we ended up at a 24-hour diner in New Jersey at 3 AM eating waffles, and that's how I met your Aunt Robin."<div class="src">— Ted Mosby, How I Met Your Mother S01E05 / 对孩子讲故事的收尾方式</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I was literally speechless.</span>
+        <span class="cn-meaning">我真的完全说不出话来</span>
+      </div>
+      <div class="scene">故事讲到高潮后，描述自己的震惊反应。literally 在口语里是加强语气——"我真真切切地"，不是比喻。speechless = 哑口无言。比说 I was very surprised 或 I have no words 更地道。也可以用 I didn't know what to say，但 literally speechless 更有画面感。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"She told me she was moving to Paris, and I was literally speechless. I just stood there with my mouth open like an idiot."<div class="src">— Ross Geller, Friends S05E24 / 听到女友突然要离开时的反应</div></div>
+        <div class="quote-item">"Michael walked in wearing a tuxedo on a Tuesday, and I was literally speechless. I mean, who does that? Who wears a tuxedo on a Tuesday?"<div class="src">— Pam Beesly, The Office S03E07 / 对着镜头描述震惊瞬间</div></div>
+        <div class="quote-item">"My dad showed up to my graduation with a mariachi band, and I was literally speechless. Everyone was staring, and I just wanted to disappear."<div class="src">— Haley Dunphy, Modern Family S06E22 / 讲述高中毕业典礼上的社死瞬间</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">It was one of those days where...</span>
+        <span class="cn-meaning">就是那种……的日子</span>
+      </div>
+      <div class="scene">讲一个"什么倒霉事都赶在一起"或"特别奇葩的一天"时的开头句式。one of those days 在英语里有固定含义——就是"诸事不顺/特别的那种日子"。where 后面接一连串发生的事，语气无奈又好笑。比说 Today was a bad day 生动得多，带着讲故事的腔调。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"It was one of those days where nothing went right. I spilled coffee on my shirt, the subway broke down, and I walked into the wrong meeting room."<div class="src">— Chandler Bing, Friends S02E08 / 一进门就开始吐槽倒霉的一天</div></div>
+        <div class="quote-item">"It was one of those days where everything just fell apart. The client canceled, my computer crashed, and Creed asked me to help him bury something. I said no."<div class="src">— Jim Halpert, The Office S04E02 / 对着镜头苦笑总结一天</div></div>
+        <div class="quote-item">"It was one of those days where you just want to go home, put on sweatpants, and pretend the world doesn't exist. So that's what I did."<div class="src">— Claire Dunphy, Modern Family S04E09 / 回家后瘫在沙发上感慨</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周二午休，Alex 和 Jamie 在公司楼下咖啡店碰面。Alex 一脸激动地坐下，Jamie 问怎么了——Alex 要讲一个今天早上发生的离谱故事。</div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">Hey, you look like you've got something to say. What's going on?</div>
+        <div class="cn">嘿，你看起来有话要说。怎么了？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Dude, you won't believe what happened this morning. So I'm walking to the bus stop, minding my own business, and I see this dog — a golden retriever — just walking down the street with a handbag in its mouth.</div>
+        <div class="cn">兄弟，你绝对想不到今天早上发生了什么。我走到公交站，好好的走着，就看见一条狗——金毛——嘴里叼着一个手提包走在街上。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">No way. A handbag? Like, a real one?</div>
+        <div class="cn">不是吧。手提包？那种真的手提包？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">A real designer handbag. And the next thing I know, this woman comes running around the corner screaming, "That's my bag!" The dog just looks at her and keeps walking.</div>
+        <div class="cn">真的名牌包。然后下一秒，一个女的大喊着从街角冲过来："那是我的包！"那狗就看了她一眼，继续走。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">Okay, you're making this up.</div>
+        <div class="cn">行吧，你编的。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">I swear! To make a long story short, the woman chased the dog for two blocks, I tried to help, and we both ended up in a fountain. I was literally speechless. Just standing there, soaking wet, holding a wet designer bag.</div>
+        <div class="cn">我发誓！长话短说，那女的追了狗两个街区，我想帮忙，结果俩人都掉进了喷泉里。我真的完全说不出话。就站在那儿，浑身湿透，拎着一个湿透的名牌包。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">That is insane. So what happened to the dog?</div>
+        <div class="cn">太离谱了。那狗呢？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Oh, the dog was totally fine. He dropped the bag, shook off the water, and just trotted away like nothing happened. It was one of those days where you just can't make this stuff up.</div>
+        <div class="cn">哦，那条狗完全没事。它扔下包，甩了甩水，就跟没事人一样溜达走了。就是那种你编都编不出来的日子。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">I need to see security footage. You're buying coffee today — that story was worth it.</div>
+        <div class="cn">我得看看监控录像。今天咖啡你请——这故事值了。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">A friend asks "How was your weekend?" Tell them about something unexpected that happened, using "You won't believe what happened" to open.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"You won't believe what happened. I went to the farmer's market on Saturday, and I ran into my middle school teacher. She actually remembered my name — and my essay about dolphins."</div>
+      <div class="sample-answer"><strong>B：</strong>"You won't believe what happened. I ordered food delivery, and the driver turned out to be my college roommate. We haven't seen each other in five years. He just stood there holding my noodles."</div>
+      <div class="sample-answer"><strong>C：</strong>"You won't believe what happened. I was at the park and a kid walked up to me and just handed me a goldfish in a bag. No explanation. I now own a fish."</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">Describe a funny or embarrassing moment using story transitions: "So then I…" and "And the next thing I know…"</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"So I'm at the gym, on the treadmill, and I'm trying to change the song on my phone. And the next thing I know, I've stepped off the edge and face-planted in front of like ten people. Someone actually clapped."</div>
+      <div class="sample-answer"><strong>B：</strong>"So I walk into what I think is my friend's birthday party, and I start saying hi to everyone. And the next thing I know, the host asks me who I am — it's a completely different party. I was literally speechless."</div>
+      <div class="sample-answer"><strong>C：</strong>"So I'm at a job interview, and I call the interviewer by the wrong name — twice. And the next thing I know, she just stares at me and says, 'Maybe this isn't the right fit.' I wanted to disappear."</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">Share a story about a time things went wrong but turned out fine. Use "To make a long story short…" to wrap it up.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"My flight got canceled, my hotel lost the reservation, and it started pouring rain. To make a long story short, I ended up at this tiny local inn, had the best meal of my life, and made a new friend who showed me around the next day."</div>
+      <div class="sample-answer"><strong>B：</strong>"I accidentally sent an email complaining about my boss to my boss. To make a long story short, we had a really honest conversation, she actually agreed with some of my points, and things got way better after that."</div>
+      <div class="sample-answer"><strong>C：</strong>"We got completely lost hiking, our phones died, and it started getting dark. To make a long story short, a local farmer found us, drove us back to town on his tractor, and we made it home in time for dinner. Best tractor ride ever."</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Let me tell you a story.</div>
+      <div class="right">✅ You won't believe what happened. / So get this…</div>
+      <div class="why">老外讲故事几乎从不说 Let me tell you a story——太正式、像念书。自然的开场是直接抛悬念：You won't believe what happened 或 So get this（"你听我说"），把对方好奇心勾起来。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ And then... and then... and then...</div>
+      <div class="right">✅ So then I... / And the next thing I know...</div>
+      <div class="why">一直重复 and then 听起来像小学生写作文。用 So then I 过渡到下一个动作，用 And the next thing I know 制造转折感。叙事节奏自然了，故事才好听。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ I have no words. / I can't say anything.</div>
+      <div class="right">✅ I was literally speechless. / I didn't know what to say.</div>
+      <div class="why">I have no words 太书面，口语里几乎不用来形容"震惊"。I was literally speechless 是最自然的说法——literally 加强语气，speechless 有画面感。也可以说 I didn't know what to say。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Long story short, / Make a long story short,</div>
+      <div class="right">✅ To make a long story short, / Long story short,</div>
+      <div class="why">完整的说法是 To make a long story short，介词 to 不能省。口语里也可以缩成 Long story short, 但别漏 short。千万别说 Make story short 或 In short——后者是总结报告的语气，不是聊天。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Today is a bad day. Let me talk about it.</div>
+      <div class="right">✅ It was one of those days where… / You won't believe the day I had.</div>
+      <div class="why">Today is a bad day 太直白，像写日记。讲故事时用 It was one of those days where… 开头，带着"你猜怎么着"的语气，比直接报结论更吸引人。老外聊天讲故事是社交核心技能，开场方式决定对方爱不爱听。</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

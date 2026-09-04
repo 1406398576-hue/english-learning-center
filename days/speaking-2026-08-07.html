@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | 2026-08-07 · 看医生</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e7e1d8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .kicker {
+    font-size: 12.5px; letter-spacing: .08em; color: var(--accent);
+    font-weight: 700; text-align: center; margin-bottom: 6px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .header .sub { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f7;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin: 4px 0 8px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-src {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--accent-3);
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .movie-tip {
+    font-size: 13px;
+    color: var(--accent-3);
+    background: #f7f4ef;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 6px;
+  }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.a { color: var(--accent); }
+  .speaker.b { color: var(--accent-3); }
+  .speaker.c { color: #6b5b95; }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="kicker">每日口语 · 2026-08-07</div>
+<div class="header">
+<span class="day-badge">DAY 14</span>
+<h1>看医生 · 描述症状、问病情、拿药<br/>Seeing a Doctor &amp; Describing Symptoms</h1>
+<div class="sub">2026年8月7日（周五） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>去医院/诊所看医生：描述哪里不舒服、问严不严重、拿药和忌口</h2>
+<div class="en">Seeing a Doctor · Describing Symptoms</div>
+<p>在国外看医生，最怕的不是病痛本身，是进了诊室张不开嘴——症状说不清楚，问题问不出来。今天这 5 个表达，从「我最近一直感觉……」「……的时候疼」到「要不要忌口」「需要处方吗」，让你不用掏出手机翻译就能把病看明白。医生问你 What brings you in today? 的时候，别再只说 headache 一个字了。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 句真实美剧原句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "I've been feeling..." / "I haven't been feeling great lately."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I've been feeling...&quot; / &quot;I haven't been feeling great lately.&quot;" data-scene='使用场景 医生问"what brings you in today"时，描述持续了几天的症状——头痛、乏力、恶心、没有胃口等' data-zh="我最近一直感觉……（描述持续一段时间的症状，不是突然发生的）" type="button">☆</button></div>
+<div class="expr-cn">我最近一直感觉……（描述持续一段时间的症状，不是突然发生的）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>医生问"what brings you in today"时，描述持续了几天的症状——头痛、乏力、恶心、没有胃口等</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S06E04 "The One Where Joey Loses His Insurance" — Joey 终于去看医生</span>"I've been having this... this pain. Right here. And it kind of comes and goes."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S02E13 "Caught in the Act" — Claire 对 Phil 抱怨身体不舒服</span>"I haven't been feeling well all week. It's like this low-grade... something."</div>
+<div class="tv-line"><span class="tv-src">《The Office》S04E01 "Fun Run" — Michael 在医院试图描述症状</span>"I've been feeling... not myself. There's a burning. And I feel like I'm... fading."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：I've been feeling 后面直接加形容词（tired / dizzy / nauseous / achy），或者 I've been having + 名词（a headache / a fever / this pain）。"一阵一阵的"用 comes and goes，"没好过"用 hasn't gone away。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "It hurts when I..." / "It only hurts when I..."</div><button aria-label="收藏表达" class="expr-fav" data-en='"It hurts when I..." / "It only hurts when I..."' data-scene="使用场景 医生需要定位原因——是吞咽时疼、弯腰时疼、还是不动也疼？越具体越好" data-zh="我……的时候会疼 / 只有……的时候才疼" type="button">☆</button></div>
+<div class="expr-cn">我……的时候会疼 / 只有……的时候才疼</div>
+<div class="expr-meta"><span class="tag">使用场景</span>医生需要定位原因——是吞咽时疼、弯腰时疼、还是不动也疼？越具体越好</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S06E04 "The One Where Joey Loses His Insurance" — Joey 描述疝气症状</span>"It hurts when I cough. And when I laugh. Basically when I do... anything."</div>
+<div class="tv-line"><span class="tv-src">《The Office》S02E12 "The Injury" — Michael 描述他的脚</span>"It hurts when I walk. It hurts when I sit. It hurts when I don't move it. I just... it hurts."</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S03E20 "Miracles" — Ted 在急诊室</span>"It only hurts when I turn my neck this way. The other way is fine."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：描述疼痛有三个层次——sharp（刺痛）、dull（钝痛/隐隐作痛）、throbbing（一跳一跳地疼）。问位置用 It's on the left/right side 或 It's right here（指位置）。"不动就不疼"说 It only hurts when I...，"一直疼"说 It's constant。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "Is this something I should be worried about?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Is this something I should be worried about?"' data-scene='使用场景 描述完症状后，想知道病情严不严重——比 "Is it serious?" 更自然、更像普通人会问的话' data-zh="这个严重吗？我需要担心吗？" type="button">☆</button></div>
+<div class="expr-cn">这个严重吗？我需要担心吗？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>描述完症状后，想知道病情严不严重——比 "Is it serious?" 更自然、更像普通人会问的话</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S06E04 — Joey 看完检查结果后紧张地问医生</span>"So... is it bad? Like really bad? Like... not-gonna-make-it bad?"</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S01E03 "Come Fly with Me" — Phil 在诊所</span>"Just tell me. Is this something I should be worried about? Because I have a condition— I can't handle bad news."</div>
+<div class="tv-line"><span class="tv-src">《The Office》S02E12 "The Injury" — Michael 紧张地问</span>"Am I going to be okay? Just be straight with me. I'm a big boy."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：问严重性有三个层次——最轻的是 Should I be worried?，中等的 Is this serious?，紧张的 Am I going to be okay?。对方如果说 It's nothing serious（不严重），你就可以放心了。别直接问 Will I die?，除非你真的在演喜剧。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "Do I need a prescription? / Can I just get something over the counter?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Do I need a prescription? / Can I just get something over the counter?"' data-scene="使用场景 医生诊断完了，药怎么拿——需要处方去药房、还是超市就能买到" data-zh="我需要处方药吗？还是买非处方药就行？" type="button">☆</button></div>
+<div class="expr-cn">我需要处方药吗？还是买非处方药就行？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>医生诊断完了，药怎么拿——需要处方去药房、还是超市就能买到</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S06E04 — Joey 在医生诊室</span>"So do I need, like... surgery? Or can I just take something and be fine?"</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S02E13 "Columns" — Barney 在药房</span>"Can I just get the over-the-counter stuff? The prescription ones make me feel like I'm 80."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S04E05 "Open House of Horrors" — Phil 问药剂师</span>"So I don't need a prescription for this? I just... take it? This feels like a loophole."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：prescription（处方药，需医生开处方去药房取）和 over-the-counter / OTC（非处方药，超市药店直接买）是两个核心词。处方上会有 dosage（剂量），问 How often should I take this? 是"一天吃几次"。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "Is there anything I should avoid?" / "Should I stay away from...?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Is there anything I should avoid?" / "Should I stay away from...?"' data-scene="使用场景 拿完药、诊断结束后问饮食禁忌、活动限制——能不能喝酒、能不能运动、要不要休息" data-zh="有什么注意事项/要忌口的吗？" type="button">☆</button></div>
+<div class="expr-cn">有什么注意事项/要忌口的吗？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>拿完药、诊断结束后问饮食禁忌、活动限制——能不能喝酒、能不能运动、要不要休息</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Modern Family》S01E15 "My Funky Valentine" — Phil 问医生</span>"So I should probably stay away from... spicy food? Alcohol? Fun in general?"</div>
+<div class="tv-line"><span class="tv-src">《Friends》S08E21 "The One with the Cooking Class" — Monica 问注意事项</span>"Is there anything I shouldn't eat? Like... anything good?"</div>
+<div class="tv-line"><span class="tv-src">《The Office》S03E22 "Women's Appreciation" — Dwight 对 Michael</span>"You should probably avoid... all physical activity. And strong emotions. And daylight."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：avoid 后面直接加名词（alcohol / spicy food / heavy lifting / dairy）。Should I stay away from... 更口语化。如果医生只是说 Get some rest and drink plenty of water，说明你这病没什么大不了的——这就是英语国家最常开的"药方"。</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 去诊所看医生（8 轮）</h3>
+<div class="dialogue">
+<div class="scene">🏥 场景：Emma 最近一周持续头痛、乏力、没什么胃口，终于约了家庭医生 Dr. Chen 去看诊。医生问诊、检查、给建议的完整流程。</div>
+<div class="line">
+<span class="speaker b">Dr. Chen:</span>
+<span class="text">Hi Emma, come on in. What brings you in today?</span>
+<div class="translation">Emma 你好，请进。今天怎么不舒服？</div>
+</div>
+<div class="line">
+<span class="speaker a">Emma:</span>
+<span class="text">Hi, Dr. Chen. I've been feeling really run-down for about a week now. Headaches, no energy, and I've barely been eating.</span>
+<div class="translation">您好陈医生。我大概一个星期了，一直感觉很累，头痛，没精神，几乎吃不下东西。</div>
+</div>
+<div class="line">
+<span class="speaker b">Dr. Chen:</span>
+<span class="text">Okay, let me check your vitals. When do the headaches usually hit? Is it worse in the morning or at night?</span>
+<div class="translation">好，我先给你量一下基本体征。头痛一般什么时候发作？早上更严重还是晚上？</div>
+</div>
+<div class="line">
+<span class="speaker a">Emma:</span>
+<span class="text">Usually in the afternoon. And it hurts mostly on the right side, around my temple. Like a dull, throbbing pain.</span>
+<div class="translation">通常是下午。主要是右边疼，太阳穴附近，像那种隐隐的一跳一跳的疼。</div>
+</div>
+<div class="line">
+<span class="speaker b">Dr. Chen:</span>
+<span class="text">I see. Have you been under a lot of stress lately? Sleeping okay?</span>
+<div class="translation">明白了。最近压力大吗？睡得怎么样？</div>
+</div>
+<div class="line">
+<span class="speaker a">Emma:</span>
+<span class="text">Yeah, work has been pretty intense. I've been sleeping maybe five hours a night. Is this something I should be worried about?</span>
+<div class="translation">对，工作压力挺大的。我每晚大概只睡五小时。这个严重吗，需要担心吗？</div>
+</div>
+<div class="line">
+<span class="speaker b">Dr. Chen:</span>
+<span class="text">I don't think it's anything serious — sounds like a tension headache combined with burnout. I'll prescribe something for the pain, but the real fix is rest. Is there anything else?</span>
+<div class="translation">我觉得不严重——听上去像紧张性头痛加上过劳。我给你开点止痛药，但真正的解药是休息。还有别的问题吗？</div>
+</div>
+<div class="line">
+<span class="speaker a">Emma:</span>
+<span class="text">Actually, yeah — is there anything I should avoid while taking the medication? Like coffee or alcohol?</span>
+<div class="translation">对了，吃药期间有什么要注意的吗？比如咖啡或者酒要忌吗？</div>
+</div>
+<div class="line">
+<span class="speaker b">Dr. Chen:</span>
+<span class="text">Good question. Skip the alcohol for now, and try to cut back on caffeine — it can make the headaches worse. Drink plenty of water and get at least seven hours of sleep. You should feel better in a few days.</span>
+<div class="translation">问得好。暂时别喝酒，咖啡因也尽量少喝——它可能让头痛加重。多喝水，每天至少睡七小时。过几天应该就好了。</div>
+</div>
+<div class="line">
+<span class="speaker a">Emma:</span>
+<span class="text">Got it. Thanks so much, Dr. Chen. I really appreciate it.</span>
+<div class="translation">好的，太谢谢您了陈医生。真的很感谢。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>You've had a sore throat and fever for three days. The doctor asks: "What brings you in today?" Describe your symptoms in 2-3 sentences.</strong>
+<div class="hint">💡 用 I've been feeling... / I've had + 症状 + for + 天数 来描述。顺便告诉医生什么时候开始的（started about three days ago）。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"I've had a really bad sore throat for about three days, and I've been running a fever on and off. It hurts when I swallow, especially in the morning."</span>
+<span class="s">"I've been feeling pretty awful — sore throat, fever, just no energy at all. It started three days ago and hasn't gotten any better."</span>
+<span class="s">"My throat has been killing me for three days. It hurts when I swallow, and I've had a fever that comes and goes. I can barely eat anything."</span>
+</div>
+</li>
+<li>
+<strong>You hurt your ankle playing basketball over the weekend, and it still hurts when you walk. Tell the doctor what happened and ask if it's serious.</strong>
+<div class="hint">💡 先说怎么受伤的（I twisted my ankle / I landed funny），再说什么时候疼（It hurts when I walk / put weight on it），最后问 Is this something I should be worried about?</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"I twisted my ankle playing basketball on Saturday. It's not super swollen now, but it still hurts when I walk or put weight on it. Is this something I should be worried about?"</span>
+<span class="s">"I landed funny during a game over the weekend and my ankle's been bugging me ever since. It only hurts when I walk — when I'm sitting it's fine. Should I get an X-ray?"</span>
+<span class="s">"So I rolled my ankle pretty badly two days ago. It hurts when I try to walk normally, and it's still a little swollen. Is it possible I did more than just twist it?"</span>
+</div>
+</li>
+<li>
+<strong>The doctor prescribes you antibiotics and tells you to take them with food. Ask three follow-up questions: about side effects, what to avoid, and when you should come back.</strong>
+<div class="hint">💡 三连问：① Are there any side effects? ② Is there anything I should avoid? ③ How long should I wait before coming back if it doesn't get better?</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Are there any side effects I should know about? Like, will it make me drowsy? And is there anything I should avoid — alcohol, certain foods? Also, if I'm not feeling better after a few days, should I come back?"</span>
+<span class="s">"Got it — one, any side effects? Two, anything I should stay away from while I'm on this? Three, if it doesn't clear up by Friday, should I come back in or just call?"</span>
+<span class="s">"Thanks — just a few quick questions. Should I expect any side effects? Is there anything I should avoid while taking it? And how long should I give it before coming back if I'm still not feeling better?"</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：今天训练最重要的是三个句型——I've been feeling...（描述持续症状）、It hurts when I...（定位疼痛触发点）、Is there anything I should avoid?（问注意事项）。这三个句型放在一起，基本覆盖了普通门诊的 80% 对话。先朗读对话，直到不看中文就能顺下来，然后对着镜子大声回答 3 个练习。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"I have headache. Yesterday start."</td>
+<td class="right">"I've had a headache since yesterday."<br/>"My headache started yesterday."</td>
+<td class="note">描述持续症状用现在完成时 I've had... since...，不要只用一般现在时。started 和 since 搭配使用时态要对。</td>
+</tr>
+<tr>
+<td class="wrong">"My head is pain." / "I have pain in my head."</td>
+<td class="right">"My head hurts." / "I have a headache."<br/>"It's a sharp pain on the left side."</td>
+<td class="note">pain 是名词、hurt 是动词。"疼"的日常说法是 It hurts 或 I have a headache / sore throat / stomachache，而不是 My head is pain。</td>
+</tr>
+<tr>
+<td class="wrong">"Is it big problem?"</td>
+<td class="right">"Is it serious?"<br/>"Is this something I should be worried about?"</td>
+<td class="note">问病情严重不严重，big problem 太中式。serious 是最简洁的词，something I should be worried about 是更自然的日常说法。</td>
+</tr>
+<tr>
+<td class="wrong">"I need medicine." / "Give me some medicine."</td>
+<td class="right">"Do I need a prescription?"<br/>"Can I just get something over the counter?"</td>
+<td class="note">跟医生说"给我药"在中文语境里可以，英文里 Give me medicine 像命令。用问句 Do I need a prescription? 既礼貌又道出了你真正的意思——要不要开药。</td>
+</tr>
+<tr>
+<td class="wrong">"I can't eat what?" / "What food I cannot eat?"</td>
+<td class="right">"Is there anything I should avoid?"<br/>"Are there any foods I should stay away from?"</td>
+<td class="note">问忌口不要说 I cannot eat what（语序和用词都别扭）。avoid / stay away from 是地道说法，适用于食物、酒精、运动等任何注意事项。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话 2 遍 → ② 背 5 个核心表达的 3 个关键句型（I've been feeling / It hurts when I / Is there anything I should avoid）→ ③ 用英语回答 3 个练习并录音 → ④ 回看纠正表，把 I have headache 改成 I've had a headache。
+    </div>
+<p>下一次身体不舒服去看医生，进诊室先深呼吸，开口就是 "Hi, I've been feeling..."，剩下的医生会一步一步问你。你只需要把症状说清楚，问题问到位。Take care and stay healthy! 🩺</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-07',title:"去医院/诊所看医生：描述哪里不舒服、问严不严重、拿药和忌口"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

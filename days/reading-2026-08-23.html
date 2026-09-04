@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-23</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:24px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:21px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Quiet Engineering of Your Taste: How the Feed Learned to Read You Better Than You Read Yourself</h1>
+<p class="sub">「品味的悄然工程化」：当信息流比你自己更懂你，你的"喜欢"还有多少是真的属于你？</p>
+<div class="meta">
+<span>📅 <b>2026-08-23</b></span>
+<span>🎯 主题桶：<b>科技与未来 (25%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">互联网早期，找东西像去图书馆——你主动检索、自己点开。过去十年，这个关系悄悄反了过来：信息流不再等你提问，它"已经知道"你接下来想看什么。这篇文章聊的正是一个被你「城市观察者」公众号一以贯之母题照见的现象：<b>算法越能精准预测你的"过去"，就越难把"未来的你"递到你面前；在一切都按互动量优化的世界里，"具体、带缺点、不可被预测的人味"正变成最稀缺的东西</b>。它和审美平权(08-07)、偶遇之夜消失(08-13)、零点击互联网(08-18)、真实 vs 精致(08-12)串成同一根线——机器替我们读、替我们选，于是"会主动想要一件没被推荐的东西"本身，成了一种微小的反叛。这条线，也直掐你计划中的 012《AI 第二大脑》。</p>
+<div class="tip">💡 读前小思考：回想一个你以为"自己发现"的兴趣或习惯——有没有可能，它其实是某个信息流先递给你的？你愿意承认吗？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most of the internet's short history, finding things worked the way a library works: you went looking. You typed a query, clicked a link, chose where to go. The web was <span class="hl">pull</span> — and you were the one doing the pulling. Somewhere in the last decade, that relationship quietly <span class="hl">inverted</span>. The feed no longer waits for your question. It arrives already knowing, or at least betting, what you will want next. We like to believe our tastes are ours — hard-won, personal, the residue of a thousand small choices. But the apps we open dozens of times a day have become <span class="hl">uncannily</span> good at predicting our next want, often before we have formed it ourselves.</p>
+<p>The machinery behind this is not magic, and it is not trying to understand you in any human sense. A recommendation system is an <span class="hl">optimization engine</span> with a single, narrow target: keep you watching, reading, scrolling. It learns from the <span class="hl">crumbs</span> you leave behind without thinking — the video you didn't finish, the post you hovered over, the three seconds you spent before swiping away. From millions of such crumbs, it builds a model of "the kind of person who does what you just did," then serves more of whatever kept that kind of person engaged. It is not judging whether something is good, true, or good for you. It is <span class="hl">maximizing a metric</span>. The taste it serves is the taste that keeps the dial moving.</p>
+<p>Here is the part that sits under the skin. <span class="hl">The more</span> the system feeds you what it thinks you like, <span class="hl">the more</span> your actual behavior confirms that guess — and the narrower the stream becomes. Watch one video about an obscure hobby and your feed quietly reorganizes itself around it; within a day you are swimming in variants, reactions, and people who were already there. Your "interest" looks less like a discovery you made and more like a mirror the machine held up and then polished until it looked like a conviction. Psychologists have a name for a quieter version of this — a <span class="hl">feedback loop</span> where prediction and behavior harden each other — but the algorithmic version runs at the scale of billions and at the speed of a thumb.</p>
+<p>The cultural cost is a kind of <span class="hl">flattening</span>. When the same optimization targets push the same emotional peaks to the same billions of people, the global feed starts to sound the same. A joke format goes planetary in a week. A visual style — the same lighting, the same caption cadence, the same nervous sincerity — shows up in Bangalore and Bogotá within days of each other. This is not conspiracy; it is arithmetic. Taste that is optimized for engagement converges, because the things that hold attention are, it turns out, rather similar across humans. The weird, local, unphotogenic corners of culture — the ones that never tested well — get quietly starved of attention, because no metric rewards them.</p>
+<p>What disappears alongside them is <span class="hl">serendipity</span>. Before the feed, discovery had friction built in: you wandered into a record shop, flipped through a friend's shelves, stumbled on a blog from a link someone emailed. Those stumbles were inefficient, and they were also how taste actually grew — sideways, by chance, into things you would never have searched for. The algorithmic feed removes the friction and, with it, the serendipity. It serves you the next likely thing, not the unlikely thing you needed. It optimizes the past version of you and is constitutionally unable to introduce the future version.</p>
+<p>There is a quieter loss buried in the convenience. The algorithm knows your patterns better than you do, but it does not know your curiosity. It can tell you what you have liked; it cannot tell you what you might love if only it interrupted the loop. Worse, because it is so good at giving you more of the same, it slowly trains you out of wanting anything else. You stop being surprised because surprise no longer arrives, and you stop reaching for it because reaching takes effort the feed was designed to spare you. Taste, practiced this way, <span class="hl">atrophies</span> into preference — a thin, reactive thing that mistakes "what I usually click" for "who I am."</p>
+<p>The counter-movement is small but real, and it tends to sound like the older lessons this column keeps returning to. People are rebuilding RSS readers, going analog, keeping dumbphones, buying vinyl — not because the new tools are bad, but because choosing <span class="hl">friction</span> has become a way of claiming taste back. To curate a playlist by hand, to read a blog no algorithm ranks, to walk into a shop with no recommendation engine — these are small acts of autonomy. They reintroduce the friction the feed removed, and with it the possibility of being wrong, delighted, or changed by something you did not ask for.</p>
+<p>None of this requires throwing your phone into a river. It requires noticing that the feed is not a neutral window onto the world but a curator with a very specific, very narrow job. Taste is not something you find fully formed; it is something you practice, often badly, by bumping into things that weren't served to you. The most <span class="hl">subversive</span> thing a person can do in the age of the optimized feed is to want something the feed did not suggest — and then to go find it anyway.</p>
+</article>
+</section>
+<!-- 10:00–13:00 · Key Expressions -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">pull (n./adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="pull (n./adj.)" data-example="The web was pull — and you were the one doing the pulling. （本文 / Daily English Reading · 2026-08-23）" data-scene='使用场景：描述"用户主动检索/索取"的信息获取方式，对应算法时代的 push feed（被动推送）。' data-zh='拉取（与 push「推送」相对）；the web was pull = 网络是"你主动去取"的模式' type="button">☆</button></span><span class="zh">拉取（与 push「推送」相对）；the web was pull = 网络是"你主动去取"的模式</span>
+<span class="sc">使用场景：描述"用户主动检索/索取"的信息获取方式，对应算法时代的 push feed（被动推送）。</span>
+<span class="ex">The web was pull — and you were the one doing the pulling. （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">invert (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="invert (v.)" data-example="Somewhere in the last decade, that relationship quietly inverted. （本文 / Daily English Reading · 2026-08-23）" data-scene="使用场景：某关系或顺序发生根本性倒转；比 reverse 更正式、偏书面。" data-zh="使反转 / 颠倒（in- 进入 + vert 转，如 invert a relationship）" type="button">☆</button></span><span class="zh">使反转 / 颠倒（in- 进入 + vert 转，如 invert a relationship）</span>
+<span class="sc">使用场景：某关系或顺序发生根本性倒转；比 reverse 更正式、偏书面。</span>
+<span class="ex">Somewhere in the last decade, that relationship quietly inverted. （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">uncannily (adv.)</span><button aria-label="收藏表达" class="expr-fav" data-en="uncannily (adv.)" data-example="…have become uncannily good at predicting our next want… （本文 / Daily English Reading · 2026-08-23）" data-scene='使用场景：形容某事物准得让人发毛，常用于"比预期更像/更懂"。' data-zh='异乎寻常地 / 令人不安地准确（uncanny 的副词；原指"似曾相识般诡异"）' type="button">☆</button></span><span class="zh">异乎寻常地 / 令人不安地准确（uncanny 的副词；原指"似曾相识般诡异"）</span>
+<span class="sc">使用场景：形容某事物准得让人发毛，常用于"比预期更像/更懂"。</span>
+<span class="ex">…have become uncannily good at predicting our next want… （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">crumbs (n., pl.)</span><button aria-label="收藏表达" class="expr-fav" data-en="crumbs (n., pl.)" data-example="It learns from the crumbs you leave behind without thinking… （本文 / Daily English Reading · 2026-08-23）" data-scene="使用场景：比喻零散、不经意的数字足迹（browse crumbs / digital crumbs）。" data-zh='碎屑 / 零碎痕迹；文中指用户无意识留下的行为"信号碎屑"' type="button">☆</button></span><span class="zh">碎屑 / 零碎痕迹；文中指用户无意识留下的行为"信号碎屑"</span>
+<span class="sc">使用场景：比喻零散、不经意的数字足迹（browse crumbs / digital crumbs）。</span>
+<span class="ex">It learns from the crumbs you leave behind without thinking… （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">maximize a metric (phr.)</span><button aria-label="收藏表达" class="expr-fav" data-en="maximize a metric (phr.)" data-example="It is not judging whether something is good… It is maximizing a metric. （本文 / Daily English Reading · 2026-08-23）" data-scene='使用场景：说明系统/公司"不为你着想，只为某个数字优化"；科技评论高频表达。' data-zh="最大化某个指标（metric = 可量化的衡量标准，如停留时长）" type="button">☆</button></span><span class="zh">最大化某个指标（metric = 可量化的衡量标准，如停留时长）</span>
+<span class="sc">使用场景：说明系统/公司"不为你着想，只为某个数字优化"；科技评论高频表达。</span>
+<span class="ex">It is not judging whether something is good… It is maximizing a metric. （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">feedback loop (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="feedback loop (n.)" data-example="…a feedback loop where prediction and behavior harden each other… （本文 / Daily English Reading · 2026-08-23）" data-scene='使用场景：心理学、系统论、产品设计中描述"自我强化循环"的标配术语。' data-zh="反馈回路（A 强化 B、B 又强化 A 的循环）" type="button">☆</button></span><span class="zh">反馈回路（A 强化 B、B 又强化 A 的循环）</span>
+<span class="sc">使用场景：心理学、系统论、产品设计中描述"自我强化循环"的标配术语。</span>
+<span class="ex">…a feedback loop where prediction and behavior harden each other… （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">flattening (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="flattening (n.)" data-example="The cultural cost is a kind of flattening. （本文 / Daily English Reading · 2026-08-23）" data-scene="使用场景：批评算法/全球化让多样性消失、everything sounds the same。" data-zh='扁平化 / 趋同（flatten 的名词化；文中指文化被优化得"长得一样"）' type="button">☆</button></span><span class="zh">扁平化 / 趋同（flatten 的名词化；文中指文化被优化得"长得一样"）</span>
+<span class="sc">使用场景：批评算法/全球化让多样性消失、everything sounds the same。</span>
+<span class="ex">The cultural cost is a kind of flattening. （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">serendipity (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="serendipity (n.)" data-example="What disappears alongside them is serendipity. （本文 / Daily English Reading · 2026-08-23）" data-scene='使用场景：形容"不期而遇的好东西/灵感"，常用于对比被算法安排的 discovery。' data-zh="机缘巧合 / 意外发现美好事物的运气（不可数，高级词汇）" type="button">☆</button></span><span class="zh">机缘巧合 / 意外发现美好事物的运气（不可数，高级词汇）</span>
+<span class="sc">使用场景：形容"不期而遇的好东西/灵感"，常用于对比被算法安排的 discovery。</span>
+<span class="ex">What disappears alongside them is serendipity. （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">atrophy (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="atrophy (v.)" data-example="Taste, practiced this way, atrophies into preference… （本文 / Daily English Reading · 2026-08-23）" data-scene='使用场景：能力/关系因"长期不用"而退化；比喻用法很地道。' data-zh="萎缩 / 退化（原指肌肉因不用而萎缩；文中 atrophies into = 退化成）" type="button">☆</button></span><span class="zh">萎缩 / 退化（原指肌肉因不用而萎缩；文中 atrophies into = 退化成）</span>
+<span class="sc">使用场景：能力/关系因"长期不用"而退化；比喻用法很地道。</span>
+<span class="ex">Taste, practiced this way, atrophies into preference… （本文 / Daily English Reading · 2026-08-23）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">subversive (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="subversive (adj.)" data-example="The most subversive thing a person can do… is to want something the feed did not suggest. （本文 / Daily English Reading · 2026-08-23）" data-scene="使用场景：形容一个看似微小、却挑战主流秩序的行为或想法。" data-zh='颠覆性的 / 具反抗精神的（sub- 下 + vert 转，暗指"从底下掀翻"）' type="button">☆</button></span><span class="zh">颠覆性的 / 具反抗精神的（sub- 下 + vert 转，暗指"从底下掀翻"）</span>
+<span class="sc">使用场景：形容一个看似微小、却挑战主流秩序的行为或想法。</span>
+<span class="ex">The most subversive thing a person can do… is to want something the feed did not suggest. （本文 / Daily English Reading · 2026-08-23）</span></span>
+</section>
+<!-- 10:30–12:00 · Tech & Media Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Tech &amp; Media Vocabulary · 算法与信息流</h2><span class="time-tag">⏱ 10:30–12:00 主题词</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:14px;">涉及"推荐系统 / 信息流"主题时的核心术语（例句均摘自本文，标「本文 / Daily English Reading · 2026-08-23」）：</p>
+<div class="vocab">
+<div class="v"><b>recommendation engine</b><span>推荐引擎（= recommender system）；以"让你停留"为唯一优化目标的算法系统。<br/><i>例句：A recommendation system is an optimization engine…</i></span></div>
+<div class="v"><b>the feed</b><span>信息流（社交/短视频平台按算法排好的内容流）；与 pull（主动检索）相对。<br/><i>例句：The feed no longer waits for your question.</i></span></div>
+<div class="v"><b>optimization target</b><span>优化目标（系统真正在"追"的数字，如观看时长、互动量）。<br/><i>例句：…an optimization engine with a single, narrow target…</i></span></div>
+<div class="v"><b>engagement signals</b><span>互动信号（停留、悬停、划走等被算法采集的行为数据）。<br/><i>例句：It learns from the crumbs you leave behind…</i></span></div>
+<div class="v"><b>feedback loop</b><span>反馈回路（预测→行为→再预测，互相加固，使品味收窄）。<br/><i>例句：…a feedback loop where prediction and behavior harden each other.</i></span></div>
+<div class="v"><b>filter bubble</b><span>过滤气泡（算法只喂你"像你"的内容，把你困在同质信息里）。<br/><i>例句（本文意译）：your feed quietly reorganizes itself around it.</i></span></div>
+<div class="v"><b>personalization</b><span>个性化（按个人行为定制内容；双刃：更"懂你"也更易被困住）。<br/><i>例句（本文意译）：It serves more of whatever kept that kind of person engaged.</i></span></div>
+<div class="v"><b>rabbit hole</b><span>兔子洞（越刷越深、被同类内容吞没的状态）。<br/><i>例句（本文意译）：within a day you are swimming in variants…</i></span></div>
+<div class="v"><b>the algorithm</b><span>算法（拟人化指代"那个决定你看到什么的黑箱"）。<br/><i>例句：The algorithm knows your patterns better than you do…</i></span></div>
+<div class="v"><b>friction (built-in)</b><span>摩擦成本（发现过程中"低效却必要"的阻力；主动找回它=夺回品味主权）。<br/><i>例句：…choosing friction has become a way of claiming taste back.</i></span></div>
+</div>
+</section>
+<!-- 12:00–13:30 · Sentence Breakdown -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 12:00–13:30 句型</span></div>
+<div class="sb">
+<p class="q">"For most of the internet's short history, finding things worked the way a library works: you went looking."</p>
+<p class="a"><b>句型：</b>介词短语作时间状语 + 主语 + <b>the way + 从句</b> 类比结构 + 冒号引出具体说明。<br/><b>逻辑：</b>用"图书馆"作类比，把抽象的"主动检索"具象化；冒号后 you went looking 是口语化短句，平衡了前半句的书面感。<br/><b>表达：</b>the way…works 是极地道的"像……那样运作"写法；finding things 用动名词作主语，比 you find things 更凝练客观。</p>
+</div>
+<div class="sb">
+<p class="q">"We like to believe our tastes are ours — hard-won, personal, the residue of a thousand small choices."</p>
+<p class="a"><b>句型：</b>主句 + 宾语从语 + 破折号后<b>三个名词/形容词短语同位堆叠</b>（hard-won, personal, the residue…）。<br/><b>逻辑：</b>先立一个"我们以为品味属于自己"的错觉，再用破折号后的排比把这种"拥有感"渲染得具体可感，为后文反转做铺垫。<br/><b>表达：</b>hard-won（来之不易的）、residue（残余/沉淀）都是高级词；三个短语层层递进，节奏感强。</p>
+</div>
+<div class="sb">
+<p class="q">"The more the system feeds you what it thinks you like, the more your actual behavior confirms that guess — and the narrower the stream becomes."</p>
+<p class="a"><b>句型：</b><b>The more…, the more…（越……越……）</b> 比较级递进结构，并叠加第三个 the + 比较级（the narrower…）形成三项递进。<br/><b>逻辑：</b>揭示"算法投喂→行为确认→品味收窄"的因果链，破折号收束到最关键的后果（stream narrows）。<br/><b>表达：</b>feeds you what it thinks you like 嵌套宾语从句，紧凑有力；三项 the more 并列是写作加分句型。</p>
+</div>
+<div class="sb">
+<p class="q">"Taste that is optimized for engagement converges, because the things that hold attention are, it turns out, rather similar across humans."</p>
+<p class="a"><b>句型：</b>主句（含定语从句 that is optimized for engagement）+ because 原因从句（内嵌定语从句 that hold attention）+ <b>插入语 it turns out</b>。<br/><b>逻辑：</b>先给结论（被优化的品味会趋同），再用 because 解释根因——人类被吸引的东西本就相似；插入语 it turns out 削弱绝对感，显客观。<br/><b>表达：</b>optimized for engagement（为互动量优化）、hold attention（抓住注意力）都是媒体高频搭配；插入语位置灵活、显老练。</p>
+</div>
+<div class="sb">
+<p class="q">"The most subversive thing a person can do in the age of the optimized feed is to want something the feed did not suggest — and then to go find it anyway."</p>
+<p class="a"><b>句型：</b><b>最高级名词短语作主语</b>（The most subversive thing + 定语从句）+ be 动词 + <b>两个并列不定式作表语</b>（to want… — and then to go find…）。<br/><b>逻辑：</b>把"主动想要一个没被推荐的东西"拔高为一种微型反叛，破折号后用 and then 递进，落到行动（go find it anyway）。<br/><b>表达：</b>in the age of…（在……时代）、did not suggest 用过去式显"已发生"，anyway 收尾干脆；整句是全文题眼。</p>
+</div>
+</section>
+<!-- 13:30–14:30 · Chinese Summary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 13:30–14:30 复盘</span></div>
+<div class="sum">
+<p><b>核心内容</b><br/>互联网早期是"你搜"（pull），如今信息流反客为主，在你提问之前就"推"（push）。推荐系统本质是个<b>只为单一指标（停留/互动）优化的引擎</b>，它从你无意识留下的行为碎屑中学习，喂给你更多"像你"的内容。于是形成一个<b>反馈回路</b>：它越喂，你的行为越确认它的猜测，品味越收窄、文化越趋同、偶遇（serendipity）越消失。算法懂你的模式，却不懂你的好奇心——它优化"过去的你"，结构上无法递来"未来的你"。</p>
+<p><b>背后文化现象</b><br/>这和你「城市观察者」公众号的母题同频：<b>在一切都按互动量优化的年代，"具体、带缺点、不可被预测的人味"最稀缺</b>。它和审美平权(08-07)、偶遇之夜消失(08-13)、零点击互联网(08-18)、真实 vs 精致(08-12)串成同一根线——机器越替我们读、替我们选，愿意"主动撞见没被推荐的东西"的人声越该被保护，也越破圈。这几乎是为你计划中的 012《AI 第二大脑》量身铺的清醒观点母题。</p>
+<p><b>值得思考的问题</b><br/>① 你自称"自己发现"的兴趣，有多少其实是某个信息流先递给你的？② 当"喜欢"能被预测和喂养，"品味"还算不算一种自由？③ 主动想要一件没被推荐的东西，在今天是不是已经成了一种小小的反叛？</p>
+</div>
+</section>
+<!-- 14:30–15:00 · Speaking Practice -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练习</h2><span class="time-tag">⏱ 14:30–15:00 输出</span></div>
+<div class="prompt">🗣 Discussion Question（用英文作答，约 200 词）：<br/><br/>Do you think your personal taste is truly "yours," or has it been quietly shaped by recommendation algorithms? Describe one interest or habit you suspect was suggested to you rather than discovered on your own — and argue whether that matters.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词 · 仅供思路参考，鼓励写出你自己的版本）</span>
+<p style="margin:0;">I used to think my taste was entirely my own, but the older I get, the less sure I am. A few years ago I became obsessed with a niche style of analog photography — grainy, half-ruined film shots. I told myself I had "discovered" it, that it spoke to something deep in me. In truth, I watched one video, the algorithm fed me a hundred more, and within a week my entire feed was film cameras, thrift-store lenses, and the same three aesthetics recycled endlessly. My "discovery" was really a mirror the machine held up and polished until it looked like conviction.</p>
+<p style="margin:8px 0 0;">Does it matter? Partly yes, partly no. It doesn't matter that the interest is enjoyable — I still love the photos. What matters is the quieter cost: when something is always served to me, I stop reaching, I stop being surprised, and my taste slowly atrophies into passive preference. The fix isn't throwing my phone away; it's reintroducing friction on purpose — buying a magazine no algorithm ranks, wandering a record shop, letting myself be wrong. In the age of the optimized feed, wanting something it didn't suggest might be the most subversive thing I can do.</p>
+</div>
+</section>
+<footer>Daily English Reading · 2026-08-23 · 主题桶：科技与未来 (25%) · 配色遵循浅色低饱和规范</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-23',title:"The Quiet Engineering of Your Taste: How the Feed Learned to Read You Better Than You Read Yourself"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

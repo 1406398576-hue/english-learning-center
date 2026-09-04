@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-03</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .kp .src{display:block; font-size:12px; color:var(--muted); margin-top:4px; font-style:normal;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .vocab .v .ex2{display:block; font-size:12.5px; color:#3b352e; font-style:italic; margin-top:5px;}
+  .vocab .v .src2{display:block; font-size:11.5px; color:var(--muted); margin-top:2px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Thrift Generation: How Young Shoppers Fell Out of Love with 'New'</h1>
+<p class="sub">当"二手"不再是贬义词——年轻人如何把闲置经济过成了一种生活态度</p>
+<div class="meta">
+<span>📅 <b>2026-08-03</b></span>
+<span>🎯 主题桶：<b>商业与其他 (15%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">十年前，买二手在很多人眼里还带着"买不起新的"的微妙羞耻；今天，它在年轻人中成了一种审美与立场。今天我们读一篇商业+社会观察，聊聊：当"闲置"变成"宝藏"、"二手"变成"preloved"，这到底是经济压力下的妥协，还是一代人重新定义"好生活"的方式？这和你做「城市观察者」公众号其实同频——在千篇一律的算法时代，"具体、独特、带故事"的东西最稀缺。</p>
+<div class="tip">💡 读前小思考：你上一次买/收一件二手物品是什么时候？是因为"便宜"，还是因为"它独一无二、有故事"？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>Walk into a thrift store in almost any city on a Saturday afternoon, and you are likely to find the same scene: a slow-moving crowd of twenty-somethings rifling through racks of someone else's castoffs, phones in hand, hunting for the one jacket that no one else will be wearing on Monday. A decade ago, buying secondhand in the West meant either necessity or a quiet niche obsession; in many places it still carried a faint stigma, the whiff of "can't afford new." Today it reads differently. For a growing share of young consumers, the used rack is not a consolation prize but a destination.</p>
+<p>The numbers explain the mood. The global secondhand apparel market is growing roughly three times faster than the apparel market overall, and in the United States the broader "<span class="hl">recommerce</span>" economy—resale across clothing, furniture, electronics and more—is now worth well over $200 billion. The shift is being led by the young. Nearly half of Gen Z consumers sold a pre-owned item for the first time last year, and a majority say they prefer secondhand when it is available. What was once a quiet corner of retail has, in the words of one industry chief, simply become "<span class="hl">mainstream</span>." Analysts expect the recommerce market to keep climbing—one report projects roughly 34% growth by the end of the decade, pushing its value past $300 billion.</p>
+<p>Part of the explanation is bluntly economic. With the cost of living climbing and inflation quietly eating into wages, "new" has lost some of its shine. Young shoppers have learned to <span class="hl">stretch a budget</span>, and resale lets them reach brands they could not otherwise afford. Yet money alone does not capture the change. If price were the whole story, secondhand would feel like a compromise to be hidden. Instead, for many it has become a point of pride—a small, daily act of refusing to pay full price for something a machine could make ten thousand times. There is even a quiet status in restraint now: mentioning that your coat cost less than a café lunch can read as clever rather than ashamed.</p>
+<p>That points to the second force, and the more interesting one: the hunger to look like no one else. <span class="hl">Mass-produced</span> fashion has grown so uniform that a genuinely "unique" find now carries its own cultural capital. For this generation, secondhand is not merely a way to save money; it is a quiet argument about what a good life costs. Shoppers are not simply purchasing; as one trend analyst put it, they are "<span class="hl">curating</span>"—assembling a self from pieces with history rather than from a single store's seasonal drop. The pleasure is in the hunt, in the chance of a <span class="hl">one-of-a-kind</span> item that cannot be googled into sameness. It is social as much as aesthetic: a thrifted find is something to show, not merely something to wear.</p>
+<p>Far from being a sign of hardship, buying used has become, for many young urbanites, a badge of taste. The language around it has shifted too: "<span class="hl">preloved</span>" and "pre-owned" have softened the blunt word "secondhand," and "<span class="hl">circular</span>" has turned a private thrift into a public virtue. To be sure, not every thrift-store trip is a climate protest. But the framing matters. When sustainability is part of the story a person tells about themselves, a secondhand coat is no longer "someone's leftover"—it is proof of a considered life.</p>
+<p>Technology did the rest. The very apps that made fast fashion frictionless have now made resale just as easy, blurring the line between indulgence and thrift. A phone can list a closet in minutes, surface a stranger's jacket by size and color, and arrange a handoff without a single shopfront. Platforms compete to make the hunt feel less like an errand and more like entertainment, complete with drops, alerts, and the small dopamine hit of "the one that got away." Convenience, it turns out, is the quiet engine beneath the whole moral turn.</p>
+<p>What separates today's resale boom from the garage sales of the past is not the act of trading old things, but the meaning attached to it. A yard sale was usually a chore—spring cleaning with pocket change. Today's resale is often a performance: the find is photographed, captioned, and posted as evidence of a sensibility. The object travels from stranger to stranger not despite its history but because of it. We have turned the discard into a kind of authorship. The same jacket that once meant "clearing the attic" now means "I have taste, and I know where to look."</p>
+<p>In the end, that may be the real story. It is precisely because these objects already carry someone else's story that they feel more personal, not less. A <span class="hl">mass-produced</span> shirt arrives blank; a vintage one arrives with a previous life, a gap the wearer gets to fill. For a generation raised on feeds engineered to look identical, the slightly worn, slightly specific, slightly unrepeatable thing is a small rebellion—and a reminder that not everything worth having is new.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">以下例句均来自真实英文媒体语料，并标注来源（媒体 / 报告名 + 标题）。建议先记住"表达 + 中文"，再读例句体会真实语境。</p>
+<span class="kp"><span class="exp-row"><span class="exp">stretch a budget</span><button aria-label="收藏表达" class="expr-fav" data-en="stretch a budget" data-example='"People are choosing resale to stretch budgets, shop more sustainably, and make real local connections…"' data-scene='使用场景：在钱不够时"拉长"每一分钱的使用效率，比 save money 更具体、更有动作感。' data-zh="让预算更经用 / 精打细算地花钱" type="button">☆</button></span><span class="zh">让预算更经用 / 精打细算地花钱</span>
+<span class="sc">使用场景：在钱不够时"拉长"每一分钱的使用效率，比 save money 更具体、更有动作感。</span>
+<span class="ex">"People are choosing resale to stretch budgets, shop more sustainably, and make real local connections…"</span>
+<span class="src">— Just Style / Yahoo Finance, "Gen Z take lead on fashion resale becoming mainstream in US" (2025)</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">mainstream</span><button aria-label="收藏表达" class="expr-fav" data-en="mainstream" data-example='"Secondhand is now mainstream."' data-scene='使用场景：说某事物从小众/边缘变成"大家都接受"的状态，常作表语或定语（mainstream culture / go mainstream）。' data-zh="主流（的）；被大众普遍接受" type="button">☆</button></span><span class="zh">主流（的）；被大众普遍接受</span>
+<span class="sc">使用场景：说某事物从小众/边缘变成"大家都接受"的状态，常作表语或定语（mainstream culture / go mainstream）。</span>
+<span class="ex">"Secondhand is now mainstream."</span>
+<span class="src">— Todd Dunlap, CEO of OfferUp, quoted in Just Style / Yahoo Finance (2025)</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">economise (英) / economize (美)</span><button aria-label="收藏表达" class="expr-fav" data-en="economise (英) / economize (美)" data-example='"79% of buyers acknowledge that their primary motivation for shopping secondhand is to economise…"' data-scene='使用场景：比 save money 更书面，指通过更聪明的方式"节流"，常用于消费、能源、时间。' data-zh="省钱、节省开支" type="button">☆</button></span><span class="zh">省钱、节省开支</span>
+<span class="sc">使用场景：比 save money 更书面，指通过更聪明的方式"节流"，常用于消费、能源、时间。</span>
+<span class="ex">"79% of buyers acknowledge that their primary motivation for shopping secondhand is to economise…"</span>
+<span class="src">— Just Style / Yahoo Finance, "Gen Z take lead on fashion resale becoming mainstream in US" (2025)</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">one-of-a-kind</span><button aria-label="收藏表达" class="expr-fav" data-en="one-of-a-kind" data-example='"A significant proportion of consumers are drawn to the resale market in search of distinctive or singular items." (报告中并列出现 one-of-a-kind 表述)' data-scene="使用场景：强调某物无法被复制或替代，是二手/古着/手作叙事里的核心词。" data-zh="独一无二的、仅此一件的" type="button">☆</button></span><span class="zh">独一无二的、仅此一件的</span>
+<span class="sc">使用场景：强调某物无法被复制或替代，是二手/古着/手作叙事里的核心词。</span>
+<span class="ex">"A significant proportion of consumers are drawn to the resale market in search of distinctive or singular items." (报告中并列出现 one-of-a-kind 表述)</span>
+<span class="src">— ThredUp 2025 Holiday Report: "Discover unique, one-of-a-kind items (56%)"</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">curate / curating</span><button aria-label="收藏表达" class="expr-fav" data-en="curate / curating" data-example="&quot;[Gen Z] are not just buying—they're curating.&quot;" data-scene='使用场景：原指策展，现常用于"有品位的挑选"——买衣服、做歌单、经营账号都可说 curate。' data-zh="精心挑选、策展式地组织" type="button">☆</button></span><span class="zh">精心挑选、策展式地组织</span>
+<span class="sc">使用场景：原指策展，现常用于"有品位的挑选"——买衣服、做歌单、经营账号都可说 curate。</span>
+<span class="ex">"[Gen Z] are not just buying—they're curating."</span>
+<span class="src">— Sydney Stanback, Global Insights lead at Pinterest, via WWD (2025)</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">stigma (fade / the stigma is gone)</span><button aria-label="收藏表达" class="expr-fav" data-en="stigma (fade / the stigma is gone)" data-example='"The stigma around giving and receiving secondhand gifts continues to fade rapidly."' data-scene="使用场景：指附着在某事上的负面标签；the stigma around X fades / lifts 是常见搭配。" data-zh="污名、偏见（逐渐消退）" type="button">☆</button></span><span class="zh">污名、偏见（逐渐消退）</span>
+<span class="sc">使用场景：指附着在某事上的负面标签；the stigma around X fades / lifts 是常见搭配。</span>
+<span class="ex">"The stigma around giving and receiving secondhand gifts continues to fade rapidly."</span>
+<span class="src">— ThredUp 2025 Holiday Report</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">preloved</span><button aria-label="收藏表达" class="expr-fav" data-en="preloved" data-example='"36 percent are turning to secondhand or preloved items more than ever."' data-scene='使用场景：二手市场偏爱的 euphemism，比 secondhand 温柔，暗示"之前有人爱过"。' data-zh="二手的、曾被珍爱过的（委婉/温暖说法）" type="button">☆</button></span><span class="zh">二手的、曾被珍爱过的（委婉/温暖说法）</span>
+<span class="sc">使用场景：二手市场偏爱的 euphemism，比 secondhand 温柔，暗示"之前有人爱过"。</span>
+<span class="ex">"36 percent are turning to secondhand or preloved items more than ever."</span>
+<span class="src">— EY report, via WWD, "Gen Z Is Searching for Dream Thrift Finds…" (2025)</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">mass-produced</span><button aria-label="收藏表达" class="expr-fav" data-en="mass-produced" data-example='"…secondhand is a way to create a unique look or space that feels personal and meaningful, rather than mass-produced."' data-scene='使用场景：与 handmade / one-of-a-kind 相对，常带"缺乏个性"的隐含批评。' data-zh="批量生产的、千篇一律的" type="button">☆</button></span><span class="zh">批量生产的、千篇一律的</span>
+<span class="sc">使用场景：与 handmade / one-of-a-kind 相对，常带"缺乏个性"的隐含批评。</span>
+<span class="ex">"…secondhand is a way to create a unique look or space that feels personal and meaningful, rather than mass-produced."</span>
+<span class="src">— WWD, "Gen Z Is Searching for Dream Thrift Finds…" (Pinterest fall 2025 trend report)</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a permanent shift</span><button aria-label="收藏表达" class="expr-fav" data-en="a permanent shift" data-example='"The study indicates a permanent shift in consumer behaviour…"' data-scene="使用场景：强调变化不可逆、成了新常态，商业与社评常用。" data-zh="永久性的转变" type="button">☆</button></span><span class="zh">永久性的转变</span>
+<span class="sc">使用场景：强调变化不可逆、成了新常态，商业与社评常用。</span>
+<span class="ex">"The study indicates a permanent shift in consumer behaviour…"</span>
+<span class="src">— Just Style / Yahoo Finance, "Gen Z take lead on fashion resale becoming mainstream in US" (2025)</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">resilient</span><button aria-label="收藏表达" class="expr-fav" data-en="resilient" data-example='"…holiday spending remains resilient, with a major shift to circular shopping…"' data-scene='使用场景：形容经济、消费、情绪在压力后仍"挺住"，stay resilient / remain resilient 很常见。' data-zh="有韧性的、经得起冲击的" type="button">☆</button></span><span class="zh">有韧性的、经得起冲击的</span>
+<span class="sc">使用场景：形容经济、消费、情绪在压力后仍"挺住"，stay resilient / remain resilient 很常见。</span>
+<span class="ex">"…holiday spending remains resilient, with a major shift to circular shopping…"</span>
+<span class="src">— ThredUp, via Business Wire, "ThredUp Report Reveals 40% of Holiday Budgets Will Go to Secondhand Gifts" (2025)</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Brand &amp; Consumer Vocabulary · 商业消费词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题是「商业与其他」而非娱乐，所以把"Celebrity / Culture Vocabulary"换成了更贴题的「商业消费词块」——读外媒商业/消费报道时这些词高频出现（例句同样标注真实出处）：</p>
+<div class="vocab">
+<div class="v"><b>recommerce</b><span>转售经济（二手交易的统称，区别于一次性零售）</span>
+<span class="ex2">"Apparel accounts for 25% of the market within the multi-category US recommerce economy."</span>
+<span class="src2">— Just Style / Yahoo Finance (2025)</span></div>
+<div class="v"><b>circular (economy)</b><span>循环（经济）——延长物品生命周期、减少浪费的模式</span>
+<span class="ex2">"…have embraced circularity as a core part of their gifting strategy."</span>
+<span class="src2">— ThredUp 2025 Holiday Report</span></div>
+<div class="v"><b>preloved / pre-owned</b><span>二手的、曾被人珍爱的（温暖的委婉语）</span>
+<span class="ex2">"…turning to secondhand or preloved items more than ever."</span>
+<span class="src2">— EY, via WWD (2025)</span></div>
+<div class="v"><b>thrifting / thrift store</b><span>淘二手 / 二手店（动词化很地道）</span>
+<span class="ex2">"'Dream thrift finds' rose by more than 550 percent this year."</span>
+<span class="src2">— WWD (Pinterest fall 2025 trend report)</span></div>
+<div class="v"><b>vintage</b><span>古着、复古款（有年代感、不再量产）</span>
+<span class="ex2">"'vintage fall aesthetic' rose by more than 1,000 percent."</span>
+<span class="src2">— WWD (Pinterest fall 2025 trend report)</span></div>
+<div class="v"><b>clean out one's closet</b><span>清理衣橱（把闲置拿出来卖的常用说法）</span>
+<span class="ex2">"Sellers love ThredUp because we make it easy to clean out their closets…"</span>
+<span class="src2">— ThredUp (About / Brand)</span></div>
+<div class="v"><b>statement piece / layers</b><span>"点睛单品"——一眼抢戏、表达态度的那件</span>
+<span class="ex2">"…statement layers, caffeine-inspired neutral hues… taking the lead."</span>
+<span class="src2">— WWD (Pinterest fall 2025 trend report)</span></div>
+<div class="v"><b>one-click retail</b><span>一键式零售（算法下单、无接触的便利消费）</span>
+<span class="ex2">"…make real local connections that one-click retail can't deliver."</span>
+<span class="src2">— OfferUp CEO, via Just Style (2025)</span></div>
+<div class="v"><b>discontinued / limited edition</b><span>停产款 / 限量版（二手里的"硬通货"）</span>
+<span class="ex2">"Find items no longer sold new (vintage, discontinued, limited edition)."</span>
+<span class="src2">— ThredUp 2025 Holiday Report</span></div>
+<div class="v"><b>brand discovery</b><span>品牌发现——通过二手渠道"种草"新品牌</span>
+<span class="ex2">"Gen Z treat secondhand platforms as a key channel for brand discovery."</span>
+<span class="src2">— BCG &amp; Vestiaire Collective, Resale's Next Chapter (2025)</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"For this generation, secondhand is not merely a way to save money; it is a quiet argument about what a good life costs."</p>
+<p class="a"><b>句型：</b>not merely A; but B 的并列递进（用分号更有文气，but 后接名词短语 it is a(n) …）。<b>逻辑：</b>先压低（省钱），再抬高（是对"好生活代价"的安静宣言），把消费行为上升成价值观。<b>表达：</b>① <i>not merely… but…</i> 是评论文签名句式，比 not only… but also… 更克制高级；② <i>a quiet argument about…</i> 把抽象立场比作"argument（论点）"，值得模仿：<i>Her silence was not merely shyness; it was an argument about consent.</i></p>
+</div>
+<div class="sb">
+<p class="q">"Far from being a sign of hardship, buying used has become, for many young urbanites, a badge of taste."</p>
+<p class="a"><b>句型：</b><i>Far from being + 名词/形容词</i> 让步开头 + 主句（中间插入 for many young urbanites 当作状语）。<b>逻辑：</b>先否定"这是穷的标志"，再翻转成"这是品味的徽章"，制造反差。<b>表达：</b>① <i>far from being</i> 比 despite 更有力，专门用来"先破后立"；② <i>a badge of taste</i> 把抽象品味具象成"徽章"，画面感强，可套：<i>Reading slowly has become, for him, a badge of independence.</i></p>
+</div>
+<div class="sb">
+<p class="q">"The very apps that made fast fashion frictionless have now made resale just as easy, blurring the line between indulgence and thrift."</p>
+<p class="a"><b>句型：</b><i>The very X that… have now…</i> 强调结构 + 现在分词短语 <i>blurring the line between A and B</i> 作结果状语。<b>逻辑：</b>指出同一批 App 既是快时尚的推手、又是二手的推手，模糊了"放纵"与"节俭"的边界。<b>表达：</b>① <i>the very</i> 表"正是那个"，加强语气；② <i>blurring the line between A and B</i> 超好用，形容两件事不再分明：<i>Remote work is blurring the line between home and office.</i></p>
+</div>
+<div class="sb">
+<p class="q">"What separates today's resale boom from the garage sales of the past is not the act of trading old things, but the meaning attached to it."</p>
+<p class="a"><b>句型：</b>What 引导的主语从句 + 系动词 + <i>not A, but B</i> 平行表语；B 中带过去分词 <i>attached to it</i> 作后置定语。<b>逻辑：</b>把"今天的转售热"和"过去的车库甩卖"区分开，结论是差别不在行为、而在意义。<b>表达：</b>① <i>What separates X from Y is…</i> 是极好用的对比框架；② <i>attached to it</i> 让"意义"像被贴上去的标签，比 with 更紧凑。</p>
+</div>
+<div class="sb">
+<p class="q">"It is precisely because these objects already carry someone else's story that they feel more personal, not less."</p>
+<p class="a"><b>句型：</b>强调句 <i>It is precisely because… that…</i>（强调原因状语从句），句末 <i>not less</i> 呼应 more，形成 not A (but) B 收束。<b>逻辑：</b>点出悖论——正因带着别人的故事，这些旧物才更"个人化"。<b>表达：</b>① <i>precisely because</i> 比 just because 更笃定、更有评论腔；② <i>more personal, not less</i> 用"更…而非更不…"收尾，是议论文的高级反转法，可套：<i>It is precisely because it is small that it matters more, not less.</i></p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>十年前，买二手在西方多是无奈或边缘爱好，还带着"买不起新的"的微妙羞耻；今天，对越来越多年轻消费者来说，二手架不是安慰奖，而是目的地。数据很硬：全球二手服装市场增速约为整体服装市场的 3 倍，美国整个"recommerce（转售）"经济已超 2000 亿美元，且由年轻人带头——近半数 Z 世代去年首次卖出闲置，多数人说"有二手就优先选二手"，用行业大佬的话说，二手已经"mainstream（主流）"。原因有两层：一是经济——生活成本上涨，年轻人学会 stretch a budget（让预算更经用）；二是身份——mass-produced（量产）时尚太雷同，"独一无二"的二手反而成了文化资本。他们不是在买，而是在 curating（策展式地拼凑自我）。"preloved / circular"等词把"二手"软化成了"有故事的、可持续的"美德；技术（App）则把转售变得和快时尚一样顺手。文章最后点题：今天的转售热和过去的车库甩卖不同，差别不在"交易旧物"这个动作，而在"附着其上的意义"——旧物因带着别人的故事，反而更 personal。</p>
+<p><b>背后文化现象：</b>① 从"羞耻"到"徽章"——"二手"完成语义反转，成了品味、可持续、会过日子的标志；② 经济压力 + 身份表达双轮驱动，年轻人把"省钱"重新讲成了"一种生活立场"；③ 平台把"寻宝"游戏化（drops / alerts / 错过感），让道德转向有了便利引擎；④ "具体、带故事、不可复制"的东西，在量产与算法时代反而稀缺——这恰是你「城市观察者」账号的核心母题。</p>
+<p><b>值得思考的问题：</b>这股"二手=有态度"的浪潮，究竟是价值观的真实转向，还是经济下行下"把省钱讲得好听"的话术？当 brands 也开始下场做官方转售，"反消费"会不会被收编成又一种 marketing？——放到你做内容这件事上：当所有人都在追算法分发的"量产爆款"，你那条"具体、带缺点、有人味"的观察，会不会恰恰是最稀缺、最值钱的那件"vintage"？</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article says young people now treat "used" as a badge of taste rather than a sign of hardship. Do you think this is a real shift in values, or mostly a smarter way to talk about saving money? Share your view in about 200 words, with one concrete example from your own life or your city.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think it's a bit of both, but the values part is realer than people admit. On one hand, yes, a lot of the "thrift is chic" talk is a polite rewrite of "I can't afford new." When money is tight, calling a $3 shirt a "vintage find" feels better than calling it a compromise. That framing work is genuine, and brands know it.
+      But I've watched the shift happen in my own circle, and it's not only about price. A friend of mine started renting a tiny studio and began furnishing it entirely from secondhand markets—not because she was broke, but because she wanted a home that looked like no one else's. She'll send me photos of a chipped teacup or a 90s lamp with real pride, the way someone else might show off a new purchase. The object matters less than the story she gets to tell about it.
+      So I'd say the economy gave the trend its push, but the meaning is what keeps it going. "Used" stopped being a confession and became a kind of authorship. That feels like more than a budget trick to me.
+    </div>
+<div class="tip">✍️ 写法提示：用 I think it's a bit of both 先"两不像"地破题，比直接站队更老练；中间用 On one hand… But… 把"省钱话术"和"真实价值观"分层，再用 A friend of mine… 拉回自身 concrete example 扣题；结尾用 So I'd say… 收束并给出你的判断，像母语者议论的落点。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计回到「人类与社会」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-03',title:"The Thrift Generation: How Young Shoppers Fell Out of Love with 'New'"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

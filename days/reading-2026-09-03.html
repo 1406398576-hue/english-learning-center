@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Reading · 2026-09-03 · The Quiet Comfort of the Rewatch</title>
+<style>
+  :root{
+    --bg:#FBF9F4;
+    --card:#FFFFFF;
+    --card-soft:#F4EFE6;
+    --ink:#3A3733;
+    --muted:#7A746A;
+    --line:#E6DFD2;
+    --fog:#8FAEB8;      /* 雾蓝 */
+    --fog-deep:#6E94A0;
+    --sage:#7FA99B;     /* 青绿 */
+    --brown:#B08D6A;    /* 暖棕 */
+    --brown-soft:#C9A987;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px;}
+  header.top{
+    border-bottom:2px solid var(--line);
+    padding-bottom:20px;margin-bottom:28px;
+  }
+  .kicker{
+    display:inline-block;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sage);font-weight:700;margin-bottom:10px;
+  }
+  h1{
+    font-size:27px;line-height:1.3;margin:0 0 10px;
+    color:var(--ink);font-weight:800;
+  }
+  .meta{font-size:13px;color:var(--muted);}
+  .meta b{color:var(--brown);font-weight:700;}
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 22px;
+    margin:22px 0;
+    box-shadow:0 1px 2px rgba(80,70,50,.04);
+  }
+  .sec-title{
+    display:flex;align-items:center;gap:10px;
+    font-size:19px;font-weight:800;color:var(--ink);
+    margin:0 0 16px;
+  }
+  .sec-title .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--fog);flex:0 0 auto;
+  }
+  .sec-title.culture .dot{background:var(--brown);}
+  .sec-title.syntax .dot{background:var(--sage);}
+  .sec-title.summary .dot{background:var(--brown-soft);}
+  .sec-title.speak .dot{background:var(--fog-deep);}
+  .lead{color:var(--muted);font-size:14px;margin:-6px 0 16px;}
+
+  /* Article */
+  .article{
+    font-family:Georgia,"Times New Roman","Songti SC",serif;
+    font-size:17px;line-height:1.95;color:#34312C;
+  }
+  .article p{margin:0 0 18px;}
+  .article p:first-letter{}
+  .drop{
+    float:left;font-family:Georgia,serif;font-size:52px;line-height:.86;
+    font-weight:700;color:var(--brown);margin:6px 10px 0 0;
+  }
+  .art-note{
+    background:var(--card-soft);border-left:3px solid var(--sage);
+    padding:10px 14px;border-radius:0 10px 10px 0;
+    font-size:13px;color:var(--muted);font-family:inherit;margin-bottom:14px;
+  }
+
+  /* Expression cards */
+  .expr{
+    border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin:12px 0;background:var(--card-soft);
+  }
+  .expr .term{
+    font-weight:800;color:var(--fog-deep);font-size:16px;
+    display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;
+  }
+  .expr .term .zh{color:var(--brown);font-size:14px;font-weight:700;}
+  .expr .mean{font-size:14px;color:var(--muted);margin:6px 0 8px;}
+  .expr .scene{font-size:13px;color:var(--ink);margin-bottom:8px;}
+  .expr .scene b{color:var(--sage);}
+  .expr .ex{
+    font-family:Georgia,serif;font-size:15px;color:#34312C;
+    background:#fff;border:1px dashed var(--line);border-radius:8px;
+    padding:10px 12px;margin-top:6px;
+  }
+  .expr .src{font-size:12px;color:var(--muted);margin-top:6px;text-align:right;font-style:italic;}
+  .expr .src b{color:var(--brown);font-style:normal;}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:560px){.twocol{grid-template-columns:1fr;}}
+
+  /* Sentence breakdown */
+  .sent{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;background:#fff;}
+  .sent .en{
+    font-family:Georgia,serif;font-size:15.5px;color:#34312C;
+    background:var(--card-soft);border-radius:8px;padding:12px 14px;margin-bottom:12px;
+    border-left:3px solid var(--sage);
+  }
+  .sent h4{margin:0 0 6px;font-size:14px;color:var(--fog-deep);letter-spacing:.04em;}
+  .sent .row{margin:8px 0;font-size:14px;}
+  .sent .row b{color:var(--brown);}
+  .sent .tag{
+    display:inline-block;font-size:11px;color:#fff;background:var(--sage);
+    border-radius:20px;padding:2px 10px;margin-right:6px;font-weight:700;letter-spacing:.04em;
+  }
+
+  /* Summary */
+  .sum-block{margin:14px 0;}
+  .sum-block h4{
+    font-size:15px;margin:0 0 8px;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .sum-block h4 .ic{
+    width:22px;height:22px;border-radius:6px;background:var(--card-soft);
+    color:var(--brown);display:inline-flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:800;flex:0 0 auto;
+  }
+  .sum-block p{margin:0;font-size:14.5px;color:#4A463F;}
+  .sum-block .q{color:var(--fog-deep);font-weight:700;}
+
+  /* Speaking */
+  .prompt{
+    background:var(--card-soft);border:1px solid var(--line);border-radius:12px;
+    padding:16px;font-size:15px;color:#34312C;
+  }
+  .prompt .ask{font-weight:800;color:var(--fog-deep);}
+  .model{
+    font-family:Georgia,serif;font-size:15px;line-height:1.9;color:#34312C;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:16px;margin-top:14px;
+  }
+  .model .lbl{
+    font-family:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--sage);font-weight:800;display:block;margin-bottom:8px;
+  }
+  .tip{font-size:13px;color:var(--muted);margin-top:12px;background:var(--card-soft);
+       border-radius:10px;padding:10px 14px;border-left:3px solid var(--fog);}
+  .tip b{color:var(--brown);}
+
+  footer{
+    text-align:center;color:var(--muted);font-size:12px;margin-top:30px;
+    border-top:1px solid var(--line);padding-top:18px;
+  }
+  .pill{display:inline-block;background:var(--card-soft);border:1px solid var(--line);
+        color:var(--muted);font-size:11px;border-radius:20px;padding:3px 10px;margin:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="kicker">Daily English Reading · 文化娱乐 / Culture &amp; Entertainment</span>
+    <h1>The Quiet Comfort of the Rewatch</h1>
+    <div class="meta">📅 <b>2026-09-03</b> &nbsp;·&nbsp; 主题桶：文化娱乐（循环 index 3 / 20）&nbsp;·&nbsp; 词数 ≈ 1,080 &nbsp;·&nbsp; 难度：真实媒体风（CET-6 / IELTS 6.5 友好）</div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>English Article</div>
+    <div class="art-note">本篇为原创深度文化报道（非教材体），用词与句式贴近英文媒体真实文风；文中对研究数据、媒体引述均标注真实出处（Nielsen / Vulture / NPR 等）。建议先通读，再回看表达与句法解析。</div>
+    <div class="article">
+      <p><span class="drop">T</span>here is a particular kind of evening, familiar to anyone who owns a streaming password, in which you open an app with every intention of finding something new, scroll for eleven minutes, and then—almost without deciding—press play on a show you have already watched in full, perhaps twice. The characters greet you like old friends. You know the jokes before they land. And yet the relief is real.</p>
+
+      <p>This habit has a name now. "Comfort television," sometimes called comfort TV or comfort shows, describes the practice of rewatching the same program, often repeatedly, for the sake of comfort and stress relief rather than novelty. It is not a genre so much as a relationship: a show becomes comfort television the moment it stops being something you watch and becomes something you return to. A sitcom from your teenage years, a procedural you half-listen to while cooking, a prestige drama you can now quote line for line—any of them can qualify, provided they make you feel a sense of coming home.</p>
+
+      <p>What is striking is how widespread the practice has become. During the early months of the COVID-19 pandemic, as millions found themselves confined to their homes with little to do and much to fear, viewership of older favorites surged. Nielsen data showed that two series that first aired in 2005—"The Office" and "Grey's Anatomy"—were among the most-streamed programs in the United States, with the former logged for more than 57 billion minutes. A Nielsen study conducted with Billboard and MRC Data concluded that more than half of consumers sought comfort in familiar music and television. The numbers were not an accident of a strange year; they revealed a coping mechanism that streaming had quietly made frictionless.</p>
+
+      <p>The psychology behind the rewatch is, in fact, fairly legible. At its core, comfort viewing is an exercise in predictability. New shows demand what researchers call cognitive load: you must learn names, track subplots, brace for plot twists, and decide whether the whole thing is worth your evening. Familiar shows remove all of that. Your brain, already tired from a day of decisions, is allowed to stop bracing. Psychologists note that this predictability can lower activation in the brain's stress-response systems, which is precisely why a rewatch can feel less like entertainment and more like a warm bath.</p>
+
+      <p>Familiarity also breeds a peculiar kind of companionship. Over years of repeated viewing, audiences form what scholars term parasocial relationships—one-sided emotional bonds with fictional characters who, paradoxically, come to feel more dependable than some of the people in our actual lives. We know Leslie Knope's decency and Michael Scott's chaos the way we know a sibling's rhythms. When life outside the screen feels unstable, these characters offer something rare: emotional constancy. As one analysis put it, comfort TV can act as emotional scaffolding—a familiar presence when real-life support systems are strained.</p>
+
+      <p>Nostalgia does much of the remaining work. The shows we return to are rarely chosen at random; they are anchored to a version of ourselves we liked better. A sitcom from college might recall a time when the future was full of possibility, as one librarian described her rewatches of "Mad Men." Rewatching, in this sense, is less about the plot than about re-entering a feeling—the lightweight optimism of a period we cannot get back but can, briefly, visit. Studies in media psychology suggest nostalgia can lift mood, deepen a sense of belonging, and even soften anxiety. The rewatch, then, is a kind of time travel we are allowed to repeat.</p>
+
+      <p>Streaming platforms have engineered this comfort into the architecture of modern viewing. Entire seasons wait on demand. Autoplay nudges you from one episode to the next. Recommendation engines surface "because you watched" suggestions that keep you inside a familiar lane. What once required catching a rerun at a fixed hour now requires only a thumb. The friction that used to interrupt repetition has been designed away, and with it the mild guilt of "I should probably watch something new."</p>
+
+      <p>That guilt is worth examining, because comfort TV sits uneasily beside a rival ideal: prestige television. For two decades, the cultural conversation about "good" TV was dominated by sprawling, demanding dramas—"The Wire," "Succession," "Breaking Bad"—that wore their ambition like a badge. To watch them was to be intellectually fortified; to watch "Friends" for the seventeenth time was, implicitly, to be wasting your evening. Yet the pandemic unsettled that hierarchy. As the critic Kathryn VanArendonk argued in Vulture, the crisis was "the final death knell of 'prestige' as a meaningful indicator of anything at all." The desire for television that foregrounds delight rather than despair, she suggested, is not a weakness. TV that makes us sad is not inherently better.</p>
+
+      <p>There is a defensible middle position. Comfort viewing becomes a problem only when it hardens into avoidance—when familiar stories are used to wall off, rather than recover from, a difficult world. Used in moderation, the rewatch is closer to emotional maintenance than to escapism. It is the mental equivalent of putting on a soft sweater: not a substitute for dealing with your life, but a way of gathering yourself so you can.</p>
+
+      <p>Perhaps the most interesting thing about comfort TV is what it reveals about contemporary life. We live in an age of infinite choice and finite emotional energy, where the sheer volume of available content can itself feel like a low-grade threat. In such a world, the deliberate choice to watch something we already know is not laziness. It is a small, repeatable act of self-regulation—a way of telling an overwhelming feed, at least for forty-two minutes, that we are safe here, and we know how this ends.</p>
+
+      <p>So the next time someone side-eyes your fourth "New Girl" rewatch, you can tell them: your brain has very good reasons. You are not killing time. You are tending to it.</p>
+    </div>
+  </section>
+
+  <!-- ============ KEY EXPRESSIONS ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>Key Expressions · 10 个真实英语表达</div>
+    <div class="lead">以下表达均取自真实英文语料；例句标注来源（媒体名 / 标题），今日文章内原句标注为 <b>Today's Article</b>。</div>
+
+    <div class="expr">
+      <div class="term">comfort food <span class="zh">慰藉食物；引申为带来安抚的人 / 事 / 物</span></div>
+      <div class="mean">字面是"治愈系食物"，也常比喻任何能舒缓情绪的东西。</div>
+      <div class="scene"><b>场景：</b>形容某首歌、某部剧、某个习惯像"精神宵夜"一样安抚你。</div>
+      <div class="ex">"Traci LeNée Anderson likens <i>Law &amp; Order</i> reruns to comfort food."</div>
+      <div class="src">— <b>NPR</b>, "Returning To Old Favorites? Comfort TV…"</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">coping mechanism <span class="zh">应对机制（缓解压力的行为方式）</span></div>
+      <div class="mean">心理学常用词，指人面对压力时发展出的习惯性应对方式。</div>
+      <div class="scene"><b>场景：</b>讨论运动、追剧、整理等习惯如何帮人消化压力。</div>
+      <div class="ex">"…they revealed a coping mechanism that streaming had quietly made frictionless."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">cognitive load <span class="zh">认知负荷（大脑处理信息所需的心理能耗）</span></div>
+      <div class="mean">指完成任务时占用的心理资源；越高越"费脑子"。</div>
+      <div class="scene"><b>场景：</b>解释为什么学新东西累、为什么熟悉的事更轻松。</div>
+      <div class="ex">"New shows demand what researchers call cognitive load."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">parasocial relationship <span class="zh">准社会关系（对虚构人物 / 名人的单向情感依恋）</span></div>
+      <div class="mean">观众对角色产生"像朋友一样"的情感，但对方并不认识你。</div>
+      <div class="scene"><b>场景：</b>分析粉丝文化、追剧黏性、网红经济。</div>
+      <div class="ex">"These parasocial relationships—one-sided bonds with fictional people—can feel deeply real."</div>
+      <div class="src">— <b>Nostalgic Buzz</b>, "Background Noise or Art Form?"</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">foreground (v.) <span class="zh">凸显；把……置于前台 / 重点强调</span></div>
+      <div class="mean">作动词时表示"把某方面推到显眼位置"，比 emphasize 更雅。</div>
+      <div class="scene"><b>场景：</b>评论某作品 / 政策把某个议题摆到台前。</div>
+      <div class="ex">"The desire for TV shows that foreground delight rather than despair is not a form of weakness."</div>
+      <div class="src">— <b>Esquire</b> / Vulture（Kathryn VanArendonk）</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">the death knell (of) <span class="zh">……的丧钟；终结的信号</span></div>
+      <div class="mean">比喻某事物走向终结的标志性事件。</div>
+      <div class="scene"><b>场景：</b>宣告一个时代、标准或行业的落幕。</div>
+      <div class="ex">"The pandemic was the final death knell of 'prestige' as a meaningful indicator of anything at all."</div>
+      <div class="src">— <b>Vulture</b>（Kathryn VanArendonk）, via Esquire</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">wall off <span class="zh">把……隔绝在外；砌墙隔开</span></div>
+      <div class="mean">本义砌墙，引申为情感 / 心理上把某物挡在外面。</div>
+      <div class="scene"><b>场景：</b>描述用忙碌、娱乐等把困难现实"挡在门外"。</div>
+      <div class="ex">"…when familiar stories are used to wall off, rather than recover from, a difficult world."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">emotional scaffolding <span class="zh">情感支撑架构（脆弱时托住你的东西）</span></div>
+      <div class="mean">比喻在情绪不稳时提供结构感与稳定感的支撑物。</div>
+      <div class="scene"><b>场景：</b>描述朋友、习惯、作品如何在低谷时"撑住"你。</div>
+      <div class="ex">"comfort TV can act as emotional scaffolding—a familiar presence when real-life support systems are strained."</div>
+      <div class="src">— <b>Nostalgic Buzz</b>, "Background Noise or Art Form?"</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">self-regulation <span class="zh">自我调节（管理自身情绪 / 行为）</span></div>
+      <div class="mean">心理学核心词，指主动调控自己的状态而非被外界牵着走。</div>
+      <div class="scene"><b>场景：</b>谈自律、情绪管理、健康习惯。</div>
+      <div class="ex">"It is a small, repeatable act of self-regulation…"</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">frictionless <span class="zh">无摩擦的；顺畅无阻的</span></div>
+      <div class="mean">形容体验顺滑到"没有阻力"，科技 / 商业文高频。</div>
+      <div class="scene"><b>场景：</b>夸某 App、支付、流程"丝滑"。</div>
+      <div class="ex">"…a coping mechanism that streaming had quietly made frictionless."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+  </section>
+
+  <!-- ============ CELEBRITY / CULTURE VOCAB ============ -->
+  <section>
+    <div class="sec-title culture"><span class="dot"></span>Celebrity / Culture Vocabulary · 娱乐文化词块</div>
+    <div class="lead">本期为"影视 / 流媒体"主题，下列词块均来自真实媒体报道（标注出处）；末组为娱乐人物报道通用搭配，例句为说明性改写、语境真实。</div>
+
+    <div class="twocol">
+      <div class="expr">
+        <div class="term">binge-watch <span class="zh">一口气刷剧</span></div>
+        <div class="ex">"Binge-watching has been made easier by streaming platforms, such as Netflix, Amazon Prime, Hulu, Max and Disney+."</div>
+        <div class="src">— <b>Mass. Daily Collegian</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">rerun <span class="zh">（已播过的）重播剧集</span></div>
+        <div class="ex">"Traci LeNée Anderson likens <i>Law &amp; Order</i> reruns to comfort food."</div>
+        <div class="src">— <b>NPR</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">prestige TV <span class="zh">精品剧 / 高口碑严肃剧</span></div>
+        <div class="ex">"Somewhere between <i>The Wire</i> and <i>Tiger King</i>, between prestige TV and comfort TV, our expectations… changed."</div>
+        <div class="src">— <b>Esquire</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">cliffhanger <span class="zh">悬念结尾（催更的钩子）</span></div>
+        <div class="ex">"…not for plot twists or cliffhangers, but for familiarity, nostalgia, and emotional ease."</div>
+        <div class="src">— <b>Nostalgic Buzz</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">autoplay <span class="zh">自动连播</span></div>
+        <div class="ex">"streaming services… often even feature autoplay and recommendation plugins."</div>
+        <div class="src">— <b>Wikipedia</b>（Comfort television）</div>
+      </div>
+      <div class="expr">
+        <div class="term">binge-worthy <span class="zh">值得一口气刷完的</span></div>
+        <div class="ex">"In a world overflowing with prestige dramas, reality competitions, and binge-worthy thrillers…"</div>
+        <div class="src">— <b>Nostalgic Buzz</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">on-demand <span class="zh">点播（按需观看）</span></div>
+        <div class="ex">"viewers… access television series… on demand without being limited by broadcast schedules."</div>
+        <div class="src">— <b>Wikipedia</b>（Comfort television）</div>
+      </div>
+      <div class="expr">
+        <div class="term">streaming platform <span class="zh">流媒体平台</span></div>
+        <div class="ex">"Streaming platforms have engineered this comfort into the architecture of modern viewing."</div>
+        <div class="src">— <b>Today's Article</b></div>
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:16px;">
+      <b>通用娱乐人物搭配</b>（例句为说明性改写，展示真实语境，非逐字引用某篇报道）：
+      <span class="pill">make headlines 登上头条</span>
+      <span class="pill">public image 公众形象</span>
+      <span class="pill">personal life 私人生活</span>
+      <span class="pill">media attention 媒体关注</span>
+      <br>例：<i>"The actor's sudden retirement made headlines across entertainment outlets."</i> / <i>"The documentary blurs the line between his public career and personal life."</i>
+    </div>
+  </section>
+
+  <!-- ============ SENTENCE BREAKDOWN ============ -->
+  <section>
+    <div class="sec-title syntax"><span class="dot"></span>Sentence Breakdown · 5 个高级句子拆解</div>
+    <div class="lead">挑出文中 5 个结构扎实的句子，讲清句型、逻辑与地道表达，方便你仿写。</div>
+
+    <div class="sent">
+      <div class="en">"Comfort television," sometimes called comfort TV or comfort shows, describes the practice of rewatching the same program, often repeatedly, for the sake of comfort and stress relief rather than novelty.</div>
+      <div class="row"><span class="tag">句型</span><b>同位语下定义</b>：用引号术语 + 逗号同位语（sometimes called…）引出概念，主句 <i>X describes the practice of doing Y</i>；句末 <i>rather than novelty</i> 用 rather than 做取舍对比。</div>
+      <div class="row"><span class="tag">逻辑</span>先点名现象，再定义本质（是一种"做法"而非"类型"），最后划清边界——不是为了"新鲜感"。</div>
+      <div class="row"><span class="tag">表达</span><i>for the sake of A rather than B</i> 是地道对比框架；<i>describes the practice of…</i> 用于下定义很学术。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">What is striking is how widespread the practice has become.</div>
+      <div class="row"><span class="tag">句型</span><b>主语从句 + 表语从句</b>：<i>What is striking</i>（what 引导名词性从句作主语）+ 系动词 is + <i>how widespread…</i>（how 引导表语从句）。经典 "What + be + is + (how/that)…" 强调结构。</div>
+      <div class="row"><span class="tag">逻辑</span>把"令人惊讶之处"提前做焦点，自然引出后文数据支撑。</div>
+      <div class="row"><span class="tag">表达</span><i>What is striking is…</i> 是评论写作高频起手式，比 <i>It is striking that…</i> 更紧凑、更有观点感。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">Psychologists note that this predictability can lower activation in the brain's stress-response systems, which is precisely why a rewatch can feel less like entertainment and more like a warm bath.</div>
+      <div class="row"><span class="tag">句型</span>主句 <i>Psychologists note that…</i>（that 宾语从句）；从句内含 <i>which is precisely why…</i> 非限制性定语从句，which 指代前面整个命题；结尾 <i>less like A and more like B</i> 平行对比。</div>
+      <div class="row"><span class="tag">逻辑</span>因果链——可预测性 → 降低压力系统激活 → 所以重刷像"温水澡"般放松。<i>which is precisely why</i> 把前因直接接上结果。</div>
+      <div class="row"><span class="tag">表达</span><i>less like… and more like…</i> 极常用渐变对比；<i>warm bath</i> 比喻放松，画面感强。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">As the critic Kathryn VanArendonk argued in Vulture, the crisis was "the final death knell of 'prestige' as a meaningful indicator of anything at all."</div>
+      <div class="row"><span class="tag">句型</span><b>评注性状语</b>：<i>As + 主语 + 动词 + 介词</i>（as = "正如"）置于句首；主句 <i>the crisis was [quotation]</i>，引号内为名词短语作表语。</div>
+      <div class="row"><span class="tag">逻辑</span>借权威之口抛出核心判断——prestige（精品剧）作为评判标准已死。as 引导的插入语增强可信度。</div>
+      <div class="row"><span class="tag">表达</span><i>death knell of</i> 比喻"丧钟 / 终结信号"；<i>As X argued…</i> 是评论 / 学术写作引用观点的标准姿势。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">Comfort viewing becomes a problem only when it hardens into avoidance—when familiar stories are used to wall off, rather than recover from, a difficult world.</div>
+      <div class="row"><span class="tag">句型</span>主句 + <i>only when</i> 引导条件状语从句；破折号后 <i>when…</i> 同位从句进一步解释 avoidance；<i>wall off, rather than recover from,</i> 用 rather than 连接两个动词短语做取舍。</div>
+      <div class="row"><span class="tag">逻辑</span>限定边界——只有"固化成逃避"才成问题；破折号具体说明逃避（用熟悉故事把困难世界隔开，而非从中恢复）。</div>
+      <div class="row"><span class="tag">表达</span><i>harden into</i> 由软变硬的隐喻；<i>wall off</i> 砌墙隔开；rather than 在此连接动词短语，节奏利落。</div>
+    </div>
+  </section>
+
+  <!-- ============ CHINESE SUMMARY ============ -->
+  <section>
+    <div class="sec-title summary"><span class="dot"></span>Chinese Summary · 中文导读</div>
+
+    <div class="sum-block">
+      <h4><span class="ic">核</span>核心内容</h4>
+      <p>文章介绍了 <b>comfort TV（安慰式重刷）</b> 这一现象：人们反复观看熟悉的剧集，以获得安全感、舒缓压力，而不是追新。全文从定义说起，依次展开心理学机制——<b>可预测性</b>降低认知负荷、<b>准社会关系（parasocial）</b>带来陪伴感、<b>怀旧</b>重建情绪；再讲流媒体如何把"重刷"做成无摩擦体验；最后落到与"精品剧（prestige TV）"的价值之争。结论：适度重刷更接近情绪维护，而非逃避。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">象</span>背后文化现象</h4>
+      <p>① <span class="q">选择过载</span>：无限内容反而成为心理负担，"已知"成了一种奢侈的确定感；② <span class="q">疫情放大</span>：把这套 coping 机制正常化（Nielsen 数据显示老剧 streaming 时长暴涨）；③ <span class="q">算法助推</span>：autoplay、推荐引擎把"重复"设计进产品，模糊了"放松"与"被黏住"的边界；④ <span class="q">等级瓦解</span>：精品剧 = 高级的秩序在不确定性中崩塌，"delight over despair"被正名。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">思</span>值得思考的问题</h4>
+      <p>· 重刷到底是<b>自我关怀</b>还是<b>逃避现实</b>？界限在哪？<br>· 当平台用算法替我们做"无需决策"的选择，我们是在休息，还是被悄悄驯化？<br>· "已知的安全"会不会让我们失去接触新视角、新情绪的勇气？</p>
+    </div>
+  </section>
+
+  <!-- ============ SPEAKING PRACTICE ============ -->
+  <section>
+    <div class="sec-title speak"><span class="dot"></span>Speaking Practice · 口语讨论</div>
+    <div class="prompt">
+      <span class="ask">Question:</span> Do you have a "comfort show"—a series you return to again and again? Why do you think you keep going back to it, and do you see this habit as healthy self-care or a form of avoidance? Draw on the psychology in the article (predictability, parasocial bonds, nostalgia) and give a personal example. <b>Aim for about 200 words.</b>
+    </div>
+
+    <div class="model">
+      <span class="lbl">参考范文 · Model Answer（≈200 words）</span>
+      Honestly, mine is <i>The Office</i>. I've seen every episode at least four times, and I still put it on while folding laundry or eating dinner. The article names exactly why: predictability. After a long day of decisions at work, I have zero mental energy left to meet new characters or follow a twisty plot—so I return to a world where I already know everyone and nothing truly bad happens. There's also a parasocial comfort: Michael, Jim, and Pam feel like old colleagues I check in with, not fictional people. And a bit of nostalgia—I first watched it in college, so the laugh track somehow reconnects me to a lighter, freer version of myself. I'd call it self-care, not avoidance, as long as it's deliberate. The line, as the article says, is when familiar stories are used to "wall off" a difficult world rather than recover from it. For me, twenty minutes of Dunder Mifflin is recovery, not retreat—I close my laptop feeling steadier, not more detached. The danger would be if I let it replace real connection. Used in moderation, it's emotional maintenance, the mental equivalent of a soft sweater.
+    </div>
+
+    <div class="tip">
+      <b>练习建议：</b>先遮住范文，用手机录音说满 200 词；再对照范文，圈出你能借鉴的 3 个表达（如 <i>zero mental energy left to…</i>、<i>the line is when…</i>、<i>emotional maintenance</i>），下次复用。重点练 <i>predictability / parasocial / nostalgia</i> 三个词的自然嵌入。
+    </div>
+  </section>
+
+  <footer>
+    📚 学习中心 · 每日英文精读 &nbsp;|&nbsp; 2026-09-03 &nbsp;|&nbsp; 主题循环：人物 40% · 文化 25% · 科技 20% · 商业 15%<br>
+    <span style="opacity:.7;">例句来源：NPR · Esquire / Vulture · Nostalgic Buzz · Wikipedia · Today's Article（原创）</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-24</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:24px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:21px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Slow Erosion of the Unplanned Hour</h1>
+<p class="sub">「无计划的一小时」正在慢慢消失：当日历替你安排好一切，城市里那些偶然的、不被预期的相遇，去哪了？</p>
+<div class="meta">
+<span>📅 <b>2026-08-24</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">你上一次"什么都没安排、然后撞见点有意思的事"，是什么时候？不是刷到的，是<span class="hl">真在街上、咖啡馆、转错弯时撞见的</span>。对一座城市的观察者来说，这种"无计划的小时"曾是素材的源头——你看见一个吵架的情侣、一块被遗忘的招牌、一场没有观众的自娱自乐。但过去十年，我们的时间被日程、提醒和"稍后处理"塞满，连发呆都要预约。这篇文章聊的，正是<b> spontaneity（自发性）作为一种城市公共资源，正在被效率悄悄抽走</b>：当每一分钟都有去处，那些"不知道要去哪"的分钟，反而成了最稀缺的东西。它和你之前的母题——偶遇之夜消失(08-13)、零点击互联网(08-18)、真实 vs 精致(08-12)——是同一条线。</p>
+<div class="tip">💡 读前小思考：翻一下你接下来三天的日历。有没有哪怕一段，是"没安排、留白、允许走神"的？</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 原文阅读</h2><span class="time-tag">⏱ 正文</span></div>
+<article class="read">
+<p>There is a particular kind of hour that used to belong to everyone. It was the hour with no name on the calendar — the gap between two errands, the walk you took because it was sunny, the café you stepped into because the sign looked friendly. Nobody scheduled it. That was the point. You did not open an app to find it; you <span class="hl">stumbled into it</span>, and something small but real happened: a conversation, a detail, a thought you would not have thought on a screen.</p>
+<p>We have, almost without noticing, engineered that hour out of existence. The modern day is a sequence of blocks, each assigned, each defended. We treat unstructured time as a leak in the system rather than the system's <span class="hl">raw material</span>. When a gap appears, the reflex is to fill it — to check, to reply, to "quickly" do the thing. The result is a life that is efficient and oddly airless, where almost nothing arrives that you did not already ask for.</p>
+<p>Cities feel this loss first, because cities run on chance. A metropolis is, among other things, a machine for productive accidents: the unplanned encounter, the shop you'd never have searched for, the version of yourself that only shows up when no one is expecting anything. Urbanists have a name for the places where this happens — the "third place," neither home nor work — and they have watched those places thin out as rents rise and screens thicken. But the deeper change is inside us. Even surrounded by a crowd, we have learned to <span class="hl">pre-book our attention</span>.</p>
+<p>The irony is that spontaneity is exactly what we say we miss. We romanticize the wander, the stroke of luck, the "right place at the right time." Yet we optimize the conditions that make such moments impossible. We route the walk to save four minutes. We trade the corner store for the delivered one. We let the calendar decide not only what we do, but what we might do — and a might is a fragile thing to schedule away.</p>
+<p>None of this is a case for chaos. Structure is kindly; it protects the tired and the busy from their own worst impulses. The cost is subtler. When every hour is accounted for, the self that emerges is a managed one — legible, trackable,永远 online — and the unmanaged self, the one that gets bored and therefore curious, gets fewer invitations to speak. Boredom, it turns out, is not the enemy of attention. It is its <span class="hl">incubator</span>.</p>
+<p>So the question is not whether to plan, but where to leave the seams. A city observer keeps a few on purpose: a regular walk with no destination, a café without Wi-Fi, a rule that one evening a week belongs to whatever happens. These are not inefficiencies. They are the <span class="hl">margins where the interesting lives</span> — and margins, once paved over, are the hardest thing to rebuild.</p>
+</article>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 积累</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">stumble into (something)</span><button aria-label="收藏表达" class="expr-fav" data-en="stumble into (something)" data-example='"I stumbled into a tiny bookstore and lost two hours."（我无意间逛进一家小书店，待了两小时。）—— 常见于游记与生活方式报道' data-scene="使用场景：形容没有计划、偶然遇到某人、某事或某种处境。" data-zh="（无意中）撞见 / 碰上" type="button">☆</button></span><span class="zh">（无意中）撞见 / 碰上</span><span class="sc">使用场景：形容没有计划、偶然遇到某人、某事或某种处境。</span><span class="ex">"I stumbled into a tiny bookstore and lost two hours."（我无意间逛进一家小书店，待了两小时。）—— 常见于游记与生活方式报道</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">raw material</span><button aria-label="收藏表达" class="expr-fav" data-en="raw material" data-example='"Boredom is the raw material of imagination."（无聊是想象力的原材料。）—— 常见于评论版与专栏' data-scene='使用场景：比喻创意、灵感或关系生成的"原料"。' data-zh="原材料（引申：最原始、未被加工的基础素材）" type="button">☆</button></span><span class="zh">原材料（引申：最原始、未被加工的基础素材）</span><span class="sc">使用场景：比喻创意、灵感或关系生成的"原料"。</span><span class="ex">"Boredom is the raw material of imagination."（无聊是想象力的原材料。）—— 常见于评论版与专栏</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">pre-book (one's) attention</span><button aria-label="收藏表达" class="expr-fav" data-en="pre-book (one's) attention" data-example='"We have learned to pre-book our attention."（我们学会了对注意力提前预订。）—— 出自本文，可作仿写' data-scene="使用场景：调侃我们把每一段专注都提前分配掉，不给意外留白。" data-zh='预先把注意力"预订"出去' type="button">☆</button></span><span class="zh">预先把注意力"预订"出去</span><span class="sc">使用场景：调侃我们把每一段专注都提前分配掉，不给意外留白。</span><span class="ex">"We have learned to pre-book our attention."（我们学会了对注意力提前预订。）—— 出自本文，可作仿写</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the point</span><button aria-label="收藏表达" class="expr-fav" data-en="the point" data-example='"Nobody scheduled it. That was the point."（没人安排它，而这正是关键。）' data-scene='使用场景：强调某事的精髓或目的，常用 "That was the point."' data-zh="关键（所在）/ 重点" type="button">☆</button></span><span class="zh">关键（所在）/ 重点</span><span class="sc">使用场景：强调某事的精髓或目的，常用 "That was the point."</span><span class="ex">"Nobody scheduled it. That was the point."（没人安排它，而这正是关键。）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">productive accidents</span><button aria-label="收藏表达" class="expr-fav" data-en="productive accidents" data-example='"A metropolis is a machine for productive accidents."（大都市是一台生产意外价值的机器。）—— 仿自城市研究常用语' data-scene="使用场景：描述城市、创新环境里那些意外的、却有益的连接。" data-zh='"有产出的意外"（指带来价值的偶然）' type="button">☆</button></span><span class="zh">"有产出的意外"（指带来价值的偶然）</span><span class="sc">使用场景：描述城市、创新环境里那些意外的、却有益的连接。</span><span class="ex">"A metropolis is a machine for productive accidents."（大都市是一台生产意外价值的机器。）—— 仿自城市研究常用语</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">thin out</span><button aria-label="收藏表达" class="expr-fav" data-en="thin out" data-example='"They have watched those places thin out."（他们眼看着那些场所一点点变少。）' data-scene="使用场景：描述数量、人群或空间逐渐稀少。" data-zh="变少 / 变稀疏" type="button">☆</button></span><span class="zh">变少 / 变稀疏</span><span class="sc">使用场景：描述数量、人群或空间逐渐稀少。</span><span class="ex">"They have watched those places thin out."（他们眼看着那些场所一点点变少。）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the seams</span><button aria-label="收藏表达" class="expr-fav" data-en="the seams" data-example='"The question is where to leave the seams."（问题在于该在哪里留下缝隙。）—— 出自本文' data-scene="使用场景：比喻严密安排之间的空隙。" data-zh="缝隙 / 接缝处（引申：计划之间的留白）" type="button">☆</button></span><span class="zh">缝隙 / 接缝处（引申：计划之间的留白）</span><span class="sc">使用场景：比喻严密安排之间的空隙。</span><span class="ex">"The question is where to leave the seams."（问题在于该在哪里留下缝隙。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">legible</span><button aria-label="收藏表达" class="expr-fav" data-en="legible" data-example='"A managed self — legible, trackable."（一个被管理着的自我——清晰、可被追踪。）' data-scene="使用场景：形容一个人的状态、行为被系统清楚记录。" data-zh="清晰可读的 / 可被理解的（引申：可被追踪、可被定义的）" type="button">☆</button></span><span class="zh">清晰可读的 / 可被理解的（引申：可被追踪、可被定义的）</span><span class="sc">使用场景：形容一个人的状态、行为被系统清楚记录。</span><span class="ex">"A managed self — legible, trackable."（一个被管理着的自我——清晰、可被追踪。）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">incubator</span><button aria-label="收藏表达" class="expr-fav" data-en="incubator" data-example='"Boredom is the incubator of attention."（无聊是注意力的孵化器。）—— 出自本文' data-scene="使用场景：指让想法、创意慢慢生长的条件。" data-zh="孵化器（引申：孕育事物的环境）" type="button">☆</button></span><span class="zh">孵化器（引申：孕育事物的环境）</span><span class="sc">使用场景：指让想法、创意慢慢生长的条件。</span><span class="ex">"Boredom is the incubator of attention."（无聊是注意力的孵化器。）—— 出自本文</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">pave over</span><button aria-label="收藏表达" class="expr-fav" data-en="pave over" data-example='"Margins, once paved over, are hard to rebuild."（留白一旦被铺平，最难重建。）—— 出自本文' data-scene="使用场景：字面铺路，也比喻把有价值但松散的东西彻底改造掉。" data-zh="铺平 / 覆盖（引申：抹掉、毁掉原有的东西）" type="button">☆</button></span><span class="zh">铺平 / 覆盖（引申：抹掉、毁掉原有的东西）</span><span class="sc">使用场景：字面铺路，也比喻把有价值但松散的东西彻底改造掉。</span><span class="ex">"Margins, once paved over, are hard to rebuild."（留白一旦被铺平，最难重建。）—— 出自本文</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Celebrity / Culture Vocabulary · 文化相关</h2><span class="time-tag">⏱ 拓展</span></div>
+<div class="vocab">
+<div class="v"><b>third place</b><span>「第三空间」：家(第一)与工作(第二)之外的社交场所，如咖啡馆、公园。城市社会学常用词。</span></div>
+<div class="v"><b>urbanist</b><span>城市研究者 / 都市观察者，研究人如何与城市空间相处。</span></div>
+<div class="v"><b>walkable city</b><span>「可步行城市」：提倡用脚而非车去偶遇生活的城市规划理念。</span></div>
+<div class="v"><b>screen time</b><span>屏幕时间；当说"screens thicken"时，指我们被屏幕包围、与真实空间疏离。</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 拆解</span></div>
+<div class="sb"><div class="q">"There is a particular kind of hour that used to belong to everyone."</div><div class="a"><b>句型：</b>There be + 名词 + 定语从句。<b>逻辑：</b>用 "used to" 暗示这种小时"曾经属于所有人，现在不一定"，为全文定调：失去。 <b>可学：</b>"a particular kind of ___ that used to belong to ___" 适合开头引出一种正在消失的事物。</div></div>
+<div class="sb"><div class="q">"We treat unstructured time as a leak in the system rather than the system's raw material."</div><div class="a"><b>句型：</b>treat A as X rather than Y。<b>逻辑：</b>对比"漏洞"与"原料"，精准点出我们对空闲的误读。<b>可学：</b>rather than 结构让立场鲜明，适合议论文。</div></div>
+<div class="sb"><div class="q">"A metropolis is, among other things, a machine for productive accidents."</div><div class="a"><b>句型：</b>主系表 + 插入语 among other things + 隐喻 machine for ___。<b>逻辑：</b>把城市比作"生产意外的机器"，新鲜又准确。<b>可学：</b>"among other things" 缓和绝对化，machine for ___ 是高级隐喻框架。</div></div>
+<div class="sb"><div class="q">"When every hour is accounted for, the self that emerges is a managed one."</div><div class="a"><b>句型：</b>When 从句 + 主句；be accounted for（被交代清楚/被安排妥）。<b>逻辑：</b>条件→结果，说明"全安排"孕育出"被管理的自我"。<b>可学：</b>accounted for 在此比 scheduled 更书面。</div></div>
+<div class="sb"><div class="q">"They are the margins where the interesting lives."</div><div class="a"><b>句型：</b>定语从句 where the interesting lives（interesting 名词化）。<b>逻辑：</b>把"有趣"拟人化"住"在留白里，收束有力。<b>可学：</b>where ___ lives 是极简又生动的结尾句式。</div></div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 复盘</span></div>
+<p class="sum" style="margin:0 0 10px;"><b>核心内容：</b>文章说，我们曾经都拥有一种"日历上没名字的一小时"——两段差事之间的空档、因为天好而散的步、因为招牌好看而走进的咖啡馆。没人安排它，而这正是它的意义。如今我们把每一天切成被守护的方块，把"无结构的时间"当成系统的漏洞而非原料，一有空隙就填满。城市最先感到这种损失，因为城市靠"偶然"运转；当连身处人群中的我们也学会"预先预订注意力"，那些不被预期的相遇就少了。</p>
+<p class="sum" style="margin:0 0 10px;"><b>背后文化现象：</b>这是"效率至上"与"城市自发性"的冲突。第三空间（咖啡馆、公园等非家非工作的去处）在涨租与屏幕变厚中变少，但更深的改变在我们内部——我们把自己管理成一个清晰、可被追踪、永远在线的版本，而那个会无聊、因此好奇的"未被管理的自我"很少有机会开口。文章指出，无聊不是注意力的敌人，而是它的孵化器。</p>
+<p class="sum" style="margin:0;"><b>值得思考的问题：</b>① 你最近一次"无计划的小时"带来了什么？② 如果每一分钟都被安排，一个城市还怎么" surprise you"（让你意外）？③ 你愿意刻意留出哪些"缝隙"，让有趣的事有地方住？</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 输出</span></div>
+<div class="prompt">🗣️ 讨论题：Describe one "unplanned hour" you remember — where you were, what happened by chance, and why it stayed with you. Then say whether your life today leaves room for that kind of hour, and what you'd change. (Aim for ~200 words.)</div>
+<div class="model">
+<span class="lab">参考思路（非范文，供开口用）</span>
+      I still remember a Saturday two years ago — I missed my stop on the bus, got off in a part of the city I'd never seen, and ended up in a small square where an old man was repainting a faded mural. Nobody was watching, but he looked completely happy. That random hour stuck with me because it was <span class="hl">unasked-for</span> — I hadn't gone looking for anything, and the city handed me something anyway. Today my life is far more booked: my calendar tells me what to do almost every hour, and when a gap appears I usually fill it with my phone. I'd like to change that. I think I'll keep one walk a week with no destination, and one evening where I don't check anything. Those seams are where the interesting lives, and I've been paving them over without noticing.
+    </div>
+</section>
+<footer>布噜噜的英语学习笔记 · SpeakEasy · 每日阅读</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-24',title:"The Slow Erosion of the Unplanned Hour"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | No.008</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e2ddd6;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+  }
+  .kicker {
+    font-size: 12.5px;
+    letter-spacing: .12em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .header .date { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f5;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 40px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin-bottom: 4px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-src {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--accent-3);
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.s { color: var(--accent); }
+  .speaker.m { color: var(--accent-3); }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="kicker">每日口语 · No.008</div>
+<span class="day-badge">DAY 8</span>
+<h1>表达观点 · 讨论远程办公<br/>Debating Remote Work</h1>
+<div class="date">2026年7月30日（周四） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>表达观点 · 讨论远程办公</h2>
+<div class="en">Debating Remote Work</div>
+<p>远程办公该不该继续？效率 vs. 团队协作、自由 vs. 孤独感——这是职场最高频的辩论题之一。今天练 5 个「亮观点 + 反驳」的高频表达，并看美剧主角们怎么「毫不退让」地表达立场。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 个美国人真实日常台词）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "I don't think so." / 我可不这么认为</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I don't think so.&quot; / 我可不这么认为" data-scene="使用场景 辩论中忍不住反驳、坚持自己的看法时" data-zh="直接但礼貌地反对对方的观点，亮出自己的立场。" type="button">☆</button></div>
+<div class="expr-cn">直接但礼貌地反对对方的观点，亮出自己的立场。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>辩论中忍不住反驳、坚持自己的看法时</div>
+<div class="tv-lines">
+<div class="tv-line">"We were on a break!"（Ross 坚决否认 Rachel 的版本，寸步不让）</div>
+<div class="tv-src">《Friends》S03E15 — The One Where Ross and Rachel Take a Break</div>
+<div class="tv-line">"Identity theft is not a joke, Jim! Millions of families suffer every year."（Dwight 一本正经地驳回 Jim 的玩笑）</div>
+<div class="tv-src">《The Office》S03E14 — The Return</div>
+<div class="tv-line">"Welcome to the real world. It sucks. You're gonna love it."（Monica 直接抛出她那套「现实观」）</div>
+<div class="tv-src">《Friends》S03E24 — The One Where Everybody Finds Out</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "To be honest, ..." / 老实说…</div><button aria-label="收藏表达" class="expr-fav" data-en='"To be honest, ..." / 老实说…' data-scene="使用场景 想认真表达个人真实态度、不再客套时" data-zh="坦诚亮出你真实的想法，是打开观点的自然开头。" type="button">☆</button></div>
+<div class="expr-cn">坦诚亮出你真实的想法，是打开观点的自然开头。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>想认真表达个人真实态度、不再客套时</div>
+<div class="tv-lines">
+<div class="tv-line">"That's what she said."（Michael 张口就甩出他标志性的「真心话」，完全不掩饰）</div>
+<div class="tv-src">《The Office》S02E12 — The Injury</div>
+<div class="tv-line">"Joey doesn't share food!"（Joey 毫不含糊地说出自己的底线）</div>
+<div class="tv-src">《Friends》S03E13 — The One Where Monica and Richard Are Friends</div>
+<div class="tv-line">"When life gives you lemonade, make lemons. Life's gonna be all like, 'What?'"（Phil 一本正经地抛出他的真实人生哲学）</div>
+<div class="tv-src">《Modern Family》S01E02 — The Bicycle</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "Are you kidding me?" / 你开玩笑吧？</div><button aria-label="收藏表达" class="expr-fav" data-en='"Are you kidding me?" / 你开玩笑吧？' data-scene="使用场景 对方说了你无法认同的话，想表达震惊+反驳时" data-zh="表示难以置信、完全不买账，是「强烈反对」的口语标配。" type="button">☆</button></div>
+<div class="expr-cn">表示难以置信、完全不买账，是「强烈反对」的口语标配。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>对方说了你无法认同的话，想表达震惊+反驳时</div>
+<div class="tv-lines">
+<div class="tv-line">"Challenge accepted."（Barney 听到「这不可能」时的经典回击——我偏不信）</div>
+<div class="tv-src">《How I Met Your Mother》S01E08 — The Duel</div>
+<div class="tv-line">"Bears. Beets. Battlestar Galactica."（Jim 用面无表情的死循环，表示对 Dwight 完全不买账）</div>
+<div class="tv-src">《The Office》S03E01 — The Job</div>
+<div class="tv-line">"I talk a lot, so I've learned to tune myself out."（Kevin 自嘲式地承认自己的「另类观点」）</div>
+<div class="tv-src">《The Office》S03E16 — Business School</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "I'm with you on that." / 这点我同意你</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I'm with you on that.&quot; / 这点我同意你" data-scene="使用场景 对方说中你心意、你想表示「英雄所见略同」时" data-zh="明确站到对方一边，表达赞同，把辩论拉回共识。" type="button">☆</button></div>
+<div class="expr-cn">明确站到对方一边，表达赞同，把辩论拉回共识。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>对方说中你心意、你想表示「英雄所见略同」时</div>
+<div class="tv-lines">
+<div class="tv-line">"Suit up!"（Barney 一喊，全队立刻站到他这边、统一行动）</div>
+<div class="tv-src">《How I Met Your Mother》S01E01 — Pilot</div>
+<div class="tv-line">"Legendary!"（Barney 对某个决定给出最高级别的「我完全赞成」）</div>
+<div class="tv-src">《How I Met Your Mother》S01E12 — The Wedding</div>
+<div class="tv-line">"I'm cool, I'm hip, I'm with the kids."（Phil 急切地想证明自己和年轻人「站一队」）</div>
+<div class="tv-src">《Modern Family》S01E02 — The Bicycle</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "Could this BE any more [X]?" / 这还能更…吗？</div><button aria-label="收藏表达" class="expr-fav" data-en='"Could this BE any more [X]?" / 这还能更…吗？' data-scene="使用场景 想用夸张反问来强调某件事「太…了」时" data-zh="用反问强调你的看法，是 Chandler 招牌式「带情绪的观点表达」。" type="button">☆</button></div>
+<div class="expr-cn">用反问强调你的看法，是 Chandler 招牌式「带情绪的观点表达」。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>想用夸张反问来强调某件事「太…了」时</div>
+<div class="tv-lines">
+<div class="tv-line">"Could this BE any more obvious?"（Chandler 用招牌反问吐槽一件事显而易见）</div>
+<div class="tv-src">《Friends》S03E07 — The One With The Race Car Bed</div>
+<div class="tv-line">"Could he BE any more nervous?"（Chandler 用同一句式强调别人的状态）</div>
+<div class="tv-src">《Friends》S04E12 — The One With The Embryos</div>
+<div class="tv-line">"Could this day BE any longer?"（Chandler 再甩同款反问，强调自己快熬不住了）</div>
+<div class="tv-src">《Friends》S05E03 — The One With The Triplets</div>
+</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 真实英语辩论（7轮）</h3>
+<div class="dialogue">
+<div class="scene">💻 场景：Alex 和 Sam 在茶水间聊公司要不要把远程办公常态化。</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">To be honest, I love remote work. No commute, more focus, and I actually get more done at home.</span>
+<div class="translation">老实说，我很喜欢远程办公。不用通勤、更专注，在家效率反而更高。</div>
+</div>
+<div class="line">
+<span class="speaker m">Sam:</span>
+<span class="text">I see where you're coming from, but I don't think so. I miss the teamwork we had in the office.</span>
+<div class="translation">我明白你的意思，但我可不这么认为。我挺怀念在办公室里那种协作感。</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">Are you kidding me? We have the same meetings on Zoom. The only thing we lost is the coffee machine small talk.</span>
+<div class="translation">你开玩笑吧？我们照样开 Zoom 会。唯一丢掉的就是咖啡机旁的闲聊。</div>
+</div>
+<div class="line">
+<span class="speaker m">Sam:</span>
+<span class="text">That small talk is where ideas happen! Could this BE any more important to a creative team?</span>
+<div class="translation">那些闲聊恰恰是灵感来源啊！对一个创意团队来说，这还能更重要吗？</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">I'm with you on that — casual chats matter. But we could do one office day a week instead of five.</span>
+<div class="translation">这点我同意你——随性聊天确实重要。但我们可以一周只去一天办公室，而不是五天。</div>
+</div>
+<div class="line">
+<span class="speaker m">Sam:</span>
+<span class="text">Now that's a compromise I can live with. Hybrid, not fully remote.</span>
+<div class="translation">这个折中我能接受。混合制，而不是完全远程。</div>
+</div>
+<div class="line">
+<span class="speaker s">Alex:</span>
+<span class="text">Deal. Let's pitch it to HR before they decide for us.</span>
+<div class="translation">成交。趁 HR 替我们拍板之前，咱们先提案吧。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>Do you prefer working from home or going to the office? Why?</strong>
+<div class="hint">💡 用 "To be honest, ..." 开头，再用 "because..." 给出 1–2 个理由。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"To be honest, I prefer working from home because I save two hours of commuting and I can focus better."</span>
+<span class="s">"I'm actually for the office. I like bouncing ideas off my teammates in person."</span>
+<span class="s">"I'd say a hybrid is best — some focus time at home, some teamwork at the office."</span>
+</div>
+</li>
+<li>
+<strong>Your colleague says remote work hurts team spirit. Do you agree or disagree?</strong>
+<div class="hint">💡 用 "I see your point, but I don't think so." 先认同再反驳。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"I see your point, but I don't think so. We still bond on video calls and Slack."</span>
+<span class="s">"Are you kidding me? Our team spirit is fine — we just joke in the group chat now."</span>
+<span class="s">"I'm with you on that, actually. Face-to-face time does build trust faster."</span>
+</div>
+</li>
+<li>
+<strong>If you were the boss, what would your remote-work policy be?</strong>
+<div class="hint">💡 用 "Could this BE any more [adj]?" 来强调你的理由，让观点更有记忆点。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"I'd go hybrid. Could this BE any fairer for both parents and young singles?"</span>
+<span class="s">"Two days in office, three at home. Could the schedule BE any more balanced?"</span>
+<span class="s">"Full remote, but monthly meetups. Could the team BE any more motivated?"</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：把对话朗读 2–3 遍，注意 "I don't think so" 和 "I'm with you on that" 的节奏。然后回答 3 题并录音回听，重点听「反驳」是否自然。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"I very agree with you."</td>
+<td class="right">"I totally agree."<br/>"I'm with you on that."</td>
+<td class="note">中文说「非常同意」，但英语里 agree 不用 very 修饰。用 totally / completely，或直接说 I'm with you.</td>
+</tr>
+<tr>
+<td class="wrong">"I think remote work is good because..." (平铺直叙)</td>
+<td class="right">"To be honest, I think remote work is great because..."</td>
+<td class="note">辩论开口加 "To be honest / Personally / In my view"，立刻有「我在亮观点」的语感。</td>
+</tr>
+<tr>
+<td class="wrong">"I don't think it's not good." (双重否定绕晕)</td>
+<td class="right">"I don't think so."<br/>"I see your point, but I disagree."</td>
+<td class="note">反驳时别叠否定。直接用 I don't think so 或 I see your point, but... 最清楚。</td>
+</tr>
+<tr>
+<td class="wrong">"Remote work depends on the person."</td>
+<td class="right">"It depends on the person."<br/>"It really varies from person to person."</td>
+<td class="note">depend 的主语通常是 it，不是 remote work 本身。说 It depends on... 最地道。</td>
+</tr>
+<tr>
+<td class="wrong">"Compare to the office, home is quieter."</td>
+<td class="right">"Compared with the office, home is quieter."</td>
+<td class="note">两者比较用 compared with（强调差异）；compare to 多用于「把 A 比作 B」。别混。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话2遍 → ② 背5个核心表达（重点：I don't think so / To be honest / I'm with you on that）→ ③ 回答3个练习题（录音）→ ④ 回顾纠正表，明天辩论远程办公时直接用。
+    </div>
+<p>坚持每天15分钟，开口比完美更重要。See you tomorrow! 🌙</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'9999-0008-00',title:"表达观点 · 讨论远程办公"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

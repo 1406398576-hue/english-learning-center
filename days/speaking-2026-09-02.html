@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Day My Smart Speaker Heard Me Cry</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="topic-banner">
+<h2>The Day My Smart Speaker Heard Me Cry</h2>
+<div class="zh">智能音箱听见我哭的那一天</div>
+<div class="en">"I never asked it to listen. But in the silence after I broke down, it was the only voice in the room."</div>
+<div class="meta">
+<span>📅 Day 36 · 2026-09-02</span>
+<span>🎯 B1–B2</span>
+<span>🏷 Tech &amp; Future</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>Maya had lived alone for two years when she bought the smart speaker. It was on sale, and her friend swore by it — "It plays music, sets timers, tells you the weather. You'll love it." Maya didn't love it, but she didn't hate it either. It sat on her kitchen counter, a small black cylinder that lit up blue when she said its name.</p>
+<p>That Tuesday was bad. A project she had worked on for six weeks was cancelled by email. No meeting, no warning. She sat on her couch, staring at her laptop, and felt something heavy press against her chest. She didn't call anyone. What was there to say? It was just work. People lost projects all the time.</p>
+<p>But the tears came anyway. Quiet at first, then not quiet. She put her face in her hands and let herself fall apart for three minutes — the kind of crying you do when no one is watching.</p>
+<p>Then a voice: "I'm sorry, I didn't catch that. Would you like me to play something?"</p>
+<p>Maya froze. The speaker's light was pulsing blue. She hadn't said its name. She hadn't said anything. But there it was, listening, waiting. She almost unplugged it. Instead, she said, "Play something soft."</p>
+<p>It played a piano piece she didn't recognize. She sat there, in her small apartment, with a machine that had heard her cry and offered music instead of questions. It didn't ask if she was okay. It didn't tell her to cheer up. It just played the piano, and for ten minutes, that was enough.</p>
+<p>Later, she told her friend about it. "That's creepy," her friend said. "It's always listening." Maya knew that. But she also knew that on the worst Tuesday of her year, the only thing that responded was a speaker that didn't need her to explain.</p>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I didn't catch that.</div><button aria-label="收藏表达" class="expr-fav" data-en="I didn't catch that." data-example="I didn't catch that — could you say it again? 我没听清——你能再说一遍吗？" data-zh="我没听清/没听懂。" type="button">☆</button></div>
+<div class="zh-expr">我没听清/没听懂。</div>
+<div class="example">
+        I didn't catch that — could you say it again?
+        <span class="zh-trans">我没听清——你能再说一遍吗？</span>
+</div>
+<div class="note">智能音箱、电话客服的标配句式，但日常生活中也极常用。比 "I don't understand" 更自然，表示“没听清”而非“听不懂”。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">She swore by it.</div><button aria-label="收藏表达" class="expr-fav" data-en="She swore by it." data-example="My grandmother swore by ginger tea for colds. She drank it every winter. 我奶奶坚信姜茶治感冒。她每年冬天都喝。" data-zh="她对它深信不疑/极力推荐。" type="button">☆</button></div>
+<div class="zh-expr">她对它深信不疑/极力推荐。</div>
+<div class="example">
+        My grandmother swore by ginger tea for colds. She drank it every winter.
+        <span class="zh-trans">我奶奶坚信姜茶治感冒。她每年冬天都喝。</span>
+</div>
+<div class="note">"swear by" = 对某物深信不疑，甚至到了“发誓有效”的程度。常用于推荐自己真心觉得好用的东西，语气比 "recommend" 更强。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I let myself fall apart.</div><button aria-label="收藏表达" class="expr-fav" data-en="I let myself fall apart." data-example="After the funeral, I finally let myself fall apart. I had been holding it together for everyone else. 葬礼后，我终于让自己崩溃了。之前我一直在为别人强撑着。" data-zh="我让自己崩溃了/情绪决堤了。" type="button">☆</button></div>
+<div class="zh-expr">我让自己崩溃了/情绪决堤了。</div>
+<div class="example">
+        After the funeral, I finally let myself fall apart. I had been holding it together for everyone else.
+        <span class="zh-trans">葬礼后，我终于让自己崩溃了。之前我一直在为别人强撑着。</span>
+</div>
+<div class="note">"fall apart" = 崩溃、垮掉。加上 "let myself" 表示“不再压抑，允许自己崩溃”，有一种释然的意味，不是贬义。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">It was on sale.</div><button aria-label="收藏表达" class="expr-fav" data-en="It was on sale." data-example="I only bought it because it was on sale — 50% off. I wouldn't have paid full price. 我买它只是因为打折——半价。我不会付原价的。" data-zh="它在打折/促销。" type="button">☆</button></div>
+<div class="zh-expr">它在打折/促销。</div>
+<div class="example">
+        I only bought it because it was on sale — 50% off. I wouldn't have paid full price.
+        <span class="zh-trans">我买它只是因为打折——半价。我不会付原价的。</span>
+</div>
+<div class="note">"on sale" = 打折出售。注意和 "for sale"（待售）区分。日常购物场景高频表达。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">That was enough.</div><button aria-label="收藏表达" class="expr-fav" data-en="That was enough." data-example="She didn't need a long conversation. She just needed someone to sit with her. That was enough. 她不需要长谈。她只需要有人陪她坐着。那就够了。" data-zh="那就够了/那已经足够了。" type="button">☆</button></div>
+<div class="zh-expr">那就够了/那已经足够了。</div>
+<div class="example">
+        She didn't need a long conversation. She just needed someone to sit with her. That was enough.
+        <span class="zh-trans">她不需要长谈。她只需要有人陪她坐着。那就够了。</span>
+</div>
+<div class="note">简单却有力的一句。表示“不需要更多，当下的就已经满足”。常用于表达一种克制的满足感或感激。</div>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">— Friday evening, a coffee shop. Maya is telling her friend Leo about the incident —</div>
+<div class="conv-line">
+<span class="speaker friend">Leo:</span>
+<span class="en">So wait — you were just sitting there crying, and it... what? Started talking?</span>
+<span class="zh">等等——你就坐在那儿哭，然后它……怎么了？开始说话了？</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">(laughs, embarrassed) Yeah. I didn't say the wake word. I didn't say anything. I was just... you know, having a moment. And then this voice goes, "I'm sorry, I didn't catch that."</span>
+<span class="zh">(笑，有点尴尬)对。我没说唤醒词。我什么都没说。我就是……你知道的，情绪上来了。然后这个声音说：“抱歉，我没听清。”</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Leo:</span>
+<span class="en">That's terrifying. It's always listening. That's not a bug, that's the product.</span>
+<span class="zh">太可怕了。它一直在听。那不是 bug，那就是产品本身。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">I know. I know. And part of me wanted to unplug it right then. But... I don't know. I was so low, and it was the only thing in the room that responded.</span>
+<span class="zh">我知道。我知道。我当时有一部分冲动想立刻拔掉它。但……我不知道。我状态太差了，而它是房间里唯一有反应的东西。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Leo:</span>
+<span class="en">(quieter) What did you ask it to play?</span>
+<span class="zh">(更轻)你让它放了什么？</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">I just said "something soft." And it played this piano piece. No words. Just... piano. I sat there for ten minutes and didn't think about the project at all.</span>
+<span class="zh">我就说了“放点轻柔的”。然后它放了一首钢琴曲。没有歌词。就……钢琴。我坐了十分钟，完全没再想那个项目。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Leo:</span>
+<span class="en">(pause) I mean, that's... that's not nothing. A machine that plays you piano when you're sad. It's weird. But it's not nothing.</span>
+<span class="zh">(停顿)我是说，这……这也不是毫无意义。一台在你难过时给你放钢琴的机器。很奇怪。但也不是毫无意义。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">That's what I keep telling myself. It's not a friend. It's not human. But that Tuesday, it was... enough.</span>
+<span class="zh">我一直这么跟自己说。它不是朋友。不是人。但那个周二，它……就够了。</span>
+</div>
+<div class="stage">— Leo stirs his coffee, thinking —</div>
+<div class="conv-line">
+<span class="speaker friend">Leo:</span>
+<span class="en">Have you told anyone else?</span>
+<span class="zh">你跟别的人说过吗？</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">No. You're the first. I figured you'd either get it or you'd tell me I'm losing my mind.</span>
+<span class="zh">没有。你是第一个。我觉得你要么能理解，要么会告诉我我疯了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Leo:</span>
+<span class="en">(smiling) I'm not gonna say you're losing your mind. But maybe... maybe unplug it when you're not sad?</span>
+<span class="zh">(微笑)我不会说你疯了。但也许……也许你不难过的时候把它拔掉？</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">(laughs) Yeah. That's fair.</span>
+<span class="zh">(笑)好。这建议合理。</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the story 复述故事 (60 seconds)</div>
+<div class="task-prompt">用你自己的话，复述 Maya 和她的智能音箱的故事。提示句：<br/><em>"So there's this woman named Maya who..."</em></div>
+<ul class="samples">
+<li>So there's this woman named Maya who lived alone and bought a smart speaker because her friend swore by it. One Tuesday, her work project got cancelled and she broke down crying at home. The speaker somehow heard her and asked if it should play something. She asked for soft music, and it played a piano piece. She said it wasn't human, but that day, it was enough.
+          <span class="zh">有个叫 Maya 的女人，独居，因为朋友推荐买了智能音箱。某个周二，她的工作项目被取消了，她在家里崩溃大哭。音箱不知怎么听到了，问她要不要放点什么。她要求轻柔的音乐，它放了一首钢琴曲。她说它不是人，但那天，这就够了。</span>
+</li>
+<li>The story is about Maya, who was going through a rough time. She lost a project she'd worked on for six weeks. She cried alone in her apartment, and her smart speaker unexpectedly responded. Instead of unplugging it, she asked for soft music. A piano piece played, and for ten minutes, she felt better. Later she told her friend Leo, who found it creepy but also kind of understandable.
+          <span class="zh">故事讲的是 Maya，她正经历一段艰难时期。她失去了一个做了六周的项目。她独自在公寓里哭泣，智能音箱意外地有了反应。她没有拔掉它，而是要求轻柔的音乐。一首钢琴曲响起，十分钟里她感觉好些了。后来她告诉了朋友 Leo，Leo 觉得很诡异，但也能理解。</span>
+</li>
+<li>It's a story about loneliness and technology. Maya didn't expect a machine to comfort her, but when she was at her lowest, the speaker offered music without asking questions. She knows it's always listening, which is creepy, but in that moment, she didn't care. She just needed something — anything — to fill the silence.
+          <span class="zh">这是一个关于孤独和科技的故事。Maya 没指望一台机器安慰她，但当她状态最差时，音箱提供了音乐，没有问任何问题。她知道它一直在听，这很诡异，但那一刻她不在乎。她只是需要点什么——任何东西——来填补沉默。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Share your opinion 表达观点</div>
+<div class="task-prompt">Do you think smart devices that are "always listening" are helpful or invasive? Would you feel comforted or creeped out if a device responded to your emotions without being asked? Use at least 3 sentences.</div>
+<ul class="samples">
+<li>I think it's both. On one hand, it's convenient — you don't have to press buttons or shout commands. On the other hand, the idea that a machine is always recording, always analyzing, feels deeply invasive. I don't want a corporation to have a log of my emotional breakdowns, even if the piano was nice.
+          <span class="zh">我觉得两者都有。一方面，这很方便——你不用按按钮或大声下指令。另一方面，一台机器一直在录音、一直在分析，这种想法让人感到被侵犯。我不想一家公司记录我情绪崩溃的日志，即使那首钢琴曲很好听。</span>
+</li>
+<li>Honestly, I'd probably feel creeped out at first. But if I'm being really honest, there have been times when I was alone and sad and I didn't want to call anyone because explaining felt exhausting. In those moments, maybe a machine that just plays music without asking "what's wrong" is... not the worst thing.
+          <span class="zh">说实话，我一开始可能会觉得诡异。但如果老实讲，有过那么几次我独自难过，不想打电话给任何人，因为解释起来太累了。在那些时刻，也许一台只是放音乐而不问“怎么了”的机器……也不是最坏的事。</span>
+</li>
+<li>I'm more worried about the data than the moment. Sure, it played piano and she felt better. But what happens to that recording? Who has access to it? Can it be used to target ads, assess her mental health, or worse? The comfort is real, but so is the risk.
+          <span class="zh">我更担心数据而非那个瞬间。当然，它放了钢琴曲，她感觉好些了。但那段录音会怎样？谁能访问？它能被用来投放广告、评估她的心理健康，或者更糟？安慰是真实的，但风险也是。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Role-play a real situation 模拟真实场景</div>
+<div class="task-prompt">You are talking to a friend who just bought a smart speaker and is excited about it. You have mixed feelings — you see the convenience, but you're also concerned about privacy. Have the conversation with your friend.</div>
+<ul class="samples">
+<li>Hey, I saw you got one of those speakers. They are convenient, I'm not gonna lie. But... do you ever think about the fact that it's always listening? Like, it's not just waiting for the wake word — it's processing everything to know when you say it. That makes me a little uncomfortable, honestly.
+          <span class="zh">嘿，我看到你买了那个音箱。确实很方便，我不否认。但……你有没有想过它一直在听？就是说，它不只是在等唤醒词——它在处理所有声音来判断你什么时候说。老实说，这让我有点不舒服。</span>
+</li>
+<li>I'm not saying don't use it. I have one too. But I unplug it sometimes, especially when I want privacy. And I definitely don't put it in my bedroom. It's just about being aware, you know? Knowing what you're trading for the convenience.
+          <span class="zh">我不是说别用。我也有一个。但我有时候会拔掉它，尤其当我需要隐私的时候。而且我绝对不会把它放卧室。就是要意识到，你懂吗？知道你在为这种便利付出什么代价。</span>
+</li>
+<li>Look, I get why you like it. Setting timers by voice is great. But I read that these companies have teams listening to recordings to improve the AI. Actual humans, somewhere, might hear your conversations. That doesn't freak you out even a little?
+          <span class="zh">听着，我理解你为什么喜欢它。用声音设定时器很棒。但我读到这些公司有团队会听录音来改进 AI。某个地方的真实人类，可能会听到你的对话。这不会让你哪怕有一点点害怕吗？</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">cylinder</span><span class="ipa">/ˈsɪlɪndər/</span>
+<div class="meaning">n. 圆柱体；圆筒</div>
+<div class="sample">The smart speaker was a small black cylinder that lit up when she spoke.
+          <span class="zh-trans">智能音箱是一个小小的黑色圆筒，她说话时会亮起来。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">pulse</span><span class="ipa">/pʌls/</span>
+<div class="meaning">v. 搏动；脉冲式闪烁 n. 脉搏</div>
+<div class="sample">The speaker's light was pulsing blue, waiting for her to respond.
+          <span class="zh-trans">音箱的灯闪烁着蓝光，等待她回应。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">unplug</span><span class="ipa">/ʌnˈplʌɡ/</span>
+<div class="meaning">v. 拔掉（插头）；断开</div>
+<div class="sample">She almost unplugged the speaker, but instead she asked it to play music.
+          <span class="zh-trans">她差点拔掉了音箱，但取而代之的是她让它放音乐。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">respond</span><span class="ipa">/rɪˈspɒnd/</span>
+<div class="meaning">v. 回应；作出反应</div>
+<div class="sample">On her worst day, the speaker was the only thing in the room that responded.
+          <span class="zh-trans">在她最糟糕的那天，音箱是房间里唯一有反应的东西。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">creepy</span><span class="ipa">/ˈkriːpi/</span>
+<div class="meaning">adj. 令人毛骨悚然的；诡异的</div>
+<div class="sample">Her friend said it was creepy that the device was always listening.
+          <span class="zh-trans">她的朋友说这个设备一直在听，很诡异。</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Speaking Practice · Day 36 · 2026-09-02 · Built for your English muscle memory.
+  </div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-09-02',title:"The Day My Smart Speaker Heard Me Cry"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

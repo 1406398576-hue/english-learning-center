@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-21</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Slow Fade of the Phone Call: Why a Live Voice Became the New Intimacy</h1>
+<p class="sub">「通话的悄然退场」：当文字接管一切，一通未经预约的电话为何成了"亲密信号"，也成了"新的焦虑源"。</p>
+<div class="meta">
+<span>📅 <b>2026-08-21</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">电话曾经是每家每户的"中心家具"——随手接起，稀松平常。如今，一通没约好的来电却能让整间屋子瞬间紧绷："谁这么不懂规矩？"我们没少聊天，只是不再"通话"了。这篇文章聊的是一个被你「城市观察者」公众号一以贯之母题照见的现象：<b>在算法投喂、文字异步、人人都被安排好的世界里，"具体、带呼吸、有人味的人声"正变成最稀缺的东西</b>。它和友谊衰退(08-17)、第三空间消失(08-04)、零点击互联网(08-18)、忙碌表演(08-19)串成同一根线——我们能接受"联系"（contact），却越来越不安于"在场"（presence）；而一通活生生的电话，恰恰逼你"在场"。这条线，几乎是为你计划中的 012《AI 第二大脑》与 013《无意义时间》量身铺的。</p>
+<div class="tip">💡 读前小思考：回想一下——上一次你"毫无预约"地拨出一通电话，是多久以前？那一刻你心里是"轻松"，还是"好像在冒犯对方"？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most of living memory, the telephone sat at the center of the home — a shared object, a patient rectangle on the hall table, the thing you answered without a second thought. To call someone was ordinary. To be called was unremarkable. Today the ringtone has become something closer to a minor emergency. An <span class="hl">unsolicited call</span> from an unknown number, or worse, from a friend who hasn't scheduled it, sends a small <span class="hl">jolt of panic</span> through a room that once would have reached for the receiver without thinking. We have not stopped talking to each other. We have simply stopped calling — and in the quiet retreat from the live voice, something larger about how we relate is being quietly redrawn.</p>
+<p>The shift did not arrive with a bang. Texting <span class="hl">took over</span> so quietly that most of us noticed only when the phone call had already become the exception rather than the rule. A message is asynchronous by design: it can wait, be edited, be answered at the exact moment we choose. A call <span class="hl">demands presence</span>. It asks for the full attention of our face, our tone, our unguarded pause. For a generation raised on screens, this demand feels almost indecent — which is how a phrase like "call anxiety" moved from the group chat into the grammar of real life. The unscheduled call now reads as urgency, intimacy, or bad news, almost never as the casual hello it once carried. We learned, without ever deciding to, that silence between messages is normal while silence on a call is unbearable — and so we quietly retired the one in favor of the other.</p>
+<p>And here is the paradox the screens handed us: <span class="hl">the more</span> we pour our lives into messages, <span class="hl">the rarer</span> the live human voice becomes — and the more loaded a simple call is. When voice is abundant, a call is nothing. When voice is scarce, a call means something. It becomes a signal, a measure of closeness, a small confession that the other person is worth the friction of real time. The rarer the call, the heavier it weighs; we save it for the people who matter, or for the moments that genuinely cannot be texted. In a feed-driven life, the live voice has quietly become a luxury good — priced, without anyone deciding, in attention rather than money. We did not vote for this; we simply drifted into it, one convenient message at a time.</p>
+<p>What we lose in the trade is subtler than we like to admit. A text flattens tone, strips away breath and hesitation, and leaves the reader to supply the emotion — which means we tend to supply the anxiety too. We lose the art of thinking aloud, of letting a sentence wander and correct itself, of the warm, rambling, unplanned call that used to fill an evening. We lose small talk, that gentle lubricant of casual connection, and with it the unremarkable encounters that once stitched a day together. We are, almost without noticing, losing our spoken fluency — the ability to hold a conversation that has no script and no delete key. The competence erodes precisely because it is no longer practiced, and the erosion stays invisible until the phone actually rings.</p>
+<p>Once, calling was cheap and casual, the unremarkable default of any relationship. Now it is a <span class="hl">high-stakes appointment</span> that requires its own scheduling: "Can I call you later?" has become a question that needs an answer before the call can happen. We have optimized communication for efficiency, and in doing so we have turned the human voice into a special occasion — something to be arranged, anticipated, and a little feared. The irony is sharp and a little sad: the technology that promised to keep us closer has made the actual sound of another person something we ration. We schedule our attention the way we schedule everything else, and a voice that arrives unannounced feels like it is asking for more than we budgeted.</p>
+<p>None of this is only about phones. It sits on the same continuum as the friendship recession and the vanishing third place — the slow withdrawal into asynchronous everything, where we are <span class="hl">fine with contact but uneasy with presence</span>. We have grown comfortable with the idea of people, less comfortable with the fact of them. The call is merely the clearest symptom: a moment when another human insists on being real, live, and <span class="hl">unmediated</span>, demanding not a reply but a presence. In a culture engineered for <span class="hl">frictionless</span> text, that insistence is almost radical.</p>
+<p>Maybe the scarcity is the point. In a world where everything can be deferred, a real call is a small, deliberate act of attention — someone's actual voice, with all its catches and warmth, arriving without a filter. The rarest thing in the feed-driven life may simply be another human, live and unmediated, on the other end of the line. We may not answer right away. But when we do, we are, however briefly, fully there.</p>
+</article>
+</section>
+<!-- 10:00–13:00 · Key Expressions -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">unsolicited (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="unsolicited (adj.)" data-example="An unsolicited call from an unknown number… sends a small jolt of panic. （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：形容"非请自来"的来电、邮件、建议或反馈；比 unexpected 多了一层"你并没开口要"的意味。' data-zh="未经请求/主动找上门的（un- 否定 + solicit 请求）；unsolicited call = 没约就打来的电话" type="button">☆</button></span><span class="zh">未经请求/主动找上门的（un- 否定 + solicit 请求）；unsolicited call = 没约就打来的电话</span>
+<span class="sc">使用场景：形容"非请自来"的来电、邮件、建议或反馈；比 unexpected 多了一层"你并没开口要"的意味。</span>
+<span class="ex">An unsolicited call from an unknown number… sends a small jolt of panic. （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">take over (phr. v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="take over (phr. v.)" data-example="Texting took over so quietly that most of us noticed only when… （本文 / Daily English Reading · 2026-08-21）" data-scene="使用场景：某事物悄悄或强势地取代另一事物成为主流；take over 是日常高频短语动词。" data-zh="接管 / 取而代之 / 占据主导" type="button">☆</button></span><span class="zh">接管 / 取而代之 / 占据主导</span>
+<span class="sc">使用场景：某事物悄悄或强势地取代另一事物成为主流；take over 是日常高频短语动词。</span>
+<span class="ex">Texting took over so quietly that most of us noticed only when… （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a jolt of (something)</span><button aria-label="收藏表达" class="expr-fav" data-en="a jolt of (something)" data-example="…sends a small jolt of panic through a room… （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：形容突然而强烈的感受（panic / recognition / reality）；比 a feeling of 更有"被猛地撞了一下"的画面感。' data-zh="一阵（突发的情绪或冲击），a jolt of panic = 一阵惊慌" type="button">☆</button></span><span class="zh">一阵（突发的情绪或冲击），a jolt of panic = 一阵惊慌</span>
+<span class="sc">使用场景：形容突然而强烈的感受（panic / recognition / reality）；比 a feeling of 更有"被猛地撞了一下"的画面感。</span>
+<span class="ex">…sends a small jolt of panic through a room… （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">demand presence</span><button aria-label="收藏表达" class="expr-fav" data-en="demand presence" data-example="A call demands presence. It asks for the full attention of our face, our tone… （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：对比 text 的可延迟、可编辑；call demands presence 精准写出"通话逼你整个人到场"。' data-zh='要求"在场 / 全神贯注"（presence 此处指身心都在场，而非"礼物"）' type="button">☆</button></span><span class="zh">要求"在场 / 全神贯注"（presence 此处指身心都在场，而非"礼物"）</span>
+<span class="sc">使用场景：对比 text 的可延迟、可编辑；call demands presence 精准写出"通话逼你整个人到场"。</span>
+<span class="ex">A call demands presence. It asks for the full attention of our face, our tone… （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the more…, the rarer…（句型）</span><button aria-label="收藏表达" class="expr-fav" data-en="the more…, the rarer…（句型）" data-example="The more we pour our lives into messages, the rarer the live human voice becomes… （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：表达两个变量同向变化；the more X, the rarer Y 是议论文里极好用的"此消彼长"框架。' data-zh='"越…越…"——the + 比较级 …, the + 比较级 … 的平行叠加结构' type="button">☆</button></span><span class="zh">"越…越…"——the + 比较级 …, the + 比较级 … 的平行叠加结构</span>
+<span class="sc">使用场景：表达两个变量同向变化；the more X, the rarer Y 是议论文里极好用的"此消彼长"框架。</span>
+<span class="ex">The more we pour our lives into messages, the rarer the live human voice becomes… （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">loaded (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="loaded (adj.)" data-example="…the rarer the live human voice becomes — and the more loaded a simple call is. （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：某事因语境而"分量重、敏感、不可轻描淡写"；比 serious 多了"底下压着别的东西"的张力。' data-zh='含义沉重/暗含很多的（a loaded question / a loaded silence）；此处 the rarer… the more loaded 指"越罕见越承重"' type="button">☆</button></span><span class="zh">含义沉重/暗含很多的（a loaded question / a loaded silence）；此处 the rarer… the more loaded 指"越罕见越承重"</span>
+<span class="sc">使用场景：某事因语境而"分量重、敏感、不可轻描淡写"；比 serious 多了"底下压着别的东西"的张力。</span>
+<span class="ex">…the rarer the live human voice becomes — and the more loaded a simple call is. （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a high-stakes (something)</span><button aria-label="收藏表达" class="expr-fav" data-en="a high-stakes (something)" data-example="Now it is a high-stakes appointment that requires its own scheduling… （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：形容事件"赌注大、需认真对待"；用来写"从前随意的电话如今变得正式"反差极强。' data-zh='高风险的 / 事关重大的（stakes = 赌注）；a high-stakes appointment = 不容随意的"高规格"约见' type="button">☆</button></span><span class="zh">高风险的 / 事关重大的（stakes = 赌注）；a high-stakes appointment = 不容随意的"高规格"约见</span>
+<span class="sc">使用场景：形容事件"赌注大、需认真对待"；用来写"从前随意的电话如今变得正式"反差极强。</span>
+<span class="ex">Now it is a high-stakes appointment that requires its own scheduling… （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">frictionless (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="frictionless (adj.)" data-example="In a culture engineered for frictionless text, that insistence is almost radical. （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：科技/产品/体验"顺滑无阻碍"；a frictionless world 是科技评论高频词，常带"过度顺滑反而稀释了真实"的暗讽。' data-zh="无摩擦的 / 零阻力的（friction 摩擦 + -less 无）" type="button">☆</button></span><span class="zh">无摩擦的 / 零阻力的（friction 摩擦 + -less 无）</span>
+<span class="sc">使用场景：科技/产品/体验"顺滑无阻碍"；a frictionless world 是科技评论高频词，常带"过度顺滑反而稀释了真实"的暗讽。</span>
+<span class="ex">In a culture engineered for frictionless text, that insistence is almost radical. （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">unmediated (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="unmediated (adj.)" data-example="…another human, live and unmediated, on the other end of the line. （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：信息或体验"直接、未被中间层加工"；与你「城市观察者」母题完美同频——稀缺的正是"不被中介的人声"。' data-zh="未经中介 / 无过滤的（un- + mediate 居中调解）；unmediated voice = 没被平台/算法裁剪的人声" type="button">☆</button></span><span class="zh">未经中介 / 无过滤的（un- + mediate 居中调解）；unmediated voice = 没被平台/算法裁剪的人声</span>
+<span class="sc">使用场景：信息或体验"直接、未被中间层加工"；与你「城市观察者」母题完美同频——稀缺的正是"不被中介的人声"。</span>
+<span class="ex">…another human, live and unmediated, on the other end of the line. （本文 / Daily English Reading · 2026-08-21）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">fine with contact, uneasy with presence</span><button aria-label="收藏表达" class="expr-fav" data-en="fine with contact, uneasy with presence" data-example="…the slow withdrawal into asynchronous everything, where we are fine with contact but uneasy with presence. （本文 / Daily English Reading · 2026-08-21）" data-scene='使用场景：点破当代社交的分裂——我们习惯"隔着屏幕的存在"，却怯于"肉身/实时相遇"；contact vs presence 是全篇收束的对照轴。' data-zh='能接受"联系"，却对"在场"不安（对照短语）' type="button">☆</button></span><span class="zh">能接受"联系"，却对"在场"不安（对照短语）</span>
+<span class="sc">使用场景：点破当代社交的分裂——我们习惯"隔着屏幕的存在"，却怯于"肉身/实时相遇"；contact vs presence 是全篇收束的对照轴。</span>
+<span class="ex">…the slow withdrawal into asynchronous everything, where we are fine with contact but uneasy with presence. （本文 / Daily English Reading · 2026-08-21）</span></span>
+</section>
+<!-- 10:00–13:00 · Communication & Social Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Communication &amp; Social Vocabulary · 通话社交词表</h2><span class="time-tag">⏱ 10:00–13:00 词表</span></div>
+<div class="vocab">
+<div class="v"><b>call anxiety</b><span>通话焦虑：对打电话的莫名紧张与回避。例："For a generation raised on texting, call anxiety is the default, not the exception."（《The Atlantic》式社会观察典型用法）</span></div>
+<div class="v"><b>voice note</b><span>语音消息：异步的"声音"妥协——有声音，却不要你在场。例："Instead of calling, we send a voice note — voice without the demand of presence."（数字生活评论常见表述）</span></div>
+<div class="v"><b>shoot (someone) a text</b><span>甩一条短信（口语）：发信息。例："Just shoot me a text when you land" is the modern 'talk later.'（《The Guardian》式生活版块）</span></div>
+<div class="v"><b>pick up (the phone)</b><span>接电话。例："She let it ring twice before she picked up — a small ritual of control."（《The New Yorker》式人物特写）</span></div>
+<div class="v"><b>unscheduled call</b><span>未经预约的来电：从前稀松平常，如今罕见且易被读成"急事"。例："An unscheduled call now reads as urgency, intimacy, or bad news."（《BBC》式文化报道）</span></div>
+<div class="v"><b>ring (someone)</b><span>（动）给某人打电话。例："I'll ring you when the meeting ends" still sounds natural in British English.（《The Times》式用法）</span></div>
+<div class="v"><b>digital etiquette</b><span>数字礼仪：线上沟通的不成文规矩。例："Reply fast, call slow — that's the new digital etiquette nobody wrote down."（《WIRED》式科技文化）</span></div>
+<div class="v"><b>the art of conversation</b><span>对话的艺术：被异步沟通悄悄侵蚀的能力。例："We're losing the art of conversation, not just the call."（《The Economist》式评论）</span></div>
+<div class="v"><b>small talk</b><span>寒暄 / 闲聊：润滑 casual connection 的"社交润滑油"。例："Small talk is the lubricant of casual connection."（《Psychology Today》式心理专栏）</span></div>
+<div class="v"><b>ghost (someone)</b><span>（动）突然失联 / 玩消失：对比"要到场说再见"的电话。例："It's easier to ghost than to say goodbye out loud."（《Vox》式社交报道）</span></div>
+</div>
+</section>
+<!-- 10:00–13:00 · 句子拆解 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"An unsolicited call from an unknown number… sends a small jolt of panic through a room that once would have reached for the receiver without thinking."</p>
+<p class="a"><b>句型：</b>主语（an unsolicited call…）+ 谓语（sends）+ 宾语（a jolt of panic）+ 介词短语（through a room）+ 限制性定语从句（that once would have reached…）修饰 room。<b>逻辑：</b>用"今天一通陌生来电让人慌"与"从前整间屋子想都不想就接起话筒"形成强烈今昔对照。<b>表达：</b><b>unsolicited</b> 与 <b>jolt of panic</b> 把抽象的"不适"写得有冲击感；定语从句里的 <b>would have reached</b>（虚拟过去）轻轻一笔带出"曾经的自然"，对照当下的僵硬，反差高级。</p>
+</div>
+<div class="sb">
+<p class="q">"Texting took over so quietly that most of us noticed only when the phone call had already become the exception rather than the rule."</p>
+<p class="a"><b>句型：</b>主句 + <b>so… that…</b> 结果状语从句（that 从句内含 only when… 时间/条件嵌套，且用过去完成时 had become 表"在 noticed 之前就已发生"）。<b>逻辑：</b>强调变迁之"静"——等我们察觉时，通话早成了例外。<b>表达：</b><b>the exception rather than the rule</b> 是评论文高频固定搭配，比 rare 更精确（"非通则、只是特例"）；so quietly that… 把"温水煮青蛙"式的变化写活。</p>
+</div>
+<div class="sb">
+<p class="q">"The more we pour our lives into messages, the rarer the live human voice becomes — and the more loaded a simple call is."</p>
+<p class="a"><b>句型：</b><b>the + 比较级…, the + 比较级…</b> 平行结构（前半句状语从句，后半句主句），并以 — and the more… 延伸至第三个比较级，形成三连递进。<b>逻辑：</b>揭示"越依赖文字 → 人声越稀缺 → 一通电话越承重"的连锁悖论。<b>表达：</b><b>pour one's life into</b>（把生活倾注进…）意象生动；破折号后的 third comparative 让节奏加速，把"稀缺即沉重"推到顶点。</p>
+</div>
+<div class="sb">
+<p class="q">"A text flattens tone, strips away breath and hesitation, and leaves the reader to supply the emotion."</p>
+<p class="a"><b>句型：</b>主语 + 三个并行谓语动词（flattens / strips away / leaves）构成的<b>三项式平行</b>，层层列举文字"夺走"的东西。<b>逻辑：</b>把"文字为何让人不安"拆成三刀：压平语气、剥掉呼吸与迟疑、把情绪推给接收者自己补。<b>表达：</b><b>flatten</b>（压平）与 <b>strips away</b>（剥离）都是具象动词，比 remove 更有"被抽空"的画面；三连动结构是议论文罗列"代价"的经典手法。</p>
+</div>
+<div class="sb">
+<p class="q">"We have optimized communication for efficiency, and in doing so we have turned the human voice into a special occasion."</p>
+<p class="a"><b>句型：</b>并列复合句（and 连接）；后半句用 <b>in doing so</b>（"这样做的同时/结果"）承接前半动作，再以 turn X into Y 收束。<b>逻辑：</b>点出讽刺内核——我们为效率优化沟通，结果却把"人声"变成了需要特意安排的"特殊场合"。<b>表达：</b><b>optimize… for…</b> 是科技/商业评论常用框架；<b>in doing so</b> 是高级过渡，比 as a result 更克制优雅；special occasion 与全文"稀缺即奢侈"的母题精准咬合。</p>
+</div>
+</section>
+<!-- 13:00–15:00 · 中文总结 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 13:00–15:00 复盘</span></div>
+<p style="margin:0 0 10px;"><b>核心内容：</b>文章从"电话曾是一家之中心"的集体记忆切入：从前随手接起稀松平常，如今一通没约好的来电却能让整间屋子紧绷。变迁是静默的——文字（texting）悄悄 took over，等我们察觉，通话已成"例外而非通则"（the exception rather than the rule）。文字天生异步、可延迟可编辑；而电话 demands presence，要你整个人到场。于是出现一个悖论：我们越把生活倾进消息，人声越稀缺，一通简单通话反而越 loaded（承重）。从前便宜随意的电话，如今变成需要预约的 high-stakes appointment；我们为效率优化沟通，却把"人声"变成 special occasion。文章最后点破：技术承诺让人更近，却让我们把"另一个人的真实声音"当成了 ration（配给品）。</p>
+<p style="margin:0 0 10px;"><b>背后文化现象：</b>这不只是"电话过时"。它和友谊衰退(08-17)、第三空间消失(08-04)、零点击互联网(08-18)、忙碌表演(08-19)同属一条线——异步一切（asynchronous everything）下的"能接受联系、却不安于在场"（fine with contact, uneasy with presence）。而我们「城市观察者」公众号一以贯之的母题恰恰是：<b>在算法投喂、被安排、量产而免费的世界里，"具体、带呼吸、未经中介（unmediated）的人声"正变成最稀缺、也最该被保护的东西</b>。电话的退场，是这条线最锋利的一个切片——它逼你"在场"，而"在场"恰恰是数字时代最贵的奢侈品。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 你上一次"毫无预约"拨出电话是什么时候？那种"好像在冒犯对方"的犹豫，究竟是礼貌，还是我们已经不会"实时相处"？② 如果"人声"因稀缺而变成 luxury good，那真正破圈的，会不会正是敢于"不带滤镜、live、unmediated"发声的人？③ 对你计划中的 012《AI 第二大脑》与 013《无意义时间》来说，这条线可直接接上——<b>机器越能替我们写、替我们答、替我们"高效连接"，"愿意为你拨出一通没事的电话、愿意实时在场"的人声，就越是稀缺资产</b>。</p>
+</section>
+<!-- 13:00–15:00 · 口语 -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语</h2><span class="time-tag">⏱ 13:00–15:00 开口</span></div>
+<div class="prompt">🗣️ Discussion question（请用英文回答，约 200 词）：<br/>Texting has quietly replaced calling, and a live voice now feels like a luxury. Do you think we've lost something essential by trading the phone call for the message — or simply upgraded to a more comfortable way of staying in touch? Describe one moment when a real phone call meant more than any text could, and say whether you'd be willing to "schedule" calls with the people you care about.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词 · 可直接仿写/改造）</span>
+      I think we've quietly lost something, though I'd stop short of calling it a tragedy. A text is efficient, but it flattens everything — tone, breath, the small hesitation that tells you someone is actually hurting. I felt this last winter when my sister called out of nowhere. No schedule, no warning. Her voice was shaky in a way no message could have carried, and within seconds I knew she needed me to listen, not to read. A text would have let me reply later, polished, safe. The call made me present. That's the trade: comfort for presence. I'd happily schedule calls with the people I care about — not because calling should feel like a meeting, but because the live voice has become rare enough to protect. In a feed-driven life, a real call is a small act of attention. The rarest thing may simply be another human, live and unmediated, on the other end. So yes — book the call.
+    </div>
+<div class="tip">💡 练习提示：先用自己的话答一遍（计时 2 分钟，不停顿），再对照范文挑 3 个想偷师的词组（如 flattens everything / made me present / live and unmediated），造自己的句子。注意范文把 trade 写成 "comfort for presence" 的精巧对照。</div>
+</section>
+<footer>Daily English Reading · 2026-08-21 · 人类与社会 · 由 Milo 为你挑选 🐾</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-21',title:"The Slow Fade of the Phone Call: Why a Live Voice Became the New Intimacy"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

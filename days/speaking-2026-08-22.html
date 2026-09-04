@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting a Haircut — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 28 · 8/22 Sat</div>
+    <h2>Getting a Haircut</h2>
+    <div class="zh">理发店剪发 · 从进门描述到满意出门</div>
+    <div class="en">"I told her 'just a trim' and now I look like I'm enlisting in the army."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm here for a haircut.</span>
+        <span class="cn-meaning">我来剪头发。</span>
+      </div>
+      <div class="scene">走进理发店/沙龙的第一句话。也可以说 I'd like to get a haircut. / I don't have an appointment, do you have any openings? 美国理发店分两种：barber shop（男士为主，walk-in 不用预约）和 hair salon / salon（男女都接，通常要预约）。Walk in 直接说 I'm here for a haircut 最自然。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm here for a haircut. Just a standard one. Nothing crazy. Last time I said 'surprise me' and I looked like a backup singer from a boy band."<div class="src">— Chandler Bing, Friends S02E16 / 进理发店时的谨慎开场</div></div>
+        <div class="quote-item">"I'm here for a haircut. And before you ask — yes, I know I only have three hairs left. Just make them look like four."<div class="src">— Kevin Malone, The Office S05E13 / 对着理发师自嘲发量</div></div>
+        <div class="quote-item">"I'm here for a haircut. My wife says I look like a man who's given up, so I'm here to prove her wrong — for fifteen dollars."<div class="src">— Jay Pritchett, Modern Family S03E06 / 被太太拉来理发</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Just a trim, please. Don't take too much off.</span>
+        <span class="cn-meaning">只修一修，别剪太多。</span>
+      </div>
+      <div class="scene">理发师问 How much would you like taken off? 时最经典的回答。trim = 修剪（只去分叉和一点长度），take off = 剪掉多少。还可以具体说 Can you take off about an inch? / Just the split ends. 关键是强调 don't take too much off，否则有可能从 trim 变成大改。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Just a trim, please. Don't take too much off. I'm trying to grow it out, not start over."<div class="src">— Rachel Green, Friends S02E07 / 经典理发椅对话</div></div>
+        <div class="quote-item">"Just a trim. Don't take too much off. I have a date on Friday and I'd like to still recognize myself in the mirror."<div class="src">— Ted Mosby, How I Met Your Mother S01E03 / 约会前的小心翼翼</div></div>
+        <div class="quote-item">"Just a trim, please. And don't take too much off the top — I need every strand I can get. My brother has a full head of hair and I need people to know we're related."<div class="src">— Mitchell Pritchett, Modern Family S04E14 / 珍惜发量的自我调侃</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Could you clean up the sides and the back?</span>
+        <span class="cn-meaning">能把两边和后面修一下吗？</span>
+      </div>
+      <div class="scene">理发店高频句。clean up = 打理、修整齐，指推掉多余的碎发。两边和后面是最容易长乱的地方。如果想推上去可以用 fade（渐变推上去）、taper（自然收窄）。也可以说 Can you taper the sides? / Just clean up around the ears and the neck.</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Could you clean up the sides and the back? Keep the top long enough to part. I have a very specific brand of handsome I'm going for."<div class="src">— Barney Stinson, How I Met Your Mother S02E11 / 对发型极其讲究</div></div>
+        <div class="quote-item">"Could you clean up the sides and the back? And if you could make the back look less like a mullet, that would be a win for everyone."<div class="src">— Jim Halpert, The Office S03E05 / 理发师旁自嘲后摆</div></div>
+        <div class="quote-item">"Could you clean up the sides and the back? My daughter says I look like a mountain man. I'd like to look like a man who owns a razor, at least."<div class="src">— Phil Dunphy, Modern Family S05E02 / 被女儿嫌弃后去理发</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I want to try something different.</span>
+        <span class="cn-meaning">我想换个发型试试。</span>
+      </div>
+      <div class="scene">对理发师说想换个风格时的万能句。也可以说 I'm thinking about changing it up. / I want to switch up my look. / I've had the same style for years — what would you recommend? 理发师听到后会问你想要什么方向：shorter? layers? bangs? 带图来也完全 OK。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I want to try something different. Something that says 'I'm fun but also employable.' Can you do that?"<div class="src">— Rachel Green, Friends S01E22 / 描述想要的感觉而非具体发型</div></div>
+        <div class="quote-item">"I want to try something different. Not 'circus different,' just 'slightly less predictable' different. There's a fine line."<div class="src">— Michael Scott, The Office S02E17 / 想换发型又怕走太远</div></div>
+        <div class="quote-item">"I want to try something different. My wife has had the same view of my head for twenty years and I think she deserves some variety."<div class="src">— Jay Pritchett, Modern Family S07E09 / 以太太视角为由换发型</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Can you thin it out a bit?</span>
+        <span class="cn-meaning">能打薄一点吗？</span>
+      </div>
+      <div class="scene">头发太厚太多时用的表达。thin out = 打薄，用 thinning shears（牙剪）去掉部分厚度。也可以说 Can you texturize the top a bit? / It's too thick on top — can you take some of the weight out? "take the weight out" 是理发师行话，就是打薄去量。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Can you thin it out a bit? It's like wearing a helmet. I sweat in places I didn't know I had."<div class="src">— Joey Tribbiani, Friends S04E03 / 抱怨头发太厚太热</div></div>
+        <div class="quote-item">"Can you thin it out a bit on top? It's getting a little... helmet-y. I want 'effortlessly good,' not 'protected from falling debris.'"<div class="src">— Ted Mosby, How I Met Your Mother S03E19 / 微妙地描述想要的轻盈感</div></div>
+        <div class="quote-item">"Can you thin it out a bit? My hair has a mind of its own and right now that mind is 'angry hedgehog.'"<div class="src">— Luke Dunphy, Modern Family S06E04 / 形容头发炸毛的状态</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting">
+        场景：<span>Alex 周六上午走进一家 barber shop，没预约，想剪头发换个精神面貌。理发师 Tony 接待。</span>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Hey, I'm here for a haircut. I don't have an appointment — do you have any openings?</div>
+        <div class="cn">你好，我来剪头发。没有预约——你们现在有空吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Tony</div>
+        <div class="en">Sure, you're in luck — I just finished up. Have a seat. What are we doing today?</div>
+        <div class="cn">没问题，你运气好——我刚弄完一个。坐吧。今天想怎么剪？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Just a trim on top, don't take too much off. But could you clean up the sides and the back? They're getting pretty messy.</div>
+        <div class="cn">上面只修一修，别剪太多。但两边和后面能修一下吗？有点乱了。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Tony</div>
+        <div class="en">Got it — keep the length on top, taper the sides. You want a fade or just a regular taper?</div>
+        <div class="cn">明白——上面留长度，两边收窄。你想要渐变推上去还是普通自然收窄？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Just a regular taper is fine. Oh, and can you thin it out a bit on top? It gets pretty thick.</div>
+        <div class="cn">普通收窄就行。哦对了，上面能打薄一点吗？头发挺厚的。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Tony</div>
+        <div class="en">No problem. I'll take some of the weight out so it lays nicer. Want me to clean up around the ears and the neck line too?</div>
+        <div class="cn">没问题。我帮你去点量，头发会更服帖。耳朵和发际线那边也一起收拾一下？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Yeah, that'd be great. Honestly, I might want to try something a little different next time, but for today let's keep it safe.</div>
+        <div class="cn">好的，太好了。说实话下次可能想换个不同的风格，但今天先稳妥点来。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Tony</div>
+        <div class="en">Smart move. I'll make you look sharp, and next time you can go wild. All done — check the back.</div>
+        <div class="cn">明智。今天给你剪精神了，下次再放飞。好了——看看后面满意不。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">1</span>你走进一家理发店，没有预约。用英语说清楚你要剪头发，并问有没有空位。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">Hi, I'm here for a haircut. I don't have an appointment — do you have any openings right now?</div>
+      <div class="sample-answer">Hey, I'd like to get a haircut. I'm a walk-in — is now a good time?</div>
+      <div class="sample-answer">I don't have an appointment, but I was hoping to get a quick trim. Do you have room for one more?</div>
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">2</span>理发师问你今天想怎么剪。用英语描述：上面只修一点别剪太多，两边和后面修整齐，顺便打薄。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">Just a trim on top — don't take too much off. Could you clean up the sides and the back? And can you thin it out a bit? It's pretty thick.</div>
+      <div class="sample-answer">I want to keep the length on top, just clean up around the sides and the neck. And if you could take some of the weight out on top, that'd be great.</div>
+      <div class="sample-answer">Not too short on top, just a trim. Taper the sides and clean up the back, please. Oh, and thin it out a little — it gets really poofy.</div>
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">3</span>剪完之后你很满意，想告诉理发师下次想换个风格试试。用英语表达感谢并预告下次的想法。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">This looks great, thanks. Next time I might want to try something different — maybe go a bit shorter or switch up the style.</div>
+      <div class="sample-answer">I love it. Honestly I'm thinking about changing it up next time — what would you recommend for my face shape?</div>
+      <div class="sample-answer">Perfect, exactly what I wanted. I've had the same cut for years, so next time I come in I want to switch it up. You'll be the first to know.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">✅</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">I want to cut my hair.</div>
+      <div class="right">I'd like to get a haircut. / I'm here for a haircut.</div>
+      <div class="why">cut my hair 听起来像你自己拿剪刀剪（I cut my hair = 我剪了自己的头发）。让别人帮你剪要用 get a haircut 或 have my hair cut。进店最自然的开场是 I'm here for a haircut。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">Don't cut too much.</div>
+      <div class="right">Don't take too much off. / Just a trim, please.</div>
+      <div class="why">Don't cut too much 语法没错但不太地道。理发师习惯说 take off（剪掉多少），所以 Don't take too much off 是自然说法。搭配 Just a trim 更完整。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">Make my hair thinner.</div>
+      <div class="right">Can you thin it out a bit?</div>
+      <div class="why">make my hair thinner 听起来像要把每根头发变细，理发师会懵。打薄的专业说法是 thin it out 或 take the weight out。thin out 是动词短语，意为"去掉一部分使变薄"。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">I want to change a new hairstyle.</div>
+      <div class="right">I want to try something different. / I'm thinking about switching it up.</div>
+      <div class="why">change a new hairstyle 语义重复（change 已经是新了还加 new），且不自然。日常口语里更常说 try something different 或 switch up my look。带张照片给理发师看也完全 OK。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">Repair the two sides.</div>
+      <div class="right">Could you clean up the sides and the back?</div>
+      <div class="why">repair 是"修理坏了的东西"（修电器、修车），用在头发上很奇怪。修整发型用 clean up、trim 或 tidy up。两边和后面一般一起说 the sides and the back。</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

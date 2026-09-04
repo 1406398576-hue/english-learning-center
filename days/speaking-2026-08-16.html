@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checking In & Hotel Stay — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 22 · 8/16 Sat</div>
+    <h2>Checking In & Hotel Stay</h2>
+    <div class="zh">酒店入住与旅行住宿 · 从办理入住到延迟退房</div>
+    <div class="en">"Home away from home — until checkout time."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I have a reservation under...</span>
+        <span class="cn-meaning">我有预订，名字是……</span>
+      </div>
+      <div class="scene">到达酒店前台的第一句话。under 后面加你的姓氏，前台系统是按姓名检索的。也可以说 I booked a room online.</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Hi, I have a reservation under Geller. Two nights?"<div class="src">— Monica Geller, Friends S09E13 / 和 Chandler 去度假时办理入住</div></div>
+        <div class="quote-item">"I have a reservation under Scott. It's a business trip."<div class="src">— Michael Scott, The Office S07E04 / 出差住酒店跟前台</div></div>
+        <div class="quote-item">"We have a reservation under Pritchett. It's for three rooms."<div class="src">— Jay Pritchett, Modern Family S05E13 / 全家出游订了多间房</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Is breakfast included?</span>
+        <span class="cn-meaning">早餐包含在内吗？</span>
+      </div>
+      <div class="scene">办理入住时必问。不同酒店政策不同，有的包早餐（continental breakfast），有的要额外付费。included 是关键词。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Does the room rate include breakfast, or is that extra?"<div class="src">— Ted Mosby, How I Met Your Mother S04E09 / 和 Barney 出差住酒店</div></div>
+        <div class="quote-item">"Is breakfast included? Because if not, I'm eating at the diner across the street."<div class="src">— Joey Tribbiani, Friends S07E01 / 关心早餐是否免费</div></div>
+        <div class="quote-item">"The website said breakfast was complimentary. Is that still the case?"<div class="src">— Phil Dunphy, Modern Family S06E11 / 和前台确认网站上的承诺</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Could I get a late checkout?</span>
+        <span class="cn-meaning">我可以延迟退房吗？</span>
+      </div>
+      <div class="scene">标准退房时间一般是上午 11 点或中午 12 点。如果你需要多睡一会儿或下午才离开，可以礼貌询问 late checkout。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Could we get a late checkout? Our flight isn't until 6 p.m."<div class="src">— Ross Geller, Friends S10E03 / 和 Rachel 旅行想晚点退房</div></div>
+        <div class="quote-item">"Any chance I could get a late checkout? I had a rough night."<div class="src">— Barney Stinson, How I Met Your Mother S05E22 / 宿醉后想多睡会儿</div></div>
+        <div class="quote-item">"I'd like to request a late checkout. Is there an extra charge for that?"<div class="src">— Pam Beesly, The Office S06E16 / 和 Jim 蜜月旅行</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">The [something] in my room isn't working.</span>
+        <span class="cn-meaning">我房间的……坏了/不能用。</span>
+      </div>
+      <div class="scene">房间设施出问题时的标准说法。isn't working 比 is broken 更委婉、更常用。可替换 Wi-Fi / AC (air conditioning) / TV / shower / heater 等。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"The Wi-Fi in my room isn't working. I have a deadline."<div class="src">— Chandler Bing, Friends S08E18 / 居家办公需要网络</div></div>
+        <div class="quote-item">"The AC in my room isn't working and it's like a sauna in there."<div class="src">— Marshall Eriksen, How I Met Your Mother S03E17 / 夏天空调坏了</div></div>
+        <div class="quote-item">"The TV in my room isn't working. I was gonna watch the game."<div class="src">— Dwight Schrute, The Office S04E12 / 出差时电视故障</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'd like to extend my stay by one night.</span>
+        <span class="cn-meaning">我想多住一晚。</span>
+      </div>
+      <div class="scene">行程有变需要续住时。extend my stay 是标准说法，by one night / for two more nights 说明具体天数。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'd like to extend my stay by one night. Is the room still available?"<div class="src">— Rachel Green, Friends S05E22 / 旅行计划临时改变</div></div>
+        <div class="quote-item">"We need to extend our stay for two more nights. Our car broke down."<div class="src">— Claire Dunphy, Modern Family S04E15 / 车坏了被迫续住</div></div>
+        <div class="quote-item">"Is it possible to extend my stay? My meeting got pushed to Friday."<div class="src">— Jim Halpert, The Office S05E10 / 出差会议延期</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周六下午，Emma 拖着行李箱到达一家商务酒店前台，接待员 Sarah 正在帮她办理入住手续，两人聊到了早餐和房间设施。</div>
+
+      <div class="msg">
+        <div class="speaker a">Emma</div>
+        <div class="en">Hi, I have a reservation under Miller. I booked it online last week.</div>
+        <div class="cn">你好，我有预订，名字是 Miller。我上周在网上订的。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">Let me check... Yes, here it is. Emma Miller, two nights, standard king room. Could I see your ID and credit card, please?</div>
+        <div class="cn">我查一下……是的，找到了。Emma Miller，两晚，标准大床房。请出示一下您的身份证件和信用卡。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Emma</div>
+        <div class="en">Sure, here you go. Is breakfast included in the rate?</div>
+        <div class="cn">好的，给您。早餐包含在房费里吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">Yes, continental breakfast is included. It's served from 6:30 to 10 a.m. on the second floor. Your room is 412, fourth floor. Here's your key card.</div>
+        <div class="cn">是的，包含欧式早餐。供应时间是早上 6:30 到 10 点，在二楼。您的房间是 412，四楼。这是您的房卡。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Emma</div>
+        <div class="en">Great, thanks. One more thing — what's the checkout time?</div>
+        <div class="cn">太好了，谢谢。还有一件事——退房时间是几点？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">Checkout is at noon. If you need a late checkout, just let us know the night before and we can usually arrange until 1 p.m. at no extra charge.</div>
+        <div class="cn">中午 12 点退房。如果您需要延迟退房，提前一晚告诉我们，通常可以免费延到下午 1 点。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Emma</div>
+        <div class="en">Good to know. Also, I noticed the gym on the website. Is it open 24 hours?</div>
+        <div class="cn">知道了。另外，我在网站上看到这里有健身房。是 24 小时开放的吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Sarah</div>
+        <div class="en">Yes, the fitness center is open 24/7. You'll need your key card to access it. If you need anything else, just dial 0 from your room phone. Enjoy your stay!</div>
+        <div class="cn">是的，健身中心全天候开放。您需要用房卡刷卡进入。如果还需要什么，从房间电话拨 0 就行。祝您入住愉快！</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">You just arrived at a hotel. Walk up to the front desk and tell them you have a reservation. Ask if breakfast is included.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Hi, I have a reservation under Smith. I booked it through the website. Is breakfast included in the room rate?"</div>
+      <div class="sample-answer"><strong>B：</strong>"Hello, I'm checking in. My name is Li, and I have a reservation for two nights. Does that come with breakfast?"</div>
+      <div class="sample-answer"><strong>C：</strong>"Good afternoon. I believe I have a booking here — under the name Chen. Could you confirm if breakfast is included?"</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">You're in your hotel room and the Wi-Fi isn't working. Call the front desk and explain the problem. Ask if someone can come take a look.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Hi, this is room 412. The Wi-Fi in my room isn't working. Could someone come take a look? I need it for work."</div>
+      <div class="sample-answer"><strong>B：</strong>"Front desk? I'm in room 205. The internet keeps dropping and I can't connect. Is there someone who can help with that?"</div>
+      <div class="sample-answer"><strong>C：</strong>"Hello, I have a small issue — the Wi-Fi in my room doesn't seem to be working. Could you send someone up to check it? I'm in 318."</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">Your flight got cancelled and you need to stay one more night. Go to the front desk and ask if you can extend your stay. Ask about a late checkout too.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Hi, my flight got cancelled so I'd like to extend my stay by one night. Is my room still available? And could I get a late checkout tomorrow?"</div>
+      <div class="sample-answer"><strong>B：</strong>"I need to stay an extra night because of a flight delay. Can I extend my reservation? Also, what time is checkout, and is a late checkout possible?"</div>
+      <div class="sample-answer"><strong>C：</strong>"My travel plans changed and I need to stay until Thursday. I'd like to extend my stay for one more night if the room isn't booked. And could I request a late checkout?"</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I want to open a room."</div>
+      <div class="right">"I'd like to check in." / "I have a reservation."</div>
+      <div class="why">中文说「开间房」，但英语里没有 open a room 的说法。check in 才是办理入住的标准表达，前台一听就懂。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"My room has no Wi-Fi."</div>
+      <div class="right">"The Wi-Fi in my room isn't working." / "I can't get Wi-Fi in my room."</div>
+      <div class="why">has no Wi-Fi 暗示房间本来就没有，但酒店通常都有。isn't working 表示「坏了/连不上」，更准确地描述问题，也更容易获得帮助。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I want to live one more day."</div>
+      <div class="right">"I'd like to extend my stay by one night." / "Can I stay one more night?"</div>
+      <div class="why">live 指「居住/生活」，在酒店语境里不自然。extend my stay 是酒店行业的标准说法，by one night 说明具体延长多久。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I booked a room. My name is Li."</div>
+      <div class="right">"I have a reservation under Li." / "I booked a room under the name Li."</div>
+      <div class="why">单独说 I booked a room 没错，但前台需要按姓名查系统。under + 姓氏是酒店前台最熟悉的表达方式，效率更高。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"Can you change my room?"</div>
+      <div class="right">"Could I switch to a different room?" / "Would it be possible to change rooms?"</div>
+      <div class="why">Can you change my room? 语法上说得通，但听起来像命令。Could I switch to...? 更礼貌、更地道，switch 在换房语境里比 change 更常用。</div>
+    </div>
+  </div>
+
+</div><!-- .wrap -->
+
+</body>
+</html>

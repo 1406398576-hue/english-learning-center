@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | 2026-08-05 · 表达观点</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e7e1d8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .kicker {
+    font-size: 12.5px; letter-spacing: .08em; color: var(--accent);
+    font-weight: 700; text-align: center; margin-bottom: 6px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .header .sub { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f7;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin: 4px 0 8px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-src {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--accent-3);
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .movie-tip {
+    font-size: 13px;
+    color: var(--accent-3);
+    background: #f7f4ef;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 6px;
+  }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.a { color: var(--accent); }
+  .speaker.b { color: var(--accent-3); }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="kicker">每日口语 · 2026-08-05</div>
+<div class="header">
+<span class="day-badge">DAY 12</span>
+<h1>表达观点 · 同意 / 反对 / 委婉说「不」<br/>Sharing Your Opinion</h1>
+<div class="sub">2026年8月5日（周三） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>表达观点：说"我觉得…"，礼貌反对，承认「这事看情况」</h2>
+<div class="en">Sharing Your Opinion &amp; Agreeing / Disagreeing</div>
+<p>日常聊天里最常用但最难开口的，不是说"我喜欢"或"我不喜欢"，而是「我同意 / 我反对 / 我有保留」。今天这 5 个表达，帮你把"我觉得"升级成"我同意你的部分观点，但我有不同看法"，既不假客气，也不伤感情。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 句真实美剧原句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "I think..." / "I don't think..."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I think...&quot; / &quot;I don't think...&quot;" data-scene="使用场景 任何想表达自己观点的场合，比 I believe 更口语、更谦虚" data-zh='我觉得…… / 我觉得不是这样……（最基础的"亮观点"开头）' type="button">☆</button></div>
+<div class="expr-cn">我觉得…… / 我觉得不是这样……（最基础的"亮观点"开头）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>任何想表达自己观点的场合，比 I believe 更口语、更谦虚</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》Chandler 评价 Ross 的感情观时</span>"I think you really need to move on, Ross."</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》Ted 回应 Marshall 的担心时</span>"Honestly, I don't think that's gonna happen."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》Claire 跟 Phil 谈女儿恋爱时</span>"I think we need to have a talk with her, don't you?"</div>
+</div>
+<div class="movie-tip">🎬 真实场景：I think 比 I believe 更谦虚、更不咄咄逼人。表达不认同时，用 I don't think + 陈述句，比 I think...not 顺口得多（I don't think that's a good idea 是最常用句型）。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "I totally agree." / "I'm with you on that."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I totally agree.&quot; / &quot;I'm with you on that.&quot;" data-scene='使用场景 朋友说的和你的想法一致，想让对方感受到"我们是一伙的"' data-zh="我完全同意。/ 我站你这边。（高能量地表示赞同）" type="button">☆</button></div>
+<div class="expr-cn">我完全同意。/ 我站你这边。（高能量地表示赞同）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>朋友说的和你的想法一致，想让对方感受到"我们是一伙的"</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《The Office》Jim 同意 Dwight 的提案时</span>"I totally agree with you, Dwight. One hundred percent."</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》Lily 站 Ted 那边时</span>"I'm with you on that, Ted. You should do it."</div>
+<div class="tv-line"><span class="tv-src">《Friends》Rachel 认同 Monica 的决定时</span>"I'm with you. You deserve better than him."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：I'm with you on that 是美国职场和朋友圈最常说的"我挺你"，比 I agree with you 自然得多——因为它隐含"我们是同一个阵营"的温度。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "That's a good point, but..."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;That's a good point, but...&quot;" data-scene='使用场景 对方观点有道理但你不同意——先肯定再转折，是"职场 + 朋友圈"通用话术' data-zh="你说的有道理，但是……（先肯定再反对，最礼貌的反对起手式）" type="button">☆</button></div>
+<div class="expr-cn">你说的有道理，但是……（先肯定再反对，最礼貌的反对起手式）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>对方观点有道理但你不同意——先肯定再转折，是"职场 + 朋友圈"通用话术</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》Monica 反驳 Ross 的育儿观时</span>"That's a good point, Ross, but I don't think we should do it that way."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》Phil 委婉反对 Jay 的方案时</span>"That's a good point, Jay, but have you thought about this?"</div>
+<div class="tv-line"><span class="tv-src">《The Office》Oscar 反驳 Michael 的商业计划时</span>"That's a good point, Michael, but I think you're missing a few things."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：先 "That's a good point" 再 "but"——这是英语国家最经典的"礼貌反对"模板。否定对方时，先给他台阶下，对话就不会陷入争吵。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "I see what you're saying, but..."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I see what you're saying, but...&quot;" data-scene="使用场景 对方讲了一堆，你确实听懂了，但还是有自己的判断" data-zh="我懂你的意思，但是……（承认理解，再表达不同看法）" type="button">☆</button></div>
+<div class="expr-cn">我懂你的意思，但是……（承认理解，再表达不同看法）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>对方讲了一堆，你确实听懂了，但还是有自己的判断</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》Ted 听完 Barney 的人生哲学后</span>"I see what you're saying, Barney, but I don't think that's gonna work for me."</div>
+<div class="tv-line"><span class="tv-src">《Friends》Ross 听完 Rachel 的职业建议后</span>"I see what you're saying, Rach, but I've made up my mind."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》Claire 回应 Phil 的大计划时</span>"I see what you're saying, honey, but we can't afford it."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：I see what you're saying 比 I understand 更有"我真的在听你说话"的共情感，是"我反对你，但我不觉得你蠢"的标准说法。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "It really depends on..." / "It depends."</div><button aria-label="收藏表达" class="expr-fav" data-en='"It really depends on..." / "It depends."' data-scene="使用场景 话题太大、立场敏感、或你真的没想好时——避免被逼表态" data-zh="这得看情况……/ 视情况而定。（留余地、不站队的安全牌）" type="button">☆</button></div>
+<div class="expr-cn">这得看情况……/ 视情况而定。（留余地、不站队的安全牌）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>话题太大、立场敏感、或你真的没想好时——避免被逼表态</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《The Office》Michael 评价谁更适合当经理时</span>"Well, it really depends on what we're looking for in a manager."</div>
+<div class="tv-line"><span class="tv-src">《Friends》Joey 解释他对感情的态度时</span>"I mean, it depends on the girl, you know?"</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》Marshall 讨论买房时</span>"It really depends on how long we plan to stay in the city."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：It depends 是"成年人"的回答——既不站队也不得罪人。在美国职场讨论敏感话题（薪资、跳槽、政治）时，It depends on... 是最体面的"打太极"方式。</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 朋友间聊"远程办公好不好"（8 轮）</h3>
+<div class="dialogue">
+<div class="scene">🛋️ 场景：周末 Alex 去 Jamie 家做客，两人一边喝咖啡一边讨论最近公司推的"每周三天在家办公"政策——一方觉得是福利，另一方觉得弊大于利。</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">So, what do you think about the new remote work policy? I think it's actually a great idea.</span>
+<div class="translation">你觉得公司新的远程办公政策怎么样？我觉得这主意其实挺棒的。</div>
+</div>
+<div class="line">
+<span class="speaker b">Jamie:</span>
+<span class="text">Honestly? I don't think it's gonna work for everyone. Some people really need that office structure.</span>
+<div class="translation">说真的？我觉得这不适用于所有人。有些人真的需要办公室那种节奏感。</div>
+</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">I see what you're saying, but I think people are more productive at home. Less interruptions, you know?</span>
+<div class="translation">我懂你的意思，但我觉得在家效率更高。打扰少，你懂吧？</div>
+</div>
+<div class="line">
+<span class="speaker b">Jamie:</span>
+<span class="text">That's a good point, but some of us have kids at home. It's not exactly quiet, is it?</span>
+<div class="translation">你说的有道理，但我们有些人家里有小孩。家里可不太安静啊。</div>
+</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">Okay, fair enough. What about the team bonding part? Don't you miss seeing people in person?</span>
+<div class="translation">好吧，也有道理。那团队氛围那方面呢？你不怀念跟同事面对面吗？</div>
+</div>
+<div class="line">
+<span class="speaker b">Jamie:</span>
+<span class="text">I do, actually. But I think it depends on the person. Introverts probably love it. Extroverts like me? Not so much.</span>
+<div class="translation">其实我挺想的。但我觉得这得看人。内向的人估计超爱，但我这种外向的就一般般了。</div>
+</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">I'm with you on that part. Okay, so maybe a mix — two days at home, three in the office?</span>
+<div class="translation">这点我站你。那要不混合一下？两天在家，三天在公司？</div>
+</div>
+<div class="line">
+<span class="speaker b">Jamie:</span>
+<span class="text">Yeah, I totally agree. That actually sounds like a good balance.</span>
+<div class="translation">嗯，我完全同意。这样听起来平衡多了。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>Your friend says "Remote work is the best thing ever." Share your own opinion on remote work — agree, disagree, or somewhere in between.</strong>
+<div class="hint">💡 用 I think / I don't think 开头，结尾用 It depends on... 留余地。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"I think it's great for focused work, but I don't think it works for everything. It really depends on your role."</span>
+<span class="s">"Honestly, I don't think I'd want to go fully remote. I like seeing people — but two days at home sounds perfect."</span>
+<span class="s">"I think it depends on the person. Some people thrive at home, others really need the office."</span>
+</div>
+</li>
+<li>
+<strong>Your colleague says "We should cut the project timeline in half to impress the client." You think it's a bad idea. Politely disagree.</strong>
+<div class="hint">💡 先肯定（That's a good point），再说"但是"（but I don't think / I see what you're saying, but）。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"That's a good point, but I don't think we can do it without burning out the team."</span>
+<span class="s">"I see what you're saying, but the quality might suffer if we rush it."</span>
+<span class="s">"That's a fair point, but I think we should at least talk to the team first. It really depends on their capacity."</span>
+</div>
+</li>
+<li>
+<strong>A friend asks "Do you think people should work until 65?" You don't have a strong opinion. Express a balanced view without taking sides.</strong>
+<div class="hint">💡 用 It really depends on... 开头，再说"看情况"是看什么。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"It really depends on the job, I think. Some jobs are physically demanding — for those, 65 might be too late."</span>
+<span class="s">"I think it depends on the person. Some people love their work and want to keep going. Others can't wait to stop."</span>
+<span class="s">"Honestly, it depends. If you're healthy and enjoy it, sure. If not, there's no shame in retiring earlier."</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：先把对话朗读 2 遍找节奏——注意 "I see what you're saying" 这句常连读成 /aɪ siː wʌt jʊr ˈseɪɪŋ/；"I don't think" 经常一起重读，强调你的不认同。然后关掉中文，用英语回答 3 个练习并录音回放，听自己有没有像在"念稿"。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"I think so."</td>
+<td class="right">"I totally agree."<br/>"I'm with you on that."</td>
+<td class="note">I think so 太敷衍、没温度。表示同意时用 I totally agree 或 I'm with you on that，更有人情味。</td>
+</tr>
+<tr>
+<td class="wrong">"I don't agree with you."</td>
+<td class="right">"I see what you're saying, but..."<br/>"That's a good point, but..."</td>
+<td class="note">I don't agree with you 太直接、生硬。英语里反对前先肯定一句，是基本的礼貌——美国人也这么做。</td>
+</tr>
+<tr>
+<td class="wrong">"In my opinion, I think..."</td>
+<td class="right">"I think..."<br/>"From where I stand,..."</td>
+<td class="note">In my opinion 和 I think 重复了——美国口语里基本不会这么连用。一个就好。</td>
+</tr>
+<tr>
+<td class="wrong">"You are wrong."</td>
+<td class="right">"I don't see it that way."<br/>"I'm not sure I agree."</td>
+<td class="note">You are wrong 像指责、容易让对方炸毛；改用 I don't see it that way 或 I'm not sure I agree，把"错"变成"我有不同看法"。</td>
+</tr>
+<tr>
+<td class="wrong">"I have no opinion."</td>
+<td class="right">"It really depends on..."<br/>"I haven't really thought about it."</td>
+<td class="note">I have no opinion 太冷漠，等于拒绝对话。说 it depends on... 或 I haven't really thought about it，是更体面的"我没想好"。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话 2 遍 → ② 背 5 个核心表达（含美剧原句）→ ③ 用英语回答 3 个练习并录音 → ④ 回看纠正表，避开 "I think so / You are wrong" 等坑。
+    </div>
+<p>下次朋友聊天观点不一致时，试着用 "That's a good point, but..." 开头。表达观点不等于吵架。See you tomorrow! 🌙</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-05',title:"表达观点：说\"我觉得…\"，礼貌反对，承认「这事看情况」"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

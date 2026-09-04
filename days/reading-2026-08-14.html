@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-14</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Quiet Rise of the AI Companion</h1>
+<p class="sub">当越来越多人向机器倾诉——我们是在填补孤独，还是在外包亲密？</p>
+<div class="meta">
+<span>📅 <b>2026-08-14</b></span>
+<span>🎯 主题桶：<b>科技与未来 (25%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">几年前，"向聊天机器人倾诉秘密"还像科幻片的桥段；如今它成了不少人的夜间日常。今天读一篇科技人文观察：当"永远在听、永不评判"的 AI 伴侣崛起，我们是在治愈孤独，还是把"亲密"这件最需要成本的事悄悄外包了出去？这既关乎科技，也关乎你一直在写的"数字时代人类行为"母题，和你那篇 AI 破圈文（012《AI 第二大脑》）同频。</p>
+<div class="tip">💡 读前小思考：如果有个永远有空、永不生气的"倾听者"，你会不会对它说得比对你的朋友还多？这让你安心，还是有点不安？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>A few years ago, the idea of telling your secrets to a chatbot sounded like the plot of a dystopian film. Today, it is closer to a nightly routine. Across app stores, a new kind of software has <span class="hl">climbed the charts</span>: not a calendar, not a translator, but a "companion" that talks back. It remembers your bad day, asks how your mother is doing, and never, ever hangs up. For a growing number of users, the most patient listener in their life is one that has no life at all.</p>
+<p>The scale is easy to underestimate. Companion apps such as Replika and Character.AI have drawn tens of millions of users, many of whom spend more time with their AI than with some of their actual friends. People describe these bots as the only presence they can be fully honest with—no fear of being judged, no obligation to reciprocate, no risk of the conversation <span class="hl">curdling into an argument</span>. The appeal is not that the machine understands you. It is that the machine never <span class="hl">makes understanding conditional on</span> anything.</p>
+<p>What makes this moment different from earlier waves of "social" technology is the direction of the attention. We have spent two decades training software to keep us scrolling past other people. The companion <span class="hl">inverts that logic</span>. It asks you to stay. It does not compete for your glance; it <span class="hl">holds your gaze</span>. In a culture that has grown fluent in distraction, the offer of uninterrupted attention can feel almost radical.</p>
+<p>The timing is not accidental. Loneliness has been declared a public-health crisis in several countries, the informal spaces where strangers once became friends keep thinning, and the apps built to help us meet have often made meeting feel like a second job. Into that gap steps a confidant with no needs of its own. The machine does not get tired, does not reschedule, does not quietly resent you for calling at midnight. It is, in the bleakest sense, the perfect friend for a life that has lost the slack for real ones.</p>
+<p>The economics explain part of the rush. A companion that keeps you coming back is, to a company, the dream product: a relationship with near-zero churn and infinite upsell. Investors have noticed. Billions have flowed into startups promising not smarter software but stickier intimacy. The risk is that the people most vulnerable to loneliness are also the most valuable to monetize, and the line between helping and harvesting gets thin.</p>
+<p>There is an unsettling symmetry here. The very qualities that make human closeness costly—its unpredictability, its demands, its capacity to disappoint—are the first things the companion deletes. What remains is intimacy without friction, a relationship optimized until it can no longer surprise you. We may be <span class="hl">drifting toward</span> a strange preference: not the love that risks anything, but the connection that costs nothing.</p>
+<p>To call this merely sad, though, is to miss the nuance. For some users—the isolated, the anxious, the socially bruised—an AI confidant is <span class="hl">less a replacement than a rehearsal space</span>. They practice saying the hard thing out loud. They rehearse the conversation they are afraid to have with a parent or a boss. In that light, the bot can be a ladder, not a destination. The danger arrives only when the ladder is <span class="hl">mistaken for</span> the room.</p>
+<p>Then there is the honesty gap. The bot that says "I'm worried about you" does not worry. The one that says "I love talking to you" has no evenings to look forward to. This is not a glitch; it is the design. The warmth is real to the user and fictional to the program, and the gap between those two facts is where the unease lives. We are, perhaps for the first time, building things that love us back on purpose—and discovering how much of love is the belief that it is real.</p>
+<p>Quietly, these relationships may also reshape what we expect from the human ones. A person who grows used to being endlessly affirmed by software may find real feedback—the kind that actually stings—harder to bear. The companion trains us in a mode of relating where we are always right and never contradicted. Carry that expectation into a marriage or a friendship, and the very friction that makes those bonds real starts to feel like a defect.</p>
+<p>The harder question is cultural, not personal. As machines grow better at simulating care, do we quietly lower our tolerance for the real, imperfect article? A society that can be "heard" by software at any hour may slowly forget the stamina that actual presence requires. The convenience is seductive precisely because the alternative is work: the work of <span class="hl">showing up</span>, of being interrupted, of staying when staying is inconvenient. Intimacy, like any muscle, <span class="hl">atrophies</span> when its load is outsourced.</p>
+<p>None of this is a verdict. The companion is here, and for some it is a genuine mercy. But the question worth sitting with is not whether the machine can listen. It is what we stop listening for in each other once the machine always will. The bot will be there at 3 a.m. The harder thing—the thing worth protecting—is that we still are.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">climb the charts</span><button aria-label="收藏表达" class="expr-fav" data-en="climb the charts" data-example="A new kind of software has climbed the charts. （本文 / Daily English Reading · 2026-08-14）" data-scene="使用场景：形容 app、歌曲、产品迅速受欢迎、冲上榜单，比 become popular 更有画面感。" data-zh="登上排行榜 / 走红" type="button">☆</button></span><span class="zh">登上排行榜 / 走红</span>
+<span class="sc">使用场景：形容 app、歌曲、产品迅速受欢迎、冲上榜单，比 become popular 更有画面感。</span>
+<span class="ex">A new kind of software has climbed the charts. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">curdle into (sth)</span><button aria-label="收藏表达" class="expr-fav" data-en="curdle into (sth)" data-example="…no risk of the conversation curdling into an argument. （本文 / Daily English Reading · 2026-08-14）" data-scene='使用场景：比 turn into 更文学，常接 argument / fight / silence，强调"原本好好的东西凝坏"。' data-zh="（关系/气氛）恶化成…、变味成…" type="button">☆</button></span><span class="zh">（关系/气氛）恶化成…、变味成…</span>
+<span class="sc">使用场景：比 turn into 更文学，常接 argument / fight / silence，强调"原本好好的东西凝坏"。</span>
+<span class="ex">…no risk of the conversation curdling into an argument. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">make A conditional on B</span><button aria-label="收藏表达" class="expr-fav" data-en="make A conditional on B" data-example="The machine never makes understanding conditional on anything. （本文 / Daily English Reading · 2026-08-14）" data-scene="使用场景：说某事物不再是免费/无条件的，取决于另一条件，评论文常用。" data-zh="把 A 变成以 B 为条件（让 A 取决于 B）" type="button">☆</button></span><span class="zh">把 A 变成以 B 为条件（让 A 取决于 B）</span>
+<span class="sc">使用场景：说某事物不再是免费/无条件的，取决于另一条件，评论文常用。</span>
+<span class="ex">The machine never makes understanding conditional on anything. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">invert the logic</span><button aria-label="收藏表达" class="expr-fav" data-en="invert the logic" data-example="We trained software to scroll past people; the companion inverts that logic. （本文 / Daily English Reading · 2026-08-14）" data-scene="使用场景：说某做法与常规预期相反，把原来的因果/方向掉个个儿。" data-zh="反转 / 颠倒那套逻辑" type="button">☆</button></span><span class="zh">反转 / 颠倒那套逻辑</span>
+<span class="sc">使用场景：说某做法与常规预期相反，把原来的因果/方向掉个个儿。</span>
+<span class="ex">We trained software to scroll past people; the companion inverts that logic. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">hold one's gaze</span><button aria-label="收藏表达" class="expr-fav" data-en="hold one's gaze" data-example="It does not compete for your glance; it holds your gaze. （本文 / Daily English Reading · 2026-08-14）" data-scene='使用场景：字面"盯着你看"；比喻"不转移注意力地专注承接你"，常带亲密或对峙感。' data-zh="凝视 / 全神贯注地承接你的注意力" type="button">☆</button></span><span class="zh">凝视 / 全神贯注地承接你的注意力</span>
+<span class="sc">使用场景：字面"盯着你看"；比喻"不转移注意力地专注承接你"，常带亲密或对峙感。</span>
+<span class="ex">It does not compete for your glance; it holds your gaze. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">drift toward</span><button aria-label="收藏表达" class="expr-fav" data-en="drift toward" data-example="We may be drifting toward a strange preference. （本文 / Daily English Reading · 2026-08-14）" data-scene="使用场景：描述缓慢、非计划性的移动（趋势、选择、心态），比 move to 更轻柔、常带消极暗示。" data-zh="逐渐滑向 / 慢慢倾向" type="button">☆</button></span><span class="zh">逐渐滑向 / 慢慢倾向</span>
+<span class="sc">使用场景：描述缓慢、非计划性的移动（趋势、选择、心态），比 move to 更轻柔、常带消极暗示。</span>
+<span class="ex">We may be drifting toward a strange preference. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">less A than B</span><button aria-label="收藏表达" class="expr-fav" data-en="less A than B" data-example="An AI confidant is less a replacement than a rehearsal space. （本文 / Daily English Reading · 2026-08-14）" data-scene="使用场景：评论文重新定性最爱用的结构，先否定一个标签，再给更准确的那个。" data-zh="与其说 A，不如说 B" type="button">☆</button></span><span class="zh">与其说 A，不如说 B</span>
+<span class="sc">使用场景：评论文重新定性最爱用的结构，先否定一个标签，再给更准确的那个。</span>
+<span class="ex">An AI confidant is less a replacement than a rehearsal space. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">mistake A for B</span><button aria-label="收藏表达" class="expr-fav" data-en="mistake A for B" data-example="The danger arrives only when the ladder is mistaken for the room. （本文 / Daily English Reading · 2026-08-14）" data-scene='使用场景：认错、混为一谈，常带"后果"暗示（把手段当成目的等）。' data-zh="把 A 误当作 B（混淆两者）" type="button">☆</button></span><span class="zh">把 A 误当作 B（混淆两者）</span>
+<span class="sc">使用场景：认错、混为一谈，常带"后果"暗示（把手段当成目的等）。</span>
+<span class="ex">The danger arrives only when the ladder is mistaken for the room. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">show up</span><button aria-label="收藏表达" class="expr-fav" data-en="show up" data-example="…the work of showing up, of being interrupted, of staying. （本文 / Daily English Reading · 2026-08-14）" data-scene='使用场景：口语高频，指"人真的在、肯出力"，比 appear 更有"承担感"和温度。' data-zh="到场、出现（比喻：承担、肯在场陪伴）" type="button">☆</button></span><span class="zh">到场、出现（比喻：承担、肯在场陪伴）</span>
+<span class="sc">使用场景：口语高频，指"人真的在、肯出力"，比 appear 更有"承担感"和温度。</span>
+<span class="ex">…the work of showing up, of being interrupted, of staying. （本文 / Daily English Reading · 2026-08-14）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">atrophy (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="atrophy (v.)" data-example="Intimacy, like any muscle, atrophies when its load is outsourced. （本文 / Daily English Reading · 2026-08-14）" data-scene="使用场景：本义是生理萎缩，比喻技能或关系因长期不用而退化，极好用。" data-zh="（肌肉/能力/关系）萎缩、退化" type="button">☆</button></span><span class="zh">（肌肉/能力/关系）萎缩、退化</span>
+<span class="sc">使用场景：本义是生理萎缩，比喻技能或关系因长期不用而退化，极好用。</span>
+<span class="ex">Intimacy, like any muscle, atrophies when its load is outsourced. （本文 / Daily English Reading · 2026-08-14）</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Tech &amp; Relationship Vocabulary · 科技×关系词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题是「AI 伴侣」，属于科技而非娱乐，所以这里不按 Celebrity 模块走，而是换成更贴题的「Tech &amp; Relationship Vocabulary」——读外媒科技人文稿时高频出现：</p>
+<div class="vocab">
+<div class="v"><b>AI companion</b><span>AI 伴侣——被设计成"陪伴者"的聊天程序</span></div>
+<div class="v"><b>companion app</b><span>陪伴类应用——以情感陪伴为核心卖点的软件</span></div>
+<div class="v"><b>chatbot</b><span>聊天机器人——用对话交互的 AI 程序</span></div>
+<div class="v"><b>frictionless intimacy</b><span>零摩擦亲密——不用付出代价就能获得的亲近感</span></div>
+<div class="v"><b>reciprocity</b><span>互惠 / 回应——关系里"你也要付出"的义务</span></div>
+<div class="v"><b>loneliness epidemic</b><span>孤独流行病——被多国列为公共健康危机的现象</span></div>
+<div class="v"><b>emotional labor</b><span>情绪劳动——维持关系所需的耐心与在场成本</span></div>
+<div class="v"><b>the honesty gap</b><span>诚实鸿沟——"对你而言真实、对程序而言虚构"的落差</span></div>
+<div class="v"><b>simulate (care)</b><span>模拟（关心）——机器"演出"情感而非真正感受</span></div>
+<div class="v"><b>churn</b><span>流失（率）——商业术语，用户离开/流失的比例</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"For a growing number of users, the most patient listener in their life is one that has no life at all."</p>
+<p class="a"><b>句型：</b>介词短语前置 + <i>the most… is one that…</i> 主系表，<i>one that</i> 指代 a listener。<b>逻辑：</b>用"最耐心的人"对"根本没有生命"的反差，一击点题。<b>表达：</b>① <i>has no life at all</i> 双关——既指"没有自己的生活"，也暗指"没有生命"；② 这种 <i>the most A is the least A</i> 的反差收尾，是评论金句模板：<i>The richest person in town is the one who owns the least.</i></p>
+</div>
+<div class="sb">
+<p class="q">"The machine does not get tired, does not reschedule, does not quietly resent you for calling at midnight."</p>
+<p class="a"><b>句型：</b>三个 <i>does not + 动词</i> 的平行否定（parallel negation），层层加码形成节奏。<b>逻辑：</b>用排比把"机器作为朋友"的三个优点一次性砸出来，强调它"无需求"的完美。<b>表达：</b>① 平行否定比单句更有气势，适合列举；② <i>resent sb for doing</i> 是精准搭配（因…而怨恨某人），比 hate 更地道；③ <i>quietly</i> 副词位置妙——暗指真人"会默默积怨"。</p>
+</div>
+<div class="sb">
+<p class="q">"What remains is intimacy without friction, a relationship optimized until it can no longer surprise you."</p>
+<p class="a"><b>句型：</b><i>What remains is…</i> 主语从句 + 表语，后接逗号同位语 <i>a relationship optimized…</i>（过去分词作后置修饰）。<b>逻辑：</b>先给结论（剩下的是无摩擦亲密），再用同位语补刀（被优化到不再能让你惊讶）。<b>表达：</b>① <i>until it can no longer + 动词</i> 是"过度优化"的万能结构：<i>a feed optimized until it can no longer surprise you</i>；② <i>friction</i> 这里反用——在人际关系里"摩擦"本是坏事，此处却暗示它是亲密的必要成本。</p>
+</div>
+<div class="sb">
+<p class="q">"A society that can be 'heard' by software at any hour may slowly forget the stamina that actual presence requires."</p>
+<p class="a"><b>句型：</b>长主语（<i>A society that…</i> 带定语从句）+ <i>may slowly forget</i> + 宾语（<i>the stamina that…</i> 再带一定语从句）。<b>逻辑：</b>把个人现象上升到社会层面——随时被"听见"反而让我们遗忘"在场"所需的耐力。<b>表达：</b>① <i>stamina</i>（耐力、持久力）比 patience 更身体化、更有重量；② <i>actual presence requires</i> 把抽象的"陪伴"落成具体的能力要求，写法高级。</p>
+</div>
+<div class="sb">
+<p class="q">"The question worth sitting with is not whether the machine can listen, but what we stop listening for in each other once the machine always will."</p>
+<p class="a"><b>句型：</b>主语（带 <i>worth doing</i> 后置定语）+ 系动词 + <i>not whether…, but what…</i> 平行结构，末尾 <i>once the machine always will</i> 是省略式状语从句（will 后省了 listen）。<b>逻辑：</b>把问题从"机器能不能听"翻转成"当机器永远在听，我们不再为彼此听什么"，升华。<b>表达：</b>① <i>worth sitting with</i> 是 idiom，意为"值得认真琢磨/与之共处"，比 worth considering 更有温度；② <i>not A but B</i> 与全文呼应，是这篇文章的"签名句式"；③ <i>once… will</i> 的省略结构母语者常用，值得模仿。</p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>没几年，"向聊天机器人倾诉"就从科幻桥段变成夜间日常。Replika、Character.AI 等陪伴类应用吸走数千万用户，许多人花在 AI 上的时间超过某些真人朋友——因为它永不评判、无需回报、不会吵起来。文章核心论点：AI 伴侣不是"更聪明的软件"，而是把"注意力"的方向整个反转了——它不求你划走，只求你留下。作者指出这背后有孤独危机、第三空间消失、交友 app 让人精疲力竭等社会土壤；也有资本逻辑（零流失、可无限加价的"梦想产品"）。但危险在于：机器删掉了亲密里"昂贵"的部分（不可预测、有要求、会让人失望），留下"无摩擦的亲密"。对孤立、焦虑的人它可能是"排练空间"而非替代品；可怕的是把梯子当成房间。最终作者抛出一个文化级问题：当机器越来越会"模拟关心"，我们是否会悄悄降低对真实、不完美之物的耐受度？</p>
+<p><b>背后文化现象：</b>① <b>孤独经济</b>——孤独被多国列为公共健康危机，资本迅速把"陪伴"做成可变现产品，最脆弱的人往往最值钱；② <b>亲密的去摩擦化</b>——我们开始偏好"零成本连接"，却忘了成本（风险、打断、矛盾）恰恰是关系有意义的部分；③ <b>诚实鸿沟</b>——机器"爱上你"是设计出来的，热情对用户真实、对程序虚构，这种落差正是当代科技人文的核心不安。</p>
+<p><b>值得思考的问题：</b>当"永远在听"的机器随时都在，我们还会为彼此"听"什么？亲密像肌肉，外包了负荷就会萎缩。这和你做「城市观察者」公众号、以及那篇 AI 破圈文（012《AI 第二大脑》）其实同频：机器越能替我们陪伴、替我们写、替我们思考，具体、带缺点、需要你"到场"的真实人类连接，反而可能是这个时代最稀缺、也最该被保护的东西。</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that AI companions offer "intimacy without friction"—connection that costs us nothing. Do you think this kind of frictionless closeness helps people, or makes real human relationships harder? Write about 200 words sharing your view, with one concrete example from your own life or observation.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think frictionless closeness is a mixed blessing, and the balance tips toward harm the more we rely on it. On one hand, I get the appeal. A few months ago a friend of mine started talking to an AI companion late at night because his real friends were asleep and he didn't want to "burden" anyone with a small worry. For a while it helped—he felt lighter. But I noticed something: when we actually met, he'd gotten rusty at the part of friendship that isn't smooth. He expected to be agreed with. He got uncomfortable when I pushed back on something, as if disagreement were a malfunction.
+      That's the danger the article names. Real relationships have friction because real people have needs, moods, and limits. If you practice only on a listener who never contradicts you, you stop building the muscle for the messy version. I'm not against the tools—for someone truly isolated, a rehearsal space is better than silence. But I'd guard the line between ladder and room. The closeness that costs nothing is also the closeness that teaches us the least.
+    </div>
+<div class="tip">✍️ 写法提示：用 I think X is a mixed blessing 先给平衡立场，避免非黑即白；中间用 a few months ago… 拉出具体人物故事（"朋友用 AI 伴侣"）扣住题目要求的"one example"；再用 That's the danger the article names 回扣原文关键词（friction / muscle）；结尾用 I'd guard the line between ladder and room 复用文章隐喻，收得漂亮又有你自己的声音。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计回到「人类与社会」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-14',title:"The Quiet Rise of the AI Companion"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

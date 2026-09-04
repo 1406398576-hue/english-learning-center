@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Office That Forgot How to Whisper</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="topic-banner">
+<h2>The Office That Forgot How to Whisper</h2>
+<div class="zh">那个忘了怎么低语的办公室</div>
+<div class="en">"I spent three years perfecting my home setup. On day one back at the office, I realized I had forgotten how to have a conversation that wasn't scheduled."</div>
+<div class="meta">
+<span>📅 Day 38 · 2026-09-04</span>
+<span>🎯 B1–B2</span>
+<span>🏷 Tech &amp; Future</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>I had been working from home for three years. My desk was exactly the way I liked it: a standing converter, a ring light, a microphone that made me sound like a podcast host. I had a system. Coffee at 8:15. Standup at 9. Lunch walk at 12:30. Deep work until 4. I was productive, comfortable, and — I didn't realize until later — very lonely.</p>
+<p>Then the company called everyone back. Two days a week, mandatory. I wasn't angry about it. I was nervous. I hadn't worn real shoes in months.</p>
+<p>The office had been renovated while we were gone. Open plan. Glass everywhere. Desks you could book through an app. My old desk — the corner one near the window, where I used to keep a small cactus — was gone. Now every desk looked like every other desk.</p>
+<p>On the first morning, I sat down across from a woman named Priya. We had been on the same team for two years. We had video-called each other maybe a hundred times. But sitting three feet from her, I didn't know how to start a conversation. On Zoom, there was always an agenda. In person, there was just... air.</p>
+<p>"So," she said. "This is weird, right?"</p>
+<p>"Yeah," I said. "I keep wanting to check if my camera is on."</p>
+<p>She laughed. It was a real laugh, not the polite one she did on calls. And something about the sound — unfiltered, unoptimized — made me realize what I'd been missing. Not the office. Not the commute. Not the desk. The sound of a person laughing before they remember anyone is listening.</p>
+<p>By the end of that week, I still hated the open plan. But I had started leaving my phone in my bag during lunch. Priya and I ate together twice. She told me about her kid's school play. I told her about the cactus I used to keep. None of it would have made it onto a meeting agenda.</p>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I didn't realize until later</div><button aria-label="收藏表达" class="expr-fav" data-en="I didn't realize until later" data-example="I was productive at home. I didn't realize until later that I was also very lonely. 我在家很高效。后来才意识到，我也很孤独。" data-zh="我后来才意识到。" type="button">☆</button></div>
+<div class="zh-expr">我后来才意识到。</div>
+<div class="example">
+        I was productive at home. I didn't realize until later that I was also very lonely.
+        <span class="zh-trans">我在家很高效。后来才意识到，我也很孤独。</span>
+</div>
+<div class="note">回顾性表达，暗示当时被某件事蒙住了眼睛，事过境迁才看清。讲故事时制造"转折感"的利器。比 "later I found out" 更有内省的味道。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">On Zoom, there was always an agenda.</div><button aria-label="收藏表达" class="expr-fav" data-en="On Zoom, there was always an agenda." data-example="On Zoom, there was always an agenda. In person, there was just air. 在 Zoom 上总有议程。面对面时，只剩下空气。" data-zh="在 Zoom 上总有一个议程。" type="button">☆</button></div>
+<div class="zh-expr">在 Zoom 上总有一个议程。</div>
+<div class="example">
+        On Zoom, there was always an agenda. In person, there was just air.
+        <span class="zh-trans">在 Zoom 上总有议程。面对面时，只剩下空气。</span>
+</div>
+<div class="note">"there was always an agenda" 表面说会议流程，实际暗指远程沟通的代价——一切都被结构化，没有"无目的闲聊"的空隙。句型可灵活替换：On ___, there was always ___.</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">unfiltered, unoptimized</div><button aria-label="收藏表达" class="expr-fav" data-en="unfiltered, unoptimized" data-example="It was a real laugh — unfiltered, unoptimized — and it made me realize what I'd been missing. 那是真笑——没经过滤、没有优化——让我意识到我错过了什么。" data-zh="未经修饰、未经优化。" type="button">☆</button></div>
+<div class="zh-expr">未经修饰、未经优化。</div>
+<div class="example">
+        It was a real laugh — unfiltered, unoptimized — and it made me realize what I'd been missing.
+        <span class="zh-trans">那是真正的笑——没有修饰、没有优化——让我意识到自己错过了什么。</span>
+</div>
+<div class="note">两个 un- 前缀形容词并排，节奏感极强。本来是数字产品术语（优化性能/过滤噪音），借用来形容人的自然反应，反差感十足。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">None of it would have made it onto a meeting agenda.</div><button aria-label="收藏表达" class="expr-fav" data-en="None of it would have made it onto a meeting agenda." data-example="She told me about her kid's play. None of it would have made it onto a meeting agenda. 她说起孩子的演出。这些永远进不了会议议程。" data-zh="这些内容永远进不了会议议程。" type="button">☆</button></div>
+<div class="zh-expr">这些内容永远进不了会议议程。</div>
+<div class="example">
+        She told me about her kid's school play. None of it would have made it onto a meeting agenda.
+        <span class="zh-trans">她跟我讲孩子学校的话剧。这些永远进不了会议议程。</span>
+</div>
+<div class="note">"make it onto ___" 意思是"被纳入、被排进"。这里用否定形式强调线下对话的珍贵——那些不会出现在任何正式清单里的话题，才是真正的人际连接。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I keep wanting to check if my camera is on.</div><button aria-label="收藏表达" class="expr-fav" data-en="I keep wanting to check if my camera is on." data-example="Sitting across from her, I keep wanting to check if my camera is on. 坐在她对面，我老想看看摄像头有没有开。" data-zh="我总忍不住去确认摄像头开没开。" type="button">☆</button></div>
+<div class="zh-expr">我总忍不住去确认摄像头开没开。</div>
+<div class="example">
+        Sitting across from her in person, I keep wanting to check if my camera is on.
+        <span class="zh-trans">面对面坐在她旁边，我还是忍不住想去确认摄像头有没有开。</span>
+</div>
+<div class="note">"keep wanting to" 表达一种不受控制的惯性动作——明知没必要但身体还在执行。自嘲式的幽默句式，描述"线上习惯入侵线下生活"的尴尬感。</div>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">Monday, 12:15 PM. The office kitchen. Priya is making tea. You walk in with a microwaved lunch container.</div>
+<div class="conv-line">
+<span class="speaker friend">Priya:</span>
+<span class="en">Oh — hey. Is that... is that the same container from the team lunch last year?</span>
+<span class="zh">哦——嘿。那个……是去年团建午餐时用的那个饭盒吗？</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">Ha, maybe? I, uh... I honestly don't remember what I used back then.</span>
+<span class="zh">哈，可能吧？我，呃……说实话我不太记得当时用的什么了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Priya:</span>
+<span class="en">Fair. So — how's it feel being back? I keep... I keep reaching for my mouse to unmute.</span>
+<span class="zh">行吧。那——回来感觉怎么样？我老……老想摸鼠标去开麦。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">Oh my god, yes. And I sat down this morning and almost said "can everyone see my screen?" out loud.</span>
+<span class="zh">天哪对。今天早上我坐下差点把"大家能看到我的屏幕吗"说出声来。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Priya:</span>
+<span class="en">[laughs] That's... no, that's not even weird. I did the same thing. Twice. And then I just stared at the wall for like thirty seconds.</span>
+<span class="zh">[笑] 这……不，这都不算奇怪。我也干了同样的事。两次。然后我就盯着墙看了大概三十秒。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">I think the worst part is — I was so good at the online version. Like, I had a whole system. And now I feel like I'm learning how to talk to people again.</span>
+<span class="zh">我觉得最难的是——我在线上那套特别溜。我有整套系统。现在感觉像在重新学怎么跟人说话。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Priya:</span>
+<span class="en">Yeah, but... I mean, at least we're both bad at it together? That's kind of nice, actually.</span>
+<span class="zh">是，但是……我是说，至少我们是一起不擅长的？这其实还挺好的。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">[smiling] Okay, that's... yeah. That is genuinely the nicest thing someone's said to me in a meeting all year.</span>
+<span class="zh">[笑] 行，这……嗯。这真的是今年开会时别人跟我说过的最温暖的话了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Priya:</span>
+<span class="en">Well, it wouldn't have made it onto the agenda.</span>
+<span class="zh">嗯，这种话也进不了会议议程。</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the Story</div>
+<div class="task-prompt">用自己的话复述这个故事（60-90秒）。重点讲清三件事：远程办公时的"系统"、回办公室第一天的尴尬、以及那杯茶旁的对话改变了什么。不要逐句翻译原文。</div>
+<ul class="samples">
+<li>I had this whole routine at home — standup at nine, lunch walk, the works. First day back, I didn't even know how to start a conversation with my own teammate.<span class="zh">我在家有一整套流程——九点站会、午餐散步，全套。回来的第一天，我连怎么跟自己的队友开口都不知道。</span></li>
+<li>The thing that hit me was her laugh. It was just... real. Not the Zoom version. And I thought, okay, maybe this is what I've been missing.<span class="zh">打动我的是她的笑。那是……真实的笑，不是 Zoom 版本。我就想，好吧，也许这才是我一直错过的东西。</span></li>
+<li>We ended up having lunch twice that week. Nothing important. Just stuff that would never make it onto an agenda.<span class="zh">那周我们最后一起吃了两次午饭。没什么重要内容。就是那些永远进不了议程的东西。</span></li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Express Your Opinion</div>
+<div class="task-prompt">回答这个问题（60秒）：远程办公让人更高效还是更孤独？你同意"线下对话有线上替代不了的东西"这个观点吗？给出一个具体理由，不要说空话。</div>
+<ul class="samples">
+<li>I think remote work made me more efficient, but also more isolated. You can schedule a meeting, but you can't schedule the ten seconds of small talk before it — and that's where trust actually gets built.<span class="zh">我觉得远程办公让我更高效，但也更孤立。会议可以排，但开会前十秒的寒暄排不了——而信任恰恰是在那里建立的。</span></li>
+<li>Honestly, I think it depends. For focused work, home is better. But for ideas? The best ones came from the hallway, not the calendar invite.<span class="zh">说实话，我觉得看情况。专注工作在家更好。但想法呢？最好的想法都来自走廊，不是日历邀请。</span></li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Simulate a Real Scenario</div>
+<div class="task-prompt">你回到办公室第一周，在茶水间遇到一个线上合作了两年但从未见过面的同事。用自然口语开一段对话，包括：一句破冰、一句自嘲（关于远程办公习惯）、一句邀请（一起吃饭/喝咖啡）。</div>
+<ul class="samples">
+<li>Hey — wow, so this is what you look like in three dimensions. I'm kidding. Kind of. I keep reaching for my mouse to unmute, it's embarrassing.<span class="zh">嘿——哇，原来你在三维世界里长这样。开玩笑的。算是吧。我老想摸鼠标开麦，太丢人了。</span></li>
+<li>I don't know about you, but I've forgotten how to do this part. Want to grab lunch? There's a place downstairs that's not on any app.<span class="zh">不知道你怎么样，但这部分我已经忘了怎么做。一起吃午饭吗？楼下有家店，在任何 app 上都找不到。</span></li>
+<li>So... do we just talk now? Without a link? This is going to take some getting used to. Coffee?<span class="zh">所以……我们现在直接说话？不用链接？这得适应一下。喝咖啡吗？</span></li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词汇</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">agenda</span>
+<span class="ipa">/əˈdʒendə/</span>
+<div class="meaning">n. 议程；会议待办事项清单</div>
+<div class="sample">On Zoom, there was always an agenda.<span class="zh-trans">在 Zoom 上总有一份议程。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">renovate</span>
+<span class="ipa">/ˈrenəveɪt/</span>
+<div class="meaning">v. 翻新；改造（建筑/空间）</div>
+<div class="sample">The office had been renovated while we were gone.<span class="zh-trans">我们不在的时候办公室被翻新了。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">unfiltered</span>
+<span class="ipa">/ʌnˈfɪltərd/</span>
+<div class="meaning">adj. 未经过滤的；原始未修饰的</div>
+<div class="sample">It was a real laugh — unfiltered, unoptimized.<span class="zh-trans">那是一个真正的笑——未经过滤、未经优化。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">optimal</span>
+<span class="ipa">/ˈɒptɪməl/</span>
+<div class="meaning">adj. 最优的；最佳状态的</div>
+<div class="sample">I had optimized my home setup to be optimal.<span class="zh-trans">我把家里的办公配置优化到了最佳状态。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">mandatory</span>
+<span class="ipa">/ˈmændətəri/</span>
+<div class="meaning">adj. 强制性的；必须执行的</div>
+<div class="sample">Two days a week, mandatory.<span class="zh-trans">每周两天，强制要求。</span></div>
+</div>
+</div>
+</div>
+<div class="footer">
+Speaking Practice · Day 38 · 2026-09-04 · B1–B2 · Tech &amp; Future<br/>
+Learn something real today.
+</div>
+</div>
+<script>
+(function(){
+  var favKey='expr-favs';
+  var favs={};
+  try{ favs=JSON.parse(localStorage.getItem(favKey)||'{}'); }catch(e){}
+  document.querySelectorAll('.expr-fav').forEach(function(btn){
+    var en=btn.getAttribute('data-en');
+    if(favs[en]){ btn.classList.add('on'); btn.textContent='★'; }
+    btn.addEventListener('click',function(){
+      if(btn.classList.contains('on')){
+        btn.classList.remove('on'); btn.textContent='☆'; delete favs[en];
+        showToast('已取消收藏');
+      }else{
+        btn.classList.add('on'); btn.textContent='★';
+        favs[en]={ zh:btn.getAttribute('data-zh'), example:btn.getAttribute('data-example') };
+        showToast('已收藏到「我的表达」');
+      }
+      try{ localStorage.setItem(favKey,JSON.stringify(favs)); }catch(e){}
+    });
+  });
+  function showToast(msg){
+    var t=document.querySelector('.fav-toast');
+    if(!t){ t=document.createElement('div'); t.className='fav-toast'; document.body.appendChild(t); }
+    t.textContent=msg; t.classList.add('show');
+    clearTimeout(t._timer); t._timer=setTimeout(function(){ t.classList.remove('show'); },1800);
+  }
+})();
+</script>
+</body>
+</html>

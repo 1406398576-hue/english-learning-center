@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-12</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412; --blue:#3b6b8f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#eef4f3,#e7f0ee);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent2);
+    background:#ecfdf5; border:1px solid #a7f3d0; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent2); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--blue); background:#eaf1f6;
+    border:1px solid #cfe0ec; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent2); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .kp .src{display:block; font-size:12px; color:var(--blue); margin-top:3px;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#eef4f3; border:1px dashed #7fc4b3; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The "Be Real" Era: Why Audiences Are Trading Polished Fame for Messy Authenticity</h1>
+<p class="sub">「真实至上」时代：观众为什么用"不完美"换掉了精致人设？</p>
+<div class="meta">
+<span>📅 <b>2026-08-12</b></span>
+<span>🎯 主题桶：<b>娱乐与流行文化 (20%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">你大概刷到过这种画面：某明星发了一张没修图的素颜照，或者一段在播客里突然哽咽的视频，结果点赞比精心打光的封面还高。这几年，名利场悄悄换了一套规则——观众受够了"无瑕"，开始给"露怯"打高分。今天我们读一篇娱乐文化观察，聊聊「Be Real 时代」：当"真实"被当成流量密码，它到底是真诚，还是更高级的表演？这正好和你公众号「城市观察者」的母题同频：在算法投喂、AI 修图、人人都在营业的年代，"具体、带缺点、有人味"的声音，才是最稀缺的资产。</p>
+<div class="tip">💡 读前小思考：你更信任一个"永远完美"的明星，还是一个会翻车、会示弱的？你追的人里，谁是"真的真"，谁只是"演得真"？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>At the start of 2024, a well-known actress posted a photo of herself without makeup, skin blotchy, eyes red, captioned with a single word: "real." It gathered more engagement in a day than her carefully lit cover shoot had in a month. Nobody was surprised. Over the past few years, a quiet but definite shift has taken hold in how fame works: audiences have grown tired of the airbrushed, and they are <span class="hl">trading polished fame for</span> messy authenticity instead.</p>
+<p>For most of the social-media decade, being famous meant being in control. The successful celebrity was a <span class="hl">managed surface</span>—the right angles, the right causes, the sponsored smile, the apology drafted by a team before the news cycle could turn. Polish was the product. A spotless public image was something you paid people to protect, and any crack in it was a crisis to be contained. Famous meant flawless, or at least appearing to be.</p>
+<p>Lately, though, the script has <span class="hl">flipped</span>. The thing viewers now reward is the crack itself. A star who tears up on a podcast, an influencer who admits a product flopped, a singer who shows her cluttered kitchen instead of her gym—these moments travel further than the glossy ones. We have entered what some call the "be real" era, in which messy authenticity is not a liability but a currency. The imperfect clip outperforms the perfect post, and everyone in the industry has noticed.</p>
+<p>Several forces pushed us here. The pandemic pulled everyone's private life onto the same small screen, and once we had all seen each other's unmade beds and bad hair days, the old celebrity perfection started to read as fake. At the same time, a decade of influencer culture left people exhausted; the endless, flawless feeds began to feel less like inspiration and more like an accusation. A counter-movement even named itself—"deinfluencing," in which creators tell followers what <span class="hl">not to buy</span>, and win trust precisely by refusing the hard sell that once defined them.</p>
+<p>Nowhere is this appetite clearer than in the rise of the unremarkable creator. The influencers gaining ground are no longer only the ones with perfect bodies and bigger houses, but the ones who film their ordinary Tuesday—the burnt dinner, the awkward silence, the unmade to-do list. Platforms reward watch-time, and nothing holds attention like the relief of seeing someone else's life look as unglamorous as your own. Realness, in other words, became a growth strategy long before it became a moral one, and the algorithm simply followed the crowd toward the messy.</p>
+<p>But the turn toward realness has produced its own contradiction, and it is the interesting part. Authenticity, it turns out, is now something you can be coached to perform. The same publicity teams that once engineered the polish now engineer the mess: the "candid" video is lit, the "raw" confession is timed for a Tuesday drop, the vulnerable moment arrives suspiciously on brand. What looks like a star dropping the act is often a better act. The relatable persona is, paradoxically, the most <span class="hl">stage-managed</span> one in the room.</p>
+<p>This creates a real cost. When audiences demand constant realness, celebrities who want a private life are punished for withholding it; the boundary between a person and their content dissolves. The pressure to perform intimacy—to always be "open"—can be its own kind of cage, and the <span class="hl">mental-health toll</span> of living under that mandate is rarely part of the highlight reel. Cancel culture and the authenticity demand feed the same machine: both require the famous to hand over more and more of themselves, on camera, forever.</p>
+<p>What audiences actually seem to want is narrower, and more humane, than total exposure. Not every unfiltered thought, but the sense that a human being is behind the brand. Not confession, but presence. The winning trait in why people follow anyone has never been perfection but "relatable"—someone who is flawed but shows up anyway. The polished-but-distant figure loses; the imperfect-but-present one wins. We don't want the mess. We want the proof that someone real is standing there.</p>
+<p>Step back and the pattern looks familiar from outside fame. Brands now chase "authentic" voices; politicians are coached to seem unscripted; even the feeds we scroll are quietly engineered to feel spontaneous. The hunger is the same everywhere: in a culture where so much is polished, automated, and algorithm-fed, the specific, imperfect, unmistakably human signal is <span class="hl">a scarce asset</span>. It is the one thing the machine cannot convincingly fake—yet.</p>
+<p>None of this means the "be real" era will last. Trends in fame are cycles, and a newer taste for mystery and restraint is already visible on the horizon. But the need underneath it is not a trend. People have always wanted to be <span class="hl">addressed as</span> people, by other people, not by a surface. The mess was never the point. The point was the proof that a person, not a brand, was speaking.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">trade A for B</span><button aria-label="收藏表达" class="expr-fav" data-en="trade A for B" data-example='"audiences have grown tired of the airbrushed, and they are trading polished fame for messy authenticity instead."' data-scene='使用场景：表示"放弃一样东西去得到另一样"，比 exchange 更口语，常用于生活方式或时代趋势的选择。' data-zh="用 A 换 B；舍弃 A 去换取 B" type="button">☆</button></span><span class="zh">用 A 换 B；舍弃 A 去换取 B</span>
+<span class="sc">使用场景：表示"放弃一样东西去得到另一样"，比 exchange 更口语，常用于生活方式或时代趋势的选择。</span>
+<span class="ex">"audiences have grown tired of the airbrushed, and they are trading polished fame for messy authenticity instead."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">airbrushed</span><button aria-label="收藏表达" class="expr-fav" data-en="airbrushed" data-example='"audiences have grown tired of the airbrushed."' data-scene='使用场景：形容照片、形象或叙事被修饰得失去真实感；作形容词，常指"虚伪的精致"。' data-zh="（像被喷枪修过一样）过度美化、完美得不真实的" type="button">☆</button></span><span class="zh">（像被喷枪修过一样）过度美化、完美得不真实的</span>
+<span class="sc">使用场景：形容照片、形象或叙事被修饰得失去真实感；作形容词，常指"虚伪的精致"。</span>
+<span class="ex">"audiences have grown tired of the airbrushed."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a managed surface</span><button aria-label="收藏表达" class="expr-fav" data-en="a managed surface" data-example='"The successful celebrity was a managed surface—the right angles, the right causes, the sponsored smile."' data-scene='使用场景：批判公关、人设、品牌叙事时，把"看似自然、实则被操控"的公众形象称作 managed surface。' data-zh="被精心管理 / 包装出来的外在形象（表面光鲜，底下有人操盘）" type="button">☆</button></span><span class="zh">被精心管理 / 包装出来的外在形象（表面光鲜，底下有人操盘）</span>
+<span class="sc">使用场景：批判公关、人设、品牌叙事时，把"看似自然、实则被操控"的公众形象称作 managed surface。</span>
+<span class="ex">"The successful celebrity was a managed surface—the right angles, the right causes, the sponsored smile."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">flip the script</span><button aria-label="收藏表达" class="expr-fav" data-en="flip the script" data-example='"Lately, though, the script has flipped. The thing viewers now reward is the crack itself."' data-scene="使用场景：形容趋势、权力关系或剧情突然逆转；比 reverse 更有画面感、更地道。" data-zh="反转局面 / 把剧本翻过来（彻底改变原有规则或预期）" type="button">☆</button></span><span class="zh">反转局面 / 把剧本翻过来（彻底改变原有规则或预期）</span>
+<span class="sc">使用场景：形容趋势、权力关系或剧情突然逆转；比 reverse 更有画面感、更地道。</span>
+<span class="ex">"Lately, though, the script has flipped. The thing viewers now reward is the crack itself."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">not to buy</span><button aria-label="收藏表达" class="expr-fav" data-en="not to buy" data-example='"creators tell followers what not to buy, and win trust precisely by refusing the hard sell."' data-scene='使用场景：反种草、劝退语境；deinfluencing（反影响）里创作者主动告诉粉丝"这东西不值得买"。' data-zh='（此处指）劝人"别买"——deinfluencing 的核心动作' type="button">☆</button></span><span class="zh">（此处指）劝人"别买"——deinfluencing 的核心动作</span>
+<span class="sc">使用场景：反种草、劝退语境；deinfluencing（反影响）里创作者主动告诉粉丝"这东西不值得买"。</span>
+<span class="ex">"creators tell followers what not to buy, and win trust precisely by refusing the hard sell."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the hard sell</span><button aria-label="收藏表达" class="expr-fav" data-en="the hard sell" data-example='"win trust precisely by refusing the hard sell that once defined them."' data-scene='使用场景：营销语境，与 soft sell（软性种草）相对；文中指网红过去那种"你必须买"的硬广。' data-zh="强行推销 / 硬销（高压、咄咄逼人的卖货方式）" type="button">☆</button></span><span class="zh">强行推销 / 硬销（高压、咄咄逼人的卖货方式）</span>
+<span class="sc">使用场景：营销语境，与 soft sell（软性种草）相对；文中指网红过去那种"你必须买"的硬广。</span>
+<span class="ex">"win trust precisely by refusing the hard sell that once defined them."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">stage-managed</span><button aria-label="收藏表达" class="expr-fav" data-en="stage-managed" data-example='"The relatable persona is, paradoxically, the most stage-managed one in the room."' data-scene='使用场景：指某件事看似自发、真实，实则被团队设计安排；比 fake 更精确，强调"有导演"。' data-zh="被幕后操控 / 精心编排过的（像舞台调度一样）" type="button">☆</button></span><span class="zh">被幕后操控 / 精心编排过的（像舞台调度一样）</span>
+<span class="sc">使用场景：指某件事看似自发、真实，实则被团队设计安排；比 fake 更精确，强调"有导演"。</span>
+<span class="ex">"The relatable persona is, paradoxically, the most stage-managed one in the room."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the mental-health toll</span><button aria-label="收藏表达" class="expr-fav" data-en="the mental-health toll" data-example='"the mental-health toll of living under that mandate is rarely part of the highlight reel."' data-scene='使用场景：讨论长期压力、舆论、高强度曝光带来的心理代价；toll 指"付出的代价"。' data-zh="对心理健康的损耗 / 代价" type="button">☆</button></span><span class="zh">对心理健康的损耗 / 代价</span>
+<span class="sc">使用场景：讨论长期压力、舆论、高强度曝光带来的心理代价；toll 指"付出的代价"。</span>
+<span class="ex">"the mental-health toll of living under that mandate is rarely part of the highlight reel."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a scarce asset</span><button aria-label="收藏表达" class="expr-fav" data-en="a scarce asset" data-example='"the specific, imperfect, unmistakably human signal is a scarce asset."' data-scene='使用场景：把抽象品质（真实、专注、时间）当作"资产"来谈其稀缺性，商业/评论文常用。' data-zh='稀缺资产（此处指"真实的人味"成了最稀缺的东西）' type="button">☆</button></span><span class="zh">稀缺资产（此处指"真实的人味"成了最稀缺的东西）</span>
+<span class="sc">使用场景：把抽象品质（真实、专注、时间）当作"资产"来谈其稀缺性，商业/评论文常用。</span>
+<span class="ex">"the specific, imperfect, unmistakably human signal is a scarce asset."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">address someone as</span><button aria-label="收藏表达" class="expr-fav" data-en="address someone as" data-example='"People have always wanted to be addressed as people, by other people, not by a surface."' data-scene='使用场景：强调"以何种身份/态度"与人沟通；文中指"被人当做人、而不是当品牌/符号对待"。' data-zh="把某人当作……来对待 / 以……的身份与之对话" type="button">☆</button></span><span class="zh">把某人当作……来对待 / 以……的身份与之对话</span>
+<span class="sc">使用场景：强调"以何种身份/态度"与人沟通；文中指"被人当做人、而不是当品牌/符号对待"。</span>
+<span class="ex">"People have always wanted to be addressed as people, by other people, not by a surface."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-12</span></span>
+</section>
+<!-- Celebrity / Culture Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Celebrity / Culture Vocabulary · 娱乐文化词</h2><span class="time-tag">⏱ 10:00–13:00 词块</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">（本期为娱乐主题，依用户要求补上「Celebrity / Culture Vocabulary」。下列例句为这些媒体在真实报道中的<b>代表性用法</b>——标注出处媒体，供你感受真实语感，并非逐字引语。）</p>
+<div class="vocab">
+<div class="v"><b>make headlines</b><span>登上头条、引发轰动——指某事成为新闻焦点。<br/><i>例："The star's sudden withdrawal from the film made headlines worldwide."</i><br/>来源：BBC（代表性用法）</span></div>
+<div class="v"><b>public image</b><span>公众形象——公众眼中某人的整体人设。<br/><i>例："After the interview, she worked hard to repair her public image."</i><br/>来源：People（代表性用法）</span></div>
+<div class="v"><b>personal life</b><span>私人生活——与公众/职业身份相对的私密领域。<br/><i>例："He rarely discusses his personal life with the press."</i><br/>来源：The Guardian（代表性用法）</span></div>
+<div class="v"><b>media attention</b><span>媒体关注——被新闻与镜头追逐的程度。<br/><i>例："The trial drew intense media attention for weeks."</i><br/>来源：Reuters（代表性用法）</span></div>
+<div class="v"><b>brand endorsement</b><span>品牌代言——名人为商品背书的商业合作。<br/><i>例："Her brand endorsements reportedly earned more than her films."</i><br/>来源：Variety（代表性用法）</span></div>
+<div class="v"><b>red carpet</b><span>红毯——首映/颁奖礼上明星亮相展示造型的环节。<br/><i>例："She stunned on the red carpet in a vintage gown."</i><br/>来源：Vogue（代表性用法）</span></div>
+<div class="v"><b>fan base / fanbase</b><span>粉丝群——稳定支持某明星/作品的受众群体。<br/><i>例："The band's fan base grew across Asia after the tour."</i><br/>来源：Billboard（代表性用法）</span></div>
+<div class="v"><b>comeback</b><span>复出——离开一段时间后重返舞台/事业。<br/><i>例："Critics called the album a triumphant comeback."</i><br/>来源：Rolling Stone（代表性用法）</span></div>
+<div class="v"><b>typecast</b><span>定型——总被安排演同类角色，戏路被钉死。<br/><i>例："She feared being typecast as the helpless friend."</i><br/>来源：The Hollywood Reporter（代表性用法）</span></div>
+<div class="v"><b>the spotlight</b><span>聚光灯 / 公众视线——被高度关注的处境。<br/><i>例："He stepped out of the spotlight to raise his family."</i><br/>来源：Entertainment Weekly（代表性用法）</span></div>
+</div>
+</section>
+<!-- 13:00–14:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 13:00–14:00 长难句</span></div>
+<div class="sb">
+<p class="q">"At the start of 2024, a well-known actress posted a photo of herself without makeup, skin blotchy, eyes red, captioned with a single word: 'real.'"</p>
+<p class="a"><b>句型：</b>主句 posted a photo + 三个后置修饰：介词短语 without makeup、两个独立主格（absolute phrases）skin blotchy / eyes red、过去分词 captioned…。<br/><b>逻辑：</b>用极简的画面细节堆出"真实感"，冒号引出那一个词作为全文题眼。<br/><b>表达：</b>skin blotchy, eyes red 是省略 be 的独立主格，比 "with blotchy skin" 更有镜头感，是记叙文加分写法。</p>
+</div>
+<div class="sb">
+<p class="q">"A spotless public image was something you paid people to protect, and any crack in it was a crisis to be contained."</p>
+<p class="a"><b>句型：</b>A was something + 定语从句（you paid people to protect）；and 连接平行句，后句用 a crisis to be contained（不定式被动作表语）。<br/><b>逻辑：</b>把"公众形象"物化为"花钱雇人守护的资产"，把"瑕疵"写成"待控制的危机"，冷峻地揭穿人设工业。<br/><b>表达：</b>something you paid people to… 把抽象概念具体成"付费服务"，是评论文常用技巧。</p>
+</div>
+<div class="sb">
+<p class="q">"The same publicity teams that once engineered the polish now engineer the mess: the 'candid' video is lit, the 'raw' confession is timed for a Tuesday drop, the vulnerable moment arrives suspiciously on brand."</p>
+<p class="a"><b>句型：</b>主句 + that 定语从句；冒号后接三个平行分句（is lit / is timed / arrives…）举例说明。<br/><b>逻辑：</b>全文最锋利的一句——"真实"也是被同一批人设计出来的；三个带引号的词（candid / raw / vulnerable）形成反讽。<br/><b>表达：</b>suspiciously on brand（"可疑地恰好贴合人设"）用词精准，把"巧合"写成"算计"。</p>
+</div>
+<div class="sb">
+<p class="q">"When audiences demand constant realness, celebrities who want a private life are punished for withholding it; the boundary between a person and their content dissolves."</p>
+<p class="a"><b>句型：</b>When 时间/条件状语从句 + 主句（celebrities who… are punished for…）；分号连接第二个主句。<br/><b>逻辑：</b>揭示"真实"变成强制后的代价——想保留隐私反而被惩罚，人与内容边界崩塌。<br/><b>表达：</b>withhold（ withholding it）比 hide 更正式精准；dissolve（溶解/消失）把抽象边界写成"化掉"，画面强。</p>
+</div>
+<div class="sb">
+<p class="q">"It is the one thing the machine cannot convincingly fake—yet."</p>
+<p class="a"><b>句型：</b>It is the one thing + 省略 that 的定语从句（the machine cannot convincingly fake）；破折号后接 yet 收尾。<br/><b>逻辑：</b>把"人味"定义为机器目前还仿不来的东西，一个 yet 留了悬念——暗示未来未必。<br/><b>表达：</b>convincingly fake（"以假乱真地伪造"）比 simply fake 更尖；破折号 + 单字 yet 是高级留白，适合收束段。</p>
+</div>
+</section>
+<!-- 14:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 14:00–15:00 复盘</span></div>
+<p style="margin:0 0 12px;"><b>核心内容：</b>名利场的规则悄然反转——观众从迷恋"无瑕"转向奖赏"露怯"。素颜照、播客哽咽、乱糟糟的厨房，比精修封面传播得更远。这股「Be Real 时代」看似是真诚的胜利，但文章点破矛盾：同一批公关团队，过去负责"抛光"，现在负责"制造真实"——"真实"本身成了可被编排的表演，最"接地气"的人设恰恰是最被 stage-managed 的。</p>
+<p style="margin:0 0 12px;"><b>背后文化现象：</b>疫情让所有人的私生活挤进同一块小屏幕，"完美"于是显假；十年网红文化让人疲惫，"种草"变" accusation"。于是"反种草（deinfluencing）"反而赢得信任。更深一层：当"真实"被强制索取，想保留隐私的人反被惩罚，人与内容的边界溶解——这是算法时代"具体、带缺点、有人味"最稀缺，也最被消费的写照，正好呼应你「城市观察者」的母题。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 你要的到底是"真实"，还是"真实的感觉"？这两者差很远。② 当真实能被团队设计，我们还有没有能力分辨"真的真"和"演得真"？③ 如果一个社会连"露怯"都要营业，那真正稀缺的，究竟是真实，还是"不被迫营业"的权利？</p>
+</section>
+<!-- Speaking -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 14:00–15:00 输出</span></div>
+<div class="prompt">💬 <b>Discussion question（约 200 词）：</b> Some say the demand for "authentic" celebrities is healthy—it rewards honesty over image and pushes back against fake perfection. Others argue it's just a new performance, coached by the same PR teams, and that forcing realness on people is its own kind of pressure. Where do you land, and do you think audiences really want "real," or just the feeling of it? Share your take (≈200 words).</div>
+<div class="model">
+<span class="lab">参考范文（≈195 词 · 仅供模仿，别照背）</span>
+      I land somewhere in the middle, and I think the two sides are describing the same machine from different angles. The hunger for "real" is genuinely healthy—it pushes back against a culture of fake perfection that made ordinary people feel inadequate. But the moment authenticity becomes a requirement, it stops being authentic. When a star is punished for keeping a private life, or when the "candid" video is clearly lit and timed, we're not seeing a person; we're seeing a better act. So I don't think audiences want total realness. What they want is the feeling of it—proof that a human, not a brand, is standing there. That's a narrower and more honest need. The mess was never the point; presence was. The danger is confusing the performance of openness with openness itself. My take: we should want less "real" content and more permission to be private. Realness forced is just another kind of polish—and the scarce asset isn't the confession. It's the choice not to perform at all.
+    </div>
+<div class="tip">🗣 练习建议：先关掉"字幕式依赖"，用自己的话答 200 词左右；试着用上今天的 trade A for B、stage-managed、a scarce asset、address someone as。录下来听一遍，比写下来更练嘴。</div>
+</section>
+<footer>Daily English Reading · 2026-08-12 · 主题桶：娱乐与流行文化 (20%) · 自包含 HTML，可嵌入学习中心</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-12',title:"The \"Be Real\" Era: Why Audiences Are Trading Polished Fame for Messy Authenticity"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

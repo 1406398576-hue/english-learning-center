@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-20</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Nepo Baby Reckoning: How Hollywood's Open Secret Became a Public Conversation</h1>
+<p class="sub">「星二代清算」：当好莱坞"人脉世袭"的公开秘密被说破，一场关于天赋、特权与"白手起家"神话的对话就此打开。</p>
+<div class="meta">
+<span>📅 <b>2026-08-20</b></span>
+<span>🎯 主题桶：<b>娱乐与流行文化 (20%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">"成功全靠自己拼"——这是我们最爱讲、也最爱信的故事。但好莱坞早就有一个"公开的秘密"：很多明星的孩子，天然就站在舞台中央。2022 年底，一本杂志把这个现象起了个名字——<b>nepo baby（星二代）</b>——秘密从此不再是秘密。今天读一篇娱乐文化评论：从"白手起家神话"的松动，到"生来就占三垒"的特权如何复利累积，再到我们为何如此不适于承认"优势是被继承的"。这条线与你「城市观察者」公众号一以贯之的母题高度同频——在人人讲"努力万能"的世界里，<b>"把房间里不平等的起跑线说破"反而成了一件需要勇气的事</b>；它和静奢风(08-06)、真实 vs 精致(08-12)、零点击互联网(08-18)、忙碌表演(08-19)串成同一根线：当叙事越把"公平"包装得漂亮，清醒地说出"其实并不公平"的人声越稀缺，也越该被保护。</p>
+<div class="tip">💡 读前小思考：你心里有没有过这样的瞬间——看到某个"天才/新星"，第一反应不是"TA好厉害"，而是"TA背后有人"？那一刻，你是在嫉妒，还是在诚实地描述这个房间？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most of Hollywood's history, family connections were an <span class="hl">open secret</span> nobody was supposed to mention out loud. Children of stars became stars; nephews of producers got the meeting; the offspring of legends were handed the microphone, the role, the magazine cover. Everyone in the industry knew it. Few outside it wanted to look too closely. Then, in late 2022, a single magazine issue <span class="hl">gave the pattern a name</span> — "nepo baby" — and the open secret stopped being quiet.</p>
+<p>The term itself was almost too tidy. A "nepo baby" is, plainly, the child of someone famous or powerful who then builds a career in the same spotlight their parent already occupied. What made the label stick was not novelty but timing. The culture had grown tired of <span class="hl">the self-made myth</span> — the flattering story that fame is purely earned, that every star climbed from nothing on talent alone. A pandemic had stripped away the pretense that the economy was <span class="hl">a level playing field</span>. A younger audience, fluent in naming structural advantage, was ready to say the quiet part loud: a lot of your favorite "overnight sensations" were simply <span class="hl">born on third base</span>. When New York Magazine devoted a full cover issue to "The Nepo Babies" that December, it did not invent the phenomenon — it merely handed a generation the vocabulary to talk about it.</p>
+<p>What followed was less a scandal than a reckoning. Actors who had spent years insisting their success was all hard work found themselves asked, gently or not, about the door their surname had already opened. Some answered with humor. Others <span class="hl">bristled</span>, insisting that having a famous parent was its own kind of obstacle — a shadow to escape, a comparison to survive, a name people assumed had done the work for them. Both can be true at once, and that tension is exactly what made the conversation more interesting than the usual celebrity squabble.</p>
+<p>Because the privilege is real, and it compounds. A famous parent is not a guarantee of talent, but it is a guarantee of access: the agent who takes the call, the audition that gets granted, the magazine profile that arrives before the first role even lands. "It's not what you know, it's who" has always been Hollywood's <span class="hl">unspoken operating manual</span>; the nepo baby debate simply printed it on a t-shirt. The children of the famous do not start at zero. They start with <span class="hl">a foot already in the door</span> — and in an industry where a foot in the door is most of the battle, that is not a small thing.</p>
+<p>Yet the conversation also exposed how narrow our vocabulary for success has become. We tend to <span class="hl">sort people into two boxes</span>: either they earned it, or they were handed it. The reality is messier and more human. Many nepo babies work hard, take real risks, and develop genuine craft; nepotism may have opened the door, but it cannot write the performance, sustain the career, or survive the reviews. Conversely, plenty of self-made stars had their own unearned advantages — race, class, geography, luck — that we politely decline to count. The meritocracy we worship is, on inspection, a story we tell to make uneven starting lines feel fair.</p>
+<p>There is a quieter lesson underneath the gossip, and it is not really about celebrities. The nepo baby moment revealed how uncomfortable we are, as a culture, admitting that advantage is inherited — not just in Hollywood, but everywhere. We love the narrative of the lone genius, the founder who started in a garage, the actor "discovered" on a street corner. Those stories are comforting because they imply the system is open. The nepo baby is the inconvenient reminder that it often is not, and that the people who insist loudest on merit are sometimes the ones who needed it least.</p>
+<p>What changes after a reckoning like this? Probably less than the headlines suggest. The industry will keep casting the children of the famous, because they are bankable, recognizable, and easy to market — and because, frankly, fame is a family business that predates the movies. But the conversation has at least made the wiring visible. Audiences now arrive with their eyes open. When a young actor with a legendary last name delivers a genuinely good performance, the question is no longer "did the name do it?" but "what did they do with the name they were given?" That is a fairer, more grown-up question — and it applies far beyond Hollywood.</p>
+<p>In the end, the nepo baby reckoning is less about any individual star than about the stories we tell to feel okay with an unequal world. The most honest takeaway is not outrage, but clarity: advantage is real, it is inherited, and naming it is not jealousy — it is simply describing the room as it is. The people worth admiring are not those who deny the <span class="hl">head start</span>, but those who acknowledge it and still do the work. That, at least, is a story worth keeping.</p>
+</article>
+</section>
+<!-- 10:00–13:00 · Key Expressions -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">an open secret</span><button aria-label="收藏表达" class="expr-fav" data-en="an open secret" data-example="…family connections were an open secret nobody was supposed to mention out loud. （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：指「圈内皆知但没人说破」的潜规则或现象；比 secret 多了"公开却不被讨论"的反差张力。' data-zh="公开的秘密（大家都知道、却心照不宣不点破的事）" type="button">☆</button></span><span class="zh">公开的秘密（大家都知道、却心照不宣不点破的事）</span>
+<span class="sc">使用场景：指「圈内皆知但没人说破」的潜规则或现象；比 secret 多了"公开却不被讨论"的反差张力。</span>
+<span class="ex">…family connections were an open secret nobody was supposed to mention out loud. （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">give (something) a name</span><button aria-label="收藏表达" class="expr-fav" data-en="give (something) a name" data-example='…a single magazine issue gave the pattern a name — "nepo baby"… （本文 / Daily English Reading · 2026-08-20）' data-scene='使用场景：说「把模糊的共性提炼成可讨论的概念」，比 call it 更强调"使讨论成形"；媒体常用。' data-zh='给…安上一个名字 / 让某种现象"被命名"从而被讨论' type="button">☆</button></span><span class="zh">给…安上一个名字 / 让某种现象"被命名"从而被讨论</span>
+<span class="sc">使用场景：说「把模糊的共性提炼成可讨论的概念」，比 call it 更强调"使讨论成形"；媒体常用。</span>
+<span class="ex">…a single magazine issue gave the pattern a name — "nepo baby"… （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the self-made myth</span><button aria-label="收藏表达" class="expr-fav" data-en="the self-made myth" data-example="The culture had grown tired of the self-made myth… （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：myth 此处指"被反复讲述、却经不起细看的故事"；self-made myth 是社会/商业评论高频词。' data-zh='"白手起家"神话（凡事靠自己拼的叙事）' type="button">☆</button></span><span class="zh">"白手起家"神话（凡事靠自己拼的叙事）</span>
+<span class="sc">使用场景：myth 此处指"被反复讲述、却经不起细看的故事"；self-made myth 是社会/商业评论高频词。</span>
+<span class="ex">The culture had grown tired of the self-made myth… （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a level playing field</span><button aria-label="收藏表达" class="expr-fav" data-en="a level playing field" data-example="A pandemic had stripped away the pretense that the economy was a level playing field. （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：来自体育（平整的球场），比喻"规则公平、无人占先手"；pretense that… is a level playing field 即"假装人人机会均等"。' data-zh="公平的竞争环境 / 平等的起跑线" type="button">☆</button></span><span class="zh">公平的竞争环境 / 平等的起跑线</span>
+<span class="sc">使用场景：来自体育（平整的球场），比喻"规则公平、无人占先手"；pretense that… is a level playing field 即"假装人人机会均等"。</span>
+<span class="ex">A pandemic had stripped away the pretense that the economy was a level playing field. （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">born on third base</span><button aria-label="收藏表达" class="expr-fav" data-en="born on third base" data-example='…a lot of your favorite "overnight sensations" were simply born on third base. （本文 / Daily English Reading · 2026-08-20）' data-scene='使用场景：美式俚语（完整句常是 "born on third base and thinks he hit a triple"），调侃把继承来的优势误当成自己赢来的；比 born with a silver spoon 更辛辣。' data-zh='生来就站在三垒（喻"含着金汤匙、未跑已近得分"）' type="button">☆</button></span><span class="zh">生来就站在三垒（喻"含着金汤匙、未跑已近得分"）</span>
+<span class="sc">使用场景：美式俚语（完整句常是 "born on third base and thinks he hit a triple"），调侃把继承来的优势误当成自己赢来的；比 born with a silver spoon 更辛辣。</span>
+<span class="ex">…a lot of your favorite "overnight sensations" were simply born on third base. （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">bristle (at/with) (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="bristle (at/with) (v.)" data-example="Others bristled, insisting that having a famous parent was its own kind of obstacle… （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：原义"（动物）竖毛"，比喻"被触到敏感点时的本能抗拒"；比 get angry 更有"被戳到、炸毛"的画面感。' data-zh="（被说到痛处时）恼火、竖起刺来、本能防卫" type="button">☆</button></span><span class="zh">（被说到痛处时）恼火、竖起刺来、本能防卫</span>
+<span class="sc">使用场景：原义"（动物）竖毛"，比喻"被触到敏感点时的本能抗拒"；比 get angry 更有"被戳到、炸毛"的画面感。</span>
+<span class="ex">Others bristled, insisting that having a famous parent was its own kind of obstacle… （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">an unspoken operating manual</span><button aria-label="收藏表达" class="expr-fav" data-en="an unspoken operating manual" data-example="&quot;It's not what you know, it's who&quot; has always been Hollywood's unspoken operating manual… （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：operating manual 本是"操作说明书"，加 unspoken 指"没人写下来、但人人照做的规矩"；比 unwritten rule 更形象。' data-zh="心照不宣的运转手册 / 潜规则" type="button">☆</button></span><span class="zh">心照不宣的运转手册 / 潜规则</span>
+<span class="sc">使用场景：operating manual 本是"操作说明书"，加 unspoken 指"没人写下来、但人人照做的规矩"；比 unwritten rule 更形象。</span>
+<span class="ex">"It's not what you know, it's who" has always been Hollywood's unspoken operating manual… （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a foot in the door</span><button aria-label="收藏表达" class="expr-fav" data-en="a foot in the door" data-example="They start with a foot already in the door… （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：职场/行业通用，指"最难的第一步已被打通"；They start with a foot already in the door 点破"起点已非零点"。' data-zh='一只脚踏进门内（喻"入门的第一桶机会 / 突破口"）' type="button">☆</button></span><span class="zh">一只脚踏进门内（喻"入门的第一桶机会 / 突破口"）</span>
+<span class="sc">使用场景：职场/行业通用，指"最难的第一步已被打通"；They start with a foot already in the door 点破"起点已非零点"。</span>
+<span class="ex">They start with a foot already in the door… （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">sort (people/things) into boxes</span><button aria-label="收藏表达" class="expr-fav" data-en="sort (people/things) into boxes" data-example="We tend to sort people into two boxes: either they earned it, or they were handed it. （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：box 比喻"固定的类别/框架"；sort into boxes 常带贬义，指"把复杂的人强行塞进非此即彼的格子"。' data-zh="把…分门别类 / 简单贴标签归类" type="button">☆</button></span><span class="zh">把…分门别类 / 简单贴标签归类</span>
+<span class="sc">使用场景：box 比喻"固定的类别/框架"；sort into boxes 常带贬义，指"把复杂的人强行塞进非此即彼的格子"。</span>
+<span class="ex">We tend to sort people into two boxes: either they earned it, or they were handed it. （本文 / Daily English Reading · 2026-08-20）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a head start</span><button aria-label="收藏表达" class="expr-fav" data-en="a head start" data-example="The people worth admiring are not those who deny the head start… （本文 / Daily English Reading · 2026-08-20）" data-scene='使用场景：来自赛跑，指"一开始就领先的距离"；deny the head start vs acknowledge it 是全文"承认优势 vs 假装没有"的收尾落点。' data-zh="先发优势 / 起跑领先（先天领先的位置）" type="button">☆</button></span><span class="zh">先发优势 / 起跑领先（先天领先的位置）</span>
+<span class="sc">使用场景：来自赛跑，指"一开始就领先的距离"；deny the head start vs acknowledge it 是全文"承认优势 vs 假装没有"的收尾落点。</span>
+<span class="ex">The people worth admiring are not those who deny the head start… （本文 / Daily English Reading · 2026-08-20）</span></span>
+</section>
+<!-- 10:00–13:00 · Celebrity / Culture Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Celebrity / Culture Vocabulary · 娱乐文化词表</h2><span class="time-tag">⏱ 10:00–13:00 词表</span></div>
+<div class="vocab">
+<div class="v"><b>nepo baby</b><span>星二代（调侃义）：父母是名流/权贵、自己也在同领域出道的后代。出处：《New York Magazine》2022 年 12 月「The Nepo Babies」封面专题首次把它推成公共词。</span></div>
+<div class="v"><b>the spotlight</b><span>聚光灯 / 公众视线：名人被持续注视的状态。例："Born into the spotlight, she struggled to be seen as more than her father's daughter."（《Variety》式人物报道典型用法）</span></div>
+<div class="v"><b>public image</b><span>公众形象：明星在大众眼中的人设。例："The scandal forced the star to rebuild his public image from scratch."（《People》式娱乐报道）</span></div>
+<div class="v"><b>make headlines</b><span>上头条 / 引发广泛关注。例："The actress's candid interview made headlines across entertainment outlets."（《The Hollywood Reporter》式报道）</span></div>
+<div class="v"><b>media scrutiny</b><span>媒体审视 / 严密盯防。例："Under constant media scrutiny, even minor mistakes become front-page news."（《The Guardian》式文化评论）</span></div>
+<div class="v"><b>a foot in the door</b><span>（行业）入门机会 / 突破口（详见上文 Key Expression）。例："A famous surname can be a foot in the door, but not a guarantee of longevity."（《Rolling Stone》式人物特写）</span></div>
+<div class="v"><b>trade on one's name</b><span>仗着名气/姓氏获利：借家族招牌而非自身实力。例："Critics accused the label of trading on the singer's family name rather than her talent."（《Billboard》式乐评）</span></div>
+<div class="v"><b>come from money</b><span>出身富裕 / 家境优渥。例："Many so-called self-made founders actually came from money."（《Forbes》式商业人物报道）</span></div>
+<div class="v"><b>backlash</b><span>反弹 / 强烈反对（尤指舆论反噬）。例："The tone-deaf comment sparked a backlash on social media within hours."（《Vogue》式时尚文化报道）</span></div>
+<div class="v"><b>self-made</b><span>白手起家的：靠自己打拼而非继承。例："He prided himself on being a self-made man who built everything from nothing."（《Reuters》式人物特写）</span></div>
+</div>
+</section>
+<!-- 10:00–13:00 · 句子拆解 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"For most of Hollywood's history, family connections were an open secret nobody was supposed to mention out loud."</p>
+<p class="a"><b>句型：</b>介词短语（时间范围）作状语 + 主系表（含后置定语从句 nobody was supposed to mention out loud 修饰 secret）。<b>逻辑：</b>先立"好莱坞长期心照不宣"的背景，再用 open secret 这个反差词点出"众所周知却不被谈论"的状态。<b>表达：</b><b>open secret</b> 是漂亮的反讽搭配；<b>be supposed to</b> 在此不作"应该"，而作"规矩上不被允许/约定俗成不…"，精准写出圈内默契。</p>
+</div>
+<div class="sb">
+<p class="q">"A younger audience, fluent in naming structural advantage, was ready to say the quiet part loud…"</p>
+<p class="a"><b>句型：</b>主语 + 插入形容词短语（fluent in… 作定语/补充说明）+ 系表（ready to…）。<b>逻辑：</b>把"年轻一代敢于说破"归因于他们"擅长命名结构性优势"的能力。<b>表达：</b><b>fluent in</b> 原指"语言的流利"，此处引申为"对某种话语/框架运用自如"，高级转喻；<b>say the quiet part loud</b> 是英语惯用隐喻（把不该说出口的"安静部分"大声说出），比 expose 更有画面与反讽。</p>
+</div>
+<div class="sb">
+<p class="q">"The children of the famous do not start at zero. They start with a foot already in the door…"</p>
+<p class="a"><b>句型：</b>两个短句并列，用 not… / They start with… 形成对照与递进。<b>逻辑：</b>先破"从零开始"的幻觉，再立"门已半开"的事实，短句制造节奏感。<b>表达：</b><b>start at zero</b> 与 <b>a foot in the door</b> 两个"起点"意象对撞，把抽象的"世袭优势"写得具体可触；短句分段是议论文强调关键判断的常用手法。</p>
+</div>
+<div class="sb">
+<p class="q">"We tend to sort people into two boxes: either they earned it, or they were handed it."</p>
+<p class="a"><b>句型：</b>主句 + 冒号同位解释（either… or… 平行结构）。<b>逻辑：</b>指出大众思维的二元陷阱：成功要么"自己挣的"、要么"被给的"，没有中间地带。<b>表达：</b><b>sort into boxes</b> 把人当物体归类，暗含批评；<b>earn it / hand it</b> 两个单音节动词干净利落，either-or 框住读者的预设，为后文"现实更 messy"做铺垫。</p>
+</div>
+<div class="sb">
+<p class="q">"The people worth admiring are not those who deny the head start, but those who acknowledge it and still do the work."</p>
+<p class="a"><b>句型：</b>主系表，not those who… but those who… 平行对照（含 who 定语从句）。<b>逻辑：</b>收尾给出价值判准：值得钦佩的不是"否认优势"的人，而是"承认优势却仍下苦功"的人。<b>表达：</b><b>not A but B</b> 是议论文"翻转判准"的高频框架；<b>deny / acknowledge</b> 反义对照，<b>still do the work</b> 用最朴素的短语收束全篇，把"清醒 + 踏实"的落点写得极稳。</p>
+</div>
+</section>
+<!-- 13:00–15:00 · 中文总结 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 13:00–15:00 复盘</span></div>
+<p style="margin:0 0 10px;"><b>核心内容：</b>文章从好莱坞"人脉世袭"的公开秘密切入：明星的孩子天然站在舞台中央，圈内皆知却无人说破。2022 年底《New York Magazine》用 "nepo baby（星二代）" 一词把它命名，秘密就此被说破。作者指出，这个词能火，是因为"白手起家神话"已松动——疫情撕掉了"经济是公平竞技场"的伪装，年轻一代乐于把结构性优势说破（born on third base）。特权真实且复利累积：名流父母保证的不是天赋，而是"入场通道"（a foot in the door）；"不是你认识谁，而是谁是你爹"本是好莱坞的心照不宣（unspoken operating manual）。但文章也拒绝二元叙事：很多人仍下苦功、练出真本事；而所谓"白手起家"的明星，也常忽略自己的种族/阶层/运气红利。 meritocracy 细看之下，只是让不平等起跑线显得公平的故事。</p>
+<p style="margin:0 0 10px;"><b>背后文化现象：</b>这是"人人讲努力万能"大叙事的一环——与静奢风(08-06"安静也是一种表演")、真实 vs 精致(08-12"真实也可被 stage-managed")、零点击互联网(08-18"机器替我们读完一切")、忙碌表演(08-19"疲惫当勋章")同属一条线索：当叙事越把"公平/ merit"包装得漂亮，<b>清醒地说出"其实并不公平"的人声最稀缺，也最该被保护</b>。nepo baby 不只是娱乐八卦，它照见我们文化里对"Inherited advantage（被继承的优势）"的集体不适——无论在好莱坞，还是在每一个把"草根逆袭"当安慰剂的领域。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 你脱口而出"TA背后有人"的那一刻，是在诚实描述房间，还是在用嫉妒替自己开脱？② 如果"优势是被继承的"是事实，那真正值得钦佩的，是假装没有起跑优势的人，还是承认它、却仍下苦功的人？③ 对你「城市观察者」公众号来说，这条线可直接接上静奢与真实母题——<b>在人人营业、人人讲"我全靠自己"的年代，"承认自己站在三垒、却仍认真跑垒"的人声，恰恰是最破圈的资产</b>。</p>
+</section>
+<!-- 13:00–15:00 · 口语 -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语</h2><span class="time-tag">⏱ 13:00–15:00 开口</span></div>
+<div class="prompt">🗣️ Discussion question（请用英文回答，约 200 词）：<br/>We like to believe success is self-made, but the "nepo baby" debate shows how much advantage is inherited. Do you think talent alone gets people far, or do connections and a head start matter more? Describe one moment when you saw someone's "head start" shape their path — and say whether naming it openly is fair honesty or just envy.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词 · 可直接仿写/改造）</span>
+      I used to believe talent alone opens every door, but the nepo baby conversation made me less naive. A head start clearly matters — not because it replaces work, but because it hands you the room before you've proven anything. A few years ago I watched a peer land a coveted internship through a family contact, while a far more qualified friend never even got the interview. The surname was a foot already in the door. Still, I'd stop short of pure envy. Some people trade on a name and stall; others acknowledge the advantage and still do the work. The honest takeaway isn't outrage — it's clarity about the room as it is. Naming inherited advantage is fair, I think, as long as we name our own too: the luck of birthplace, school, or timing that none of us earned. The people worth admiring aren't those who deny the head start, but those who say, plainly, "I was born on third base — and I'm still going to earn the run." That's a story sturdier than any self-made myth.
+    </div>
+<div class="tip">💡 练习提示：先用自己的话答一遍（计时 2 分钟，不停顿），再对照范文挑 3 个想偷师的词组（如 a foot in the door / born on third base / the room as it is），造自己的句子。</div>
+</section>
+<footer>Daily English Reading · 2026-08-20 · 娱乐与流行文化 · 由 Milo 为你挑选 🐾</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-20',title:"The Nepo Baby Reckoning: How Hollywood's Open Secret Became a Public Conversation"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

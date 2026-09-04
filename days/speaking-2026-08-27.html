@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Algorithm That Knew Me Better Than I Did</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  /* Banner */
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  /* Sections */
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  /* Expression cards */
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  /* Conversation */
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  /* Practice */
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  /* Vocab */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    font-style: italic;
+    margin-top: 2px;
+  }
+  /* Footer */
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<!-- TOPIC BANNER -->
+<div class="topic-banner">
+<h2>The Algorithm That Knew Me Better Than I Did</h2>
+<div class="zh">那个比我更早知道我"扛不住了"的算法</div>
+<div class="en">"The phone didn't fix me. It just said out loud what I'd been too tired to admit."</div>
+<div class="meta">
+<span>📅 Day 33 · 2026-08-27</span>
+<span>🎯 B1–B2</span>
+<span>🏷 Tech &amp; Future</span>
+</div>
+</div>
+<!-- A. TITLE (consolidated above) -->
+<!-- B. SHORT STORY -->
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>Maya had been freelancing from home for eleven months. She was fine. At least that's what she told herself every morning when she sat down at her desk at 7 a.m. and didn't look up until the sky went dark.</p>
+<p>One Tuesday, her music app switched her usual playlist to something slow and acoustic — without her asking. She didn't think much of it. But then things started adding up. Her phone began sending gentle nudges: "You've been active for 12 hours. Consider a short walk?" Her email app started suggesting she reply with "I'll get back to you tomorrow" instead of "Right away." Even her smart lights dimmed themselves to a warm amber at 8 p.m., as if someone had quietly decided the day was over.</p>
+<p>By Thursday she was annoyed. "Stop trying to manage me," she muttered, and turned off every wellness suggestion she could find. But that night, lying in bed, her chest felt tight. Her jaw ached from clenching. And with a kind of slow, awful clarity, she realized she hadn't eaten a real meal in three days. She hadn't called her mom in two weeks. She hadn't laughed at anything in a month.</p>
+<p>The algorithms hadn't been trying to fix her. They had been holding up a mirror she refused to look into. That night she didn't turn the suggestions back on. She picked up her phone and called the one person she'd been avoiding — her mother — and said the sentence she couldn't bring herself to say to anyone, including herself: "I think I need help."</p>
+</div>
+</div>
+<!-- C. KEY EXPRESSIONS -->
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I've been running on empty.</div><button aria-label="收藏表达" class="expr-fav" data-en="I've been running on empty." data-example="I've been running on empty for weeks now. I show up, I do the work, but I have nothing left at the end of the day. 我已经透支好几个星期了。我照常出现、照常干活,但一天结束时我什么都不剩了。" data-zh="我一直在透支自己。(形容精力耗尽、靠惯性撑着)" type="button">☆</button></div>
+<div class="zh-expr">我一直在透支自己。(形容精力耗尽、靠惯性撑着)</div>
+<div class="example">
+        I've been running on empty for weeks now. I show up, I do the work, but I have nothing left at the end of the day.
+        <span class="zh-trans">我已经透支好几个星期了。我照常出现、照常干活,但一天结束时我什么都不剩了。</span>
+</div>
+<div class="note">比 "I'm tired" 强得多,暗示你已经"空了"却还在运转。口语里非常常用,尤其在聊 burnout 话题时。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">It took me a while to notice.</div><button aria-label="收藏表达" class="expr-fav" data-en="It took me a while to notice." data-example="It took me a while to notice, but the reason I wasn't sleeping wasn't the coffee — it was the anxiety I wasn't dealing with. 我过了好一会儿才注意到,我睡不着不是因为咖啡——而是我一直在回避的焦虑。" data-zh="我过了好一会儿才注意到。" type="button">☆</button></div>
+<div class="zh-expr">我过了好一会儿才注意到。</div>
+<div class="example">
+        It took me a while to notice, but the reason I wasn't sleeping wasn't the coffee — it was the anxiety I wasn't dealing with.
+        <span class="zh-trans">我过了好一会儿才注意到,我睡不着不是因为咖啡——而是我一直在回避的焦虑。</span>
+</div>
+<div class="note">用来承认自己"后知后觉"的句型,语气谦逊、自然。比 "I didn't realize" 更口语化,后面常接转折 "but..."。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I couldn't bring myself to admit it.</div><button aria-label="收藏表达" class="expr-fav" data-en="I couldn't bring myself to admit it." data-example="I couldn't bring myself to admit it, but the truth was I hadn't been happy at that job for over a year. 我没办法让自己承认,但事实是我在那份工作里已经超过一年没开心过了。" data-zh="我没法让自己承认这件事。" type="button">☆</button></div>
+<div class="zh-expr">我没法让自己承认这件事。</div>
+<div class="example">
+        I couldn't bring myself to admit it, but the truth was I hadn't been happy at that job for over a year.
+        <span class="zh-trans">我没办法让自己承认,但事实是我在那份工作里已经超过一年没开心过了。</span>
+</div>
+<div class="note">"bring oneself to do something" = 说服自己去做某件心理上很难的事。常用于承认、开口、面对这类动词前。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">That's when it hit me.</div><button aria-label="收藏表达" class="expr-fav" data-en="That's when it hit me." data-example="I was sitting in the parking lot, eating cold fries, and that's when it hit me — I hadn't taken a single day off in four months. 我坐在停车场里吃冷薯条,那一刻我突然意识到——我已经四个月没休息过一天了。" data-zh="就在那一刻我突然意识到了。" type="button">☆</button></div>
+<div class="zh-expr">就在那一刻我突然意识到了。</div>
+<div class="example">
+        I was sitting in the parking lot, eating cold fries, and that's when it hit me — I hadn't taken a single day off in four months.
+        <span class="zh-trans">我坐在停车场里吃冷薯条,那一刻我突然意识到——我已经四个月没休息过一天了。</span>
+</div>
+<div class="note">口语中最常用的"顿悟"句型。"hit" 在这里的画面感很强:像被什么东西"撞了一下"才猛然清醒。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I didn't see it coming.</div><button aria-label="收藏表达" class="expr-fav" data-en="I didn't see it coming." data-example="I didn't see it coming, honestly. I thought I was handling everything fine — turns out I was just numb. 说实话我完全没料到。我以为一切都处理得挺好——结果只是我麻木了而已。" data-zh="我完全没料到。" type="button">☆</button></div>
+<div class="zh-expr">我完全没料到。</div>
+<div class="example">
+        I didn't see it coming, honestly. I thought I was handling everything fine — turns out I was just numb.
+        <span class="zh-trans">说实话我完全没料到。我以为一切都处理得挺好——结果只是我麻木了而已。</span>
+</div>
+<div class="note">比 "I was surprised" 口语化得多,强调"事前毫无预感"。可以用来描述坏事也可以是好事,语境很灵活。</div>
+</div>
+</div>
+<!-- D. REAL CONVERSATION -->
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">— Friday night, 10:47 p.m. Maya finally calls her friend Jess. She hasn't spoken to anyone in days —</div>
+<div class="conv-line">
+<span class="speaker friend">Jess:</span>
+<span class="en">Maya? Hey — wow, it's been a minute. Everything okay?</span>
+<span class="zh">Maya? 嗨——哇,好久没联系了。没事吧?</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">(pause) ...Yeah. No. I don't know. Can I just... talk for a second?</span>
+<span class="zh">(停顿)……嗯。不是。我也不知道。我能就……说会儿话吗?</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Jess:</span>
+<span class="en">Of course. I'm here. What's going on?</span>
+<span class="zh">当然。我在。怎么了?</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">Okay, this is gonna sound stupid, but... my phone has been sending me these "take a break" notifications all week. And my music app switched to like, meditation playlists? And I got so annoyed I turned everything off.</span>
+<span class="zh">好吧,这听起来可能很蠢,但是……我这周手机一直在给我发"休息一下"的通知。然后我的音乐 App 自动切成了冥想歌单?我烦得把全关了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Jess:</span>
+<span class="en">(small laugh) Wait — you got mad at your phone for caring about you?</span>
+<span class="zh">(笑了一下)等等——你因为手机关心你,就生气了?</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">I know, I know. But that's not the point. The point is — (longer pause) — I was lying in bed last night and my chest hurt and my jaw was clenched and I realized I hadn't eaten a real meal in three days. And the stupid phone knew before I did.</span>
+<span class="zh">我知道我知道。但重点不是这个。重点是——(停顿更久)——我昨晚躺在床上,胸口发紧,牙关咬着,然后我意识到我已经三天没正经吃过饭了。而那破手机比我先知道了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Jess:</span>
+<span class="en">(quietly) Maya... how long have you been feeling like this?</span>
+<span class="zh">(轻声)Maya……你这样多久了?</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">Honestly? I think... months? I've been running on empty and telling myself I was fine. I couldn't bring myself to admit it. And then a bunch of algorithms basically said it out loud for me. (half-laugh, half-cry) Isn't that pathetic?</span>
+<span class="zh">说实话?我觉得……好几个月了?我一直在透支,然后跟自己说没事。我没办法让自己承认。然后一堆算法基本替我说了出来。(半笑半哭)这不挺可悲的吗?</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Jess:</span>
+<span class="en">It's not pathetic. It's actually... I don't know, kind of beautiful? Like, something was looking out for you when you weren't looking out for yourself. That counts.</span>
+<span class="zh">一点都不可悲。其实……怎么说呢,还挺美的?就是,有东西在替你操心,在你没顾上自己的时候。这算数。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Maya:</span>
+<span class="en">(after a beat) ...Yeah. Maybe. I just — I haven't called my mom in two weeks, Jess. Two weeks. And I didn't even notice.</span>
+<span class="zh">(停了一下)……嗯。也许吧。我只是——我已经两个星期没给我妈打电话了,Jess。两个星期。我甚至都没注意到。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Jess:</span>
+<span class="en">Then call her. Right now if you want. Or tomorrow morning. It doesn't have to be perfect — it just has to happen. And hey? I'm glad you called me first.</span>
+<span class="zh">那就打给她。现在就打也行。或者明早。不用打得多完美——打了就行。还有?我很高兴你先打给了我。</span>
+</div>
+<div class="stage">— Maya exhales. For the first time in weeks, the tightness in her chest loosens just a little —</div>
+</div>
+<!-- E. SPEAKING PRACTICE -->
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the story 复述故事 (60 seconds)</div>
+<div class="task-prompt">用你自己的话,复述 Maya 的故事。提示句:<br/><em>"So there's this woman named Maya who..."</em></div>
+<ul class="samples">
+<li>So there's this woman named Maya who's been freelancing from home for almost a year. She thought she was fine, but her phone kept suggesting she take breaks and dimming her lights. She got annoyed and turned everything off. But that night she realized she hadn't eaten properly in days, hadn't called her mom in weeks. The algorithms had noticed what she refused to see — she was burned out. She finally called a friend and admitted she needed help.
+          <span class="zh">有这么个叫 Maya 的女人,在家做了快一年自由职业。她觉得自己没事,但手机一直在提醒她休息、帮她把灯调暗。她烦了,全关了。但那天晚上她意识到自己好几天没正经吃饭了、好几周没给妈妈打电话了。那些算法注意到了她拒绝面对的事——她已经倦怠了。她终于给朋友打了个电话,承认自己需要帮助。</span>
+</li>
+<li>The story is about a freelancer whose technology noticed her burnout before she did. Her music app, her phone, her smart lights — they all started "caring" for her automatically. She turned them off because she was annoyed. But lying awake that night, she realized the machines were right. She called her friend Jess and finally said out loud what she'd been avoiding: "I think I need help."
+          <span class="zh">故事讲的是一个自由职业者,她的设备比她自己更早发现了她的倦怠。音乐 App、手机、智能灯——它们都开始自动"照顾"她。她烦了,全关了。但那天晚上躺着想了很久,她意识到机器是对的。她给朋友 Jess 打了电话,终于说出了她一直在逃避的话:"我觉得我需要帮助。"</span>
+</li>
+<li>It's a short story about a woman who was overworking and didn't know it. Her phone's AI started sending wellness alerts. She hated it and shut everything down. But then she couldn't sleep, her body hurt, and she realized she'd been running on empty for months. What struck me was the ending — she didn't fix herself. She just finally admitted it to another person. And that was the beginning.
+          <span class="zh">是个短篇,讲一个过度工作却不自知的女人。她手机的 AI 开始发健康提醒。她讨厌,全关了。但她睡不着,身体疼,然后意识到自己已经透支了好几个月。让我触动的是结局——她没有"修好"自己。她只是终于对另一个人承认了。而那就是开始。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Share your opinion 表达观点</div>
+<div class="task-prompt">Do you think technology can sometimes understand us better than the people around us? Why or why not? Use at least 3 sentences.</div>
+<ul class="samples">
+<li>I think yes, in a weird way. People around you have their own problems — they're busy, they assume you're fine. But your phone doesn't assume. It just tracks patterns. The problem is that data isn't the same as empathy — it can tell you something is wrong, but it can't sit with you in the dark.
+          <span class="zh">我觉得是的,以一种奇怪的方式。你身边的人有自己的事——他们忙,他们以为你没事。但你的手机不会假设。它只是记录模式。问题是数据和共情不是一回事——它能告诉你出问题了,但它不能陪你在黑暗里坐着。</span>
+</li>
+<li>Not really. I think technology gives us information, not understanding. A phone can say "you haven't slept well in 14 days," but only a friend can hear your voice at 10 p.m. and know something's off. Algorithms are mirrors, not friends. Useful, but not the same thing.
+          <span class="zh">不太是。我觉得技术给我们的是信息,不是理解。手机能说"你14天没睡好了",但只有朋友能在晚上10点听到你的声音就知道不对劲。算法是镜子,不是朋友。有用,但不是一回事。</span>
+</li>
+<li>I'm torn on this. On one hand, the data doesn't lie — if my screen time is 14 hours a day, something's wrong whether I admit it or not. On the other hand, I don't want to live in a world where the only thing that notices I'm struggling is a machine. Both can be true at the same time.
+          <span class="zh">我有点纠结。一方面,数据不会撒谎——如果我每天屏幕时间14小时,不管我承不承认都有问题。但另一方面,我不想活在一个只有机器注意到我在挣扎的世界里。两边可以同时成立。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Role-play a real situation 模拟真实场景</div>
+<div class="task-prompt">You finally realized you've been pushing yourself too hard for months. You call a close friend and admit it for the first time. Say exactly what you'd say — out loud.</div>
+<ul class="samples">
+<li>Hey... so I've been meaning to call you. I'm not great, honestly. I've been running on empty for... I don't even know how long. And I think I finally hit a wall this week. I just needed to tell someone.
+          <span class="zh">嗨……我一直想给你打电话。说实话我不太好。我已经透支了……我都不知道多久了。我觉得这周我终于扛不住了。我只是想告诉一个人。</span>
+</li>
+<li>Listen, I know this is out of nowhere, but... I haven't been okay for a while. I kept telling myself I was fine, but I'm not. I haven't slept properly in weeks. I haven't called my parents. I think I need to slow down, and I'm scared to do it alone.
+          <span class="zh">听着,我知道这突然,但是……我有一阵子不太好。我一直跟自己说没事,但不是的。我好几个星期没正经睡了。没给父母打电话。我觉得我得慢下来,但我害怕一个人面对。</span>
+</li>
+<li>I don't even know how to say this, but... I think I've been pretending I'm fine for so long that I started believing it. And then something small happened — my phone told me to take a break, and I almost cried. That's when I knew I had to call you.
+          <span class="zh">我甚至不知道该怎么说,但是……我觉得我假装没事太久了,久到我自己都信了。然后发生了件小事——手机提醒我休息,我差点哭了。那一刻我知道我得打给你。</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- F. USEFUL VOCABULARY -->
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">burnout</span><span class="ipa">/ˈbɜːrnaʊt/</span>
+<div class="meaning">n. 职业倦怠;精力耗尽</div>
+<div class="sample">She didn't recognize the burnout until she forgot how to enjoy her own weekends.
+          <span class="zh-trans">她直到忘了怎么享受自己的周末,才意识到自己已经倦怠了。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">dim</span><span class="ipa">/dɪm/</span>
+<div class="meaning">v. (使)变暗;调低亮度</div>
+<div class="sample">The smart lights dimmed themselves at sunset, as if telling her the day was done.
+          <span class="zh-trans">智能灯在日落时自动变暗,好像在告诉她今天结束了。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">clench</span><span class="ipa">/klentʃ/</span>
+<div class="meaning">v. 紧咬;攥紧(牙关/拳头)</div>
+<div class="sample">She hadn't realized how hard she'd been clenching her jaw until it started aching at night.
+          <span class="zh-trans">她一直没意识到自己咬得多紧,直到晚上牙关开始疼。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">algorithm</span><span class="ipa">/ˈælɡərɪðəm/</span>
+<div class="meaning">n. 算法</div>
+<div class="sample">The algorithm had noticed the pattern in her sleep data weeks before she did.
+          <span class="zh-trans">那个算法在她之前好几周就注意到了她睡眠数据里的规律。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">clarity</span><span class="ipa">/ˈklerəti/</span>
+<div class="meaning">n. 清晰;明朗</div>
+<div class="sample">It came with a kind of awful clarity — she hadn't been "fine" for a very long time.
+          <span class="zh-trans">那是一种令人难受的清醒——她已经很久不"没事"了。</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Speaking Practice · Day 33 · 2026-08-27 · Built for your English muscle memory.
+  </div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-27',title:"The Algorithm That Knew Me Better Than I Did"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

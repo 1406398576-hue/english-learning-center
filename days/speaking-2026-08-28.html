@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Stranger Who Cried at the Ending</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  /* Banner */
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  /* Sections */
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  /* Expression cards */
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  /* Conversation */
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  /* Practice */
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  /* Vocab */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  /* Footer */
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<!-- TOPIC BANNER -->
+<div class="topic-banner">
+<h2>The Stranger Who Cried at the Ending</h2>
+<div class="zh">那个在结局时哭了的陌生人</div>
+<div class="en">"Some movies you forget by dinner. Others stay with you because a stranger taught you how to watch them."</div>
+<div class="meta">
+<span>📅 Day 34 · 2026-08-28</span>
+<span>🎯 B1–B2</span>
+<span>🏷 Entertainment &amp; Culture</span>
+</div>
+</div>
+<!-- A. TITLE (consolidated above) -->
+<!-- B. SHORT STORY -->
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>Last Thursday, Clara went to see a reissue of an old Japanese film at the little cinema on Maple Street. She went by herself because her friend had canceled at the last minute, and because she had already been looking forward to it all week.</p>
+<p>The theater was almost empty. Just three people, and by the time the lights dimmed, only one other person remained — an older man sitting two rows behind her, on the aisle. She noticed him because he laughed at a line no one else seemed to find funny, and because, during the quiet scenes, she could hear him breathing in a way that sounded almost like remembering.</p>
+<p>The film was slow. It was about a woman who returns to her hometown after many years and finds that nothing is the same, but also — confusingly — exactly the same. Clara liked it, though she couldn't put her finger on why. It felt like a dream she'd had once and forgotten.</p>
+<p>When the credits began to roll, the man didn't leave. Neither did she. After a moment, he leaned forward and said, almost to himself, "She isn't sad because it's over. She's sad because she finally understands it." Clara turned around. "I'm sorry?" she said. He smiled, a little embarrassed. "My wife used to say that. About this ending. Every time."</p>
+<p>They talked for maybe five minutes, standing in the aisle while the screen went white. He told her his wife had loved this director, that they had seen this film together in 1987, and that he came every time it came back to theaters. "I don't come to remember her," he said. "I come because she taught me how to see."</p>
+<p>Clara walked home alone, but the film felt different now — heavier, and somehow lighter at the same time. It stayed with her for days. She still doesn't know the man's name.</p>
+</div>
+</div>
+<!-- C. KEY EXPRESSIONS -->
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I went by myself.</div><button aria-label="收藏表达" class="expr-fav" data-en="I went by myself." data-example="I went by myself because nobody else wanted to see a three-hour black-and-white film. 我一个人去的,因为没人 else 想看一部三小时的黑白电影。" data-zh="我一个人去的。" type="button">☆</button></div>
+<div class="zh-expr">我一个人去的。</div>
+<div class="example">
+        I went by myself because nobody else wanted to see a three-hour black-and-white film.
+        <span class="zh-trans">我一个人去的,因为没人想看一部三小时的黑白电影。</span>
+</div>
+<div class="note">比 "I went alone" 更自然、更口语,强调"独自去做某事"是一种主动选择,而不是孤单。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I couldn't put my finger on it.</div><button aria-label="收藏表达" class="expr-fav" data-en="I couldn't put my finger on it." data-example="Something about the room felt strange, but I couldn't put my finger on it. 房间里有点不对劲,但我说不上来具体是什么。" data-zh="我说不上来具体是什么。" type="button">☆</button></div>
+<div class="zh-expr">我说不上来具体是什么。</div>
+<div class="example">
+        Something about the room felt strange, but I couldn't put my finger on it.
+        <span class="zh-trans">房间里有点不对劲,但我说不上来具体是什么。</span>
+</div>
+<div class="note">用来表达"隐约感觉到什么,但无法准确描述"。非常地道的口语表达,比 "I don't know why" 更有画面感。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">There's something about...</div><button aria-label="收藏表达" class="expr-fav" data-en="There's something about..." data-example="There's something about old theaters. The smell of popcorn, the red velvet seats — it makes everything feel more important. 老电影院有一种特别的感觉。爆米花的味道、红色天鹅绒座椅——让一切都显得更重要。" data-zh="……有一种说不出的感觉/魅力。" type="button">☆</button></div>
+<div class="zh-expr">……有一种说不出的感觉/魅力。</div>
+<div class="example">
+        There's something about old theaters. The smell of popcorn, the red velvet seats — it makes everything feel more important.
+        <span class="zh-trans">老电影院有一种特别的感觉。爆米花的味道、红色天鹅绒座椅——让一切都显得更重要。</span>
+</div>
+<div class="note">用来引出某种难以名状的吸引力或氛围,后面常接地方、人、声音、时刻等名词。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">It hit me right in the chest.</div><button aria-label="收藏表达" class="expr-fav" data-en="It hit me right in the chest." data-example="When she started singing the song her mother used to sing, it hit me right in the chest. 当她唱起她妈妈以前唱的那首歌时,我胸口一紧。" data-zh="它直击我心口/让我心头一震。" type="button">☆</button></div>
+<div class="zh-expr">它直击我心口/让我心头一震。</div>
+<div class="example">
+        When she started singing the song her mother used to sing, it hit me right in the chest.
+        <span class="zh-trans">当她唱起她妈妈以前唱的那首歌时,我胸口一紧。</span>
+</div>
+<div class="note">形容情绪突然强烈袭来,带有身体感受。比 "It made me emotional" 更生动、更口语化。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">It stayed with me.</div><button aria-label="收藏表达" class="expr-fav" data-en="It stayed with me." data-example="The ending wasn't shocking, but it stayed with me for weeks. 结局并不 shocking,但它在我脑海里萦绕了好几周。" data-zh="它一直萦绕在我心头。" type="button">☆</button></div>
+<div class="zh-expr">它一直萦绕在我心头。</div>
+<div class="example">
+        The ending wasn't shocking, but it stayed with me for weeks.
+        <span class="zh-trans">结局并不震撼,但它在我脑海里萦绕了好几周。</span>
+</div>
+<div class="note">用来表达"久久不能忘怀"。适合形容电影、书、对话、画面等给人留下持久印象。</div>
+</div>
+</div>
+<!-- D. REAL CONVERSATION -->
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">— The credits are rolling. The screen is glowing white. The older man is still sitting two rows back —</div>
+<div class="conv-line">
+<span class="speaker friend">Henry:</span>
+<span class="en">(quietly) She isn't sad because it's over. She's sad because she finally understands it.</span>
+<span class="zh">(轻声)她不是因为它结束了而难过。她是因为终于理解了它而难过。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Clara:</span>
+<span class="en">(turning around) I'm sorry?</span>
+<span class="zh">(转过身)您说什么?</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Henry:</span>
+<span class="en">Oh — sorry. I didn't mean to... I just talk to myself sometimes. After this one.</span>
+<span class="zh">哦——抱歉。我不是要……我只是看完这部会自言自语。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Clara:</span>
+<span class="en">No, it's okay. I think I know what you mean. There's something about the ending that I couldn't put my finger on.</span>
+<span class="zh">没事,没关系。我想我明白您的意思。结局有种我说不上来的感觉。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Henry:</span>
+<span class="en">(small laugh) My wife used to say that exact thing. "It's not sad. It's just too late."</span>
+<span class="zh">(轻笑)我太太以前也这么说。"不是难过。只是太迟了。"</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Clara:</span>
+<span class="en">(pause) Did you used to watch this film together?</span>
+<span class="zh">(停顿)你们以前会一起看这部电影吗?</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Henry:</span>
+<span class="en">Every time it came back to theaters. Forty years, maybe? She loved the director. I didn't get it at first — too slow, too quiet. But she would hold my hand and say, "Wait for it." And then, at the end, it hit me right in the chest.</span>
+<span class="zh">每次重映都会看。大概四十年?她喜欢这个导演。我一开始不懂——太慢、太安静。但她会握着我的手说:"等一等。"然后到了结尾,我胸口一紧。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Clara:</span>
+<span class="en">That's... really beautiful. Do you still come alone?</span>
+<span class="zh">那……真的很美。您现在一个人来吗?</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Henry:</span>
+<span class="en">(longer pause) I do. But I don't feel alone when I'm here. That's strange, isn't it? To feel closer to someone in a dark room full of strangers?</span>
+<span class="zh">(停顿更久)是的。但在这里我不觉得孤单。很奇怪,对吧?在一屋子陌生人的黑屋子里,反而觉得离某人更近?</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Clara:</span>
+<span class="en">No. I think I understand. Some things you can't explain to someone who hasn't sat through the same film.</span>
+<span class="zh">不。我想我理解。有些东西你没办法解释给没一起看完这部电影的人听。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Henry:</span>
+<span class="en">(standing up, smiling) Well. Enjoy the walk home. And thank you for not thinking I'm crazy.</span>
+<span class="zh">(站起来,微笑)嗯。回家路上慢慢享受。谢谢你没觉得我疯了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">Clara:</span>
+<span class="en">Thank you for explaining the ending.</span>
+<span class="zh">谢谢您解释了结局。</span>
+</div>
+<div class="stage">— He walks out. Clara sits for another minute, watching the empty screen. Then she gathers her bag and leaves through the side door —</div>
+</div>
+<!-- E. SPEAKING PRACTICE -->
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the story 复述故事 (60 seconds)</div>
+<div class="task-prompt">用你自己的话,复述 Clara 在电影院遇到陌生人的故事。提示句:<br/><em>"So there's this woman named Clara who..."</em></div>
+<ul class="samples">
+<li>So there's this woman named Clara who went to see an old Japanese film by herself. The theater was almost empty, and there was this older man sitting behind her. After the movie, he said something about the ending — that the character wasn't sad because it was over, but because she finally understood it. It turned out his late wife used to love that film. They talked for a few minutes, and Clara left feeling like the movie meant something different now.
+          <span class="zh">有个叫 Clara 的女人,一个人去看一部老日本电影。影院几乎空了,有个年长男人坐在她后面。电影结束后,他说了句关于结局的话——角色不是因为它结束了而难过,而是因为她终于理解了。原来他去世的妻子以前很爱这部电影。他们聊了几分钟,Clara 离开的时候觉得这部电影现在意义不同了。</span>
+</li>
+<li>The story is about Clara, who goes to a reissue of an old film alone. She notices an older man because he laughs at a line no one else gets. After the credits, he explains the ending in a way that connects to his wife. They have a short conversation in the aisle. Clara never learns his name, but the encounter stays with her for days.
+          <span class="zh">故事讲的是 Clara,一个人去看一部老电影的重映。她注意到一个年长男人,因为他笑了一个别人都没 get 到的梗。片尾字幕后,他用一种和太太有关的方式解释了结局。他们在过道里简短聊了几句。Clara 始终不知道他的名字,但那次偶遇在她心里留了好几天。</span>
+</li>
+<li>It's a short story about a woman who watches a slow Japanese film alone and meets a stranger afterward. The man tells her that his wife used to say the ending wasn't sad — it was just too late. Clara realizes the stranger isn't just remembering the movie; he's keeping a promise to someone who isn't there anymore. The film becomes more than a film for her.
+          <span class="zh">是个短篇,讲一个女人独自看一部慢节奏的日本电影,之后遇到一个陌生人。男人告诉她,他太太以前总说结局不是难过,只是太迟了。Clara 意识到这个陌生人不仅在回忆电影,他还在对一个不在场的人信守承诺。这部电影对她来说不再只是一部电影。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Share your opinion 表达观点</div>
+<div class="task-prompt">Do you think going to the movies alone is a good experience? Why or why not? Use at least 3 sentences.</div>
+<ul class="samples">
+<li>I actually love going to the movies alone. Nobody asks you questions during the film, and you can cry or laugh without feeling judged. The only downside is you can't talk about it right after. But sometimes that's okay — some films need a little silence before you share them.
+          <span class="zh">我其实很喜欢一个人看电影。没人会在电影期间问你问题,你可以哭可以笑,不用怕被评判。唯一的缺点是你不能马上和别人讨论。但有时候这样也挺好——有些电影需要先沉默一会儿,才能分享。</span>
+</li>
+<li>It depends on the movie. For action films or comedies, I want to be with friends so we can react together. But for slower, more emotional films, I prefer going alone. I feel like I can sink into the story more deeply when I'm not aware of someone else next to me.
+          <span class="zh">这取决于电影。看动作片或喜剧,我想和朋友一起,这样可以一起反应。但看慢节奏、情绪浓的电影,我更喜欢一个人。我觉得旁边没有人的时候,我能更深地沉入故事里。</span>
+</li>
+<li>I used to think it was weird, but now I do it all the time. Going alone means you choose exactly what you want to see, and you don't have to negotiate the time. It taught me that being alone isn't the same as being lonely. Some of my best movie memories are from screenings where I was the only person in the room.
+          <span class="zh">我以前觉得一个人看电影很奇怪,但现在我经常去。一个人去意味着你可以选自己真正想看的,不用商量时间。这让我明白,独处不等于孤独。我一些最美好的电影记忆,来自整场只有我一个人的放映。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Role-play a real situation 模拟真实场景</div>
+<div class="task-prompt">You just watched a film alone, and a stranger next to you starts a conversation about the ending. Respond naturally — agree, ask a follow-up question, and share one feeling you had.</div>
+<ul class="samples">
+<li>Yeah, I know what you mean. I actually couldn't put my finger on why the ending felt so heavy until you said that. Did you see it before? I feel like this is one of those films that hits harder the second time.
+          <span class="zh">对,我明白您的意思。其实直到您那么说,我才明白为什么结局感觉那么沉重。您以前看过吗?我觉得这种电影看第二遍会更戳人。</span>
+</li>
+<li>Right? I wasn't expecting to feel so much. There's something about the way she just stands there at the train station. What did you think of the music? For me, that's what made it stay with me.
+          <span class="zh">对吧?我没想到会感触这么深。她就这样站在火车站那里的画面,有种说不出的感觉。您觉得音乐怎么样?对我来说,那是让它萦绕在我心头的原因。</span>
+</li>
+<li>Honestly, I'm still processing it. I went by myself tonight because I needed to clear my head, and now I'm walking out with even more to think about. Did the ending make you sad, or more like... peaceful?
+          <span class="zh">说实话,我还在消化。我今晚一个人来,因为想清空脑袋,结果现在走出来要想的更多了。结局让您觉得难过,还是更像……平静?</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- F. USEFUL VOCABULARY -->
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">reissue</span><span class="ipa">/ˌriːˈɪʃuː/</span>
+<div class="meaning">n./v. (电影/唱片的)重映;重新发行</div>
+<div class="sample">The cinema was showing a reissue of a 1980s Japanese classic.
+          <span class="zh-trans">那家影院正在重映一部1980年代的日本经典电影。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">aisle</span><span class="ipa">/aɪl/</span>
+<div class="meaning">n. (剧院/飞机/超市的)过道</div>
+<div class="sample">He chose a seat on the aisle so he could leave quietly if he needed to.
+          <span class="zh-trans">他选了靠过道的座位,这样如果需要可以悄悄离开。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">nostalgia</span><span class="ipa">/nɒˈstældʒə/</span>
+<div class="meaning">n. 怀旧;念旧之情</div>
+<div class="sample">The old theater was filled with nostalgia, even for people who had never been there before.
+          <span class="zh-trans">那家老电影院弥漫着怀旧气息,即使对从没去过的人来说也是。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">subtle</span><span class="ipa">/ˈsʌtl/</span>
+<div class="meaning">adj. 微妙的;含蓄的;不易察觉的</div>
+<div class="sample">The film's message was subtle — you had to pay attention to the silence between the lines.
+          <span class="zh-trans">这部电影的主题很含蓄——你得注意台词之间的沉默。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">credit</span><span class="ipa">/ˈkredɪt/</span>
+<div class="meaning">n. (常用复数 credits)片尾字幕;演职员表</div>
+<div class="sample">We stayed until the credits finished, just to hear the final song.
+          <span class="zh-trans">我们一直坐到片尾字幕结束,就为了听完最后一首歌。</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Speaking Practice · Day 34 · 2026-08-28 · Built for your English muscle memory.
+  </div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-28',title:"The Stranger Who Cried at the Ending"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

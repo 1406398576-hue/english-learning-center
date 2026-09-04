@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-05</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .kp .src{display:block; font-size:12px; color:var(--muted); margin-top:4px; font-style:normal;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .vocab .v .ex2{display:block; font-size:12.5px; color:#3b352e; font-style:italic; margin-top:5px;}
+  .vocab .v .src2{display:block; font-size:11.5px; color:var(--muted); margin-top:2px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Internet Is Quietly Filling With Words No Human Meant</h1>
+<p class="sub">当网页、攻略、新闻稿越来越多由 AI 批量生成——我们失去的不只是"人写的字"，还有一种被具体的人认真对待的感觉</p>
+<div class="meta">
+<span>📅 <b>2026-08-05</b></span>
+<span>🎯 主题桶：<b>科技与未来 (25%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">今天的主题桶轮到「科技与未来」。挑了一个和你当下最相关的话题：互联网正在被 AI 生成的内容悄悄淹没——"AI slop（AI 烂内容）"、搜索引擎直接替你总结、原创作者被绕开。这跟你正在准备的 AI 破圈文（012《AI 第二大脑》）和你「城市观察者」的定位其实高度同频：当全网都是机器"统计上最合理的下一个词"，一个具体、带缺点、有人味的人声，反而成了最稀缺的资产。今天这篇，既是练英语，也是帮你把那条内容母题再想深一层。读之前先问自己一句：你上一次"确认对方是个真人"才点开的账号，是哪个？</p>
+<div class="tip">💡 读前小思考：你平时刷到的内容里，有没有哪篇让你"一眼觉得是 AI 写的"？它缺了什么，才让你这么确定？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>Walk into a search engine today and the first thing you'll notice is that someone has answered the question before you asked it. Where there used to be ten blue links—ten doors, each opened by a different human—there are now three sentences, calmly composed by a machine that has never been anywhere, never waited in a slow line, never lost anyone. The web has not gone silent. It has gone synthetic. Open almost any site and the voice you hear is fluent, helpful, and strangely vacant—as if written by someone who has read everything and felt nothing at all.</p>
+<p>No one planned this, exactly. It crept. Over the past two years, the share of new writing online that is at least partly generated by AI has climbed from a curiosity to a condition. Researchers who try to measure it disagree on the number, but they agree on the direction: a large and growing slice of the text you read—product descriptions, travel "guides," market recaps, the helpful little intros to recipes you never asked for—was written by nobody who was there. The phrase for it has already entered the language: "AI slop," the cheap, fluent, forgettable output that content farms now <span class="hl">churn out</span> by the ton.</p>
+<p>The economics are not mysterious. Human writing is slow, and slow is expensive. A person needs to be paid, and rested, and occasionally wrong in an interesting way. A model needs a prompt. Under pressure from falling ad revenue and impatient investors, many publishers have quietly <span class="hl">swapped</span> craft for volume, betting that a flood of adequate copy will <span class="hl">out-earn</span> a little careful prose. The result is a content treadmill: more pages, less presence, and a creeping sense that the internet is talking to itself.</p>
+<p>The change runs deeper than the bylines. The front door to the web—the search box—no longer simply shows you the room; it summarizes the room, decides what was important, and hands you the conclusion. AI Overviews and their cousins answer in your place, sometimes gracefully, sometimes by confidently inventing a source. The human who actually wrote the original page is <span class="hl">disintermediated</span>: their words are scraped, flattened, and served back to you without the click that once paid for them. The author becomes a footnote to their own work.</p>
+<p><span class="hl">What we lose</span> in this shift is not only accuracy but texture. Machine text is, almost by definition, <span class="hl">statistically probable</span>—the most likely next word, repeated until it resembles meaning. It is smooth where human writing is jagged, agreeable where we are opinionated, and absent of the small, stubborn details that betray a person who was actually standing somewhere. A human essay carries stakes; the model carries only probabilities. When everything is generated toward the average, the average is all we get.</p>
+<p>There is a strange inversion buried in all of this. For decades we asked machines to sound more human; now human writing has to <span class="hl">prove it is human</span>. Watermarks, "written by a real person" badges, detectors that guess at our souls—we have built an entire bureaucracy to certify the one thing we used to take for granted. To publish online today is, in a quiet way, to defend your own humanness, as if being a person were a credential that needed renewing.</p>
+<p>The people this hurts most are not the big outlets but the small ones—the independent bloggers, the niche forums, the <span class="hl">long tail</span> of the web where the weird, specific, and unprofitable live. Those corners were never efficient, and an algorithm that rewards scale will happily let them starve. Yet they are precisely where the internet was most itself: a person, a subject they cared about, and the courage to say something <span class="hl">off-script</span>. Strip those out and the network becomes a mall—bright, identical, and strangely empty.</p>
+<p>And yet the counter-current is real, and it is growing. A "small web" movement has emerged, made of people who would rather read one careful post than a thousand fluent ones. Newsletters, personal sites, RSS feeds—slow formats that insist on a human on the other end. The appeal is not nostalgia; it is scarcity. In a feed <span class="hl">saturated</span> with synthetic text, "I was actually there" has become the rarest sentence on the internet. It is a small rebellion, really—choosing to be read by a person who chose you back, instead of being fed to a crowd that never noticed.</p>
+<p>None of this means the machines will stop. They will keep filling the web with words, efficiently and without complaint. But they cannot fill it with someone. The shortage we are sliding into is not information—we have more of that than we can bear—but presence: the sense that a specific, flawed, accountable person decided this was worth saying. To protect that, we may not need better models. We may simply need to keep writing as if being human were still the point. Because in a synthetic age, it quietly is.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">以下例句均摘自今日文章（媒体风格真实英文语料），标注来源为「本文 / Daily English Reading · 2026-08-05」。建议先记"表达 + 中文"，再读例句体会真实语境——这些都是外媒科技/评论报道里的高频活词。</p>
+<span class="kp"><span class="exp-row"><span class="exp">churn out</span><button aria-label="收藏表达" class="expr-fav" data-en="churn out" data-example='"…the cheap, fluent, forgettable output that content farms now churn out by the ton."' data-scene='使用场景：形容工厂、媒体、内容农场"机械地产出"，比 produce 更有"泛滥、不走心"的意味。' data-zh="大量、流水线式地粗制滥造（常带贬义）" type="button">☆</button></span><span class="zh">大量、流水线式地粗制滥造（常带贬义）</span>
+<span class="sc">使用场景：形容工厂、媒体、内容农场"机械地产出"，比 produce 更有"泛滥、不走心"的意味。</span>
+<span class="ex">"…the cheap, fluent, forgettable output that content farms now churn out by the ton."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">disintermediate</span><button aria-label="收藏表达" class="expr-fav" data-en="disintermediate" data-example='"The human who actually wrote the original page is disintermediated…"' data-scene="使用场景：商业/科技评论文利器，指平台把作者或商家与终端用户直接连接（或消失）。be disintermediated 被动极好用。" data-zh="去中介化（让原创者/中间商被绕开、拿不到应得的）" type="button">☆</button></span><span class="zh">去中介化（让原创者/中间商被绕开、拿不到应得的）</span>
+<span class="sc">使用场景：商业/科技评论文利器，指平台把作者或商家与终端用户直接连接（或消失）。be disintermediated 被动极好用。</span>
+<span class="ex">"The human who actually wrote the original page is disintermediated…"</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the long tail</span><button aria-label="收藏表达" class="expr-fav" data-en="the long tail" data-example='"…the long tail of the web where the weird, specific, and unprofitable live."' data-scene='使用场景：互联网/商业分析经典概念（Chris Anderson, 2004）；说"小众但众多"的总和时用。' data-zh="长尾（大量小众、低销量/低流量事物的总和，聚起来很可观）" type="button">☆</button></span><span class="zh">长尾（大量小众、低销量/低流量事物的总和，聚起来很可观）</span>
+<span class="sc">使用场景：互联网/商业分析经典概念（Chris Anderson, 2004）；说"小众但众多"的总和时用。</span>
+<span class="ex">"…the long tail of the web where the weird, specific, and unprofitable live."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05（概念出自 C. Anderson, <i>The Long Tail</i>, 2004）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">statistically probable</span><button aria-label="收藏表达" class="expr-fav" data-en="statistically probable" data-example='"Machine text is, almost by definition, statistically probable…"' data-scene='使用场景：解释机器学习/生成的本质——不是"想说的"，而是"最可能出现的"。' data-zh='统计上最可能的（此处指 AI 文本是"最大概率的下一个词"堆出来的）' type="button">☆</button></span><span class="zh">统计上最可能的（此处指 AI 文本是"最大概率的下一个词"堆出来的）</span>
+<span class="sc">使用场景：解释机器学习/生成的本质——不是"想说的"，而是"最可能出现的"。</span>
+<span class="ex">"Machine text is, almost by definition, statistically probable…"</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">creep (crept)</span><button aria-label="收藏表达" class="expr-fav" data-en="creep (crept)" data-example='"It crept." / "…a creeping sense that the internet is talking to itself."' data-scene="使用场景：形容问题/变化缓慢但持续地蔓延；a creeping sense / anxiety crept in。" data-zh="悄悄地、逐渐地发生（贬义渐进，常令人不安）" type="button">☆</button></span><span class="zh">悄悄地、逐渐地发生（贬义渐进，常令人不安）</span>
+<span class="sc">使用场景：形容问题/变化缓慢但持续地蔓延；a creeping sense / anxiety crept in。</span>
+<span class="ex">"It crept." / "…a creeping sense that the internet is talking to itself."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">swap A for B</span><button aria-label="收藏表达" class="expr-fav" data-en="swap A for B" data-example='"…many publishers have quietly swapped craft for volume…"' data-scene='使用场景：swap craft for volume / swap speed for quality，写"用 X 换 Y"的取舍很自然。' data-zh='用 B 替换 A（比 replace 更口语、更有"交易/取舍"感）' type="button">☆</button></span><span class="zh">用 B 替换 A（比 replace 更口语、更有"交易/取舍"感）</span>
+<span class="sc">使用场景：swap craft for volume / swap speed for quality，写"用 X 换 Y"的取舍很自然。</span>
+<span class="ex">"…many publishers have quietly swapped craft for volume…"</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">out-earn</span><button aria-label="收藏表达" class="expr-fav" data-en="out-earn" data-example='"…a flood of adequate copy will out-earn a little careful prose."' data-scene='使用场景：商业比较，out- 前缀表"胜过"（out-perform / out-sell / out-last），干净有力。' data-zh="比…赚得更多（A out-earns B）" type="button">☆</button></span><span class="zh">比…赚得更多（A out-earns B）</span>
+<span class="sc">使用场景：商业比较，out- 前缀表"胜过"（out-perform / out-sell / out-last），干净有力。</span>
+<span class="ex">"…a flood of adequate copy will out-earn a little careful prose."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">prove it is human</span><button aria-label="收藏表达" class="expr-fav" data-en="prove it is human" data-example='"…now human writing has to prove it is human."' data-scene="使用场景：科技/社会评论，指人类写作现在得自证身份；可引申 prove one's humanness。" data-zh='证明自己是"人"（AI 时代新增的荒诞需求）' type="button">☆</button></span><span class="zh">证明自己是"人"（AI 时代新增的荒诞需求）</span>
+<span class="sc">使用场景：科技/社会评论，指人类写作现在得自证身份；可引申 prove one's humanness。</span>
+<span class="ex">"…now human writing has to prove it is human."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">saturated (with)</span><button aria-label="收藏表达" class="expr-fav" data-en="saturated (with)" data-example='"In a feed saturated with synthetic text…"' data-scene='使用场景：a market/feed/channel saturated with X，说"某物多到溢出来"的高级写法。' data-zh="饱和的、被…充斥的" type="button">☆</button></span><span class="zh">饱和的、被…充斥的</span>
+<span class="sc">使用场景：a market/feed/channel saturated with X，说"某物多到溢出来"的高级写法。</span>
+<span class="ex">"In a feed saturated with synthetic text…"</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">off-script</span><button aria-label="收藏表达" class="expr-fav" data-en="off-script" data-example='"…the courage to say something off-script."' data-scene='使用场景：政治/媒体常用，指"即兴、不照本宣科、有真话"；说 something off-script 很有态度。' data-zh="脱离剧本 / 不按套路（此处指说旁人不敢说的、不合规矩的话）" type="button">☆</button></span><span class="zh">脱离剧本 / 不按套路（此处指说旁人不敢说的、不合规矩的话）</span>
+<span class="sc">使用场景：政治/媒体常用，指"即兴、不照本宣科、有真话"；说 something off-script 很有态度。</span>
+<span class="ex">"…the courage to say something off-script."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-05</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Tech &amp; Media Vocabulary · 科技与媒体词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期是「科技与未来」而非娱乐，所以把"Celebrity / Culture Vocabulary"换成更贴题的「科技与媒体词块」——读外媒科技/AI 报道时这些词高频出现。标注「本文」的例句摘自今日文章；标注「通用 / 科技报道」的是常见于同类报道的搭配（非逐字引用，供积累）。</p>
+<div class="vocab">
+<div class="v"><b>AI slop</b><span>AI 烂内容——机器批量生成的廉价、流畅但空洞的文字/图</span>
+<span class="ex2">"The phrase for it has already entered the language: 'AI slop'…"</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>content farm</b><span>内容农场——以量取胜、低质批量产内容的站点/机构</span>
+<span class="ex2">"…the cheap, fluent, forgettable output that content farms now churn out by the ton."</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>AI Overviews</b><span>谷歌搜索的 AI 摘要——直接在搜索结果顶部替你总结答案</span>
+<span class="ex2">"AI Overviews and their cousins answer in your place…"</span>
+<span class="src2">— 本文（指 Google 的 AI Overviews 功能）</span></div>
+<div class="v"><b>byline</b><span>署名行——标在文章开头/结尾的作者名</span>
+<span class="ex2">"The change runs deeper than the bylines."</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>disintermediation</b><span>去中介化——平台绕开中间环节，原创者被边缘化</span>
+<span class="ex2">"The human who actually wrote the original page is disintermediated…"</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>synthetic content</b><span>合成内容——由 AI 生成、非人类亲手写就的文本/媒体</span>
+<span class="ex2">"In a feed saturated with synthetic text, 'I was actually there' has become the rarest sentence…"</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>the small web</b><span>"小网络"运动——主动回归个人网站/博客/ Newsletter 的慢内容</span>
+<span class="ex2">"A 'small web' movement has emerged, made of people who would rather read one careful post…"</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>watermark</b><span>（AI）水印——标记"此内容由机器生成"的隐性信号</span>
+<span class="ex2">"Watermarks, 'written by a real person' badges, detectors that guess at our souls…"</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>niche</b><span>小众的、细分领域的（niche forums / a niche audience）</span>
+<span class="ex2">"…the independent bloggers, the niche forums, the long tail of the web…"</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>RSS feed</b><span>RSS 订阅——一种不依赖算法、直接订阅站点更新的老牌慢格式</span>
+<span class="ex2">"Newsletters, personal sites, RSS feeds—slow formats that insist on a human on the other end."</span>
+<span class="src2">— 本文</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"Walk into a search engine today and the first thing you'll notice is that someone has answered the question before you asked it."</p>
+<p class="a"><b>句型：</b>祈使句 <i>Walk into…</i> 引导场景 + <i>and</i> 连接的并列主句，主句用 <i>the first thing you'll notice is that…</i>（定语从句修饰主语 + 表语从句）。<b>逻辑：</b>用"走进搜索引擎"这个具象动作开场，再抛出一个反直觉观察——答案在你问之前就备好了。<b>表达：</b>① <i>the first thing you'll notice is that…</i> 是极好用的"先描述画面、再点破"框架；② 祈使句开场比平铺 "If you use a search engine" 更有现场感。可套：<i>Open any food app today and the first thing you'll notice is that nobody cooking your meal has ever tasted it.</i></p>
+</div>
+<div class="sb">
+<p class="q">"Where there used to be ten blue links—ten doors, each opened by a different human—there are now three sentences, calmly composed by a machine that has never been anywhere, never waited in a slow line, never lost anyone."</p>
+<p class="a"><b>句型：</b><i>Where there used to be A, there are now B</i> 的对比框架；A 后接破折号同位语 <i>ten doors, each opened by…</i>（过去分词作定语），B 后接逗号分词 <i>calmly composed by…</i> + 定语从句里三个并列 <i>never…</i> 排比。<b>逻辑：</b>用"十个蓝链接 vs 三句话"的具象对比，把"人的退场"讲得有形。<b>表达：</b>① <i>Where there used to be…, there are now…</i> 是观点文做"今昔对比"的金句结构；② 三个 <i>never</i> 排比把机器的"无经历"钉死。可套：<i>Where there used to be a clerk who knew your name, there is now a kiosk that knows only your card.</i></p>
+</div>
+<div class="sb">
+<p class="q">"Under pressure from falling ad revenue and impatient investors, many publishers have quietly swapped craft for volume, betting that a flood of adequate copy will out-earn a little careful prose."</p>
+<p class="a"><b>句型：</b>介词短语 <i>Under pressure from…</i> 作状语开场 + 主句 + 现在分词 <i>betting that…</i> 作伴随结果（内含宾语从句）。<b>逻辑：</b>先给"外部压力"因果，再引出"用产量换匠心"的取舍，末用 betting that 揭示赌注。<b>表达：</b>① <i>Under pressure from…</i> 比 Because 更书面克制；② <i>swap A for B</i> 与 <i>out-earn</i> 两个词把商业悖论压得很紧。可套：<i>Under pressure from quarterly targets, the studio swapped originality for sequels, betting that familiarity will out-earn surprise.</i></p>
+</div>
+<div class="sb">
+<p class="q">"What we lose in this shift is not only accuracy but texture."</p>
+<p class="a"><b>句型：</b>What 引导的主语从句 <i>What we lose…</i> + 系动词 + <i>not only A but B</i> 的表语。<b>逻辑：</b>一句话把论点从"失真"抬到"失去质感"，由浅入深。<b>表达：</b>① <i>What we lose / gain / miss is…</i> 是评论文万能起手；② 用抽象名词 <i>texture</i>（质感/纹理）替代具体的"风格"，高级又精准。可套：<i>What the algorithm optimizes for is not quality but engagement.</i></p>
+</div>
+<div class="sb">
+<p class="q">"To publish online today is, in a quiet way, to defend your own humanness, as if being a person were a credential that needed renewing."</p>
+<p class="a"><b>句型：</b>不定式短语 <i>To publish online today</i> 作主语 + 系动词 + 插入语 <i>in a quiet way</i> + 不定式表语 + <i>as if</i> 引导的方式状语从句（虚拟语气 <i>were</i>）+ 定语从句 <i>that needed renewing</i>。<b>逻辑：</b>把"上网发东西"重新定义为"捍卫做人资格"，再用 as if 虚拟把"做人像要年审的执照"这个荒诞意象坐实。<b>表达：</b>① <i>as if… were…</i> 虚拟语气制造反讽；② <i>in a quiet way</i> 这种插入语让重话变轻、余味更长。可套：<i>To disagree politely today is, in a quiet way, to perform a small courage, as if honesty were a skill that needed practice.</i></p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>文章开篇就抛出一个反直觉画面：你还没提问，搜索引擎已经替你答好了——过去是"十个蓝链接、十扇由不同的人打开的门"，现在是"三句话，由一台从没去过任何地方、没排过队、没失去过任何人的机器平静写就"。过去两年，线上新文中"至少有一部分由 AI 生成"的比例，从好奇变成常态；研究者对具体数字有分歧，但方向一致：你读到的产品描述、旅行"攻略"、市场快讯、菜谱前言，很多是"没人在场"写出来的。"AI slop"这个词已经进了语言。原因在经济学：人写得慢、慢就贵，模型只要一个 prompt；在广告收入下滑和投资人耐心的双重压力下，不少出版方悄悄把 craft（匠心）swap 成 volume（产量），赌"海量合格文案"能 out-earn"少量用心散文"，结果就是内容跑步机——页面更多、在场感更少。更深的改变在 byline（署名）之外：搜索框不再"带你进房间"，而是替你总结房间、替你下结论；AI Overviews 有时优雅、有时自信地编造来源；真正写原稿的人被 disintermediated（去中介化），文字被抓取、压平、回喂给你，却没了当年养活作者的那次点击。文章指出，我们失去的不只是准确，更是 texture（质感）：机器文本几乎注定是 statistically probable 的——最可能的下一个词重复到看起来像意义；它平滑、讨喜、缺了那种"暴露写作者真在现场"的固执细节。更荒诞的是 inversion（反转）：几十年来我们让机器更像人，现在人类写作得反过来 prove it is human——水印、"真人撰写"徽章、猜你灵魂的探测器，整了一套官僚机器来认证我们本当作天经地义的事。受伤最重的是小玩家：独立博主、小众论坛、承载"怪、具体、不赚钱"的 long tail；算法奖赏规模，会乐见它们饿死——可那偏偏是互联网最像自己的地方：一个人、一个他在乎的题材、和说句 off-script 的真话的勇气。好在 counter-current（逆流）真实且壮大："small web"运动、Newsletter、个人站、RSS——这些慢格式坚持"另一端是个活人"，吸引力不是怀旧而是稀缺；在被 synthetic text saturated 的信息流里，"我真的在那儿"成了互联网上最稀有的句子。结尾点题：机器不会停，但机器填不满"某人"；我们滑入的短缺不是信息（我们早就信息过剩），而是 presence（在场）——一个具体、有缺陷、可被问责的人，觉得这事值得说。守住它，也许不需要更好的模型，只需要继续写，仿佛"做人"仍是重点。</p>
+<p><b>背后文化现象：</b>① "AI slop" flooding the web 是 2024–2026 全球科技圈真实焦虑——SEO 内容农场、电商描述、新闻快讯大量机器化，真人作者被算法与平台双重挤出；② 搜索入口的"答案化"（AI Overviews / 各类 copilot）正在改写"超链接经济"，原创者的流量与收益被截胡，disintermediation 从商业词变成文化词；③ "证明自己是人"成了新刚需——水印、真人徽章、AI 检测器，折射出"人味"正在被重新定价；④ 这也正是你「城市观察者」账号的母题：当全网都是"统计上最合理的下一个词"，你那条具体、带缺点、有人味的城市观察，恰恰是最稀缺、最像"在场"的那件东西——别人想读，而不是划走。</p>
+<p><b>值得思考的问题：</b>当"人味"变成一种被认证、被稀缺化的卖点，它会不会被平台做成新的生意（付费"真人认证"、订阅"真人 Newsletter"）？我们又是在失去"真人内容"，还是失去"愿意为具体的人停下来"的能力和耐心？——放到你做内容这件事上：你的 AI 破圈文（012）想讲的"AI 第二大脑"，和这篇恰好是同一枚硬币的两面——机器越能替我们想、替我们写，那个"我真的在那儿、我真的这么想"的人声，就越是你的破圈资产。你准备好把它当成稀缺品，而不是负担来经营了吗？</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues the internet is filling with machine-written text, and that human, "I was actually there" writing is becoming the rarest thing online. Do you make a deliberate effort to find human-made content, and would you pay for it? Share your view in about 200 words, with one real example from your own reading habits.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I'd say I do try, but not as deliberately as I should. Most of my feed is synthetic by default—summaries, listicles, the kind of smooth copy the article describes—and I only notice it when something feels weightless, like it was written by no one. The human-made stuff I actually trust tends to come from newsletters written by a single person with a real point of view. There's one on urban life I read every week; the author clearly walks the streets she writes about, and you can feel the specific, stubborn details the article mentions. That's the "I was actually there" quality, and it's why I never skip it.
+      Would I pay? Honestly, yes—and I already do, a little. Paying feels like refusing the content treadmill, like saying the person's presence is worth more than free, fluent filler. But I'm picky: I'll pay for one careful voice, not for a badge that simply claims "written by a human." The label alone proves nothing now.
+      So my rule is simple—if a piece makes me feel someone risked an opinion, I stay. If it's smooth all the way down, I leave. Scarcity, not price, is what I'm really paying for.
+    </div>
+<div class="tip">✍️ 写法提示：用 I'd say… 开篇给一个平衡的判断（有意识、但不够刻意），比直接站队更老练；中间拉回自身 concrete example（一份城市生活 Newsletter）扣住文章 "I was actually there"；再用 Honestly, yes—and I already do 做真实自白，呼应 "content treadmill"；结尾用 So my rule is simple—… 收成一条你自己的小原则，是母语者议论的舒服落点。注意 deliberately / weightless / filler / picky 这几个词都来自今日词块，试着在口语里用上。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计切到「娱乐与流行文化」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-05',title:"The Internet Is Quietly Filling With Words No Human Meant"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

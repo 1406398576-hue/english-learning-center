@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-06</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Quiet Luxury Boom: Why We Stopped Showing Off</h1>
+<p class="sub">静奢风爆红：为什么我们不再"秀"财富了？</p>
+<div class="meta">
+<span>📅 <b>2026-08-06</b></span>
+<span>🎯 主题桶：<b>娱乐与流行文化 (20%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">前几年，想让人知道"我过得不错"，最管用的办法就是穿 logo——满身大牌标识，价签比人先开口。如今风向悄悄变了：logo 缩水、配色变素，一种新的财富开始"耳语"而不是"喊叫"。今天我们读一篇文化评论，聊聊"静奢风（quiet luxury）"——它到底是炫富的终结，还是换了一种更隐秘的方式炫？这不只关于穿搭，也关于我们这个"人人都在被观看"的时代。</p>
+<div class="tip">💡 读前小思考：你最近有没有买过（或羡慕过）那种"看起来平平无奇、但贵得离谱"的东西？你更想被"懂行的人"认出，还是根本不想被人看出价格？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>A few years ago, the surest way to signal that you had arrived was to wear the logo. A canvas tote with a repeating monogram, a belt with a brass buckle the size of a coaster, a pair of sneakers that announced their price before you did. Flash was the point. To be wealthy was to be seen being wealthy. Then, almost without a formal announcement, the mood shifted. The logos shrank, the monograms vanished, and a new kind of wealth began to whisper rather than shout.</p>
+<p>This is the era of "quiet luxury"—clothing and accessories that cost a fortune yet look, to the untrained eye, utterly plain. No branding. No slogans. Often no color. The appeal is that only those who already know will recognize it, which is precisely the point. <span class="hl">A status symbol</span> that requires an explanation has failed; the best ones are legible only to insiders.</p>
+<p>The trend is easy to mock and harder to explain. On one level it is a fashion cycle like any other, a recoil against the logo mania of the previous decade. Trends <span class="hl">trickle down</span> and then they bounce back up; what was loud becomes tiresome, and the culture quietly rewards restraint. But quiet luxury is more than a palette change. It is a story about anxiety.</p>
+<p>When economic confidence falls, <span class="hl">conspicuous consumption</span> tends to make people uneasy—both the people wearing it and the people watching. In uncertain times, flaunting money can <span class="hl">read as</span> tone-deaf, even reckless. So the wealthy learn to <span class="hl">fly under the radar</span>, signaling their status to one another through small, expensive details: the weight of a cashmere sweater, the stitching on a loafer, the particular shade of a coat that costs as much as a used car. The point is to be recognized by the right people and invisible to everyone else.</p>
+<p>There is <span class="hl">a telltale sign</span> in how the language around spending has changed. Where once a brand wanted you to perform its name, now it wants you to possess its confidence. "Stealth wealth" is sold not as hiding but as maturity. To wear nothing identifiable is framed as having nothing to prove—<span class="hl">a reversal of fortune</span> from an era when proof was the whole game.</p>
+<p>Critics note the irony. Quiet luxury is still luxury, still priced for the very few, and the people who can actually afford to be unconcerned about money are, almost by definition, the ones who can afford it. The "quiet" part is a performance too. A $3,000 beige shirt is not humility; it is a different kind of boast, one aimed at a narrower room. What looks like the absence of status signaling is, on closer inspection, status signaling with the volume turned down.</p>
+<p>The internet has complicated the whole game. A decade ago, a subtle look might have stayed subtle. Today a single video can decode it for millions, turning "understated" into a costume anyone can rent for the weekend. Influencers who built audiences on logo-heavy hauls now <span class="hl">lean into</span> the minimalist look, and the aesthetic that was meant to separate insiders from outsiders is suddenly everywhere. The thing designed to fly under the radar now trends on the radar.</p>
+<p>That tension explains why brands are <span class="hl">on the defensive</span>. The old playbook—stamp the logo, charge the premium, repeat—no longer reads as aspirational to large parts of the audience. Younger consumers, many of them pessimistic about their own economic futures, are suspicious of hierarchy and impatient with exclusion. They want the feeling of luxury without the lecture about why they should be grateful for it. Some houses have responded by softening their marks; others have doubled down, betting that scarcity still sells.</p>
+<p>Whether the trend lasts is less interesting than what it reveals. Quiet luxury is a weather vane for collective mood. It tells us that we are anxious, that we equate restraint with wisdom, and that we are newly uncomfortable being watched while we spend. <span class="hl">The writing on the wall</span> is not that logos are dead—they will return, as they always do—but that, for now, we would rather not be seen wanting.</p>
+<p>Maybe that is the quietest luxury of all: the freedom, real or imagined, to stop performing for an audience you no longer trust. The clothes are just the costume. The feeling underneath—caution, exhaustion, a desire to retreat—is the real trend, and it is not nearly as quiet as it looks.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">a status symbol</span><button aria-label="收藏表达" class="expr-fav" data-en="a status symbol" data-example="A status symbol that requires an explanation has failed; the best ones are legible only to insiders. （本文 / Daily English Reading · 2026-08-06）" data-scene="使用场景：说某物/某行为被用来彰显阶层或成功，常带一点社会学味。" data-zh="身份象征（标志着社会地位的东西）" type="button">☆</button></span><span class="zh">身份象征（标志着社会地位的东西）</span>
+<span class="sc">使用场景：说某物/某行为被用来彰显阶层或成功，常带一点社会学味。</span>
+<span class="ex">A status symbol that requires an explanation has failed; the best ones are legible only to insiders. （本文 / Daily English Reading · 2026-08-06）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">conspicuous consumption</span><button aria-label="收藏表达" class="expr-fav" data-en="conspicuous consumption" data-example="When economic confidence falls, conspicuous consumption tends to make people uneasy—both the people wearing it and the people watching. （本文）" data-scene='使用场景：学术/评论里指"花钱让人看见"的行为，比 simply "showing off money" 更精准、更书面。' data-zh="炫耀性消费（刻意外显财富）" type="button">☆</button></span><span class="zh">炫耀性消费（刻意外显财富）</span>
+<span class="sc">使用场景：学术/评论里指"花钱让人看见"的行为，比 simply "showing off money" 更精准、更书面。</span>
+<span class="ex">When economic confidence falls, conspicuous consumption tends to make people uneasy—both the people wearing it and the people watching. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">read as</span><button aria-label="收藏表达" class="expr-fav" data-en="read as" data-example="In uncertain times, flaunting money can read as tone-deaf, even reckless. （本文）" data-scene='使用场景：X can read as Y，说某言行"让人读出了某种意味"，比 seem 更有"被旁观者解读"的张力。' data-zh="被解读为 / 听起来像是（某种印象）" type="button">☆</button></span><span class="zh">被解读为 / 听起来像是（某种印象）</span>
+<span class="sc">使用场景：X can read as Y，说某言行"让人读出了某种意味"，比 seem 更有"被旁观者解读"的张力。</span>
+<span class="ex">In uncertain times, flaunting money can read as tone-deaf, even reckless. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">fly under the radar</span><button aria-label="收藏表达" class="expr-fav" data-en="fly under the radar" data-example="So the wealthy learn to fly under the radar, signaling their status to one another through small, expensive details. （本文）" data-scene='使用场景：原指飞行避开雷达探测，引申为"不引人注目地做事"，人、品牌、趋势都可用。' data-zh="低调行事 / 避开聚光灯而不被注意" type="button">☆</button></span><span class="zh">低调行事 / 避开聚光灯而不被注意</span>
+<span class="sc">使用场景：原指飞行避开雷达探测，引申为"不引人注目地做事"，人、品牌、趋势都可用。</span>
+<span class="ex">So the wealthy learn to fly under the radar, signaling their status to one another through small, expensive details. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a telltale sign</span><button aria-label="收藏表达" class="expr-fav" data-en="a telltale sign" data-example="There is a telltale sign in how the language around spending has changed. （本文）" data-scene='使用场景：telltale 原意"告密的"，形容一个不小心暴露实情的小信号，叙事和评论都爱用。' data-zh="露馅的痕迹 / 明显的迹象（暴露真相的细节）" type="button">☆</button></span><span class="zh">露馅的痕迹 / 明显的迹象（暴露真相的细节）</span>
+<span class="sc">使用场景：telltale 原意"告密的"，形容一个不小心暴露实情的小信号，叙事和评论都爱用。</span>
+<span class="ex">There is a telltale sign in how the language around spending has changed. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">trickle down</span><button aria-label="收藏表达" class="expr-fav" data-en="trickle down" data-example="Trends trickle down and then they bounce back up; what was loud becomes tiresome. （本文）" data-scene='使用场景：常指潮流、财富、观念从精英层"滴"向普通人；trickle-down economics 是固定说法。' data-zh="自上而下渗透（趋势/影响由上层扩散到大众）" type="button">☆</button></span><span class="zh">自上而下渗透（趋势/影响由上层扩散到大众）</span>
+<span class="sc">使用场景：常指潮流、财富、观念从精英层"滴"向普通人；trickle-down economics 是固定说法。</span>
+<span class="ex">Trends trickle down and then they bounce back up; what was loud becomes tiresome. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a reversal of fortune</span><button aria-label="收藏表达" class="expr-fav" data-en="a reversal of fortune" data-example="To wear nothing identifiable is framed as having nothing to prove—a reversal of fortune from an era when proof was the whole game. （本文）" data-scene='使用场景：描述人或事物从一种处境翻转到相反处境，比 simply "a big change" 更有戏剧感。' data-zh="运势/局面的逆转（此消彼长的大反转）" type="button">☆</button></span><span class="zh">运势/局面的逆转（此消彼长的大反转）</span>
+<span class="sc">使用场景：描述人或事物从一种处境翻转到相反处境，比 simply "a big change" 更有戏剧感。</span>
+<span class="ex">To wear nothing identifiable is framed as having nothing to prove—a reversal of fortune from an era when proof was the whole game. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">lean into</span><button aria-label="收藏表达" class="expr-fav" data-en="lean into" data-example="Influencers who built audiences on logo-heavy hauls now lean into the minimalist look. （本文）" data-scene='使用场景：原是体育/舞蹈用语（身体重心压向某方向），现广泛用于"顺势而为、放大某一姿态"。' data-zh="顺势拥抱 / 主动迎合（把趋势当作机会全情投入）" type="button">☆</button></span><span class="zh">顺势拥抱 / 主动迎合（把趋势当作机会全情投入）</span>
+<span class="sc">使用场景：原是体育/舞蹈用语（身体重心压向某方向），现广泛用于"顺势而为、放大某一姿态"。</span>
+<span class="ex">Influencers who built audiences on logo-heavy hauls now lean into the minimalist look. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">on the defensive</span><button aria-label="收藏表达" class="expr-fav" data-en="on the defensive" data-example="That tension explains why brands are on the defensive. （本文）" data-scene='使用场景：说个人、品牌或群体因批评/竞争而转入"防守"，常接 about / over。' data-zh="处于守势 / 被迫辩解（因受压而 defensive）" type="button">☆</button></span><span class="zh">处于守势 / 被迫辩解（因受压而 defensive）</span>
+<span class="sc">使用场景：说个人、品牌或群体因批评/竞争而转入"防守"，常接 about / over。</span>
+<span class="ex">That tension explains why brands are on the defensive. （本文）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the writing on the wall</span><button aria-label="收藏表达" class="expr-fav" data-en="the writing on the wall" data-example="The writing on the wall is not that logos are dead—they will return—but that, for now, we would rather not be seen wanting. （本文）" data-scene='使用场景：源自《圣经》的 idiom，指"明摆着的预警"；常用于评论里点出"大势已定"。' data-zh="不祥之兆 / 显而易见的趋势（坏事将临的信号）" type="button">☆</button></span><span class="zh">不祥之兆 / 显而易见的趋势（坏事将临的信号）</span>
+<span class="sc">使用场景：源自《圣经》的 idiom，指"明摆着的预警"；常用于评论里点出"大势已定"。</span>
+<span class="ex">The writing on the wall is not that logos are dead—they will return—but that, for now, we would rather not be seen wanting. （本文）</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Celebrity / Culture Vocabulary · 流行文化与时尚词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题是时尚/流行文化，所以补上你点名要的「Celebrity / Culture Vocabulary」模块——读外媒时尚评论、人物稿、趋势报道时高频出现的词块：</p>
+<div class="vocab">
+<div class="v"><b>quiet luxury</b><span>静奢风——无明显 logo、价格高昂却看着素净的穿搭哲学</span></div>
+<div class="v"><b>stealth wealth</b><span>隐富——用低调细节彰显财力，而非亮出价签</span></div>
+<div class="v"><b>logo mania</b><span>logo 狂热——前些年"满身大牌标识"的审美风气</span></div>
+<div class="v"><b>aspirational</b><span>令人向往的——品牌用来勾起"想成为那种人"的渴望</span></div>
+<div class="v"><b>brand cachet</b><span>品牌光环——名字本身携带的身份与吸引力</span></div>
+<div class="v"><b>trend cycle</b><span>潮流周期——风格从兴到衰再回潮的循环</span></div>
+<div class="v"><b>gatekeeping</b><span>圈层守门——用"你不懂"把外人挡在品味门外</span></div>
+<div class="v"><b>understated / minimalist</b><span>低调 / 极简——不张扬、靠质感取胜的美学</span></div>
+<div class="v"><b>flaunt</b><span>炫耀——刻意把财富/优势摆出来给人看</span></div>
+<div class="v"><b>haul</b><span>（网红）开箱秀——博主展示一堆新购入的"战利品"视频</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"A status symbol that requires an explanation has failed; the best ones are legible only to insiders."</p>
+<p class="a"><b>句型：</b>名词短语（带 that 定语从句）作主语 + 系动词 + 表语，用分号接一个平行短句。<b>逻辑：</b>先立规则（需要解释的就失败），再补一句收束（最高级的象征只写给内行读）。<b>表达：</b>① <i>legible</i>（可读的）把"身份符号"比作"文字"，比 recognizable 更有评论的巧思；② <i>only to insiders</i> 的 only 把"排他性"压到最后，力道很足。</p>
+</div>
+<div class="sb">
+<p class="q">"In uncertain times, flaunting money can read as tone-deaf, even reckless."</p>
+<p class="a"><b>句型：</b>介词短语作时间/背景状语 + 动名词 <i>flaunting money</i> 作主语 + <i>can read as + 形容词</i>。<b>逻辑：</b>把"炫富"放进"不确定时代"的语境，说明它为何从"酷"变成"不合时宜"。<b>表达：</b>① <i>read as</i> 比 seem 多了一层"被旁观者解读"的意味；② <i>even reckless</i> 是递进补刀，把程度推到"近乎冒失"，评论里这种"递进一步"的收尾很常见。</p>
+</div>
+<div class="sb">
+<p class="q">"What looks like the absence of status signaling is, on closer inspection, status signaling with the volume turned down."</p>
+<p class="a"><b>句型：</b><i>What</i> 引导的主语从句 + 系动词 + 插入语 <i>on closer inspection</i> + 表语（名词短语，带 with + 宾语 + 过去分词）。<b>逻辑：</b>先承认表象（看似没有身份信号），再用插入语转折，点破本质（只是把音量调小了）。<b>表达：</b>① <i>on closer inspection</i> 是"细看之下"的万能过渡；② <i>with the volume turned down</i> 把抽象的身份展示比作"调低音量"，是全篇最亮的比喻，可直接套用：<i>criticism with the volume turned down.</i></p>
+</div>
+<div class="sb">
+<p class="q">"The thing designed to fly under the radar now trends on the radar."</p>
+<p class="a"><b>句型：</b>名词 <i>the thing</i> + 过去分词短语 <i>designed to…</i> 作后置定语 + 现在时谓语 <i>trends</i> + 介词短语。<b>逻辑：</b>用同一个词 <i>radar</i> 正反两用，制造反讽：本想避开雷达，结果反而上了雷达热搜。<b>表达：</b>① 过去分词 <i>designed to</i> 简洁地交代"初衷"；② 这种"同一意象正反对撞"的写法（fly under the radar / trends on the radar）是英文评论的高级幽默，值得模仿。</p>
+</div>
+<div class="sb">
+<p class="q">"The writing on the wall is not that logos are dead—they will return, as they always do—but that, for now, we would rather not be seen wanting."</p>
+<p class="a"><b>句型：</b>主语 + <i>is not that…—插入破折号—but that…</i> 的平行结构；后半句带 <i>for now</i> 与 <i>would rather + 被动不定式</i>。<b>逻辑：</b>把结论从"logo 死了"翻转成"我们只是不想被看出'想要'"，升华主题。<b>表达：</b>① <i>the writing on the wall</i> 是典故 idiom，指"明摆的预警"；② 破折号里 <i>as they always do</i> 轻巧地抵消了绝对化，显出评论的节制；③ <i>be seen wanting</i>（被看出有所欠缺/有所图谋）是极地道的搭配。</p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>几年前，炫耀财富靠"穿 logo"——满身标识就是"我过得不错"的声明。如今进入"静奢风"时代：衣服配饰贵得离谱，看起来却素净平凡，因为"只有懂行的人才认得"，这恰恰是重点。作者指出这既是时尚周期的回摆（吵闹久了就厌倦，文化奖赏克制），更是一则关于"焦虑"的故事：经济信心下降时，conspicuous consumption 让人不安，于是富人学会 fly under the radar，用细微的贵价细节彼此相认、对大众隐形。所谓"隐富"被包装成成熟而非藏拙——这是与"靠 logo 证明自己"时代的 reversal of fortune。但批评者点破：静奢仍是少数人的奢侈，"安静"本身也是一种表演，本质是把身份信号的"音量调小"。互联网又让这套玩法复杂化：一个视频就能把"低调"解码给千百万人，本想避开雷达的审美反而上了雷达。品牌因此 on the defensive，旧玩法（贴 logo—加价—repeat）不再 aspirational。作者结论：静奢是集体情绪的风向标——它告诉我们正焦虑、把克制等同于智慧、且越来越不愿在花钱时被注视；the writing on the wall 不是 logo 已死，而是此刻我们宁愿不被看出"有所图"。</p>
+<p><b>背后文化现象：</b>① 从"炫耀性消费"到"隐奢"——不确定时代，高调炫富显得 tone-deaf，于是身份信号转入地下、只对内行可见；② "安静"也是一种表演——把音量调小不等于没有信号，圈层 gatekeeping 从"亮价签"变成"看得懂细节"；③ 互联网消解了 exclusivity——本想小圈层相认的审美，被算法和开箱视频（haul）摊平给所有人，恰好呼应"人人都在被观看"的时代症候。</p>
+<p><b>值得思考的问题：</b>我们到底是"不爱秀了"，还是换了种更隐秘的方式秀？当"克制"本身也能被表演、被解码、被跟风，真正"不被看见"还存不存在？——这和你做「城市观察者」公众号其实同频：在算法让每个人都不得不"表演给人看"的年代，所谓"安静"可能正是最新的、也更难模仿的人设；而具体、带缺点、不端着的人声，反而可能是最稀缺也最值钱的东西。</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that "quiet luxury" is not the end of status signaling, but status signaling "with the volume turned down." Do you think people today care more about appearing understated than they used to—in how they dress, post online, or talk about money? Share your view in about 200 words, with one concrete example from your own experience.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think the appetite for appearing understated has grown, and not only in fashion. Online, the loud "look how successful I am" posts have curdled; now the aspirational image is often the opposite—a plainly lit kitchen, a casual mention of a trip, money implied rather than stated. People seem to have learned that overt signaling invites both envy and scrutiny, so they lower the volume.
+      A concrete example from my own circle: a friend who used to post every new gadget and restaurant now shares almost nothing about spending. When I asked, she said she'd grown tired of being "read" by people who weren't really friends. That is exactly the dynamic the article describes—recognition among the right people, invisibility to the rest.
+      But I'd push back slightly. The "quiet" version is still a performance. If you're carefully crafting restraint, you're still performing for an audience. The difference is only whom you'll let see it. So I'd say we haven't stopped signaling; we've just gotten more selective about the room.
+    </div>
+<div class="tip">✍️ 写法提示：开头用 I think the appetite for X has grown, and not only in… 把"不止时尚如此"自然铺开；中间用 A concrete example from my own circle 落实题目要求的"one example"，把宏观现象拉回身边人；结尾用 But I'd push back slightly 制造转折深度，再用 So I'd say… 收束——这是母语者议论常用的"先立、再证、后反、终收"四步法。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计回到「人类与社会」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-06',title:"The Quiet Luxury Boom: Why We Stopped Showing Off"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

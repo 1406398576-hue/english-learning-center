@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-13</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412; --blue:#3b6b8f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#eef4f3,#e7f0ee);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent2);
+    background:#ecfdf5; border:1px solid #a7f3d0; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent2); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--blue); background:#eaf1f6;
+    border:1px solid #cfe0ec; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent2); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .kp .src{display:block; font-size:12px; color:var(--blue); margin-top:3px;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#eef4f3; border:1px dashed #7fc4b3; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Vanishing Unplanned Evening: How Scheduling Quietly Replaced Serendipity</h1>
+<p class="sub">随性之夜正在消失：我们如何用"日程"悄悄取代了"偶然"</p>
+<div class="meta">
+<span>📅 <b>2026-08-13</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">你有没有过这种体验：朋友发来"周六有空吗？"，你下意识先去翻日历，发现那天的格子早被填满了，于是回一句"我看看"，然后就没有然后了。现代城市里，一个普通的夜晚，已经从一个"会发生"的事，变成了一个"必须被安排"的事。今天我们读一篇社会观察，聊聊 drop-in（顺路串门）如何被日历邀请取代，以及社会学家说的"弱关系（weak ties）"为什么正悄悄消失。这正好和你公众号「城市观察者」的母题同频：在一切都被安排、被优化、被算法投喂的年代，那些偶然的、不可复制的相遇，才是最稀缺的。</p>
+<div class="tip">💡 读前小思考：你上一次没有任何计划、只是"晃出去"的夜晚，是什么时候？它为什么让你记得？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>The text message arrives on a Tuesday: "Are you free next Saturday? Around 7?" By the time you read it, your calendar is already a patchwork of <span class="hl">color-coded</span> blocks, and Saturday at 7 has been tentatively held since last month. You reply, "Let me check and get back to you"—and then you don't, because checking means opening three apps and negotiating with a version of yourself who planned everything weeks ago. The evening, in other words, has been postponed—not by circumstance, but by administration.</p>
+<p>This is what an ordinary evening has become in the modern city: not a thing that happens, but a thing that must be arranged. Somewhere in the last decade, the <span class="hl">drop-in</span>—the unannounced knock, the "I was in the neighborhood" text, the decision to go somewhere <span class="hl">on a whim</span> because the light looked right—quietly slipped out of our lives. In its place we have the plan: the calendar invite, the group-chat poll, the table booked fourteen days early because that is when the restaurant releases them. We have, without deciding to, traded the surprise of the evening for the comfort of the confirmed one.</p>
+<p>We did not intend this. The tools that did it were sold as freedom. A calendar that syncs across devices would, in theory, give us more time, not less. Instead, they turned our social lives into a <span class="hl">logistics problem</span>. To see a friend now often requires the same project-management skills we use at work: a clear objective, a proposed time, a backup slot, and a polite follow-up when the first attempt stalls. A friend recently admitted she had not seen her oldest group in months—not because they had drifted, but because no one could find a single Saturday that fit four calendars at once. We have optimized friendship into something we must apply for.</p>
+<p>Sociologists have a name for the people we meet only by chance—the stranger at the next table, the acquaintance we bump into on the street—and they call them <span class="hl">weak ties</span>. The term comes from Stanford's Mark Granovetter, who argued in 1973 that these loose, low-stakes connections are often more valuable than our closest friendships, precisely because they are how new information and new possibilities travel. The unplanned evening is, almost by definition, a machine for producing weak ties.</p>
+<p>There is a particular loss here that is easy to dismiss. We measure a good social life by the strength of our closest relationships—the people we would call at 2 a.m. But cities run on something looser. The casual invitation, the shared laugh with someone we only sort of know, the plan that forms in the moment: these are the small courtesies that make a place feel like a place, rather than a transit hub we happen to sleep in. When everything must be scheduled, the loose threads that hold a community together stop being tied. We notice the absence only when a city starts to feel like a waiting room we rent by the month.</p>
+<p>Part of the blame sits with a deeper shift: the belief that time is a resource to be optimized. We talk about "protecting our calendar" and "being intentional" with our evenings, as if an unscheduled hour were a security risk. Productivity language has seeped into the one part of life it was meant to leave alone. We have learned to treat rest as something we schedule, and spontaneity as something we <span class="hl">pencil in</span>. The result is a strange paradox: we are more connected than any generation in history, yet more likely to feel we never quite <span class="hl">catch our friends in the raw</span>, unproduced moment. The very tools that promised to free our time have quietly colonized it.</p>
+<p>The pandemic accelerated all of this. For months, the unplanned evening was unsafe, then a hazy memory. When we returned to the world, we returned to it with apps. We booked the picnic, the walk, the drink. We relearned how to be together on a schedule, and then half-forgot how to do it any other way. A generation raised online treats the plan as the <span class="hl">default setting</span>, and the drop-in as a minor social violation—too intimate, too unpredictable, too much.</p>
+<p>And yet the hunger for the opposite is real. You can see it in the quiet popularity of things that resist scheduling: the spontaneous road trip, the "let's just walk and see," the party with no guest list. These are not nostalgia exactly. They are a recognition that some of the best things that happen to us were never in the calendar. Ask people what they remember from a trip, and they rarely name the booked tour. They name the wrong turn, the stranger who bought the round, the night that had no plan and no end. This is <span class="hl">serendipity</span>, and serendipity is a luxury we have accidentally taxed into near-extinction.</p>
+<p>None of this is an argument against planning. Plans are how we protect the people and moments we love. But a life composed only of plans is a life with the <span class="hl">air let out of it</span>. The trick, if there is one, is to leave a gap—an unscheduled evening, a door theoretically open—and to let the unremarkable magic of the unplanned slip through it. The city is still full of strangers and small wonders. We have only trained ourselves not to be available when they show up. So the next time the text comes—"free tonight?"—consider answering before you check the calendar. The evening you did not plan might be the one worth remembering.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">the drop-in</span><button aria-label="收藏表达" class="expr-fav" data-en="the drop-in" data-example='"Somewhere in the last decade, the drop-in… quietly slipped out of our lives."' data-scene="使用场景：指没提前约、直接过去找人的那种随意拜访；城市生活里正在变少的行为，常带亲切感。" data-zh="顺路串门 / 不请自来的拜访" type="button">☆</button></span><span class="zh">顺路串门 / 不请自来的拜访</span>
+<span class="sc">使用场景：指没提前约、直接过去找人的那种随意拜访；城市生活里正在变少的行为，常带亲切感。</span>
+<span class="ex">"Somewhere in the last decade, the drop-in… quietly slipped out of our lives."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">on a whim</span><button aria-label="收藏表达" class="expr-fav" data-en="on a whim" data-example='"the decision to go somewhere on a whim because the light looked right"' data-scene='使用场景：形容某个决定是临时起意、没什么理由；比 suddenly 更有"心血来潮"的画面。' data-zh="一时兴起 / 凭冲动（没经过算计）" type="button">☆</button></span><span class="zh">一时兴起 / 凭冲动（没经过算计）</span>
+<span class="sc">使用场景：形容某个决定是临时起意、没什么理由；比 suddenly 更有"心血来潮"的画面。</span>
+<span class="ex">"the decision to go somewhere on a whim because the light looked right"</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a logistics problem</span><button aria-label="收藏表达" class="expr-fav" data-en="a logistics problem" data-example='"Instead, they turned our social lives into a logistics problem."' data-scene='使用场景：把本该轻松的事（聚会、出行）说成需要统筹调度的问题；略带自嘲，常用于生活被"项目管理化"的语境。' data-zh='需要协调安排的"后勤麻烦"' type="button">☆</button></span><span class="zh">需要协调安排的"后勤麻烦"</span>
+<span class="sc">使用场景：把本该轻松的事（聚会、出行）说成需要统筹调度的问题；略带自嘲，常用于生活被"项目管理化"的语境。</span>
+<span class="ex">"Instead, they turned our social lives into a logistics problem."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">color-coded</span><button aria-label="收藏表达" class="expr-fav" data-en="color-coded" data-example='"your calendar is already a patchwork of color-coded blocks"' data-scene='使用场景：形容信息被分颜色管理；文中指被各种颜色填满的日程表，是"过度安排"的视觉符号。' data-zh="用颜色分类标记的（日历 / 文件等）" type="button">☆</button></span><span class="zh">用颜色分类标记的（日历 / 文件等）</span>
+<span class="sc">使用场景：形容信息被分颜色管理；文中指被各种颜色填满的日程表，是"过度安排"的视觉符号。</span>
+<span class="ex">"your calendar is already a patchwork of color-coded blocks"</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">pencil something in</span><button aria-label="收藏表达" class="expr-fav" data-en="pencil something in" data-example='"We have learned to treat… spontaneity as something we pencil in."' data-scene='使用场景：源自"用铅笔写、还能擦掉"，指不定的安排；文中说 spontaneity 也要被"pencil in"，是反讽。' data-zh="先把…暂定排进日程（尚未确认，可改）" type="button">☆</button></span><span class="zh">先把…暂定排进日程（尚未确认，可改）</span>
+<span class="sc">使用场景：源自"用铅笔写、还能擦掉"，指不定的安排；文中说 spontaneity 也要被"pencil in"，是反讽。</span>
+<span class="ex">"We have learned to treat… spontaneity as something we pencil in."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">weak ties</span><button aria-label="收藏表达" class="expr-fav" data-en="weak ties" data-example='"Sociologists… call them weak ties."（术语出处：M. Granovetter, "The Strength of Weak Ties", 1973）' data-scene="使用场景：Granovetter 1973 提出，指偶然认识的人；常用来讨论人际网络、机会来源、城市活力。" data-zh="弱关系（社会学名词：不太熟但有用的松散连接）" type="button">☆</button></span><span class="zh">弱关系（社会学名词：不太熟但有用的松散连接）</span>
+<span class="sc">使用场景：Granovetter 1973 提出，指偶然认识的人；常用来讨论人际网络、机会来源、城市活力。</span>
+<span class="ex">"Sociologists… call them weak ties."（术语出处：M. Granovetter, "The Strength of Weak Ties", 1973）</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">catch someone in the raw</span><button aria-label="收藏表达" class="expr-fav" data-en="catch someone in the raw" data-example='"we never quite catch our friends in the raw, unproduced moment."' data-scene='使用场景：raw 此处指"没被包装过的"；catch someone in the raw 比 see someone 更精准，强调看到本真一面。' data-zh="撞见某人最真实、不加修饰的状态" type="button">☆</button></span><span class="zh">撞见某人最真实、不加修饰的状态</span>
+<span class="sc">使用场景：raw 此处指"没被包装过的"；catch someone in the raw 比 see someone 更精准，强调看到本真一面。</span>
+<span class="ex">"we never quite catch our friends in the raw, unproduced moment."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the default setting</span><button aria-label="收藏表达" class="expr-fav" data-en="the default setting" data-example='"A generation raised online treats the plan as the default setting."' data-scene='使用场景：借自软件"出厂默认设置"，引申为某代人/社会的常态；文中指线上长大的一代把"先计划"当成天经地义。' data-zh="默认状态 / 习以为常、不加反思的模式" type="button">☆</button></span><span class="zh">默认状态 / 习以为常、不加反思的模式</span>
+<span class="sc">使用场景：借自软件"出厂默认设置"，引申为某代人/社会的常态；文中指线上长大的一代把"先计划"当成天经地义。</span>
+<span class="ex">"A generation raised online treats the plan as the default setting."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">serendipity</span><button aria-label="收藏表达" class="expr-fav" data-en="serendipity" data-example='"This is serendipity, and serendipity is a luxury we have accidentally taxed into near-extinction."' data-scene='使用场景：指"没计划却撞上的好事"；评论文常用它讲创新、灵感、城市偶遇，比 luck 更优雅、更"有故事"。' data-zh="机缘巧合 / 意外发现美好事物的运气" type="button">☆</button></span><span class="zh">机缘巧合 / 意外发现美好事物的运气</span>
+<span class="sc">使用场景：指"没计划却撞上的好事"；评论文常用它讲创新、灵感、城市偶遇，比 luck 更优雅、更"有故事"。</span>
+<span class="ex">"This is serendipity, and serendipity is a luxury we have accidentally taxed into near-extinction."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">let the air out of something</span><button aria-label="收藏表达" class="expr-fav" data-en="let the air out of something" data-example='"a life composed only of plans is a life with the air let out of it."' data-scene='使用场景：口语化比喻，把"没生气"写成"被放气的球"；比 boring 更有画面，适合收束段的金句。' data-zh="让…泄了气 / 抽掉灵魂（使其无趣、没劲）" type="button">☆</button></span><span class="zh">让…泄了气 / 抽掉灵魂（使其无趣、没劲）</span>
+<span class="sc">使用场景：口语化比喻，把"没生气"写成"被放气的球"；比 boring 更有画面，适合收束段的金句。</span>
+<span class="ex">"a life composed only of plans is a life with the air let out of it."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-13</span></span>
+</section>
+<!-- Urban & Social Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Urban &amp; Social Vocabulary · 城市社会词</h2><span class="time-tag">⏱ 10:00–13:00 词块</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">（本期为人类与社会主题，依轮换将「Celebrity / Culture Vocabulary」替换为城市社会词块。下列例句均摘自本文，标注「本文 / Daily English Reading · 2026-08-13」，供你感受真实语感。）</p>
+<div class="vocab">
+<div class="v"><b>the unplanned evening</b><span>随性之夜——没有任何预先安排、临时起意的相聚。<br/><i>例："The unplanned evening is, almost by definition, a machine for producing weak ties."</i><br/>来源：本文</span></div>
+<div class="v"><b>social fabric</b><span>社会纽带 / 社群肌理——维系一个社区的隐性连接。<br/><i>例："the loose threads that hold a community together stop being tied."</i><br/>来源：本文</span></div>
+<div class="v"><b>sense of community</b><span>社区归属感——把"空间"变成"地方"的情感。<br/><i>例："these are the small courtesies that make a place feel like a place."</i><br/>来源：本文</span></div>
+<div class="v"><b>placemaking</b><span>场所营造——让一栋建筑/街区产生归属感的设计与活动。<br/><i>例："make a place feel like a place, rather than a transit hub."</i><br/>来源：本文</span></div>
+<div class="v"><b>social atomization</b><span>社会原子化——人越来越孤立、连接被拆解的过程。<br/><i>例："When everything must be scheduled, the loose threads… stop being tied."</i><br/>来源：本文</span></div>
+<div class="v"><b>a transit hub</b><span>中转站——比喻"只是路过、没有归属"的城市空间。<br/><i>例："rather than a transit hub we happen to sleep in."</i><br/>来源：本文</span></div>
+<div class="v"><b>scheduled spontaneity</b><span>被安排的" spontaneity"——把随性也排进日程的反讽说法。<br/><i>例："we have learned to treat… spontaneity as something we pencil in."</i><br/>来源：本文</span></div>
+<div class="v"><b>crowded solitude</b><span>拥挤中的孤独——身处闹市却彼此孤立的状态。<br/><i>例："a city starts to feel like a waiting room we rent by the month."</i><br/>来源：本文</span></div>
+<div class="v"><b>the logistics of friendship</b><span>友情的"后勤"——把交友当成项目来管理的隐喻。<br/><i>例："they turned our social lives into a logistics problem."</i><br/>来源：本文</span></div>
+<div class="v"><b>a waiting room</b><span>候车室——比喻没有归属、只是"路过"的城市生活。<br/><i>例："a city starts to feel like a waiting room we rent by the month."</i><br/>来源：本文</span></div>
+</div>
+</section>
+<!-- 13:00–14:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 13:00–14:00 长难句</span></div>
+<div class="sb">
+<p class="q">"You reply, 'Let me check and get back to you'—and then you don't, because checking means opening three apps and negotiating with a version of yourself who planned everything weeks ago."</p>
+<p class="a"><b>句型：</b>并列句 You reply… and then you don't + because 原因状语从句（checking means opening… and negotiating with a version of yourself who…）；who 定语从句修饰 a version of yourself。<br/><b>逻辑：</b>用破折号制造停顿，把"已读不回"的当代尴尬写得真实；结尾把"和过去的自己协调时间"写成荒诞画面。<br/><b>表达：</b>a version of yourself（"另一个版本的你"）修辞精妙，把"计划好的自己"物化为一个谈判对象，是记叙文加分写法。</p>
+</div>
+<div class="sb">
+<p class="q">"Somewhere in the last decade, the drop-in—the unannounced knock, the 'I was in the neighborhood' text, the decision to go somewhere on a whim because the light looked right—quietly slipped out of our lives."</p>
+<p class="a"><b>句型：</b>介词短语作状语 + 主句（the drop-in… slipped out）；破折号内三个并列名词短语（the unannounced knock / the text / the decision to go…）作同位语解释 drop-in，decision 后接不定式 to go + because 原因从句。<br/><b>逻辑：</b>用三个具体画面定义"顺路串门"，再写它"悄悄溜走"，把抽象趋势写成人情味的流失。<br/><b>表达：</b>on a whim（一时兴起）地道；slip out of our lives 把"消失"写得无声无息，比 disappear 更有温度。</p>
+</div>
+<div class="sb">
+<p class="q">"The term comes from Stanford's Mark Granovetter, who argued in 1973 that these loose, low-stakes connections are often more valuable than our close friendships, precisely because they are how new information and new possibilities travel."</p>
+<p class="a"><b>句型：</b>主句 + who 定语从句（argued that 宾语从句）；that 从句内含比较级 more valuable than… + precisely because 原因状语从句（they are how… travel，how 引导表语从句）。<br/><b>逻辑：</b>借学术权威支撑"弱关系更有用"这个反直觉观点；precisely because 强调因果的精确性。<br/><b>表达：</b>low-stakes（低风险的/不起眼的）精准；how new information… travel 把抽象写成"流动"，比 spread 更生动。</p>
+</div>
+<div class="sb">
+<p class="q">"The result is a strange paradox: we are more connected than any generation in history, yet more likely to feel we never quite catch our friends in the raw, unproduced moment."</p>
+<p class="a"><b>句型：</b>主句（The result is a paradox）+ 冒号后主句 we are more connected… yet more likely to feel + (that) 省略宾语从句 we never quite catch…。<br/><b>逻辑：</b>用一个 paradox（悖论）收束整段——越连接，越难见到"真实"的朋友。<br/><b>表达：</b>catch someone in the raw（撞见某人最本真的状态）高级搭配；unproduced moment（没被"制作"过的瞬间）把社交写成"演出"，反讽强。</p>
+</div>
+<div class="sb">
+<p class="q">"But a life composed only of plans is a life with the air let out of it."</p>
+<p class="a"><b>句型：</b>主句（a life… is a life…），前一个 life 带过去分词短语 composed only of plans 作后置定语；后一个 life 带 with 复合结构 the air let out of it（let out 过去分词，表被动完成）。<br/><b>逻辑：</b>把"只有计划的人生"比作"被放了气的球"，简洁有力地收尾，呼应标题的"消失"。<br/><b>表达：</b>let the air out of something 是口语化比喻，比 boring 更有画面；composed of 比 made of 更书面。</p>
+</div>
+</section>
+<!-- 14:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 14:00–15:00 复盘</span></div>
+<p style="margin:0 0 12px;"><b>核心内容：</b>现代城市的夜晚，从一个"会发生"的事，变成了一个"必须被安排"的事。drop-in（顺路串门）悄然消失，取而代之的是日历邀请、群聊投票、提前 14 天订的位子。我们本没想这样，但"自由工具"（同步日历、即时通讯）反而把社交变成了 logistics problem（后勤麻烦）。社会学家 Granovetter 的"弱关系（weak ties）"理论点明：那些偶遇的松散连接，恰恰是新信息与新可能的通道，而随性之夜正是生产弱关系的机器。更深层是"时间要被优化"的信念，让休息也要排期、spontaneity 也要 pencil in。疫情加速了这一切，线上长大的一代把"计划"当成 default setting。但人对"相反"的渴望真实存在——拒绝排期的公路旅行、没有嘉宾名单的派对，都是 serendipity（机缘），而它已被我们不知不觉课税到濒临灭绝。</p>
+<p style="margin:0 0 12px;"><b>背后文化现象：</b>这是算法时代"具体、带缺点、有人味"母题的延伸——当一切都被安排、被优化、被投喂，偶然与不可复制的相遇最稀缺。呼应你公众号「城市观察者」：城市本该充满陌生人与小奇迹，我们却训练自己"不在场"。也和你计划中的 013《无意义时间》同频：能"不被安排"的时间，才是奢侈。当 spontaneity 都被排进日程（scheduled spontaneity），城市便像"按月租的候车室（waiting room）"——人在，但没归属。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 你上一次真正的"随性之夜"是什么时候？它为什么让你记得？② 当 spontaneity 也被排进日程，它还算 spontaneity 吗？③ 如果城市正在变成"按月租的候车室"，我们该怎么给自己留一扇"虚掩的门"？④ 弱关系（偶遇的陌生人）对你最近一次机会或想法的产生，真的没用吗？</p>
+</section>
+<!-- Speaking -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 14:00–15:00 输出</span></div>
+<div class="prompt">💬 <b>Discussion question（约 200 词）：</b> Modern life runs on calendars. Some argue that scheduling our social lives is simply maturity—it shows we value our friends enough to protect time for them, and it spares everyone the awkwardness of uncertainty. Others worry we've optimized the soul out of friendship: that the drop-in, the weak tie, and the unplanned evening are exactly what make a city feel alive, and that a life composed only of plans is a life with the air let out of it. Where do you stand? Do you think the unplanned evening can—or should—be recovered in city life, and what would it take? Share your take (≈200 words).</div>
+<div class="model">
+<span class="lab">参考范文（≈190 词 · 仅供模仿，别照背）</span>
+      I stand with the recovery camp, though not naively. Scheduling isn't the enemy—it's how we protect the people we love in busy cities, and a confirmed plan is kinder than a flaky maybe. But the cost is real. When every evening is a logistics problem, we stop being available to the accidental: the stranger at the next table, the friend we'd have bumped into, the idea that arrives only because two people were in the same room with nothing planned. That's serendipity, and it's a luxury we've taxed into near-extinction. I think the unplanned evening can be recovered, but only if we treat it as a deliberate choice—leave one evening a week unscheduled, keep a door theoretically open, answer "free tonight?" before checking the calendar. The trick isn't less planning; it's a gap in the plan. A city feels alive not because we meet more, but because we might meet anyone. Protect the surprise, and you protect the place.
+    </div>
+<div class="tip">🗣 练习建议：先关掉"字幕式依赖"，用自己的话答 200 词左右；试着用上今天的 the drop-in、weak ties、serendipity、let the air out of something、pencil something in。录下来听一遍，比写下来更练嘴。</div>
+</section>
+<footer>Daily English Reading · 2026-08-13 · 主题桶：人类与社会 (40%) · 自包含 HTML，可嵌入学习中心</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-13',title:"The Vanishing Unplanned Evening: How Scheduling Quietly Replaced Serendipity"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

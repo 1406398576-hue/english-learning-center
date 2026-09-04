@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Night a Stranger's Kitchen Saved My Solo Trip — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 32px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .9; margin-bottom: 8px;}
+  .topic-banner .en{font-size: 16px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Short Story ── */
+  .story-box{
+    background: linear-gradient(135deg, #fbfaf7, #f2f6fa);
+    border-left: 4px solid var(--primary);
+    border-radius: 12px;
+    padding: 22px 24px;
+    font-size: 16px; line-height: 1.9; color: var(--ink);
+  }
+  .story-box p{margin-bottom: 13px;}
+  .story-box p:last-child{margin-bottom: 0;}
+  .story-box .lead::first-letter{font-size: 30px; font-weight: 700; color: var(--primary);}
+
+  /* ── Key Expressions (new A~F card) ── */
+  .kx-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 14px;
+  }
+  .kx-card .expr{
+    font-size: 19px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); display: inline-block;
+    padding: 3px 12px; border-radius: 6px; margin-bottom: 6px;
+  }
+  .kx-card .cn{font-size: 14px; color: var(--muted); margin-bottom: 12px;}
+  .kx-card .blk{margin-bottom: 10px;}
+  .kx-card .blk .lab{
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--accent); margin-bottom: 3px;
+  }
+  .kx-card .blk .val{font-size: 14px; color: var(--ink); line-height: 1.6;}
+  .kx-card .usage{
+    background: var(--warm-l); border-left: 3px solid var(--warm);
+    padding: 9px 12px; border-radius: 6px; font-size: 13px; color: var(--ink); line-height: 1.6;
+  }
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .speaker.c{color: var(--accent);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Speaking Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 8px; line-height: 1.55;}
+  .practice-card .q-hint{font-size: 13px; color: var(--muted); line-height: 1.6;}
+
+  /* ── Useful Vocabulary ── */
+  .vocab-card{
+    display: flex; gap: 14px; align-items: baseline;
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 14px 18px; margin-bottom: 10px;
+  }
+  .vocab-card .word{font-size: 17px; font-weight: 700; color: var(--primary); min-width: 110px; flex-shrink: 0;}
+  .vocab-card .pos{font-size: 12px; color: var(--warm); font-weight: 600; margin-right: 6px;}
+  .vocab-card .mean{font-size: 14px; color: var(--ink); line-height: 1.6;}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 25px;}
+    .sec-head{font-size: 19px;}
+    .kx-card .expr{font-size: 16px;}
+    .story-box{font-size: 15px;}
+    .practice-card .q-text{font-size: 15px;}
+    .vocab-card{flex-direction: column; gap: 4px;}
+    .vocab-card .word{min-width: 0;}
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<!-- ═══════════ A. Title ═══════════ -->
+<div class="topic-banner">
+<div class="day">Day 30 · 8/24 Mon</div>
+<h2>The Night a Stranger's Kitchen Saved My Solo Trip</h2>
+<div class="zh">陌生人的厨房，救了我那场独旅的夜晚</div>
+<div class="en">"When solo travel goes wrong, a stranger's kitchen can go wonderfully right."</div>
+</div>
+<!-- ═══════════ B. Short Story ═══════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">📖</span> B. Short Story</div>
+<div class="story-box">
+<p class="lead">When my train pulled into Porto, I was certain I had everything under control. I'd booked the guesthouse, saved the restaurant address, and even learned two Portuguese words: <em>obrigado</em> and <em>bom dia</em>.</p>
+<p>But Monday had other plans. The seafood place I'd traveled an hour to reach was shut, a hand-written sign taped to the glass. My phone blinked 4% battery. And somewhere between the cathedral and the river, the narrow streets stopped making sense. I wasn't lost exactly — I was disappearing into a city that didn't owe me directions.</p>
+<p>Cold and a little ashamed, I stopped in front of a pale yellow door with warm light behind it. For a full minute I rehearsed a sentence I couldn't say. Then I knocked.</p>
+<p>A man opened it — João — followed by Sofia, who took one look at my shivering shoulders and simply stepped aside. No English passed between us for the first ten minutes. She set a bowl of <em>caldo verde</em> in front of me, steam fogging my glasses, and João held up his phone: a translation that read, "You look like our daughter in Lisbon."</p>
+<p>I hadn't been touched by kindness in days. In that small kitchen, alone but not lonely, I understood something I'd flown across an ocean to learn: the best part of traveling solo isn't the freedom. It's the chance to be caught, gently, by strangers.</p>
+</div>
+</div>
+<!-- ═══════════ C. Key Expressions ═══════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">💬</span> C. Key Expressions</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">I'm completely lost.</div><button aria-label="收藏表达" class="expr-fav" data-en="I'm completely lost." data-example="&quot;I'm completely lost — do you know where the tram stop is?&quot; (said to a woman outside a bakery)" data-scene='lost 在这里是"迷路"，不是"把东西弄丢"。强调彻底迷路用 completely / totally lost ，比 I lose my way 更口语、更带慌张感。在异国街道掏出手机前，这句往往是最先蹦出来的。' data-zh="我完全迷路了。" type="button">☆</button></div>
+<div class="cn">我完全迷路了。</div>
+<div class="blk"><div class="lab">Natural example</div><div class="val">"I'm completely lost — do you know where the tram stop is?" (said to a woman outside a bakery)</div></div>
+<div class="blk"><div class="lab">Usage note</div><div class="usage">lost 在这里是"迷路"，不是"把东西弄丢"。强调彻底迷路用 <b>completely / totally lost</b>，比 <i>I lose my way</i> 更口语、更带慌张感。在异国街道掏出手机前，这句往往是最先蹦出来的。</div></div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">Could you point me in the right direction?</div><button aria-label="收藏表达" class="expr-fav" data-en="Could you point me in the right direction?" data-example="&quot;Could you point me in the right direction? I've been walking in circles for twenty minutes.&quot;" data-scene='point someone in the right direction 是固定搭配，字面"指向正确的方向"，引申为"给点指引 / 指条明路"。比干巴巴的 Where is the station? 更像真人在求助，也给了对方一个自然的开口。' data-zh="能给我指个正确的方向吗？" type="button">☆</button></div>
+<div class="cn">能给我指个正确的方向吗？</div>
+<div class="blk"><div class="lab">Natural example</div><div class="val">"Could you point me in the right direction? I've been walking in circles for twenty minutes."</div></div>
+<div class="blk"><div class="lab">Usage note</div><div class="usage"><b>point someone in the right direction</b> 是固定搭配，字面"指向正确的方向"，引申为"给点指引 / 指条明路"。比干巴巴的 <i>Where is the station?</i> 更像真人在求助，也给了对方一个自然的开口。</div></div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">I don't mean to intrude, but…</div><button aria-label="收藏表达" class="expr-fav" data-en="I don't mean to intrude, but…" data-example="&quot;I don't mean to intrude, but it's getting dark and my phone is dead — could I wait here a minute?&quot;" data-scene="intrude = 打扰、侵扰。要敲门进别人空间、或打断陌生人之前，用这句先缓冲，显得有分寸、不冒犯。比 Sorry to bother you 稍正式一点，适合登门求助的场景。" data-zh="我不是想打扰（闯入），但……" type="button">☆</button></div>
+<div class="cn">我不是想打扰（闯入），但……</div>
+<div class="blk"><div class="lab">Natural example</div><div class="val">"I don't mean to intrude, but it's getting dark and my phone is dead — could I wait here a minute?"</div></div>
+<div class="blk"><div class="lab">Usage note</div><div class="usage"><b>intrude</b> = 打扰、侵扰。要敲门进别人空间、或打断陌生人之前，用这句先缓冲，显得有分寸、不冒犯。比 <i>Sorry to bother you</i> 稍正式一点，适合登门求助的场景。</div></div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">You're an absolute lifesaver.</div><button aria-label="收藏表达" class="expr-fav" data-en="You're an absolute lifesaver." data-example="&quot;You're an absolute lifesaver — that bowl of soup just saved my night.&quot;" data-scene='lifesaver 本义"救生员 / 救生圈"，口语里夸张地说"你救了我一命"，用来感谢别人解了你的燃眉之急。 absolute 加强语气。比 Thank you so much 更有画面感，也更易被记住。' data-zh="你真是救星。（太感谢你了）" type="button">☆</button></div>
+<div class="cn">你真是救星。（太感谢你了）</div>
+<div class="blk"><div class="lab">Natural example</div><div class="val">"You're an absolute lifesaver — that bowl of soup just saved my night."</div></div>
+<div class="blk"><div class="lab">Usage note</div><div class="usage">lifesaver 本义"救生员 / 救生圈"，口语里夸张地说"你救了我一命"，用来感谢别人解了你的燃眉之急。<b>absolute</b> 加强语气。比 <i>Thank you so much</i> 更有画面感，也更易被记住。</div></div>
+</div>
+<div class="kx-card">
+<div class="en-row"><div class="expr">Make yourself at home.</div><button aria-label="收藏表达" class="expr-fav" data-en="Make yourself at home." data-example="&quot;Sit down, make yourself at home. The soup's still hot.&quot; (Sofia, waving me in)" data-scene='主人待客的万能句，让客人放松。 home 这里指"像在自己家一样自在"。注意 yourself 不能写成 yourselves（对单数的 you 永远用 yourself）。' data-zh="别客气，把这儿当自己家。" type="button">☆</button></div>
+<div class="cn">别客气，把这儿当自己家。</div>
+<div class="blk"><div class="lab">Natural example</div><div class="val">"Sit down, make yourself at home. The soup's still hot." (Sofia, waving me in)</div></div>
+<div class="blk"><div class="lab">Usage note</div><div class="usage">主人待客的万能句，让客人放松。<b>home</b> 这里指"像在自己家一样自在"。注意 <b>yourself</b> 不能写成 yourselves（对单数的 you 永远用 yourself）。</div></div>
+</div>
+</div>
+<!-- ═══════════ D. Real Conversation ═══════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">🎭</span> D. Real Conversation</div>
+<div class="dialogue-box">
+<div class="setting">场景：<span>Maya 在波尔图旧城一家亮着暖光的人家门前敲门。Sofia 开门，João 拿着翻译软件加入。全程带着停顿、犹豫和不全的英语。</span></div>
+<div class="msg">
+<div class="speaker a">Maya</div>
+<div class="en">Hi — um, sorry, I… I think I'm lost. And my phone is… <em>(glances down)</em> dead. Completely dead.</div>
+<div class="cn">嗨——嗯，抱歉，我……我想我迷路了。而且我手机……没电了。彻底没电了。</div>
+</div>
+<div class="msg">
+<div class="speaker b">Sofia</div>
+<div class="en">Oh! Um… <em>entra, entra.</em> <em>(opens the door wider, smiles)</em></div>
+<div class="cn">哦！嗯……进来，进来。</div>
+</div>
+<div class="msg">
+<div class="speaker a">Maya</div>
+<div class="en">I don't mean to intrude, but… it's so cold, and I — I just need to figure out where I am.</div>
+<div class="cn">我不是想打扰，但是……太冷了，而且我——我只是想搞清楚我在哪儿。</div>
+</div>
+<div class="msg">
+<div class="speaker c">João</div>
+<div class="en">You… are welcome. Please. Uh… <em>make yourself at home.</em> <em>(points at a chair)</em></div>
+<div class="cn">你……欢迎。请。呃……别客气，当自己家。 </div>
+</div>
+<div class="msg">
+<div class="speaker a">Maya</div>
+<div class="en">You're an absolute lifesaver, really. I was about to cry in the street, you know?</div>
+<div class="cn">你真是救星，真的。我刚才在街上都快哭了，你懂吧？</div>
+</div>
+<div class="msg">
+<div class="speaker b">Sofia</div>
+<div class="en"><em>Comer.</em> Eat. You look… how you say… <em>(laughs softly)</em> stranded.</div>
+<div class="cn">吃。你看起来……怎么说来着……被困住了。</div>
+</div>
+<div class="msg">
+<div class="speaker a">Maya</div>
+<div class="en">Stranded, yes! That's the word. Thank you — this is… this is too kind.</div>
+<div class="cn">对，就是 stranded！就是这个词。谢谢——这……这太好了。</div>
+</div>
+<div class="msg">
+<div class="speaker c">João</div>
+<div class="en"><em>(holds up phone, translation app)</em> "Our daughter, she is in Lisbon. You remind us. You are safe here."</div>
+<div class="cn">（举起手机，翻译软件）"我们的女儿在里斯本。你让我们想起她。你在这里很安全。"</div>
+</div>
+</div>
+</div>
+<!-- ═══════════ E. Speaking Practice ═══════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">🎤</span> E. Speaking Practice</div>
+<div class="practice-card">
+<div class="q-text"><span class="q-num">1</span>复述故事（Retell）</div>
+<div class="q-hint">用你自己的话把 Maya 的波尔图之夜讲一遍（约 150 词）：从"计划全失控"讲到"被陌生人的厨房接住"。试着自然带出 I'm completely lost / You're an absolute lifesaver 这类表达，不必背原文。</div>
+</div>
+<div class="practice-card">
+<div class="q-text"><span class="q-num">2</span>表达个人观点（Opinion）</div>
+<div class="q-hint">你有没有被陌生人帮助过的经历？你觉得有时候陌生人会不会比朋友更热情、更没有负担？为什么？用 2–3 句话说清你的看法，可以用 I think… / In my experience… 起头。</div>
+</div>
+<div class="practice-card">
+<div class="q-text"><span class="q-num">3</span>模拟真实场景（Role-play）</div>
+<div class="q-hint">你是独自旅行的旅人，又冷、又饿、又迷路，手机没电。模拟你敲开当地人家门 / 向小店店主求助的对话。尽量用上今天的 5 个表达，允许停顿、改口、不流利——就像真人一样。</div>
+</div>
+</div>
+<!-- ═══════════ F. Useful Vocabulary ═══════════ -->
+<div class="sec">
+<div class="sec-head"><span class="ico">📚</span> F. Useful Vocabulary</div>
+<div class="vocab-card">
+<div class="word">wander</div>
+<div class="mean"><span class="pos">v.</span>闲逛；走神。 "I wandered into the old town and lost track of time."（我晃进老城，忘了时间。）</div>
+</div>
+<div class="vocab-card">
+<div class="word">hospitable</div>
+<div class="mean"><span class="pos">adj.</span>好客的。 "The couple were incredibly hospitable despite the language gap."（尽管语言不通，那对夫妇好客得惊人。）</div>
+</div>
+<div class="vocab-card">
+<div class="word">stranded</div>
+<div class="mean"><span class="pos">adj.</span>被困的，进退两难的。 "With a dead phone, I felt completely stranded."（手机没电，我觉得彻底困住了。）</div>
+</div>
+<div class="vocab-card">
+<div class="word">gesture</div>
+<div class="mean"><span class="pos">n.</span>姿态；手势。 "Her wave toward the chair was a small, kind gesture."（她朝椅子一挥手，是个细小而善意的姿态。）</div>
+</div>
+<div class="vocab-card">
+<div class="word">unplanned</div>
+<div class="mean"><span class="pos">adj.</span>计划外的，意外的。 "The unplanned night turned out to be the best part of the trip."（那个没计划的夜晚，竟成了整趟旅程最好的部分。）</div>
+</div>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-24',title:"The Night a Stranger's Kitchen Saved My Solo Trip"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

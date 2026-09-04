@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | 2026-08-06 · 打电话预约</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e7e1d8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .kicker {
+    font-size: 12.5px; letter-spacing: .08em; color: var(--accent);
+    font-weight: 700; text-align: center; margin-bottom: 6px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .header .sub { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f7;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin: 4px 0 8px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-src {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--accent-3);
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .movie-tip {
+    font-size: 13px;
+    color: var(--accent-3);
+    background: #f7f4ef;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 6px;
+  }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.a { color: var(--accent); }
+  .speaker.b { color: var(--accent-3); }
+  .speaker.c { color: #6b5b95; }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="kicker">每日口语 · 2026-08-06</div>
+<div class="header">
+<span class="day-badge">DAY 13</span>
+<h1>打电话预约 · 改期 / 取消 / 找对人<br/>Making Phone Calls &amp; Appointments</h1>
+<div class="sub">2026年8月6日（周四） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>打电话预约：餐厅订位、看医生、理发、改时间、取消</h2>
+<div class="en">Making Phone Calls &amp; Appointments</div>
+<p>电话英语和当面聊天最大的区别：对方看不到你的表情和手势，所以语气和用词要更加礼貌、清楚。今天这 5 个表达，从「我想预约」到「我能改个时间吗」，覆盖你电话里 90% 会遇到的场景。打完电话，记得在心里把刚才说的话用英语过一遍。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 句真实美剧原句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "I'd like to make an appointment..." / "I'd like to book a table..."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I'd like to make an appointment...&quot; / &quot;I'd like to book a table...&quot;" data-scene="使用场景 打电话预约医生、理发、餐厅、银行、车管所等任何需要提前安排的事" data-zh="我想预约……（比 I want 更礼貌、更自然的开头）" type="button">☆</button></div>
+<div class="expr-cn">我想预约……（比 I want 更礼貌、更自然的开头）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>打电话预约医生、理发、餐厅、银行、车管所等任何需要提前安排的事</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S06E04 "The One Where Joey Loses His Insurance" — Joey 终于鼓起勇气打给医生</span>"Hi, I'd like to make an appointment to see Dr. Drake Ramoray... I mean, Dr. Morris."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S03E03 "Phil on Wire" — Phil 给牙医诊所打电话</span>"Hi, this is Phil Dunphy. I'd like to make an appointment for a cleaning, please."</div>
+<div class="tv-line"><span class="tv-src">《The Office》S04E14 "Chair Model" — Michael 给餐厅订位</span>"Yes, I'd like to make a reservation for two. Under Scott. Michael Scott."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：电话里千万别说 I want，太生硬。用 I'd like to...（= I would like to）是基本礼貌。预约餐厅常用 book a table，预约医生/理发常用 make an appointment。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "Is there any chance I could reschedule...?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Is there any chance I could reschedule...?"' data-scene="使用场景 已经约好但临时有事，想换个时间——把责任揽到自己这边，不让对方觉得被爽约" data-zh="请问能不能改个时间？（最委婉的改期说法）" type="button">☆</button></div>
+<div class="expr-cn">请问能不能改个时间？（最委婉的改期说法）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>已经约好但临时有事，想换个时间——把责任揽到自己这边，不让对方觉得被爽约</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《The Office》S02E16 "Valentine's Day" — Jim 给花店打电话想改配送时间</span>"Hey, is there any chance I could reschedule the delivery to tomorrow? Something came up."</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S03E05 "How I Met Everyone Else" — Ted 给电影院打电话</span>"Is there any chance we could move our reservation to a later show? We're running late."</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S02E17 "Two Monkeys and a Panda" — Claire 给美甲店打电话</span>"Hi, is there any chance I could reschedule my appointment to next Tuesday?"</div>
+</div>
+<div class="movie-tip">🎬 真实场景：Is there any chance... 是美国口语里最强的"委婉请求"句型，后面跟 could / can / we could 都可以。说完最好补一句 Something came up（有点事），对方一般不会再追问。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "Could I speak to..., please?" / "Is ... available?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Could I speak to..., please?" / "Is ... available?"' data-scene="使用场景 前台或总机接电话，你想找某个具体的人——医生、经理、朋友、负责人" data-zh="请问……在吗？/ 我能和……说话吗？（找对接人）" type="button">☆</button></div>
+<div class="expr-cn">请问……在吗？/ 我能和……说话吗？（找对接人）</div>
+<div class="expr-meta"><span class="tag">使用场景</span>前台或总机接电话，你想找某个具体的人——医生、经理、朋友、负责人</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S02E16 "The One Where Dr. Ramoray Dies" — Joey 打电话找经纪人</span>"Hi, could I speak to Estelle, please? This is Joey Tribbiani."</div>
+<div class="tv-line"><span class="tv-src">《The Office》S03E02 "The Convention" — Pam 接电话找 Michael</span>"Dunder Mifflin, this is Pam. Oh, is Michael available?"</div>
+<div class="tv-line"><span class="tv-src">《How I Met Your Mother》S05E08 "The Playbook" — Marshall 打电话找律师</span>"Hello, could I speak to Mr. Hammond, please? It's Marshall Eriksen calling."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：接电话问"你是谁"是 Who's calling?，你说"我是某某"用 This is [name] calling. 不要受中文影响说 I am [name]，这是电话英语和当面最大的不同之一。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "What time slots do you have available?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"What time slots do you have available?"' data-scene='使用场景 对方给出时间不巧，你想让对方把可选时间列出来——比 "Do you have time?" 更专业' data-zh="你们还有什么时间段可以约？" type="button">☆</button></div>
+<div class="expr-cn">你们还有什么时间段可以约？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>对方给出时间不巧，你想让对方把可选时间列出来——比 "Do you have time?" 更专业</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Modern Family》S04E12 "Party Crasher" — Jay 给派对策划打电话</span>"What time slots do you have available on Saturday? The afternoon works better for us."</div>
+<div class="tv-line"><span class="tv-src">《Friends》S07E07 "The One With Ross's Library Book" — Monica 给舞蹈教室打电话</span>"What time slots do you have available for the beginner's class?"</div>
+<div class="tv-line"><span class="tv-src">《The Office》S06E12 "Scott's Tots" — Dwight 给租车公司打电话</span>"What time slots do you have available for pickup? We need the van by noon."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：time slot 是"时间段/空档"的常用词。问什么时候有空，除了 When are you free?，更正式自然的是 What time slots do you have available? 或者直接问 Do you have anything in the morning?</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "I need to cancel / confirm my appointment."</div><button aria-label="收藏表达" class="expr-fav" data-en='"I need to cancel / confirm my appointment."' data-scene="使用场景 临时去不了要取消，或者不确定预约是否还在、想再确认一下" data-zh="我需要取消 / 确认我的预约。" type="button">☆</button></div>
+<div class="expr-cn">我需要取消 / 确认我的预约。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>临时去不了要取消，或者不确定预约是否还在、想再确认一下</div>
+<div class="tv-lines">
+<div class="tv-line"><span class="tv-src">《Friends》S09E11 "The One Where Rachel Goes Back to Work" — Rachel 给医生诊所打电话</span>"Hi, I need to cancel my appointment this afternoon. Is there a cancellation fee?"</div>
+<div class="tv-line"><span class="tv-src">《Modern Family》S01E15 "My Funky Valentine" — Mitchell 给餐厅打电话确认</span>"Hi, I'm calling to confirm a reservation for two under Mitchell Pritchett."</div>
+<div class="tv-line"><span class="tv-src">《The Office》S03E10 "A Benihana Christmas" — Angela 给宴会厅打电话</span>"Yes, I need to cancel my reservation. And yes, this is Angela Martin."</div>
+</div>
+<div class="movie-tip">🎬 真实场景：取消时越直接越好，但开头加 I'm sorry, I need to cancel... 会更得体。确认预约用 I'm calling to confirm...，是电话英语的标准开场白，比 I want to make sure 更地道。</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 打电话给诊所改期（8 轮）</h3>
+<div class="dialogue">
+<div class="scene">☎️ 场景：Alex 预约了周四下午 3 点的牙科检查，但临时要开会，打电话想改到周五上午。诊所前台 Sarah 接电话。</div>
+<div class="line">
+<span class="speaker b">Sarah:</span>
+<span class="text">Good morning, Bright Smile Dental. How can I help you?</span>
+<div class="translation">早上好，这里是 Bright Smile 牙科诊所。有什么可以帮您？</div>
+</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">Hi, I have an appointment with Dr. Lee tomorrow at 3 p.m., but something came up at work. Is there any chance I could reschedule?</span>
+<div class="translation">您好，我约了明天下午 3 点李医生的号，但工作上临时有事。请问能不能改个时间？</div>
+</div>
+<div class="line">
+<span class="speaker b">Sarah:</span>
+<span class="text">Sure, no problem. What time slots do you have in mind?</span>
+<div class="translation">当然可以。您想约哪个时间段？</div>
+</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">Do you have anything Friday morning? Preferably before 11?</span>
+<div class="translation">周五上午有空档吗？最好是 11 点之前。</div>
+</div>
+<div class="line">
+<span class="speaker b">Sarah:</span>
+<span class="text">Let me check... We have 9:30 and 10:45.</span>
+<div class="translation">我查一下……我们有 9:30 和 10:45 两个时间。</div>
+</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">10:45 works for me. Could you confirm that?</span>
+<div class="translation">10:45 我可以。您能帮我确认一下吗？</div>
+</div>
+<div class="line">
+<span class="speaker b">Sarah:</span>
+<span class="text">Of course. I've moved your appointment to Friday at 10:45 a.m. with Dr. Lee.</span>
+<div class="translation">当然。我已经把您的预约改到周五上午 10:45，还是李医生。</div>
+</div>
+<div class="line">
+<span class="speaker a">Alex:</span>
+<span class="text">Perfect, thank you so much. I'll see you then.</span>
+<div class="translation">太好了，非常感谢。到时候见。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>You want to book a table for 4 people at a restaurant for Saturday evening around 7 p.m. Make the call.</strong>
+<div class="hint">💡 用 I'd like to book a table... 开头，告诉人数、日期、时间，最后问 Is that available?</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Hi, I'd like to book a table for four on Saturday evening, around 7 p.m. Is that time available?"</span>
+<span class="s">"Hello, I'd like to make a reservation for four people this Saturday at 7. Do you have anything around then?"</span>
+<span class="s">"Hi, is it possible to book a table for four for Saturday at 7 p.m.? Under the name Chen, please."</span>
+</div>
+</li>
+<li>
+<strong>You scheduled a haircut for Friday afternoon, but you need to move it to next Monday. Call the salon and politely reschedule.</strong>
+<div class="hint">💡 用 Is there any chance I could reschedule... 说明原因，再问 What time slots do you have on Monday?</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Hi, I have an appointment on Friday afternoon, but something came up. Is there any chance I could reschedule it for Monday?"</span>
+<span class="s">"I'm sorry, I need to reschedule my Friday appointment. What time slots do you have available on Monday?"</span>
+<span class="s">"Hi, could I move my appointment from Friday to Monday? Anytime after 2 p.m. would work for me."</span>
+</div>
+</li>
+<li>
+<strong>You need to cancel your doctor's appointment for tomorrow because you're feeling better and don't want to take up the slot. Call the clinic.</strong>
+<div class="hint">💡 用 I need to cancel my appointment... 开头，简单说明原因，最后问 Should I call back to reschedule?</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Hi, I need to cancel my appointment with Dr. Park tomorrow. I'm feeling much better now. Should I reschedule?"</span>
+<span class="s">"I'm calling to cancel my appointment tomorrow morning. I don't want to take up the slot if someone else needs it."</span>
+<span class="s">"Hello, this is [Your Name]. I'd like to cancel my appointment for tomorrow. Could you let me know if I need to reschedule soon?"</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：先朗读对话 2 遍，注意电话里的礼貌节奏——开头说 Hi/Hello，结尾说 Thank you / I'll see you then。然后自己拿起笔或手机当"电话"，大声练习 3 个场景，尽量不看中文。电话英语的关键不是语法多高级，而是让对方一听就觉得"这人很有礼貌"。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"I want to make an appointment."</td>
+<td class="right">"I'd like to make an appointment..."<br/>"I'm calling to make an appointment..."</td>
+<td class="note">电话里 I want 听起来像命令。用 I'd like 或 I'm calling to 更礼貌，是英语电话的标准开场。</td>
+</tr>
+<tr>
+<td class="wrong">"Can you give me a time?"</td>
+<td class="right">"What time slots do you have available?"<br/>"When do you have an opening?"</td>
+<td class="note">Give me a time 太直接，像催对方。time slots / opening 是预约场景的专业词，更自然。</td>
+</tr>
+<tr>
+<td class="wrong">"I want to change the time."</td>
+<td class="right">"Is there any chance I could reschedule?"<br/>"Could I move my appointment to...?"</td>
+<td class="note">I want to change 太生硬。reschedule / move my appointment 是地道说法，且用问句更委婉。</td>
+</tr>
+<tr>
+<td class="wrong">"Are you Dr. Lee?" / "Is Dr. Lee?"</td>
+<td class="right">"Could I speak to Dr. Lee, please?"<br/>"Is Dr. Lee available?"</td>
+<td class="note">电话里找医生不要说 Are you Dr. Lee?（除非是医生本人接），前台接时用 Could I speak to... 最标准。</td>
+</tr>
+<tr>
+<td class="wrong">"I don't want the appointment now."</td>
+<td class="right">"I need to cancel my appointment."<br/>"I'm calling to cancel..."</td>
+<td class="note">Don't want 听起来像嫌弃。取消预约直接说 I need to cancel my appointment，清晰、礼貌、不解释太多。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话 2 遍 → ② 背 5 个核心表达（含美剧原句）→ ③ 用英语回答 3 个练习并录音 → ④ 回看纠正表，把 I want 换成 I'd like。
+    </div>
+<p>下次需要打电话预约时，先深呼吸，开口就是 "Hi, I'd like to make an appointment..."，剩下的会越说越顺。Have a great day! ☀️</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-06',title:"打电话预约：餐厅订位、看医生、理发、改时间、取消"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

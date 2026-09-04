@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-22</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Subscription Everything: Why We Stopped Owning and Started Renting Our Lives</h1>
+<p class="sub">「万物皆可订阅」：当"买断"变成"月租"，我们究竟把什么悄悄交了出去？</p>
+<div class="meta">
+<span>📅 <b>2026-08-22</b></span>
+<span>🎯 主题桶：<b>科技与未来 (25%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">一张唱片买下就是你的，一辆车买下就停在门口——这是上个世纪默认的生活设定。今天，音乐、电影、网盘、健身、甚至你浴室架子上的剃须刀，都从"一次性买断"变成了"每月自动扣款"。这篇读的是你「城市观察者」公众号一以贯之母题的科技经济版：<b>在算法投喂、被安排、随时可被收回的世界里，"真正属于你、不可被撤回"的东西正变成最稀缺的资产</b>。它和黑胶回潮(08-16)、功能机回潮(08-11)、静奢风(08-06)、零点击互联网(08-18)串成同一根线——机器越能替我们"拥有、安排、按需取用"，具体、带缺点的"我真的拥有它"反而成了新的奢侈。读前先想：你上一次"买下"一件会一直陪着你的东西，是什么时候？</p>
+<div class="tip">💡 读前小思考：翻一下你本月账单——有多少个"自己都忘了在订阅"的自动扣款？这些"小钱"加起来，大概是多少？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most of the 20th century, ownership was the default setting of modern life. You bought a record, and it was yours; you bought a car, and it sat in your driveway; you bought software on a disc, and it ran until the disc cracked. Today that assumption is quietly dissolving, and faster than most people noticed. We no longer mainly buy things; we subscribe to them. Music, movies, news, storage, transportation, fitness, even the razor on your bathroom shelf — an ever-growing slice of daily life has shifted from a one-time purchase to a <span class="hl">recurring charge</span> that renews whether you are paying attention or not. The companies call it convenience. The rest of us are starting to call it something closer to <span class="hl">subscription fatigue</span>.</p>
+<p>The mechanics are elegant, and that is precisely the problem. A subscription feels lighter than a purchase: no large bill, no commitment, just a small deduction that disappears into the background of a bank statement. The lightness is an illusion. Taken one by one, the charges are trivial; taken together, they <span class="hl">bleed</span> a surprising amount of money from a household every month, usually without anyone quite noticing. The industry has mastered the dark art of the "free trial" — a feature that costs nothing for thirty days and then turns into a paid plan the moment you forget to cancel. By the time a person has stacked a streaming service, a music app, a cloud drive, a fitness membership, a meal-kit plan, and half a dozen trials that quietly went paid, the total can rival a car payment, for things they barely use. A whole generation has now grown up that has never owned a song, a film, or a piece of software in the old sense — only the right to play it, revoked at the publisher's discretion. To them, ownership is not a default setting but an unfamiliar luxury they have to choose on purpose.</p>
+<p>What makes the model so sticky is not the product but the <span class="hl">lock-in</span>. Once your photos live in one cloud, your passwords in another, and your reading history in a third, leaving is no longer a simple decision; it is a small migration project with real emotional cost. Firms design <span class="hl">freemium</span> tiers precisely to hook you at zero cost, then monetize the habit later. They measure success not by how much you love the product but by how rarely you <span class="hl">opt out</span> — a number they track under the cold corporate name of <span class="hl">churn</span>. The aim is not a satisfied customer who stays because they want to, but a captive one who stays because leaving is inconvenient.</p>
+<p>The deeper shift is cultural. We are moving from a culture of ownership to a culture of access, from "this is mine" to "I have the right to use this for now." Economists have a tidy phrase for it: <span class="hl">access over ownership</span>. It sounds efficient, and often it is. But something subtle is lost when nothing is truly yours. A book you buy can be lent, annotated, resold, or left on a shelf for twenty years. A book you merely license vanishes the moment the service shuts down or reprices. In an access economy, permanence is no longer included; it must be rented, month by month, like everything else.</p>
+<p>None of this is purely cynical. Subscriptions can democratize tools that used to be luxuries, spread cost over time, and spare us the clutter of things we touch twice. The trouble is the cumulative psychology. When everything is a rental, nothing feels settled. We live among our possessions like tenants rather than owners — grateful for the access, vaguely uneasy about the permanence, and quietly aware that the landlord can rewrite the terms at any time. The <span class="hl">rentership society</span> is comfortable, frictionless, and strangely weightless; it is also a life in which you can be locked out of your own music, your own files, your own memories, by a single failed payment. There is a quiet relief in not having to maintain, insure, or store the things we use; the rental spares us the gravity of possession. Yet gravity, it turns out, is also what makes a thing feel real — and what we lose when nothing weighs us down is harder to name than it is to feel.</p>
+<p>The backlash, when it comes, will probably look less like a revolt and more like a quiet reclamation. A small but visible movement is already choosing ownership on purpose: buying physical media again, canceling the <span class="hl">bundles</span>, returning to tools that live on a hard drive instead of a server. It is the same instinct behind the vinyl revival and the dumbphone trend — a refusal to let every corner of life be mediated, metered, and monetized by default. We are unlikely to go back to buying everything outright. But the question worth sitting with is simple: in a world where you own less and less, what is the one thing you would truly hate to lose the right to use?</p>
+</article>
+</section>
+<!-- 10:00–12:00 · Key Expressions -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–12:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">subscription fatigue (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="subscription fatigue (n.)" data-example="The rest of us are starting to call it something closer to subscription fatigue. （本文 / Daily English Reading · 2026-08-22）" data-scene='使用场景：形容用户对"什么都得月付"的整体倦怠；比 boredom 更精准，是媒体常用新词。' data-zh="订阅疲劳——对层出不穷的订阅服务感到厌倦、无力梳理" type="button">☆</button></span><span class="zh">订阅疲劳——对层出不穷的订阅服务感到厌倦、无力梳理</span>
+<span class="sc">使用场景：形容用户对"什么都得月付"的整体倦怠；比 boredom 更精准，是媒体常用新词。</span>
+<span class="ex">The rest of us are starting to call it something closer to subscription fatigue. （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">recurring charge (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="recurring charge (n.)" data-example="…has shifted from a one-time purchase to a recurring charge that renews… （本文 / Daily English Reading · 2026-08-22）" data-scene="使用场景：账单、订阅场景；recur = 重复发生。和 one-time purchase（一次性买断）相对。" data-zh="周期性自动扣款——每月/定期从账户自动划走的费用" type="button">☆</button></span><span class="zh">周期性自动扣款——每月/定期从账户自动划走的费用</span>
+<span class="sc">使用场景：账单、订阅场景；recur = 重复发生。和 one-time purchase（一次性买断）相对。</span>
+<span class="ex">…has shifted from a one-time purchase to a recurring charge that renews… （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">bleed (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="bleed (v.)" data-example="…taken together, they bleed a surprising amount of money from a household every month… （本文 / Daily English Reading · 2026-08-22）" data-scene='使用场景：形容小额但持续的消耗（bleed money / bleed resources）；强调"不知不觉"。' data-zh="（钱/资源）被慢慢蚕食、悄悄流失——此处作比喻用法" type="button">☆</button></span><span class="zh">（钱/资源）被慢慢蚕食、悄悄流失——此处作比喻用法</span>
+<span class="sc">使用场景：形容小额但持续的消耗（bleed money / bleed resources）；强调"不知不觉"。</span>
+<span class="ex">…taken together, they bleed a surprising amount of money from a household every month… （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">lock-in (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="lock-in (n.)" data-example="What makes the model so sticky is not the product but the lock-in. （本文 / Daily English Reading · 2026-08-22）" data-scene="使用场景：商业、SaaS、平台战略；常说 vendor lock-in（供应商锁定）。" data-zh="锁定 / 套牢——因数据或习惯迁移成本过高而难以离开某服务" type="button">☆</button></span><span class="zh">锁定 / 套牢——因数据或习惯迁移成本过高而难以离开某服务</span>
+<span class="sc">使用场景：商业、SaaS、平台战略；常说 vendor lock-in（供应商锁定）。</span>
+<span class="ex">What makes the model so sticky is not the product but the lock-in. （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">freemium (adj. / n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="freemium (adj. / n.)" data-example="Firms design freemium tiers precisely to hook you at zero cost… （本文 / Daily English Reading · 2026-08-22）" data-scene="使用场景：App / 软件商业模式；由 free + premium 拼成，是真实商业术语。" data-zh="免费增值（模式）——基础功能免费、高级功能付费" type="button">☆</button></span><span class="zh">免费增值（模式）——基础功能免费、高级功能付费</span>
+<span class="sc">使用场景：App / 软件商业模式；由 free + premium 拼成，是真实商业术语。</span>
+<span class="ex">Firms design freemium tiers precisely to hook you at zero cost… （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">opt out (phr. v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="opt out (phr. v.)" data-example="They measure success not by… but by how rarely you opt out. （本文 / Daily English Reading · 2026-08-22）" data-scene='使用场景：订阅、邮件列表、默认勾选；opt in 则是"选择加入"。' data-zh="退出 / 选择退出——主动脱离某项计划或默认设置" type="button">☆</button></span><span class="zh">退出 / 选择退出——主动脱离某项计划或默认设置</span>
+<span class="sc">使用场景：订阅、邮件列表、默认勾选；opt in 则是"选择加入"。</span>
+<span class="ex">They measure success not by… but by how rarely you opt out. （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">churn (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="churn (n.)" data-example="…a number they track under the cold corporate name of churn. （本文 / Daily English Reading · 2026-08-22）" data-scene="使用场景：SaaS / 订阅业务核心指标（churn rate）；此处带反讽色彩。" data-zh="（客户）流失——商业中指用户取消订阅、停止使用的比率" type="button">☆</button></span><span class="zh">（客户）流失——商业中指用户取消订阅、停止使用的比率</span>
+<span class="sc">使用场景：SaaS / 订阅业务核心指标（churn rate）；此处带反讽色彩。</span>
+<span class="ex">…a number they track under the cold corporate name of churn. （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">access over ownership (phrase)</span><button aria-label="收藏表达" class="expr-fav" data-en="access over ownership (phrase)" data-example="Economists have a tidy phrase for it: access over ownership. （本文 / Daily English Reading · 2026-08-22）" data-scene="使用场景：经济 / 消费趋势评论；描述共享经济、订阅经济的底层逻辑。" data-zh='使用权优先于所有权——从"拥有"转向"按需使用"' type="button">☆</button></span><span class="zh">使用权优先于所有权——从"拥有"转向"按需使用"</span>
+<span class="sc">使用场景：经济 / 消费趋势评论；描述共享经济、订阅经济的底层逻辑。</span>
+<span class="ex">Economists have a tidy phrase for it: access over ownership. （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">rentership society (n. phrase)</span><button aria-label="收藏表达" class="expr-fav" data-en="rentership society (n. phrase)" data-example="The rentership society is comfortable, frictionless, and strangely weightless… （本文 / Daily English Reading · 2026-08-22）" data-scene="使用场景：社会 / 经济评论；对应 homeownership society（有产社会）的反向造词。" data-zh="租赁型社会——什么都租、少有永久拥有的生活方式" type="button">☆</button></span><span class="zh">租赁型社会——什么都租、少有永久拥有的生活方式</span>
+<span class="sc">使用场景：社会 / 经济评论；对应 homeownership society（有产社会）的反向造词。</span>
+<span class="ex">The rentership society is comfortable, frictionless, and strangely weightless… （本文 / Daily English Reading · 2026-08-22）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">bundle (v. / n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="bundle (v. / n.)" data-example="…buying physical media again, canceling the bundles… （本文 / Daily English Reading · 2026-08-22）" data-scene="使用场景：订阅、电信、流媒体；bundle 可作动词也可作名词（a bundle）。" data-zh="捆绑 / 打包（销售）——把多项服务合为一单" type="button">☆</button></span><span class="zh">捆绑 / 打包（销售）——把多项服务合为一单</span>
+<span class="sc">使用场景：订阅、电信、流媒体；bundle 可作动词也可作名词（a bundle）。</span>
+<span class="ex">…buying physical media again, canceling the bundles… （本文 / Daily English Reading · 2026-08-22）</span></span>
+</section>
+<!-- 12:00–13:00 · Tech & Consumer Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Tech &amp; Consumer Vocabulary · 科技消费词块</h2><span class="time-tag">⏱ 12:00–13:00 词块</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:14px;">今天不是娱乐主题，所以把「Celebrity / Culture Vocabulary」换成科技消费场景的高频词块（例句均摘自本文，标注「本文 / Daily English Reading · 2026-08-22」）：</p>
+<div class="vocab">
+<div class="v"><b>the subscription economy</b><span>订阅经济——一切皆可月付的整体模式。</span></div>
+<div class="v"><b>SaaS (software as a service)</b><span>软件即服务——按订阅使用、不买断的软件形态。</span></div>
+<div class="v"><b>a free trial</b><span>免费试用——常暗藏"忘记取消就自动续费"的陷阱。</span></div>
+<div class="v"><b>auto-renew</b><span>自动续费——到期无需确认即扣款，是订阅模式的引擎。</span></div>
+<div class="v"><b>a paywall</b><span>付费墙——免费内容之后的收费门槛。</span></div>
+<div class="v"><b>dark pattern</b><span>暗黑模式（诱骗性界面设计）——用 UI 诱导你做不想做的事。</span></div>
+<div class="v"><b>cloud storage</b><span>云存储——数据存在远端服务器而非本地，强化 lock-in。</span></div>
+<div class="v"><b>physical media</b><span>实体媒介——唱片、光盘、纸质书等可真正"拥有"的载体。</span></div>
+<div class="v"><b>a captive customer</b><span>被套牢的客户——因迁移成本高而难以离开的人。</span></div>
+<div class="v"><b>the access economy</b><span>使用权经济——以"按需取用"取代"永久拥有"的经济形态。</span></div>
+</div>
+</section>
+<!-- 13:00–15:00 · Sentence Breakdown -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 13:00–15:00 长难句</span></div>
+<div class="sb">
+<p class="q">"Taken one by one, the charges are trivial; taken together, they bleed a surprising amount of money from a household every month, usually without anyone quite noticing."</p>
+<p class="a"><b>句型：</b>两个过去分词短语 <i>taken one by one / taken together</i> 作状语，构成对比框架；主干是 "the charges are trivial" 与 "they bleed…money" 由分号连接。<br/><b>逻辑：</b>用"单个 vs 合起来"的反差，揭示订阅的隐性成本——每笔都小，总和却惊人。<br/><b>表达：</b>① <i>bleed…from</i> 把"钱被蚕食"动词化、形象化；② 句末 <i>usually without anyone quite noticing</i> 是伴随状语，点出"无人察觉"的讽刺，是媒体评论常见收尾。</p>
+</div>
+<div class="sb">
+<p class="q">"Once your photos live in one cloud, your passwords in another, and your reading history in a third, leaving is no longer a simple decision; it is a small migration project with real emotional cost."</p>
+<p class="a"><b>句型：</b><i>Once</i> 引导条件/时间从句；主句用平行结构 <i>one…another…a third</i> 排布；<i>leaving</i>（动名词）作主语；分号把"简单决定 → 小型迁移工程"递进。<br/><b>逻辑：</b>数据分散在三个平台，使"离开"不再是点击，而是带情绪成本的工程——解释 lock-in 为何牢固。<br/><b>表达：</b><i>a migration project</i> 用 IT 术语比喻生活抉择，冷峻又精准；<i>with real emotional cost</i> 把抽象代价具身化。</p>
+</div>
+<div class="sb">
+<p class="q">"They measure success not by how much you love the product but by how rarely you opt out — a number they track under the cold corporate name of churn."</p>
+<p class="a"><b>句型：</b><i>not by A but by B</i> 平行结构；破折号后 <i>a number</i> 是同位语，回指 "how rarely you opt out"。<br/><b>逻辑：</b>企业的"成功标准"并非用户喜爱，而是"很少退出"——把商业目标从"满意"偷换为"离不开"。<br/><b>表达：</b><i>the cold corporate name of churn</i> 用 "cold" 褒贬化术语，暗讽企业把人走茶凉包装成中性指标。</p>
+</div>
+<div class="sb">
+<p class="q">"A book you buy can be lent, annotated, resold, or left on a shelf for twenty years. A book you merely license vanishes the moment the service shuts down or reprices."</p>
+<p class="a"><b>句型：</b>两个平行句构成 buy vs license 的对照；<i>the moment</i> 在此连词化，等于 as soon as；第二组用四个动词 <i>lent, annotated, resold, left</i> 连用。<br/><b>逻辑：</b>"拥有"意味着可处置、可留存；"授权使用"则随时可被收回——所有权的实质是"不可逆"。<br/><b>表达：</b>动词堆叠（lend / annotate / resell / leave）强化"处置自由"，与 license 的脆弱形成张力。</p>
+</div>
+<div class="sb">
+<p class="q">"We live among our possessions like tenants rather than owners — grateful for the access, vaguely uneasy about the permanence, and quietly aware that the landlord can rewrite the terms at any time."</p>
+<p class="a"><b>句型：</b>主句 + <i>like tenants rather than owners</i> 比喻；破折号后三个形容词短语 <i>grateful… / uneasy… / aware…</i> 平行递进；<i>that</i> 从句收束。<br/><b>逻辑：</b>把"订阅者"比作"租客"，三层心理由感恩→不安→警觉，层层加深"随时可被改条款"的隐忧。<br/><b>表达：</b><i>rewrite the terms at any time</i> 直指平台权力的不对等，是全文情绪落点。</p>
+</div>
+</section>
+<!-- Chinese Summary -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 复盘</span></div>
+<p style="margin:0 0 10px;"><b>核心内容：</b>文章梳理了"买断"到"订阅"的悄然转向——音乐、影视、网盘、健身甚至日用品都变成每月自动扣款的 <b>recurring charge</b>。它用"免费试用→自动续费""数据分散→迁移困难（lock-in）""freemium 钩住你后再 monetize"三套机制，解释了为什么订阅如此"黏人"；并指出企业真正的 KPI 不是你爱不爱，而是你<b>多难离开</b>（churn）。</p>
+<p style="margin:0 0 10px;"><b>背后文化现象：</b>这是从"所有权社会"滑向"使用权社会 / <b>rentership society</b>"的宏观转变。表面高效、无 clutter，代价是" permanence 不再默认包含，必须按月租"——你随时可能因一次扣款失败，被锁在自己买的歌、文件、记忆之外。它和黑胶回潮、功能机回潮、静奢风是同一股逆流：在"一切被安排、可随时收回"的世界里，<b>真正属于你、不可撤回的东西正变成新的奢侈</b>。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 当"拥有"被重新定义为"暂时使用权"，我们对"我的东西"的掌控感是否只是一种幻觉？② 平台用 convenience 换走了我们的 permanence 与议价权，这笔交易划算吗？③ 如果只能保留一件"真正属于自己、不可被收回"的东西，你会选什么——为什么恰恰是它？</p>
+</section>
+<!-- Speaking Practice -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练习</h2><span class="time-tag">⏱ 输出</span></div>
+<div class="prompt">💬 <b>Discussion question（请用英文回答，约 200 词）：</b><br/>
+    The article argues we are moving from a culture of "ownership" to a culture of "access" — we rent more and own less. Do you think this shift makes life better or worse? Share one example from your own life (a subscription you use, or something you deliberately chose to own), and explain whether "access over ownership" works for you. Where would you draw the line?</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I'd say the shift is a mixed blessing, and it really depends on what we're talking about. For software and media, access over ownership is genuinely convenient — I'd rather pay a small monthly fee for a music app than buy hundreds of CDs I'd never replay. It saves space and spreads the cost. But the downside is exactly what the article describes: nothing feels truly mine, and a single missed payment can cut me off from things I thought I had. <br/><br/>
+      A clear example from my own life is photos. For years I trusted a cloud service, and when it changed its pricing I realized how fragile that "ownership" was — my memories were essentially held hostage. Since then I've deliberately chosen to own: I now keep physical backups on a hard drive and even print a few favorites each year. That, to me, is where I draw the line. Convenience is fine for throwaway content, but for things with emotional weight — photos, books I love, a few objects with a story — I want the right to keep them permanently, on my own terms. Access is a good guest; ownership is what makes a place feel like home.
+    </div>
+<div class="tip">🗣 练习建议：先口述录音 2 分钟，再对照范文补 3 个你用得上的表达（如 draw the line / spread the cost / on my own terms），第二天复盘。</div>
+</section>
+<footer>Daily English Reading · 2026-08-22 · 主题桶：科技与未来 · 自包含单文件，可嵌入学习中心分享</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-22',title:"The Subscription Everything: Why We Stopped Owning and Started Renting Our Lives"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | Day 3</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e2ddd6;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+  }
+  .header .date { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f5;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 40px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin-bottom: 4px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.s { color: var(--accent); }
+  .speaker.m { color: var(--accent-3); }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<span class="day-badge">DAY 3</span>
+<h1>每日英语口语训练</h1>
+<div class="date">2026年7月29日（周三） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>旅行 · 机场与问路</h2>
+<div class="en">Travel · Airport &amp; Asking the Way</div>
+<p>第一次出国，机场里怎么问登机口、选座位、找洗手间；到了新城市迷路了怎么开口问路。这5个表达+1段对话，覆盖旅行最常用的开口方式。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 个美国人真实日常例句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "Where do I check in?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Where do I check in?"' data-scene="使用场景 到达机场后找值机柜台 / 不确定去哪办手续" data-zh="我在哪里办登机？" type="button">☆</button></div>
+<div class="expr-cn">我在哪里办登机？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>到达机场后找值机柜台 / 不确定去哪办手续</div>
+<div class="tv-lines">
+<div class="tv-line">"Excuse me, where do I check in for flight 208?"（问某航班的值机柜台）</div>
+<div class="tv-line">"I need to check in. Where do I go?"（要办登机，去哪办？）</div>
+<div class="tv-line">"Is this the right line to check in?"（这条队是办登机的吗？）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "Could I have a window seat?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Could I have a window seat?"' data-scene="使用场景 办理登机时礼貌地选座位" data-zh="能给我靠窗的座位吗？" type="button">☆</button></div>
+<div class="expr-cn">能给我靠窗的座位吗？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>办理登机时礼貌地选座位</div>
+<div class="tv-lines">
+<div class="tv-line">"Could I have a window seat, please? I love looking at the view."（想坐窗边）</div>
+<div class="tv-line">"Is it too late to switch to a window seat?"（想换靠窗）</div>
+<div class="tv-line">"Do you have any window seats left?"（还有靠窗位吗）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "I think I'm lost."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I think I'm lost.&quot;" data-scene="使用场景 在国外或不熟悉的地方，向路人/店员开口求助" data-zh="我想我迷路了。" type="button">☆</button></div>
+<div class="expr-cn">我想我迷路了。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>在国外或不熟悉的地方，向路人/店员开口求助</div>
+<div class="tv-lines">
+<div class="tv-line">"Excuse me, I think I'm lost. Is this the way to the subway station?"（问地铁站）</div>
+<div class="tv-line">"Sorry, I'm a bit turned around. Could you help me?"（有点转向，麻烦帮下忙）</div>
+<div class="tv-line">"I think I went the wrong way. Where am I exactly?"（走错了）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "How long does it take to get to...?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"How long does it take to get to...?"' data-scene="使用场景 在机场问去登机口要多久 / 在新城市问路程时间" data-zh="去……要多久？" type="button">☆</button></div>
+<div class="expr-cn">去……要多久？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>在机场问去登机口要多久 / 在新城市问路程时间</div>
+<div class="tv-lines">
+<div class="tv-line">"How long does it take to get to the airport from here?"（从这到机场要多久）</div>
+<div class="tv-line">"About how long is the flight to Tokyo?"（飞东京大概多久）</div>
+<div class="tv-line">"How long does the subway take to downtown?"（地铁到市中心要多久）</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "Is this the way to...?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Is this the way to...?"' data-scene="使用场景 在机场、地铁站、新城市里确认方向" data-zh="这是去……的路吗？" type="button">☆</button></div>
+<div class="expr-cn">这是去……的路吗？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>在机场、地铁站、新城市里确认方向</div>
+<div class="tv-lines">
+<div class="tv-line">"Excuse me, is this the way to the train station?"（问火车站）</div>
+<div class="tv-line">"Is this the right bus to downtown?"（这趟车去市中心吗）</div>
+<div class="tv-line">"Am I going the right direction for the museum?"（去博物馆方向对吗）</div>
+</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 8轮真实聊天</h3>
+<div class="dialogue">
+<div class="scene">✈️ 场景：Jake 第一次出国，在机场值机柜台问工作人员问题，准备飞东京。</div>
+<div class="line">
+<span class="speaker s">Staff:</span>
+<span class="text">Hi! Welcome to the counter. Can I see your passport?</span>
+<div class="translation">你好！欢迎到柜台来。我能看下你的护照吗？</div>
+</div>
+<div class="line">
+<span class="speaker m">Jake:</span>
+<span class="text">Sure, here you go. I think I'm a little lost—first time flying out of here.</span>
+<div class="translation">好，给你。我有点懵，第一次从这飞。</div>
+</div>
+<div class="line">
+<span class="speaker s">Staff:</span>
+<span class="text">No worries, I'll walk you through it. Where are you headed today?</span>
+<div class="translation">没事，我一步步带你。今天去哪？</div>
+</div>
+<div class="line">
+<span class="speaker m">Jake:</span>
+<span class="text">Tokyo. Could I have a window seat, please? I love the view from up there.</span>
+<div class="translation">东京。能给我靠窗的位子吗？我喜欢从上面看风景。</div>
+</div>
+<div class="line">
+<span class="speaker s">Staff:</span>
+<span class="text">You're in luck—last window seat left. Here's your boarding pass. Gate 22.</span>
+<div class="translation">你运气好——最后一个靠窗位。这是登机牌，22号登机口。</div>
+</div>
+<div class="line">
+<span class="speaker m">Jake:</span>
+<span class="text">Awesome, thanks. How long does it take to get to the gate from here?</span>
+<div class="translation">太好了，谢谢。从这到登机口要走多久？</div>
+</div>
+<div class="line">
+<span class="speaker s">Staff:</span>
+<span class="text">About 15 minutes if you walk at a normal pace. Just follow the purple signs.</span>
+<div class="translation">正常速度走大概15分钟。跟着紫色标志走就行。</div>
+</div>
+<div class="line">
+<span class="speaker m">Jake:</span>
+<span class="text">Got it. Is this the way to the security check?</span>
+<div class="translation">明白了。这是去安检的路吗？</div>
+</div>
+<div class="line">
+<span class="speaker s">Staff:</span>
+<span class="text">Yep, straight ahead. You'll see it on your left.</span>
+<div class="translation">对，直走。安检就在你左手边。</div>
+</div>
+<div class="line">
+<span class="speaker m">Jake:</span>
+<span class="text">Perfect. By the way, where's the restroom before I go through?</span>
+<div class="translation">完美。对了，过安检前洗手间在哪？</div>
+</div>
+<div class="line">
+<span class="speaker s">Staff:</span>
+<span class="text">Just past the coffee shop on your right—can't miss it.</span>
+<div class="translation">就在你右手边过了咖啡店——很好找。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>You just arrived at a foreign airport and can't find your gate. What do you say to airport staff?</strong>
+<div class="hint">💡 用上 "I think I'm lost." / "Is this the way to...?"</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Excuse me, I think I'm lost. Is this the way to gate 14?"</span>
+<span class="s">"Sorry to bother you—I'm a bit lost. Could you point me to the right gate?"</span>
+<span class="s">"Hi, I'm trying to find my gate. Am I going the right way?"</span>
+</div>
+</li>
+<li>
+<strong>You're checking in for a flight and really want a window seat. How do you politely ask?</strong>
+<div class="hint">💡 用上 "Could I have a window seat, please?"</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Could I have a window seat, please? I love the view."</span>
+<span class="s">"If there's any chance, I'd really love a window seat."</span>
+<span class="s">"Do you happen to have any window seats left?"</span>
+</div>
+</li>
+<li>
+<strong>You're in a new city and need to take the subway downtown. How do you ask a local for help?</strong>
+<div class="hint">💡 用上 "How long does it take to get to...?" / "Is this the way to...?"</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Excuse me, how long does it take to get downtown by subway?"</span>
+<span class="s">"Is this the right subway to the city center?"</span>
+<span class="s">"Sorry—I'm new here. How long does the train take to get to Times Square?"</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：先朗读对话2-3遍感受节奏，再回答3个练习题并录音回听。重点听"I think I'm lost"和"Could I have"这种礼貌又地道的句型。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"Where is the toilet?"</td>
+<td class="right">"Where's the restroom?"<br/>"Where's the bathroom?"</td>
+<td class="note">在美国机场/商场问洗手间，用 restroom / bathroom 更地道。toilet 偏英式且直白。</td>
+</tr>
+<tr>
+<td class="wrong">"How to go to the airport?"</td>
+<td class="right">"How do I get to the airport?"<br/>"How can I get there?"</td>
+<td class="note">"How to + 动词" 是中式错误。问路或问方式一定要加助动词 do / can。</td>
+</tr>
+<tr>
+<td class="wrong">"I want a window seat."</td>
+<td class="right">"Could I have a window seat, please?"</td>
+<td class="note">"I want..." 太直接，飞机上对工作人员说话用 "Could I..." 更礼貌自然。</td>
+</tr>
+<tr>
+<td class="wrong">"Take me to the hotel."</td>
+<td class="right">"Could you take me to ___?"<br/>"Can I get a ride to ___?"</td>
+<td class="note">直接对司机说 "Take me to..." 像命令。加 Could you / Can I 更礼貌。</td>
+</tr>
+<tr>
+<td class="wrong">"I don't know English."</td>
+<td class="right">"I don't really speak English."<br/>"My English isn't great."</td>
+<td class="note">"I don't know English" 字面是说"我不知道英语这门语言"，外国人听起来奇怪。改用 I don't really speak English。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话2遍 → ② 背5个核心表达 → ③ 回答3个练习题（录音）→ ④ 回顾纠正表，避免明天再犯。
+    </div>
+<p>坚持每天15分钟，开口比完美更重要。See you tomorrow! 🌙</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'9999-0003-00',title:"旅行 · 机场与问路"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

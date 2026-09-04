@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introducing Yourself — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #c0392b; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(192,57,43,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 19 · 8/12 Wed</div>
+    <h2>Introducing Yourself</h2>
+    <div class="zh">自我介绍 · 让别人记住你</div>
+    <div class="en">"You never get a second chance to make a first impression."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm from… originally</span>
+        <span class="cn-meaning">我老家是……（但现在住别处）</span>
+      </div>
+      <div class="scene">介绍家乡 + 说明搬来本地多久。用 originally 顺手交代"现在不住那儿了"。比直接说 I come from… 更自然。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm from Long Island."<div class="src">— Monica Geller, Friends / 反复出现（Ross & Monica 的家乡梗）</div></div>
+        <div class="quote-item">"I'm from Scranton, born and raised."<div class="src">— Michael Scott, The Office S04E01 / 介绍自己时的标志性骄傲口吻</div></div>
+        <div class="quote-item">"I mean, I'm from Ohio. We don't just blurt things out like that."<div class="src">— Ted Mosby, How I Met Your Mother S01E01 / 向 Robin 解释自己说话没那么直接</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I work as a… / I do… for a living</span>
+        <span class="cn-meaning">我是做……工作的</span>
+      </div>
+      <div class="scene">非正式场合自然说自己的职业。I do… for a living 比 My job is… 更像真人说话。别用 I am a + 职位长句，保持短。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm an actor."<div class="src">— Joey Tribbiani, Friends / Joey 的标志性自我介绍，简单直接</div></div>
+        <div class="quote-item">"I'm the assistant to the regional manager."<div class="src">— Dwight Schrute, The Office / 强调 assistant to（不是 assistant）</div></div>
+        <div class="quote-item">"I'm a realtor."<div class="src">— Phil Dunphy, Modern Family S01E01 / 全家自我介绍时 Phil 的招牌身份</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I've been getting into… lately</span>
+        <span class="cn-meaning">最近迷上了……</span>
+      </div>
+      <div class="scene">聊兴趣爱好的自然开头。get into 比 like 更有「主动投入」的意味，lately 让整个表达更随意。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I've been getting into yoga. It's really helped with my stress."<div class="src">— Phoebe Buffay, Friends S05 / Phoebe 给朋友安利瑜伽时的语境</div></div>
+        <div class="quote-item">"I have been getting into cooking lately. You know, watching those cooking shows?"<div class="src">— Lily Aldrin, How I Met Your Mother S03 / Lily 搬家后培养新爱好</div></div>
+        <div class="quote-item">"I've really been getting into this whole photography thing."<div class="src">— Phil Dunphy, Modern Family S02 / Phil 典型的"三分钟热度"式表达</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm kind of a… person</span>
+        <span class="cn-meaning">我算是那种……的人</span>
+      </div>
+      <div class="scene">用 kind of 软化语气，不给自己贴死标签。形容性格/习惯的最佳句式，比 I am a… person 更口语化。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm kind of a neat freak."<div class="src">— Monica Geller, Friends / Monica 对自己洁癖的清醒认知</div></div>
+        <div class="quote-item">"I'm kind of a cool dad. That's my thing."<div class="src">— Phil Dunphy, Modern Family S01E01 / Phil 的经典自我介绍</div></div>
+        <div class="quote-item">"I'm a bit of a hopeless romantic, I'll admit it."<div class="src">— Ted Mosby, How I Met Your Mother S01E01 / 向 Robin 坦承自己</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Great to finally meet you! / I've heard so much about you</span>
+        <span class="cn-meaning">终于见到你了！/ 久仰大名</span>
+      </div>
+      <div class="scene">初次见面「果然是你」的暖场句。finally 暗示之前听过对方，一下就拉近距离。heard so much 是最安全的破冰客套。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Oh, it's so nice to finally meet you! Joey talks about you all the time."<div class="src">— Rachel Green, Friends S02 / Rachel 第一次见 Joey 的约会对象</div></div>
+        <div class="quote-item">"Hi, nice to meet you. I've heard a lot about you."<div class="src">— Pam Beesly, The Office S03 / Pam 见新同事时的招牌羞涩开场</div></div>
+        <div class="quote-item">"I've heard so much about you!"<div class="src">— Ted Mosby, How I Met Your Mother S01 / 被介绍给 Barney 新女友时的标准社交句</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周五晚上的科技行业 happy hour。Sam（设计师，芝加哥人）和 Jamie（内容营销，奥斯汀人）第一次见面。</div>
+
+      <div class="msg">
+        <div class="speaker a">Sam</div>
+        <div class="en">Hey, is this seat taken?</div>
+        <div class="cn">嘿，这位置有人吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">No, go ahead! I'm Jamie, by the way.</div>
+        <div class="cn">没人，坐吧！对了，我是 Jamie。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Sam</div>
+        <div class="en">Sam. Great to meet you.</div>
+        <div class="cn">我是 Sam，很高兴认识你。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">So, what do you do, Sam?</div>
+        <div class="cn">那，你是做什么的？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Sam</div>
+        <div class="en">I'm a UX designer. Been doing this for about four years. What about you?</div>
+        <div class="cn">我是做 UX 设计的，干这行差不多四年了。你呢？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">Oh nice! I do content marketing. Are you from around here?</div>
+        <div class="cn">哇不错！我做内容营销的。你是本地人吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Sam</div>
+        <div class="en">I'm from Chicago, originally — moved here about a year ago for this job.</div>
+        <div class="cn">老家芝加哥的，大概一年前为了这份工作搬过来的。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">I'm from Austin myself. Been here two years now. What do you do outside of work?</div>
+        <div class="cn">我是奥斯汀的，来这儿两年了。你工作之外喜欢做什么？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Sam</div>
+        <div class="en">I've been getting into hiking lately. There's so many trails around here. I'm kind of an outdoors person, I guess.</div>
+        <div class="cn">最近迷上了徒步，这边步道真多啊。我大概算是户外型的吧。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">Oh, I've been meaning to try that! I'm more of a gym person, honestly. We should totally go sometime!</div>
+        <div class="cn">我一直想去试试！老实说，我更多是去健身房那种。改天可以一起去啊！</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">Introduce yourself to someone at a networking event. Say your name, where you're from, and what you do.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Hey, I'm Li Wei. I'm from Shenzhen, originally, but I've been living here for three years now. I work as a product manager."</div>
+      <div class="sample-answer"><strong>B：</strong>"Hi, I'm Wei. I'm from the south of China — moved up here for work. I do graphic design."</div>
+      <div class="sample-answer"><strong>C：</strong>"Oh hey, I'm Li Wei. I'm a software engineer. I grew up in Shenzhen and I've been with my current company for two years."</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">Tell someone what you do for a living and one thing you actually enjoy about it.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"I do digital marketing. What I really like about it is that every day is different — you're never doing the same thing twice."</div>
+      <div class="sample-answer"><strong>B：</strong>"I'm a high school teacher. It's exhausting sometimes, but honestly, the kids make it worth it."</div>
+      <div class="sample-answer"><strong>C：</strong>"I work as a data analyst. I know, that sounds boring — but I love it. It's like solving puzzles all day."</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">Describe your personality in 2-3 sentences. Are you more of an introvert or an extrovert? Use "I'm kind of a… person".</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"I'm kind of an introvert. I need my alone time to recharge. But once I get comfortable, I can talk for hours."</div>
+      <div class="sample-answer"><strong>B：</strong>"I'm more of a people person, honestly. I get my energy from being around others. I'm kind of the loud one in my friend group."</div>
+      <div class="sample-answer"><strong>C：</strong>"I'd say I'm somewhere in the middle. I'm kind of a planner — I like to have things figured out — but I'm also pretty easygoing when plans change."</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"My name is Zhang Wei. I am come from Beijing."</div>
+      <div class="right">"Hey, I'm Wei. I'm from Beijing, originally."</div>
+      <div class="why">中文「我叫……我来自……」直译显得僵硬。英语自我介绍直接用 I'm + 名字，I'm from + 地点。originally 放在句末或句中，暗示你现在不住那儿，比单独一句 Born in… 更自然。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"My job is a designer." / "My job is marketing."</div>
+      <div class="right">"I'm a designer." / "I do marketing." / "I work in marketing."</div>
+      <div class="why">英语里很少说 My job is a + 职位（这等于在说"我的工作这个人是个设计师"）。正确结构：I'm a + 职业 / I work as a + 职业 / I do + 领域。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I very like hiking." / "I very much like sports."</div>
+      <div class="right">"I really like hiking." / "I'm really into hiking." / "I've been getting into hiking lately."</div>
+      <div class="why">very 不直接修饰动词。very like 是中式英语经典坑。用 really / totally / super 修饰 like/love，或者直接用 I'm into / I'm a big fan of 更地道。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I am a careful person." / "I am an active person."</div>
+      <div class="right">"I'm kind of a detail-oriented person." / "I'm more of an outdoors person."</div>
+      <div class="why">careful 在英语里偏「小心翼翼的」，不是中文「细心」的意思。同理 active person 太笼统。用 kind of / more of 软化语气，用更具体的形容词（detail-oriented、outdoorsy、people person、homebody 等）。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"Nice to meet you." 在对话结尾说</div>
+      <div class="right">开头说 "Nice to meet you." / 结尾说 "Nice meeting you." 或 "It was great talking to you."</div>
+      <div class="why">Nice to meet you 是见面时的固定表达。对话结束时要说 Nice meeting you（用 -ing 形式），或用 "Great talking to you" / "Let's keep in touch" 自然收尾。这个小细节老外一听就知道你是不是真的会说。</div>
+    </div>
+  </div>
+
+</div><!-- .wrap -->
+
+</body>
+</html>

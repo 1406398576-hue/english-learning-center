@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-16</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Vinyl Revival: Why a "Dead" Format Refuses to Die</h1>
+<p class="sub">在流媒体统治一切的时代，黑胶为何反而卖得比 CD 还多？</p>
+<div class="meta">
+<span>📅 <b>2026-08-16</b></span>
+<span>🎯 主题桶：<b>商业与其他 (15%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">1988 年，CD 被认为永久"杀死"了黑胶；到 2010 年，黑胶几乎成了博物馆藏品。可 2023 年，美国黑胶销量 35 年来首次反超 CD。一个被整个行业判了"死刑"的格式，竟成了增长最快的实体音乐媒介。今天读一篇商业×文化观察：在流媒体统治、一切都"零摩擦"的时代，为什么我们反而开始为更慢、更笨重、更贵的东西买单？这条线索和你「城市观察者」公众号一以贯之的母题同频——在量产、免费、算法投喂的世界里，"具体、带缺点、需要你到场"的东西，反而最稀缺。</p>
+<div class="tip">💡 读前小思考：如果音乐已经免费、随手可得，你还会为什么样的"不方便"付费？一张唱片、一杯手冲、一本纸质书——你为"摩擦"花过钱吗？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>In 1988, the compact disc was supposed to have killed the vinyl record for good. Forty years of "progress" had shrunk music from a twelve-inch sleeve to a silver coaster, and by 2010 the LP looked like a museum piece—something your parents owned and nobody missed. So it came as a genuine surprise when, in 2023, vinyl <span class="hl">outsold</span> compact discs in the United States for the first time in thirty-five years. A format the industry had <span class="hl">written off</span> as obsolete was suddenly the fastest-growing physical music medium on the planet.</p>
+<p>The numbers are hard to dismiss. According to the Recording Industry Association of America, vinyl revenue overtook CD revenue back in 2022, and by 2023 Americans bought roughly forty-three million LPs against about thirty-seven million CDs. Streaming still <span class="hl">dwarfs</span> both, of course—paid subscriptions account for the vast majority of music revenue. Yet vinyl has climbed for seventeen straight years, quietly defying every prediction that it would <span class="hl">fade into extinction</span>. For a technology the future left behind, that is a remarkably stubborn heartbeat. No other legacy format—not the cassette, not the CD—has pulled off the same comeback.</p>
+<p>The obvious explanation—sound quality—turns out to be only part of the story. Audiophiles will argue for hours about "warmth" and "depth," but plenty of listeners who love vinyl could not pass a blind test. What the format really sells is not better audio; it is everything streaming took away. A stream is invisible, owned by no one, and gone the moment you stop paying. A record is a thing you hold, a sleeve you read, an object that lives on your shelf. A stream asks nothing of you and gives you everything at once; a record asks you to be somewhere, with something, for a while. In a world of <span class="hl">frictionless</span> everything, friction quietly became a feature.</p>
+<p>Consider the ritual. Dropping a needle on a record forces you to slow down. You listen to an album the way the artist intended—front to back, no skipping, no autoplay pulling you somewhere else. Against algorithmic playlists engineered to optimize the next thirty seconds, sitting with a full record feels almost rebellious. The inconvenience is precisely <span class="hl">the point</span>: the music asks something of you, and that demand is what makes it feel like yours.</p>
+<p>There is also a quiet politics to the comeback. In a culture where nearly every choice is personalized by an algorithm, choosing physical media is a small, <span class="hl">deliberate</span> act of autonomy. To buy a record is to say: I curate, I do not merely consume what is fed to me. For a generation raised inside <span class="hl">the feed</span>, vinyl is a way of stepping outside it—a tactile reminder that culture can exist off-screen, unsorted, and slightly out of reach.</p>
+<p>The economics also reveal a tension. Vinyl is more expensive to make and buy, and its revival has little to do with thrift. If anything, it is a purchase that announces taste—a small luxury in an age when music itself is effectively free. Paying more for less convenience is, in a sense, the whole appeal: you are not buying a file, you are buying a statement.</p>
+<p>The industry noticed. Labels rediscovered that <span class="hl">scarcity</span> sells: limited pressings, colored vinyl, picture discs, and deluxe editions now arrive in waves. Major artists release exclusive formats their fans queue for, and what was once disposable packaging has become a merch category and, for some, a <span class="hl">status object</span> displayed more than played. The same logic that drives hype drops in fashion now moves plastic in record stores.</p>
+<p>Strangest of all, many of today's buyers were not alive for vinyl's first life. For Gen Z, the LP is not nostalgia; it is discovery. It is a retro aesthetic, a room decoration, a prop for a photo, an identity to try on. The comeback is partly a fashion cycle wearing an old costume—proof that "dead" formats rarely die so much as wait for the next generation to find them cool again.</p>
+<p>What makes the revival worth watching is not the sales chart but the signal. When a digital-native generation chooses a slower, clumsier, more expensive medium, it is voting with its wallet against the logic of frictionless convenience. The message is not "analog is better." It is "I want to matter to the things I consume, and for them to matter to me." Objects that <span class="hl">ask something of</span> us—that demand presence, that cannot be infinitely copied—have become a quiet luxury in a copy-paste world.</p>
+<p>None of this means vinyl will dethrone streaming, and it should not pretend to. But its return is an argument, made without words: that we still want things that ask something of us, that reward attention instead of fragmenting it. The format the future left behind may be teaching us exactly what the future forgot—that some value only shows up when you have to show up for it.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">outsell (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="outsell (v.)" data-example="…vinyl outsold compact discs in the US for the first time in 35 years. （本文 / Daily English Reading · 2026-08-16）" data-scene="使用场景：比较两个产品的市场表现，比 sell more than 更紧凑、商业/评论文高频。" data-zh="销量超过、卖得比…多" type="button">☆</button></span><span class="zh">销量超过、卖得比…多</span>
+<span class="sc">使用场景：比较两个产品的市场表现，比 sell more than 更紧凑、商业/评论文高频。</span>
+<span class="ex">…vinyl outsold compact discs in the US for the first time in 35 years. （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">write off (phrasal)</span><button aria-label="收藏表达" class="expr-fav" data-en="write off (phrasal)" data-example="A format the industry had written off as obsolete… （本文 / Daily English Reading · 2026-08-16）" data-scene='使用场景：说把某项目/技术/人判定为"失败、不值得救"，商业与日常都常用。' data-zh="认定（某物）没救了、注销 / 放弃" type="button">☆</button></span><span class="zh">认定（某物）没救了、注销 / 放弃</span>
+<span class="sc">使用场景：说把某项目/技术/人判定为"失败、不值得救"，商业与日常都常用。</span>
+<span class="ex">A format the industry had written off as obsolete… （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">dwarf (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="dwarf (v.)" data-example="Streaming still dwarfs both, of course… （本文 / Daily English Reading · 2026-08-16）" data-scene="使用场景：强调一方在体量上碾压另一方，比 be much bigger than 更有力。" data-zh="使相形见绌、使显得渺小（数量/规模远超）" type="button">☆</button></span><span class="zh">使相形见绌、使显得渺小（数量/规模远超）</span>
+<span class="sc">使用场景：强调一方在体量上碾压另一方，比 be much bigger than 更有力。</span>
+<span class="ex">Streaming still dwarfs both, of course… （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">fade into extinction</span><button aria-label="收藏表达" class="expr-fav" data-en="fade into extinction" data-example="…defying every prediction that it would fade into extinction. （本文 / Daily English Reading · 2026-08-16）" data-scene="使用场景：形容趋势、物种、技术、习惯缓慢但不可避免地退场。" data-zh="逐渐消亡、慢慢消失（直至灭绝）" type="button">☆</button></span><span class="zh">逐渐消亡、慢慢消失（直至灭绝）</span>
+<span class="sc">使用场景：形容趋势、物种、技术、习惯缓慢但不可避免地退场。</span>
+<span class="ex">…defying every prediction that it would fade into extinction. （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">frictionless (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="frictionless (adj.)" data-example="In a world of frictionless everything, friction quietly became a feature. （本文 / Daily English Reading · 2026-08-16）" data-scene='使用场景：科技/商业文形容"顺滑到没有阻力"的体验，本文反用它点出代价。' data-zh='零摩擦的、毫不费力的（也指"无需付出代价"）' type="button">☆</button></span><span class="zh">零摩擦的、毫不费力的（也指"无需付出代价"）</span>
+<span class="sc">使用场景：科技/商业文形容"顺滑到没有阻力"的体验，本文反用它点出代价。</span>
+<span class="ex">In a world of frictionless everything, friction quietly became a feature. （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the point</span><button aria-label="收藏表达" class="expr-fav" data-en="the point" data-example="The inconvenience is precisely the point. （本文 / Daily English Reading · 2026-08-16）" data-scene='使用场景：回扣"这件事的用意就在它本身"，强调某种"不便/代价"恰恰是关键。' data-zh="重点、意义所在（it's / is precisely the point）" type="button">☆</button></span><span class="zh">重点、意义所在（it's / is precisely the point）</span>
+<span class="sc">使用场景：回扣"这件事的用意就在它本身"，强调某种"不便/代价"恰恰是关键。</span>
+<span class="ex">The inconvenience is precisely the point. （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">deliberate (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="deliberate (adj.)" data-example="…choosing physical media is a small, deliberate act of autonomy. （本文 / Daily English Reading · 2026-08-16）" data-scene='使用场景：与 accidental 相对，强调"有意识的选择"，评论文最爱用来点出态度。' data-zh="刻意的、经过深思熟虑的" type="button">☆</button></span><span class="zh">刻意的、经过深思熟虑的</span>
+<span class="sc">使用场景：与 accidental 相对，强调"有意识的选择"，评论文最爱用来点出态度。</span>
+<span class="ex">…choosing physical media is a small, deliberate act of autonomy. （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the feed</span><button aria-label="收藏表达" class="expr-fav" data-en="the feed" data-example="For a generation raised inside the feed, vinyl is a way of stepping outside it. （本文 / Daily English Reading · 2026-08-16）" data-scene='使用场景：泛指被算法投喂的内容流；常带"被安排、非自主"的隐含批评。' data-zh="（社媒/流媒体的）算法信息流" type="button">☆</button></span><span class="zh">（社媒/流媒体的）算法信息流</span>
+<span class="sc">使用场景：泛指被算法投喂的内容流；常带"被安排、非自主"的隐含批评。</span>
+<span class="ex">For a generation raised inside the feed, vinyl is a way of stepping outside it. （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">scarcity (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="scarcity (n.)" data-example="Labels rediscovered that scarcity sells. （本文 / Daily English Reading · 2026-08-16）" data-scene='使用场景：经济/营销核心词，说"限量/稀有"如何推高价值，比 shortage 更高级。' data-zh="稀缺（性）；供不应求" type="button">☆</button></span><span class="zh">稀缺（性）；供不应求</span>
+<span class="sc">使用场景：经济/营销核心词，说"限量/稀有"如何推高价值，比 shortage 更高级。</span>
+<span class="ex">Labels rediscovered that scarcity sells. （本文 / Daily English Reading · 2026-08-16）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">ask something of (sb)</span><button aria-label="收藏表达" class="expr-fav" data-en="ask something of (sb)" data-example="Objects that ask something of us… have become a quiet luxury. （本文 / Daily English Reading · 2026-08-16）" data-scene='使用场景：说某事物"向你要投入"，比 demand 更柔和、更有温度，本文签名句。' data-zh="对（某人）有所要求、需要（某人）付出" type="button">☆</button></span><span class="zh">对（某人）有所要求、需要（某人）付出</span>
+<span class="sc">使用场景：说某事物"向你要投入"，比 demand 更柔和、更有温度，本文签名句。</span>
+<span class="ex">Objects that ask something of us… have become a quiet luxury. （本文 / Daily English Reading · 2026-08-16）</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Music &amp; Consumer Vocabulary · 音乐×消费词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题是黑胶回潮，属于「商业与其他」而非娱乐八卦，所以这里不按 Celebrity 模块走，换成更贴题的「Music &amp; Consumer Vocabulary」——读外媒商业/文化稿时高频出现（数据来源：RIAA 2023 Year-End Report）：</p>
+<div class="vocab">
+<div class="v"><b>vinyl (LP / record)</b><span>黑胶（密纹唱片）——被宣告"死亡"却回潮的实体格式</span></div>
+<div class="v"><b>pressing</b><span>压片——生产唱片的过程；limited pressing = 限量压片</span></div>
+<div class="v"><b>limited edition</b><span>限量版——靠稀缺制造溢价与收藏欲</span></div>
+<div class="v"><b>streaming</b><span>流媒体——按订阅付费、不拥有文件的听歌方式</span></div>
+<div class="v"><b>physical media</b><span>实体媒介——与数字文件相对，可触摸、可拥有的载体</span></div>
+<div class="v"><b>sleeve art</b><span>唱片封套美术——黑胶"大尺寸"带来的视觉与把玩价值</span></div>
+<div class="v"><b>collector's item</b><span>收藏品——因稀有而被收藏、未必常播放的东西</span></div>
+<div class="v"><b>turntable</b><span>唱机 / 转盘——播放黑胶的硬件，回潮带动设备销售</span></div>
+<div class="v"><b>analog</b><span>模拟的（非数字）——常被浪漫化为"有温度、真实"</span></div>
+<div class="v"><b>merch (merchandise)</b><span>周边商品——艺人变现的实体品类，黑胶已成主力</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"A format the industry had written off as obsolete was suddenly the fastest-growing physical music medium on the planet."</p>
+<p class="a"><b>句型：</b>名词短语 <i>A format (that) the industry had written off as obsolete</i> 作主语（省略 that 的定语从句修饰 format）+ 系动词 <i>was</i> + 表语。<b>逻辑：</b>把"被行业判死刑"与"突然增长最快"并置，反差即论点。<b>表达：</b>① <i>write off as obsolete</i> 是商业报道高频搭配，"判定为过时而放弃"；② 用 <i>the + 最高级 + noun + on the planet</i> 收尾，比 in the world 更有"地球级"气势。</p>
+</div>
+<div class="sb">
+<p class="q">"Against algorithmic playlists engineered to optimize the next thirty seconds, sitting with a full record feels almost rebellious."</p>
+<p class="a"><b>句型：</b>介词 <i>against</i> 引导对比状语（against A, B feels…）+ 动名词短语 <i>sitting with a full record</i> 作主语。<b>逻辑：</b>用"算法歌单"作背景板，反衬"听完整张唱片"像一种叛逆。<b>表达：</b>① <i>engineered to optimize…</i> 过去分词作后置定语，把"被设计来榨取下 30 秒"写活；② <i>against</i> 在此不是"反对"而是"在…的映衬下"，是高级用法；③ <i>feels almost rebellious</i> 把行为升格为态度。</p>
+</div>
+<div class="sb">
+<p class="q">"In a culture where nearly every choice is personalized by an algorithm, choosing physical media is a small, deliberate act of autonomy."</p>
+<p class="a"><b>句型：</b><i>In a culture where…</i> 带定语从句的介词短语铺背景 + 动名词主语 <i>choosing physical media</i> + <i>is a… act of autonomy</i>。<b>逻辑：</b>先立"一切都被算法个性化"的大环境，再把"买实体"定性为"自主的小小宣示"。<b>表达：</b>① <i>is personalized by an algorithm</i> 被动式点出"你以为你在选，其实是它在替你选"；② <i>a deliberate act of autonomy</i> 名词堆叠（adj.+ noun + of + noun）是评论文招牌写法，干脆有力。</p>
+</div>
+<div class="sb">
+<p class="q">"What was once obsolete packaging has become a merch category and, for some, a quiet status object."</p>
+<p class="a"><b>句型：</b><i>What was once obsolete packaging</i> 主语从句（what = the thing that）+ <i>has become</i> + 两个并列表语（a merch category / a quiet status object），中间插入 <i>for some</i>。<b>逻辑：</b>从"废包装"到"周边品类"再到"安静的身份符号"，三级跳讲清价值跃迁。<b>表达：</b>① <i>What was once X has become Y</i> 是"逆袭/复兴"类文章万能骨架；② <i>quiet status object</i> 把"炫富"改写成"低调身份物"，与静奢风同频，高级。</p>
+</div>
+<div class="sb">
+<p class="q">"The format the future left behind may be teaching us exactly what the future forgot."</p>
+<p class="a"><b>句型：</b><i>The format (that) the future left behind</i> 作主语（省 that 定语从句）+ <i>may be teaching us</i> + 宾语从句 <i>what the future forgot</i>。<b>逻辑：</b>用 <i>the future left behind</i> 与 <i>what the future forgot</i> 形成回环（echo），把"被淘汰者反而在教淘汰者"写成诗意收束。<b>表达：</b>① <i>leave behind</i> 双关——既"抛弃"，也"落在后面"；② <i>may be teaching us exactly what… forgot</i> 的对称结构（the future X / what the future forgot）是全文签名句式，值得模仿。</p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>1988 年 CD 被认为永久埋葬了黑胶；到 2010 年黑胶几近绝迹。可 2023 年，美国黑胶销量 35 年来首次反超 CD——一个被整个行业判死刑的格式，成了增长最快的实体音乐媒介。文章拆解了这波回潮：① 不是音质（很多爱好者其实听不出盲测差别），而是流媒体拿走的"拥有感、仪式感、实体物"；② 黑胶的"摩擦"——要慢放、要听完一面、要你到场——在一切都零摩擦的时代反成了卖点；③ 它还是一种"安静的政治"：在算法替你做所有选择的文化里，买实体是小小的自主宣示，是走出信息流的一步；④ 商业上，厂牌发现"稀缺"好卖，限量彩胶、豪华版成了周边品类与身份符号；⑤ 最妙的是，许多买家根本没经历过黑胶第一次生命周期——对 Gen Z 它是"发现"而非"怀旧"，是复古审美与社交道具。结论：黑胶不会取代流媒体，但它的回归本身就是一句无声的论点——我们仍想要"向我们索取、奖赏专注"的东西。</p>
+<p><b>背后文化现象：</b>① <b>反 frictionless 的反弹</b>——当一切免费、随手可得、被算法投喂，"不方便"反而成了奢侈与身份；② <b>稀缺即价值</b>——在数字可无限复制的世界，"带重量、需到场、不可复制"的实体成了安静的奢侈品（和你「静奢风」「具体有人味」的母题同频）；③ <b>算法时代的自主焦虑</b>——"我策展，而非被投喂"成为一代人的微小反抗，与你写过的"审美平替""真实 vs 精致人设"一脉相承。</p>
+<p><b>值得思考的问题：</b>当音乐、资讯、连接都免费又顺滑，我们还会为什么样的"摩擦"付费？黑胶的真相或许是：我们付的不是音质，而是一种"被要求投入"的关系。这和你「城市观察者」公众号一以贯之的观察同频——在量产、免费、被安排的世界里，具体、带缺点、需要你"到场"的东西，最稀缺也最值钱。明天可以把这条线，接到你计划中的 013《无意义时间》：能"无聊"、能"被打断"，本身就是一种被算法剥夺的能力。</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that in a world of "frictionless" everything, we now pay extra for things that are slower, clumsier, and ask something of us. Do you think this "return to friction" is meaningful—or just another marketing trend? Write about 200 words giving your view, with one concrete example from your own life.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think the "return to friction" is partly real and partly marketing, and the line between them is exactly what's interesting. On the real side, I notice it in my own reading. A year ago I switched from scrolling articles on my phone to reading one physical book a week. The phone version felt free and effortless, but I remembered almost nothing. The book is slower—I underline, I pause, I actually finish things. That friction makes the reading stick, and I'd genuinely pay for it now. So yes, some friction is meaningful; it's the cost of attention.
+      But I'm skeptical of the trend version. When a brand sells a "limited edition" vinyl purely as a status object that nobody plays, the friction is fake—it's convenience wearing a costume. The article's point lands: we want things that ask something of us, not things that merely perform asking. My test is simple—does the inconvenience change me, or just my photo? If it's only the photo, it's marketing. If it changes how I pay attention, it's the real article.
+    </div>
+<div class="tip">✍️ 写法提示：用 I think X is partly real and partly marketing 先给平衡立场，避免非黑即白；中间用 A year ago I switched… 拉出"自己从手机刷文改读纸质书"的具体故事，扣住题目要求的"one concrete example"；再用 The article's point lands 回扣原文关键词（friction / ask something of us）；结尾用 my test is simple… 抛出一个你自己的判断标准，收得有声音、不套话。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计回到「人类与社会」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-16',title:"The Vinyl Revival: Why a \"Dead\" Format Refuses to Die"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

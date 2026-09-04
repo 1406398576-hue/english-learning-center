@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-18</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Zero-Click Internet: When AI Answers Before You Click</h1>
+<p class="sub">「零点击互联网」：当 AI 在你点击之前就把答案递到眼前，我们和「愿意点进去的人声」正渐行渐远。</p>
+<div class="meta">
+<span>📅 <b>2026-08-18</b></span>
+<span>🎯 主题桶：<b>科技与未来 (25%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">过去二十年，我们的阅读入口几乎被「搜索框 + 蓝色链接」垄断；你点一下，才有人为你写的那篇文章赚到一次浏览。如今 AI 概览直接把答案压在链接之上——你还没点，答案已经给完了。今天我们读一篇科技与未来观察：零点击互联网是怎么形成的、它和「AI slop 泛滥」「AI 伴侣」同属一条线索（机器越替我们读、替我们陪，越让真人声变得稀缺），以及它对「开放网络」意味着什么。这条线与你「城市观察者」公众号一以贯之的母题同频——在算法替我们读完一切的时代，<b>「让你愿意点进去的那个人声」</b>反而最稀缺、最该被保护；它也正是你计划中的 AI 破圈文(012《AI 第二大脑》)最稳的立足点。</p>
+<div class="tip">💡 读前小思考：你上一次因为「想读那个人怎么写」而点进一篇长文，是什么时候？如果 AI 永远替你总结，你还会为「具体、带缺点、有人味」的文字停留吗？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most of the web's history, the deal was simple. You had a question, you typed it into a search box, and the search engine <span class="hl">handed you</span> a list of blue links. Your job was to click. Somewhere, someone had written the answer — a blog post, a news article, a forum thread — and your curiosity was a small <span class="hl">toll paid to</span> the open web. Every click was a vote, a path, a reason for that page to exist.</p>
+<p>That bargain is quietly <span class="hl">coming apart</span>.</p>
+<p>A growing share of what we once searched for now arrives pre-answered. Type a recipe into a modern assistant and you get the steps without a single site visit. Ask who won the match and the score appears before you have finished the sentence. Need a summary of a long report? The machine reads it so you do not have to. We are entering the zero-click internet — a web where the answer is served at the top, and the source is optional, often invisible, and increasingly unvisited.</p>
+<p>The numbers tell the story. Studies of search behavior show that a large and rising percentage of results now <span class="hl">end without a click</span>. When an AI-generated summary sits above every link, users often get what they came for and leave. For publishers, this is not a tweak to the traffic report; it is an <span class="hl">existential threat</span>. Newsrooms, recipe sites, travel guides, and niche blogs built their entire economics on the assumption that answers would send people somewhere. Take away the click, and you take away the ad impression, the subscriber, the reason to keep publishing.</p>
+<p>There is a seductive logic to it. Why <span class="hl">wade through</span> ten tabs when one clean paragraph will do? The zero-click internet promises efficiency — less noise, fewer pop-ups, no "accept cookies" banners <span class="hl">standing between</span> you and the fact. For the user in a hurry, it feels like a gift. But efficiency has a cost that is easy to miss while you are enjoying it.</p>
+<p>The first cost is <span class="hl">provenance</span>. When an answer arrives without a destination, you rarely learn where it came from, who wrote it, or what they left out. The web's old messiness had a hidden virtue: following a link meant encountering a perspective, a bias, an argument you could weigh. Strip that away and knowledge becomes a flat, authorless statement — correct-sounding, but unaccountable. You are told, not shown.</p>
+<p>The shift is also rewriting the rules of visibility. For two decades, being found online meant pleasing the search engine — a discipline known as SEO, built on keywords, backlinks, and the hope that a human would eventually land on your page. Now a new layer is forming on top: "answer engine optimization," the art of writing so that machines, not people, quote you. The goal is no longer to attract a visitor but to be the sentence the AI reads aloud. It is a subtle change with large consequences: the web starts to optimize for extraction rather than encounter.</p>
+<p>The second cost is to the creators who keep the web worth searching. If no one clicks, no one gets paid, and the incentives to produce original reporting, careful guides, and weird little personal sites quietly <span class="hl">erode</span>. The open web is not a natural resource; it is something people build because someone might read it. Starve the audience and you starve the supply. The irony is sharp: the more perfectly AI answers our questions, the less reason anyone has to write the answers it learns from.</p>
+<p>Some call this the "dead internet" <span class="hl">in slow motion</span>. Not bots replacing humans overnight, but a slow drying-up — a web that still looks alive but increasingly points only to itself. The human corners that survived the rise of platforms may not survive the rise of the answer engine.</p>
+<p>Publishers have not <span class="hl">stood still</span>. Many are retreating behind paywalls, <span class="hl">betting that</span> loyal readers who pay directly are worth more than anonymous clicks they no longer get. Others lean into newsletters and podcasts — formats an AI summary cannot easily swallow. A smaller movement, sometimes called the "small web," is betting the opposite way: that in a sea of machine-generated sameness, a real person's uneven, opinionated, occasionally wrong writing will be the thing worth finding. If the algorithm rewards the average, the human edge may be exactly the rough edges machines smooth away.</p>
+<p>None of this means the click is finished. People still go deep when something matters — a medical scare, a hobby, a grudge, a genuine curiosity that a summary cannot satisfy. The zero-click internet may simply split the web in two: a thin layer of instant answers on top, and a quieter, harder-to-reach layer of human writing underneath. The question is whether we will still be able to find our way down.</p>
+<p>For readers, the fix is partly a habit. When an answer appears, ask for the source. Click through. Treat the summary as a starting point, not a destination. The open web was built by people who chose to show up — and it stays alive the same way.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">hand sb sth (phr. v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="hand sb sth (phr. v.)" data-example="…the search engine handed you a list of blue links. （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：本义「递」，评论文中常指「（系统/人）把某物交到你手上」，比 give 更带画面感与「交接」意味。" data-zh="把…交给 / 递给某人" type="button">☆</button></span><span class="zh">把…交给 / 递给某人</span>
+<span class="sc">使用场景：本义「递」，评论文中常指「（系统/人）把某物交到你手上」，比 give 更带画面感与「交接」意味。</span>
+<span class="ex">…the search engine handed you a list of blue links. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a toll paid to</span><button aria-label="收藏表达" class="expr-fav" data-en="a toll paid to" data-example="…your curiosity was a small toll paid to the open web. （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：toll 原指过路费；这里比喻「每次点击都是对开放网络的一次微小付费/投票」，适合写「隐性代价」。" data-zh="为…付出的代价 /（比喻）过路费" type="button">☆</button></span><span class="zh">为…付出的代价 /（比喻）过路费</span>
+<span class="sc">使用场景：toll 原指过路费；这里比喻「每次点击都是对开放网络的一次微小付费/投票」，适合写「隐性代价」。</span>
+<span class="ex">…your curiosity was a small toll paid to the open web. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">come apart (phr. v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="come apart (phr. v.)" data-example="That bargain is quietly coming apart. （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：指「（协议/体系/关系）一点点失效、崩开」，比 break 更强调渐进、不可逆的松散，常带 quietly 修饰。" data-zh="瓦解、崩解、散架" type="button">☆</button></span><span class="zh">瓦解、崩解、散架</span>
+<span class="sc">使用场景：指「（协议/体系/关系）一点点失效、崩开」，比 break 更强调渐进、不可逆的松散，常带 quietly 修饰。</span>
+<span class="ex">That bargain is quietly coming apart. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">existential threat</span><button aria-label="收藏表达" class="expr-fav" data-en="existential threat" data-example="For publishers, this is not a tweak to the traffic report; it is an existential threat. （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：商业/社会评论高频词，指「动摇存在根基」的威胁，比 big problem 重得多，适合写行业危机。" data-zh="生存威胁（危及根本存在的威胁）" type="button">☆</button></span><span class="zh">生存威胁（危及根本存在的威胁）</span>
+<span class="sc">使用场景：商业/社会评论高频词，指「动摇存在根基」的威胁，比 big problem 重得多，适合写行业危机。</span>
+<span class="ex">For publishers, this is not a tweak to the traffic report; it is an existential threat. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">wade through</span><button aria-label="收藏表达" class="expr-fav" data-en="wade through" data-example="Why wade through ten tabs when one clean paragraph will do? （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：原指「蹚（水/泥）」，引申为「硬着头皮读完/翻完一堆积压的东西」（邮件、报告、标签页），带不耐烦感。" data-zh="费力地浏览 / 艰难地穿过" type="button">☆</button></span><span class="zh">费力地浏览 / 艰难地穿过</span>
+<span class="sc">使用场景：原指「蹚（水/泥）」，引申为「硬着头皮读完/翻完一堆积压的东西」（邮件、报告、标签页），带不耐烦感。</span>
+<span class="ex">Why wade through ten tabs when one clean paragraph will do? （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">stand between A and B</span><button aria-label="收藏表达" class="expr-fav" data-en="stand between A and B" data-example='…no "accept cookies" banners standing between you and the fact. （本文 / Daily English Reading · 2026-08-18）' data-scene="使用场景：说「某物成了你和目标之间的障碍」，比 block 更文学；常接 you and the fact / you and the truth。" data-zh="挡在 A 和 B 之间（阻碍）" type="button">☆</button></span><span class="zh">挡在 A 和 B 之间（阻碍）</span>
+<span class="sc">使用场景：说「某物成了你和目标之间的障碍」，比 block 更文学；常接 you and the fact / you and the truth。</span>
+<span class="ex">…no "accept cookies" banners standing between you and the fact. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">provenance (n.)</span><button aria-label="收藏表达" class="expr-fav" data-en="provenance (n.)" data-example="The first cost is provenance. （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：原用于艺术品/文物「来源考证」，现常用于信息/知识的「出处可追溯性」——AI 时代讨论「答案从哪来」的高频词。" data-zh="出处、来源、溯源" type="button">☆</button></span><span class="zh">出处、来源、溯源</span>
+<span class="sc">使用场景：原用于艺术品/文物「来源考证」，现常用于信息/知识的「出处可追溯性」——AI 时代讨论「答案从哪来」的高频词。</span>
+<span class="ex">The first cost is provenance. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">erode (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="erode (v.)" data-example="…the incentives to produce original reporting… quietly erode. （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：本义「风化/侵蚀」，评论文常指「（信任/动力/利益）被慢慢啃掉」，比 decrease 更有「一点点磨掉」的力度。" data-zh="逐渐削弱、侵蚀" type="button">☆</button></span><span class="zh">逐渐削弱、侵蚀</span>
+<span class="sc">使用场景：本义「风化/侵蚀」，评论文常指「（信任/动力/利益）被慢慢啃掉」，比 decrease 更有「一点点磨掉」的力度。</span>
+<span class="ex">…the incentives to produce original reporting… quietly erode. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">in slow motion</span><button aria-label="收藏表达" class="expr-fav" data-en="in slow motion" data-example='Some call this the "dead internet" in slow motion. （本文 / Daily English Reading · 2026-08-18）' data-scene="使用场景：把「一夜之间发生」改成「慢慢发生」，强调过程缓慢却不可逆；常接 dead internet / collapse / decline。" data-zh="以慢动作方式（比喻：缓慢、渐进地发生）" type="button">☆</button></span><span class="zh">以慢动作方式（比喻：缓慢、渐进地发生）</span>
+<span class="sc">使用场景：把「一夜之间发生」改成「慢慢发生」，强调过程缓慢却不可逆；常接 dead internet / collapse / decline。</span>
+<span class="ex">Some call this the "dead internet" in slow motion. （本文 / Daily English Reading · 2026-08-18）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">bet that… (phr.)</span><button aria-label="收藏表达" class="expr-fav" data-en="bet that… (phr.)" data-example="Many are retreating behind paywalls, betting that loyal readers… are worth more… （本文 / Daily English Reading · 2026-08-18）" data-scene="使用场景：bet (that) + 从句，表示「赌定…会发生」，比 think 更有立场与风险感，商业文写策略判断很常用。" data-zh="押注 / 打赌（相信某事会发生）" type="button">☆</button></span><span class="zh">押注 / 打赌（相信某事会发生）</span>
+<span class="sc">使用场景：bet (that) + 从句，表示「赌定…会发生」，比 think 更有立场与风险感，商业文写策略判断很常用。</span>
+<span class="ex">Many are retreating behind paywalls, betting that loyal readers… are worth more… （本文 / Daily English Reading · 2026-08-18）</span></span>
+</section>
+<!-- 10:00–13:00 · 科技与媒体词表 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Tech &amp; Media Vocabulary · 科技与媒体词表</h2><span class="time-tag">⏱ 10:00–13:00 词表</span></div>
+<div class="vocab">
+<div class="v"><b>zero-click internet</b><span>零点击互联网：答案直接呈现、用户不再点链接的Web 形态。</span></div>
+<div class="v"><b>answer engine</b><span>答案引擎：直接给答案的 AI 搜索（如 Perplexity、AI Overviews）。</span></div>
+<div class="v"><b>AI-generated summary / AI Overviews</b><span>AI 生成的摘要（谷歌「AI 概览」即此）。</span></div>
+<div class="v"><b>search behavior</b><span>搜索行为：用户如何搜索、是否点击的量化研究。</span></div>
+<div class="v"><b>publisher</b><span>内容发布方：靠流量/广告生存的媒体与网站。</span></div>
+<div class="v"><b>click-through (rate)</b><span>点击（率）：链接被点开的比例，流量生意命脉。</span></div>
+<div class="v"><b>the open web</b><span>开放网络：非平台围墙花园、任何人可发布可被检索的部分。</span></div>
+<div class="v"><b>SEO (search engine optimization)</b><span>搜索引擎优化：为被「人」搜到而做的关键词/外链工程。</span></div>
+<div class="v"><b>answer engine optimization (AEO)</b><span>答案引擎优化：为被「AI」引用而写的新策略。</span></div>
+<div class="v"><b>the small web</b><span>小众独立网络：独立博客/个人站，与机器量产内容相对。</span></div>
+</div>
+</section>
+<!-- 10:00–13:00 · 句子拆解 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"For most of the web's history, the deal was simple."</p>
+<p class="a"><b>句型：</b>介词短语作时间状语 + 主系表。<b>逻辑：</b>用 <b>the deal was simple</b> 这个隐喻，把一整套复杂的网络生态压缩成「一个约定」，先立一个旧秩序，为后文「约定正在崩解」做铺垫。<b>表达：</b>the deal 在此不是「交易」而是「（默认）规矩/默契」，是评论开篇的漂亮框架句。</p>
+</div>
+<div class="sb">
+<p class="q">"When an AI-generated summary sits above every link, users often get what they came for and leave."</p>
+<p class="a"><b>句型：</b>When 引导的时间状语从句 + 主句（and 连接两个并列谓语）。<b>逻辑：</b>前半句设场景（AI 摘要压在链接之上），后半句给结果（拿到要的就走）。<b>表达：</b><b>get what you came for</b> 是地道短语，等于「得到此行目的」，比 get the answer 更口语自然；sit above 用「坐」字写出层级压制感。</p>
+</div>
+<div class="sb">
+<p class="q">"The open web is not a natural resource; it is something people build because someone might read it."</p>
+<p class="a"><b>句型：</b>否定 + 重构（not A; it is B）+ because 引导的定语从句。<b>逻辑：</b>先否定「开放网络是天然资源」，再正面定义「它是人为了『可能有人读』而建的东西」，强调其脆弱与人为性。<b>表达：</b>分号 + 对比结构（not…; it is…）是议论文重定义一个概念的经典写法。</p>
+</div>
+<div class="sb">
+<p class="q">"Some call this the 'dead internet' in slow motion. Not bots replacing humans overnight, but a slow drying-up — a web that still looks alive but increasingly points only to itself."</p>
+<p class="a"><b>句型：</b>前句主谓宾 + 宾语补足语；后句用 <b>Not A, but B</b> 平行否定结构 + 破折号同位语 + that 定语从句。<b>逻辑：</b>先给标签，再用「不是…而是…」澄清：不是机器人一夜取代人，而是缓慢干涸。<b>表达：</b><b>drying-up</b> 与前面 in slow motion 呼应，把抽象衰退写成「水分流失」，画面强。</p>
+</div>
+<div class="sb">
+<p class="q">"If the algorithm rewards the average, the human edge may be exactly the rough edges machines smooth away."</p>
+<p class="a"><b>句型：</b>If 条件状语从句 + 主句。<b>逻辑：</b>若算法奖励「平均」，那么人的优势恰恰就是机器抹平的「毛边」。<b>表达：</b><b>edge / rough edges</b> 双关——edge 既指「优势」也指「棱角」；<b>smooth away</b>（抹平瑕疵）与 rough edges 形成动作—对象呼应，是全篇点题的一句。</p>
+</div>
+</section>
+<!-- 13:00–15:00 · 中文总结 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 13:00–15:00 复盘</span></div>
+<p style="margin:0 0 10px;"><b>核心内容：</b>互联网长期的「契约」是——你搜索，引擎给你链接，你点击，创作者靠这次浏览活下去。如今 AI 概览把答案直接压在链接之上，越来越多搜索「零点击」结束。对依赖流量的媒体与独立站而言，这是生存威胁；对用户而言，效率的代价是<b>失去出处（provenance）</b>与「可被 weighing 的观点」；对创作者而言，没人点击就没有收入，写下去的动力被慢慢侵蚀（erode）。文章指出网络正「缓慢地（in slow motion）」变成只指向自身的空壳，而出版方正退守付费墙、转做通讯/播客，或押注「小众网络」里有人味的写作。</p>
+<p style="margin:0 0 10px;"><b>背后文化现象：</b>这是「机器替我们读、替我们陪、替我们答」大趋势的一环——与「AI slop 泛滥」「AI 伴侣」同属一条线索：当 AI 把一切前置成「现成答案」，<b>「带你点进去的那个人声」反而成了最稀缺的资产</b>。SEO 正进化为 AEO（答案引擎优化）：网络开始「为被提取而优化，而非为被遇见而优化」，人的痕迹被一点点抹平（smooth away）。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 当答案永远「免费且即时」，我们还会为「具体、带缺点、有人味」的文字停留吗？② 如果 AI 学会了我们写过的所有东西，却没人再写，下一轮它学什么？③ 对你「城市观察者」公众号来说，「零点击」时代恰恰意味着：<b>让人愿意点进来的人声，就是破圈最硬的通货</b>——这可否直接接上你计划中的 AI 破圈文(012《AI 第二大脑》)？</p>
+</section>
+<!-- 13:00–15:00 · 口语 -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语</h2><span class="time-tag">⏱ 13:00–15:00 开口</span></div>
+<div class="prompt">🗣️ Discussion question（请用英文回答，约 200 词）：<br/>AI now answers many questions before we ever click a link. Do you think this makes us more efficient, or quietly weaker as readers and thinkers? Share a moment when a short answer left you missing the fuller story — and say what you'll do differently next time.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词 · 可直接仿写/改造）</span>
+      I think the zero-click internet makes us more efficient in a narrow sense, but quietly weaker as readers. When an AI summary hands me the answer, I save time — but I also skip the messiness that actually teaches me something: the writer's bias, the counter-arguments, the detail that doesn't fit. A few months ago I asked an assistant for the "main takeaway" of a long report on city life. The one-line answer sounded complete, so I moved on. Later I read the original and realized the summary had flattened a genuine debate into a slogan. I had felt informed, but I wasn't. The short answer had robbed me of the fuller story — and of the small friction that makes an idea stick. Next time, I'll treat the summary as a starting point, not a destination. If something matters, I'll click through and read at least one real source. I'll also ask "who wrote this and what did they leave out?" before I trust a neat paragraph. Efficiency is fine; unearned certainty is the real cost.
+    </div>
+<div class="tip">💡 练习提示：先用自己的话答一遍（计时 2 分钟，不停顿），再对照范文挑 3 个想偷师的词组（如 hand me the answer / flatten a debate into a slogan / unearned certainty），造自己的句子。</div>
+</section>
+<footer>Daily English Reading · 2026-08-18 · 科技与未来 · 由 Milo 为你挑选 🐾</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-18',title:"The Zero-Click Internet: When AI Answers Before You Click"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

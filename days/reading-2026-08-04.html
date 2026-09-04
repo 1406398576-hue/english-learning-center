@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-04</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .kp .src{display:block; font-size:12px; color:var(--muted); margin-top:4px; font-style:normal;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .vocab .v .ex2{display:block; font-size:12.5px; color:#3b352e; font-style:italic; margin-top:5px;}
+  .vocab .v .src2{display:block; font-size:11.5px; color:var(--muted); margin-top:2px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Quiet Loss of the 'Third Place': Where Did Our Shared Spaces Go?</h1>
+<p class="sub">当咖啡馆、酒吧、社区广场从城市里悄悄消失——我们失去的不仅是一张椅子，还有一种"无目的地待在一起"的能力</p>
+<div class="meta">
+<span>📅 <b>2026-08-04</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">社会学家给一类地方起了个名字叫 "third place"（第三空间）——既不是家（第一空间）、也不是工作单位（第二空间），而是那些我们"因为想待才去、而不是因为必须去"的非正式公共角落：咖啡馆、街角酒吧、理发店、社区广场。它们正在城市里静悄悄地消失。这和你做「城市观察者」公众号其实高度同频：当算法让我们越来越"宅"、越来越孤独，"具体的人挤在具体的空间里"反而成了最稀缺的画面。今天我们就读一篇社会观察，聊聊——我们失去的到底是什么？</p>
+<div class="tip">💡 读前小思考：你所在的城市里，有没有一个"去了什么都不用做、但只要坐在那就不孤单"的地方？它现在还好吗？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>Walk into almost any revived city center and you will notice a strange silence where there should be a hum. The coffee shop on the corner has been replaced by a bank branch that closes at four. The neighborhood bar where arguments were settled and friendships begun is now a vape store. The public square, if it ever existed, is a traffic island. Sociologists have a name for the kind of place that has quietly vanished: the "third place"—the informal, neutral ground where people gather not because they must, but because they want to. Home is the first place. Work is the second. The third was everywhere else, and it is disappearing.</p>
+<p>The term was coined by the urbanist Ray Oldenburg in 1989, in a book with the unglamorous title <i>The Great Good Place</i>. He argued that civilization depends on these spaces—cafés, salons, pubs, barbershops, town squares—where conversation is the main activity and nobody keeps a ledger of who owes whom. In a true third place, the mayor and the mechanic sit at the same counter. <span class="hl">Status is left at the door</span>. You go because the company is good, the stool is free, and the coffee is cheap enough that lingering is not a crime. Oldenburg called these spots <span class="hl">the heart of</span> a community's social vitality, and warned that their decline would leave people "privatized" and lonely.</p>
+<p>What is striking is how right he now looks. Over the past few decades, the institutions that once held communities together have <span class="hl">hollowed out</span>. Membership in clubs, churches, and local groups has fallen sharply. We work longer hours, often from kitchens that double as offices, and commute through screens rather than streets. When the pandemic sent everyone home, it did not simply pause our social lives; for many, it revealed how few unplanned encounters we actually had. The workplace watercooler, itself a minor third place, went digital and then went quiet.</p>
+<p>The economics are part of the story. Real estate in desirable cities has grown punishingly expensive, and the businesses that can afford the rent are the ones that extract the most per square foot—pharmacies, gyms, banks—not the ones that invite you to sit and do nothing. Independent cafés and bookshops, the natural habitats of the third place, are <span class="hl">squeezed</span> by rents and by chains that treat the table as inventory. Meanwhile, the designed "third places" we are sold—the polished lobby, the co-working lounge, the airport-style "experience"—tend to be either transactional or performative. You are welcome to linger, the lighting says, as long as you are buying.</p>
+<p>Technology, for all its promise of connection, has become the perfect substitute for presence. We <span class="hl">outsource</span> our sense of belonging to feeds and group chats, mistaking the faint warmth of being "in the loop" for the messy, physical comfort of being in the room. A notification is cheaper than a walk to the corner. And so the third place loses twice: we no longer need to leave home to feel accompanied, and when we do leave, we are often looking down, navigating, ordering, reviewing—never quite arriving.</p>
+<p>This matters because the third place does quiet, unglamorous work that no app can replicate. It is where weak ties are formed—the acquaintance who tips you off to a job, the regular whose name you finally learn, the stranger who becomes a friend. Sociologists have long known that our happiness depends less on a few deep relationships than on a web of loose, low-stakes connections. Those threads <span class="hl">fray</span> when there is nowhere to <span class="hl">bump into</span> anyone. A city full of strangers who never meet is not a community; it is a crowded solitude.</p>
+<p>There are signs of a fightback. "Third place" has become a kind of urban-planning slogan, invoked by mayors and developers alike. Libraries are reinventing themselves as living rooms. Some cities are tearing up parking lots to build plazas. A new generation of members' clubs and communal tables tries, with varying sincerity, to sell back what was once free. Even the humble park, properly funded, can <span class="hl">do the job</span>. The appetite is clearly there; what is missing is the permission to <span class="hl">loiter</span>, and the cheap, unremarkable seating that makes loitering possible.</p>
+<p>Oldenburg's remedy was never complicated. Build more places that ask nothing of you but your presence. Keep the coffee cheap, the door open, and the hierarchy out. The point was never the espresso; it was the ease. A society that cannot afford to let people sit together, he might say, has <span class="hl">mispriced</span> the things that actually hold it together.</p>
+<p>In the end, the loss of the third place is a loss of practice—practice in being with other people without a purpose. We have grown fluent in solitude and clumsy in company, and we have mistaken the noise of our feeds for the sound of a neighborhood. To get it back will not require a revolution, only a stool, a counter, and the radical decision to stay a while.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">以下例句均摘自今日文章（媒体风格真实英文语料），标注来源为「本文 / Daily English Reading · 2026-08-04」。建议先记"表达 + 中文"，再读例句体会真实语境；涉及学界出处的词（third place / weak ties）在场景里注明。</p>
+<span class="kp"><span class="exp-row"><span class="exp">hollow out</span><button aria-label="收藏表达" class="expr-fav" data-en="hollow out" data-example='"…the institutions that once held communities together have hollowed out."' data-scene='使用场景：形容组织、社区、产业"表面还在、内核已空"，比 empty 更精准、更有过程感。' data-zh="掏空、使…空洞化（机构/社群被慢慢抽空）" type="button">☆</button></span><span class="zh">掏空、使…空洞化（机构/社群被慢慢抽空）</span>
+<span class="sc">使用场景：形容组织、社区、产业"表面还在、内核已空"，比 empty 更精准、更有过程感。</span>
+<span class="ex">"…the institutions that once held communities together have hollowed out."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">squeeze</span><button aria-label="收藏表达" class="expr-fav" data-en="squeeze" data-example='"Independent cafés and bookshops … are squeezed by rents and by chains that treat the table as inventory."' data-scene='使用场景：be squeezed by A and B 是社评高频结构，写"小商家被租金和连锁夹击"极好用。' data-zh="挤压、夹击（在经济/竞争压力下被两头挤）" type="button">☆</button></span><span class="zh">挤压、夹击（在经济/竞争压力下被两头挤）</span>
+<span class="sc">使用场景：be squeezed by A and B 是社评高频结构，写"小商家被租金和连锁夹击"极好用。</span>
+<span class="ex">"Independent cafés and bookshops … are squeezed by rents and by chains that treat the table as inventory."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">outsource (something to …)</span><button aria-label="收藏表达" class="expr-fav" data-en="outsource (something to …)" data-example='"We outsource our sense of belonging to feeds and group chats…"' data-scene="使用场景：outsource 原是商业词（外包），比喻用法很高级——outsource our memory / belonging / care to apps。" data-zh='把…外包 / 转嫁出去（此处指把"归属感"交给算法）' type="button">☆</button></span><span class="zh">把…外包 / 转嫁出去（此处指把"归属感"交给算法）</span>
+<span class="sc">使用场景：outsource 原是商业词（外包），比喻用法很高级——outsource our memory / belonging / care to apps。</span>
+<span class="ex">"We outsource our sense of belonging to feeds and group chats…"</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">bump into</span><button aria-label="收藏表达" class="expr-fav" data-en="bump into" data-example='"Those threads fray when there is nowhere to bump into anyone."' data-scene='使用场景：最地道的"偶遇"口语/书面都可用；bump into an old friend / an idea。比 meet by chance 自然。' data-zh="偶遇、无意中撞见" type="button">☆</button></span><span class="zh">偶遇、无意中撞见</span>
+<span class="sc">使用场景：最地道的"偶遇"口语/书面都可用；bump into an old friend / an idea。比 meet by chance 自然。</span>
+<span class="ex">"Those threads fray when there is nowhere to bump into anyone."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">fray</span><button aria-label="收藏表达" class="expr-fav" data-en="fray" data-example='"Those threads fray when there is nowhere to bump into anyone."' data-scene='使用场景：比喻"慢慢松脱、变紧张"；fraying ties / frayed nerves / patience is fraying。' data-zh="磨损、变脆弱（关系/纽带/神经/耐心被磨断）" type="button">☆</button></span><span class="zh">磨损、变脆弱（关系/纽带/神经/耐心被磨断）</span>
+<span class="sc">使用场景：比喻"慢慢松脱、变紧张"；fraying ties / frayed nerves / patience is fraying。</span>
+<span class="ex">"Those threads fray when there is nowhere to bump into anyone."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">loiter</span><button aria-label="收藏表达" class="expr-fav" data-en="loiter" data-example='"…what is missing is the permission to loiter, and the cheap, unremarkable seating that makes loitering possible."' data-scene='使用场景：本多作贬义（警方用语"游荡"），文中 the permission to loiter 把它翻成"被允许无所事事地待着"的城市权利。' data-zh='闲逛、逗留（常带"无所事事"意味，文中被正名）' type="button">☆</button></span><span class="zh">闲逛、逗留（常带"无所事事"意味，文中被正名）</span>
+<span class="sc">使用场景：本多作贬义（警方用语"游荡"），文中 the permission to loiter 把它翻成"被允许无所事事地待着"的城市权利。</span>
+<span class="ex">"…what is missing is the permission to loiter, and the cheap, unremarkable seating that makes loitering possible."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">mispriced</span><button aria-label="收藏表达" class="expr-fav" data-en="mispriced" data-example='"…has mispriced the things that actually hold it together."' data-scene='使用场景：经济/评论文利器，指社会"把最重要的东西标价错了"；mispriced risk / mispriced care。' data-zh="错误定价（引申：低估了某事物的真正价值）" type="button">☆</button></span><span class="zh">错误定价（引申：低估了某事物的真正价值）</span>
+<span class="sc">使用场景：经济/评论文利器，指社会"把最重要的东西标价错了"；mispriced risk / mispriced care。</span>
+<span class="ex">"…has mispriced the things that actually hold it together."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">leave something at the door</span><button aria-label="收藏表达" class="expr-fav" data-en="leave something at the door" data-example='"Status is left at the door."' data-scene="使用场景：极具画面感的短语；leave your ego / pride / phone at the door，常用于平等、专注的场合。" data-zh="把…留在门外（不计较身份/情绪/手机）" type="button">☆</button></span><span class="zh">把…留在门外（不计较身份/情绪/手机）</span>
+<span class="sc">使用场景：极具画面感的短语；leave your ego / pride / phone at the door，常用于平等、专注的场合。</span>
+<span class="ex">"Status is left at the door."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the heart of (something)</span><button aria-label="收藏表达" class="expr-fav" data-en="the heart of (something)" data-example="&quot;Oldenburg called these spots the heart of a community's social vitality…&quot;" data-scene="使用场景：the heart of the matter / the problem / a community's vitality，比 the core of 更有温度。" data-zh="…的核心 / 精髓" type="button">☆</button></span><span class="zh">…的核心 / 精髓</span>
+<span class="sc">使用场景：the heart of the matter / the problem / a community's vitality，比 the core of 更有温度。</span>
+<span class="ex">"Oldenburg called these spots the heart of a community's social vitality…"</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04（概念出自 Ray Oldenburg, <i>The Great Good Place</i>, 1989）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">do the job</span><button aria-label="收藏表达" class="expr-fav" data-en="do the job" data-example='"Even the humble park, properly funded, can do the job."' data-scene='使用场景：口语化但评论文也常用，指"不需要花哨，朴素地达成了目标"；a humble park can do the job。' data-zh="起作用、胜任、把事办成" type="button">☆</button></span><span class="zh">起作用、胜任、把事办成</span>
+<span class="sc">使用场景：口语化但评论文也常用，指"不需要花哨，朴素地达成了目标"；a humble park can do the job。</span>
+<span class="ex">"Even the humble park, properly funded, can do the job."</span>
+<span class="src">— 本文 / Daily English Reading · 2026-08-04</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Urban &amp; Social Vocabulary · 城市与社会词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期是「人类与社会」而非娱乐，所以把"Celebrity / Culture Vocabulary"换成更贴题的「城市与社会词块」——读外媒社会/城市报道时这些词高频出现。标注「本文」的例句摘自今日文章；标注「通用 / 学界」的是常见于同类报道的搭配（非逐字引用，供积累）。</p>
+<div class="vocab">
+<div class="v"><b>third place</b><span>第三空间 / 第三场所——家与工作之外的非正式公共聚集地</span>
+<span class="ex2">"Sociologists have a name for the kind of place that has quietly vanished: the 'third place'."</span>
+<span class="src2">— 本文（概念出自 Ray Oldenburg, <i>The Great Good Place</i>, 1989）</span></div>
+<div class="v"><b>weak ties</b><span>弱关系——松散但广泛的社会连接（社会学核心概念）</span>
+<span class="ex2">"It is where weak ties are formed—the acquaintance who tips you off to a job…"</span>
+<span class="src2">— 本文（理论源自 M. Granovetter, "The Strength of Weak Ties", 1973）</span></div>
+<div class="v"><b>sense of belonging</b><span>归属感——"觉得自己属于某个地方/群体"的感觉</span>
+<span class="ex2">"We outsource our sense of belonging to feeds and group chats…"</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>social fabric</b><span>社会结构 / 社会纽带（比喻社区像织物一样被织在一起）</span>
+<span class="ex2">"Policies that strengthen the local social fabric tend to lower loneliness."（通用 / 常见于社评）</span>
+<span class="src2">— 通用搭配（非逐字引用）</span></div>
+<div class="v"><b>unplanned encounters</b><span>非计划中的偶遇——第三空间最珍贵的"意外连接"</span>
+<span class="ex2">"…it revealed how few unplanned encounters we actually had."</span>
+<span class="src2">— 本文</span></div>
+<div class="v"><b>placemaking</b><span>场所营造——通过设计主动创造宜人公共空间的城市规划手法</span>
+<span class="ex2">"The city's placemaking effort turned a dead corner into a small plaza."（通用 / 规划报道）</span>
+<span class="src2">— 通用搭配（非逐字引用）</span></div>
+<div class="v"><b>social atomization</b><span>社会原子化——人越来越孤立、像原子一样散开</span>
+<span class="ex2">"Urban design that ignores gathering space accelerates social atomization."（通用 / 学界）</span>
+<span class="src2">— 通用搭配（非逐字引用）</span></div>
+<div class="v"><b>public realm</b><span>公共领域 / 公共空间——属于所有人、人人可进的户外/半户外空间</span>
+<span class="ex2">"A healthy public realm is where strangers learn to coexist."（通用 / 城市研究）</span>
+<span class="src2">— 通用搭配（非逐字引用）</span></div>
+<div class="v"><b>community anchor</b><span>社区锚点——稳定社区的核心机构（图书馆、老店、教堂等）</span>
+<span class="ex2">"The corner library acts as a community anchor for the neighborhood."（通用 / 社评）</span>
+<span class="src2">— 通用搭配（非逐字引用）</span></div>
+<div class="v"><b>crowded solitude</b><span>拥挤的孤独——身处人群却彼此隔绝（文中 coined 的意象）</span>
+<span class="ex2">"A city full of strangers who never meet … is a crowded solitude."</span>
+<span class="src2">— 本文</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"Sociologists have a name for the kind of place that has quietly vanished: the 'third place'—the informal, neutral ground where people gather not because they must, but because they want to."</p>
+<p class="a"><b>句型：</b>主句 + 冒号引出同位语 the 'third place'，破折号后再接带定语从句 <i>where people gather not because A, but because B</i> 的解释。<b>逻辑：</b>先抛现象（一类地方消失了），再给学名，最后用"不是因为必须、而是因为想"点出第三空间的本质。<b>表达：</b>① <i>not because… but because…</i> 把"动机"讲得极清楚，是定义类写作的万能框架；② 用冒号+破折号"层层揭示"，比平铺更有文气。可套：<i>She had a word for the feeling that wouldn't leave her: relief—the quiet kind that comes not because the work is done, but because it no longer matters.</i></p>
+</div>
+<div class="sb">
+<p class="q">"What is striking is how right he now looks."</p>
+<p class="a"><b>句型：</b>What 引导的主语从句（What is striking）+ 系动词 + how 引导的表语从句（how right he now looks）。<b>逻辑：</b>一句话完成"时隔多年，预言竟成真"的感慨，短而有力。<b>表达：</b>① <i>What is striking is…</i> 是极好用的评论开头，比 I think it's surprising 高级；② <i>how right someone looks</i> 把"某人说得对"变成画面（看起来很对），可套：<i>What is unsettling is how normal it all looks.</i></p>
+</div>
+<div class="sb">
+<p class="q">"Technology, for all its promise of connection, has become the perfect substitute for presence."</p>
+<p class="a"><b>句型：</b>主语 Technology + 插入的让步短语 <i>for all its promise of connection</i>（尽管它承诺连接）+ 主句。<b>逻辑：</b>先承认科技"本意是连接"，再翻转——它最终替代了"在场"本身，点出核心悖论。<b>表达：</b>① <i>for all its…</i> 是优雅的"先扬后抑"让步，比 despite 更书面；② <i>a substitute for presence</i> 把抽象的"人在场"名词化为 presence，精准又高级。可套：<i>Optimism, for all its comfort, can become a substitute for action.</i></p>
+</div>
+<div class="sb">
+<p class="q">"A city full of strangers who never meet is not a community; it is a crowded solitude."</p>
+<p class="a"><b>句型：</b>名词短语主语（带定语 full of… / 定语从句 who never meet）+ <i>is not A; it is B</i> 的 aphoristic（格言式）平行收束；B 中用了 oxymoron（矛盾修辞）crowded solitude。<b>逻辑：</b>用一句话戳破"住在一起≠共同体"，把"拥挤"与"孤独"并置，冲击力极强。<b>表达：</b>① <i>X is not A; it is B</i> 是观点文金句结构；② 自己造一个矛盾词组（crowded solitude / silent noise / lonely crowd）能让句子瞬间有记忆点。可套：<i>A feed full of voices that never listen is not a conversation; it is a lonely broadcast.</i></p>
+</div>
+<div class="sb">
+<p class="q">"To get it back will not require a revolution, only a stool, a counter, and the radical decision to stay a while."</p>
+<p class="a"><b>句型：</b>不定式短语 <i>To get it back</i> 作主语 + <i>will not require A, only B</i> 的 not… only… 平行（B 为三个名词短语的排比，末项带不定式定语）。<b>逻辑：</b>把"重建第三空间"从宏大叙事拉回极小行动——不需要革命，只需一张凳子、一个柜台、和"待一会儿"的决定。<b>表达：</b>① <i>not require a revolution, only…</i> 用"不是革命、只是…"制造举重若轻的落点；② <i>the radical decision to…</i> 把日常小事说成"激进的决定"，反差俏皮。可套：<i>To fix the mood will not require a vacation, only a walk, a bench, and the radical decision to do nothing for ten minutes.</i></p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>社会学家 Ray Oldenburg 在 1989 年提出 "third place（第三空间）"：家是第一空间、工作是第二空间，而咖啡馆、酒吧、理发店、社区广场这类"因为想待才去"的非正式公共角落，是维系社区活力的"心脏"。文章指出，过去几十年这些空间正被 quietly 掏空（hollowed out）——俱乐部、教会、本地组织成员骤减；疫情更是把仅剩的"偶然相遇"也抽走了。原因有二：一是经济，好地段租金贵到只容得下药店、健身房、银行，独立咖啡馆和小书店被租金和连锁两头 squeeze；二是技术，我们把"归属感"outsource 给了信息流和群聊，用"在圈子里"的微弱暖意，冒充了"在同一个房间里"的真实陪伴。文章强调，第三空间干的是 App 替代不了的活：它孕育 weak ties（弱关系）——那些把你介绍给工作、让你记住常客名字的松散连接；当无处可 bump into 任何人，这些纽带就 fray，城市变成"拥挤的孤独（crowded solitude）"。好在已有回潮：图书馆变身客厅、停车场改广场、口袋公园只要 funded 就能 do the job。Oldenburg 的解药很简单——多建"只要求你人在、不要求你消费"的地方，社会若连让人坐在一起都负担不起，就是 mispriced 了真正把人黏在一起的东西。</p>
+<p><b>背后文化现象：</b>① "第三空间"的消失是发达国家城市通病——高房租把"可以无所事事"的空间挤出，留下来的不是公共的、而是交易性的；② 技术许诺连接、却成了"在场"的替代品，我们越来越 fluent in solitude（擅长独处）、clumsy in company（笨拙于相处）；③ "loiter（闲逛）"从被警方嫌弃的游荡，被重新认作一种城市权利——有没有"被允许无所事事地坐着"的便宜座位，成了城市是否友好的标尺；④ 这恰是你「城市观察者」账号的母题：在算法把我们一个个关进信息茧房的年代，具体的、肉身相遇的"第三空间"最稀缺，也最值得被写。</p>
+<p><b>值得思考的问题：</b>当 mayors 和 developers 都开始把 "third place" 当口号，资本会不会把"公共生活"也做成一门生意（付费会员制俱乐部、打卡式"体验"）？我们究竟是失去了空间，还是失去了"无目的地待在一起"的能力和意愿？——放到你做内容这件事上：当所有人都在追算法分发的"量产爆款"，你那条"具体、带缺点、有人味"的城市观察，会不会恰恰是最稀缺、最像"第三空间"的那件东西——别人想进来坐坐，而不是划走？</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that cities are losing their "third places"—the cafés, bars, and plazas where we gather without a purpose. Does your own city have enough of these spaces, and would you be willing to "waste" an hour on a weekday just sitting in one? Share your view in about 200 words, with one real place from your own life.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I'd say my city has the spaces, but most of them now come with a price tag or an expectation to buy. There's a small riverside café near where I live that used to feel like a real third place—you could sit with a single coffee for two hours and no one would hint that you should leave. Lately it's been replaced in my routine by the library, which is free and genuinely welcoming, but somehow quieter, less alive.
+      Would I waste an hour on a weekday just sitting? Honestly, I talk myself out of it. I tell myself I'm too busy, that sitting with no purpose feels irresponsible. That's exactly the reflex the article is describing—I've grown clumsy at doing nothing in public. The one place I still allow it is a bench by the old city wall, where old men play cards and nobody asks what you're doing there. It costs nothing and asks nothing.
+      So no, we don't have enough, not really. We have spots to consume in, and corners to pass through, but few where you're allowed to simply be. I think I should protect that bench—and maybe actually use it more often.
+    </div>
+<div class="tip">✍️ 写法提示：用 I'd say… 先给一个平衡的判斷（有空间、但多带价签），比直接站队更老练；中间用 there's a small… near where I live 拉回自身 concrete place 扣题；再用 Honestly, I talk myself out of it 做真实自省，呼应文章 "clumsy at doing nothing"；结尾用 So no… / I think I should… 收束并给出你的小行动，像母语者议论的落点。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计切到「科技与未来」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-04',title:"The Quiet Loss of the 'Third Place': Where Did Our Shared Spaces Go?"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

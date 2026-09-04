@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-26</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>BookTok: When a Stranger's Tears Sell a 400-Page Novel</h1>
+<p class="sub">「BookTok」现象：当一条 15 秒的落泪视频，把一本十年旧书推回畅销榜——算法时代的阅读，是怎么从"一个人读"变成"一群人围观"的？</p>
+<div class="meta">
+<span>📅 <b>2026-08-26</b></span>
+<span>🎯 主题桶：<b>娱乐与流行文化 (20%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">你大概刷到过那种视频：一个人抱着书哭到妆花，镜头一晃是书的封面，文案只有一句"我完了"。然后那本书，一夜之间卖断货。今天切回你点名要的<b>娱乐与流行文化桶</b>（上次娱乐还是 08-20 的 nepo baby），聊聊 <b>BookTok</b>——TikTok 上一个靠"读者落泪"卖书的角落。它把出版业打了个措手不及：一本十年前的旧书，能被一条短视频推回畅销榜。这条线和你「城市观察者」公众号一以贯之的母题高度同频——算法在替我们决定"该爱什么"（审美平权 08-07 / 品味被 feed 调试 08-23 / 零点击 08-18），但 BookTok 是个<b>反例</b>：一个为 15 秒碎片设计的 App，阴差阳错成了这代人最强的"长文阅读推手"。它和静奢(08-06)、真实 vs 精致(08-12)、忙碌表演(08-19)串成同一根线：当一切被算法安排、被表演，<b>"一个人被一本书真正打动、且愿意公开承认"的人声，反而最稀缺也最值钱</b>。</p>
+<div class="tip">💡 读前小思考：你有没有因为一条"陌生人哭着推荐"的视频，去下单一本你本来绝不会读的书？那一刻，你信的是"书好"，还是"那个人真的被击中了"？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>A 15-second video of a stranger in tears over the final page of a novel should not move markets. And yet, on BookTok — the literary corner of TikTok where readers post raw, emotional reactions to the books they love — that is exactly what happens. A clip of someone <span class="hl">reduced to tears</span> by a fictional heartbreak can <span class="hl">catapult</span> a paperback back onto the bestseller list, sometimes a full decade after it first <span class="hl">flew under the radar</span>. No review, no advertising campaign, no late-night talk-show appearance. Just one person, a camera, and a book that broke them open.</p>
+<p>For most of the past century, the book business ran on a small set of <span class="hl">gatekeepers</span>: editors who decided what got published, book reviewers who decided what got noticed, and bookstore buyers who decided what got shelved. Word of which titles would survive traveled slowly, through newspapers and the quiet authority of a starred review. BookTok scrambled that order. It handed the microphone to readers themselves — mostly young women, many of them erstwhile "non-readers" — and let them recommend books the way friends do: not with criticism, but with feeling. The result was a sales engine that the industry's own experts did not see coming, and in some cases actively resisted.</p>
+<p>The clearest proof is the romantasy explosion. Sarah J. Maas, whose early novels had sold modestly for years, suddenly found her entire back catalogue climb the charts when fans posted breathless, spoiler-free tributes to her worlds. Her <span class="hl">backlist titles</span> — books that had been quietly in print for a decade — began to <span class="hl">fly off the shelves</span>, repackaged with new covers aimed squarely at the app. When Rebecca Yarros published "Fourth Wing" in 2023, it was not a guaranteed hit. It became one because thousands of readers filmed themselves finishing it, and their delight did more than any billboard could.</p>
+<p>Then there is Colleen Hoover, the undisputed queen of the trend. A former social worker who self-published her first novel, she spent years as <span class="hl">a sleeper hit</span> — popular, but below the radar of the literary establishment. BookTok turned her into a publishing phenomenon: "It Ends With Us" sold millions, spawned a film, and made her the bestselling author in the United States for multiple years running. What traditional marketing could not do in a decade, a community of readers did in a single summer — purely through <span class="hl">word of mouth</span> amplified to the scale of a stadium.</p>
+<p>Why does watching someone cry sell a book? Part of it is intimacy. A written review keeps its distance; a video of a person <span class="hl">reduced to tears</span> does not. You are not being told the book is good — you are watching what it did to a real human, and your brain treats that as evidence. The algorithm helps by serving these clips to a <span class="hl">captive audience</span> of people who already love the feeling of being moved. And because TikTok's reach is near-infinite, even the most niche title can find its thousand true readers — the famous <span class="hl">long tail</span> of the internet, where small audiences, aggregated, become a market large enough to print another edition.</p>
+<p>Publishers, stunned, adapted fast. Imprints created dedicated social-media roles, hired "BookTok managers," and began printing editions stamped with the words "As Seen on TikTok." Bookstores built endcaps around the trend. For the first time in memory, the readers — not the reviewers, not the buyers — were setting the agenda. A debut author could now out-sell a prize winner simply because a stranger on an app had loved them out loud. The <span class="hl">gatekeepers</span> had not vanished; they had been joined, loudly, by everyone else.</p>
+<p>Not everyone is cheering. Critics worry that an algorithm built to maximize emotion will flatten taste, rewarding the same handful of weepy, plot-driven books while quieter literature is left behind. There is truth in that: the app's feedback loop does push toward the familiar. But the same mechanism has lifted voices the old system ignored — queer authors, writers of romance and fantasy long dismissed as "guilty pleasures," debut novelists from outside the literary capitals. For them, BookTok was not a threat to quality but a bypass around <span class="hl">the gatekeepers</span> who had never taken their readers seriously.</p>
+<p>Step back, and the phenomenon is stranger than it looks. We are told constantly that attention is shattered, that no one reads anything longer than a caption, that the novel is a dying form. And yet here is a 400-page book becoming a viral object — a thing shared, performed, argued over, loved in public. Reading did not die. It moved. The solitary reader of the 20th century, curled alone with a paperback, has <span class="hl">given way to</span> a reader who finishes a chapter and immediately reaches for the phone to find someone else feeling the exact same thing. What BookTok revealed is not that people stopped reading, but that they had been reading alone for too long.</p>
+<p>There is a quiet lesson in that for anyone who makes things. The panic about algorithms usually runs one way: that machines decide what we love, and taste gets engineered for us. BookTok is the rare counterexample. An app designed for fifteen-second distraction became, almost by accident, the most effective promoter of long-form reading in a generation. The book was not dying. The solitary reader was. And a stranger's tears, filmed and shared, gave reading back its voice.</p>
+</article>
+</section>
+<!-- 10:00–13:00 · Key Expressions -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">reduced to tears</span><button aria-label="收藏表达" class="expr-fav" data-en="reduced to tears" data-example="A clip of someone reduced to tears by a fictional heartbreak can catapult a paperback back onto the bestseller list. （本文 / Daily English Reading · 2026-08-26）" data-scene='使用场景：描述某人被某物（书、电影、消息）强烈触动而落泪；比 started crying 更有"被某种力量压垮"的画面感。' data-zh="哭成泪人 / 被情绪彻底击溃到落泪" type="button">☆</button></span><span class="zh">哭成泪人 / 被情绪彻底击溃到落泪</span>
+<span class="sc">使用场景：描述某人被某物（书、电影、消息）强烈触动而落泪；比 started crying 更有"被某种力量压垮"的画面感。</span>
+<span class="ex">A clip of someone reduced to tears by a fictional heartbreak can catapult a paperback back onto the bestseller list. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">catapult (something) to the top</span><button aria-label="收藏表达" class="expr-fav" data-en="catapult (something) to the top" data-example="…can catapult a paperback back onto the bestseller list, sometimes a full decade after it first flew under the radar. （本文 / Daily English Reading · 2026-08-26）" data-scene='使用场景：catapult 本义"弹射"，比喻某事物被迅速送到高位（畅销榜、名气顶点）；比 make popular 更有爆发力。' data-zh="把…猛地推到榜首 / 顶峰" type="button">☆</button></span><span class="zh">把…猛地推到榜首 / 顶峰</span>
+<span class="sc">使用场景：catapult 本义"弹射"，比喻某事物被迅速送到高位（畅销榜、名气顶点）；比 make popular 更有爆发力。</span>
+<span class="ex">…can catapult a paperback back onto the bestseller list, sometimes a full decade after it first flew under the radar. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">fly under the radar</span><button aria-label="收藏表达" class="expr-fav" data-en="fly under the radar" data-example="…a full decade after it first flew under the radar. （本文 / Daily English Reading · 2026-08-26）" data-scene="使用场景：来自军事（低空飞行避开雷达），比喻本该引人注意却未被发现，或低调不被审视；常与 for years 连用。" data-zh="默默无闻 / 没被注意到 / 避开聚光灯" type="button">☆</button></span><span class="zh">默默无闻 / 没被注意到 / 避开聚光灯</span>
+<span class="sc">使用场景：来自军事（低空飞行避开雷达），比喻本该引人注意却未被发现，或低调不被审视；常与 for years 连用。</span>
+<span class="ex">…a full decade after it first flew under the radar. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a backlist title</span><button aria-label="收藏表达" class="expr-fav" data-en="a backlist title" data-example="Her backlist titles — books that had been quietly in print for a decade — began to fly off the shelves. （本文 / Daily English Reading · 2026-08-26）" data-scene="使用场景：出版业术语，与 frontlist（新书）相对，指出版社已出版、仍在印的旧作；BookTok 常让 backlist 翻红。" data-zh="旧书 / 出版库存书目（已上市一段时间、非新书的作品）" type="button">☆</button></span><span class="zh">旧书 / 出版库存书目（已上市一段时间、非新书的作品）</span>
+<span class="sc">使用场景：出版业术语，与 frontlist（新书）相对，指出版社已出版、仍在印的旧作；BookTok 常让 backlist 翻红。</span>
+<span class="ex">Her backlist titles — books that had been quietly in print for a decade — began to fly off the shelves. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">fly off the shelves</span><button aria-label="收藏表达" class="expr-fav" data-en="fly off the shelves" data-example="Her backlist titles… began to fly off the shelves, repackaged with new covers aimed squarely at the app. （本文 / Daily English Reading · 2026-08-26）" data-scene='使用场景：形容商品极畅销，上架即被抢空；比 sell well 更生动，强调"速度"。' data-zh="卖断货 / 迅速售罄" type="button">☆</button></span><span class="zh">卖断货 / 迅速售罄</span>
+<span class="sc">使用场景：形容商品极畅销，上架即被抢空；比 sell well 更生动，强调"速度"。</span>
+<span class="ex">Her backlist titles… began to fly off the shelves, repackaged with new covers aimed squarely at the app. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a sleeper hit</span><button aria-label="收藏表达" class="expr-fav" data-en="a sleeper hit" data-example="She spent years as a sleeper hit — popular, but below the radar of the literary establishment. （本文 / Daily English Reading · 2026-08-26）" data-scene="使用场景：影视、出版、音乐皆可用，指低开高走、靠积累而非宣发走红的事物。" data-zh="黑马 / 慢热大卖的作品（起初不被看好、后靠口碑爆发）" type="button">☆</button></span><span class="zh">黑马 / 慢热大卖的作品（起初不被看好、后靠口碑爆发）</span>
+<span class="sc">使用场景：影视、出版、音乐皆可用，指低开高走、靠积累而非宣发走红的事物。</span>
+<span class="ex">She spent years as a sleeper hit — popular, but below the radar of the literary establishment. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">word of mouth</span><button aria-label="收藏表达" class="expr-fav" data-en="word of mouth" data-example="What traditional marketing could not do in a decade, a community of readers did… purely through word of mouth amplified to the scale of a stadium. （本文 / Daily English Reading · 2026-08-26）" data-scene="使用场景：指不经过广告、靠使用者之间自发推荐的传播；出版/餐饮/创业高频词。" data-zh="口碑 / 口口相传" type="button">☆</button></span><span class="zh">口碑 / 口口相传</span>
+<span class="sc">使用场景：指不经过广告、靠使用者之间自发推荐的传播；出版/餐饮/创业高频词。</span>
+<span class="ex">What traditional marketing could not do in a decade, a community of readers did… purely through word of mouth amplified to the scale of a stadium. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the gatekeepers</span><button aria-label="收藏表达" class="expr-fav" data-en="the gatekeepers" data-example="For most of the past century, the book business ran on a small set of gatekeepers: editors… reviewers… buyers. （本文 / Daily English Reading · 2026-08-26）" data-scene="使用场景：传媒、出版、文化评论高频，指筛选与取舍的权力中介；gatekeepers 被 bypass / joined 是本文核心张力。" data-zh="把关人（决定什么能出版 / 上架 / 被看见的权力方）" type="button">☆</button></span><span class="zh">把关人（决定什么能出版 / 上架 / 被看见的权力方）</span>
+<span class="sc">使用场景：传媒、出版、文化评论高频，指筛选与取舍的权力中介；gatekeepers 被 bypass / joined 是本文核心张力。</span>
+<span class="ex">For most of the past century, the book business ran on a small set of gatekeepers: editors… reviewers… buyers. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a captive audience</span><button aria-label="收藏表达" class="expr-fav" data-en="a captive audience" data-example="The algorithm helps by serving these clips to a captive audience of people who already love the feeling of being moved. （本文 / Daily English Reading · 2026-08-26）" data-scene='使用场景：指因平台或场景而天然聚集、难以逃离的观众群；此处指算法投喂的、本就爱"被触动"的人。' data-zh="现成的 / 被天然锁定的一群受众" type="button">☆</button></span><span class="zh">现成的 / 被天然锁定的一群受众</span>
+<span class="sc">使用场景：指因平台或场景而天然聚集、难以逃离的观众群；此处指算法投喂的、本就爱"被触动"的人。</span>
+<span class="ex">The algorithm helps by serving these clips to a captive audience of people who already love the feeling of being moved. （本文 / Daily English Reading · 2026-08-26）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the long tail</span><button aria-label="收藏表达" class="expr-fav" data-en="the long tail" data-example='…even the most niche title can find its thousand true readers — the famous long tail of the internet… （本文 / Daily English Reading · 2026-08-26）—— 出处：Chris Anderson, "The Long Tail," Wired, 2004' data-scene="使用场景：源自 Chris Anderson 2004 年《Wired》同名文，指冷门累计成大生意；此处指最 niche 的书也能找到足够读者。" data-zh="长尾（海量小众需求聚合成大市场）" type="button">☆</button></span><span class="zh">长尾（海量小众需求聚合成大市场）</span>
+<span class="sc">使用场景：源自 Chris Anderson 2004 年《Wired》同名文，指冷门累计成大生意；此处指最 niche 的书也能找到足够读者。</span>
+<span class="ex">…even the most niche title can find its thousand true readers — the famous long tail of the internet… （本文 / Daily English Reading · 2026-08-26）—— 出处：Chris Anderson, "The Long Tail," Wired, 2004</span></span>
+</section>
+<!-- 10:00–13:00 · Celebrity / Culture Vocabulary -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Celebrity / Culture Vocabulary · 娱乐文化词表</h2><span class="time-tag">⏱ 10:00–13:00 词表</span></div>
+<div class="vocab">
+<div class="v"><b>go viral</b><span>走红 / 病毒式传播：内容短时间内被海量转发。例："The author's emotional reading clip went viral, pushing the novel to No.1."（《The Guardian》式文化报道典型用法）</span></div>
+<div class="v"><b>make headlines</b><span>上头条 / 引发广泛关注。例："BookTok's power to make headlines out of quiet backlist titles surprised the industry."（《Publishers Weekly》式行业报道）</span></div>
+<div class="v"><b>a breakout hit</b><span>爆款 / 一举成名的作品。例："Fourth Wing became an instant breakout hit after fans flooded the app with reactions."（《Variety》式娱乐/书讯报道）</span></div>
+<div class="v"><b>a built-in / captive audience</b><span>现成受众 / 天然锁定的观众群。例："Streaming platforms arrive with a built-in audience no debut author could buy."（《The New York Times》式媒体观察）</span></div>
+<div class="v"><b>the spotlight</b><span>聚光灯 / 公众视线：被持续关注的状态。例："Years off the spotlight, the novelist found fame again through TikTok."（《People》式人物报道）</span></div>
+<div class="v"><b>public image</b><span>公众形象：创作者在大众眼中的人设。例："BookTok reshaped her public image from 'niche writer' to 'household name.'"（人物/文化报道典型用法）</span></div>
+<div class="v"><b>word of mouth</b><span>口碑（详见上文 Key Expression）：社媒时代最常用的"非广告传播"说法。例："The film's box office was built almost entirely on word of mouth."（《Forbes》式商业文化报道）</span></div>
+<div class="v"><b>media attention</b><span>媒体关注 / 舆论聚焦。例："Sudden media attention turned a self-published book into a cultural moment."（《Reuters》式报道）</span></div>
+<div class="v"><b>a fan base</b><span>粉丝群 / 固定受众。例："She grew a devoted fan base years before the literary world noticed."（人物特写典型用法）</span></div>
+<div class="v"><b>the algorithm</b><span>算法（决定内容被谁看到的黑箱机制）。例："On BookTok, the algorithm — not the critic — decides which stories survive."（《Wired》式科技文化评论）</span></div>
+</div>
+</section>
+<!-- 10:00–13:00 · 句子拆解 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"A 15-second video of a stranger in tears over the final page of a novel should not move markets."</p>
+<p class="a"><b>句型：</b>名词短语作主语（含 of 介词串 + 过去分词 in tears + over 介词短语作后置修饰）+ should not + 动词 move markets。<b>逻辑：</b>先立一个"本不该成立"的悖论作为钩子，制造反差，引出 BookTok 的反常力量。<b>表达：</b><b>move markets</b> 是经商比喻（影响行情/销量），把"一条视频"和"市场"并置，张力立刻拉满；<b>should not</b> 强化"反常"，为后文"但它就是发生了"埋伏笔。</p>
+</div>
+<div class="sb">
+<p class="q">"It handed the microphone to readers themselves — mostly young women, many of them erstwhile 'non-readers' — and let them recommend books the way friends do…"</p>
+<p class="a"><b>句型：</b>并列谓语（handed / let）+ 破折号插入同位（mostly…, many of them…）+ the way 比较从句收尾。<b>逻辑：</b>点出权力从专家转移到读者，并用插入语说明这群读者恰恰是被传统市场忽略的人。<b>表达：</b><b>hand the microphone to</b> 是比喻"把话语权交给"，比 give power to 更具体；<b>erstwhile</b>（从前的）是高雅词，比 former 更有文气；<b>the way friends do</b> 用日常类比消解专业感，突出"朋友式推荐"的特质。</p>
+</div>
+<div class="sb">
+<p class="q">"Her backlist titles — books that had been quietly in print for a decade — began to fly off the shelves, repackaged with new covers aimed squarely at the app."</p>
+<p class="a"><b>句型：</b>主语 + 破折号插入定语从句 + 谓语 began to fly off the shelves + 现在分词 repackaged 作伴随/被动修饰 + aimed 后置定语。<b>逻辑：</b>写旧书因"新封面 + 算法"双重作用翻红。<b>表达：</b><b>quietly in print</b> 写"默默在印十年"，与后文 fly off the shelves 形成静→动的节奏反差；<b>aimed squarely at the app</b> 中 squarely（精准地）点出"为 App 量身定制"，把出版策略写得有锋芒。</p>
+</div>
+<div class="sb">
+<p class="q">"You are not being told the book is good — you are watching what it did to a real human, and your brain treats that as evidence."</p>
+<p class="a"><b>句型：</b>not… — you are watching what 宾语从句 + and 并列 + treats that as evidence（treat… as… 结构）。<b>逻辑：</b>对比"被告知书好"与"亲眼看见书对人做了什么"，解释视频推荐为何比文字书评更可信。<b>表达：</b><b>treats that as evidence</b> 把大脑拟人化，点出"共情即证据"的心理机制——这是全文解释"为什么哭能卖书"的关键句，very 高级的因果写法。</p>
+</div>
+<div class="sb">
+<p class="q">"The solitary reader of the 20th century, curled alone with a paperback, has given way to a reader who finishes a chapter and immediately reaches for the phone…"</p>
+<p class="a"><b>句型：</b>主语（含 curled 分词定语）+ has given way to + 宾语（who 定语从句）。<b>逻辑：</b>收束"阅读从独处转向共读"的母题，用两个时代的读者对撞。<b>表达：</b><b>give way to</b> 是"让位于"的雅致说法；<b>curled alone with a paperback</b> 画面感强（蜷着、独自、一本平装书）；<b>reaches for the phone</b> 用最朴素的动作收束时代变迁，比任何宏大结论都更有力。</p>
+</div>
+</section>
+<!-- 13:00–15:00 · 中文总结 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 13:00–15:00 复盘</span></div>
+<p style="margin:0 0 10px;"><b>核心内容：</b>文章从一个反直觉的画面切入：一个陌生人因为小说最后一页哭成泪人（reduced to tears）的 15 秒视频，竟能把一本十年前默默无闻（flew under the radar）的平装书重新弹射（catapult）回畅销榜。过去百年，出版业由少数<b>把关人（gatekeepers）</b>——编辑、书评人、书店采购——运转；BookTok 把麦克风交到读者手里，靠"朋友式、带情绪"的推荐，造出传统专家没预料到的销售引擎。证据是"romantasy（浪漫奇幻）"爆发：Sarah J. Maas 的旧作（backlist titles）被重新包装、卖断货（fly off the shelves）；Colleen Hoover 从自出版的<b>黑马（sleeper hit）</b>，靠纯<b>口碑（word of mouth）</b>放大成体育场级现象。文章还解释了"为什么看人哭能卖书"：视频的亲密感让大脑把"被击中的真实反应"当作证据；算法把这些片段投给本就爱被触动的<b>现成受众（captive audience）</b>，而互联网的<b>长尾（long tail）</b>让最冷门的书也能找到足够读者。出版业仓促适应（设 BookTok 经理、"As Seen on TikTok"版），但批评声也在：算法追求情绪会flatten taste；不过同一机制也扶起了被旧系统忽视的酷儿作者、言情/奇幻写手。</p>
+<p style="margin:0 0 10px;"><b>背后文化现象：</b>这是"算法在替我们决定爱什么"大叙事的一个<b>反例</b>——和你之前的母题（审美平权 08-07 / 品味被 feed 调试 08-23 / 零点击 08-18 / 真实 vs 精致 08-12）反向呼应：通常我们说算法把品味削平、把人声中介掉；但 BookTok 这个为 15 秒碎片设计的 App，阴差阳错成了长文阅读的最强推手。它和静奢(08-06)、忙碌表演(08-19)同属一根线：当一切被安排、被表演，<b>"一个人被一本书真正打动、且愿意公开承认"的人声，反而最稀缺也最值钱</b>。所谓"阅读已死"，死的不是书，是"独自读"这件事。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 你刷到"陌生人哭着推荐"而下单时，信的是"书好"，还是"那个人真的被击中"——这二者的差别，正是 BookTok 商业逻辑的命门。② 算法既会 flatten taste，也能 bypass gatekeepers 扶起被忽视的声音，问题从来不是"算法好不好"，而是<b>谁在定义什么算"好"</b>。③ 对你「城市观察者」公众号来说，这条线可直接接上静奢与真实母题——<b>在人人营业、人人被算法投喂的年代，"承认自己被一本书/一部剧真正打动、且不羞于说出口"的人声，恰恰是最破圈的资产</b>；你的 012《AI 第二大脑》也可借此反写：机器越能替我们读，具体、带缺点、会落泪的真人推荐越是硬通货。</p>
+</section>
+<!-- 13:00–15:00 · 口语 -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语</h2><span class="time-tag">⏱ 13:00–15:00 开口</span></div>
+<div class="prompt">🗣️ Discussion question（请用英文回答，约 200 词）：<br/>BookTok shows that a stranger's tears can sell a 400-page novel better than any billboard. Do you think this is a beautiful revival of reading — or just emotion engineered for clicks? Describe one time you picked up a book (or film, or anything) because someone's raw reaction moved you, and say whether you trust that kind of recommendation more than a professional critic's.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词 · 可直接仿写/改造）</span>
+      I'd call it a revival with a catch. Last winter I bought a battered secondhand novel purely because a stranger on the app filmed herself shaking at the last page, unable to speak. No critic had reached me like that. There's something honest about a recommendation that shows the cost a book extracted from a real person — it feels less like marketing and more like witness. I trust those raw reactions more than a starred review, precisely because they're useless for selling me anything except the feeling itself. That said, I'm wary. An algorithm built to maximize tears will quietly serve me the same weepy, plot-driven books and skip the quieter ones that changed me most. The gatekeepers didn't vanish; they were joined by a louder, blunter crowd. So I treat BookTok as a door, not a map — it hands me entries I'd never have found, then I read the actual book and decide for myself. Emotion can sell a novel, but only the novel can keep me. The stranger's tears got me to open it; the writing had to do the rest.
+    </div>
+<div class="tip">💡 练习提示：先用自己的话答一遍（计时 2 分钟，不停顿），再对照范文挑 3 个想偷师的词组（如 a revival with a catch / extracted from a real person / a door, not a map），造自己的句子。</div>
+</section>
+<footer>Daily English Reading · 2026-08-26 · 娱乐与流行文化 · 由 Milo 为你挑选 🐾</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-26',title:"BookTok: When a Stranger's Tears Sell a 400-Page Novel"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

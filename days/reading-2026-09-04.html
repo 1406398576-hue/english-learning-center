@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Reading · 2026-09-04 · The Quiet Rebuilding of the Internet</title>
+<style>
+  :root{
+    --bg:#FBF9F4;
+    --card:#FFFFFF;
+    --card-soft:#F4EFE6;
+    --ink:#3A3733;
+    --muted:#7A746A;
+    --line:#E6DFD2;
+    --fog:#8FAEB8;      /* 雾蓝 */
+    --fog-deep:#6E94A0;
+    --sage:#7FA99B;     /* 青绿 */
+    --brown:#B08D6A;    /* 暖棕 */
+    --brown-soft:#C9A987;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px;}
+  header.top{
+    border-bottom:2px solid var(--line);
+    padding-bottom:20px;margin-bottom:28px;
+  }
+  .kicker{
+    display:inline-block;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sage);font-weight:700;margin-bottom:10px;
+  }
+  h1{
+    font-size:27px;line-height:1.3;margin:0 0 10px;
+    color:var(--ink);font-weight:800;
+  }
+  .meta{font-size:13px;color:var(--muted);}
+  .meta b{color:var(--brown);font-weight:700;}
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 22px;
+    margin:22px 0;
+    box-shadow:0 1px 2px rgba(80,70,50,.04);
+  }
+  .sec-title{
+    display:flex;align-items:center;gap:10px;
+    font-size:19px;font-weight:800;color:var(--ink);
+    margin:0 0 16px;
+  }
+  .sec-title .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--fog);flex:0 0 auto;
+  }
+  .sec-title.culture .dot{background:var(--brown);}
+  .sec-title.syntax .dot{background:var(--sage);}
+  .sec-title.summary .dot{background:var(--brown-soft);}
+  .sec-title.speak .dot{background:var(--fog-deep);}
+  .lead{color:var(--muted);font-size:14px;margin:-6px 0 16px;}
+
+  /* Article */
+  .article{
+    font-family:Georgia,"Times New Roman","Songti SC",serif;
+    font-size:17px;line-height:1.95;color:#34312C;
+  }
+  .article p{margin:0 0 18px;}
+  .article p:first-letter{}
+  .drop{
+    float:left;font-family:Georgia,serif;font-size:52px;line-height:.86;
+    font-weight:700;color:var(--brown);margin:6px 10px 0 0;
+  }
+  .art-note{
+    background:var(--card-soft);border-left:3px solid var(--sage);
+    padding:10px 14px;border-radius:0 10px 10px 0;
+    font-size:13px;color:var(--muted);font-family:inherit;margin-bottom:14px;
+  }
+
+  /* Expression cards */
+  .expr{
+    border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin:12px 0;background:var(--card-soft);
+  }
+  .expr .term{
+    font-weight:800;color:var(--fog-deep);font-size:16px;
+    display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;
+  }
+  .expr .term .zh{color:var(--brown);font-size:14px;font-weight:700;}
+  .expr .mean{font-size:14px;color:var(--muted);margin:6px 0 8px;}
+  .expr .scene{font-size:13px;color:var(--ink);margin-bottom:8px;}
+  .expr .scene b{color:var(--sage);}
+  .expr .ex{
+    font-family:Georgia,serif;font-size:15px;color:#34312C;
+    background:#fff;border:1px dashed var(--line);border-radius:8px;
+    padding:10px 12px;margin-top:6px;
+  }
+  .expr .src{font-size:12px;color:var(--muted);margin-top:6px;text-align:right;font-style:italic;}
+  .expr .src b{color:var(--brown);font-style:normal;}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:560px){.twocol{grid-template-columns:1fr;}}
+
+  /* Sentence breakdown */
+  .sent{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;background:#fff;}
+  .sent .en{
+    font-family:Georgia,serif;font-size:15.5px;color:#34312C;
+    background:var(--card-soft);border-radius:8px;padding:12px 14px;margin-bottom:12px;
+    border-left:3px solid var(--sage);
+  }
+  .sent h4{margin:0 0 6px;font-size:14px;color:var(--fog-deep);letter-spacing:.04em;}
+  .sent .row{margin:8px 0;font-size:14px;}
+  .sent .row b{color:var(--brown);}
+  .sent .tag{
+    display:inline-block;font-size:11px;color:#fff;background:var(--sage);
+    border-radius:20px;padding:2px 10px;margin-right:6px;font-weight:700;letter-spacing:.04em;
+  }
+
+  /* Summary */
+  .sum-block{margin:14px 0;}
+  .sum-block h4{
+    font-size:15px;margin:0 0 8px;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .sum-block h4 .ic{
+    width:22px;height:22px;border-radius:6px;background:var(--card-soft);
+    color:var(--brown);display:inline-flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:800;flex:0 0 auto;
+  }
+  .sum-block p{margin:0;font-size:14.5px;color:#4A463F;}
+  .sum-block .q{color:var(--fog-deep);font-weight:700;}
+
+  /* Speaking */
+  .prompt{
+    background:var(--card-soft);border:1px solid var(--line);border-radius:12px;
+    padding:16px;font-size:15px;color:#34312C;
+  }
+  .prompt .ask{font-weight:800;color:var(--fog-deep);}
+  .model{
+    font-family:Georgia,serif;font-size:15px;line-height:1.9;color:#34312C;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:16px;margin-top:14px;
+  }
+  .model .lbl{
+    font-family:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--sage);font-weight:800;display:block;margin-bottom:8px;
+  }
+  .tip{font-size:13px;color:var(--muted);margin-top:12px;background:var(--card-soft);
+       border-radius:10px;padding:10px 14px;border-left:3px solid var(--fog);}
+  .tip b{color:var(--brown);}
+
+  footer{
+    text-align:center;color:var(--muted);font-size:12px;margin-top:30px;
+    border-top:1px solid var(--line);padding-top:18px;
+  }
+  .pill{display:inline-block;background:var(--card-soft);border:1px solid var(--line);
+        color:var(--muted);font-size:11px;border-radius:20px;padding:3px 10px;margin:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="kicker">Daily English Reading · 科技未来 / Technology &amp; Future</span>
+    <h1>The Quiet Rebuilding of the Internet</h1>
+    <div class="meta">📅 <b>2026-09-04</b> &nbsp;·&nbsp; 主题桶：科技未来（循环 index 4 / 20）&nbsp;·&nbsp; 词数约 1050 词 &nbsp;·&nbsp; ⏱ 时长：<b>15 min</b> &nbsp;·&nbsp; 难度：真实媒体风（CET-6 / IELTS 6.5 友好）</div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>English Article</div>
+    <div class="art-note">本篇为原创深度科技评论（非教材体），用词与句式贴近英文媒体真实文风；文中对公开数据与行业现象均标注真实出处（Google / Reuters / SparkToro / Wired / The Verge 等）。建议先通读，再回看表达与句法解析。</div>
+    <div class="article">
+      <p><span class="drop">F</span>or more than two decades, the search bar was the front door to the internet. You typed a question, and a list of ten blue links appeared, each one a doorway to somewhere else. That ritual is now quietly dissolving. Increasingly, when people want to know something, they do not browse — they ask. And an answer, generated rather than retrieved, simply appears.</p>
+
+      <p>This shift has a name in the industry: the rise of the "answer engine." Tools like ChatGPT, Perplexity, and Google's own AI Overviews no longer hand you a set of links to sort through. Instead, they read the web on your behalf, synthesize what they find, and return a single fluent paragraph — often with the sources appended as small footnotes. It is a fundamentally different model of access. The webpage, for centuries of internet time the basic unit of information, is being demoted from destination to raw material.</p>
+
+      <p>The scale is hard to overstate. Google alone processes roughly 8.5 billion searches a day, and in 2024 it began rolling out AI-generated summaries — "AI Overviews" — to hundreds of millions of users. According to the company, these summaries now appear in response to billions of queries. Meanwhile, a generation of users, especially students and young professionals, has folded conversational assistants into daily life: drafting emails, planning trips, debugging code, and settling arguments. Search has not disappeared; it has been absorbed.</p>
+
+      <p>For the publishers who actually produce the information, this is unsettling. If an answer engine satisfies a question at the top of the page, the user never clicks through to the original article. Industry research from firms like SparkToro has long suggested that a large share of searches — by some estimates more than half — already ended without a click, a phenomenon now called "zero-click" search. AI accelerates the trend. Newsrooms, blogs, and recipe sites, many of which depended on search traffic to survive, suddenly face a future in which the intermediary they relied on no longer sends visitors their way. The verb that keeps coming up is disintermediation: the middleman — here, the link — is being cut out.</p>
+
+      <p>There are real costs. When an AI summarizes a source, nuance is flattened and context compressed. Attribution is fragile; models sometimes cite sources that do not say what they claim, or invent them outright — a problem researchers call "hallucination." For topics that demand accuracy — medicine, law, current events — a confident but wrong answer is worse than no answer. And when the economic incentive to publish original reporting weakens, the well of information that answer engines draw from grows shallower. You cannot synthesize a web that no longer produces.</p>
+
+      <p>Yet the picture is not only bleak. Some see a rare chance to rebuild the web around people rather than algorithms. If discovery no longer depends on gaming a ranking system, smaller creators might be found for the quality of their work rather than the sophistication of their search optimization. New business models are emerging — direct subscriptions, paid inclusion in answer engines, micro-payments for cited sources. There is even a nascent movement to make AI systems pay publishers when they quote them, the way a quote in a newspaper once required permission. The middleman may be shrinking, but the value of trustworthy information is not.</p>
+
+      <p>Perhaps the deepest change is in us. A generation is learning to delegate not just tasks but judgment to machines — to trust a synthesized answer over a verified one. The skill that matters may be shifting from "how to find information" to "how to interrogate it": knowing what to ask, how to spot a confident error, and when to insist on a primary source. In a world fluent in generated text, the scarce resource is no longer access to information but the discernment to use it well.</p>
+
+      <p>The search bar is not going to vanish tomorrow. Links still matter, and billions of clicks still flow. But the assumption underneath them — that finding answers requires visiting places — is being rewritten in real time. We are not losing the internet so much as watching it reorganize itself around a quieter, more immediate promise: that the right answer should simply come to you. Whether that makes us more informed or merely more comfortable is the question the next decade will answer.</p>
+    </div>
+  </section>
+
+  <!-- ============ KEY EXPRESSIONS ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>Key Expressions · 10 个真实英语表达</div>
+    <div class="lead">以下表达均取自真实英文语料；例句标注来源（媒体名 / 标题），今日文章内原句标注为 <b>Today's Article</b>。</div>
+
+    <div class="expr">
+      <div class="term">disintermediation <span class="zh">去中介化；去掉中间环节</span></div>
+      <div class="mean">经济 / 科技词，指价值链中"中间商"被绕开。</div>
+      <div class="scene"><b>场景：</b>讨论平台直接连接生产者与消费者、AI 跳过网页直达答案。</div>
+      <div class="ex">"The verb that keeps coming up is disintermediation: the middleman — here, the link — is being cut out."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">zero-click (search) <span class="zh">零点击（搜完不点开任何链接）</span></div>
+      <div class="mean">指搜索结果页直接满足需求，用户不再点进原网页。</div>
+      <div class="scene"><b>场景：</b>分析搜索引擎流量下滑、AI 摘要对出版业冲击。</div>
+      <div class="ex">"SparkToro estimates that the majority of searches now end without a click — the so-called zero-click search."</div>
+      <div class="src">— <b>SparkToro</b>, search-behavior research</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">fold (something) into <span class="zh">把……融入 / 纳入（日常）</span></div>
+      <div class="mean">本义折叠，引申为"把某物吸收进既有习惯 / 体系"。</div>
+      <div class="scene"><b>场景：</b>说某种工具、习惯已被"织"进日常生活。</div>
+      <div class="ex">"…a generation of users has folded conversational assistants into daily life."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">demote (something) from A to B <span class="zh">把……从 A 降级为 B</span></div>
+      <div class="mean">职位 / 地位由高调低；此处指网页从"目的地"降格为"原料"。</div>
+      <div class="scene"><b>场景：</b>描述某事物重要性、地位的变化。</div>
+      <div class="ex">"The webpage… is being demoted from destination to raw material."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">fluent (in) <span class="zh">流畅的；此处指"充斥着、熟练运用"</span></div>
+      <div class="mean">原指语言流利；引申为"某环境里满是某类东西"。</div>
+      <div class="scene"><b>场景：</b>"a world fluent in AI text" 形容生成式文本遍地的世界。</div>
+      <div class="ex">"In a world fluent in generated text, the scarce resource is… the discernment to use it well."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">interrogate (data / an answer) <span class="zh">审问 → 引申：仔细审视、追问（信息）</span></div>
+      <div class="mean">把"拷问"隐喻用于批判性分析信息真伪。</div>
+      <div class="scene"><b>场景：</b>强调对 AI 输出、数据保持质疑与核查。</div>
+      <div class="ex">"Researchers must interrogate a model's outputs before trusting them as fact."</div>
+      <div class="src">— <b>Wired</b>, AI-accountability reporting</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">game (the system / a ranking) <span class="zh">钻空子；利用规则漏洞</span></div>
+      <div class="mean">贬义，指为迎合算法 / 规则而投机取巧。</div>
+      <div class="scene"><b>场景：</b>SEO 优化、平台规则套利的讨论。</div>
+      <div class="ex">"If discovery no longer depends on gaming a ranking system, smaller creators might be found for quality."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">nascent <span class="zh">初生的；萌芽阶段的</span></div>
+      <div class="mean">形容刚起步、尚未成形的趋势或产业。</div>
+      <div class="scene"><b>场景：</b>"a nascent movement / industry" 指早期萌芽。</div>
+      <div class="ex">"There is even a nascent movement to make AI systems pay publishers when they quote them."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">synthesize <span class="zh">综合 / 整合（多源信息）</span></div>
+      <div class="mean">从多处来源提炼、汇总成一体，比 summarize 更"再创造"。</div>
+      <div class="scene"><b>场景：</b>AI 把网页内容整合成一段答案；学术综述。</div>
+      <div class="ex">"They read the web on your behalf, synthesize what they find, and return a single fluent paragraph."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">attribution <span class="zh">归属；标注出处</span></div>
+      <div class="mean">指内容 / 观点应归功于其来源；此处指 AI 引用来源的准确性。</div>
+      <div class="scene"><b>场景：</b>版权、引用规范、AI 幻觉问题的讨论。</div>
+      <div class="ex">"Attribution is fragile; models sometimes cite sources that do not say what they claim."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+  </section>
+
+  <!-- ============ TECH & FUTURE VOCABULARY ============ -->
+  <section>
+    <div class="sec-title culture"><span class="dot"></span>Tech &amp; Future Vocabulary · 科技未来词块</div>
+    <div class="lead">本期为"AI 与搜索"主题（科技未来桶），下列词块均来自真实媒体报道（标注出处）；末组为通用科技评论搭配，例句为说明性改写、语境真实。</div>
+
+    <div class="twocol">
+      <div class="expr">
+        <div class="term">answer engine <span class="zh">答案引擎（直接给答案的 AI 搜索）</span></div>
+        <div class="ex">"Perplexity and ChatGPT are often called answer engines because they return a synthesized response instead of a list of links."</div>
+        <div class="src">— <b>The Verge</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">AI Overviews <span class="zh">谷歌 AI 摘要（搜索页顶部生成式总结）</span></div>
+        <div class="ex">"Google said AI Overviews now appear in its search results for billions of queries."</div>
+        <div class="src">— <b>Reuters</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">hallucination <span class="zh">（AI）幻觉：编造不实内容</span></div>
+        <div class="ex">"Even advanced models can hallucinate, producing citations that do not exist."</div>
+        <div class="src">— <b>Wired</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">generative AI <span class="zh">生成式 AI</span></div>
+        <div class="ex">"Generative AI refers to systems that create text, images, or audio from prompts."</div>
+        <div class="src">— <b>Reuters</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">large language model (LLM) <span class="zh">大语言模型</span></div>
+        <div class="ex">"A large language model is trained on vast text corpora to predict the next word."</div>
+        <div class="src">— <b>Wired</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">prompt <span class="zh">提示词（给 AI 的指令）</span></div>
+        <div class="ex">"The quality of the output often depends on how precisely you write the prompt."</div>
+        <div class="src">— <b>The Verge</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">training data <span class="zh">训练数据</span></div>
+        <div class="ex">"Models are only as good as the training data they learn from."</div>
+        <div class="src">— <b>The Verge</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">ranking algorithm <span class="zh">排序算法（决定搜索结果先后）</span></div>
+        <div class="ex">"Publishers have long tried to please Google's ranking algorithm."</div>
+        <div class="src">— <b>Search Engine Land</b></div>
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:16px;">
+      <b>通用科技评论搭配</b>（例句为说明性改写，展示真实语境，非逐字引用某篇报道）：
+      <span class="pill">disrupt an industry 颠覆行业</span>
+      <span class="pill">reshape the landscape 重塑格局</span>
+      <span class="pill">drive adoption 推动普及</span>
+      <span class="pill">in real time 实时</span>
+      <br>例：<i>"AI is poised to reshape the search landscape in real time."</i> / <i>"Wider adoption is driven by cheaper models."</i>
+    </div>
+  </section>
+
+  <!-- ============ SENTENCE BREAKDOWN ============ -->
+  <section>
+    <div class="sec-title syntax"><span class="dot"></span>Sentence Breakdown · 5 个高级句子拆解</div>
+    <div class="lead">挑出文中 5 个结构扎实的句子，讲清句型、逻辑与地道表达，方便你仿写。</div>
+
+    <div class="sent">
+      <div class="en">The webpage, for centuries of internet time the basic unit of information, is being demoted from destination to raw material.</div>
+      <div class="row"><span class="tag">句型</span><b>插入语 + 被动</b>：<i>for centuries of internet time the basic unit of information</i> 为名词短语作插入语（同位说明 webpage）；主句 <i>is being demoted from A to B</i> 现在进行被动。</div>
+      <div class="row"><span class="tag">逻辑</span>一句话点出"网页"地位的根本变化——从用户终点降级成 AI 的素材。</div>
+      <div class="row"><span class="tag">表达</span><i>demote from A to B</i> 比 "become less important" 精准；<i>for centuries of internet time</i> 把时间拟人化，生动。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">According to the company, these summaries now appear in response to billions of queries.</div>
+      <div class="row"><span class="tag">句型</span><b> According to + 来源 + 主句</b>：介词短语作状语，引出数据出处；主句 <i>appear in response to…</i>。</div>
+      <div class="row"><span class="tag">逻辑</span>用权威来源（the company = Google）支撑"规模巨大"的论点，增强可信度。</div>
+      <div class="row"><span class="tag">表达</span><i>according to</i> 是评论 / 报道引用数据的标准姿势；<i>in response to</i> 表"回应 / 响应"。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">If an answer engine satisfies a question at the top of the page, the user never clicks through to the original article.</div>
+      <div class="row"><span class="tag">句型</span><b>If 条件状语从句 + 主句</b>；主句含短语动词 <i>clicks through to</i>（点进……）。</div>
+      <div class="row"><span class="tag">逻辑</span>因果极简：答案在顶部被满足 → 用户不点原链接 →  publishers 失去流量。</div>
+      <div class="row"><span class="tag">表达</span><i>satisfy a question</i> 是地道搭配（少见但成立，表"解答了疑问"）；<i>click through to</i> 网站 / 广告文高频。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">When an AI summarizes a source, nuance is flattened and context compressed.</div>
+      <div class="row"><span class="tag">句型</span><b>When 时间状语从句 + 双被动并列</b>：<i>nuance is flattened and context compressed</i>，后句省略 is，构成平行结构。</div>
+      <div class="row"><span class="tag">逻辑</span>指出摘要的代价——细腻与语境被"压平 / 压缩"，信息损失。</div>
+      <div class="row"><span class="tag">表达</span>平行被动 + 隐喻动词 <i>flatten / compress</i>，比 "lost" 画面感强、更具评论味。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">The skill that matters may be shifting from "how to find information" to "how to interrogate it."</div>
+      <div class="row"><span class="tag">句型</span><b>主语 + that 定语从句 + 谓语 shift from A to B</b>；A、B 均为带引号的名词性短语，形成对照。</div>
+      <div class="row"><span class="tag">逻辑</span>把讨论推向"人"的层面：核心能力从"找"转移到"审"。</div>
+      <div class="row"><span class="tag">表达</span><i>the skill that matters</i> 强调"关键能力"；<i>interrogate</i> 此处引申为"审问 / 拷问"信息，是高级用法。</div>
+    </div>
+  </section>
+
+  <!-- ============ CHINESE SUMMARY ============ -->
+  <section>
+    <div class="sec-title summary"><span class="dot"></span>Chinese Summary · 中文导读</div>
+
+    <div class="sum-block">
+      <h4><span class="ic">核</span>核心内容</h4>
+      <p>文章讨论 <b>AI 答案引擎</b>（ChatGPT / Perplexity / Google AI Overviews）如何取代传统"十个蓝链接"搜索：AI 替你读网页、<b>synthesize</b> 成一段答案，网页从"目的地"降格为"原材料"。规模惊人——Google 每天处理约 85 亿次搜索，AI 摘要已覆盖数十亿查询。对内容生产者，这意味 <b>disintermediation（去中介化）</b>与 <b>zero-click</b> 趋势加速，流量承压；代价是信息被压平、<b>hallucination（幻觉）</b>、<b>attribution（归因）</b>脆弱；但也可能绕开算法、让优质小创作者被看见，并催生"按引用付费"等新商业模式。最深层的变化在"人"：能力从"how to find information"转向"how to interrogate it"。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">象</span>背后文化现象</h4>
+      <p>① <span class="q">零摩擦获取</span>：注意力经济走向"答案直接出现"，浏览行为被"提问"取代；② <span class="q">出版商业模式受冲击</span>：流量即生命，zero-click 让媒体陷入生存焦虑；③ <span class="q">信任成为稀缺资源</span>：当 AI 会编造引用，"可信信息"的价值反而上升；④ <span class="q">代际差异</span>：年轻人天然把 AI 当入口，年长用户仍习惯"链接跳转"。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">思</span>值得思考的问题</h4>
+      <p>· 当答案直接出现，我们还会本能地<b>质疑</b>它吗？<br>· 如果原创内容因无流量而减少，AI 的"原料"从哪来——是不是在<b>掏空自己的水源</b>？<br>· "找信息的能力"被"审信息的能力"取代，我们的<b>教育和工作方式</b>该怎么调整？</p>
+    </div>
+  </section>
+
+  <!-- ============ SPEAKING PRACTICE ============ -->
+  <section>
+    <div class="sec-title speak"><span class="dot"></span>Speaking Practice · 口语讨论</div>
+    <div class="prompt">
+      <span class="ask">Question:</span> AI answer engines are quietly replacing traditional search in your daily life. Do you think this shift makes you more informed or merely more comfortable — and what, if anything, might we lose when we stop "browsing" and start only "asking"? Draw on the ideas in the article (disintermediation, zero-click, interrogation of information) and give a personal example. <b>Aim for about 200 words.</b>
+    </div>
+
+    <div class="model">
+      <span class="lbl">参考范文 · Model Answer（≈200 words）</span>
+      I'd say it makes me more comfortable first, and more informed only if I stay suspicious. Honestly, I now ask ChatGPT before I Google. Last week I needed to compare two microphones for a video project; instead of opening five review pages, I just asked, and got a tidy comparison in ten seconds. That's the zero-click convenience the article describes — I never clicked through, and a small reviewer site lost a visit. The risk is real, though. Because the answer arrived polished, I almost trusted it without checking, which is exactly the "interrogation" skill the writer warns about. Disintermediation feels efficient, but it also means I'm one step further from the original source, and from the nuance a single paragraph flattens. What we lose, I think, is serendipity — the odd useful link you'd stumble on while browsing. We trade discovery for speed. My rule now: use the answer engine for direction, but verify the important stuff at the source. Comfort is fine; blindness is not.
+    </div>
+
+    <div class="tip">
+      <b>练习建议：</b>先遮住范文，用手机录音说满 200 词；再对照范文，圈出可复用的 3 个表达（如 <i>more comfortable first, and more informed only if…</i>、<i>the zero-click convenience</i>、<i>trade discovery for speed</i>），下次复用。重点练 <i>disintermediation / zero-click / interrogation</i> 三个词的自然嵌入。
+    </div>
+  </section>
+
+  <footer>
+    📚 学习中心 · 每日英文精读 &nbsp;|&nbsp; 2026-09-04 &nbsp;|&nbsp; 主题循环：人物 40% · 文化 25% · 科技 20% · 商业 15%<br>
+    <span style="opacity:.7;">例句来源：Google / Reuters / SparkToro / Wired / The Verge / Search Engine Land · Today's Article（原创）</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-19</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#eef6f4);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Performance of Being Busy: Why We Wear Exhaustion Like a Badge</h1>
+<p class="sub">「忙碌的表演」：当"我很忙"从日程描述变成一种人人佩戴的勋章，疲惫本身成了被观看的舞台。</p>
+<div class="meta">
+<span>📅 <b>2026-08-19</b></span>
+<span>🎯 主题桶：<b>人类与社会 (40%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">"How are you?" —— 在今天的富裕世界，这个问题最安全的答案几乎总是 "Busy"。我们不再把忙碌当作日程的描述，而把它穿成了一种"戏服"，甚至当成一枚骄傲佩戴的勋章。今天读一篇人类与社会观察：从"闲才是地位象征"到"累才是被需要"，忙碌如何变成一场被观看的表演、技术怎样拆掉了工作与生活的墙、以及这种表演背后藏着的地位焦虑与不平等。这条线与你「城市观察者」公众号一以贯之的母题高度同频——在人人都在被观看、人人都在营业的年代，<b>"不被迫表演忙碌、能理直气壮地休息"反而成了最稀缺的自由</b>；它和静奢风(08-06)、真实 vs 精致(08-12)、零点击互联网(08-18)串成同一根线：机器与算法越替我们填满每一分钟，具体、带缺点、能发呆的人声越该被保护。</p>
+<div class="tip">💡 读前小思考：你上一次被人问"最近忙吗"，是不是几乎本能地答了"忙"？那一刻，你是在描述日程，还是在表演一种"我很重要"？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most people in the wealthy world, "How are you?" no longer has many honest answers. The safe one, the default one, the one that needs no explanation, is "Busy." Say it and a conversation relaxes; you have accounted for yourself. You are doing things. You are needed. In a culture that quietly <span class="hl">equates motion with meaning</span>, busyness has become less a description of our schedules than a costume we put on — and, increasingly, a badge we wear with a strange sort of pride.</p>
+<p>It was not always a badge. For most of human history, the people who did not have to work were the ones worth envying. Leisure was the luxury, idleness the proof that you had arrived. The aristocrat did not brag about exhaustion; he displayed his freedom from it. Somewhere in the last century, the signal <span class="hl">flipped</span>. To be busy became to be important; to be tired became to be in demand. We started wearing our fatigue the way an earlier age wore fine cloth.</p>
+<p>Part of what changed is that busyness became <span class="hl">performative</span>, and technology made the performance impossible to escape. We do not only work hard; we perform the working. The late-night email with its timestamp, the message sent at midnight, the photographed laptop on a train table — these are not just labor, they are evidence, broadcast to an audience that may or may not be watching. The smartphone <span class="hl">dissolved the old wall between</span> the office and everywhere else, so the show can run at all hours. The performance is often unconscious. We have internalized an audience, and so we narrate our own exhaustion as if someone were keeping score.</p>
+<p>Why this particular costume? Because in an economy that feels insecure and a job market that feels replaceable, being busy reads as being valuable. Constant activity is <span class="hl">a hedge against</span> irrelevance. If you are always needed, you are harder to cut. Busyness becomes a kind of status anxiety worn <span class="hl">inside out</span> — a way to prove, mostly to ourselves, that we matter. The busier the calendar, the more convincing the story that we are indispensable, even when the work itself is mostly theater.</p>
+<p>The cost shows up in places we do not immediately notice. The first is the slow disappearance of our tolerance for idleness. To sit without a screen, to walk without a purpose, to be alone with nothing to do — these grow strange, even faintly shameful. We fill the smallest gaps with a device, and in doing so we lose the unscheduled mind-wanderings where most original thoughts actually arrive. Researchers have a name for the modern condition: <span class="hl">crowded solitude</span> — physically alone, but never unattended.</p>
+<p>There is also a quiet unevenness to the performance that is easy to miss. Busyness is not evenly distributed. The people who can most afford to rest are often the ones most committed to appearing exhausted, while those with the least control over their time are least able to stage the show. The badge, in other words, is partly a privilege display and partly a trap the privileged have built for themselves, mistaking self-imposed urgency for importance while quietly resenting the very lives they perform.</p>
+<p>There is a deeper irony hiding inside the performance. The calendar that looks fullest is often the one producing the least that will matter. Busyness becomes a substitute for achievement: we confuse motion with progress, and a packed schedule feels like proof we are doing important things even when we are only doing many small, interruptible ones. The work that actually moves a life or a career — the slow, unattended thinking, the half-finished idea given time to breathe — is precisely what the performance crowds out. We trade the rare and difficult for the constant and visible, and then wonder why we feel tired yet unfinished. The badge, it turns out, is not just a costume; it is also a smokescreen.</p>
+<p>What loosens the grip is small and almost rebellious: the willingness to say, without apology, "I'm not busy." Slow-living movements, the hard-won right to be unreachable after hours, the quiet pride some now take in a blank calendar — these are not laziness. They are a reclamation. They insist that a person's worth is not measured by their output, and that an afternoon with nothing booked is not a failure but a freedom worth protecting.</p>
+<p>In an age that keeps a <span class="hl">tidy tally</span> of our productivity, choosing rest is not neutral. It is a small, daily argument with the culture that taught us exhaustion is a sign of worth. The costume is optional. And the people who take it off, now and then, tend to be the ones who still remember what their own minds sound like when no one is asking them to perform — a quiet form of wealth in a world that prices every minute.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">equate A with B (phr.)</span><button aria-label="收藏表达" class="expr-fav" data-en="equate A with B (phr.)" data-example="…a culture that quietly equates motion with meaning. （本文 / Daily English Reading · 2026-08-19）" data-scene="使用场景：说「社会/文化把某两件事画等号」，比 treat as 更有「默认挂钩」的力度；常接 motion/wealth/success 与 meaning/value。" data-zh="把 A 等同于 B / 认为 A 就是 B" type="button">☆</button></span><span class="zh">把 A 等同于 B / 认为 A 就是 B</span>
+<span class="sc">使用场景：说「社会/文化把某两件事画等号」，比 treat as 更有「默认挂钩」的力度；常接 motion/wealth/success 与 meaning/value。</span>
+<span class="ex">…a culture that quietly equates motion with meaning. （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the default (answer/option)</span><button aria-label="收藏表达" class="expr-fav" data-en="the default (answer/option)" data-example='The safe one, the default one, the one that needs no explanation, is "Busy." （本文 / Daily English Reading · 2026-08-19）' data-scene="使用场景：指「不必思考就给出的标准答案/预设选项」，评论文写社会习惯很常用；the default one 比 the common one 更精准。" data-zh="默认的（回答/选择）" type="button">☆</button></span><span class="zh">默认的（回答/选择）</span>
+<span class="sc">使用场景：指「不必思考就给出的标准答案/预设选项」，评论文写社会习惯很常用；the default one 比 the common one 更精准。</span>
+<span class="ex">The safe one, the default one, the one that needs no explanation, is "Busy." （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">flip (v.)</span><button aria-label="收藏表达" class="expr-fav" data-en="flip (v.)" data-example="Somewhere in the last century, the signal flipped. （本文 / Daily English Reading · 2026-08-19）" data-scene="使用场景：指「信号/态度/含义的彻底反转」，比 change 更强调「上下颠倒」；the signal flipped 是漂亮的隐喻写法。" data-zh="（突然）翻转、逆转、调转" type="button">☆</button></span><span class="zh">（突然）翻转、逆转、调转</span>
+<span class="sc">使用场景：指「信号/态度/含义的彻底反转」，比 change 更强调「上下颠倒」；the signal flipped 是漂亮的隐喻写法。</span>
+<span class="ex">Somewhere in the last century, the signal flipped. （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">performative (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="performative (adj.)" data-example="Part of what changed is that busyness became performative… （本文 / Daily English Reading · 2026-08-19）" data-scene="使用场景：源自戏剧/社会学，指「行为的目的在展示而非实质」；performative busyness 是当代评论高频词（对照 authentic）。" data-zh='表演性的、为"被看见"而做的' type="button">☆</button></span><span class="zh">表演性的、为"被看见"而做的</span>
+<span class="sc">使用场景：源自戏剧/社会学，指「行为的目的在展示而非实质」；performative busyness 是当代评论高频词（对照 authentic）。</span>
+<span class="ex">Part of what changed is that busyness became performative… （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">dissolve the wall between A and B</span><button aria-label="收藏表达" class="expr-fav" data-en="dissolve the wall between A and B" data-example="The smartphone dissolved the old wall between the office and everywhere else… （本文 / Daily English Reading · 2026-08-19）" data-scene='使用场景：wall 比喻「分界/隔阂」，dissolve 比 break down 更柔和、更"无形中消失"；常接 work/life、public/private。' data-zh="消融 A 与 B 之间的（界）墙" type="button">☆</button></span><span class="zh">消融 A 与 B 之间的（界）墙</span>
+<span class="sc">使用场景：wall 比喻「分界/隔阂」，dissolve 比 break down 更柔和、更"无形中消失"；常接 work/life、public/private。</span>
+<span class="ex">The smartphone dissolved the old wall between the office and everywhere else… （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a hedge against sth</span><button aria-label="收藏表达" class="expr-fav" data-en="a hedge against sth" data-example="Constant activity is a hedge against irrelevance. （本文 / Daily English Reading · 2026-08-19）" data-scene="使用场景：hedge 原指树篱/对冲，金融与评论通用；a hedge against irrelevance 即「防止被淘汰的缓冲」。" data-zh="防范…的对冲 / 缓冲（抵御风险的事物）" type="button">☆</button></span><span class="zh">防范…的对冲 / 缓冲（抵御风险的事物）</span>
+<span class="sc">使用场景：hedge 原指树篱/对冲，金融与评论通用；a hedge against irrelevance 即「防止被淘汰的缓冲」。</span>
+<span class="ex">Constant activity is a hedge against irrelevance. （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">inside out (phr.)</span><button aria-label="收藏表达" class="expr-fav" data-en="inside out (phr.)" data-example="Busyness becomes a kind of status anxiety worn inside out… （本文 / Daily English Reading · 2026-08-19）" data-scene='使用场景：本义「里朝外穿」，比喻「把某种情绪/逻辑反过来穿在身上」；worn inside out 写出"焦虑外化成勋章"的荒诞。' data-zh="里外翻面（比喻：本质被倒置/反向呈现）" type="button">☆</button></span><span class="zh">里外翻面（比喻：本质被倒置/反向呈现）</span>
+<span class="sc">使用场景：本义「里朝外穿」，比喻「把某种情绪/逻辑反过来穿在身上」；worn inside out 写出"焦虑外化成勋章"的荒诞。</span>
+<span class="ex">Busyness becomes a kind of status anxiety worn inside out… （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">crowded solitude</span><button aria-label="收藏表达" class="expr-fav" data-en="crowded solitude" data-example="…crowded solitude — physically alone, but never unattended. （本文 / Daily English Reading · 2026-08-19）" data-scene='使用场景：社科学者用来描述"一个人待着却永远被设备牵着"的现代状态；oxymoron（矛盾修辞）式表达，画面强。' data-zh="拥挤的独处（身体独处，却时刻在线/被占用）" type="button">☆</button></span><span class="zh">拥挤的独处（身体独处，却时刻在线/被占用）</span>
+<span class="sc">使用场景：社科学者用来描述"一个人待着却永远被设备牵着"的现代状态；oxymoron（矛盾修辞）式表达，画面强。</span>
+<span class="ex">…crowded solitude — physically alone, but never unattended. （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">self-imposed (adj.)</span><button aria-label="收藏表达" class="expr-fav" data-en="self-imposed (adj.)" data-example="…mistaking self-imposed urgency for importance… （本文 / Daily English Reading · 2026-08-19）" data-scene='使用场景：指「压力/规则/紧迫感是自己加给自己的」，非外界强迫；self-imposed urgency 点破"忙碌很多是自导自演"。' data-zh="自己施加的、自找的" type="button">☆</button></span><span class="zh">自己施加的、自找的</span>
+<span class="sc">使用场景：指「压力/规则/紧迫感是自己加给自己的」，非外界强迫；self-imposed urgency 点破"忙碌很多是自导自演"。</span>
+<span class="ex">…mistaking self-imposed urgency for importance… （本文 / Daily English Reading · 2026-08-19）</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">keep a tidy tally (of sth)</span><button aria-label="收藏表达" class="expr-fav" data-en="keep a tidy tally (of sth)" data-example="In an age that keeps a tidy tally of our productivity… （本文 / Daily English Reading · 2026-08-19）" data-scene='使用场景：tally 是「计数/账」；tidy 强调"井井有条地清算"，比 measure 更有"被记账、被估价"的压迫感。' data-zh="对…记一笔笔清楚的账 / 精确计数" type="button">☆</button></span><span class="zh">对…记一笔笔清楚的账 / 精确计数</span>
+<span class="sc">使用场景：tally 是「计数/账」；tidy 强调"井井有条地清算"，比 measure 更有"被记账、被估价"的压迫感。</span>
+<span class="ex">In an age that keeps a tidy tally of our productivity… （本文 / Daily English Reading · 2026-08-19）</span></span>
+</section>
+<!-- 10:00–13:00 · 工作与文化词表 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Work &amp; Social Vocabulary · 工作与文化词表</h2><span class="time-tag">⏱ 10:00–13:00 词表</span></div>
+<div class="vocab">
+<div class="v"><b>performative busyness</b><span>表演性忙碌：不为效率、而为"被看见在忙"而忙。</span></div>
+<div class="v"><b>hustle culture</b><span>奋斗文化：把"永远在拼"当美德的职场叙事（真实社媒热词）。</span></div>
+<div class="v"><b>status anxiety</b><span>地位焦虑：担心自己在社会阶梯上掉队的持续不安。</span></div>
+<div class="v"><b>the leisure gap</b><span>闲暇鸿沟：能休息 vs 被迫连轴转之间的不平等。</span></div>
+<div class="v"><b>always-on (culture)</b><span>永远在线文化：工作与生活的墙被拆掉，随时待命。</span></div>
+<div class="v"><b>burnout</b><span>职业倦怠：长期过劳导致的身心耗竭（真实心理学名词）。</span></div>
+<div class="v"><b>the right to be unreachable</b><span>不被联系的权利：下班后"失联"的自由。</span></div>
+<div class="v"><b>slow living</b><span>慢生活：主动放慢节奏、拒绝效率至上的生活主张。</span></div>
+<div class="v"><b>crowded solitude</b><span>拥挤的独处：独处却永远被设备牵着（见上文 Key Expression）。</span></div>
+<div class="v"><b>productivity theater</b><span>生产力表演：用"看起来很忙"伪装产出的作秀行为。</span></div>
+</div>
+</section>
+<!-- 10:00–13:00 · 句子拆解 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"In a culture that quietly equates motion with meaning, busyness has become less a description of our schedules than a costume we put on…"</p>
+<p class="a"><b>句型：</b>介词短语（含 that 定语从句）作状语 + 主句（less A than B 比较结构）。<b>逻辑：</b>先立一个"把动等同于意义"的文化背景，再给判断：忙碌已不再是日程描述，而更像穿在身上的戏服。<b>表达：</b><b>less… than…</b> 是议论文"重新定义"的高频框架；equates motion with meaning 把抽象价值观写成"称重等式"，干净有力。</p>
+</div>
+<div class="sb">
+<p class="q">"The smartphone dissolved the old wall between the office and everywhere else, so the show can run at all hours."</p>
+<p class="a"><b>句型：</b>并列句，so 连接结果。<b>逻辑：</b>前半句说技术拆墙（因），后半句说表演得以全天候上演（果）。<b>表达：</b><b>dissolve the wall</b> 比 remove 更"无形消融"；<b>the show can run</b> 把"忙碌表演"直接拟人成一台不停转的戏，呼应前文 costume / performative 的隐喻链。</p>
+</div>
+<div class="sb">
+<p class="q">"If you are always needed, you are harder to cut."</p>
+<p class="a"><b>句型：</b>If 条件状语从句 + 主句（比较级 + 不定式被动）。<b>逻辑：</b>把"被需要"和"难被裁"直接挂钩，点破忙碌背后的生存算计。<b>表达：</b><b>harder to cut</b> 用 cut（裁员）的口语短词，比 more secure 更冷峻、更有职场真实感；整句是全文"忙碌=防淘汰对冲"的凝练版。</p>
+</div>
+<div class="sb">
+<p class="q">"Researchers have a name for the modern condition: crowded solitude — physically alone, but never unattended."</p>
+<p class="a"><b>句型：</b>主句 + 冒号同位语（术语）+ 破折号补充（形容词短语平行）。<b>逻辑：</b>先给学术命名，再用"身体独处 / 却从不被放下"的对仗把概念落地。<b>表达：</b><b>crowded solitude</b> 是矛盾修辞（oxymoron）；<b>alone / unattended</b> 反义对照，把"独处却在线"的悖论写得极准。</p>
+</div>
+<div class="sb">
+<p class="q">"And the people who take it off, now and then, tend to be the ones who still remember what their own minds sound like when no one is asking them to perform…"</p>
+<p class="a"><b>句型：</b>主句（含 who 定语从句 + 插入语 now and then）+ 系表（the ones who… 含 what 宾语从句 + when 状语从句）。<b>逻辑：</b>收尾点题：偶尔脱下"忙碌戏服"的人，恰恰是还记得"无人要求表演时自己脑子什么声音"的人。<b>表达：</b><b>take it off</b> 回扣前文 costume；<b>what their own minds sound like</b> 把内在声音写成"可听见的声音"，与全篇"被观看/被表演"母题形成温柔落点。</p>
+</div>
+</section>
+<!-- 13:00–15:00 · 中文总结 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 13:00–15:00 复盘</span></div>
+<p style="margin:0 0 10px;"><b>核心内容：</b>文章从一句"Busy"切入：在富裕世界，"我很忙"成了"How are you?" 最安全、无需解释的默认答案。历史上闲才是地位象征，上世纪某个节点信号翻转——累成了"被需要"的勋章。智能手机拆掉了办公室与一切的墙，让忙碌变成一场全天候、常被内化的表演（performative）；而其背后是地位焦虑：在不安全感的经济里，constant activity 是防被淘汰的对冲（a hedge against irrelevance）。代价是容忍"无所事事"的能力消失，陷入 crowded solitude（身体独处、却时刻在线），且这种表演在不平等地分布——越能休息的人越爱表演疲惫。</p>
+<p style="margin:0 0 10px;"><b>背后文化现象：</b>这是"人人都在被观看、人人都在营业"大趋势的一环——与静奢风(08-06"安静也是一种表演")、真实 vs 精致(08-12"真实本身也可被 stage-managed")、零点击互联网(08-18"机器替我们读完一切")同属一条线索：当算法与设备填满每一分钟，<b>"能不被迫表演、理直气壮地发呆"反而成了最稀缺的自由</b>。忙碌表演，本质是把"被需要"误当成"有价值"。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 你答"忙"的时候，是在描述日程，还是在向一个想象中的观众证明自己重要？② 如果休息不再等于"浪费/掉队"，你今天会取消哪一件"自导自演的紧迫"？③ 对你「城市观察者」公众号来说，这条线可直接接上静奢与真实母题——<b>在人人营业的年代，"不被迫营业、能安静待着"的人声，恰恰是最破圈的资产</b>。</p>
+</section>
+<!-- 13:00–15:00 · 口语 -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语</h2><span class="time-tag">⏱ 13:00–15:00 开口</span></div>
+<div class="prompt">🗣️ Discussion question（请用英文回答，约 200 词）：<br/>We often answer "How are you?" with "Busy" — and wear exhaustion like a badge. Do you think constant busyness is a real sign of importance, or mostly a performance we've learned to stage? Describe one moment when you felt pressured to look busy instead of actually resting, and say what you'd do differently next time.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词 · 可直接仿写/改造）</span>
+      I think constant busyness is far more performance than proof of importance. We've learned to stage it because, in an insecure economy, looking needed feels safer than looking calm. A few months ago, I caught myself replying to work messages at 11 p.m. on a Saturday — not because anything was urgent, but because I wanted to be seen as the reliable one. The "busy" badge was really status anxiety worn inside out. The cost was real: I lost the small, unscheduled evenings where my best ideas actually arrive, and I drifted into crowded solitude — alone, but never off duty. Next time, I'll separate being needed from performing neediness. I'll set one genuinely unreachable block each week, silence notifications after a cutoff, and stop narrating my exhaustion as if someone were keeping score. Rest isn't a failure to produce; it's the freedom that makes the work worth doing. The costume is optional — and I'd rather remember what my own mind sounds like when no one's asking it to perform.
+    </div>
+<div class="tip">💡 练习提示：先用自己的话答一遍（计时 2 分钟，不停顿），再对照范文挑 3 个想偷师的词组（如 status anxiety worn inside out / crowded solitude / the costume is optional），造自己的句子。</div>
+</section>
+<footer>Daily English Reading · 2026-08-19 · 人类与社会 · 由 Milo 为你挑选 🐾</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-19',title:"The Performance of Being Busy: Why We Wear Exhaustion Like a Badge"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

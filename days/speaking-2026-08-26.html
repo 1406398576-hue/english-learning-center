@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Old Man at the Library</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  /* Banner */
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  /* Sections */
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  /* Expression cards */
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  /* Conversation */
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.elder { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  /* Practice */
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  /* Vocab */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    font-style: italic;
+    margin-top: 2px;
+  }
+  /* Footer */
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<!-- TOPIC BANNER -->
+<div class="topic-banner">
+<h2>The Old Man at the Library</h2>
+<div class="zh">图书馆里那位让我重新理解"陪伴"的老人</div>
+<div class="en">"Sometimes the people we don't expect to meet are the ones we end up not forgetting."</div>
+<div class="meta">
+<span>📅 Day 32 · 2026-08-26</span>
+<span>🎯 B1–B2</span>
+<span>🏷 People &amp; Society</span>
+</div>
+</div>
+<!-- A. TITLE (consolidated above) -->
+<!-- B. SHORT STORY -->
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>I had been in the city for three months when I started going to the public library on Saturday afternoons. Not to study, not to work — just to sit somewhere that wasn't my tiny apartment.</p>
+<p>The library was old, the kind with creaky wooden floors and lamps that gave off a warm yellow glow. Almost every Saturday, an elderly man sat in the same chair by the window. He was always reading the same book — a thin, faded poetry collection. I noticed him, but I never said a word.</p>
+<p>One afternoon, a librarian walked past too quickly and knocked the man's book off the table. It fell open on the floor. I bent down to pick it up before anyone else could. That was the moment he looked up at me — really looked up, as if he had been waiting for something like this to happen.</p>
+<p>"Thank you," he said quietly. "This belonged to my wife." He paused. "She used to read me a poem from it every night before she passed." For a second I didn't know what to say. I just stood there, holding the book in both hands like it was something fragile.</p>
+<p>He told me her name was Ellen. He told me she loved autumn. He told me she had underlined the same line in every poem — <em>"I carry you with me wherever I go"</em> — and that he had read it out loud to her, every single night, for thirty-two years.</p>
+<p>I left the library that day feeling something I hadn't felt in months. Not sad, not happy. Just... held. Like someone had reminded me that even the quietest people in the world are carrying stories that could break your heart open, if you only stopped long enough to listen.</p>
+</div>
+</div>
+<!-- C. KEY EXPRESSIONS -->
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">This belonged to my wife.</div><button aria-label="收藏表达" class="expr-fav" data-en="This belonged to my wife." data-example="This belonged to my wife. She passed away last winter, and I still can't bring myself to move it from the shelf. 这是我太太的。她去年冬天走的,我还是不忍心把它从架子上挪走。" data-zh="这是我太太的。(用来介绍一件物品背后的人)" type="button">☆</button></div>
+<div class="zh-expr">这是我太太的。(用来介绍一件物品背后的人)</div>
+<div class="example">
+        This belonged to my wife. She passed away last winter, and I still can't bring myself to move it from the shelf.
+        <span class="zh-trans">这是我太太的。她去年冬天走的,我还是不忍心把它从架子上挪走。</span>
+</div>
+<div class="note">用 "belonged to" 而不是 "is my wife's",因为对方已经不在了——这是英语里非常温柔、非常哀伤的表达方式。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">Are you a regular here?</div><button aria-label="收藏表达" class="expr-fav" data-en="Are you a regular here?" data-example="— Are you a regular here? I've seen you almost every Saturday. — 你是这儿的常客吗?我几乎每个周六都看到你。" data-zh="你是这儿的常客吗?" type="button">☆</button></div>
+<div class="zh-expr">你是这儿的常客吗?</div>
+<div class="example">
+        — Are you a regular here? I've seen you almost every Saturday.
+        <span class="zh-trans">— 你是这儿的常客吗?我几乎每个周六都看到你。</span>
+</div>
+<div class="note">比 "Do you come here often?" 更自然、更地道。常用来开启一场关于"我们好像见过"的对话。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I didn't know what to say.</div><button aria-label="收藏表达" class="expr-fav" data-en="I didn't know what to say." data-example="When she told me she was leaving the company, I honestly didn't know what to say. 当她告诉我她要离开公司时,我真的说不出话来。" data-zh="我一时语塞。(说不出话来)" type="button">☆</button></div>
+<div class="zh-expr">我一时语塞。(说不出话来)</div>
+<div class="example">
+        When she told me she was leaving the company, I honestly didn't know what to say.
+        <span class="zh-trans">当她告诉我她要离开公司时,我真的说不出话来。</span>
+</div>
+<div class="note">比 "I was speechless" 更日常、更可重复使用。描述被触动、震惊、感动时的"失语"状态。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I couldn't help but notice...</div><button aria-label="收藏表达" class="expr-fav" data-en="I couldn't help but notice..." data-example="I couldn't help but notice you've been looking at the same page for the last twenty minutes. Everything okay? 我忍不住注意到你过去二十分钟一直盯着同一页。没事吧?" data-zh="我忍不住注意到……" type="button">☆</button></div>
+<div class="zh-expr">我忍不住注意到……</div>
+<div class="example">
+        I couldn't help but notice you've been looking at the same page for the last twenty minutes. Everything okay?
+        <span class="zh-trans">我忍不住注意到你过去二十分钟一直盯着同一页。没事吧?</span>
+</div>
+<div class="note">礼貌地提起你观察到的事。后面可以接关心的内容,也可以只是好奇——是开启对话的"温和借口"。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">It meant the world to me.</div><button aria-label="收藏表达" class="expr-fav" data-en="It meant the world to me." data-example="Her note at the bottom of the card meant the world to me — I still keep it in my wallet. 她写在卡片底下的留言对我意义重大——我一直把它放在钱包里。" data-zh="那对我意义重大。" type="button">☆</button></div>
+<div class="zh-expr">那对我意义重大。</div>
+<div class="example">
+        Her note at the bottom of the card meant the world to me — I still keep it in my wallet.
+        <span class="zh-trans">她写在卡片底下的留言对我意义重大——我一直把它放在钱包里。</span>
+</div>
+<div class="note">比 "it was very important to me" 情感浓度高得多。用来感谢别人对你意义重大的小事。</div>
+</div>
+</div>
+<!-- D. REAL CONVERSATION -->
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">— Saturday afternoon, public library, the poetry section. The old man's book has just slid off the table —</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">Here — I think this is yours?</span>
+<span class="zh">给——我想这是您的?</span>
+</div>
+<div class="conv-line">
+<span class="speaker elder">Old Man:</span>
+<span class="en">Oh... (small pause) thank you. I didn't see it fall.</span>
+<span class="zh">噢……(停顿了一下)谢谢。我都没看见它掉了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">No problem. Are you okay? I mean — the book looks old. I didn't want to... you know, step on it or anything.</span>
+<span class="zh">没事。您还好吗?我是说——这本书看起来挺旧了。我可不想……踩到它之类的。</span>
+</div>
+<div class="conv-line">
+<span class="speaker elder">Old Man:</span>
+<span class="en">(slight laugh) It's older than I am, that's for sure.</span>
+<div class="stage">— he smooths the page with his thumb, very carefully —</div>
+<span class="en">This belonged to my wife. Ellen. She used to read from it out loud, almost every night.</span>
+<span class="zh">(轻轻笑)它比我老,这倒是真的。这是我太太的。Ellen。她以前几乎每晚都会念里面的诗。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">That's... wow. I'm sorry. I didn't mean to pry.</span>
+<span class="zh">这……哇。抱歉。我不是有意多问的。</span>
+</div>
+<div class="conv-line">
+<span class="speaker elder">Old Man:</span>
+<span class="en">No, no — don't apologize. I don't mind. (longer pause) I come here on Saturdays just to read a few pages out loud, even if no one's listening.</span>
+<span class="zh">不不——别道歉。我不介意。(停顿更久)我周六来这里,只是为了念几页出来,哪怕没人听。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">That's kind of beautiful, actually.</span>
+<span class="zh">其实这挺美的。</span>
+</div>
+<div class="conv-line">
+<span class="speaker elder">Old Man:</span>
+<span class="en">(looking up, surprised) You think so? My kids think I'm a little... (taps his temple) ...crazy, maybe.</span>
+<span class="zh">(抬头,有些意外)你这么觉得?我孩子们觉得我有点……(点了点太阳穴)……疯了,也许。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">No. I think it's the opposite of crazy. I think it's one of the most human things I've heard in a long time.</span>
+<span class="zh">不。我觉得正相反。这是我好久以来听过最人味儿的一件事。</span>
+</div>
+<div class="conv-line">
+<span class="speaker elder">Old Man:</span>
+<span class="en">(quietly, after a beat) ...Thank you. That — means a lot. More than you probably realize.</span>
+<span class="zh">(停了一下,轻声)……谢谢你。这对我——意义很大。大概比你意识到的还要大。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">If you don't mind me asking... what's the poem? The one she read most?</span>
+<span class="zh">您要是不介意我问……是哪首诗?她念得最多的那首?</span>
+</div>
+<div class="conv-line">
+<span class="speaker elder">Old Man:</span>
+<span class="en">It's the last one in the book. I'll show you — (opens it, runs his finger down a page) here. It's underlined. Three times.</span>
+<div class="stage">— he reads it slowly, like it's a prayer —</div>
+<span class="en">"I carry you with me — wherever I go."</span>
+<span class="zh">就是书里最后一首。我给你看——(翻开,手指顺着页面划下来)这儿。画了线。划了三遍。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">(very quietly) ...That's a beautiful line.</span>
+<span class="zh">(很轻地)……那句真美。</span>
+</div>
+<div class="stage">— the room gets very still. Neither of us says anything for a while. And somehow, it doesn't feel awkward —</div>
+</div>
+<!-- E. SPEAKING PRACTICE -->
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the story 复述故事 (60 seconds)</div>
+<div class="task-prompt">用你自己的话,简短复述"图书馆老人"的故事。提示句:<br/><em>"So there's this old man who comes to the library every Saturday..."</em></div>
+<ul class="samples">
+<li>So there's this old man who comes to the library every Saturday. He always sits by the window, reading the same old poetry book. One day it fell off the table and I picked it up. He told me it belonged to his late wife — he still comes just to read a few pages out loud, even though she's gone. Honestly, I left the library feeling... held. Like the world is bigger than I usually let myself believe.
+          <span class="zh">有这么一位老人,每个周六都来图书馆。他总坐在窗边,读同一本旧诗集。一天书掉了,我帮他捡起来。他告诉我那是他已故太太的——他到现在还会来读几页出来,虽然她已经走了。说实话,我离开图书馆的时候觉得……被托住了。好像世界比我平时愿意相信的更大。</span>
+</li>
+<li>The story is about a stranger I met by accident. He was reading a poetry book that used to belong to his wife. Every Saturday, he reads a poem out loud to an empty chair. I think the whole thing changed something in me — I'd been numb for months, and that afternoon, something opened up again.
+          <span class="zh">这个故事是关于一个我偶然遇见的陌生人。他在读一本他太太的诗集。每个周六,他都会给一张空椅子念一首诗。我觉得这件事改变了我身上某样东西——我已经麻木了好几个月,那天下午,有什么又重新打开了。</span>
+</li>
+<li>It's a small story, really. An old man, a book, a Saturday afternoon. But the line that stuck with me was when he said he still reads out loud, "even if no one's listening." I keep thinking about that. I keep thinking about how much love that takes.
+          <span class="zh">其实是个小故事。一个老人,一本书,一个周六下午。但让我一直想着的,是他说的"哪怕没人听"也照样念出来。我一直在想这件事。我一直在想那需要多少爱。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Share your opinion 表达观点</div>
+<div class="task-prompt">Do you think public spaces like libraries are still important in the age of smartphones? Why or why not? 用至少 3 句话回应,可以赞同也可以反对。</div>
+<ul class="samples">
+<li>I think they're more important than ever, honestly. Phones make us constantly connected — but they also make us lonely in a new way. A library is one of the last places where you can be around people without performing for them. That's rare now.
+          <span class="zh">说实话我觉得比以往任何时候都重要。手机让我们时刻"连着"——但它也用一种新的方式让我们孤独。图书馆是为数不多的、你可以待在别人身边、却不需要为他们表演的地方。这在今天已经很罕见了。</span>
+</li>
+<li>Honestly, I'm on the fence. I love libraries, but I also think young people need different kinds of spaces now. If libraries want to stay relevant, they need to be more than just quiet rooms with books — they need to be places where you can actually meet someone like that old man.
+          <span class="zh">说实话我有点纠结。我喜欢图书馆,但我也觉得年轻人现在需要不同种类的空间。如果图书馆想保持意义,它就不能只是安静的房间加几本书——它得是一个你可以真正遇见像那位老人那样的陌生人的地方。</span>
+</li>
+<li>I think yes — but not for the reason most people say. People say it's about the books, but for me it's about the silence. You can't get that silence anywhere else. And sometimes, like in the story, it's in that silence that someone finally speaks to you.
+          <span class="zh">我觉得是——但不是为了大多数人说的那个原因。大家说的是"书",但对我来说,是为了那种安静。这种安静在别的地方找不到。有时候,就像故事里那样,正是在那种安静里,有人终于跟你开口。</span>
+</li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Role-play a real situation 模拟真实场景</div>
+<div class="task-prompt">You're in a coffee shop, working on your laptop. An elderly woman next to you starts crying quietly while reading a letter. What do you do? Speak out loud — say exactly what you'd say.</div>
+<ul class="samples">
+<li>(gently) Excuse me... I'm so sorry to bother you. I don't mean to intrude, but... is there anything I can do? Can I get you a glass of water, or...?
+          <span class="zh">(轻轻)不好意思……抱歉打扰您。我不是有意多管,但……我能帮点什么吗?要不要我帮您倒杯水,或者……?</span>
+</li>
+<li>I wouldn't say anything right away. I'd just... sit closer. Maybe slide a tissue across the table without saying anything. Sometimes presence is enough. If she looks up, I'd just say: "Take your time."
+          <span class="zh">我不会立刻开口。我会只是……坐近一点。也许默默递一张纸巾过去。有时候陪伴就够了。如果她抬头,我只会说:"您慢慢来。"</span>
+</li>
+<li>(quietly) Hey. I'm sorry — I couldn't help but notice. Is everything... okay? You don't have to tell me anything, of course. I just... I'm right here if you need anything.
+          <span class="zh">(轻轻)嗨。抱歉——我忍不住注意到。没什么事儿吧?您当然不用跟我说什么。我只是……如果您需要什么,我就在这儿。</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- F. USEFUL VOCABULARY -->
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">creaky</span><span class="ipa">/ˈkriːki/</span>
+<div class="meaning">adj. 嘎吱作响的</div>
+<div class="sample">The creaky wooden floor announced every step I took.
+          <span class="zh-trans">嘎吱作响的木地板记录着我走过的每一步。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">glow</span><span class="ipa">/ɡloʊ/</span>
+<div class="meaning">n. 柔和的光</div>
+<div class="sample">The lamp gave off a warm yellow glow that made the room feel safe.
+          <span class="zh-trans">那盏灯散发出柔和的黄光,让房间感觉安全。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">faded</span><span class="ipa">/ˈfeɪdɪd/</span>
+<div class="meaning">adj. 褪色的;曾经鲜艳的</div>
+<div class="sample">She was wearing a faded blue jacket that looked like it had a hundred stories.
+          <span class="zh-trans">她穿着一件褪了色的蓝外套,看起来像装着一百个故事。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">fragile</span><span class="ipa">/ˈfrædʒəl/</span>
+<div class="meaning">adj. 易碎的;脆弱的</div>
+<div class="sample">I held the photograph like it was something fragile.
+          <span class="zh-trans">我拿着那张照片,像是拿着什么易碎的东西。</span>
+</div>
+</div>
+<div class="vocab-item">
+<span class="word">underlined</span><span class="ipa">/ˈʌndərlaɪnd/</span>
+<div class="meaning">adj. (词句下面)画了线的</div>
+<div class="sample">She had underlined three words in the letter and circled them twice.
+          <span class="zh-trans">她在信里给三个词画了线,还圈了两遍。</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Speaking Practice · Day 32 · 2026-08-26 · Built for your English muscle memory.
+  </div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'2026-08-26',title:"The Old Man at the Library"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

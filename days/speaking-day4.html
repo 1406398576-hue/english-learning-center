@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | Day 4</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e2ddd6;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+  }
+  .header .date { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f5;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 40px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin-bottom: 4px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-line .cn { color: var(--text-dim); font-size: 13px; display: block; margin-top: 3px; }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.s { color: var(--accent); }
+  .speaker.m { color: var(--accent-3); }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<span class="day-badge">DAY 4</span>
+<h1>每日英语口语训练</h1>
+<div class="date">2026年7月30日（周四） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>聊兴趣爱好 · 表达喜欢</h2>
+<div class="en">Talking About Hobbies &amp; What You're Into</div>
+<p>和外国朋友聊天，十有八九会聊到"你平时玩啥、喜欢什么"。这5个表达+1段对话，帮你自然说出自己的爱好、也能顺着对方的话接下去，不再是干巴巴的 "I like..."。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 个美国人真实日常例句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">I'm really into...</div><button aria-label="收藏表达" class="expr-fav" data-en="I'm really into..." data-scene='最常用 比 "I like" 更口语、更有热情' data-zh="我超喜欢…／我最近迷上…" type="button">☆</button></div>
+<div class="expr-cn">我超喜欢…／我最近迷上…</div>
+<div class="expr-meta"><span class="tag">最常用</span>比 "I like" 更口语、更有热情</div>
+<div class="tv-lines">
+<div class="tv-line">I'm really into hiking these days.<span class="cn">（最近超迷爬山。）</span></div>
+<div class="tv-line">She's really into indie music.<span class="cn">（她特别爱听独立音乐。）</span></div>
+<div class="tv-line">Honestly, I'm just into chilling at home on weekends.<span class="cn">（说真的，我周末就爱窝家里放空。）</span></div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">I'm kind of hooked on...</div><button aria-label="收藏表达" class="expr-fav" data-en="I'm kind of hooked on..." data-scene='轻松 比 "addicted" 更日常、不严肃' data-zh="我有点上瘾于…／我有点停不下来" type="button">☆</button></div>
+<div class="expr-cn">我有点上瘾于…／我有点停不下来</div>
+<div class="expr-meta"><span class="tag">轻松</span>比 "addicted" 更日常、不严肃</div>
+<div class="tv-lines">
+<div class="tv-line">I'm kind of hooked on this new podcast.<span class="cn">（我有点迷上这个新播客了。）</span></div>
+<div class="tv-line">He's hooked on that mobile game everyone's playing.<span class="cn">（他迷上那个大家都在玩的手游了。）</span></div>
+<div class="tv-line">I think I'm getting hooked on baking.<span class="cn">（我感觉自己越来越爱烘焙了。）</span></div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">I'm not big on...</div><button aria-label="收藏表达" class="expr-fav" data-en="I'm not big on..." data-scene="委婉 拒绝或表达反感时的柔和说法" data-zh="我不太喜欢…／…不是我的菜" type="button">☆</button></div>
+<div class="expr-cn">我不太喜欢…／…不是我的菜</div>
+<div class="expr-meta"><span class="tag">委婉</span>拒绝或表达反感时的柔和说法</div>
+<div class="tv-lines">
+<div class="tv-line">I'm not big on spicy food, to be honest.<span class="cn">（说实话，我不太吃辣。）</span></div>
+<div class="tv-line">She's not big on crowded places.<span class="cn">（她不太喜欢人挤人的地方。）</span></div>
+<div class="tv-line">I'm not really big on horror movies.<span class="cn">（恐怖片真不是我的菜。）</span></div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">What do you do for fun?</div><button aria-label="收藏表达" class="expr-fav" data-en="What do you do for fun?" data-scene="破冰 问对方爱好最自然的一句" data-zh="你平时玩啥？／有啥爱好？" type="button">☆</button></div>
+<div class="expr-cn">你平时玩啥？／有啥爱好？</div>
+<div class="expr-meta"><span class="tag">破冰</span>问对方爱好最自然的一句</div>
+<div class="tv-lines">
+<div class="tv-line">So, what do you do for fun around here?<span class="cn">（那你在这一带平时都玩啥？）</span></div>
+<div class="tv-line">What do you do for fun when you're not working?<span class="cn">（你不工作的时候都干点啥？）</span></div>
+<div class="tv-line">I'm just curious — what do you do for fun?<span class="cn">（就是好奇问问，你平时爱好啥？）</span></div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">I've been meaning to try...</div><button aria-label="收藏表达" class="expr-fav" data-en="I've been meaning to try..." data-scene="接话 聊到新事物时顺口接一句" data-zh="我一直想试试…（但还没做）" type="button">☆</button></div>
+<div class="expr-cn">我一直想试试…（但还没做）</div>
+<div class="expr-meta"><span class="tag">接话</span>聊到新事物时顺口接一句</div>
+<div class="tv-lines">
+<div class="tv-line">I've been meaning to try rock climbing.<span class="cn">（我一直想试试攀岩。）</span></div>
+<div class="tv-line">Oh, I've been meaning to try that cafe!<span class="cn">（哦那个咖啡店我一直想去！）</span></div>
+<div class="tv-line">I've been meaning to learn how to cook Thai food.<span class="cn">（我一直想学做泰餐。）</span></div>
+</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 咖啡馆里聊周末爱好</h3>
+<div class="dialogue">
+<div class="scene">Lisa 和 Tom 在咖啡馆碰面，闲聊各自周末都干点啥。轮到你跟着读，注意"自然接话"的节奏。</div>
+<div class="line">
+<span class="speaker s">Lisa</span>
+<span class="text">So, what do you do for fun on weekends?</span>
+<div class="translation">话说，你周末一般都玩啥？</div>
+</div>
+<div class="line">
+<span class="speaker m">Tom</span>
+<span class="text">I'm really into photography lately. I basically go out and shoot photos every Saturday.</span>
+<div class="translation">我最近超迷摄影，基本每周六都出去拍照。</div>
+</div>
+<div class="line">
+<span class="speaker s">Lisa</span>
+<span class="text">That's cool. I'm kind of hooked on this true-crime podcast — I listen to it on every walk.</span>
+<div class="translation">好酷。我有点迷上那个真实犯罪播客了，每次散步都在听。</div>
+</div>
+<div class="line">
+<span class="speaker m">Tom</span>
+<span class="text">Nice. I'm not big on podcasts, but I'll check it out.</span>
+<div class="translation">不错。我平时不太听播客，不过我去听听看。</div>
+</div>
+<div class="line">
+<span class="speaker s">Lisa</span>
+<span class="text">Do it! Anyway, I've been meaning to try film photography. Maybe you can show me sometime.</span>
+<div class="translation">去听！对了，我一直想试试胶片摄影，哪天你教我呗。</div>
+</div>
+<div class="line">
+<span class="speaker m">Tom</span>
+<span class="text">For sure. We should go shoot together this Saturday, actually.</span>
+<div class="translation">没问题。其实这周六咱俩一起去拍呗。</div>
+</div>
+<div class="line">
+<span class="speaker s">Lisa</span>
+<span class="text">I'm so down. Let me know the plan and I'm in.</span>
+<div class="translation">我超愿意！你定个计划喊我就行。</div>
+</div>
+<div class="line">
+<span class="speaker m">Tom</span>
+<span class="text">Perfect. I'll text you the spot Friday night.</span>
+<div class="translation">完美。我周五晚上把地点发你。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 3道开口题（直接照着说）</h3>
+<div class="practice">
+<ol>
+<li>
+          说说你平时喜欢做什么（你的爱好）。
+          <div class="hint">可以用 I'm really into... / I'm kind of hooked on...</div>
+<div class="samples">
+<span class="s"><span class="lab">示例1</span>I'm really into running. I go out almost every morning.</span>
+<span class="s"><span class="lab">示例2</span>I'm kind of hooked on cooking lately — I try a new recipe every week.</span>
+<span class="s"><span class="lab">示例3</span>I'm not big on sports, but I love reading and watching movies.</span>
+</div>
+</li>
+<li>
+          说一件你最近迷上、或者一直想试试的事。
+          <div class="hint">可以用 I've been meaning to try... / I'm kind of hooked on...</div>
+<div class="samples">
+<span class="s"><span class="lab">示例1</span>I've been meaning to try surfing, but I keep putting it off.</span>
+<span class="s"><span class="lab">示例2</span>I'm kind of hooked on this Chinese drama everyone's talking about.</span>
+<span class="s"><span class="lab">示例3</span>I've been meaning to learn guitar for years, honestly.</span>
+</div>
+</li>
+<li>
+          邀请朋友一起做你喜欢的户外活动。
+          <div class="hint">可以用 What do you do for fun? 之后接邀请</div>
+<div class="samples">
+<span class="s"><span class="lab">示例1</span>We should go hiking this weekend — I'm really into it lately.</span>
+<span class="s"><span class="lab">示例2</span>You should try rock climbing with me sometime, it's so much fun.</span>
+<span class="s"><span class="lab">示例3</span>I'm going biking Saturday, wanna come along?</span>
+</div>
+</li>
+</ol>
+<div class="tip">💡 练习小技巧：先大声把 3 条示例各念一遍，再关掉页面、用自己的词复述一遍。能不照稿说出来，今天这 15 分钟就算达标了。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 5个中式英语坑</h3>
+<table class="mistakes-table">
+<tr>
+<th style="width:33%">❌ 不自然</th>
+<th style="width:33%">✅ 更自然</th>
+<th>说明</th>
+</tr>
+<tr>
+<td class="wrong">I like reading very much.</td>
+<td class="right">I'm really into reading.</td>
+<td class="note">"very much" 太书面。口语用 into / a big fan of 更有温度。</td>
+</tr>
+<tr>
+<td class="wrong">My hobby is singing.</td>
+<td class="right">I'm into singing. / I love singing in my free time.</td>
+<td class="note">老外很少说 "My hobby is..."，太像填表。直接说你爱干啥。</td>
+</tr>
+<tr>
+<td class="wrong">What is your hobby?</td>
+<td class="right">What do you do for fun?</td>
+<td class="note">问爱好更自然的就是这句，别用 hobby 这个词。</td>
+</tr>
+<tr>
+<td class="wrong">I very like coffee.</td>
+<td class="right">I really like coffee.</td>
+<td class="note">英语里 very 不能修饰 like，要用 really。这是高频错法。</td>
+</tr>
+<tr>
+<td class="wrong">I don't like it.</td>
+<td class="right">I'm not big on it. / It's not really my thing.</td>
+<td class="note">直接说 don't like 有点生硬，用 not big on / not my thing 更柔和地道。</td>
+</tr>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      🐾 今日一句话带走：聊爱好别只会 "I like..."，换成 <b>I'm really into...</b> 和 <b>I'm kind of hooked on...</b>，对方一听就知道你是真聊得来的人。明天见～
+    </div>
+    每日15分钟口语训练 · Day 4 · 坚持就是开口的底气
+  </div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'9999-0004-00',title:"聊兴趣爱好 · 表达喜欢"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

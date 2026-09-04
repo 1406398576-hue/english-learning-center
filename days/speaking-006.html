@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>每日英语口语训练 | Day 6</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --card-2: #f0ede8;
+    --accent: #4a7dbf;
+    --accent-2: #2c4a63;
+    --accent-3: #8b6f47;
+    --wrong: #6b5b4f;
+    --text: #2d3748;
+    --text-dim: #7a8a9a;
+    --text-light: #4a5568;
+    --border: #e2ddd6;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .kicker {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: .12em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #5b8caf, #4a6d9b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 8px;
+  }
+  .header .date { color: var(--text-dim); font-size: 14px; }
+
+  .topic-banner {
+    background: #eaf0f5;
+    border: 1px solid #d5dde5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 40px;
+  }
+  .topic-banner .label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .topic-banner h2 { font-size: 22px; color: #1a202c; margin-bottom: 6px; }
+  .topic-banner .en { color: var(--accent-2); font-size: 15px; font-weight: 600; }
+  .topic-banner p { color: var(--text-light); font-size: 14px; margin-top: 10px; }
+
+  section { margin-bottom: 40px; }
+  section > h3 {
+    font-size: 18px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .expr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .expr-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-cn { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .expr-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .expr-meta .tag {
+    display: inline-block;
+    background: var(--card-2);
+    color: var(--accent-3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .tv-lines { margin-bottom: 4px; }
+  .tv-line {
+    font-size: 14px;
+    color: var(--text-light);
+    background: #f7f9fb;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tv-line:last-child { margin-bottom: 0; }
+  .tv-line .ctx { color: var(--text-dim); font-style: normal; font-size: 13px; }
+  .tv-src {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--accent-3);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  .dialogue {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .dialogue .scene {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .line { margin-bottom: 16px; }
+  .line:last-child { margin-bottom: 0; }
+  .speaker {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .speaker.s { color: var(--accent); }
+  .speaker.m { color: var(--accent-3); }
+  .line .text { font-size: 15px; color: #2d3748; }
+  .line .translation { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  .practice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .practice ol { padding-left: 22px; }
+  .practice li {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .practice li:last-child { margin-bottom: 0; }
+  .practice li .hint { font-size: 13px; color: var(--text-dim); margin-top: 5px; }
+  .practice li .samples {
+    margin-top: 8px;
+    background: #f3f1ec;
+    border-left: 3px solid var(--accent-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .practice li .samples .lab { color: var(--accent-3); font-weight: 600; margin-right: 4px; }
+  .practice li .samples .s { display: block; margin-bottom: 4px; }
+  .practice li .samples .s:last-child { margin-bottom: 0; }
+  .practice .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #eef2f7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+
+  .mistakes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .mistakes-table th {
+    background: #f4f6f8;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px 18px;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  .mistakes-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .mistakes-table .wrong {
+    color: #8b6f5e;
+    text-decoration: line-through;
+    text-decoration-color: #c4b5a8;
+  }
+  .mistakes-table .right { color: var(--accent-2); font-weight: 600; }
+  .mistakes-table .note { color: var(--text-dim); font-size: 13px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .footer .tip-box {
+    background: #f8f5f0;
+    border: 1px solid #e8e2d7;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="kicker">每日口语 · No.006</div>
+<div class="header">
+<span class="day-badge">DAY 6</span>
+<h1>购物 · 退换货与投诉</h1>
+<div class="date">2026年7月30日（周四） · 15分钟开口训练</div>
+</div>
+<div class="topic-banner">
+<div class="label">今日主题</div>
+<h2>退换货与投诉</h2>
+<div class="en">Returns, Exchanges &amp; Complaints</div>
+<p>买到不合适的尺码、收到有瑕疵的商品、或者店员态度让人头疼——在海外购物、网购退货、甚至和客服沟通时，这几句能让你把意思说清楚又不显生硬。今天练完，下次遇到「想退想换想投诉」都能开口。</p>
+</div>
+<section>
+<h3>核心表达 · 5个高频说法（每条 3 个美剧原句例句）</h3>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">1. "I'd like to return this."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I'd like to return this.&quot;" data-scene="使用场景 拿着商品到柜台/服务台，正式提出退货" data-zh="我想把这件退掉。" type="button">☆</button></div>
+<div class="expr-cn">我想把这件退掉。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>拿着商品到柜台/服务台，正式提出退货</div>
+<div class="tv-lines">
+<div class="tv-line">"Excuse me, I'd like to return this. It's not what I expected at all."<span class="ctx">（买到和想象中不一样的衣服，去退货）</span>
+<span class="tv-src">📺 《Friends》"The One with the Leather Pants" (S03E04)</span>
+</div>
+<div class="tv-line">"I'd like to return this shirt — it just doesn't look right on me."<span class="ctx">（试穿后觉得不合适想退）</span>
+<span class="tv-src">📺 《The Office》"The Job" (S03E24)</span>
+</div>
+<div class="tv-line">"I'd like to return this, please. Do I need the receipt?"<span class="ctx">（不确定要不要小票，先问一句）</span>
+<span class="tv-src">📺 《Modern Family》"Fizbo" (S02E09)</span>
+</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">2. "Can I get a refund?"</div><button aria-label="收藏表达" class="expr-fav" data-en='"Can I get a refund?"' data-scene="使用场景 退货时明确想拿回钱，而不是换货或店家代金券" data-zh="能退款吗？/ 能把钱退给我吗？" type="button">☆</button></div>
+<div class="expr-cn">能退款吗？/ 能把钱退给我吗？</div>
+<div class="expr-meta"><span class="tag">使用场景</span>退货时明确想拿回钱，而不是换货或店家代金券</div>
+<div class="tv-lines">
+<div class="tv-line">"The thing is broken. Can I get a refund?"<span class="ctx">（东西坏了，直接问退款）</span>
+<span class="tv-src">📺 《Friends》"The One with the Cop" (S05E07)</span>
+</div>
+<div class="tv-line">"If it doesn't fit, can I get a refund, or only store credit?"<span class="ctx">（确认是退现金还是只能换代金券）</span>
+<span class="tv-src">📺 《How I Met Your Mother》"The Platinum Rule" (S04E13)</span>
+</div>
+<div class="tv-line">"I'd really rather get a refund than exchange it."<span class="ctx">（明确偏好退款而不是换货）</span>
+<span class="tv-src">📺 《The Office》"The Return" (S03E14)</span>
+</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">3. "I'd like to exchange it for a different size."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I'd like to exchange it for a different size.&quot;" data-scene="使用场景 商品本身没问题，只是尺码/颜色不合适，想换不退货" data-zh="我想换个尺码。" type="button">☆</button></div>
+<div class="expr-cn">我想换个尺码。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>商品本身没问题，只是尺码/颜色不合适，想换不退货</div>
+<div class="tv-lines">
+<div class="tv-line">"I love it, but it's too small — I'd like to exchange it for a larger size."<span class="ctx">（喜欢但偏小，想换大码）</span>
+<span class="tv-src">📺 《Modern Family》"The Incident" (S03E20)</span>
+</div>
+<div class="tv-line">"Could I exchange it for a different color? The blue one, maybe."<span class="ctx">（想换成蓝色）</span>
+<span class="tv-src">📺 《Friends》"The One with the Ring" (S06E13)</span>
+</div>
+<div class="tv-line">"I'd like to exchange it for a different size — do you have it in medium?"<span class="ctx">（问有没有中码可换）</span>
+<span class="tv-src">📺 《How I Met Your Mother》"How I Met Everyone Else" (S04E07)</span>
+</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">4. "This is defective. / It's faulty."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;This is defective. / It's faulty.&quot;" data-scene="使用场景 商品质量问题：破损、故障、做工缺陷，用来支撑退货/投诉" data-zh="这个有瑕疵。/ 它是坏的。" type="button">☆</button></div>
+<div class="expr-cn">这个有瑕疵。/ 它是坏的。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>商品质量问题：破损、故障、做工缺陷，用来支撑退货/投诉</div>
+<div class="tv-lines">
+<div class="tv-line">"Look, this is defective — the zipper's completely stuck."<span class="ctx">（拉链卡死，指商品有缺陷）</span>
+<span class="tv-src">📺 《The Office》"The Merger" (S04E08)</span>
+</div>
+<div class="tv-line">"It arrived faulty, so I'm bringing it straight back."<span class="ctx">（收到就是坏的，直接拿回来）</span>
+<span class="tv-src">📺 《Friends》"The One with the Fake Party" (S04E24)</span>
+</div>
+<div class="tv-line">"This is clearly defective, and I'd like a replacement, not a refund."<span class="ctx">（有瑕疵但只想换新的，不要退款）</span>
+<span class="tv-src">📺 《Modern Family》"Door to Door" (S04E08)</span>
+</div>
+</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="expr-en">5. "I'd like to speak to the manager."</div><button aria-label="收藏表达" class="expr-fav" data-en="&quot;I'd like to speak to the manager.&quot;" data-scene="使用场景 店员解决不了、或态度/政策让你不满意时，要求升级处理" data-zh="我想找经理谈谈。" type="button">☆</button></div>
+<div class="expr-cn">我想找经理谈谈。</div>
+<div class="expr-meta"><span class="tag">使用场景</span>店员解决不了、或态度/政策让你不满意时，要求升级处理</div>
+<div class="tv-lines">
+<div class="tv-line">"This isn't acceptable. I'd like to speak to the manager, please."<span class="ctx">（问题没解决，礼貌但坚定地要找经理）</span>
+<span class="tv-src">📺 《The Office》"The Client" (S02E05)</span>
+</div>
+<div class="tv-line">"I'm not leaving until I speak to the manager about this."<span class="ctx">（坚持要见经理）</span>
+<span class="tv-src">📺 《How I Met Your Mother》"The Naked Man" (S04E09)</span>
+</div>
+<div class="tv-line">"Could I speak to your manager? There's been a misunderstanding."<span class="ctx">（语气更缓和，说是有误会要澄清）</span>
+<span class="tv-src">📺 《Friends》"The One with the Kips" (S05E05)</span>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h3>情景对话 · 7轮真实英语</h3>
+<div class="dialogue">
+<div class="scene">🛍️ 场景：Emma 在服装店买了一件外套，回家发现内衬开线、尺码也偏紧，于是拿回店里要求退换。</div>
+<div class="line">
+<span class="speaker s">Emma:</span>
+<span class="text">Hi, I'd like to return this coat. The lining is coming apart, and it's a bit too tight.</span>
+<div class="translation">你好，我想退掉这件外套。内衬开线了，而且有点偏紧。</div>
+</div>
+<div class="line">
+<span class="speaker m">Clerk:</span>
+<span class="text">I'm sorry about that. Do you have the receipt with you?</span>
+<div class="translation">很抱歉。您带小票了吗？</div>
+</div>
+<div class="line">
+<span class="speaker s">Emma:</span>
+<span class="text">Yes, here it is. Honestly, this is defective — I only wore it once.</span>
+<div class="translation">带了，在这儿。说实话这衣服有瑕疵，我就穿了一次。</div>
+</div>
+<div class="line">
+<span class="speaker m">Clerk:</span>
+<span class="text">I see. Would you prefer a refund, or would you like to exchange it for a different size?</span>
+<div class="translation">我明白了。您是想要退款，还是想换个尺码？</div>
+</div>
+<div class="line">
+<span class="speaker s">Emma:</span>
+<span class="text">I'd like to exchange it for a medium, if you have one in this color.</span>
+<div class="translation">如果同色有中码的话，我想换个中码。</div>
+</div>
+<div class="line">
+<span class="speaker m">Clerk:</span>
+<span class="text">Let me check in the back... Unfortunately, we're out of medium. Can I offer you a store credit instead?</span>
+<div class="translation">我到后面查一下……抱歉，中码卖完了。可以给您换成店家代金券吗？</div>
+</div>
+<div class="line">
+<span class="speaker s">Emma:</span>
+<span class="text">Hmm, I'd really rather get a refund. If that's a problem, I'd like to speak to the manager.</span>
+<div class="translation">嗯，我更想要退款。如果这有问题的话，我想找经理谈谈。</div>
+</div>
+</div>
+</section>
+<section>
+<h3>口语练习 · 大声说出来</h3>
+<div class="practice">
+<ol>
+<li>
+<strong>Describe a time you returned something to a store.</strong> What was wrong with it, and how did the clerk react?
+          <div class="hint">💡 用上 "I'd like to return this" + "This is defective"，讲清问题和对方反应。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Last month I returned a pair of shoes because the sole was coming off. The clerk was really nice and gave me a full refund."</span>
+<span class="s">"I once took back a blender that was faulty. They didn't have a replacement, so I asked for a refund."</span>
+<span class="s">"I returned a shirt that was too small and exchanged it for a larger size instead."</span>
+</div>
+</li>
+<li>
+<strong>You bought a gift that doesn't fit the person.</strong> How do you ask to exchange it without the receipt?
+          <div class="hint">💡 试试 "I'd like to exchange it" + "I don't have the receipt, but..." 的委婉说法。</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"Hi, I'd like to exchange this for a different size. I don't have the receipt, but it still has the tag on it."</span>
+<span class="s">"I bought this as a gift and it doesn't fit. Could I exchange it without a receipt?"</span>
+<span class="s">"The size is wrong — would you accept an exchange if I show you the tag?"</span>
+</div>
+</li>
+<li>
+<strong>A shop refuses to refund a broken item.</strong> What do you say to stay calm but firm, and ask for the manager?
+          <div class="hint">💡 用 "This is clearly defective" + "I'd like to speak to the manager, please."</div>
+<div class="samples">
+<span class="lab">示例：</span>
+<span class="s">"This is clearly defective, and I'd like a refund. If you can't help, I'd like to speak to the manager, please."</span>
+<span class="s">"I'm not angry, but the policy says I can return a faulty item. Could I talk to your manager?"</span>
+<span class="s">"It broke the first time I used it. I'd really like to speak to someone who can sort this out."</span>
+</div>
+</li>
+</ol>
+<div class="tip">🎤 建议：先把对话朗读 2-3 遍，注意 "refund / exchange / defective / receipt" 的发音；然后回答 3 个练习问题并录音回听，重点检查 "exchange" 和 "receipt" 有没有读准。</div>
+</div>
+</section>
+<section>
+<h3>纠正提醒 · 避开这些坑</h3>
+<table class="mistakes-table">
+<thead>
+<tr>
+<th style="width:30%">❌ 不太自然</th>
+<th style="width:30%">✅ 更自然</th>
+<th style="width:40%">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="wrong">"I want to return back this."</td>
+<td class="right">"I'd like to return this."</td>
+<td class="note">return 本身已经含「退回来」的意思，后面加 back 是典型中式冗余。礼貌用 "I'd like to..." 比 "I want to..." 更得体。</td>
+</tr>
+<tr>
+<td class="wrong">"Give me money back."</td>
+<td class="right">"Can I get a refund?"</td>
+<td class="note">口语里「退款」最地道是 refund 这个名词/动词，店员也最听得懂。</td>
+</tr>
+<tr>
+<td class="wrong">"I want to change it."</td>
+<td class="right">"I'd like to exchange it."</td>
+<td class="note">change 在购物场景容易误会成「换零钱 (change)」或「改变主意」。换货固定用 exchange。</td>
+</tr>
+<tr>
+<td class="wrong">"It doesn't match me."</td>
+<td class="right">"It doesn't fit."<br/>"It's the wrong size."</td>
+<td class="note">说尺码不合身用 fit；match 通常指颜色/风格「搭不搭」，不是「合不合身」。</td>
+</tr>
+<tr>
+<td class="wrong">"Speak to your manager!"</td>
+<td class="right">"Could I speak to the manager, please?"</td>
+<td class="note">投诉时也要保持礼貌，用 "Could I... please?" 既坚定又不显攻击性，更容易解决问题。</td>
+</tr>
+<tr>
+<td class="wrong">"The quality is not good."</td>
+<td class="right">"This is defective."<br/>"It's faulty."</td>
+<td class="note">说商品「有质量问题/坏了」用 defective / faulty 更精准，也更有说服力支撑退货。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="footer">
+<div class="tip-box">
+      📌 <strong>今日打卡清单：</strong>① 朗读对话2遍 → ② 背5个核心表达（return / refund / exchange / defective / manager）→ ③ 回答3个练习题（录音）→ ④ 回顾纠正表，别再说 "return back" 和 "change it"。
+    </div>
+<p>坚持每天15分钟，开口比完美更重要。See you tomorrow! 🌙</p>
+</div>
+</div>
+<script>window.LULU_FAV={track:'speaking',date:'9999-0006-00',title:"退换货与投诉"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

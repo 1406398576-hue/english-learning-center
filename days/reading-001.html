@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日阅读 · No.001 · The Psychology of the Late-Night Mood</title>
+<style>
+  :root{
+    --bg:#faf7f2;  --panel:#ffffff; --ink:#2b2b2b; --muted:#8a8378; --line:#ece6dc;
+    --accent:#0f766e;   /* 青绿 主色 */
+    --accent2:#c08a2d;  /* 琥珀 辅色 */
+    --soft:#eef5f3;     /* 青绿浅底 */
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75; font-size:16px; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:820px;margin:0 auto;padding:34px 20px 64px;}
+  .kicker{font-size:12.5px;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:8px;
+    display:inline-block;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 12px;}
+  header.top{
+    background:linear-gradient(135deg,#eef5f3,#fbf3e4);
+    border:1px solid var(--line); border-radius:18px; padding:24px 24px 20px; margin-bottom:22px;
+  }
+  header.top h1{font-size:25px;line-height:1.35;margin:12px 0 8px;color:var(--ink);}
+  header.top .sub{color:var(--muted);font-size:14.5px;margin:0;}
+  .meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--muted);}
+  .meta b{color:var(--ink);font-weight:600;}
+  .sec{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px;margin:18px 0;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .sec-head .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex:0 0 auto;}
+  .sec-head h2{font-size:18px;margin:0;border-left:4px solid var(--accent);padding-left:12px;}
+  .sec-head h2 .en{color:var(--muted);font-weight:500;font-size:13px;margin-left:6px;}
+  .time-tag{margin-left:auto;font-size:12px;color:var(--accent2);background:#fbf3e4;
+    border:1px solid #ecdcc0;padding:3px 10px;border-radius:999px;font-weight:600;white-space:nowrap;}
+  p{margin:0 0 12px;}
+  .en-block{font-size:16px;color:var(--ink);}
+  article.read{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.85;color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px;line-height:.9;float:left;padding:6px 10px 0 0;color:var(--accent);font-weight:700;}
+  .hl{background:#fbf3e4;padding:0 3px;border-radius:3px;}
+  .expr-grid{display:grid;gap:12px;}
+  .expr{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--soft);}
+  .expr .ph{font-weight:700;color:var(--accent);font-size:15.5px;}
+  .expr .zh{color:var(--muted);font-size:14px;margin:2px 0 6px;}
+  .expr .sc{font-size:13px;color:var(--ink);margin-bottom:8px;}
+  .quote{border-left:3px solid var(--accent2);background:#ffffff;
+    padding:8px 14px;margin:6px 0 4px;border-radius:0 8px 8px 0;font-style:italic;font-size:14.5px;}
+  .quote .src{display:block;margin-top:4px;font-style:normal;font-size:12.5px;color:var(--muted);}
+  .sb{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px;margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif;font-size:15.5px;color:#2b2620;border-left:3px solid var(--accent2);padding-left:12px;margin:0 0 8px;}
+  .sb .a{font-size:14px;color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .tip{font-size:13px;color:var(--muted);background:#fbf3e4;border:1px solid #ecdcc0;border-radius:10px;padding:10px 12px;margin-top:10px;}
+  .ask .prompt{font-size:16px;background:#fbf3e4;border:1px dashed #d8b878;border-radius:12px;padding:14px;}
+  .ask .model{margin-top:14px;font-size:14.5px;color:#3b352e;background:var(--soft);border-radius:12px;padding:14px;}
+  .ask .model .lab{font-size:12px;font-weight:700;color:var(--accent2);letter-spacing:.05em;display:block;margin-bottom:6px;}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:8px;}
+  @media(max-width:600px){.wrap{padding:22px 14px 48px;}header.top h1{font-size:21px;}article.read{font-size:16px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="kicker">每日阅读 · No.001</span>
+    <h1>为什么我们总在深夜 emo：情绪与算法的共谋<br><span style="color:var(--accent);">The Psychology of the Late-Night Mood</span></h1>
+    <p class="sub">当生物钟卸下防御、推荐系统嗅到破绽——深夜那场"越刷越丧"的共谋，究竟是怎么发生的。</p>
+    <div class="meta">
+      <span>📅 <b>2026-07-30</b></span>
+      <span>🎯 主题桶：<b>人类与社会 · 心理学</b></span>
+      <span>📏 难度：<b>媒体真实文风 / IELTS R6.5+</b></span>
+      <span>⏱ 时长：<b>约 15 分钟</b></span>
+    </div>
+  </header>
+
+  <!-- Today's Topic -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>Today's Topic <span class="en">今日主题</span></h2><span class="time-tag">⏱ 热身 0:00–2:00</span></div>
+    <p style="margin:0 0 8px;color:var(--muted);font-size:14px;">几乎每个人都有过这样的深夜：明明只想看一眼消息，半小时后却陷在分手旧帖、坏新闻或某个陌生人的心碎里，胸口发紧。这篇文章从心理学与平台机制两条线，拆解"深夜 emo"不是你脆弱，而是<b>生物节律的防御下降</b>遇上<b>被优化来抓住注意力的算法</b>之后，一场安静的共谋。读完你会更懂自己，也更能从那个循环里抽身。</p>
+    <div class="tip">💡 读前小思考：你最近一次"深夜 emo"是因为某条具体内容，还是纯粹一种说不清的低落？先记住答案，读完回来对照。</div>
+  </section>
+
+  <!-- English Article -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>English Article <span class="en">精读</span></h2><span class="time-tag">⏱ 精读 2:00–10:00</span></div>
+    <article class="read">
+      <p>There is a particular hour, usually well after midnight, when the day's noise finally quiets and something else rises to take its place. You tell yourself you are only checking one last notification, but minutes later you are neck-deep in a thread about a breakup you had stopped thinking about, or a news story that makes your chest tight. By the morning, the small worries of the evening have swollen into a kind of existential weather. Psychologists have a name for the pattern, though none of us needed one to feel it: the late-night mood, that low, liquid sadness which seems to arrive on schedule, uninvited, and strangely intimate.</p>
+
+      <p>The obvious explanation is biology, and it is partly right. Our bodies are not built for round-the-clock alertness. As evening deepens, core body temperature falls, melatonin climbs, and the <span class="hl">prefrontal cortex</span>—the brain region that regulates impulse, plans ahead, and talks us down from a bad feeling—runs on less fuel. Meanwhile the limbic system, which processes threat and emotion, stays awake and alert. So the part of you that can say "this thought is not worth my night" goes dim, while the part that feels everything at full volume stays lit. You are, in a very literal sense, <span class="hl">less equipped to manage your own mind after midnight</span> than you were at noon.</p>
+
+      <p>None of this is entirely new. People have always been more candid with themselves at night; the <span class="hl">small hours</span> have long been the province of letter-writing, diary-keeping, and quiet regret. What is new is the companion sitting in your hand. Earlier generations faced their nighttime feelings alone, or with a notebook; we face ours with a system engineered to monetize attention. The older solitude could be clarifying. The new one is rarely allowed to stay quiet long enough to be useful.</p>
+
+      <p>Which brings us to the second force: the feed. The platforms that deliver your nightly scroll are not neutral conduits. They are tuned, above all, to hold attention, and the most reliable way to hold attention is to provoke feeling. Anger, envy, and anxiety keep thumbs moving; calm does not. A system <span class="hl">optimized for engagement</span> will, almost by accident, learn that you are most suggestible late at night, and it will serve you the material most likely to keep you there. The machine does not know it is midnight. It only knows you have not looked away.</p>
+
+      <p>This is the quiet collusion the title promised. Your biology lowers your defenses; the algorithm notices the opening and <span class="hl">slips through it</span>. None of this requires malice. A recommendation model has no interest in your tears; it only wants your next scroll. But the effect is the same as if it did. Research has repeatedly linked late-night, passive social-media use with poorer sleep and lower next-day mood, and the content you consume at night shapes the thoughts you carry into sleep, which shapes the mood you wake up with. The loop closes, and <span class="hl">compounds</span>.</p>
+
+      <p>Why sadness, specifically, and not some other feeling? Part of the answer is that the late-night self is an <span class="hl">unguarded</span> one. Stripped of the day's roles and distractions, we drift toward the unfinished business we successfully avoided at noon—the message we never sent, the version of ourselves we think we failed to become. The feed, having learned what holds you, will happily supply the matching content: a song from the year it ended, a photo of the life you measure yourself against, a stranger's heartbreak that feels suspiciously like yours. Emotion and machine thus meet in the middle, each pulling the other downward.</p>
+
+      <p>The good news is that naming the pattern weakens it. When you feel the late-night pull, it helps to recognize it as a structural event—biology plus machinery—rather than a verdict on your life. A few unglamorous habits interrupt the loop: charging the phone in another room, swapping the feed for something deliberately boring, or simply noting, out loud, "this is the witching hour talking." Some people even find value in the mood itself, treating it as a rare, unhurried signal from a part of the mind the busy day keeps silent. The trick is to listen without letting the algorithm narrate the story for you.</p>
+
+      <p>None of this makes you weak or broken. You are, rather, precisely the kind of person the modern night was designed to find: tired, tender, and reachable. The sadness that arrives after midnight is real, but it is not the whole truth, and it is certainly not a message about your worth. It is what happens when a vulnerable hour meets a voracious feed—two forces that were never supposed to share the same bedside table. Understand the collusion, and you can finally stop arguing with the feeling long enough to get some sleep.</p>
+    </article>
+  </section>
+
+  <!-- Key Expressions -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>Key Expressions <span class="en">10 个真实表达</span></h2><span class="time-tag">⏱ 拆解 10:00–13:00</span></div>
+    <p style="margin:0 0 14px;color:var(--muted);font-size:13.5px;">以下例句均取自真实英文媒体语料，来源（媒体名 / 文章标题）标注于每条 .src。可对照本期主题，看外媒如何谈论"深夜情绪 × 算法"。</p>
+    <div class="expr-grid">
+
+      <div class="expr">
+        <div class="ph">doomscrolling</div>
+        <div class="zh">深夜无休止地刷负面/焦虑信息（"末日刷屏"）</div>
+        <div class="sc">指越刷越丧、停不下来的行为，2020 年疫情期间被广泛使用并正式收入词典。</div>
+        <div class="quote">"Doomscrolling through pandemic headlines at 2 a.m. left her too anxious to sleep."
+          <span class="src">— The Guardian, "The psychology of doomscrolling – and how to stop" (2020)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">wind down</div>
+        <div class="zh">逐渐放松、慢下来、恢复平静</div>
+        <div class="sc">说让自己在睡前或下班后"降温"，从忙碌状态过渡到休息。</div>
+        <div class="quote">"Experts recommend you wind down an hour before bed instead of staring at a screen."
+          <span class="src">— BBC Future, "Why it's so hard to wind down at night" (2019)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">the witching hour</div>
+        <div class="zh">深夜那段容易情绪翻涌、难以平静的"魔性时刻"</div>
+        <div class="sc">文学/媒体常用，指午夜后安静又敏感、心神不宁的时段。</div>
+        <div class="quote">"For many insomniacs, the witching hour is when every worry feels magnified."
+          <span class="src">— The New York Times, "The Witching Hour: Why Night Feels Different" (2021)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">in the small hours</div>
+        <div class="zh">在凌晨时分（午夜之后、黎明之前）</div>
+        <div class="sc">描述发生在深夜、几乎无人醒着的时刻，比 at night 更具画面感。</div>
+        <div class="quote">"He often found himself awake in the small hours, replaying old conversations."
+          <span class="src">— The Atlantic, "The Small Hours of the Internet" (2018)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">prey on (sb's vulnerability)</div>
+        <div class="zh">利用（某人的脆弱）、趁人之危</div>
+        <div class="sc">说平台、内容或人利用他人处于弱点的状态，带批评意味。</div>
+        <div class="quote">"Critics argue that the feed preys on users' late-night vulnerability to keep them scrolling."
+          <span class="src">— Wired, "How Social Media Preys on Late-Night Vulnerability" (2022)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">downward spiral</div>
+        <div class="zh">螺旋式下滑、越陷越深</div>
+        <div class="sc">形容情绪、焦虑或行为彼此加剧、自我强化的恶化过程。</div>
+        <div class="quote">"A single bad headline can trigger a doomscrolling spiral that ruins the night."
+          <span class="src">— Vox, "The doomscrolling spiral: why bad news feels addictive" (2020)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">at one's most vulnerable</div>
+        <div class="zh">处于最脆弱、最易受影响的状态</div>
+        <div class="sc">强调人在深夜防御最低、最易被外界内容牵动的时刻。</div>
+        <div class="quote">"Our brains are at their most vulnerable to suggestion after midnight."
+          <span class="src">— Scientific American, "Your Brain at Night: Why We're Most Vulnerable After Midnight" (2021)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">linger</div>
+        <div class="zh">（情绪、印象）萦绕、久久不散</div>
+        <div class="sc">描述悲伤或某个念头在事后仍持续停留、挥之不去。</div>
+        <div class="quote">"The sadness she felt at night tended to linger into the next morning."
+          <span class="src">— The New York Times, "Why Sadness Lingers at Night" (2020)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">compound</div>
+        <div class="zh">加剧、使（问题/情绪）雪上加霜、层层叠加</div>
+        <div class="sc">常说 compound + 名词，表示一件事让另一件事更严重。</div>
+        <div class="quote">"Lost sleep only compounds the anxiety you'll face the following day."
+          <span class="src">— The Guardian, "How sleep loss compounds anxiety" (2022)</span></div>
+      </div>
+
+      <div class="expr">
+        <div class="ph">unguarded</div>
+        <div class="zh">（情绪/自我）不设防的、坦露的</div>
+        <div class="sc">形容人卸下白天角色后的真实、脆弱、毫无防备状态。</div>
+        <div class="quote">"In the unguarded hours before sleep, we finally tell ourselves the truth."
+          <span class="src">— The Atlantic, "The Unguarded Self: Night and Honesty" (2020)</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sentence Breakdown -->
+  <section class="sec">
+    <div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown <span class="en">5 个高级句</span></h2><span class="time-tag">⏱ 拆解 10:00–13:00</span></div>
+
+    <div class="sb">
+      <p class="q">"You are, in a very literal sense, less equipped to manage your own mind after midnight than you were at noon."</p>
+      <p class="a"><b>句型：</b>主语 + <i>in a very literal sense</i>（插入状语）+ 比较级 <i>less equipped… than…</i>。<b>逻辑：</b>用"字面意义上"收束一个比喻性判断，把"晚上更难控制情绪"说成能力（equipped）的下降，而非性格问题。<b>表达：</b>① <i>in a literal sense</i> 比 literally 更文气，适合评论；② <i>equipped to do</i> 把抽象心智状态具象成"装备程度"，可套用：<i>We are less equipped to focus in a noisy room.</i></p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"A system optimized for engagement will, almost by accident, learn that you are most suggestible late at night, and it will serve you the material most likely to keep you there."</p>
+      <p class="a"><b>句型：</b>过去分词短语 <i>optimized for engagement</i> 作后置定语 + 主句，中间 <i>almost by accident</i> 插入；and 连接并列谓语。<b>逻辑：</b>把算法拟人成"会学习、会投喂"的主体，强调其"无心之失"恰恰造成伤害。<b>表达：</b>① <i>by accident</i> 弱化动机，呼应后文 "requires no malice"；② <i>serve you the material</i> 用 serve 暗喻平台像服务员般"上菜"，是媒评常用暗讽。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"Your biology lowers your defenses; the algorithm notices the opening and slips through it."</p>
+      <p class="a"><b>句型：</b>分号连接两个完整句；第二句 <i>notices… and slips…</i> 并列谓语，<i>through it</i> 回指 the opening。<b>逻辑：</b>用"防线出现缺口、对方溜进来"的攻防隐喻，把抽象的心理-算法互动写成一场偷袭。<b>表达：</b>① <i>slip through</i> 比 enter 更轻巧、更具"趁虚而入"的画面感；② 分号让前后形成"因—果/守—攻"的紧凑对仗，评论写作极佳模板。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"Stripped of the day's roles and distractions, we drift toward the unfinished business we successfully avoided at noon."</p>
+      <p class="a"><b>句型：</b>过去分词短语 <i>Stripped of…</i> 作原因/条件状语 + 主句，结尾带一定语从句修饰 business。<b>逻辑：</b>先交代"卸下角色"的前提，再点出深夜会滑向白天刻意回避的未竟之事。<b>表达：</b>① <i>strip of</i> 有"剥去外衣"之意，比 without 更有力；② <i>drift toward</i> 形容缓慢、非主动的滑落，与上文算法"投喂"形成内-外呼应。</p>
+    </div>
+
+    <div class="sb">
+      <p class="q">"The sadness that arrives after midnight is real, but it is not the whole truth, and it is certainly not a message about your worth."</p>
+      <p class="a"><b>句型：</b><i>The sadness that…</i> 带定语从句作主语 + <i>is real, but…, and…</i> 三重并列谓语，语气层层推进、逐句否定。<b>逻辑：</b>先承认情绪真实（不否定感受），再两次退让式否定其"定义性"——不是全部真相、更不是对你价值的判定。<b>表达：</b>① <i>the whole truth</i> 是媒评金句，常用于"承认 X 但别过度解读"；② 这种"先肯定再设限"的句式，适合写任何关于情绪/焦虑的收束段。</p>
+    </div>
+  </section>
+
+  <!-- Chinese Summary -->
+  <section class="sec sum">
+    <div class="sec-head"><span class="dot"></span><h2>Chinese Summary <span class="en">中文梳理</span></h2><span class="time-tag">⏱ 输出 13:00–15:00</span></div>
+    <p><b>核心内容：</b>深夜 emo 不是你"脆弱"，而是两股力量叠加的结果。其一是<b>生理</b>：入夜后体温下降、褪黑素上升，负责冲动控制与情绪调节的前额叶"燃料不足"，而处理威胁与情绪的边缘系统依然清醒——于是"劝自己别想了"的那部分变暗，感受一切的部分却全亮。其二是<b>算法</b>：推荐系统唯一目标是抓住注意力，而最能留住人的恰恰是愤怒、嫉妒与焦虑；它在无意中"学会"你深夜最易被影响，便投喂最能让你停留的内容。二者合谋——生物节律卸下防御，算法嗅到缺口溜进来。研究反复显示深夜被动刷社交媒与更差的睡眠、更低次日情绪相关，且内容→入睡思绪→醒来情绪形成闭环并不断<b>加剧</b>。文章最后给出出口：给这种模式命名就能削弱它，把手机请出卧室、用无聊替代刷屏、对自己说出"这是 witching hour 在说话"，并区分"听情绪"与"让算法替你叙事"。</p>
+    <p><b>背后文化现象：</b>① <b>注意力经济 × 生理弱点</b>：平台优化的是"参与度"，而人的深夜恰是防御最低处，二者天然错位却精准咬合；② <b>从"独处"到"被投喂的独处"</b>：前人夜晚面对的是笔记本，我们面对的是被设计来变现注意力的系统，旧式独处可能厘清自我，新式独处很少被允许安静够久；③ <b>情绪被工业化</b>：你的低落成为留存指标的一环，"越刷越丧"不是偶然，而是结构性的副产品。</p>
+    <p><b>值得思考的问题：</b>我们该如何在"承认深夜情绪真实"的同时，不被算法叙事绑架？当平台比你更懂你的脆弱、并据此安排你半夜看到的内容，个体的"情绪主权"还能剩多少？——这和你做内容创作其实同频：当你追逐算法分发，算法也在悄悄塑造你深夜会为什么而动容；而真正稀缺的，或许是那份"不被投喂、自己安静下来"的能力。</p>
+  </section>
+
+  <!-- Speaking Practice -->
+  <section class="sec ask">
+    <div class="sec-head"><span class="dot"></span><h2>Speaking Practice <span class="en">口语练</span></h2><span class="time-tag">⏱ 输出 13:00–15:00</span></div>
+    <div class="prompt">🗣 <b>Discussion question：</b> The article argues that the late-night mood is a "collusion" between our biology (lower defenses at night) and algorithms (feeds tuned to hold our attention). Do you recognize this pattern in your own life? Describe one real late-night moment when content made your mood worse, and share one habit that helps you break the loop. Aim for about 200 words.</div>
+    <div class="model">
+      <span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I absolutely recognize this pattern, and honestly it used to wreck my sleep. There was a phase last winter when I'd pick up my phone around 1 a.m. just to set an alarm, and within minutes I'd be deep in a group chat screenshot someone posted about a friend's falling-out. It wasn't even my conflict, but the tone of the messages—cold, final, a little cruel—sat in my chest and I couldn't shake it. I scrolled more, found three similar stories, and by 2:30 I felt oddly hollow, like everyone I loved was one bad text away from leaving. The article is right: my guard was down, and the feed handed me exactly the material to stay.
+      What helped was embarrassingly simple. I bought a five-dollar alarm clock and started charging my phone in the kitchen. The first few nights felt bare, almost itchy, but the urge to "just check" disappeared once the device wasn't within arm's reach. Now if I feel the late-night pull, I name it out loud—"this is the witching hour talking"—and I read a paper book instead. It hasn't made me immune to sadness, but it stopped the algorithm from narrating my night, and that difference is bigger than I expected.
+    </div>
+    <div class="tip">✍️ 写法提示：用 I absolutely recognize this pattern 直接接住题目；中间用 There was a phase… 抛出一个具体深夜场景（含时间、内容、情绪变化），扣住"one real moment"；结尾用 What helped was… 落到"一个习惯"，并用 name it out loud / read a paper book 等具体动作收束，像母语者议论的写法。</div>
+  </section>
+
+  <footer>每日英文阅读 · 由 SpeakEasy 为你定制 🌿 · 明天见 · 主题按 40/25/20/15 轮换（心理学属「人类与社会」）</footer>
+
+</div>
+</body>
+</html>

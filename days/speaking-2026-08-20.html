@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>At the Supermarket — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 26 · 8/20 Thu</div>
+    <h2>At the Supermarket</h2>
+    <div class="zh">超市购物 · 从找东西到结账的真实表达</div>
+    <div class="en">"I only came in for milk. How is my cart this full?"</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Where would I find the...?</span>
+        <span class="cn-meaning">我在哪能找到……？</span>
+      </div>
+      <div class="scene">在超市里找不到东西时，问店员最自然的开场白。用 would 而不是 where is，语气更委婉——你不是在质问，而是在礼貌求助。也可以换一种问法：What aisle is the [东西] in?（在哪条过道）。超市员工一听就知道你想去哪儿，通常直接给你指方向。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Where would I find the capers? I've been up and down every aisle twice. This place is a maze — I just wanted to make one potato salad."<div class="src">— Monica Geller, Friends S04E12 / 为感恩节大餐采购时在超市迷路</div></div>
+        <div class="quote-item">"Where would I find the fancy cheese? The kind that looks like it judges you? I need it for the dinner party that will make Jan weep with joy."<div class="src">— Michael Scott, The Office S03E05 / 为办晚宴采购被琳琅满目的奶酪搞晕</div></div>
+        <div class="quote-item">"Where would I find the artisanal bread flour? Claire said 'just grab some,' but there are forty kinds of flour here and I'm having an existential crisis in aisle seven."<div class="src">— Phil Dunphy, Modern Family S08E04 / 被妻子派来买菜结果选择困难</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Do you guys carry...?</span>
+        <span class="cn-meaning">你们有卖……吗？</span>
+      </div>
+      <div class="scene">问超市有没有某类商品。carry = 经销/出售（商品），是零售业最地道的动词，比 sell 自然得多。you guys 是口语中跟店员打招呼最常见的方式——不分男女，在美国超市天天能听到。也可以缩成 Do you carry...? 但加了 guys 更随意亲切。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Do you guys carry those little marshmallows? The ones you put in hot chocolate? I'm making a 'Joey Special' and it's not special without them — it's just sad cocoa."<div class="src">— Joey Tribbiani, Friends S07E15 / 为自制热可可找配料</div></div>
+        <div class="quote-item">"Do you carry fresh beets? Not canned. I grow my own, obviously, but the crop was... compromised. By a bear. Long story."<div class="src">— Dwight Schrute, The Office S05E09 / 在超市找甜菜时的离谱解释</div></div>
+        <div class="quote-item">"Do you guys carry real Colombian coffee? Not that brown water you call 'breakfast blend.' A man shouldn't have to explain himself at 7 AM."<div class="src">— Jay Pritchett, Modern Family S03E11 / 对超市咖啡的日常挑剔</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Is this on sale?</span>
+        <span class="cn-meaning">这个在打折吗？</span>
+      </div>
+      <div class="scene">看到货架上的东西但不确定价格是否优惠时问。on sale 在美国口语里 = 在促销/打折，不是中文"在出售"的意思（那是 for sale）。超市里促销牌和价签经常对不上，所以这句在超市特别高频。也可以问 Is there a sale on this? 或 Does the discount still apply?</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Is this on sale? Because the sign said 'low price' but the tag says otherwise, and I need to know before I commit emotionally to this cheese."<div class="src">— Chandler Bing, Friends S05E14 / 对着一块奶酪纠结价格的自我调侃</div></div>
+        <div class="quote-item">"Is this on sale? The sign is three aisles over and I refuse to pay full price for something that is clearly being promoted. Check the system."<div class="src">— Angela Martin, The Office S06E08 / 超市精打细算到较真的程度</div></div>
+        <div class="quote-item">"Is this on sale? I have a coupon, a digital coupon, and a loyalty discount — I need to know the order of operations before this gets mathematically complicated."<div class="src">— Claire Dunphy, Modern Family S06E16 / 优惠券叠加达人的购物时刻</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I brought my own bags.</span>
+        <span class="cn-meaning">我自己带袋子了。</span>
+      </div>
+      <div class="scene">结账时告诉收银员你自带了购物袋。美国很多州限塑（比如加州、纽约州），自带袋子非常普遍——有些店甚至对塑料袋收费。这句话一到收银台就能用上。如果不想用袋子可以简单说 I don't need a bag, thanks。比 give me a bag 礼貌且环保得多。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I brought my own bags. They're made from recycled sailboat sails. The ocean gave them to me, and now they hold my kale. It's a beautiful cycle."<div class="src">— Phoebe Buffay, Friends S08E06 / 带着自制环保袋购物的经典 Phoebe 式发言</div></div>
+        <div class="quote-item">"I don't need a bag. I have a system. Everything fits in this rucksack by weight category. Bags are for people who lack preparation."<div class="src">— Dwight Schrute, The Office S07E02 / 拒绝超市塑料袋的 Dwight 式自信</div></div>
+        <div class="quote-item">"I brought my own bags — monogrammed, obviously. If you're saving the planet, you might as well do it with a little flair."<div class="src">— Cameron Tucker, Modern Family S09E05 / 带着定制环保袋购物</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">That's everything for me.</span>
+        <span class="cn-meaning">我就买这些了（没有了）。</span>
+      </div>
+      <div class="scene">收银员扫完码问你"还有别的吗 / 就这些？"时回应。that's everything 和 that'll be all 都是超市结账最标准的说法，带着"我买完了，可以结账了"的意思。比 I don't want anything else 或 I finish 自然得多。这句话几乎是每趟超市购物的收尾必备。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"That's everything for me. And if the total is under fifty dollars, it's a miracle. I only came in for milk — how did I end up with a cart full of cheese?"<div class="src">— Rachel Green, Friends S03E07 / 结账时感叹只买牛奶却买了一车</div></div>
+        <div class="quote-item">"That'll be all. And I expect the total to be exactly as calculated — I brought my own scale. Don't look at me like that."<div class="src">— Dwight Schrute, The Office S06E14 / 结账时掏出自制秤</div></div>
+        <div class="quote-item">"That's everything. And please don't put the eggs at the bottom — in my country, we respect the eggs. They go on top, like royalty."<div class="src">— Gloria Pritchett, Modern Family S04E09 / 结账时叮嘱收银员善待鸡蛋</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周六上午，Alex 在大型超市采购一周食材，找不到几样东西。正在理货的店员 Maria 主动询问，最后 Alex 到收银台结账。</div>
+
+      <div class="msg">
+        <div class="speaker b">Maria</div>
+        <div class="en">Hey, finding everything okay?</div>
+        <div class="cn">嘿，都找得到吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Almost. Where would I find the pasta sauce? I've been up and down the Italian aisle but I can only find the glass jars.</div>
+        <div class="cn">差不多了。我在哪能找到意面酱？我在意大利食品那条过道来回走了两趟，只看到玻璃罐装的。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Maria</div>
+        <div class="en">Oh, the canned kind? That's actually in aisle 7 with the canned goods. Were you looking for a specific brand?</div>
+        <div class="cn">哦，罐装的那种？那个其实在第7过道，罐头食品区。你在找特定牌子吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Yeah, do you guys carry the San Marzano one? My friend swears by it and I said I'd pick some up.</div>
+        <div class="cn">对，你们有卖 San Marzano 那个牌子吗？我朋友极力推荐，我说我来买点。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Maria</div>
+        <div class="en">Let me check the system... Yeah, we should have it. Top shelf, aisle 7. If you don't see it, I can look in the back.</div>
+        <div class="cn">我查一下系统……有的，第7过道最上层货架。如果没看到，我去后面仓库帮你找。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">That'd be great, thanks. Oh, and one more thing — is this on sale? The sign said "buy one get one" but the shelf tag says regular price.</div>
+        <div class="cn">那太好了，谢谢。哦还有件事——这个在打折吗？标牌上写着"买一送一"但货架价签上是原价。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Maria</div>
+        <div class="en">Let me scan it for you. ... Yeah, it's on sale. The BOGO just started today, the tags just haven't been updated yet. Good eye — you just got two for the price of one.</div>
+        <div class="cn">我帮你扫一下。……在打折的。买一送一今天刚开始，价签还没来得及换。好眼力——你买到买一送一了。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Nice, I'll grab another one then. Alright, I think that's everything for me. Oh — I brought my own bags. Do I just leave them at the end of the belt?</div>
+        <div class="cn">太好了，那我再拿一罐。好了，我想我就买这些了。哦——我自己带了袋子。放传送带那头就行吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Maria</div>
+        <div class="en">Exactly, just set them down at the end and I'll pack everything in there. Your total comes to $38.50.</div>
+        <div class="cn">对，放那头就行，我帮你装进去。一共三十八块五。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">You're at a large supermarket and can't find the pasta sauce. Ask a store employee for help using "Where would I find the...?"</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Excuse me, where would I find the pasta sauce? I've looked in the Italian section but I only see the glass jars and I want the canned kind for a recipe."</div>
+      <div class="sample-answer"><strong>B：</strong>"Hi, where would I find the soy sauce? I'm making stir-fry tonight and I've been wandering around the condiment aisle for ten minutes and I'm lost."</div>
+      <div class="sample-answer"><strong>C：</strong>"Excuse me, where would I find the laundry detergent? I always get confused — is it with the household stuff or near the cleaning supplies?"</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">You picked up an item but the shelf tag and the sale sign seem to disagree. Ask an employee "Is this on sale?"</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Excuse me, is this on sale? The sign up there says 'buy one get one half off,' but the price tag on the shelf says regular price, so I just wanted to double-check."</div>
+      <div class="sample-answer"><strong>B：</strong>"Hi, is this cereal on sale? There was a promotion sign in the last aisle but I can't tell if it applies to this size or just the family pack."</div>
+      <div class="sample-answer"><strong>C：</strong>"Quick question — is this on sale? The app says there's a discount but the shelf price looks full price to me. Could you scan it for me?"</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">You're at the checkout. The cashier asks, "Did you find everything okay?" Respond, mention you brought your own bags, and let them know that's everything.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Yeah, I found everything, thanks. I brought my own bags — they're right there at the end. And that's everything for me, nothing else."</div>
+      <div class="sample-answer"><strong>B：</strong>"Almost — I couldn't find the oat milk but it's fine, I'll grab it next time. I brought my own bags, and that'll be all for me today."</div>
+      <div class="sample-answer"><strong>C：</strong>"Yep, got everything I need. I brought my own bags — you can just put everything in those. That's everything, ready when you are."</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Where is the milk? / Where is the salt?</div>
+      <div class="right">✅ Where would I find the milk? / What aisle is the salt in?</div>
+      <div class="why">Where is X 没有语法错误，但语气生硬，像在命令。美国人问店员习惯用 where would I find 更委婉。超市里也可以直接问 what aisle（哪条过道），店员会直接告诉你过道号。礼貌 + 高效，一举两得。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Do you sell this? / Do you have this thing?</div>
+      <div class="right">✅ Do you guys carry...? / Do you carry...?</div>
+      <div class="why">sell 偏书面且听起来像问"你们做零售的吗"。零售业最地道的动词是 carry = 经销/上架。you guys 是美国口语中对店员最自然的称呼——不分性别、不卑不亢。加个 guys，语气瞬间从生硬变随和。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Is it cheap? / Is there discount? / How much money?</div>
+      <div class="right">✅ Is this on sale? / Is there a sale on this?</div>
+      <div class="why">Is it cheap 问的是"这东西廉价吗"（暗示品质差），不是问价格。问是否打折要说 is this on sale。注意 on sale 在美式英语 = 在促销/打折，不是中文"在售卖"（那是 for sale）。超市里这俩最容易搞混。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ Give me a bag. / I want a plastic bag.</div>
+      <div class="right">✅ Could I get a bag? / I don't need a bag, thanks. / I brought my own bags.</div>
+      <div class="why">give me / I want 是命令式，不礼貌。口语请求用 could I get 或 do you have。美国很多州限塑、塑料袋要收费，自带袋子很普遍——I brought my own bags 是最自然的说法，收银员一听就懂。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">❌ I want to pay. / I buy these. / I finish.</div>
+      <div class="right">✅ That's everything. / That'll be all.</div>
+      <div class="why">在收银台说 I want to pay 很奇怪——收银员当然知道你要付钱。I buy these 和 I finish 更是中式直译。that's everything / that'll be all 是回应"还有别的吗 / 就这些？"的标准说法，带着"我买完了，可以结账了"的意思。超市结账必备金句。</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

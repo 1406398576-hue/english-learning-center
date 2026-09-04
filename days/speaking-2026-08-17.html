@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Interview Success — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 23 · 8/17 Mon</div>
+    <h2>Job Interview Success</h2>
+    <div class="zh">面试生存指南 · 从自我介绍到反问面试官</div>
+    <div class="en">"Dress for the job you want — and sound like you already have it."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm currently working as a...</span>
+        <span class="cn-meaning">我现在的工作是……</span>
+      </div>
+      <div class="scene">面试官说 "Tell me about yourself" 时，用这句开头介绍当前职位。currently 强调「目前」，比 I am a... 更专业。后面接职位名称 + at 公司名 + 简短职责。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm currently working as a personal shopper at Bloomingdale's, but I'm hoping to transition into fashion buying."<div class="src">— Rachel Green, Friends S04E10 / 面试新时尚职位时介绍自己</div></div>
+        <div class="quote-item">"I'm currently working as a statistical analyst. It pays well, but honestly, my soul is dying."<div class="src">— Chandler Bing, Friends S08E20 / 向朋友坦白想转行的想法</div></div>
+        <div class="quote-item">"I'm currently working as a paralegal while I'm waiting for bar results, but I'm looking for something more permanent."<div class="src">— Marshall Eriksen, How I Met Your Mother S02E01 / 找正式律师工作时</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm really interested in this position because...</span>
+        <span class="cn-meaning">我对这个职位很感兴趣，因为……</span>
+      </div>
+      <div class="scene">面试官问 "Why do you want to work here?" 时的标准开头。interested in 比 want 更专业，because 后面要接具体原因——公司文化、产品、成长机会等，不要泛泛而谈。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm really interested in this position because I've been following your firm's work, and the Spencer Building is what made me want to be an architect."<div class="src">— Ted Mosby, How I Met Your Mother S01E03 / 面试建筑事务所时说出初心</div></div>
+        <div class="quote-item">"I'm really interested in this position because I think I could bring something new to the table — energy, ideas, maybe a little chaos."<div class="src">— Michael Scott, The Office S03E03 / 应聘分支经理时的自信发言</div></div>
+        <div class="quote-item">"I'm really interested in this position because fashion has always been my passion, ever since I was a little kid."<div class="src">— Rachel Green, Friends S03E02 / 面试时尚行业入门职位</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">One of my strengths is...</span>
+        <span class="cn-meaning">我的一个优势是……</span>
+      </div>
+      <div class="scene">面试官问 "What are your strengths?" 时的核心句型。one of 说明你不止一个优势，显得谦虚又有底气。后面接具体能力，最好举一个简短例子佐证，别空说。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"One of my strengths is that I never give up on a sale. A client says no, I come back the next day with donuts."<div class="src">— Dwight Schrute, The Office S02E05 / 评价自己的销售能力时非常认真</div></div>
+        <div class="quote-item">"One of my strengths is that I'm great with people. Selling a house isn't about the house — it's about the vibe."<div class="src">— Phil Dunphy, Modern Family S04E12 / 向客户展示房产时的自我评价</div></div>
+        <div class="quote-item">"One of my strengths is that I'm very detail-oriented. I once spent three days on a single footnote."<div class="src">— Ross Geller, Friends S06E22 / 描述学术工作的较真劲儿</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm looking for a role where I can...</span>
+        <span class="cn-meaning">我想找一个能……的职位</span>
+      </div>
+      <div class="scene">谈职业规划或离职原因时的利器。role 比 job 更专业（role 强调职责和成长），where I can 后面接你想做的事——grow / take on more responsibility / be creative 等。避免说 I want to find a good job，太直白。</div>
+      <div class="quotes">
+        <div class="quote-item">"I'm looking for a role where I can actually be creative and make something, not just push numbers around all day."<div class="src">— Chandler Bing, Friends S09E12 / 决定辞掉数据分析工作去广告行业</div></div>
+        <div class="quote-item">"I'm looking for a role where I can grow. I love what I do, but there's no room to move up where I am."<div class="src">— Pam Beesly, The Office S06E15 / 想从 receptionist 转向更有挑战的岗位</div></div>
+        <div class="quote-item">"I'm looking for a role where I can build things that matter. Not just another glass box."<div class="src">— Ted Mosby, How I Met Your Mother S04E06 / 不想再设计千篇一律的摩天大楼</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Do you have any concerns about my background?</span>
+        <span class="cn-meaning">您对我的背景有什么顾虑吗？</span>
+      </div>
+      <div class="scene">面试快结束时主动出击的高阶表达。concerns = 顾虑/担忧。这个问题展现了你的自信和开放态度——不怕被质疑，还主动给对方解释的机会。通常在"Do you have any questions?"环节使用。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Do you have any concerns about my background that I could address? I'd rather clear things up now."<div class="src">— Marshall Eriksen, How I Met Your Mother S06E04 / 面试大律所时主动化解顾虑</div></div>
+        <div class="quote-item">"Is there anything in my resume that gives you pause? I'm happy to go into more detail."<div class="src">— Chandler Bing, Friends S09E18 / 面试广告公司实习生岗位时</div></div>
+        <div class="quote-item">"Are there any gaps in my experience you'd like me to speak to? I want to make sure I'm being transparent."<div class="src">— Rachel Green, Friends S05E08 / 面试 Ralph Lauren 时坦诚相对</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周一下午，Alex 到一家科技公司面试市场专员岗位。HR 经理 Ms. Johnson 在会议室接待了他，从自我介绍一路聊到反问环节。</div>
+
+      <div class="msg">
+        <div class="speaker a">Ms. Johnson</div>
+        <div class="en">Hi Alex, thanks for coming in. Let's start with the basics — tell me a little about yourself.</div>
+        <div class="cn">嗨 Alex，谢谢你来面试。先从基本的开始——简单介绍一下你自己吧。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">Sure. I'm currently working as a marketing coordinator at a small digital agency. I've been there about two years, mainly handling social media strategy and content creation.</div>
+        <div class="cn">好的。我现在在一家小型数字代理公司做市场协调员，大概两年了，主要负责社媒策略和内容创作。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Ms. Johnson</div>
+        <div class="en">Great. And what made you interested in this position?</div>
+        <div class="cn">不错。那你是怎么对这个职位产生兴趣的？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">I'm really interested in this position because I've been following your company's growth, and I love the creative direction of your recent campaigns. I'd love to be part of a team that does work like that.</div>
+        <div class="cn">我对这个职位很感兴趣，因为我一直在关注贵公司的发展，很喜欢你们最近几波campaign的创意方向。我希望能加入这样的团队。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Ms. Johnson</div>
+        <div class="en">That's great to hear. What would you say is one of your biggest strengths?</div>
+        <div class="cn">很高兴听你这么说。你觉得你最大的优势之一是什么？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">One of my strengths is that I'm really good at turning data into stories. I can look at analytics and figure out what content actually resonates with people. At my last job, I used that to boost our Instagram engagement by 40% in three months.</div>
+        <div class="cn">我的一个优势是擅长把数据变成故事。我能从分析数据里看出什么样的内容真正能打动人。上一份工作我用这个能力把 Instagram 互动率三个月提升了 40%。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Ms. Johnson</div>
+        <div class="en">That's impressive. Why are you looking to leave your current job?</div>
+        <div class="cn">这很厉害。那你为什么想离开现在的工作？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">Honestly, I've learned a lot, but it's a small team and there's not much room to grow. I'm looking for a role where I can take on more responsibility and eventually grow into a leadership position.</div>
+        <div class="cn">说实话我学到了很多，但团队小，没什么上升空间。我想找一个能承担更多责任、将来能往管理方向发展的职位。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Ms. Johnson</div>
+        <div class="en">That aligns well with what we're looking for. Do you have any questions for me?</div>
+        <div class="cn">这跟我们想找的人很匹配。你有什么问题想问我吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">Yes, actually. What does success look like for this role in the first 90 days? And do you have any concerns about my background that I could address?</div>
+        <div class="cn">有的。这个职位在头 90 天的成功标准是什么样的？另外，您对我的背景有什么顾虑需要我解释的吗？</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">The interviewer says "Tell me about yourself." Give a 30-second introduction covering your current job, experience, and what you're looking for.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Sure. I'm currently working as a software developer at a mid-sized tech company. I've been there for three years, mostly doing backend work. I'm looking for a role where I can work on bigger products and grow into a senior position."</div>
+      <div class="sample-answer"><strong>B：</strong>"I'm currently working as a graphic designer at an ad agency. I handle everything from branding to social media assets. I've been there about two years, and now I'm looking for a role where I can focus more on product design."</div>
+      <div class="sample-answer"><strong>C：</strong>"I'm currently working as a sales associate at a retail company. I've been the top performer on my team for two quarters in a row. I'm really interested in moving into a B2B sales role where I can work with larger clients."</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">The interviewer asks "Why are you looking to leave your current job?" Answer honestly but positively — no complaining.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"I've learned a lot at my current company, but I'm looking for a role where I can take on more responsibility. My team is great, but there's limited room for growth, and I'm ready for a new challenge."</div>
+      <div class="sample-answer"><strong>B：</strong>"Honestly, I've been at my current job for four years and I feel like I've hit a ceiling. I'm looking for a role where I can learn new skills and work on bigger projects. That's what drew me to this position."</div>
+      <div class="sample-answer"><strong>C：</strong>"I'm grateful for the experience I've gained, but I'm looking for a role that's a better long-term fit. I want to be somewhere I can grow with the company and really build something. This position feels like the right next step."</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">The interviewer asks "Do you have any questions for me?" Ask two smart questions — one about the role, one about concerns.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Yes, I do. What does a typical day look like for someone in this role? And do you have any concerns about my background that I could address?"</div>
+      <div class="sample-answer"><strong>B：</strong>"Sure. What does success look like in the first 90 days for this position? Also, is there anything in my resume that gives you pause? I'd love to clear that up."</div>
+      <div class="sample-answer"><strong>C：</strong>"Actually, yes. How does the team typically collaborate on projects — is it more independent or cross-functional? And are there any gaps in my experience you'd like me to speak to?"</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I want to find a good job."</div>
+      <div class="right">"I'm looking for a role where I can grow."</div>
+      <div class="why">面试时说 find a good job 太直白，听起来像只在乎待遇和轻松。looking for a role where... 更专业，强调你在找匹配的成长机会，不是随便找份工作。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"My English is not good."</div>
+      <div class="right">"I'm comfortable communicating in English, and I'm always working on improving."</div>
+      <div class="why">面试时千万不要主动暴露弱点说 not good。如果语言不是你的强项，用 comfortable communicating 表达「能正常沟通」，再补一句正在持续提升，既诚实又不自贬。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I can do everything."</div>
+      <div class="right">"I'm a quick learner and I adapt well to new challenges."</div>
+      <div class="why">can do everything 听起来空洞又不真实，面试官不会信。quick learner + adapt well 说明你学习能力强、适应性好，这是面试官真正想听到的的话术。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"How much is the salary?"</div>
+      <div class="right">"Could you share more about the compensation package?"</div>
+      <div class="why">直接问 How much is the salary 在第一轮面试显得功利。compensation package（薪酬包）包含薪资、奖金、福利等，措辞更专业。等面试后期或 HR 主动提薪资时再深入聊。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I have no experience but I will work hard."</div>
+      <div class="right">"While I'm newer to this field, I've been teaching myself [skill] and I'm eager to contribute."</div>
+      <div class="why">no experience + work hard 是面试最空泛的回答。用 while I'm newer to this field 承认经验不足但措辞温和，再用具体行动（self-taught / 证书 / 个人项目）证明你在主动弥补，比空喊"会努力"有说服力得多。</div>
+    </div>
+  </div>
+
+</div><!-- .wrap -->
+
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talking About Work — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #c0392b; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(192,57,43,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 20 · 8/13 Thu</div>
+    <h2>Talking About Work</h2>
+    <div class="zh">聊聊工作 · 忙、跳槽、还是"先干着吧"</div>
+    <div class="en">"It's not just a job. It's a conversation starter."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm swamped.</span>
+        <span class="cn-meaning">我忙成狗了 / 被工作淹没了</span>
+      </div>
+      <div class="scene">回答别人"最近怎么样"时，比 I'm very busy 更地道。swamp 原意是沼泽，这里作动词表示「被淹没」。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm swamped. I haven't even had lunch."<div class="src">— Chandler Bing, Friends S03E19 / 加班赶方案时的经典抱怨</div></div>
+        <div class="quote-item">"I'm swamped here, Michael. Can this wait?"<div class="src">— Jim Halpert, The Office S02E06 / 手头一堆文件时的敷衍回复</div></div>
+        <div class="quote-item">"I'm totally swamped at work right now."<div class="src">— Marshall Eriksen, How I Met Your Mother S03E07 / 解释自己为什么没空赴约</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm thinking about moving on.</span>
+        <span class="cn-meaning">我在考虑换工作 / 想撤了</span>
+      </div>
+      <div class="scene">比直接说 I want to quit my job 更含蓄、更成熟。move on 表示「往前走/换条路」，适合跟朋友或同事轻描淡写地提。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm thinking about quitting my job."<div class="src">— Chandler Bing, Friends S01E15 / Chandler 对 data reconfiguration 忍无可忍</div></div>
+        <div class="quote-item">"I think it might be time for me to move on."<div class="src">— Jim Halpert, The Office S03E18 / 谈到是否留在 Dunder Mifflin 时</div></div>
+        <div class="quote-item">"I quit my job today. I'm ready to move on."<div class="src">— Marshall Eriksen, How I Met Your Mother S04E08 / 辞掉律所工作后的宣言</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">It pays the bills.</span>
+        <span class="cn-meaning">能糊口 / 反正够付账单</span>
+      </div>
+      <div class="scene">别人问你对工作的感受，你不想吐槽也不想夸，就用这句轻描淡写。语气带点「不热爱但实用」的味道。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"It's not my dream job, but it pays the bills."<div class="src">— Joey Tribbiani, Friends S06E20 / 谈到商业广告和临时演出时</div></div>
+        <div class="quote-item">"I sell paper. It pays the bills."<div class="src">— Stanley Hudson, The Office S04E04 / Stanley 对自己工作的极简总结</div></div>
+        <div class="quote-item">"Suit up. It pays the bills, baby."<div class="src">— Barney Stinson, How I Met Your Mother S02E07 / Barney 对自己西装人生的辩护</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I have back-to-back meetings.</span>
+        <span class="cn-meaning">我会议一个接一个 / 连轴开会</span>
+      </div>
+      <div class="scene">back-to-back 是「背靠背」，用来形容会议、课程排得满满当当。是职场里最常用的抱怨句式之一。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I have back-to-back meetings all afternoon."<div class="src">— Monica Geller, Friends S08E16 / 解释自己没法早退</div></div>
+        <div class="quote-item">"I've been in meetings all day. I don't even know what day it is."<div class="src">— Michael Scott, The Office S05E09 / 典型的 Michael 式夸张吐槽</div></div>
+        <div class="quote-item">"I'm stuck in meetings all day. Dinner's on you."<div class="src">— Claire Dunphy, Modern Family S03E15 / 职场妈妈回家前给家人的留言</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I'm burning out.</span>
+        <span class="cn-meaning">我要累垮了 / 快 burnout 了</span>
+      </div>
+      <div class="scene">burn out 不是单纯 tired，而是长期高压下的「燃尽」。用来描述工作强度已经影响身心，比 I'm tired 重得多。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I'm burning out here. I need a break."<div class="src">— Rachel Green, Friends S08E12 / 工作带娃两头烧时的崩溃边缘</div></div>
+        <div class="quote-item">"I'm burning out. I'm making mistakes I never make."<div class="src">— Pam Beesly, The Office S05E15 / 承认自己被工作压垮</div></div>
+        <div class="quote-item">"I'm burning out and I don't know how to say no."<div class="src">— Lily Aldrin, How I Met Your Mother S01E09 / 幼儿园老师+Lily 的双重身份压力</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting"><span>场景：</span>周四午饭时间，Alex 和 Jordan 在公司附近的三明治店排队。两人都在同一家公司不同部门。</div>
+
+      <div class="msg">
+        <div class="speaker a">Jordan</div>
+        <div class="en">Hey, you look like you haven't slept.</div>
+        <div class="cn">嘿，你看着像没睡觉一样。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">Tell me about it. I'm swamped. I have back-to-back meetings until four.</div>
+        <div class="cn">可不是嘛。我忙成狗了，下午四点前会议一个接一个。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Jordan</div>
+        <div class="en">Same here. My manager just dumped another project on me.</div>
+        <div class="cn">我也是。我经理刚又扔了一个项目给我。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">Honestly? I'm burning out. I've been thinking about moving on.</div>
+        <div class="cn">说实话吗？我要累垮了。我在考虑换工作。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Jordan</div>
+        <div class="en">Really? I had no idea. What's making you want to leave?</div>
+        <div class="cn">真的？我完全不知道。是什么让你想走？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">It's not terrible — it pays the bills. But there's no room to grow. I'm just exhausted.</div>
+        <div class="cn">也没那么糟，能糊口。但完全没有成长空间。我就是 exhausted 了。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Jordan</div>
+        <div class="en">I get it. I felt like that last year. Have you started looking yet?</div>
+        <div class="cn">我懂。我去年也是这感觉。你开始找了吗？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Alex</div>
+        <div class="en">Just casually updated my LinkedIn. Nothing serious yet. Let's talk later — I need to grab this sandwich and run.</div>
+        <div class="cn">就随便更新了 LinkedIn，还没认真找。晚点再聊——我得拿了三明治赶紧跑。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <!-- 题 1 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">1</span>
+        <span class="q-text" style="margin-bottom:0;">A friend asks, "How's work going?" Answer using "I'm swamped" or "back-to-back meetings."</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"Honestly? I'm swamped. I don't even remember what I had for breakfast."</div>
+      <div class="sample-answer"><strong>B：</strong>"It's been crazy. I have back-to-back meetings today, so I barely have time to eat."</div>
+      <div class="sample-answer"><strong>C：</strong>"Work's work, you know? Busy, but not terrible. I'm just swamped this week."</div>
+    </div>
+
+    <!-- 题 2 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">2</span>
+        <span class="q-text" style="margin-bottom:0;">Tell a close friend you're thinking about leaving your job. Give one reason.</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"I've been thinking about moving on. There's no room to grow, and I'm kind of bored."</div>
+      <div class="sample-answer"><strong>B：</strong>"I'm considering quitting. The workload is just too much, and I'm burning out."</div>
+      <div class="sample-answer"><strong>C：</strong>"I think it might be time for a change. I've been there three years and it feels like the same day over and over."</div>
+    </div>
+
+    <!-- 题 3 -->
+    <div class="practice-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span class="q-num">3</span>
+        <span class="q-text" style="margin-bottom:0;">Describe a job you don't love but keeps you going. Use "It pays the bills."</span>
+      </div>
+      <div class="sample-label">你可以这样说</div>
+      <div class="sample-answer"><strong>A：</strong>"It's not my dream job, but it pays the bills. And my coworkers are nice, so that helps."</div>
+      <div class="sample-answer"><strong>B：</strong>"I do admin work. It's pretty boring, but it pays the bills and I can leave at five."</div>
+      <div class="sample-answer"><strong>C：</strong>"Honestly? I just push papers all day. It pays the bills while I figure out what I actually want to do."</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">⚠️</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"My work is very busy."</div>
+      <div class="right">"I'm swamped." / "Work has been crazy." / "It's been a busy week."</div>
+      <div class="why">中文常说「我的工作很忙」，但英语里更自然的主语是人，用 I'm swamped / I'm slammed / I'm buried in work。说 work is busy 语法没错，但更像「这份工作本身忙」，不自然。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I want to change job."</div>
+      <div class="right">"I'm thinking about switching jobs." / "I'm looking for a new job."</div>
+      <div class="why">change job 听起来像「换工作内容」，而不是「换一家公司」。英语里「换工作」常用 switch jobs / change jobs；更自然也可以说 I'm thinking about moving on / I'm ready for something new。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"My salary is not high."</div>
+      <div class="right">"It doesn't pay much." / "The pay isn't great." / "I'm not making much."</div>
+      <div class="why">直接说 salary is not high 太中式。英语里用 pay 作名词更口语：The pay is low / It doesn't pay well / I'm not getting paid enough。也可以幽默地说 It pays the bills — 暗示刚好够。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I have many meetings today."</div>
+      <div class="right">"I'm in meetings all day." / "I have back-to-back meetings."</div>
+      <div class="why">many meetings 太像课本英语。all day / back-to-back 更生动地形容「排满」。back-to-back 尤其强调一个接一个，中间没休息，是职场高频表达。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">"I am very tired because of work."</div>
+      <div class="right">"I'm burned out." / "I'm worn out." / "Work's been draining."</div>
+      <div class="why">tired because of work 太直译。burned out 表示长期工作高压下的「燃尽感」，worn out 更偏向「累坏了」，draining 表示「消耗精力」。选哪个取决于你想表达的疲惫程度。</div>
+    </div>
+  </div>
+
+</div><!-- .wrap -->
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-07-30</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent);
+    background:#fffbeb; border:1px solid #fde68a; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--accent2); background:#ecfdf5;
+    border:1px solid #a7f3d0; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#fff7ed; border:1px dashed #fdba74; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>Where Did All the Movie Stars Go?</h1>
+<p class="sub">电影明星都去哪了？——当 IP 取代面孔，我们失去了什么</p>
+<div class="meta">
+<span>📅 <b>2026-07-30</b></span>
+<span>🎯 主题桶：<b>娱乐与流行文化 (20%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">过去，一张脸、一个名字就足以让观众买票进场；今天好莱坞卖的却是"世界观"和"系列 IP"。今天我们读一篇文化评论，聊聊：当明星从"电影的理由"退居"机器里的一张脸"，我们到底失去了什么？这不只关于电影，也关于我们这个"算法分发一切"的时代。</p>
+<div class="tip">💡 读前小思考：你能立刻说出最近一部让你"为了某个演员"才去看的电影吗？还是更多因为"它是某系列第几部"才去的？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>For most of the twentieth century, if you wanted to explain why a film succeeded, you could usually name a person. A movie <span class="hl">starred someone</span>—a face on the poster, a name above the title—and that person <span class="hl">carried the picture</span>. Audiences bought tickets to see Cary Grant be charming, to see Meryl Streep disappear into a role, to see Denzel Washington make a quiet room feel dangerous. The movie star was not merely a performer; he or she was a promise. You knew roughly what you were getting, and the studios knew exactly how much that promise was worth at the box office.</p>
+<p>That bargain has quietly <span class="hl">come undone</span>. Walk into a multiplex today and the posters tell a different story. The titles that dominate are not built around people but around worlds: a galaxy far away, a web of superheroes, a game you can play on your phone. The face on the poster is often a mask, a cape, or a logo. When a human actor does appear, they are frequently one name among many, <span class="hl">sandwiched between a franchise and a release date</span>. The star, as a cultural force, has dimmed.</p>
+<p>This is not to say acting has gotten worse. If anything, the craft is in stronger hands than ever; the performers in a typical franchise are often rigorously trained, and many could carry a smaller film with ease. The shift is structural, not personal. Hollywood no longer sells individuals. It sells intellectual property—stories already proven to exist, characters already loved, brands with built-in audiences. In that economy, the actor is a variable to be managed, not the reason the project exists.</p>
+<p>There is a particular irony in how this happened. The studios spent decades manufacturing stars, carefully controlling their <span class="hl">public image</span>, shielding their <span class="hl">personal lives</span> from <span class="hl">media attention</span>, and staging the occasional calculated revelation to keep the public interested. That machinery was expensive and fragile. Then the internet arrived, and with it a paradox: fame became both easier to win and harder to control. A single clip could <span class="hl">make headlines</span> overnight; a misstep could end a career by morning. The very tools that let unknowns become famous also let audiences grow bored faster, and bored audiences are fickle audiences.</p>
+<p>So the industry, always pragmatic, <span class="hl">hedged its bets</span>. Instead of grooming one bankable face for a decade, it poured money into properties that did not age, could be rebooted, and did not demand a salary that scaled with fame. The actor who once "was" the movie became a face inside a machine built to outlast any single career. Some accepted the trade and thrived. Others, wary of being <span class="hl">typecast</span>, drifted toward independent films and streaming projects where a name could still mean something.</p>
+<p>For audiences, the change is subtle but real. We have grown used to watching competence rather than presence. A franchise hero is often written to be admirable, edited to be exciting, and promoted to be liked; the result can be technically flawless and emotionally thin. The old stars, for all their flaws, had a quality that algorithms cannot manufacture: a specific, contradictory human being you chose to spend two hours with. We did not always love them, but we always knew who they were.</p>
+<p>What gets lost is not just glamour. When fame stops attaching to individuals and starts attaching to franchises, the conversation around film loses a certain texture. We stop arguing about whether an actor was right for a part and start arguing about whether the plot made sense. We <span class="hl">trade the messy, human drama of a career</span>—the comeback, the late bloom, the graceful exit—for the clean, corporate rhythm of a release slate. Film becomes less a meeting between people and more a transaction between a brand and a customer.</p>
+<p>None of this is a eulogy. Stars still exist, and a few—often those who pair real talent with canny choices—can still open a movie on their name alone. But they are the <span class="hl">exception that proves the rule</span>. The default has changed. The question worth asking is not whether we lost the movie star, but what we asked the movie star to do for us in the first place. We wanted someone to believe in, someone to blame, someone to watch grow old on a screen. A franchise can give us spectacle. It cannot give us that.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">carry the picture / carry a film</span><button aria-label="收藏表达" class="expr-fav" data-en="carry the picture / carry a film" data-example="The supporting cast was fine, but only she could carry the picture." data-scene='使用场景：说某演员/元素是作品成功的关键支柱，比 support 更有"扛起来"的画面感。' data-zh="撑起一部电影（担纲主演使作品成立）" type="button">☆</button></span><span class="zh">撑起一部电影（担纲主演使作品成立）</span>
+<span class="sc">使用场景：说某演员/元素是作品成功的关键支柱，比 support 更有"扛起来"的画面感。</span>
+<span class="ex">The supporting cast was fine, but only she could carry the picture.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">built around (sb / sth)</span><button aria-label="收藏表达" class="expr-fav" data-en="built around (sb / sth)" data-example="The whole campaign was built around a single catchy slogan." data-scene="使用场景：描述产品、故事、论点或活动以某人为核心，常见 built around people / a concept。" data-zh="围绕…而构建（以…为核心）" type="button">☆</button></span><span class="zh">围绕…而构建（以…为核心）</span>
+<span class="sc">使用场景：描述产品、故事、论点或活动以某人为核心，常见 built around people / a concept。</span>
+<span class="ex">The whole campaign was built around a single catchy slogan.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">come undone</span><button aria-label="收藏表达" class="expr-fav" data-en="come undone" data-example="Years of careful planning came undone in a single afternoon." data-scene='使用场景：比 break 更文学，强调"原本绷着的线松脱了"，常用于抽象的安排或默契。' data-zh="崩解、瓦解（计划/体系/关系失败）" type="button">☆</button></span><span class="zh">崩解、瓦解（计划/体系/关系失败）</span>
+<span class="sc">使用场景：比 break 更文学，强调"原本绷着的线松脱了"，常用于抽象的安排或默契。</span>
+<span class="ex">Years of careful planning came undone in a single afternoon.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">not merely A, but B</span><button aria-label="收藏表达" class="expr-fav" data-en="not merely A, but B" data-example="The app is not merely a tool, but a quiet reshaping of our habits." data-scene="使用场景：递进强调，媒体评论爱用，先压低再抬高，制造力道。" data-zh="不只是 A，更是 B" type="button">☆</button></span><span class="zh">不只是 A，更是 B</span>
+<span class="sc">使用场景：递进强调，媒体评论爱用，先压低再抬高，制造力道。</span>
+<span class="ex">The app is not merely a tool, but a quiet reshaping of our habits.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">hedge one's bets</span><button aria-label="收藏表达" class="expr-fav" data-en="hedge one's bets" data-example="Not sure which city will boom, so they hedged their bets and opened two offices." data-scene='使用场景：原指下注时两边都押，引申为"不把所有筹码放一处"，商业/决策常用。' data-zh="对冲风险 / 给自己留余地" type="button">☆</button></span><span class="zh">对冲风险 / 给自己留余地</span>
+<span class="sc">使用场景：原指下注时两边都押，引申为"不把所有筹码放一处"，商业/决策常用。</span>
+<span class="ex">Not sure which city will boom, so they hedged their bets and opened two offices.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">drift toward</span><button aria-label="收藏表达" class="expr-fav" data-en="drift toward" data-example="After the scandal, viewers drifted toward smaller, stranger shows." data-scene="使用场景：描述缓慢、非计划性的移动（人、趋势、注意力），比 move to 更轻柔。" data-zh="逐渐转向 / 流向" type="button">☆</button></span><span class="zh">逐渐转向 / 流向</span>
+<span class="sc">使用场景：描述缓慢、非计划性的移动（人、趋势、注意力），比 move to 更轻柔。</span>
+<span class="ex">After the scandal, viewers drifted toward smaller, stranger shows.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">trade A for B</span><button aria-label="收藏表达" class="expr-fav" data-en="trade A for B" data-example="We traded a little freedom for a lot of convenience, and barely noticed." data-scene='使用场景：强调"放弃一样、得到另一样"，常带得失权衡意味。' data-zh="以 A 换取 B（用前者换后者）" type="button">☆</button></span><span class="zh">以 A 换取 B（用前者换后者）</span>
+<span class="sc">使用场景：强调"放弃一样、得到另一样"，常带得失权衡意味。</span>
+<span class="ex">We traded a little freedom for a lot of convenience, and barely noticed.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">on one's name alone</span><button aria-label="收藏表达" class="expr-fav" data-en="on one's name alone" data-example="No special effects—the film opened on her name alone." data-scene="使用场景：强调某人号召力之强，光名字就能拉动票房/销量。" data-zh="仅凭某人的名气（无需其他卖点）" type="button">☆</button></span><span class="zh">仅凭某人的名气（无需其他卖点）</span>
+<span class="sc">使用场景：强调某人号召力之强，光名字就能拉动票房/销量。</span>
+<span class="ex">No special effects—the film opened on her name alone.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the exception that proves the rule</span><button aria-label="收藏表达" class="expr-fav" data-en="the exception that proves the rule" data-example="He hates flying yet loves this tiny prop plane—the exception that proves the rule." data-scene="使用场景：固定 idiom，指某个例外恰恰说明了普遍规律成立。" data-zh="印证规律的例外（反证）" type="button">☆</button></span><span class="zh">印证规律的例外（反证）</span>
+<span class="sc">使用场景：固定 idiom，指某个例外恰恰说明了普遍规律成立。</span>
+<span class="ex">He hates flying yet loves this tiny prop plane—the exception that proves the rule.</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">for all one's flaws</span><button aria-label="收藏表达" class="expr-fav" data-en="for all one's flaws" data-example="For all his faults, the mayor did leave the city safer than he found it." data-scene='使用场景：for all + 名词，表"尽管…"，让步语气，比 despite 更有文章味。' data-zh="尽管有种种缺点（退一步承认不足）" type="button">☆</button></span><span class="zh">尽管有种种缺点（退一步承认不足）</span>
+<span class="sc">使用场景：for all + 名词，表"尽管…"，让步语气，比 despite 更有文章味。</span>
+<span class="ex">For all his faults, the mayor did leave the city safer than he found it.</span></span>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Celebrity / Culture Vocabulary · 娱乐文化词块</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">本期主题就是娱乐流行文化，所以补上你点名要的「Celebrity / Culture Vocabulary」模块——这些都是读外媒娱评、人物稿时高频出现的词：</p>
+<div class="vocab">
+<div class="v"><b>make headlines</b><span>上头条、引发轰动——一个片段/事件突然成为新闻</span></div>
+<div class="v"><b>public image</b><span>公众形象——明星被精心经营的外在人设</span></div>
+<div class="v"><b>personal life</b><span>私生活——与作品相对，常被媒体窥探的部分</span></div>
+<div class="v"><b>media attention</b><span>媒体曝光 / 关注——名气带来的聚光灯</span></div>
+<div class="v"><b>box office</b><span>票房——衡量明星/电影商业价值的硬指标</span></div>
+<div class="v"><b>typecast</b><span>定型——演员总被安排演同类角色，难突破</span></div>
+<div class="v"><b>bankable (star)</b><span>有票房号召力的（明星）——片方愿意投资的对象</span></div>
+<div class="v"><b>comeback</b><span>复出——沉寂后重回大众视野</span></div>
+<div class="v"><b>franchise</b><span>系列电影 / IP 宇宙——可续命、可 reboot 的资产</span></div>
+<div class="v"><b>release slate</b><span>上映片单——片方计划中的一连串待映作品</span></div>
+</div>
+</section>
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<div class="sb">
+<p class="q">"The movie star was not merely a performer; he or she was a promise."</p>
+<p class="a"><b>句型：</b>not merely A; but B 的并列递进（用分号更有文气）。<b>逻辑：</b>先压低（只是表演者），再抬高（是一种"承诺"），制造张力。<b>表达：</b>① <i>promise</i> 这里作名词比喻——明星是对观众"你会看到什么"的保证；② 这种"把人比作抽象物"的写法在评论里极常见，值得模仿：<i>A teacher is not merely a explainer; he is a mirror.</i></p>
+</div>
+<div class="sb">
+<p class="q">"When a human actor does appear, they are frequently one name among many, sandwiched between a franchise and a release date."</p>
+<p class="a"><b>句型：</b>When 状语从句 + 主句，结尾 <i>sandwiched between…</i> 是过去分词短语作伴随/后置修饰。<b>逻辑：</b>用"夹在 IP 和档期之间"的画面，点出演员被边缘化。<b>表达：</b>① <i>one name among many</i> 强调"泯然众人"；② <i>sandwiched between A and B</i> 是超好用的结构，可形容人被两件事夹击：<i>sandwiched between deadlines and debt.</i></p>
+</div>
+<div class="sb">
+<p class="q">"The very tools that let unknowns become famous also let audiences grow bored faster, and bored audiences are fickle audiences."</p>
+<p class="a"><b>句型：</b><i>The very X that… also…</i> 强调结构 + 并列收尾；<i>fickle audiences</i> 是"A are A"的同词回环。<b>逻辑：</b>指出互联网的悖论——成名的工具也正是让人厌倦的工具。<b>表达：</b>① <i>the very</i> 表"正是那个"，加强语气；② <i>fickle</i>（善变、靠不住）精准形容注意力经济下的观众，比 changeable 更地道。</p>
+</div>
+<div class="sb">
+<p class="q">"The old stars, for all their flaws, had a quality that algorithms cannot manufacture: a specific, contradictory human being you chose to spend two hours with."</p>
+<p class="a"><b>句型：</b>插入语 <i>for all their flaws</i> 让步 + 定语从句 + 冒号后同位语（a specific… being）解释 quality。<b>逻辑：</b>退一步承认老明星有缺点，但强调他们有算法造不出的"具体而矛盾的人性"。<b>表达：</b>① <i>manufacture</i> 用作"制造"，比 produce 更冷、更机械，暗讽工业化；② 冒号后用一个名词短语下定义，是评论文的高级收束法。</p>
+</div>
+<div class="sb">
+<p class="q">"The question worth asking is not whether we lost the movie star, but what we asked the movie star to do for us in the first place."</p>
+<p class="a"><b>句型：</b>主语（带 worth doing 后置定语）+ 系动词 + <i>not whether…, but what…</i> 平行结构。<b>逻辑：</b>把问题从"失去了吗"翻转成"我们原本要它干什么"，升华主题。<b>表达：</b>① <i>worth asking</i> 比 we should ask 更简洁有力；② <i>not A but B</i> 与前面的 not merely 呼应，是这篇文章的"签名句式"，适合套任何文化议题：<i>The point is not whether it's popular, but what it asks of us.</i></p>
+</div>
+</section>
+<!-- 13:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文梳理</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<p><b>核心内容：</b>二十世纪，电影靠"明星"撑场——一张脸、一个名字就是购票理由和票房保证，明星是一种对观众的"承诺"。如今好莱坞卖的是 IP 和世界观，而非个人；演员从"电影存在的原因"退居"机器里的一张脸"。作者强调这是结构性变化（不是演技退步）：片方转而押注不会老去、可 reboot 的资产。互联网让 fame 更易得也更易失控——一个片段就能上头条，一个失误就能毁掉事业，观众也厌倦得更快。于是行业"对冲风险"，明星要么接受被工具化，要么逃向独立/流媒体。观众习惯了"能看"而非"在场"，失去了与具体的人共处两小时的质感。明星没死，但成了印证规律的例外。</p>
+<p><b>背后文化现象：</b>① 从"个人崇拜"到"IP 经济"——注意力稀缺时代，可续命、可复制的资产比会老去的人更保值；② 互联网的双刃：成名更快、失控更快、厌倦更快，fickle audiences 成常态；③ "在场感"被算法和品牌取代，表演从"人与人的相遇"退化成"品牌与顾客的交易"。</p>
+<p><b>值得思考的问题：</b>我们到底是失去了电影明星，还是不再需要"一个可以相信、可以指责、可以看着变老的人"？当一切内容都越来越像品牌与顾客的"交易"，"人"的质感还值钱吗？——这和你做「城市观察者」公众号其实同频：当所有人追逐算法分发，个体、具体、带缺点的人的声音，反而可能是最稀缺、最值钱的东西。</p>
+</section>
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 13:00–15:00 输出</span></div>
+<div class="prompt">🗣 <b>Discussion question：</b> The article argues that modern culture values "IP over people"—franchises, formats, and brands matter more than individual voices. Do you see this shift in other areas of life, such as social media, music, or even the articles you choose to read? Write about 200 words sharing your view, with one concrete example from your own experience.</div>
+<div class="model">
+<span class="lab">参考范文（约 200 词，供对照，不是标准答案）</span>
+      I think the shift from people to IP is everywhere once you look for it. Take social media: ten years ago we followed individuals—a writer, a photographer—because we liked their specific voice. Now the algorithm pushes formats and trends, not people. A "type" of video travels further than a particular creator, and creators themselves start mimicking the template to stay visible. The person behind the account matters less than the hook.
+      In my own reading, I notice the same thing. I used to follow a few columnists and read whatever they published. Now I scroll a feed sorted by topic and engagement, and I often finish an article without remembering who wrote it. The ideas feel interchangeable, because the system rewards the reusable format over the unrepeatable person.
+      What I'd miss, if this fully took over, is exactly what the article names: a specific human being I choose to spend time with. A franchise can be spectacular. It can't be someone. So I've started curating a small list of writers again—not efficient, but it feels like reading used to.
+    </div>
+<div class="tip">✍️ 写法提示：用 I think X is everywhere once you look for it 自然展开"不止电影如此"；中间用 In my own reading, I notice the same thing 把宏观现象拉回自身经验，扣住题目要求的"one example"；结尾用 So I've started… 落到具体行动，像母语者议论的收束方式。</div>
+</section>
+<footer>每日英文阅读 · 由 Milo 为你定制 🐾 · 明天见 · 主题按 40/25/20/15 轮换（明日预计回到「人类与社会」）</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-07-30',title:"Where Did All the Movie Stars Go?"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

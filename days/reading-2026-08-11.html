@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily English Reading · 2026-08-11</title>
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#26221d; --muted:#7a7268;
+    --line:#ece6dd; --accent:#b45309; --accent2:#0f766e; --soft:#f4efe8;
+    --warn:#9a3412; --blue:#3b6b8f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 64px;}
+  header.top{
+    background:linear-gradient(135deg,#eef4f3,#e7f0ee);
+    border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; margin-bottom:22px;
+  }
+  .badge{display:inline-block; font-size:12px; letter-spacing:.08em; color:var(--accent2);
+    background:#ecfdf5; border:1px solid #a7f3d0; padding:4px 10px; border-radius:999px; font-weight:600;}
+  h1{font-size:25px; margin:12px 0 6px; line-height:1.35;}
+  .sub{color:var(--muted); font-size:14px; margin:0;}
+  .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--muted);}
+  .meta b{color:var(--ink); font-weight:600;}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-bottom:18px;
+  }
+  .sec-head{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .sec-head .dot{width:10px; height:10px; border-radius:50%; background:var(--accent2); flex:0 0 auto;}
+  .sec-head h2{font-size:18px; margin:0;}
+  .time-tag{margin-left:auto; font-size:12px; color:var(--blue); background:#eaf1f6;
+    border:1px solid #cfe0ec; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap;}
+  article.read{font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.85; color:#2b2620;}
+  article.read p{margin:0 0 15px;}
+  article.read p:first-child::first-letter{
+    font-size:46px; line-height:.9; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  .hl{background:#fef3c7; padding:0 3px; border-radius:3px;}
+  .kp{display:block; border-left:3px solid var(--accent2); background:var(--soft);
+    padding:10px 14px; margin:0 0 12px; border-radius:0 10px 10px 0;}
+  .kp .exp{font-weight:700; color:var(--ink);}
+  .kp .zh{color:var(--accent); font-weight:600; margin-left:6px;}
+  .kp .sc{display:block; color:var(--muted); font-size:13.5px; margin:4px 0;}
+  .kp .ex{display:block; font-size:14.5px; color:#3b352e; font-style:italic;}
+  .kp .src{display:block; font-size:12px; color:var(--blue); margin-top:3px;}
+  .vocab{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .vocab .v{background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+  .vocab .v b{color:var(--accent2);}
+  .vocab .v span{display:block; color:var(--muted); font-size:13px; margin-top:3px;}
+  .sb{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px;}
+  .sb .q{font-family:Georgia,serif; font-size:15.5px; color:#2b2620; border-left:3px solid var(--accent2); padding-left:12px; margin:0 0 8px;}
+  .sb .a{font-size:14px; color:var(--muted);}
+  .sb .a b{color:var(--ink);}
+  .sum b{color:var(--accent);}
+  .ask .prompt{font-size:16px; background:#eef4f3; border:1px dashed #7fc4b3; border-radius:12px; padding:14px;}
+  .ask .model{margin-top:14px; font-size:14.5px; color:#3b352e; background:var(--soft); border-radius:12px; padding:14px;}
+  .ask .model .lab{font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.05em; display:block; margin-bottom:6px;}
+  .tip{font-size:13px; color:var(--muted); background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; padding:10px 12px; margin-top:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:8px;}
+  @media(max-width:560px){ .vocab{grid-template-columns:1fr;} h1{font-size:22px;} article.read{font-size:16px;} }
+  /* Lulu Lab · 阅读/口语 单条表达收藏 */
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<span class="badge">每日英文阅读 · 15 分钟训练</span>
+<h1>The Dumbphone Revival: Why Some People Are Trading Smartphones for Devices That Do Less</h1>
+<p class="sub">功能机回潮：为什么有人愿意用"只会打电话"的手机，换掉智能手机？</p>
+<div class="meta">
+<span>📅 <b>2026-08-11</b></span>
+<span>🎯 主题桶：<b>科技与未来 (25%)</b></span>
+<span>📏 难度：<b>IELTS R6.5 / 媒体真实文风</b></span>
+<span>⏱ 时长：<b>约 15 分钟</b></span>
+</div>
+</header>
+<!-- 0:00–2:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Today's Topic · 今日主题</h2><span class="time-tag">⏱ 0:00–2:00 热身</span></div>
+<p style="margin:0 0 8px;color:var(--muted);font-size:14px;">你大概见过这种画面：地铁上、咖啡馆里，人人低头刷着那块越来越大的屏幕。但最近，一小群人反其道而行——把只能打电话、发短信的"傻瓜机"重新掏了出来。这股"功能机回潮（dumbphone revival）"不是怀旧玩家的玩具，而是一部分人对"注意力经济"的有意反抗：既然手机被设计成不停抓住我，那我就换一个抓不住我的。今天我们读一篇科技文化观察，聊聊"少即是奢侈"这件事——它正好和你公众号计划里的 013《无意义时间》同频：能无聊、能慢下来，也许才是这个时代最贵的能力。</p>
+<div class="tip">💡 读前小思考：你上次"纯粹因为无聊而发呆"是什么时候？如果手机只能打电话，你一天会多出多少不被打断的时间？</div>
+</section>
+<!-- 2:00–10:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>English Article · 精读</h2><span class="time-tag">⏱ 2:00–10:00 精读</span></div>
+<article class="read">
+<p>At a café in Lisbon, a woman pulls a phone from her bag that looks like it time-traveled from 2005: a small screen, a number pad, no camera bump, no app grid. She uses it to text her sister and nothing else. In a world where our phones have become extensions of our nervous systems, choosing a device that does less feels like <span class="hl">a quiet rebellion</span>. A decade ago this would have read as poverty or nostalgia. Today, among a certain crowd, it reads as a statement.</p>
+<p>She is not alone. Across the United States, Europe, and parts of Asia, a small but visible movement is <span class="hl">trading the smartphone for</span> the "dumbphone"—a stripped-down handset built for calls, texts, and little more. Industry trackers report that sales of basic feature phones, long assumed to be dying, have ticked upward for several years running. The numbers are tiny next to the billion-plus smartphone market, but the direction is new: for the first time in a decade, "less" is gaining ground. What is striking is not the volume but the profile of the buyer. These are not people who cannot afford a smartphone. Often they are precisely the people who can—professionals, parents, and younger users who grew up online and now want out.</p>
+<p>To understand the appeal, it helps to remember what a smartphone was built to do. Every notification, every infinite feed, every autoplay video is engineered to capture and hold attention. We did not ask for phones that buzz all day; <span class="hl">the attention economy</span> asked for us. For a growing number of users, the cost has become impossible to ignore—frayed focus, worse sleep, and a vague sense of never quite being where they are. Studies on screen time tell the same story from different angles: the device that promised to free our schedules has quietly colonized our attention, one small buzz at a time. The bill, it turns out, is paid in attention we did not know we were spending.</p>
+<p>What makes the dumbphone interesting is the paradox at its center. A device that does less is, for many buyers, <span class="hl">a kind of luxury</span>. Constraint becomes a feature. By removing the endless options, the phone forces a small, daily practice of intentionality: you call instead of scrolling, you are bored instead of numbed. <span class="hl">Friction</span>—once a flaw to be designed away—is now the selling point. The very thing designers spent a decade erasing is exactly what this buyer is paying to get back. In a culture optimized for smoothness, a little roughness turns out to be restorative. You are not buying a phone so much as buying back a few undistracted hours.</p>
+<p>The people making the switch come from surprising places. There is the novelist who bought a flip phone to finish a manuscript, and now keeps it through drafts. There is the parent who gave a teenager a basic handset, relieved to know the child could reach home without living inside an algorithm. There is the consultant who carries two phones: a smart one for work, <span class="hl">a line drawn between</span> productive and present. And there is the student who keeps a dumbphone for exams and nights out, treating it as a kind of insurance against the self that cannot put the other one down.</p>
+<p>Of course, the trade is not free. Maps, payments, tickets, and group chats all live inside the smartphone, and most jobs still assume you carry one. The most honest adopters do not pretend to quit entirely. Many describe a compromise—a "weekend phone," a "travel phone," a deliberate downgrade rather than <span class="hl">a clean break</span>. The goal is not purity but proportion: to keep the tool without letting it keep you. Some keep a single smartphone but delete everything except the essentials, proving the point is not the hardware but the boundary drawn around it. The result is less a lifestyle than a set of small, repeatable rules.</p>
+<p>The phone makers have noticed. A handful of start-ups now sell devices with paper-like displays, no browser, and a single purpose, while legacy brands quietly add "focus modes" and greyscale settings to flagships already on the market. None of this will replace the smartphone. But it signals a shift in the story we tell about our devices—from "do everything" to "do less, on purpose." The dumbphone, in other words, is less a product than a pressure point on the industry that built the always-on default in the first place.</p>
+<p>Seen broadly, the dumbphone revival is <span class="hl">less about gadgets than about agency</span>. It is a quiet critique of a tech culture that confused "more" with "better," and a small bet that boredom, slowness, and interruption-free time are not wastes but prerequisites for thinking. This is not nostalgia or anti-tech puritanism. It is <span class="hl">the opposite of careless</span>: a decision, made on purpose, about what a person will and will not let into a day.</p>
+<p>In the end, the person in the Lisbon café is not really rejecting technology. She is redrawing a boundary—keeping the connection, dropping the noise. The dumbphone, for all its limits, holds up a mirror: what many of us want to <span class="hl">opt out of</span> is not the call or the text, but the always-on version of ourselves we never chose to become.</p>
+</article>
+</section>
+<!-- 10:00–13:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Key Expressions · 10 个真实表达</h2><span class="time-tag">⏱ 10:00–13:00 拆解</span></div>
+<span class="kp"><span class="exp-row"><span class="exp">a quiet rebellion</span><button aria-label="收藏表达" class="expr-fav" data-en="a quiet rebellion" data-example='"choosing a device that does less feels like a quiet rebellion."' data-scene='使用场景：形容某人用低调但坚定的方式对抗一种普遍趋势，比 open rebellion 更克制、更有"文科感"。' data-zh="无声的反叛（不喧哗、却明确地违背主流做法）" type="button">☆</button></span><span class="zh">无声的反叛（不喧哗、却明确地违背主流做法）</span>
+<span class="sc">使用场景：形容某人用低调但坚定的方式对抗一种普遍趋势，比 open rebellion 更克制、更有"文科感"。</span>
+<span class="ex">"choosing a device that does less feels like a quiet rebellion."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">trade A for B</span><button aria-label="收藏表达" class="expr-fav" data-en="trade A for B" data-example="&quot;a small but visible movement is trading the smartphone for the 'dumbphone'.&quot;" data-scene='使用场景：表示"舍弃一样东西去得到另一样"，比 exchange 更口语、常用于生活方式选择。' data-zh="用 A 换 B；放弃 A 换取 B" type="button">☆</button></span><span class="zh">用 A 换 B；放弃 A 换取 B</span>
+<span class="sc">使用场景：表示"舍弃一样东西去得到另一样"，比 exchange 更口语、常用于生活方式选择。</span>
+<span class="ex">"a small but visible movement is trading the smartphone for the 'dumbphone'."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the attention economy</span><button aria-label="收藏表达" class="expr-fav" data-en="the attention economy" data-example='"We did not ask for phones that buzz all day; the attention economy asked for us."' data-scene='使用场景：讨论社交媒体、算法、广告如何把"人的注意力"当成商品来争夺时，几乎是固定术语。' data-zh='注意力经济（谁的注意力被夺走、被变现，谁就在"被交易"）' type="button">☆</button></span><span class="zh">注意力经济（谁的注意力被夺走、被变现，谁就在"被交易"）</span>
+<span class="sc">使用场景：讨论社交媒体、算法、广告如何把"人的注意力"当成商品来争夺时，几乎是固定术语。</span>
+<span class="ex">"We did not ask for phones that buzz all day; the attention economy asked for us."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a kind of luxury</span><button aria-label="收藏表达" class="expr-fav" data-en="a kind of luxury" data-example='"A device that does less is, for many buyers, a kind of luxury."' data-scene="使用场景：反讽或升华时用，把通常不被看作奢侈的东西（时间、无聊、慢）称作 luxury。" data-zh='一种奢侈（此处指"少"反而成了稀缺的享受）' type="button">☆</button></span><span class="zh">一种奢侈（此处指"少"反而成了稀缺的享受）</span>
+<span class="sc">使用场景：反讽或升华时用，把通常不被看作奢侈的东西（时间、无聊、慢）称作 luxury。</span>
+<span class="ex">"A device that does less is, for many buyers, a kind of luxury."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">friction</span><button aria-label="收藏表达" class="expr-fav" data-en="friction" data-example='"Friction—once a flaw to be designed away—is now the selling point."' data-scene='使用场景：产品/行为设计语境里，friction 指让用户"慢一下、多想一秒"的阻力；与"去掉摩擦让用户顺滑上瘾"相反。' data-zh='摩擦 / 阻力（此处指"被刻意保留的阻碍"，是设计上的卖点）' type="button">☆</button></span><span class="zh">摩擦 / 阻力（此处指"被刻意保留的阻碍"，是设计上的卖点）</span>
+<span class="sc">使用场景：产品/行为设计语境里，friction 指让用户"慢一下、多想一秒"的阻力；与"去掉摩擦让用户顺滑上瘾"相反。</span>
+<span class="ex">"Friction—once a flaw to be designed away—is now the selling point."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a line drawn between A and B</span><button aria-label="收藏表达" class="expr-fav" data-en="a line drawn between A and B" data-example='"a smart one for work, a line drawn between productive and present."' data-scene='使用场景：表示刻意把两件事（工作/生活、生产/在场）区分开，强调"边界感"。' data-zh="在 A 与 B 之间划清界限" type="button">☆</button></span><span class="zh">在 A 与 B 之间划清界限</span>
+<span class="sc">使用场景：表示刻意把两件事（工作/生活、生产/在场）区分开，强调"边界感"。</span>
+<span class="ex">"a smart one for work, a line drawn between productive and present."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">a clean break</span><button aria-label="收藏表达" class="expr-fav" data-en="a clean break" data-example='"a deliberate downgrade rather than a clean break."' data-scene='使用场景：形容与某人、某习惯或某事物完全割裂；文中指"彻底弃用智能手机"。' data-zh="彻底断绝 / 一刀两断" type="button">☆</button></span><span class="zh">彻底断绝 / 一刀两断</span>
+<span class="sc">使用场景：形容与某人、某习惯或某事物完全割裂；文中指"彻底弃用智能手机"。</span>
+<span class="ex">"a deliberate downgrade rather than a clean break."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">less about A than about B</span><button aria-label="收藏表达" class="expr-fav" data-en="less about A than about B" data-example='"the dumbphone revival is less about gadgets than about agency."' data-scene="使用场景：把话题从表面（物件/现象）引向本质（动机/文化），议论文里极好用的转移重心句型。" data-zh="与其说关乎 A，不如说关乎 B" type="button">☆</button></span><span class="zh">与其说关乎 A，不如说关乎 B</span>
+<span class="sc">使用场景：把话题从表面（物件/现象）引向本质（动机/文化），议论文里极好用的转移重心句型。</span>
+<span class="ex">"the dumbphone revival is less about gadgets than about agency."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">the opposite of careless</span><button aria-label="收藏表达" class="expr-fav" data-en="the opposite of careless" data-example='"It is the opposite of careless: a decision, made on purpose, about what a person will and will not let into a day."' data-scene="使用场景：用反义短语给某个行为定性，语气笃定，适合收尾升华。" data-zh='与"随意/ careless"正相反（即：是经过深思的）' type="button">☆</button></span><span class="zh">与"随意/ careless"正相反（即：是经过深思的）</span>
+<span class="sc">使用场景：用反义短语给某个行为定性，语气笃定，适合收尾升华。</span>
+<span class="ex">"It is the opposite of careless: a decision, made on purpose, about what a person will and will not let into a day."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+<span class="kp"><span class="exp-row"><span class="exp">opt out of</span><button aria-label="收藏表达" class="expr-fav" data-en="opt out of" data-example='"what many of us want to opt out of is not the call or the text, but the always-on version of ourselves."' data-scene="使用场景：主动退出某个系统、潮流或默认设置；与 opt in（主动加入）相对。" data-zh="退出；选择不参与" type="button">☆</button></span><span class="zh">退出；选择不参与</span>
+<span class="sc">使用场景：主动退出某个系统、潮流或默认设置；与 opt in（主动加入）相对。</span>
+<span class="ex">"what many of us want to opt out of is not the call or the text, but the always-on version of ourselves."</span>
+<span class="src">来源：本文 / Daily English Reading · 2026-08-11</span></span>
+</section>
+<!-- 10:00–13:00 (vocab) -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Tech &amp; Lifestyle Vocabulary · 科技生活词</h2><span class="time-tag">⏱ 10:00–13:00 词块</span></div>
+<p style="margin:0 0 12px;color:var(--muted);font-size:13.5px;">（本期非娱乐主题，依惯例以「科技生活词」替代 Celebrity/Culture Vocabulary。例句均摘自本文，标注出处。）</p>
+<div class="vocab">
+<div class="v"><b>dumbphone / feature phone</b><span>功能机、低智能机——只能通话短信、无重度应用的手机。</span></div>
+<div class="v"><b>smartphone</b><span>智能手机——集通话、上网、App 于一体的设备。</span></div>
+<div class="v"><b>digital detox</b><span>数字排毒——刻意减少屏幕使用、与网络"断联"一段时间。</span></div>
+<div class="v"><b>attention economy</b><span>注意力经济——平台争夺并变现用户注意力的商业模式。</span></div>
+<div class="v"><b>notification</b><span>（手机）通知 / 推送；文中 buzz all day 的同义场景词。</span></div>
+<div class="v"><b>doomscrolling</b><span>末日刷屏——深夜停不下来地刷负面信息的行为。</span></div>
+<div class="v"><b>screen time</b><span>屏幕使用时间——设备统计的每日亮屏时长。</span></div>
+<div class="v"><b>intentionality</b><span>刻意、有意识（反义是 automatic / mindless）。</span></div>
+<div class="v"><b>friction (as a feature)</b><span>被设计保留的"阻力"，用来打断自动滑屏。</span></div>
+<div class="v"><b>always-on</b><span>永远在线——随时可被联系、随时在线的默认状态。</span></div>
+</div>
+</section>
+<!-- 13:00–14:00 -->
+<section>
+<div class="sec-head"><span class="dot"></span><h2>Sentence Breakdown · 5 个高级句</h2><span class="time-tag">⏱ 13:00–14:00 长难句</span></div>
+<div class="sb">
+<p class="q">"We did not ask for phones that buzz all day; the attention economy asked for us."</p>
+<p class="a"><b>句型：</b>分号连接的两个平行分句，前句否定（We did not ask）、后句把主语换成 the attention economy 并拟人化（asked for us）。<br/><b>逻辑：</b>把"责任"从用户转移到系统——不是我们想要的，是经济模式替我们要的。<br/><b>表达：</b>asked for us 把抽象系统当人写，制造冷幽默；buzz all day 用拟声细节让批判更具体。</p>
+</div>
+<div class="sb">
+<p class="q">"By removing the endless options, the phone forces a small, daily practice of intentionality: you call instead of scrolling, you are bored instead of numbed."</p>
+<p class="a"><b>句型：</b>句首 By V-ing 作原因状语 → 主句；冒号后接两个 you… instead of… 的平行对比句，解释前文。<br/><b>逻辑：</b>因果（拿走选项→迫出"刻意"）+ 具象化（用两组成对反义把抽象概念落地）。<br/><b>表达：</b>instead of 的并列对比是雅思写作加分结构；bored vs numbed 一字之差，区分"健康的无聊"与"被算法麻醉"。</p>
+</div>
+<div class="sb">
+<p class="q">"There is the parent who gave a teenager a basic handset, relieved to know the child could reach home without living inside an algorithm."</p>
+<p class="a"><b>句型：</b>There be + 名词 + who 定语从句；逗号后 relieved to know… 为过去分词短语作补充说明（相当于非限定定语）。<br/><b>逻辑：</b>用具体人物当论据；分词尾巴补上情绪落点（安心）。<br/><b>表达：</b>living inside an algorithm 是地道隐喻，比 "using apps" 更锋利，把算法写成"包裹人的环境"。</p>
+</div>
+<div class="sb">
+<p class="q">"It is a quiet critique of a tech culture that confused 'more' with 'better,' and a small bet that boredom, slowness, and interruption-free time are not wastes but prerequisites for thinking."</p>
+<p class="a"><b>句型：</b>It is A, and B 的平行结构；A、B 各带一个 that 定语从句；B 的从句内用 not… but… 对比。<br/><b>逻辑：</b>把现象从" gadgets（物件）"抬升到"文化批判 + 押注"，层层加码。<br/><b>表达：</b>confuse X with Y（把 X 误当 Y）；prerequisites for thinking（思考的前提）用词精准，是议论文的"重词"。</p>
+</div>
+<div class="sb">
+<p class="q">"…what many of us want to opt out of is not the call or the text, but the always-on version of ourselves we never chose to become."</p>
+<p class="a"><b>句型：</b>what 引导的名词性从句作主语 + be + not… but… 表语；句末 we never chose to become 是省略 that 的定语从句，修饰 version。<br/><b>逻辑：</b>全文收束——我们真正想退出的不是"连接"，而是"那个永远在线的、被默认的自己"。<br/><b>表达：</b>for all its limits（尽管它有种种局限）是让步短语；holds up a mirror（照镜子）是隐喻，把手机变成"映出自我"的意象。</p>
+</div>
+</section>
+<!-- 14:00–15:00 -->
+<section class="sum">
+<div class="sec-head"><span class="dot"></span><h2>Chinese Summary · 中文总结</h2><span class="time-tag">⏱ 14:00–15:00 复盘</span></div>
+<p style="margin:0 0 12px;"><b>核心内容：</b>一股"功能机回潮"正在欧美亚悄悄发生——有人主动用只能通话短信的 dumbphone 替换智能手机。动机不是怀旧，而是对"注意力经济"的有意反抗：既然手机被工程化地设计成不停抓住我，就换一个抓不住我的。多数人不追求彻底断联（a clean break），而是用"周末机""双机方案"守住边界——目标不是纯粹，而是<b>比例</b>。</p>
+<p style="margin:0 0 12px;"><b>背后文化现象：</b>我们这代科技把"更多"默认等于"更好"，把"永远在线"当成正常状态。于是<b>慢、无聊、不被打断</b>反而成了稀缺品，甚至成了一种奢侈。这股回潮本质不是反科技，而是重新夺回"agent（能动性）"——呼应慢生活、数字极简，也和你公众号计划里的 013《无意义时间》同频：能发呆，也许是这个时代最贵的能力。</p>
+<p style="margin:0;"><b>值得思考的问题：</b>① 你是想"少看手机"，还是想"少被那个被设计来抓住你的手机抓着"？这两者不一样。② 如果"少"都成了奢侈，说明我们的默认状态有多满？③ 彻底断联不现实，那"比例"该划在哪——你愿意为自己保留哪一段不被打扰的时间？</p>
+</section>
+<!-- Speaking -->
+<section class="ask">
+<div class="sec-head"><span class="dot"></span><h2>Speaking Practice · 口语练</h2><span class="time-tag">⏱ 14:00–15:00 输出</span></div>
+<div class="prompt">💬 <b>Discussion question（约 200 词）：</b> Some argue that switching to a dumbphone is a privilege for those who can afford to disconnect, while others see it as a necessary act of self-care in an always-on culture. Which view do you find more convincing, and do you think "doing less" with technology is realistic for most people? Share your take.</div>
+<div class="model">
+<span class="lab">参考范文（≈190 词 · 仅供模仿，别照背）</span>
+      I find the self-care view more convincing, though I don't think the two positions are really opposed. Choosing a less capable phone is easier for people with stable jobs and support systems—true—but that doesn't make it meaningless; it makes it a starting point. What the dumbphone revival really exposes is how little choice most of us had in becoming always-on. We didn't opt into constant notifications; they were built into the default. So "doing less" isn't about rejecting technology—it's about recovering a boundary we lost without noticing. For most people a full switch is unrealistic, and that's fine. The useful lesson isn't the device but the intention: keeping maps and payments while dropping the endless feed, or setting one phone-free evening a week. Realism matters more than purity. If nothing else, the trend is a reminder that "more" was never the same as "better," and that a little boredom might be the cheapest thinking tool we have.
+    </div>
+<div class="tip">🗣 练习建议：先关掉字幕式依赖，用自己的话答 200 词左右；试着用上今天的 less about A than about B、opt out of、a kind of luxury。录下来听一遍，比写下来更练嘴。</div>
+</section>
+<footer>Daily English Reading · 2026-08-11 · 主题桶：科技与未来 (25%) · 自包含 HTML，可嵌入学习中心</footer>
+</div>
+<script>window.LULU_FAV={track:'reading',date:'2026-08-11',title:"The Dumbphone Revival: Why Some People Are Trading Smartphones for Devices That Do Less"};</script>
+<script src="express-fav-rw.js"></script>
+</body>
+</html>

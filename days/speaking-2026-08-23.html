@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Going to a Party — 15分钟口语训练</title>
+<style>
+  :root{
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --ink: #2c3e50;
+    --muted: #7d8c96;
+    --primary: #4a7dbf;
+    --primary-l: #e8f0f9;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-l: #f6f1ea;
+    --line: #e8e3dc;
+    --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{max-width: 780px; margin: 0 auto; padding: 22px 20px 60px;}
+
+  /* ── Topic Banner ── */
+  .topic-banner{
+    background: linear-gradient(135deg, #2c4a63 0%, #3d6380 50%, #4a7dbf 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-banner::after{
+    content: ""; position: absolute;
+    top: -40px; right: -60px; width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .topic-banner .day{font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; margin-bottom: 6px;}
+  .topic-banner h2{font-size: 34px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; letter-spacing: -.01em;}
+  .topic-banner .zh{font-size: 16px; opacity: .8; margin-bottom: 6px;}
+  .topic-banner .en{font-size: 18px; font-weight: 500; opacity: .72; font-style: italic;}
+
+  /* ── Section ── */
+  .sec{margin-bottom: 30px;}
+  .sec-head{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  .sec-head .ico{font-size: 24px; line-height: 1;}
+
+  /* ── Expression Cards ── */
+  .expr-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .expr-card .main{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .expr-card .main .en-expr{
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    background: var(--primary-l); padding: 3px 12px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .expr-card .main .cn-meaning{font-size: 15px; color: var(--muted);}
+  .expr-card .scene{font-size: 14px; color: var(--warm); margin-bottom: 12px;}
+  .expr-card .scene::before{content: "场景 "; font-weight: 600; font-size: 12px; background: var(--warm-l); padding: 2px 8px; border-radius: 4px; margin-right: 6px;}
+  .quotes{margin-top: 10px;}
+  .quotes .qt-label{font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+  .quote-item{
+    font-size: 14px; color: var(--ink); padding: 6px 0 6px 14px;
+    border-left: 3px solid var(--primary-l); margin-bottom: 4px; line-height: 1.6;
+  }
+  .quote-item .src{font-size: 12px; color: var(--muted); margin-top: 2px; font-style: italic;}
+
+  /* ── Dialogue ── */
+  .dialogue-box{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .dialogue-box .setting{
+    font-size: 13px; color: var(--muted); font-style: italic;
+    padding: 8px 14px; background: var(--bg); border-radius: 8px;
+    margin-bottom: 18px; text-align: center;
+  }
+  .dialogue-box .setting span{font-weight: 600; color: var(--warm);}
+  .msg{margin-bottom: 14px;}
+  .msg .speaker{font-weight: 700; font-size: 14px; margin-bottom: 2px;}
+  .msg .speaker.a{color: var(--primary);}
+  .msg .speaker.b{color: var(--warm);}
+  .msg .speaker.c{color: var(--accent);}
+  .msg .en{font-size: 15px; color: var(--ink); margin: 2px 0;}
+  .msg .cn{font-size: 13px; color: var(--muted);}
+
+  /* ── Practice ── */
+  .practice-card{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .practice-card .q-num{
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 700; width: 28px; height: 28px; line-height: 28px;
+    text-align: center; border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+  }
+  .practice-card .q-text{font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px;}
+  .practice-card .sample-label{
+    font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 8px;
+  }
+  .sample-answer{
+    font-size: 14px; padding: 8px 12px; margin-bottom: 4px;
+    background: var(--primary-l); border-radius: 6px; color: var(--ink);
+    border-left: 3px solid var(--primary);
+  }
+
+  /* ── Corrections ── */
+  .corr-item{
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    padding: 18px 20px; margin-bottom: 10px;
+  }
+  .corr-item .wrong{font-size: 15px; color: #8b5a47; margin-bottom: 4px; text-decoration: line-through; text-decoration-color: rgba(139,90,71,.3);}
+  .corr-item .right{font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px;}
+  .corr-item .why{font-size: 13px; color: var(--muted);}
+
+  /* ── Mobile ── */
+  @media(max-width: 640px){
+    .wrap{padding: 14px 12px 48px;}
+    .topic-banner{padding: 28px 20px;}
+    .topic-banner h2{font-size: 26px;}
+    .topic-banner .en{font-size: 15px;}
+    .expr-card .main .en-expr{font-size: 17px;}
+    .sec-head{font-size: 19px;}
+    .dialogue-box{padding: 16px;}
+    .practice-card .q-text{font-size: 15px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ═══════════ 今日主题 ═══════════ -->
+  <div class="topic-banner">
+    <div class="day">Day 29 · 8/23 Sun</div>
+    <h2>Going to a Party</h2>
+    <div class="zh">参加派对 · 从进门寒暄到自然离场</div>
+    <div class="en">"I was at a party once. I stood by the dip for two hours. The dip and I are now best friends."</div>
+  </div>
+
+  <!-- ═══════════ 核心表达 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">💬</span> 核心表达
+    </div>
+
+    <!-- 表达 1 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">Thanks for having me.</span>
+        <span class="cn-meaning">感谢邀请我来。</span>
+      </div>
+      <div class="scene">派对万能句——进门和离开时都能用。进门时说 Thanks for having me over（谢你请我来），离开时说 Thanks for having me, I had a great time（谢你招待，我玩得很开心）。比单纯说 thank you 更自然，暗示"你邀请了我"这层关系。也可以说 Thanks for inviting me.</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"Thanks for having me — I almost didn't come because I hate parties, but your apartment smells amazing, so I'm glad I did."<div class="src">— Chandler Bing, Friends S04E12 / 进门时的经典社交寒暄</div></div>
+        <div class="quote-item">"Thanks for having me over, Jan. The party is... certainly a party. Is that a cheese fountain? That's either genius or a health code violation."<div class="src">— Michael Scott, The Office S03E13 / 公司派对上的尴尬寒暄</div></div>
+        <div class="quote-item">"Thanks for having me! I brought a bottle of wine and a thousand questions about your new kitchen backsplash, because I have no life."<div class="src">— Phil Dunphy, Modern Family S05E06 / 邻居派对进门自带酒+找话题</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 2 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I brought some wine. / I brought chips and guac.</span>
+        <span class="cn-meaning">我带了点酒。/ 我带了薯片和牛油果酱。</span>
+      </div>
+      <div class="scene">参加美国家庭派对（dinner party / house party）的礼节：带点东西（hostess gift）是基本操作。最常见的是带一瓶酒（bring a bottle of wine）或一份小吃（chips and guac、a cheese plate、cookies）。进门递给主人时说 I brought some... 即可。说 Here, I brought this 也行。注意不要说 I bought a gift for you——太正式了。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I brought some wine. It's a Merlot. I don't know what Merlot means, but the label had a picture of a horse on it and I felt classy."<div class="src">— Joey Tribbiani, Friends S08E09 / 带酒进门并自嘲不懂酒</div></div>
+        <div class="quote-item">"I brought chips and guac. I was going to make it from scratch, but then I remembered I can't cook, so I bought it and I'm going to lie about that if anyone asks."<div class="src">— Pam Beesly, The Office S06E11 / 带食物参加公司聚餐</div></div>
+        <div class="quote-item">"I brought some wine! It's the same bottle you brought to my place last Christmas. I re-gifted it. We're friends now — this is what friends do, Claire."<div class="src">— Cameron Tucker, Modern Family S03E09 / 坦白"回流礼"</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 3 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">How do you guys know each other?</span>
+        <span class="cn-meaning">你们俩怎么认识的？</span>
+      </div>
+      <div class="scene">派对上认识新人时的破冰金句。发现两个人似乎有交集，问 How do you guys know each other?（你们怎么认识的？）是最好用的社交润滑剂——让两个人聊起来你也能顺势加入。也可以说 So how did you two meet? / Are you guys from work? / Do you go way back?（你们认识很久了吧？）</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"So how do you guys know each other? Wait — don't tell me. You met at a yoga retreat, fell in love, and now you run a goat farm together. I'm right, aren't I?"<div class="src">— Barney Stinson, How I Met Your Mother S04E17 / 派对上八卦式破冰</div></div>
+        <div class="quote-item">"How do you guys know each other? Because the way he's looking at you right now tells me this story has at least three acts and a dramatic finale."<div class="src">— Schmidt-adjacent vibe, New Girl S02E14 / 在派对上追问两人的故事</div></div>
+        <div class="quote-item">"How do you guys know each other? And please skip the part where you both say 'it's a long story,' because every story is a long story if you tell it slowly."<div class="src">— Claire Dunphy, Modern Family S06E18 / 家宴上追问来龙去脉</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 4 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">This is a great spread.</span>
+        <span class="cn-meaning">这吃的太丰盛了。</span>
+      </div>
+      <div class="scene">夸主人准备的食物时最地道的说法。spread 在这里指"一大桌食物的摆设"（a food spread），不是"涂抹"。看到桌上摆满菜，说 This is a great spread. / You really outdid yourself.（你真的太用心了。）也可以具体夸 The dip is amazing. / These are so good, what's in them? 夸食物是让主人开心、让对话继续的最佳话题。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"This is a great spread, Monica. You've got like eight different dips. Who has eight dips? A person with a problem, that's who — and I mean that as the highest compliment."<div class="src">— Joey Tribbiani, Friends S06E15 / 聚餐夸食物并狂吃</div></div>
+        <div class="quote-item">"This is a great spread. I don't know what half of this is, but I'm going to eat all of it and then lie to my doctor on Monday."<div class="src">— Kevin Malone, The Office S07E09 / 面对丰盛食物的食欲宣言</div></div>
+        <div class="quote-item">"This is a great spread, Cam. Although I notice the serving spoons are mismatched, so I'll be having a separate conversation about that later."<div class="src">— Mitchell Pritchett, Modern Family S04E11 / 先夸后微挑细节</div></div>
+      </div>
+    </div>
+
+    <!-- 表达 5 -->
+    <div class="expr-card">
+      <div class="main">
+        <span class="en-expr">I should probably get going.</span>
+        <span class="cn-meaning">我差不多该走了。</span>
+      </div>
+      <div class="scene">派对离场的标准开场白。加 probably 软化语气，不显得突兀。然后可以说 I have an early morning tomorrow. / It's getting late. / I don't want to overstay my welcome.（不想待太久讨人嫌。）离开前别忘了对主人说 Thanks for having me, I had a great time. 然后自然走向门口。Don't just ghost（别偷偷溜走）。</div>
+      <div class="quotes">
+        <div class="qt-label">影视原句</div>
+        <div class="quote-item">"I should probably get going. I've been here since six and I've eaten enough to last me until Thursday. It's not you, it's the cheese plate."<div class="src">— Chandler Bing, Friends S07E14 / 吃撑后的经典退场</div></div>
+        <div class="quote-item">"I should probably get going. I have an early morning. I don't actually have anything to do tomorrow — I just don't know how to leave parties and this is my safe word."<div class="src">— Ted Mosby, How I Met Your Mother S05E08 / 坦白不会离场</div></div>
+        <div class="quote-item">"I should probably get going. I told my daughter I'd be home by ten, and she's fourteen, which means if I'm late she'll text me something passive-aggressive with a period at the end."<div class="src">— Jay Pritchett, Modern Family S08E03 / 以女儿为由离场</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 情景对话 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎭</span> 情景对话
+    </div>
+    <div class="dialogue-box">
+      <div class="setting">
+        场景：<span>Alex 周日晚上去同事 Jamie 的乔迁派对（housewarming party）。他带了瓶酒，在派对上认识了 Jamie 的朋友 Sam，最后自然离场。</span>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Hey Jamie! Thanks for having me over. Congrats on the new place — it looks great!</div>
+        <div class="cn">嘿 Jamie！谢你请我来。恭喜搬新家——看起来太棒了！</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">Alex! Thanks for coming. And you brought wine — you didn't have to do that, but I'm not giving it back.</div>
+        <div class="cn">Alex！谢你能来。你还带了酒——不用这么客气的，但我也不打算还了。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Ha, it's the least I could do. Wow, this is a great spread. You made all this yourself?</div>
+        <div class="cn">哈哈，这点心意算什么。哇，这吃的太丰盛了。都是你自己做的？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">Most of it. The dip is store-bought, though — don't tell anyone. Oh, Alex, this is my friend Sam. Sam, Alex and I work together.</div>
+        <div class="cn">大部分是。不过那个蘸酱是买的——别告诉别人。对了 Alex，这是我朋友 Sam。Sam，Alex 跟我一个公司的。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Hey Sam, nice to meet you! So how do you guys know each other?</div>
+        <div class="cn">嘿 Sam，很高兴认识你！你们俩怎么认识的？</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker c">Sam</div>
+        <div class="en">Oh, we go way back — college roommates, actually. Jamie used to leave dishes in the sink for a week, so I know him at his worst.</div>
+        <div class="cn">哦，我们认识很久了——大学室友。Jamie 以前碗能在水槽泡一周，所以我见过他最邋遢的样子。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">That's amazing. Well, it's getting late — I should probably get going. I have an early morning tomorrow.</div>
+        <div class="cn">哈哈哈。嗯，不早了——我差不多该走了。明天一早还有事。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker b">Jamie</div>
+        <div class="en">No worries, thanks for coming! And thanks again for the wine — I'll think of you when I drink it.</div>
+        <div class="cn">没问题，谢你来！再谢一次酒——我喝的时候会想到你的。</div>
+      </div>
+
+      <div class="msg">
+        <div class="speaker a">Alex</div>
+        <div class="en">Thanks for having me, Jamie. I had a great time. Enjoy the rest of the party, Sam — it was nice meeting you!</div>
+        <div class="cn">谢你招待，Jamie。我玩得很开心。继续享受派对吧 Sam——很高兴认识你！</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 口语练习 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">🎤</span> 口语练习
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">1</span>你到朋友家参加派对，进门时用英语打招呼、表示感谢，并递上你带的东西。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">Hey! Thanks for having me over. I brought some wine — hope that's okay. Your place looks amazing!</div>
+      <div class="sample-answer">Thanks for inviting me! I brought chips and guac. Congrats on the new apartment, it's really nice.</div>
+      <div class="sample-answer">Hey, thanks for having me! Here, I brought a bottle of red. I don't know much about wine, but the label looked fancy so I went with it.</div>
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">2</span>朋友把你介绍给一个你不认识的人。用英语和对方打招呼、互相认识，并自然地问出他们跟主人的关系。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">Hey, nice to meet you! I'm Alex. So how do you know Jamie — are you guys from work?</div>
+      <div class="sample-answer">Hi, I'm Alex, Jamie's coworker. How about you — do you guys go way back?</div>
+      <div class="sample-answer">Nice to meet you! Jamie's told me a lot about this place. So how did you two meet?</div>
+    </div>
+
+    <div class="practice-card">
+      <div class="q-text"><span class="q-num">3</span>派对快结束了，你想自然地告辞。用英语对主人表示感谢、说明要走了，并跟刚认识的人道别。</div>
+      <div class="sample-label">示例回答</div>
+      <div class="sample-answer">I should probably get going — it's getting late. Thanks for having me, I had a great time. Nice meeting you, Sam — see you around!</div>
+      <div class="sample-answer">I'm gonna head out. I have an early morning tomorrow. Thanks for everything, Jamie. And Sam, it was great meeting you — take care!</div>
+      <div class="sample-answer">Alright, I should get going before I eat all your food. Thanks for having me over, I had a blast. Sam, really nice meeting you — hopefully see you at the next one!</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 纠正提醒 ═══════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="ico">✅</span> 纠正提醒
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">Thank you for your invitation.</div>
+      <div class="right">Thanks for having me. / Thanks for inviting me.</div>
+      <div class="why">Thank you for your invitation 是请柬式的正式用语，在口语中显得像在念婚礼回执。派对进门说 Thanks for having me 就够了，轻松自然。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">I bought a gift for you.</div>
+      <div class="right">I brought some wine. / Here, I brought this.</div>
+      <div class="why">bought a gift 听起来像过生日送礼物，太正式了。参加派对带东西说 I brought... 即可，强调"我带了什么来"而不是"我买了什么给你"。brought 聚焦在分享，bought 聚焦在价值。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">How did you know each other?</div>
+      <div class="right">How do you guys know each other?</div>
+      <div class="why">How did you know each other 用过去时，听起来像在问"你们以前认识吗"（暗示现在不认识了）。问他们认识的过程要用现在时 How do you guys know each other——关系是持续的。加 guys 更口语化。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">The food is very rich.</div>
+      <div class="right">This is a great spread. / You really outdid yourself.</div>
+      <div class="why">The food is very rich 在英语里是"食物很油腻/厚重"的意思（rich 形容食物 = 高脂高热量），不是丰盛。夸一桌菜好，说 This is a great spread（这摆了一桌好菜）或 You really outdid yourself（你太用心了）。</div>
+    </div>
+
+    <div class="corr-item">
+      <div class="wrong">I want to go home now.</div>
+      <div class="right">I should probably get going. / I'm gonna head out.</div>
+      <div class="why">I want to go home now 听起来像小朋友闹脾气要回家，太生硬了。派对离场要留台阶：I should probably get going（我差不多该走了）加个 probably 软化语气，或 I'm gonna head out 更随意。配一个理由（early morning / getting late）就更自然。</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
