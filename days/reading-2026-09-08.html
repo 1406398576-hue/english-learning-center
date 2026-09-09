@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Reading · 2026-09-08 · Anthony Bourdain: From Line Cook to the World's Table</title>
+<style>
+  :root{
+    --bg:#FBF9F4;
+    --card:#FFFFFF;
+    --card-soft:#F4EFE6;
+    --ink:#3A3733;
+    --muted:#7A746A;
+    --line:#E6DFD2;
+    --fog:#8FAEB8;      /* 雾蓝 */
+    --fog-deep:#6E94A0;
+    --sage:#7FA99B;     /* 青绿 */
+    --brown:#B08D6A;    /* 暖棕 */
+    --brown-soft:#C9A987;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px;}
+  header.top{
+    border-bottom:2px solid var(--line);
+    padding-bottom:20px;margin-bottom:28px;
+  }
+  .kicker{
+    display:inline-block;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sage);font-weight:700;margin-bottom:10px;
+  }
+  h1{
+    font-size:27px;line-height:1.3;margin:0 0 10px;
+    color:var(--ink);font-weight:800;
+  }
+  .meta{font-size:13px;color:var(--muted);}
+  .meta b{color:var(--brown);font-weight:700;}
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 22px;
+    margin:22px 0;
+    box-shadow:0 1px 2px rgba(80,70,50,.04);
+  }
+  .sec-title{
+    display:flex;align-items:center;gap:10px;
+    font-size:19px;font-weight:800;color:var(--ink);
+    margin:0 0 16px;
+  }
+  .sec-title .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--fog);flex:0 0 auto;
+  }
+  .sec-title.culture .dot{background:var(--brown);}
+  .sec-title.syntax .dot{background:var(--sage);}
+  .sec-title.summary .dot{background:var(--brown-soft);}
+  .sec-title.speak .dot{background:var(--fog-deep);}
+  .lead{color:var(--muted);font-size:14px;margin:-6px 0 16px;}
+
+  /* Article */
+  .article{
+    font-family:Georgia,"Times New Roman","Songti SC",serif;
+    font-size:17px;line-height:1.95;color:#34312C;
+  }
+  .article p{margin:0 0 18px;}
+  .drop{
+    float:left;font-family:Georgia,serif;font-size:52px;line-height:.86;
+    font-weight:700;color:var(--brown);margin:6px 10px 0 0;
+  }
+  .art-note{
+    background:var(--card-soft);border-left:3px solid var(--sage);
+    padding:10px 14px;border-radius:0 10px 10px 0;
+    font-size:13px;color:var(--muted);font-family:inherit;margin-bottom:14px;
+  }
+
+  /* Expression cards */
+  .expr{
+    border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin:12px 0;background:var(--card-soft);
+  }
+  .expr .term{
+    font-weight:800;color:var(--fog-deep);font-size:16px;
+    display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;
+  }
+  .expr .term .zh{color:var(--brown);font-size:14px;font-weight:700;}
+  .expr .mean{font-size:14px;color:var(--muted);margin:6px 0 8px;}
+  .expr .scene{font-size:13px;color:var(--ink);margin-bottom:8px;}
+  .expr .scene b{color:var(--sage);}
+  .expr .ex{
+    font-family:Georgia,serif;font-size:15px;color:#34312C;
+    background:#fff;border:1px dashed var(--line);border-radius:8px;
+    padding:10px 12px;margin-top:6px;
+  }
+  .expr .src{font-size:12px;color:var(--muted);margin-top:6px;text-align:right;font-style:italic;}
+  .expr .src b{color:var(--brown);font-style:normal;}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:560px){.twocol{grid-template-columns:1fr;}}
+
+  /* Sentence breakdown */
+  .sent{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;background:#fff;}
+  .sent .en{
+    font-family:Georgia,serif;font-size:15.5px;color:#34312C;
+    background:var(--card-soft);border-radius:8px;padding:12px 14px;margin-bottom:12px;
+    border-left:3px solid var(--sage);
+  }
+  .sent h4{margin:0 0 6px;font-size:14px;color:var(--fog-deep);letter-spacing:.04em;}
+  .sent .row{margin:8px 0;font-size:14px;}
+  .sent .row b{color:var(--brown);}
+  .sent .tag{
+    display:inline-block;font-size:11px;color:#fff;background:var(--sage);
+    border-radius:20px;padding:2px 10px;margin-right:6px;font-weight:700;letter-spacing:.04em;
+  }
+
+  /* Summary */
+  .sum-block{margin:14px 0;}
+  .sum-block h4{
+    font-size:15px;margin:0 0 8px;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .sum-block h4 .ic{
+    width:22px;height:22px;border-radius:6px;background:var(--card-soft);
+    color:var(--brown);display:inline-flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:800;flex:0 0 auto;
+  }
+  .sum-block p{margin:0;font-size:14.5px;color:#4A463F;}
+  .sum-block .q{color:var(--fog-deep);font-weight:700;}
+
+  /* Speaking */
+  .prompt{
+    background:var(--card-soft);border:1px solid var(--line);border-radius:12px;
+    padding:16px;font-size:15px;color:#34312C;
+  }
+  .prompt .ask{font-weight:800;color:var(--fog-deep);}
+  .model{
+    font-family:Georgia,serif;font-size:15px;line-height:1.9;color:#34312C;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:16px;margin-top:14px;
+  }
+  .model .lbl{
+    font-family:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--sage);font-weight:800;display:block;margin-bottom:8px;
+  }
+  .tip{font-size:13px;color:var(--muted);margin-top:12px;background:var(--card-soft);
+       border-radius:10px;padding:10px 14px;border-left:3px solid var(--fog);}
+  .tip b{color:var(--brown);}
+
+  footer{
+    text-align:center;color:var(--muted);font-size:12px;margin-top:30px;
+    border-top:1px solid var(--line);padding-top:18px;
+  }
+  .pill{display:inline-block;background:var(--card-soft);border:1px solid var(--line);
+        color:var(--muted);font-size:11px;border-radius:20px;padding:3px 10px;margin:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="kicker">Daily English Reading · 人物故事 / People Story</span>
+    <h1>Anthony Bourdain: From Line Cook to the World's Table</h1>
+    <div class="meta">📅 <b>2026-09-08</b> &nbsp;·&nbsp; 主题桶：人物故事（循环 index 6 / 20）&nbsp;·&nbsp; 词数约 1,050 词 &nbsp;·&nbsp; ⏱ 时长：<b>15 min</b> &nbsp;·&nbsp; 难度：真实媒体风（CET-6 / IELTS 6.5 友好）</div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>English Article</div>
+    <div class="art-note">本篇为原创人物特写（非教材体），叙事与用词贴近英文人物报道真实文风。文中所有【Key Expressions】与【Celebrity / Culture Vocabulary】的例句均取自真实媒体报道与 Bourdain 本人著作（来源标注于每句下方：The New York Times / The Irish Times / The Seattle Times / Detroit Free Press / Food &amp; Wine 等），未作虚构改写。建议先通读，再回看表达与句法解析。</div>
+    <div class="article">
+      <p><span class="drop">A</span>nthony Bourdain was, for two decades, the most unlikely kind of television star: a foul-mouthed line cook with a heroin past who taught millions of viewers that the point of travel was not the landmark but the meal shared with a stranger. When he died in 2018 at the age of 61, the obituaries did not describe a chef so much as a cultural translator — someone who used food as a quiet argument against fear of the unfamiliar.</p>
+
+      <p>He did not begin with ambition for the spotlight. Bourdain spent more than twenty years in professional kitchens, starting as a teenager shucking oysters in a Cape Cod seafood shack and later running the line at high-end Manhattan restaurants. The work was brutal and unglamorous, and he was candid about its dark corners: the addictions, the tempers, the low wages that took a toll on the people who cooked while diners laughed overhead. What set him apart was a refusal to romanticize the kitchen even as he loved it.</p>
+
+      <p>The turning point arrived almost by accident. In 1999 he sent an unsolicited essay to The New Yorker about the unglamorous reality of restaurant work. The magazine ran it. That essay grew into "Kitchen Confidential: Adventures in the Culinary Underbelly" (2000), a profane, funny, ruthlessly honest memoir that became a surprise bestseller and touched off his second career as a writer, television host, and eventually a kind of informal diplomat. He had, in the words of one obituary, a "darkly funny" voice that translated effortlessly to the screen.</p>
+
+      <p>The literary establishment had not seen him coming. Reviewers described a man with "a checkered past, a peripatetic career and no writing experience" — yet the book's plainspoken fury was exactly what readers wanted. Bourdain wrote the way he talked: fast, opinionated, allergic to pretension. Where earlier food writing wrapped kitchens "in a shimmering gauze of glamour," he got busy unwrapping them.</p>
+
+      <p>On camera, Bourdain was never the polished host promising the "top ten burgers." He traveled to Hanoi and ate noodles with President Obama; he sought out the cook, not the celebrity. His shows — "A Cook's Tour," "No Reservations," and later CNN's "Parts Unknown" — treated food as a doorway into politics, immigration, poverty, and grief. In the wake of the #MeToo movement, he became one of the few prominent male voices to stand, as he put it, "unhesitatingly and unwaveringly with the women." He used his platform to argue that the restaurant industry, in most American cities, would collapse without immigrant labor — a point he made not as policy but as kitchen fact.</p>
+
+      <p>That meal in Hanoi — two men in collared shirts at a plastic table, bowls of bun cha between them — became known as the "noodle summit," a small masterclass in soft power. Bourdain understood instinctively what diplomats often miss: that a shared table dissolves more suspicion than a signed communiqué. He had, by the end, come into his own as a public persona very different from the "macho, unrepentant, drug-loving chef" of his early fame. The man who once gloried in excess evolved into, in the phrase of one obituary, "a clear-eyed crusader for global food justice."</p>
+
+      <p>What made him a household name was not expertise but curiosity. He identified with the grunts: the dishwashers and prep cooks whose labor the dining public never sees. He made folk heroes out of them. A close reader of George Orwell, he modeled his first book on "Down and Out in Paris and London," and he carried that democratic instinct everywhere. In Congo, in Lebanon, in a Vietnamese street stall, he looked for the same thing: evidence that strangers are legible if you sit long enough and eat.</p>
+
+      <p>His worldview had a hard edge, too. Bourdain understood that things can turn on a dime — that "tremendously awful, evil things happen to nice people all the time." He did not soften the world for his audience. But he paired that realism with an almost sentimental faith in small kindnesses, in the random generosity he kept encountering "in the most outrageous and unexpected circumstances." He was, finally, grateful.</p>
+
+      <p>The story does not end well. Bourdain died by suicide while filming in France, a fact that shocked fans who associated him with adventure and appetite. Friends said he had seemed, in the days before, "in a dark mood." The loss forced the food world to confront a quiet crisis: the mental-health toll of an industry built on relentless motion, 250 days a year away from home.</p>
+
+      <p>And yet the mark he left is durable. He changed the culture of the kitchen as much as any chef of his generation, elevating the cook from servant to storyteller. He taught a generation that "travel isn't always pretty" but that the journey changes you, and that the best meal is rarely the most expensive one. He argued, in his own blunt way, that luck is not a business model and that the body "is not a temple, it's an amusement park." Anthony Bourdain's real subject was never food. It was the stranger across the table — and the stubborn, hopeful idea that if you eat with them, you might finally understand them.</p>
+    </div>
+  </section>
+
+  <!-- ============ KEY EXPRESSIONS ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>Key Expressions · 10 个真实英语表达</div>
+    <div class="lead">以下表达均取自真实英文语料；例句标注来源（媒体名 / 标题），未作虚构改写。</div>
+
+    <div class="expr">
+      <div class="term">rise to prominence <span class="zh">成名；崭露头角</span></div>
+      <div class="mean">描述某人 / 某事物进入公众视野、获得广泛认可，比 become famous 更书面。</div>
+      <div class="scene"><b>场景：</b>人物特写、行业回顾、介绍"如何走到台前"。</div>
+      <div class="ex">"The American chef, author, and television personality first rose to prominence following the publication of his book Kitchen Confidential: Adventures in the Culinary Underbelly in 2000."</div>
+      <div class="src">— <b>The Irish Times</b>, "Anthony Bourdain: US celebrity chef found dead at 61"</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">far-flung <span class="zh">遥远的；分布广泛的</span></div>
+      <div class="mean">形容地点、旅行或业务网络分散在很远、很广的地方。</div>
+      <div class="scene"><b>场景：</b>描写全球旅行、跨国业务、广阔版图。</div>
+      <div class="ex">"The former chef turned writer and TV host … took viewers on far-flung culinary adventures with biting wit and a worldly outlook."</div>
+      <div class="src">— <b>The Irish Times</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">biting wit <span class="zh">犀利 / 尖刻的幽默</span></div>
+      <div class="mean">机锋锐利、带点讽刺的幽默感；biting 本义"咬人的"，此处指话语锋利。</div>
+      <div class="scene"><b>场景：</b>评价主持人、作家、脱口秀演员的说话风格。</div>
+      <div class="ex">"… took viewers on far-flung culinary adventures with biting wit and a worldly outlook."</div>
+      <div class="src">— <b>The Irish Times</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">take a toll on <span class="zh">对……造成损害 / 损耗</span></div>
+      <div class="mean">长期压力、辛苦或负面因素对人或系统缓慢而持续的侵蚀。</div>
+      <div class="scene"><b>场景：</b>讨论过劳、成瘾、高压行业对身心的消耗。</div>
+      <div class="ex">"… revealing the injuries and addictions, low wages and high tempers that took a toll on workers."</div>
+      <div class="src">— <b>The Seattle Times</b>, "Appraising Anthony Bourdain, so often a teller of unappetizing truths"</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">a second career / second act <span class="zh">事业第二春；人生下半场重启</span></div>
+      <div class="mean">中年或转行后开启的全新且成功的阶段，比 change jobs 更具叙事感。</div>
+      <div class="scene"><b>场景：</b>人物逆袭、退休后创业、跨界成功。</div>
+      <div class="ex">"… made him a celebrity chef and touched off his second career as a journalist, food expert and social activist …"</div>
+      <div class="src">— <b>The New York Times</b>, obituary "Anthony Bourdain, Renegade Chef Who Showed the World How to 'Eat Without Fear,' Is Dead at 61"</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">in the wake of <span class="zh">在……之后；随着……而来</span></div>
+      <div class="mean">某事发生后紧接出现的局面或反应，常接重大 / 负面事件。</div>
+      <div class="scene"><b>场景：</b>危机、丑闻、运动之后公众人物的表态或行业变化。</div>
+      <div class="ex">"Recently, Bourdain had emerged as a leading male voice in support of the #MeToo movement, in the wake of rape and abuse allegations against film producer Harvey Weinstein."</div>
+      <div class="src">— <b>The New York Times</b> (obituary)</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">turn on a dime <span class="zh">瞬间逆转；说变就变</span></div>
+      <div class="mean">源自车辆原地掉头，比喻局势、情绪或命运急剧且不可预测地转变。</div>
+      <div class="scene"><b>场景：</b>描述命运无常、行情骤变、关系急转。</div>
+      <div class="ex">"I have seen firsthand that things can turn on a dime."</div>
+      <div class="src">— <b>Food &amp; Wine</b>, "The World According to Anthony Bourdain" (2016 interview)</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">a checkered past <span class="zh">复杂 / 有污点的过去</span></div>
+      <div class="mean">履历起伏、夹杂争议或不太光彩的经历（checkered 原指"棋盘格"，引申为"好坏交杂"）。</div>
+      <div class="scene"><b>场景：</b>人物简介里如实交代其争议历史。</div>
+      <div class="ex">"… called him 'a chef with a checkered past, a peripatetic career and no writing experience' …"</div>
+      <div class="src">— <b>The New York Times</b> (1997 profile, quoted in The Irish Times)</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">make folk heroes out of <span class="zh">把……塑造成民间英雄</span></div>
+      <div class="mean">让原本普通、被忽视的人成为被推崇的人物。</div>
+      <div class="scene"><b>场景：</b>媒体 / 作品如何抬高普通人的地位。</div>
+      <div class="ex">"Mr. Bourdain made folk heroes out of the dishwasher and the line cook, a job description previously known only to restaurant employees."</div>
+      <div class="src">— <b>The Seattle Times</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">identify with <span class="zh">认同；与……产生共鸣</span></div>
+      <div class="mean">在情感或经历上对某人 / 某群体感同身受。</div>
+      <div class="scene"><b>场景：</b>表达"我和他/他们是一类人"的共情。</div>
+      <div class="ex">"He identified with the grunts, portraying himself as a slinger of cheap steaks and French fries."</div>
+      <div class="src">— <b>The Seattle Times</b></div>
+    </div>
+  </section>
+
+  <!-- ============ CELEBRITY / CULTURE VOCABULARY ============ -->
+  <section>
+    <div class="sec-title culture"><span class="dot"></span>Celebrity / Culture Vocabulary · 人物与文化词块</div>
+    <div class="lead">本期人物为电视 / 饮食文化领域的公众人物，下列词块均来自真实媒体报道（标注出处）。</div>
+
+    <div class="twocol">
+      <div class="expr">
+        <div class="term">household name <span class="zh">家喻户晓的人物</span></div>
+        <div class="mean">几乎人人知晓的名人或品牌，比 famous 更强调"渗入日常生活"。</div>
+        <div class="scene"><b>场景：</b>形容某人的国民度、国民品牌。</div>
+        <div class="ex">"He became a household name with his next series, Travel Channel's No Reservations …"</div>
+        <div class="src">— <b>Detroit Free Press</b>, "Anthony Bourdain, host of CNN's 'Parts Unknown' … dies at 61"</div>
+      </div>
+
+      <div class="expr">
+        <div class="term">public persona <span class="zh">公众形象（对外展示的人格）</span></div>
+        <div class="mean">一个人在公众面前呈现的、可能与私下不同的"人设"。</div>
+        <div class="scene"><b>场景：</b>讨论明星 / 公众人物台前幕后的反差与成长。</div>
+        <div class="ex">"His early public persona — the macho, unrepentant, drug-loving chef — evolved into that of a clear-eyed crusader for global food justice."</div>
+        <div class="src">— <b>The New York Times</b> (obituary)</div>
+      </div>
+
+      <div class="expr">
+        <div class="term">change the culture (of something) <span class="zh">改变……的行业 / 群体文化</span></div>
+        <div class="mean">不只是改变单个行为，而是重塑一整群人的价值观与工作方式。</div>
+        <div class="scene"><b>场景：</b>评价某人对一个行业、一代人的深层影响。</div>
+        <div class="ex">"He changed the culture of the kitchen as much as Marco Pierre White … He greatly affected my generation of chefs for the better."</div>
+        <div class="src">— <b>The Irish Times</b> (chef JP McMahon, on Bourdain's legacy)</div>
+      </div>
+
+      <div class="expr">
+        <div class="term">in the public eye <span class="zh">处于公众视野中；作为公众人物</span></div>
+        <div class="mean">持续被媒体与公众关注的状态。</div>
+        <div class="scene"><b>场景：</b>描述名人承受的曝光、期待与责任。</div>
+        <div class="ex">"Before his death Friday at age 61, he was the witty, connected guide who, in memoirs, cookbooks and television shows, would tell you things that others wouldn't."</div>
+        <div class="src">— <b>The Seattle Times</b></div>
+      </div>
+
+      <div class="expr">
+        <div class="term">cultural bridge / soft power <span class="zh">文化桥梁 / 软实力</span></div>
+        <div class="mean">用非强制方式（食物、艺术、交流）拉近不同群体、消解偏见。</div>
+        <div class="scene"><b>场景：</b>评论民间外交、跨文化理解。</div>
+        <div class="ex">"… Bourdain and President Obama supped together at a hole-in-the-wall restaurant in the Vietnamese capital of Hanoi, a meal that became known as the 'noodle summit.'"</div>
+        <div class="src">— <b>Detroit Free Press</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SENTENCE BREAKDOWN ============ -->
+  <section>
+    <div class="sec-title syntax"><span class="dot"></span>Sentence Breakdown · 5 个高级句子</div>
+    <div class="lead">选自今日文章，分析句型、逻辑与表达方式，帮助建立英文思维。</div>
+
+    <div class="sent">
+      <div class="en">Anthony Bourdain was, for two decades, the most unlikely kind of television star: a foul-mouthed line cook with a heroin past who taught millions of viewers that the point of travel was not the landmark but the meal shared with a stranger.</div>
+      <h4><span class="tag">句型</span>主句 + 同位语(appositive) + who 定语从句（内含 that 宾语从句，not A but B 结构）</h4>
+      <div class="row"><b>逻辑：</b>用 "the most unlikely kind of television star" 制造反差，冒号后用身份定义颠覆读者预期——明星不是光鲜人设，而是后厨粗人。</div>
+      <div class="row"><b>表达：</b>foul-mouthed（满嘴脏话的）、line cook（流水线厨师）、the point of travel was not the landmark but the meal——把抽象观点压进一个名词短语，凝练有力。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">That essay grew into "Kitchen Confidential…", a profane, funny, ruthlessly honest memoir that became a surprise bestseller and touched off his second career as a writer, television host, and eventually a kind of informal diplomat.</div>
+      <h4><span class="tag">句型</span>主句 + 同位语 memoir + that 定语从句（became … and touched off …）</h4>
+      <div class="row"><b>逻辑：</b>"grew into" 表现由小到大的演变；"touched off"（引发 / 触发）引出连锁反应：一本书 → 电视 → 民间外交角色。</div>
+      <div class="row"><b>表达：</b>touched off 比 caused 更具"点燃"的画面感；informal diplomat 是比喻用法，指他用食物做民间外交。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">His shows — "A Cook's Tour," "No Reservations," and later CNN's "Parts Unknown" — treated food as a doorway into politics, immigration, poverty, and grief.</div>
+      <h4><span class="tag">句型</span>主语(shows) + 破折号插入列举 + 谓语 treated … as …（把……当作……）</h4>
+      <div class="row"><b>逻辑：</b>破折号插入作品名做同位补充；treated food as a doorway into X 把"食物"隐喻为进入沉重议题的入口。</div>
+      <div class="row"><b>表达：</b>treat A as B 是高频搭配；a doorway into（进入……的门径）比 approach 更具画面感，把抽象议题具象化。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">Bourdain understood instinctively what diplomats often miss: that a shared table dissolves more suspicion than a signed communiqué.</div>
+      <h4><span class="tag">句型</span>主句 + what 宾语从句 + 冒号后 that 同位从句（more A than B 比较）</h4>
+      <div class="row"><b>逻辑：</b>用 "what diplomats often miss" 抬高主角的洞察力，冒号后给出金句式结论，形成"常人忽视 → 他看穿"的张力。</div>
+      <div class="row"><b>表达：</b>instinctively（本能地）、dissolves suspicion（消解猜疑）、signed communiqué（签署的官方公报）——浓缩了"软实力"论述。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">Bourdain understood that things can turn on a dime — that "tremendously awful, evil things happen to nice people all the time."</div>
+      <h4><span class="tag">句型</span>understood that 宾语从句 + 破折号后 that 从句（直接引语式补充）</h4>
+      <div class="row"><b>逻辑：</b>先给抽象判断（turn on a dime），再用引语式短句落地，节奏顿挫，避免说教。</div>
+      <div class="row"><b>表达：</b>turn on a dime 此处作动词短语，比 change suddenly 更地道、更有力度，是 native 级习语。</div>
+    </div>
+  </section>
+
+  <!-- ============ CHINESE SUMMARY ============ -->
+  <section>
+    <div class="sec-title summary"><span class="dot"></span>Chinese Summary · 中文总结</div>
+
+    <div class="sum-block">
+      <h4><span class="ic">1</span>核心内容</h4>
+      <p>文章回顾 Anthony Bourdain 从后厨杂工、毒瘾青年，到因《Kitchen Confidential》一书爆红，再跨界成为作家、电视人与"非正式外交官"的逆袭之路。他拒绝把厨房浪漫化，也拒绝把异文化奇观化，而是用一桌饭作为理解移民、贫困、性别议题的入口。结尾回到他的离世——在常年奔波、一年 250 天在外的行业节奏下，心理健康被忽视的悲剧，以及他留下的"把厨师从仆人提升为说书人"的行业遗产。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">2</span>背后文化现象</h4>
+      <p><span class="q">① 食物外交 / 软实力：</span>一桌饭比一纸公报更能消弭偏见（"noodle summit" 与奥巴马的河内面摊之约即范例）。<br>
+      <span class="q">② "真实感"的胜利：</span>在精致包装的真人秀时代，Bourdain 的粗粝、坦诚与"不当好人"反而成为观众信任的来源。<br>
+      <span class="q">③ 餐饮业的心理健康盲区：</span>高强度、常年在外的工作模式对从业者情绪的损耗，借他的离世第一次被公开、严肃地讨论。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">3</span>值得思考的问题</h4>
+      <p>· 当一个人把"理解陌生人"当作毕生事业，他自己的孤独与崩溃，是否被公众与镜头忽略了？<br>
+      · "真实"在媒体里，究竟是一种被消费的人设，还是真正的力量？Bourdain 的 case 是否两端都占了？<br>
+      · 我们是否也常把"忙碌 / 一直在路上"误当作生活有意义？</p>
+    </div>
+  </section>
+
+  <!-- ============ SPEAKING PRACTICE ============ -->
+  <section>
+    <div class="sec-title speak"><span class="dot"></span>Speaking Practice · 口语讨论</div>
+    <div class="prompt">
+      <span class="ask">Discussion question (回答约 200 词):</span><br><br>
+      Anthony Bourdain believed that sharing a meal with a stranger is one of the most direct ways to understand a culture — and perhaps to dissolve prejudice. Think about your own experience: Has food ever helped you connect with someone from a very different background, or changed your view of a place? If you could share one meal with any person (living or dead, familiar or foreign), who would it be, and what do you think you would learn? Write about 200 words.
+    </div>
+
+    <div class="model">
+      <span class="lbl">Reference answer · 参考回答（约 190 词）</span>
+      I once shared a weekend dinner with a colleague from a small village in Yunnan, in her tiny kitchen in Shenzhen. She cooked sour soup with fermented vegetables I had never tasted, and as we ate she told stories about her grandmother's kitchen during the harvest — things no textbook had prepared me for. That evening taught me more about rural China than any documentary. If I could share one meal with anyone, I would choose Anthony Bourdain himself, in a noisy street stall somewhere in Vietnam. I think I'd learn how to stay curious without turning people into subjects to be filmed. Bourdain showed that respect begins with appetite — a willingness to sit, to be uncomfortable, to ask. The danger, as his own life revealed, is that constant movement can become a way to avoid sitting still with yourself. Food connects us to others, but it cannot, by itself, heal the person doing the connecting.
+    </div>
+
+    <div class="tip"><b>练习建议：</b>先用自己的话写一遍（不抄参考），再对照参考回答的衔接词（once / if / I think / the danger is that）。重点练 "Has food ever…?" 这种现在完成时经历问句的回应逻辑。</div>
+  </section>
+
+  <footer>
+    <span class="pill">每日英文精读 · 人物故事</span>
+    <span class="pill">CET-6 / IELTS 6.5 友好</span>
+    <span class="pill">2026-09-08</span>
+  </footer>
+
+</div>
+</body>
+</html>

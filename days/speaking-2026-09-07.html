@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Last Day of the Corner Bookstore</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="topic-banner">
+<h2>The Last Day of the Corner Bookstore</h2>
+<div class="zh">街角书店的最后一天</div>
+<div class="en">"I went in to buy one last book. I walked out with the feeling that some places are worth more than what they sell."</div>
+<div class="meta">
+<span>📅 Day 41 · 2026-09-07</span>
+<span>🎯 B1–B2</span>
+<span>🏷 People &amp; Society</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>The bookstore had been on the corner of Fifth and Maple for forty-two years. I passed it every morning on my way to work and never once went inside. There was always an app for that.</p>
+<p>Then a sign appeared in the window: <i>Closing forever — everything 50% off.</i> The owner, Mr. Kim, was sitting behind the counter the way he always sat, as if the store were still full of customers. It wasn't. The shelves were thin, the boxes were packed, and the air smelled like old paper and endings.</p>
+<p>I picked up a paperback with a cracked spine. "This one's been waiting for you," Mr. Kim said without looking up. I didn't know if he said that to everyone. I bought it, and on my way out I asked him what he would do next.</p>
+<p>"I've been running this store for four decades," he said, rubbing the counter like it was an old friend. "I don't know how to do anything else. I guess I'll finally learn."</p>
+<p>That night I read the whole book in one sitting. It wasn't even that good. But the cracked spine, the corner store, the man who had waited forty-two years for someone to walk in — somehow, it was the best book I'd read all year.</p>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">There was always an app for that.</div><button aria-label="收藏表达" class="expr-fav" data-en="There was always an app for that." data-example="I never went into the bookstore — there was always an app for that. 我从没走进那家书店——总有一个 app 能解决。" data-zh="总有某个 app 能解决（这类需求）。" type="button">☆</button></div>
+<div class="zh-expr">总有某个 app 能解决（这类需求）。</div>
+<div class="example">
+        I passed it every morning and never once went inside. There was always an app for that.
+        <span class="zh-trans">我每天早上路过，却从没进去过。总有个 app 能解决。</span>
+</div>
+<div class="note">半自嘲的句式，承认"线上取代线下"的同时暗含遗憾。可替换：There's always a shortcut / a tutorial / an excuse for that.</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">waiting for someone to walk in</div><button aria-label="收藏表达" class="expr-fav" data-en="waiting for someone to walk in" data-example="The book had been waiting for someone to walk in for years. 那本书等了多年，才等到有人走进来把它带走。" data-zh="等着有人走进来。" type="button">☆</button></div>
+<div class="zh-expr">等着有人走进来。</div>
+<div class="example">
+        This one's been waiting for you. The whole store had been waiting for someone to walk in.
+        <span class="zh-trans">这本一直在等你。整家店都在等着有人走进来。</span>
+</div>
+<div class="note">"waiting for someone to walk in" 把书店写活了——像一位等待访客的老人。叙事中给无生命物加上"等待"的情感，是地道英语讲故事的常用手法。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">like it was an old friend</div><button aria-label="收藏表达" class="expr-fav" data-en="like it was an old friend" data-example="He rubbed the counter like it was an old friend. 他摩挲着柜台，像在摸一位老朋友。" data-zh="像对待老朋友一样。" type="button">☆</button></div>
+<div class="zh-expr">像对待老朋友一样。</div>
+<div class="example">
+        He said goodbye to the store like it was an old friend he was leaving behind.
+        <span class="zh-trans">他跟书店道别，像在告别一位即将留在原地的老朋友。</span>
+</div>
+<div class="note">as if / like + 虚拟过去式（was）表示"像……一样（其实不是）"，描述人对物/往事的依恋，画面感强，口语和写作都高频。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">I don't know how to do anything else.</div><button aria-label="收藏表达" class="expr-fav" data-en="I don't know how to do anything else." data-example="I've done this job for twenty years — I don't know how to do anything else. 这工作我干了二十年——别的我什么都不会了。" data-zh="我不知道自己还会做别的什么。" type="button">☆</button></div>
+<div class="zh-expr">我不知道自己还会做别的什么。</div>
+<div class="example">
+        "I've been running this store for four decades. I don't know how to do anything else."
+        <span class="zh-trans">"这家店我开了四十年。我不知道自己还会做别的什么。"</span>
+</div>
+<div class="note">真诚的自白句式，语气里带着点自嘲与脆弱。注意 anything else 用 anything（否定语境），不要说成 something else。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">in one sitting</div><button aria-label="收藏表达" class="expr-fav" data-en="in one sitting" data-example="I read the whole book in one sitting. 我一口气读完了整本书。" data-zh="一口气（看完/做完）。" type="button">☆</button></div>
+<div class="zh-expr">一口气（看完/做完）。</div>
+<div class="example">
+        That night I read the whole book in one sitting — something I hadn't done in years.
+        <span class="zh-trans">那天晚上我一口气读完了整本书——这好多年都没有过了。</span>
+</div>
+<div class="note">"sitting" 指一次坐下的时间；in one sitting = 中途不停歇地做完一件事，描述"被内容深深吸引"的最佳搭配。</div>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">Tuesday, 6:40 PM. The bookstore, two hours before it closes forever. You are the last customer. Mr. Kim is counting the cash register.</div>
+<div class="conv-line">
+<span class="speaker friend">Mr. Kim:</span>
+<span class="en">Oh — still here? I thought everyone had said their goodbyes already.</span>
+<span class="zh">哦——还在呢？我以为大家都来道过别了。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">Yeah, I, uh... I couldn't leave without getting one more book. And I wanted to say thanks. I never said it before.</span>
+<span class="zh">是啊，我，呃……不带走最后一本书我走不了。还想跟你说声谢谢。以前从没说过。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Mr. Kim:</span>
+<span class="en">[laughs softly] Forty-two years, and the thanks arrive on the last night. That's not bad timing, actually.</span>
+<span class="zh">[轻轻笑] 四十二年，谢谢在最后一晚才到。不过这时机也不算差。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">I keep thinking — there was always an app for it. Faster, cheaper. But this place... it wasn't selling books, was it?</span>
+<span class="zh">我一直在想——app 总有，更快更便宜。可这个地方……它卖的不是书，对吧？</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Mr. Kim:</span>
+<span class="en">No. It was selling time. Time to slow down, time to browse, time to let a cracked spine pick you. Apps sell speed. I sold... this.</span>
+<span class="zh">不是。它卖的是时间。慢下来的时间、随便翻翻的时间、让一本旧书选中你的时间。App 卖速度。我卖的是……这个。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">What will you do tomorrow?</span>
+<span class="zh">你明天打算做什么？</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Mr. Kim:</span>
+<span class="en">Honestly? Sleep in. Then I'll figure out who I am without this corner. Forty-two years is a long time to be one thing.</span>
+<span class="zh">说实话？睡个懒觉。然后想清楚没有这个街角的我，到底是谁。四十二年都只做一件事，是很长的时间。</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the Story</div>
+<div class="task-prompt">用自己的话复述这个故事（60-90秒）。重点讲清三件事：为什么"我"从没进去过、最后一天发生了什么、以及那本书为什么特别。不要逐句翻译原文。</div>
+<ul class="samples">
+<li>For years I walked past that bookstore without ever going in — there was always an app for that. Then I saw the closing sign and finally stepped inside.<span class="zh">多年来我路过那家书店却从没进去过——总有个 app 能解决。后来我看到了关门告示，终于走了进去。</span></li>
+<li>The owner said the book had been waiting for me. I bought it, and we talked for a while about what he'd do next.<span class="zh">老板说那本书一直在等我。我买下了它，然后聊了一会儿他接下来要做什么。</span></li>
+<li>That night I read it in one sitting. It wasn't a great book — but somehow it was the best thing I'd read all year.<span class="zh">那晚我一口气读完了它。这不是一本多好的书——但不知怎的，它是我一年里读过最好的东西。</span></li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Express Your Opinion</div>
+<div class="task-prompt">回答这个问题（60秒）：你同意 Mr. Kim 说的"App 卖速度，书店卖时间"吗？有什么东西是线上体验替代不了的？给一个你亲身经历的具体例子。</div>
+<ul class="samples">
+<li>I think he's right. Convenience can't replace the feeling of a place — the smell, the owner who remembers you, the luck of finding something you weren't looking for.<span class="zh">我觉得他说得对。便利替代不了一个地方的感受——气味、记得你的老板、意外发现你本没想找的东西的运气。</span></li>
+<li>For me it's the barbershop. Online, everything is an appointment and a review. There, it's just two hours of talk about nothing. You can't download that.<span class="zh">对我来说是理发店。线上全是预约和点评。在那里，只是两个小时的闲聊。这种东西下载不了。</span></li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Simulate a Real Scenario</div>
+<div class="task-prompt">你常去的那家小店（书店/早餐摊/理发店）要关门了。你走进去，跟店主说几句话：一句谢谢、一句你记得的具体小事、一句"以后还会见面/保重"。用自然口语。</div>
+<ul class="samples">
+<li>Hey, I heard you're closing. I just wanted to say — thank you. You don't know this, but you helped me through a pretty rough year.<span class="zh">嘿，听说你要关门了。就想来说声——谢谢。你不知道，你陪我撑过了很难的一年。</span></li>
+<li>I still remember the first morning I came here. You asked if I wanted the usual — I didn't even know I had a usual yet.<span class="zh">我还记得第一次来的那个早上。你问我是不是要老样子——那时候我自己都不知道我已经有"老样子"了。</span></li>
+<li>Anyway... take care of yourself, okay? And if you ever open something again, you know I'll be first in line.<span class="zh">总之……照顾好自己，好吗？要是你再开店，你知道我会是第一个排队的。</span></li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词汇</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">cracked spine</span>
+<span class="ipa">/krækt spaɪn/</span>
+<div class="meaning">n. （书的）开裂书脊——表示被反复翻过的旧书</div>
+<div class="sample">I picked up a paperback with a cracked spine.<span class="zh-trans">我拿起一本书脊开裂的平装书。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">browse</span>
+<span class="ipa">/braʊz/</span>
+<div class="meaning">v. 随便翻阅、随意浏览（无明确目的）</div>
+<div class="sample">Time to slow down, time to browse.<span class="zh-trans">慢下来，随便翻翻。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">in one sitting</span>
+<span class="ipa">/ɪn wʌn ˈsɪtɪŋ/</span>
+<div class="meaning">adv. 一口气（不间断地做完）</div>
+<div class="sample">I read the whole book in one sitting.<span class="zh-trans">我一口气读完了整本书。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">regular</span>
+<span class="ipa">/ˈreɡjələr/</span>
+<div class="meaning">n. 常客 adj. 定期的、惯常的</div>
+<div class="sample">Forty years of regulars walked through that door.<span class="zh-trans">四十年来，无数常客从那扇门进出。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">count (the cash register)</span>
+<span class="ipa">/kaʊnt/</span>
+<div class="meaning">v. 清点（收银机里的钱）；盘点</div>
+<div class="sample">Mr. Kim was counting the cash register.<span class="zh-trans">金先生正在清点收银机里的钱。</span></div>
+</div>
+</div>
+</div>
+<div class="footer">
+Speaking Practice · Day 41 · 2026-09-07 · B1–B2 · People &amp; Society<br/>
+Learn something real today.
+</div>
+</div>
+<script>
+(function(){
+  var favKey='expr-favs';
+  var favs={};
+  try{ favs=JSON.parse(localStorage.getItem(favKey)||'{}'); }catch(e){}
+  document.querySelectorAll('.expr-fav').forEach(function(btn){
+    var en=btn.getAttribute('data-en');
+    if(favs[en]){ btn.classList.add('on'); btn.textContent='★'; }
+    btn.addEventListener('click',function(){
+      if(btn.classList.contains('on')){
+        btn.classList.remove('on'); btn.textContent='☆'; delete favs[en];
+        showToast('已取消收藏');
+      }else{
+        btn.classList.add('on'); btn.textContent='★';
+        favs[en]={ zh:btn.getAttribute('data-zh'), example:btn.getAttribute('data-example') };
+        showToast('已收藏到「我的表达」');
+      }
+      try{ localStorage.setItem(favKey,JSON.stringify(favs)); }catch(e){}
+    });
+  });
+  function showToast(msg){
+    var t=document.querySelector('.fav-toast');
+    if(!t){ t=document.createElement('div'); t.className='fav-toast'; document.body.appendChild(t); }
+    t.textContent=msg; t.classList.add('show');
+    clearTimeout(t._timer); t._timer=setTimeout(function(){ t.classList.remove('show'); },1800);
+  }
+})();
+</script>
+</body>
+</html>

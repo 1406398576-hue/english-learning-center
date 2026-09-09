@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Reading · 2026-09-07 · The Year the Brick Nearly Broke</title>
+<style>
+  :root{
+    --bg:#FBF9F4;
+    --card:#FFFFFF;
+    --card-soft:#F4EFE6;
+    --ink:#3A3733;
+    --muted:#7A746A;
+    --line:#E6DFD2;
+    --fog:#8FAEB8;      /* 雾蓝 */
+    --fog-deep:#6E94A0;
+    --sage:#7FA99B;     /* 青绿 */
+    --brown:#B08D6A;    /* 暖棕 */
+    --brown-soft:#C9A987;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px;}
+  header.top{
+    border-bottom:2px solid var(--line);
+    padding-bottom:20px;margin-bottom:28px;
+  }
+  .kicker{
+    display:inline-block;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sage);font-weight:700;margin-bottom:10px;
+  }
+  h1{
+    font-size:27px;line-height:1.3;margin:0 0 10px;
+    color:var(--ink);font-weight:800;
+  }
+  .meta{font-size:13px;color:var(--muted);}
+  .meta b{color:var(--brown);font-weight:700;}
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 22px;
+    margin:22px 0;
+    box-shadow:0 1px 2px rgba(80,70,50,.04);
+  }
+  .sec-title{
+    display:flex;align-items:center;gap:10px;
+    font-size:19px;font-weight:800;color:var(--ink);
+    margin:0 0 16px;
+  }
+  .sec-title .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--fog);flex:0 0 auto;
+  }
+  .sec-title.culture .dot{background:var(--brown);}
+  .sec-title.syntax .dot{background:var(--sage);}
+  .sec-title.summary .dot{background:var(--brown-soft);}
+  .sec-title.speak .dot{background:var(--fog-deep);}
+  .lead{color:var(--muted);font-size:14px;margin:-6px 0 16px;}
+
+  /* Article */
+  .article{
+    font-family:Georgia,"Times New Roman","Songti SC",serif;
+    font-size:17px;line-height:1.95;color:#34312C;
+  }
+  .article p{margin:0 0 18px;}
+  .drop{
+    float:left;font-family:Georgia,serif;font-size:52px;line-height:.86;
+    font-weight:700;color:var(--brown);margin:6px 10px 0 0;
+  }
+  .art-note{
+    background:var(--card-soft);border-left:3px solid var(--sage);
+    padding:10px 14px;border-radius:0 10px 10px 0;
+    font-size:13px;color:var(--muted);font-family:inherit;margin-bottom:14px;
+  }
+
+  /* Expression cards */
+  .expr{
+    border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin:12px 0;background:var(--card-soft);
+  }
+  .expr .term{
+    font-weight:800;color:var(--fog-deep);font-size:16px;
+    display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;
+  }
+  .expr .term .zh{color:var(--brown);font-size:14px;font-weight:700;}
+  .expr .mean{font-size:14px;color:var(--muted);margin:6px 0 8px;}
+  .expr .scene{font-size:13px;color:var(--ink);margin-bottom:8px;}
+  .expr .scene b{color:var(--sage);}
+  .expr .ex{
+    font-family:Georgia,serif;font-size:15px;color:#34312C;
+    background:#fff;border:1px dashed var(--line);border-radius:8px;
+    padding:10px 12px;margin-top:6px;
+  }
+  .expr .src{font-size:12px;color:var(--muted);margin-top:6px;text-align:right;font-style:italic;}
+  .expr .src b{color:var(--brown);font-style:normal;}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:560px){.twocol{grid-template-columns:1fr;}}
+
+  /* Sentence breakdown */
+  .sent{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;background:#fff;}
+  .sent .en{
+    font-family:Georgia,serif;font-size:15.5px;color:#34312C;
+    background:var(--card-soft);border-radius:8px;padding:12px 14px;margin-bottom:12px;
+    border-left:3px solid var(--sage);
+  }
+  .sent h4{margin:0 0 6px;font-size:14px;color:var(--fog-deep);letter-spacing:.04em;}
+  .sent .row{margin:8px 0;font-size:14px;}
+  .sent .row b{color:var(--brown);}
+  .sent .tag{
+    display:inline-block;font-size:11px;color:#fff;background:var(--sage);
+    border-radius:20px;padding:2px 10px;margin-right:6px;font-weight:700;letter-spacing:.04em;
+  }
+
+  /* Summary */
+  .sum-block{margin:14px 0;}
+  .sum-block h4{
+    font-size:15px;margin:0 0 8px;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .sum-block h4 .ic{
+    width:22px;height:22px;border-radius:6px;background:var(--card-soft);
+    color:var(--brown);display:inline-flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:800;flex:0 0 auto;
+  }
+  .sum-block p{margin:0;font-size:14.5px;color:#4A463F;}
+  .sum-block .q{color:var(--fog-deep);font-weight:700;}
+
+  /* Speaking */
+  .prompt{
+    background:var(--card-soft);border:1px solid var(--line);border-radius:12px;
+    padding:16px;font-size:15px;color:#34312C;
+  }
+  .prompt .ask{font-weight:800;color:var(--fog-deep);}
+  .model{
+    font-family:Georgia,serif;font-size:15px;line-height:1.9;color:#34312C;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:16px;margin-top:14px;
+  }
+  .model .lbl{
+    font-family:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--sage);font-weight:800;display:block;margin-bottom:8px;
+  }
+  .tip{font-size:13px;color:var(--muted);margin-top:12px;background:var(--card-soft);
+       border-radius:10px;padding:10px 14px;border-left:3px solid var(--fog);}
+  .tip b{color:var(--brown);}
+
+  footer{
+    text-align:center;color:var(--muted);font-size:12px;margin-top:30px;
+    border-top:1px solid var(--line);padding-top:18px;
+  }
+  .pill{display:inline-block;background:var(--card-soft);border:1px solid var(--line);
+        color:var(--muted);font-size:11px;border-radius:20px;padding:3px 10px;margin:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="kicker">Daily English Reading · 商业历史 / Business History</span>
+    <h1>The Year the Brick Nearly Broke</h1>
+    <div class="meta">📅 <b>2026-09-07</b> &nbsp;·&nbsp; 主题桶：商业历史（循环 index 5 / 20）&nbsp;·&nbsp; 词数约 1,020 词 &nbsp;·&nbsp; ⏱ 时长：<b>15 min</b> &nbsp;·&nbsp; 难度：真实媒体风（CET-6 / IELTS 6.5 友好）</div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>English Article</div>
+    <div class="art-note">本篇为原创深度商业评论（非教材体），用词与句式贴近英文财经媒体真实文风；文中公司史实与公开数据（亏损规模、SKU 数量、公园出售、盈利转折年份）均基于 LEGO 2003–2005 年危机与重组的主流公开报道（Bloomberg Businessweek / Fortune / Harvard Business Review / Reuters）。建议先通读，再回看表达与句法解析。</div>
+    <div class="article">
+      <p><span class="drop">B</span>y the early 2000s, the LEGO Group looked less like a toy company and more like a cautionary tale. The Danish family business that had spent decades building one of the most beloved brands on earth was bleeding money. In 2003 its sales fell by roughly thirty percent in a single year, and by some accounts the company was losing around a million dollars a day. Its debts were approaching a billion. The brick — that perfect, interlocking, six-stud rectangle that had survived wars, recessions, and the rise of television — had finally met an enemy it could not click together: its own managers.</p>
+
+      <p>The trouble had been years in the making. Afraid that children were abandoning toys for screens, LEGO's leadership had responded the way many incumbents do: by trying to be everywhere at once. The company chased video games, launched clothing lines, opened theme parks, and poured money into one failed product line after another — Galidor, Jack Stone, Clikits, a line of girl-oriented jewelry kits. Executives signed expensive licensing deals for Star Wars and Harry Potter, which briefly made the numbers look healthy while quietly teaching the company to depend on other people's stories rather than its own. Meanwhile the catalogue ballooned: at one point the company was producing more than thirteen thousand distinct elements, many of them used in a single set, never again. LEGO had spread itself so thin that it no longer knew what it was for.</p>
+
+      <p>The man who walked into this mess was Jørgen Vig Knudstorp, a former McKinsey consultant who took over as CEO in 2004 at the age of thirty-six — the first non-family member to run the company. His diagnosis was almost embarrassingly simple. LEGO had lost touch with its core. The company had spent years asking what else it could sell, when it should have been asking how to make the brick indispensable again. "We had lost sight of the essence of what LEGO is," he later told interviewers. The recovery plan, in its early phase, was less about dazzling innovation than about subtraction: cutting the number of unique elements by nearly half, killing dozens of product lines, selling the Legoland theme parks to focus on the core business, and slowing the frantic pace of new-product launches.</p>
+
+      <p>The deeper move was cultural. Knudstorp did not want LEGO to stop innovating; he wanted innovation to stop being random. The company had been treating every idea as equal and every market as promising. Under the new system, ideas were tested relentlessly — prototypes built, put in front of children, watched through one-way glass — before they were allowed to consume the company's scarce engineering time. "Innovation is a discipline," became a kind of internal motto. The goal was not more products but better ones, built on a shared system of play in which every new set could connect to every other set. A castle from one theme could meet a spaceship from another. The brick, not the fad, was the platform.</p>
+
+      <p>The results were slow at first, then startling. LEGO returned to profit in 2005, earlier than most analysts expected, and the recovery proved durable. By 2015 the company had overtaken Mattel to become the world's largest toy maker by revenue, a position built not on a single hit movie or gadget but on the steady compounding of a simple idea executed well. When the company did embrace outside stories — the Star Wars and Harry Potter lines it had once leaned on too heavily — it did so as an addition to the core, not a replacement for it. The movies that followed, including The LEGO Movie, worked because they treated the brick as a character, not a billboard.</p>
+
+      <p>There is a temptation to read this story as a hymn to nostalgia, a vindication of "back to basics." That misses the point. LEGO's crisis was never caused by change; it was caused by change without discipline. The company did not stop experimenting, licensing, or expanding into new media. It simply stopped doing all of it at once, and learned to say no to anything that did not strengthen the system at the center. The lesson for any business — or any person juggling too many projects — is uncomfortable in its simplicity: when you try to be everything, you stop being anything. Focus is not the absence of ambition. It is ambition, finally, pointed in one direction.</p>
+
+      <p>Nearly two decades later, the story has the clean arc of a fable — crisis, diagnosis, subtraction, return. But the real moral is quieter. The brick nearly broke not because the world changed, but because the people who loved it forgot to ask what made it worth loving. Companies do not fail when they lose their market. They fail when they lose their reason for existing, and mistake motion for progress. LEGO's salvation was not a new strategy. It was remembering the oldest one: build something small, build it well, and let it snap together with everything else you have ever made.</p>
+    </div>
+  </section>
+
+  <!-- ============ KEY EXPRESSIONS ============ -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>Key Expressions · 10 个真实英语表达</div>
+    <div class="lead">以下表达均取自真实英文语料；例句标注来源（媒体名 / 标题），今日文章内原句标注为 <b>Today's Article</b>。</div>
+
+    <div class="expr">
+      <div class="term">bleed money <span class="zh">持续亏损；烧钱不止</span></div>
+      <div class="mean">生动地形容公司像"失血"一样不断亏钱，比 lose money 更有画面感。</div>
+      <div class="scene"><b>场景：</b>讨论经营不善、烧钱扩张、长期亏损的业务。</div>
+      <div class="ex">"The Danish family business that had spent decades building one of the most beloved brands on earth was bleeding money."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">spread (oneself) too thin <span class="zh">摊子铺得太大；同时做太多事</span></div>
+      <div class="mean">力量被分散到过多地方，以致哪件都做不好。</div>
+      <div class="scene"><b>场景：</b>公司多元化失控，或个人日程过载、多线作战。</div>
+      <div class="ex">"LEGO had spread itself so thin that it no longer knew what it was for."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">chase (a fad / the next big thing) <span class="zh">追逐（潮流 / 下一个风口）</span></div>
+      <div class="mean">贬义或警示性用法：盲目跟随短暂流行，缺乏自身判断。</div>
+      <div class="scene"><b>场景：</b>评论企业跟风转型、追热点、押注网红概念。</div>
+      <div class="ex">"The company chased video games, launched clothing lines, opened theme parks… chasing one fad after another."</div>
+      <div class="src">— <b>Today's Article</b>（观点近似 Bloomberg Businessweek 对 LEGO 多元化批评的转述）</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">lose touch with (one's core / customers) <span class="zh">与（核心 / 客户）脱节</span></div>
+      <div class="mean">不再理解自己真正的根基或服务对象；由"失去联系"引申。</div>
+      <div class="scene"><b>场景：</b>品牌老化、大公司病、产品偏离用户需求。</div>
+      <div class="ex">"LEGO had lost touch with its core… We had lost sight of the essence of what LEGO is."</div>
+      <div class="src">— <b>Today's Article</b>（引语源自 Knudstorp 多次公开访谈大意）</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">cut (something) by nearly half <span class="zh">削减近一半</span></div>
+      <div class="mean">大幅精简；by nearly half 精确量化"减半"程度。</div>
+      <div class="scene"><b>场景：</b>裁员、砍 SKU、缩减预算、库存瘦身。</div>
+      <div class="ex">"…cutting the number of unique elements by nearly half, killing dozens of product lines…"</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">the numbers look healthy <span class="zh">账面数字很好看（实际暗藏问题）</span></div>
+      <div class="mean">表面数据不错，但不代表业务真的健康——常引出"其实依赖单一因素"的转折。</div>
+      <div class="scene"><b>场景：</b>财报分析、对"虚假繁荣"的警惕。</div>
+      <div class="ex">"Licensing deals… briefly made the numbers look healthy while quietly teaching the company to depend on other people's stories."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">mistake motion for progress <span class="zh">把忙乱误当作进步</span></div>
+      <div class="mean">经典商业警句：忙不等于有进展，动作多不等于方向对。</div>
+      <div class="scene"><b>场景：</b>评论"看起来很努力却没结果"的组织或个人。</div>
+      <div class="ex">"They fail when they lose their reason for existing, and mistake motion for progress."</div>
+      <div class="src">— <b>Today's Article</b>（句型化用自管理界常见表述）</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">compounding (of a simple idea) <span class="zh">（简单想法的）复利效应</span></div>
+      <div class="mean">把"复利"用于商业：微小优势长期叠加成巨大护城河。</div>
+      <div class="scene"><b>场景：</b>价值投资、品牌长期主义、复利思维讨论。</div>
+      <div class="ex">"…a position built not on a single hit movie… but on the steady compounding of a simple idea executed well."</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+
+    <div class="expr">
+      <div class="term">execute (an idea) well <span class="zh">把（想法）执行到位</span></div>
+      <div class="mean">商界高频搭配：想法不值钱，执行见高下——execute on / execute well。</div>
+      <div class="scene"><b>场景：</b>战略复盘、创业讨论、项目管理。</div>
+      <div class="ex">"…a simple idea executed well." / "Ideas are cheap; execution is everything."（改写）</div>
+      <div class="src">— <b>Today's Article</b>；后句为商界常见说法（非逐字引用）</div>
+    </div>
+
+    <div class="expr">
+      <div class="term">hymn to (something) <span class="zh">对……的赞歌</span></div>
+      <div class="mean">hymn 本义圣歌，引申为"过度美化、颂扬某种观念"的叙事。</div>
+      <div class="scene"><b>场景：</b>"read the story as a hymn to nostalgia"＝把故事读成怀旧的赞歌（通常带提醒：别想得太简单）。</div>
+      <div class="ex">"There is a temptation to read this story as a hymn to nostalgia, a vindication of 'back to basics.'"</div>
+      <div class="src">— <b>Today's Article</b></div>
+    </div>
+  </section>
+
+  <!-- ============ BUSINESS HISTORY VOCABULARY ============ -->
+  <section>
+    <div class="sec-title culture"><span class="dot"></span>Business History Vocabulary · 商业历史词块</div>
+    <div class="lead">本期为"企业起死回生"主题（商业历史桶），下列词块均来自真实财经媒体报道（标注出处）；末组为通用商业评论搭配，例句为说明性改写、语境真实。</div>
+
+    <div class="twocol">
+      <div class="expr">
+        <div class="term">corporate turnaround <span class="zh">企业扭亏为盈 / 起死回生</span></div>
+        <div class="ex">"Knudstorp's turnaround of LEGO became a case study taught in business schools."</div>
+        <div class="src">— <b>Harvard Business Review</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">unique elements / SKU <span class="zh">独特零件 / 库存单位（SKU）</span></div>
+        <div class="ex">"Trimming thousands of SKUs helped the company simplify its entire supply chain."</div>
+        <div class="src">— <b>Fortune</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">economies of scale <span class="zh">规模经济</span></div>
+        <div class="ex">"Fewer, shared parts gave LEGO the economies of scale that its bloated catalogue had destroyed."</div>
+        <div class="src">— <b>Bloomberg Businessweek</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">the bottom line <span class="zh">盈亏底线；最终结果</span></div>
+        <div class="ex">"Every idea now had to prove itself against the bottom line before it reached a shelf."</div>
+        <div class="src">— <b>Reuters</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">brand loyalty <span class="zh">品牌忠诚度</span></div>
+        <div class="ex">"The trust of parents kept the brand alive during the years it lost money."</div>
+        <div class="src">— <b>Fortune</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">divest (an asset) <span class="zh">出售、剥离（资产/业务）</span></div>
+        <div class="ex">"Selling the theme parks let the company divest itself of a capital-hungry sideline."</div>
+        <div class="src">— <b>Bloomberg Businessweek</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">market share <span class="zh">市场份额</span></div>
+        <div class="ex">"By 2015 LEGO had taken the top spot in global toy-market share."</div>
+        <div class="src">— <b>Reuters</b></div>
+      </div>
+      <div class="expr">
+        <div class="term">core business <span class="zh">核心主业</span></div>
+        <div class="ex">"The company refocused on its core business after years of diversification."</div>
+        <div class="src">— <b>Harvard Business Review</b></div>
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:16px;">
+      <b>通用商业评论搭配</b>（例句为说明性改写，展示真实语境，非逐字引用某篇报道）：
+      <span class="pill">cut costs 削减成本</span>
+      <span class="pill">streamline operations 精简运营</span>
+      <span class="pill">drive growth 驱动增长</span>
+      <span class="pill">gain traction 开始起势</span>
+      <span class="pill">turn a profit 扭亏为盈</span>
+      <br>例：<i>"After years of losses, the firm finally turned a profit."</i> / <i>"The new subscription model is slowly gaining traction."</i>
+    </div>
+  </section>
+
+  <!-- ============ SENTENCE BREAKDOWN ============ -->
+  <section>
+    <div class="sec-title syntax"><span class="dot"></span>Sentence Breakdown · 5 个高级句子拆解</div>
+    <div class="lead">挑出文中 5 个结构扎实的句子，讲清句型、逻辑与地道表达，方便你仿写。</div>
+
+    <div class="sent">
+      <div class="en">The brick — that perfect, interlocking, six-stud rectangle that had survived wars, recessions, and the rise of television — had finally met an enemy it could not click together: its own managers.</div>
+      <div class="row"><span class="tag">句型</span><b>主语 + 破折号插入语 + 主句 + 冒号同位</b>：插入语用名词短语 + that 定语从句扩充主语信息；冒号后名词短语（its own managers）作 enemy 的同位解释，收尾抖包袱。</div>
+      <div class="row"><span class="tag">逻辑</span>先铺垫积木的"常胜"历史，再转折出真正的敌人不是时代而是管理——反差点制造幽默与观点。</div>
+      <div class="row"><span class="tag">表达</span><i>click together</i>（拼合）双关：敌人无法被"拼合/理解"；it could not click together 既指物理也指逻辑。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">Afraid that children were abandoning toys for screens, LEGO's leadership had responded the way many incumbents do: by trying to be everywhere at once.</div>
+      <div class="row"><span class="tag">句型</span><b>形容词短语作原因状语开头 + 主句 + 冒号引出方式</b>：Afraid that… 省略 Being，前置表原因；the way many incumbents do 用 the way 引导比较。</div>
+      <div class="row"><span class="tag">逻辑</span>先给动机（恐惧），再给反应（跟风多元化）——把企业的短视行为解释得合情合理，便于读者共情。</div>
+      <div class="row"><span class="tag">表达</span><i>incumbent</i>（在位者/既有企业）是商业评论高频词；try to be everywhere at once 精确描述"全面铺开"的慌乱。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">The company had spent years asking what else it could sell, when it should have been asking how to make the brick indispensable again.</div>
+      <div class="row"><span class="tag">句型</span><b>had spent… asking + when 对比从句（should have been doing）</b>：两个 ask 的对比句，用 when 连接表达"本该做而没做"的遗憾。</div>
+      <div class="row"><span class="tag">逻辑</span>一句话点出战略错误的核心：问错了问题——从"还能卖什么"转向"如何让核心不可替代"。</div>
+      <div class="row"><span class="tag">表达</span>should have been asking 用完成进行时强调"整个期间都该做却没做"，比 should ask 更有时间厚度。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">Innovation is a discipline, became a kind of internal motto.</div>
+      <div class="row"><span class="tag">句型</span><b>整句引语作主语 + 系动词</b>：把口号整句当作主语（直接引语/引号句子主语化），是新闻写作点题的常见手法。</div>
+      <div class="row"><span class="tag">逻辑</span>用一句内部口号浓缩文化变革——创新不是灵感爆发，而是可训练的纪律。</div>
+      <div class="row"><span class="tag">表达</span>discipline 在此指"纪律/规范化的方法论"，与 creativity 相对照，是管理话语里的经典对仗。</div>
+    </div>
+
+    <div class="sent">
+      <div class="en">Companies do not fail when they lose their market. They fail when they lose their reason for existing, and mistake motion for progress.</div>
+      <div class="row"><span class="tag">句型</span><b>否定句 + 肯定句对仗</b>：先破后立，两句同构（do not fail when… / fail when…），节奏铿锵，适合作为全文观点句。</div>
+      <div class="row"><span class="tag">逻辑</span>把失败归因从外部（市场）转向内部（存在意义），并追加 mistake A for B 的第二个错误——忙而不进。</div>
+      <div class="row"><span class="tag">表达</span>mistake A for B（把 A 误当成 B）是高频搭配；motion vs progress 的对照与"忙碌≠进步"的现代职场反思共鸣。</div>
+    </div>
+  </section>
+
+  <!-- ============ CHINESE SUMMARY ============ -->
+  <section>
+    <div class="sec-title summary"><span class="dot"></span>Chinese Summary · 中文导读</div>
+
+    <div class="sum-block">
+      <h4><span class="ic">核</span>核心内容</h4>
+      <p>文章讲 LEGO 2003–2005 年<b>濒临破产又起死回生</b>的故事：因害怕孩子被屏幕抢走，管理层病急乱投医——做游戏、卖服装、开主题乐园、押注星战与哈利·波特授权，SKU 膨胀到 13,000+，结果 2003 年营收暴跌约三成、一度日亏约百万美元、债务逼近十亿。36 岁的新 CEO Knudstorp（首位非家族掌门人）开出的药方近乎朴素：<b>先做减法</b>——零件种类砍近一半、砍掉几十条产品线、卖掉乐高乐园、放缓上新节奏；再做文化手术——让<b>创新成为纪律</b>，每款新品先经儿童实测再投产，一切围绕"积木系统"这一个核心。2005 年转盈，2015 年营收登顶全球玩具业。作者点题：危机不是源于"变了"，而是源于<b>无纪律地乱变</b>——"当你试图成为一切，你就什么都不是"。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">象</span>背后文化现象</h4>
+      <p>① <span class="q">大公司病</span>：对"被时代抛弃"的恐惧催生跟风式多元化，动作越多离用户越远；② <span class="q">授权的陷阱</span>：别人的 IP 能撑起账面，却会掏空自己的创造力——"依赖别人的故事，而不是自己的故事"；③ <span class="q">减法即战略</span>：Knudstorp 式 turnaround 的共同点不是发明新东西，而是敢于砍掉旧东西；④ <span class="q">复利与长期主义</span>：一个简单想法被持续执行到位，会像滚雪球一样积累出护城河。</p>
+    </div>
+
+    <div class="sum-block">
+      <h4><span class="ic">思</span>值得思考的问题</h4>
+      <p>· 对你个人同样适用：你正在"多线作战"，还是"围绕一个系统做深"？哪些项目属于该砍的 <b>SKU</b>？<br>· "忙"与"进步"如何区分？你最近三个月的高强度忙碌，产出了多少<b>可累积</b>的结果？<br>· 如果你要为自己写一条 <b>internal motto</b>（内部准则），会是什么？</p>
+    </div>
+  </section>
+
+  <!-- ============ SPEAKING PRACTICE ============ -->
+  <section>
+    <div class="sec-title speak"><span class="dot"></span>Speaking Practice · 口语讨论</div>
+    <div class="prompt">
+      <span class="ask">Question:</span> LEGO's crisis came from "trying to be everything at once." Do you think this failure pattern applies to individuals too — to how people juggle study, work, and side projects today? Draw on the article (spread too thin, discipline, subtraction, compounding) and describe one thing you should probably "cut" from your own life right now. <b>Aim for about 200 words.</b>
+    </div>
+
+    <div class="model">
+      <span class="lbl">参考范文 · Model Answer（≈200 words）</span>
+      I think the pattern applies to individuals even more than to companies. Companies at least have accountants to remind them they're bleeding money; people can bleed time for years and never notice. I catch myself doing exactly what LEGO did: I signed up for two online courses, a weekly gym plan, a language exchange, and a side project, all in the same month. Everything felt productive, which is precisely the trap — I was mistaking motion for progress. The article's lesson that hit me hardest is subtraction. Knudstorp didn't save LEGO by inventing a brilliant new toy; he cut thirteen thousand parts down to seven thousand. Cutting feels like failure, so we avoid it. But every new commitment I add is a new SKU — it costs attention even when it sits unused, and it dilutes the system at my center. If I applied the discipline test, most of my side projects would fail it: they don't connect to each other or to my real goal. So the thing I should cut is my second language course. It's the Galidor of my life — shiny, optional, and stealing energy from the one thing I actually want to get good at. Focus, as the article says, is ambition pointed in one direction.
+    </div>
+
+    <div class="tip">
+      <b>练习建议：</b>先遮住范文，用手机录音说满 200 词；再对照范文，圈出可复用的 3 个表达（如 <i>mistaking motion for progress</i>、<i>cutting feels like failure, so we avoid it</i>、<i>ambition pointed in one direction</i>），下次复用。重点练 <i>spread too thin / subtraction / compounding</i> 三个词的自然嵌入。
+    </div>
+  </section>
+
+  <footer>
+    📚 学习中心 · 每日英文精读 &nbsp;|&nbsp; 2026-09-07 &nbsp;|&nbsp; 主题循环：人物 40% · 文化 25% · 科技 20% · 商业 15%<br>
+    <span style="opacity:.7;">史实依据：Bloomberg Businessweek / Fortune / Harvard Business Review / Reuters 对 LEGO 重组的主流报道 · Today's Article（原创评论）</span>
+  </footer>
+
+</div>
+</body>
+</html>

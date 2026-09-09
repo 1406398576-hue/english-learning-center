@@ -415,8 +415,8 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
 .es-practiced .es-val{color:var(--orange);}
 .es-total{border-color:#E6E1D6; background:#fff;}
 .es-total .es-val{color:var(--ink);}
-.es-mine{border-color:#D8E3F0; background:var(--blue-soft);}
-.es-mine .es-val{color:var(--blue);}
+.es-todo{border-color:#F0E3D0; background:var(--orange-soft);}
+.es-todo .es-val{color:var(--orange);}
 .expr-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
 .expr-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); position:relative; display:flex; flex-direction:column; gap:10px;}
 .e-top{display:flex; align-items:center; justify-content:space-between; gap:8px;}
@@ -600,21 +600,34 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
 .ed-ex-list li{position:relative; padding:8px 12px 8px 28px; margin:6px 0; background:#fff; border:1px solid var(--line); border-radius:10px; font-size:14.5px; line-height:1.6; color:var(--ink);}
 .ed-ex-list li::before{content:"☞"; position:absolute; left:10px; top:8px; font-size:12px; opacity:.5;}
 
-/* —— 核心句型库入口条 —— */
-.seed-bar{display:flex; align-items:center; justify-content:space-between; gap:14px; background:linear-gradient(135deg,#F7F4EA,#FBF9F3); border:1px solid var(--line); border-radius:var(--radius); padding:16px 20px; margin:0 0 22px; box-shadow:var(--shadow);}
-.seed-bar-tt{font-family:var(--serif); font-size:17px; font-weight:700; color:var(--ink); letter-spacing:.2px;}
-.seed-bar-sub{font-size:12.5px; color:var(--muted); margin-top:4px; line-height:1.6;}
+/* —— My Expressions · 顶部内容级 Tab（我的表达 / 核心句型）—— */
+.expr-mode{display:inline-flex; background:#F0EDE3; border:1px solid var(--line); border-radius:16px; padding:4px; gap:2px; margin:2px 0 20px;}
+.expr-mode button{display:flex; flex-direction:column; align-items:flex-start; gap:1px; border:0; background:transparent; font-family:inherit; padding:8px 22px 9px; border-radius:12px; cursor:pointer; text-align:left; transition:.18s;}
+.expr-mode button b{font-size:14.5px; font-weight:800; color:var(--sum); letter-spacing:-.01em; line-height:1.25;}
+.expr-mode button span{font-size:10px; font-weight:700; letter-spacing:.1em; color:var(--muted); text-transform:uppercase; line-height:1.3;}
+.expr-mode button:hover b{color:var(--accent-d);}
+.expr-mode button.on{background:#fff; box-shadow:0 2px 10px rgba(40,60,48,.10);}
+.expr-mode button.on b{color:var(--ink);}
+.expr-mode button.on span{color:var(--accent);}
+#exprMinePane{min-height:200px;}
 
-/* —— 核心句型库浮层 —— */
-.seed-browser{display:none; position:fixed; inset:0; z-index:120;}
-.seed-browser.show{display:block;}
-.sb-backdrop{position:absolute; inset:0; background:rgba(30,36,32,.36); backdrop-filter:blur(2px);}
-.sb-box{position:relative; z-index:1; margin:4vh auto 0; width:min(840px,94vw); max-height:92vh; background:#FCFBF7; border-radius:20px; box-shadow:0 30px 80px rgba(20,30,25,.28); display:flex; flex-direction:column; overflow:hidden;}
-.sb-top{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:20px 24px 14px; border-bottom:1px solid var(--line);}
-.sb-tt{font-family:var(--serif); font-size:20px; font-weight:800; color:var(--ink);}
-.sb-st{font-size:12.5px; color:var(--muted); margin-top:4px; max-width:600px; line-height:1.65;}
-.sb-close{border:none; background:#F1EEE4; width:32px; height:32px; border-radius:50%; font-size:14px; cursor:pointer; color:var(--ink); flex:none;}
-.sb-close:hover{background:#E9E5D8;}
+/* —— 分类计数徽标 —— */
+.fb-n{display:inline-block; font-style:normal; font-size:10.5px; font-weight:800; color:var(--muted); background:#F3F1EC; border-radius:999px; padding:1px 7px; margin-left:6px; vertical-align:1px; line-height:1.5;}
+.fbtn.active .fb-n{background:rgba(255,255,255,.24); color:#fff;}
+.fb-n:empty{display:none;}
+
+/* —— 核心句型 · 独立学习面板 —— */
+.core-pane{animation:coreIn .3s ease;}
+@keyframes coreIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+.core-box{background:#FCFBF7; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+.core-head{display:flex; align-items:flex-start; gap:12px; padding:22px 24px 16px; border-bottom:1px solid var(--line); background:linear-gradient(135deg,#F7F4EA,#FBF9F3);}
+.core-head .sb-tt{font-family:var(--serif); font-size:23px; font-weight:800; color:var(--ink); letter-spacing:-.01em; line-height:1.2;}
+.core-head .sb-st{font-size:12.5px; color:var(--muted); margin-top:6px; max-width:680px; line-height:1.7;}
+.core-actions{flex:none; display:flex; align-items:center; gap:8px; padding-top:2px;}
+#exprCorePane .sb-groups{padding-top:14px;}
+#exprCorePane .sb-count{padding:12px 26px 2px;}
+
+/* —— 系统库组件（原核心句型浮层迁移至面板内） —— */
 .sb-groups{display:flex; gap:8px; flex-wrap:wrap; padding:14px 24px 4px;}
 .sg{border:1px solid var(--line); background:#fff; border-radius:999px; padding:7px 14px; font-size:13px; cursor:pointer; color:var(--ink); font-family:inherit; transition:all .15s;}
 .sg em{font-style:normal; font-size:11px; color:var(--muted); margin-left:2px;}
@@ -622,7 +635,7 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
 .sg.on{background:var(--accent); border-color:var(--accent); color:#fff;}
 .sg.on em{color:rgba(255,255,255,.85);}
 .sb-count{padding:9px 26px 2px; font-size:12px; color:var(--muted); line-height:1.6;}
-.sb-list{overflow-y:auto; padding:10px 24px 24px;}
+.sb-list{padding:10px 24px 26px;}
 .scard{background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:13px 0; box-shadow:0 2px 12px rgba(30,40,32,.05);}
 .sc-top{display:flex; gap:8px; align-items:center; margin-bottom:9px; flex-wrap:wrap;}
 .sc-en{font-size:16.5px; font-weight:700; color:var(--ink); line-height:1.55; margin-top:2px;}
@@ -639,10 +652,34 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
 .sc-add:hover{filter:brightness(.95);}
 .sc-add.done{background:var(--accent-soft); color:var(--accent-d); cursor:default;}
 .sc-add:disabled{opacity:.8; cursor:default;}
+
+/* —— 替换练习区（每条句型/台词卡内） —— */
+.sc-pact{margin-top:12px; border-top:1px dashed var(--line); padding-top:11px;}
+.sc-pbtn{display:inline-flex; align-items:center; gap:6px; border:1px solid #D8E8DC; background:var(--accent-soft); color:var(--accent-d); border-radius:999px; padding:6px 15px; font-size:12.5px; font-weight:800; font-family:inherit; cursor:pointer; transition:.15s;}
+.sc-pbtn:hover{border-color:var(--accent);}
+.sc-pbtn.saved{background:#E9F5EC;}
+.cp-box{margin-top:10px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:13px 14px;}
+.cp-guide{font-size:12.5px; color:var(--sum); line-height:1.65; margin-bottom:9px;}
+.cp-guide b{color:var(--accent-d); font-weight:800;}
+.cp-in{width:100%; box-sizing:border-box; border:1.5px solid var(--line); border-radius:10px; background:#FBFCFB; padding:10px 12px; font-size:14px; font-family:inherit; color:var(--ink); outline:none; line-height:1.6; min-height:64px; resize:vertical; transition:border-color .15s;}
+.cp-in:focus{border-color:var(--accent);}
+.cp-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:9px; flex-wrap:wrap;}
+.cp-save{border:0; background:var(--accent); color:#fff; border-radius:999px; padding:7px 16px; font-size:12.5px; font-weight:800; font-family:inherit; cursor:pointer; transition:filter .15s;}
+.cp-save:hover{filter:brightness(.95);}
+.cp-hint{font-size:11.5px; color:var(--muted);}
+.cp-mine-saved{display:none; font-size:12.5px; color:var(--accent-d); background:#E9F5EC; border:1px solid #C7E8D2; border-radius:8px; padding:7px 10px; margin-top:9px; line-height:1.6;}
+.cp-mine-saved.show{display:block;}
+
+/* —— 我的表达 · 卡片练习按钮 —— */
+.x-practice{display:inline-flex; align-items:center; gap:5px; border:1px solid #D8E8DC; background:var(--accent-soft); color:var(--accent-d); border-radius:999px; padding:3px 12px; font-size:12px; font-weight:800; font-family:inherit; cursor:pointer; transition:.15s; white-space:nowrap;}
+.x-practice:hover{border-color:var(--accent); background:#E9F5EC;}
+
 @media (max-width:720px){
-  .seed-bar{flex-direction:column; align-items:flex-start;}
+  .expr-mode{width:100%;}
+  .expr-mode button{flex:1;}
   .sb-groups{padding-left:16px; padding-right:16px;}
   .sb-list{padding:10px 16px 18px;}
+  .core-head{padding:18px 18px 14px;}
 }
 .ea-backdrop{position:absolute; inset:0; background:rgba(30,42,36,.45);}
 .ea-box{position:relative; z-index:1; background:#FCFBF7; border-radius:18px; width:min(560px,100%); max-height:92vh; overflow-y:auto; padding:24px 26px; box-shadow:0 24px 70px rgba(20,30,25,.25);}
@@ -741,6 +778,132 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
   .tp-en{font-size:22px;}
 }
 
+
+/* ================= New Concept · 新概念英语 ================= */
+#view-newconcept .xlab-hero{margin-bottom:14px;}
+.nc-summary{display:flex; align-items:center; gap:18px; flex-wrap:wrap; background:var(--card); border:1px solid var(--line); border-radius:var(--radius-sm); box-shadow:var(--shadow); padding:14px 20px; margin:0 0 20px;}
+.nc-summary-item{display:flex; flex-direction:column; gap:1px; min-width:92px;}
+.nc-summary-item b{font-family:var(--serif); font-size:22px; font-weight:800; color:var(--ink); line-height:1.1;}
+.nc-summary-item span{font-size:11.5px; color:var(--muted); font-weight:600; letter-spacing:.02em;}
+.nc-summary-sep{width:1px; height:30px; background:var(--line);}
+.nc-summary-tip{margin-left:auto; font-size:12px; color:var(--muted); line-height:1.6; max-width:400px;}
+
+.nc-books{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+.nc-book-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px 24px 20px; display:flex; flex-direction:column; transition:.18s; position:relative; overflow:hidden;}
+.nc-book-card:hover{box-shadow:0 6px 22px rgba(40,60,50,.09); transform:translateY(-2px);}
+.nc-book-card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--nc-c,var(--accent)); opacity:.85;}
+.nc-book-top{display:flex; align-items:center; gap:10px; margin-bottom:10px;}
+.nc-book-badge{font-family:var(--serif); font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--nc-c,var(--accent));}
+.nc-book-tag{font-size:11px; font-weight:600; color:var(--sum); background:#F4F2EC; border-radius:999px; padding:2px 10px;}
+.nc-book-title{font-family:var(--serif); font-size:24px; font-weight:800; color:var(--ink); margin:0 0 3px; letter-spacing:-.01em; line-height:1.2;}
+.nc-book-level{font-size:13px; color:var(--sum); font-weight:500; margin-bottom:2px;}
+.nc-book-range{font-size:12px; color:var(--muted); margin-bottom:14px;}
+.nc-bar{height:8px; border-radius:999px; background:#F1EEE5; overflow:hidden;}
+.nc-bar-fill{height:100%; border-radius:999px; background:var(--nc-c,var(--accent)); transition:width .4s ease;}
+.nc-book-prow{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin:9px 0 12px;}
+.nc-book-pnum{font-size:13px; font-weight:700; color:var(--ink);}
+.nc-book-pnum em{font-style:normal; color:var(--muted); font-weight:600;}
+.nc-book-pct{font-size:12px; font-weight:800; color:var(--nc-c,var(--accent));}
+.nc-book-last{font-size:12px; color:var(--muted); margin-bottom:14px; min-height:18px;}
+.nc-book-last b{color:var(--sum); font-weight:700;}
+.nc-book-go{margin-top:auto; display:inline-flex; align-items:center; justify-content:center; gap:6px; border:0; background:var(--nc-c,var(--accent)); color:#fff; border-radius:8px; padding:9px 16px; font-size:13.5px; font-weight:700; font-family:inherit; cursor:pointer; transition:filter .15s; width:100%;}
+.nc-book-go:hover{filter:brightness(.94);}
+
+.nc-crumb{display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12.5px; color:var(--muted); margin:0 0 14px;}
+.nc-crumb button{border:0; background:transparent; color:var(--accent-d); font-size:12.5px; font-weight:600; font-family:inherit; cursor:pointer; padding:0; transition:.15s;}
+.nc-crumb button:hover{text-decoration:underline;}
+.nc-crumb .nc-sep{color:#C9C4B6;}
+
+.nc-page-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; flex-wrap:wrap; margin:0 0 16px;}
+.nc-page-head h2{font-family:var(--serif); font-size:30px; font-weight:800; color:var(--ink); margin:0; letter-spacing:-.01em;}
+.nc-page-head .nc-sub{font-size:13px; color:var(--sum); margin-top:4px;}
+.nc-page-meta{display:flex; gap:20px; flex-wrap:wrap;}
+.nc-page-meta div{display:flex; flex-direction:column;}
+.nc-page-meta b{font-family:var(--serif); font-size:20px; font-weight:800; color:var(--ink); line-height:1.15;}
+.nc-page-meta span{font-size:11.5px; color:var(--muted); font-weight:600;}
+
+.nc-lessons{display:flex; flex-direction:column; gap:9px;}
+.nc-lesson{display:flex; align-items:center; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius-sm); box-shadow:var(--shadow); padding:13px 18px; transition:.15s; cursor:pointer;}
+.nc-lesson:hover{border-color:var(--accent); box-shadow:0 4px 16px rgba(40,60,50,.08);}
+.nc-lesson.locked{opacity:.62; cursor:default; background:#FCFBF8;}
+.nc-lesson.locked:hover{border-color:var(--line); box-shadow:var(--shadow);}
+.nc-lesson-no{font-family:var(--serif); font-size:15px; font-weight:800; color:var(--nc-c,var(--accent)); min-width:78px; flex:none;}
+.nc-lesson-main{flex:1; min-width:0;}
+.nc-lesson-title{font-size:14.5px; font-weight:700; color:var(--ink); line-height:1.4;}
+.nc-lesson-topic{font-size:12px; color:var(--muted); margin-top:2px;}
+.nc-lesson-side{display:flex; align-items:center; gap:12px; flex:none;}
+.nc-lesson-last{font-size:11.5px; color:var(--muted); min-width:86px; text-align:right;}
+.nc-status{font-size:11.5px; font-weight:700; border-radius:999px; padding:3px 11px; white-space:nowrap; display:inline-flex; align-items:center; gap:4px;}
+.nc-status.done{background:var(--accent-soft); color:var(--accent-d);}
+.nc-status.doing{background:var(--orange-soft); color:#B4762F;}
+.nc-status.todo{background:#F4F2EC; color:var(--muted);}
+.nc-lesson-arrow{color:#C9C4B6; font-size:15px; flex:none;}
+
+.nc-lhead{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px 24px; margin:0 0 18px;}
+.nc-lhead-top{display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+.nc-lhead h2{font-family:var(--serif); font-size:26px; font-weight:800; color:var(--ink); margin:0; letter-spacing:-.01em;}
+.nc-lhead .nc-lsub{font-size:13px; color:var(--sum); margin-top:5px; line-height:1.6;}
+.nc-lhead-actions{display:flex; gap:8px; align-items:center; flex:none; flex-wrap:wrap;}
+.nc-note{font-size:11.5px; color:var(--muted); background:#FBF9F3; border:1px dashed var(--line); border-radius:8px; padding:6px 10px; margin-top:12px; line-height:1.6;}
+.nc-empty{display:flex; align-items:center; gap:10px; padding:16px 18px; border:1px dashed var(--line); border-radius:12px; background:#FCFBF7; color:var(--muted); font-size:13px; line-height:1.6;}
+.nc-empty .nc-empty-ic{font-size:20px; opacity:.55; flex:none;}
+.nc-empty b{color:var(--ink); font-weight:700;}
+
+.nc-panel{animation:ncIn .28s ease;}
+@keyframes ncIn{from{opacity:0; transform:translateY(5px);} to{opacity:1; transform:none;}}
+.nc-block{margin-bottom:18px;}
+.nc-block-h{font-family:var(--sans); font-size:13px; font-weight:800; color:var(--sum); letter-spacing:.04em; text-transform:uppercase; margin:0 0 10px; display:flex; align-items:center; gap:7px;}
+
+.nc-text{font-family:var(--serif); font-size:17.5px; line-height:1.95; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px 28px; white-space:pre-wrap;}
+.nc-text-tools{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:12px 0 0;}
+.nc-tool{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line); background:#fff; color:var(--sum); border-radius:999px; padding:7px 15px; font-size:12.5px; font-weight:700; font-family:inherit; cursor:pointer; transition:.15s;}
+.nc-tool:hover{border-color:var(--accent); color:var(--accent-d);}
+.nc-tool.on{background:var(--accent-soft); border-color:var(--accent); color:var(--accent-d);}
+.nc-tool.disabled{opacity:.5; cursor:default;}
+.nc-zh{display:none; margin-top:14px; background:#FBFAF5; border:1px solid var(--line); border-radius:var(--radius-sm); padding:18px 22px; font-size:14px; color:var(--sum); line-height:1.9; white-space:pre-wrap;}
+.nc-zh.show{display:block;}
+
+.nc-vocab{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+.nc-vrow{display:grid; grid-template-columns:168px minmax(0,1fr); gap:18px; padding:15px 22px; border-bottom:1px solid var(--line);}
+.nc-vrow:last-child{border-bottom:0;}
+.nc-vword{font-family:var(--serif); font-size:17px; font-weight:800; color:var(--ink); line-height:1.35;}
+.nc-vph{font-size:11.5px; color:var(--muted); margin-top:2px; letter-spacing:.02em;}
+.nc-vdef-en{font-size:13.5px; color:var(--ink); line-height:1.6;}
+.nc-vdef-zh{font-size:13px; color:var(--sum); margin-top:2px;}
+.nc-veg{font-size:13px; color:var(--sum); margin-top:7px; line-height:1.6; padding-left:11px; border-left:2px solid var(--accent-soft);}
+.nc-veg b{color:var(--accent-d); font-weight:700;}
+
+.nc-prac-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+.nc-prac-box{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px 20px;}
+.nc-prac-box h4{margin:0 0 4px; font-family:var(--sans); font-size:14px; font-weight:800; color:var(--ink);}
+.nc-prac-tip{font-size:12px; color:var(--muted); margin:0 0 12px; line-height:1.6;}
+.nc-q{font-size:13.5px; color:var(--ink); line-height:1.65; margin:0 0 9px;}
+.nc-q b{color:var(--accent-d);}
+.nc-opts{display:flex; flex-wrap:wrap; gap:7px;}
+.nc-opt{border:1px solid var(--line); background:#fff; border-radius:999px; padding:5px 13px; font-size:12.5px; color:var(--sum); font-family:inherit; cursor:pointer; transition:.15s;}
+.nc-opt:hover{border-color:var(--accent); color:var(--accent-d);}
+.nc-opt.right{background:var(--accent-soft); border-color:var(--accent); color:var(--accent-d); font-weight:700;}
+.nc-opt.wrong{background:#FDECEC; border-color:#F0B8B8; color:#B5585A;}
+.nc-open{width:100%; box-sizing:border-box; border:1.5px solid var(--line); border-radius:10px; background:#FBFCFB; padding:10px 12px; font-size:13.5px; font-family:inherit; color:var(--ink); outline:none; line-height:1.6; min-height:62px; resize:vertical; transition:border-color .15s;}
+.nc-open:focus{border-color:var(--accent);}
+.nc-prac-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:10px; flex-wrap:wrap;}
+.nc-prac-hint{font-size:11.5px; color:var(--muted);}
+.nc-done-banner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--accent-soft); border:1px solid #C7E8D2; border-radius:var(--radius-sm); padding:13px 18px; margin-bottom:18px;}
+.nc-done-banner span{font-size:13px; color:var(--accent-d); font-weight:600;}
+
+.nc-empty{background:var(--card); border:1px dashed var(--line); border-radius:var(--radius); padding:34px 26px; text-align:center; color:var(--muted); font-size:13.5px; line-height:1.7;}
+
+@media (max-width:960px){
+  .nc-books{grid-template-columns:1fr;}
+  .nc-prac-grid{grid-template-columns:1fr;}
+  .nc-vrow{grid-template-columns:1fr; gap:6px;}
+  .nc-text{font-size:16.5px; padding:20px 20px;}
+}
+/* 导航由 4 项增加到 5 项后，窄屏留出的余量（仅在 <1080px 生效） */
+@media (max-width:1080px){
+  .top-header{padding:0 16px;}
+  .nav-item{padding:8px 12px; font-size:13.5px;}
+}
 </style>
 </head>
 <body>
@@ -755,9 +918,10 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
   <div class="header-right">
     <nav>
       <button class="nav-item active" data-view="today" onclick="showView('today')">Today's Practice</button>
-      <button class="nav-item" data-view="reading" onclick="showView('reading')">Reading Hub</button>
+      <button class="nav-item" data-view="newconcept" onclick="showView('newconcept')">New Concept</button>
       <button class="nav-item" data-view="library" onclick="showView('library')">Library</button>
       <button class="nav-item" data-view="expressions" onclick="showView('expressions')">My Expressions</button>
+      <button class="nav-item" data-view="reading" onclick="showView('reading')">Reading Hub</button>
     </nav>
     <div class="header-tools">
       <button class="tool-btn" title="搜索" onclick="focusSearch()">🔍</button>
@@ -944,38 +1108,36 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
   <section class="view" id="view-expressions">
     <div class="xlab-hero">
       <div class="xlab-hero-txt">
-        <div class="xlab-eyebrow">My Expressions</div>
-        <h2 class="xlab-title">我的表达</h2>
-        <p class="xlab-sub">收藏值得记住的表达，通过练习和替换，让它们成为自己的语言。</p>
+        <div class="xlab-eyebrow" id="exprEyebrow">My Expressions</div>
+        <h2 class="xlab-title" id="exprTitle">我的表达</h2>
+        <p class="xlab-sub" id="exprSub">收藏值得记住的表达，通过练习和替换，让它们成为自己的语言。</p>
       </div>
-      <div class="xlab-actions">
+      <div class="xlab-actions" id="exprHeroActions">
         <button class="btn btn-green" onclick="openExprAdd()">＋ 收录一条</button>
       </div>
     </div>
 
-    <div class="expr-stats" id="exprStats">
-      <div class="es-card es-total"><div class="es-val" id="esTotal">0</div><div class="es-label">收藏表达</div></div>
-      <div class="es-card es-mine"><div class="es-val" id="esMine">0</div><div class="es-label">表达积累</div></div>
-      <div class="es-card es-mastered"><div class="es-val" id="esMastered">0</div><div class="es-label">已掌握表达</div></div>
+    <div class="expr-mode" id="exprModeTabs">
+      <button class="on" data-m="mine" onclick="setExprMode('mine')"><b>我的表达</b><span>My Expressions</span></button>
+      <button data-m="core" onclick="setExprMode('core')"><b>核心句型</b><span>Core Patterns</span></button>
     </div>
 
-    <div class="seed-bar">
-      <div class="seed-bar-txt">
-        <div class="seed-bar-tt">📚 核心句型库</div>
-        <div class="seed-bar-sub">100 个母语者日常高频的表达框架。先看例句，挑喜欢的加入，再替换关键词，变成你自己的句子。</div>
-      </div>
-      <button class="btn btn-green" onclick="openSeedBrowser()">去挑选 →</button>
+    <div id="exprMinePane">
+    <div class="expr-stats" id="exprStats">
+      <div class="es-card es-total"><div class="es-val" id="esTotal">0</div><div class="es-label">我的表达</div></div>
+      <div class="es-card es-todo"><div class="es-val" id="esTodo">0</div><div class="es-label">待复习</div></div>
+      <div class="es-card es-mastered"><div class="es-val" id="esMastered">0</div><div class="es-label">已掌握</div></div>
     </div>
+
     <div class="tp-today" id="exprToday" style="display:none;"></div>
 
     <div class="xlab-tabs">
       <span class="flabel">分类：</span>
-      <button class="fbtn active" data-k="all" onclick="setExprKind('all')">全部</button>
-      <button class="fbtn" data-k="reading" onclick="setExprKind('reading')">📖 阅读表达</button>
-      <button class="fbtn" data-k="drama" onclick="setExprKind('drama')">🎬 影视表达</button>
-      <button class="fbtn" data-k="daily" onclick="setExprKind('daily')">💬 日常表达</button>
-      <button class="fbtn" data-k="writing" onclick="setExprKind('writing')">✍️ 写作表达</button>
-      <button class="fbtn" data-k="starred" onclick="setExprKind('starred')">⭐ 重点收藏</button>
+      <button class="fbtn active" data-k="all" onclick="setExprKind('all')">全部<em class="fb-n" id="knAll"></em></button>
+      <button class="fbtn" data-k="reading" onclick="setExprKind('reading')">📖 阅读表达<em class="fb-n" id="knReading"></em></button>
+      <button class="fbtn" data-k="drama" onclick="setExprKind('drama')">🎬 影视表达<em class="fb-n" id="knDrama"></em></button>
+      <button class="fbtn" data-k="daily" onclick="setExprKind('daily')">💬 日常表达<em class="fb-n" id="knDaily"></em></button>
+      <button class="fbtn" data-k="writing" onclick="setExprKind('writing')">✍️ 写作表达<em class="fb-n" id="knWriting"></em></button>
     </div>
 
     <div class="xlab-toolbar">
@@ -994,6 +1156,24 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
 
     <div class="expr-grid" id="exprGrid"></div>
     <div class="empty" id="exprEmpty" style="display:none;">还没有收藏的表达。去阅读、影视或口语里遇到喜欢的句子，点一下收藏，它就会留在这里。</div>
+    </div>
+
+    <div class="core-pane" id="exprCorePane" style="display:none;">
+      <div class="core-box">
+        <div class="core-head">
+          <div>
+            <div class="sb-tt" id="sbtt">核心句型 · Core Patterns</div>
+            <div class="sb-st" id="sbst">系统整理的高频英语表达骨架，不是收藏。挑一条做「替换练习」——把骨架里的可变部分换成你自己的真实情况，造自己的句子，练到顺口再决定要不要收进「我的表达」。</div>
+          </div>
+        </div>
+        <div class="sb-groups" id="sbModes" style="padding-top:6px;"></div>
+        <div class="sb-groups" id="seedGroups"></div>
+        <div class="sb-groups" id="drmScenes" style="display:none;"></div>
+        <div class="sb-groups" id="drmShows" style="display:none;"></div>
+        <div class="sb-count" id="seedCount"></div>
+        <div class="sb-list" id="seedList"></div>
+      </div>
+    </div>
   </section>
 
   <div class="expr-detail" id="exprDetail">
@@ -1072,21 +1252,43 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
     </div>
   </div>
 
-  <div class="seed-browser" id="seedBrowser">
-    <div class="sb-backdrop" onclick="closeSeedBrowser()"></div>
-    <div class="sb-box">
-      <div class="sb-top">
-        <div>
-          <div class="sb-tt">核心句型库</div>
-          <div class="sb-st">100 个母语者在日常交流里反复使用的表达框架。挑中一条「加入我的表达」，它会以“学习中”的状态进入你的语料库，之后可以替换练习、标记掌握。</div>
-        </div>
-        <button class="sb-close" onclick="closeSeedBrowser()">✕</button>
+  <section class="view" id="view-newconcept">
+    <div class="xlab-hero">
+      <div class="xlab-hero-txt">
+        <div class="xlab-eyebrow">New Concept English</div>
+        <h2 class="xlab-title" id="ncTitle">New Concept English</h2>
+        <p class="xlab-sub" id="ncSub">Build your English foundation, one lesson at a time.</p>
       </div>
-      <div class="sb-groups" id="seedGroups"></div>
-      <div class="sb-count" id="seedCount"></div>
-      <div class="sb-list" id="seedList"></div>
+      <div class="xlab-actions" id="ncHeroActions"></div>
     </div>
-  </div>
+
+    <!-- ① 四册首页 -->
+    <div id="ncHome">
+      <div class="nc-summary" id="ncSummary"></div>
+      <div class="nc-books" id="ncBooks"></div>
+    </div>
+
+    <!-- ② 单册课程列表 -->
+    <div id="ncBook" style="display:none;">
+      <div class="nc-crumb" id="ncBookCrumb"></div>
+      <div class="nc-page-head" id="ncBookHead"></div>
+      <div class="nc-lessons" id="ncLessonList"></div>
+    </div>
+
+    <!-- ③ Lesson 详情 -->
+    <div id="ncLesson" style="display:none;">
+      <div class="nc-crumb" id="ncLessonCrumb"></div>
+      <div class="nc-lhead" id="ncLessonHead"></div>
+      <div class="xlab-tabs" id="ncTabs">
+        <button class="fbtn active" data-t="reading" onclick="setNcTab('reading')">📖 Reading</button>
+        <button class="fbtn" data-t="vocab" onclick="setNcTab('vocab')">🔑 Key Vocabulary</button>
+        <button class="fbtn" data-t="expr" onclick="setNcTab('expr')">💬 Useful Expressions<em class="fb-n" id="ncTabExprN"></em></button>
+        <button class="fbtn" data-t="pattern" onclick="setNcTab('pattern')">🧩 Sentence Patterns<em class="fb-n" id="ncTabPatN"></em></button>
+        <button class="fbtn" data-t="practice" onclick="setNcTab('practice')">✍️ Practice</button>
+      </div>
+      <div class="nc-panel" id="ncPanel"></div>
+    </div>
+  </section>
 
   <section id="view-reading" class="view" style="position:fixed;left:0;top:0;right:0;bottom:0;z-index:60;background:#fff;">
     <iframe src="reading.html" style="width:100%;height:100%;border:0;"></iframe>
@@ -1130,6 +1332,10 @@ h1,h2,h3,.title{font-family:var(--serif);font-weight:700;}
 
 <script src="./libs/html2canvas.min.js"></script>
 <script src="./libs/jspdf.umd.min.js"></script>
+<script src="./nc-data-book1.js"></script>
+<script src="./nc-data-book2.js"></script>
+<script src="./nc-data-book3.js"></script>
+<script src="./nc-data-book4.js"></script>
 <script>
 
 const DEFAULT_EXPRS = {"reading":10,"speaking":5,"drama":6};
@@ -4077,7 +4283,7 @@ const EMBEDDED = [
       "words": "200 词",
       "exprs": 10
     },
-    "is_today": true
+    "is_today": false
   },
   {
     "track": "drama",
@@ -4136,7 +4342,7 @@ const EMBEDDED = [
       "words": "6 个词块",
       "exprs": 6
     },
-    "is_today": true
+    "is_today": false
   },
   {
     "track": "speaking",
@@ -4146,6 +4352,481 @@ const EMBEDDED = [
     "title": "The Day My Smart Speaker Heard Me Cry",
     "sub": "智能音箱听见我哭的那一天",
     "excerpt": "Maya had lived alone for two years when she bought the smart speaker. It was on sale, and her friend swore by it — \"It plays music, sets timers, tells you the weather. You'll love it.\" Maya didn't lov",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "约 200 词",
+      "exprs": 5
+    },
+    "is_today": false
+  },
+  {
+    "track": "reading",
+    "file": "days/reading-2026-09-03.html",
+    "date": "2026-09-03",
+    "label": "2026-09-03",
+    "title": "The Quiet Comfort of the Rewatch",
+    "sub": "",
+    "excerpt": "",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B2",
+      "minutes": 15,
+      "words": "约 650 词",
+      "exprs": 10
+    },
+    "is_today": false
+  },
+  {
+    "track": "drama",
+    "file": "days/drama-2026-09-03.html",
+    "date": "2026-09-03",
+    "label": "2026-09-03",
+    "title": "《摩登家庭》S01E05 · 金矿工乌龙",
+    "sub": "6 个高频实用词块，从第五集顺手攒下。",
+    "excerpt": "6 个高频实用词块，从第五集顺手攒下。",
+    "preview": [
+      "sweep it under the rug",
+      "the elephant in the room",
+      "part of the problem, or part of the solution"
+    ],
+    "exprs": [
+      {
+        "en": "sweep it under the rug",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "the elephant in the room",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "part of the problem, or part of the solution",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "take baby steps",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "give me a break",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "gold digger（coal digger）",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      }
+    ],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "6 个词块",
+      "exprs": 6
+    },
+    "is_today": false
+  },
+  {
+    "track": "speaking",
+    "file": "days/speaking-2026-09-03.html",
+    "date": "2026-09-03",
+    "label": "2026-09-03",
+    "title": "The Doorman Who Told the Same Joke Every Day",
+    "sub": "那个每天都讲同一个笑话的门卫大叔",
+    "excerpt": "Mr. Gao had been the doorman of my building for as long as I could remember. Twelve years, probably. He wore the same blue uniform every day, and he greeted every resident with the same three sentence",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "约 200 词",
+      "exprs": 5
+    },
+    "is_today": false
+  },
+  {
+    "track": "reading",
+    "file": "days/reading-2026-09-04.html",
+    "date": "2026-09-04",
+    "label": "2026-09-04",
+    "title": "The Quiet Rebuilding of the Internet",
+    "sub": "",
+    "excerpt": "",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B2",
+      "minutes": 15,
+      "words": "1050 词",
+      "exprs": 10
+    },
+    "is_today": false
+  },
+  {
+    "track": "drama",
+    "file": "days/drama-2026-09-04.html",
+    "date": "2026-09-04",
+    "label": "2026-09-04",
+    "title": "《风骚律师》S01E04 · 英雄人设",
+    "sub": "6 个高频实用词块，从「英雄」这集顺手攒下。",
+    "excerpt": "6 个高频实用词块，从「英雄」这集顺手攒下。",
+    "preview": [
+      "People love a hero",
+      "the kind of lawyer guilty people hire",
+      "do good work and the clients will come"
+    ],
+    "exprs": [
+      {
+        "en": "People love a hero",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "the kind of lawyer guilty people hire",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "do good work and the clients will come",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "sweeten the pot",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "S'all good, man",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "cease and desist",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      }
+    ],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "6 个词块",
+      "exprs": 6
+    },
+    "is_today": false
+  },
+  {
+    "track": "speaking",
+    "file": "days/speaking-2026-09-04.html",
+    "date": "2026-09-04",
+    "label": "2026-09-04",
+    "title": "The Office That Forgot How to Whisper",
+    "sub": "那个忘了怎么低语的办公室",
+    "excerpt": "I had been working from home for three years. My desk was exactly the way I liked it: a standing converter, a ring light, a microphone that made me sound like a podcast host. I had a system. Coffee at",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "约 200 词",
+      "exprs": 5
+    },
+    "is_today": false
+  },
+  {
+    "track": "reading",
+    "file": "days/reading-2026-09-07.html",
+    "date": "2026-09-07",
+    "label": "2026-09-07",
+    "title": "The Year the Brick Nearly Broke",
+    "sub": "",
+    "excerpt": "",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B2",
+      "minutes": 15,
+      "words": "约 650 词",
+      "exprs": 10
+    },
+    "is_today": false
+  },
+  {
+    "track": "drama",
+    "file": "days/drama-2026-09-07.html",
+    "date": "2026-09-07",
+    "label": "2026-09-07",
+    "title": "《绝望主妇》S01E01 · 完美主妇的秘密",
+    "sub": "6 个高频实用词块，从紫藤巷的第一天顺手攒下。",
+    "excerpt": "6 个高频实用词块，从紫藤巷的第一天顺手攒下。",
+    "preview": [
+      "keep up appearances",
+      "picture-perfect",
+      "bump into (someone)"
+    ],
+    "exprs": [
+      {
+        "en": "keep up appearances",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "picture-perfect",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "bump into (someone)",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "there's more to (someone) than meets the eye",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "behind closed doors",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "word travels fast",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      }
+    ],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "6 个词块",
+      "exprs": 6
+    },
+    "is_today": false
+  },
+  {
+    "track": "speaking",
+    "file": "days/speaking-2026-09-07.html",
+    "date": "2026-09-07",
+    "label": "2026-09-07",
+    "title": "The Last Day of the Corner Bookstore",
+    "sub": "街角书店的最后一天",
+    "excerpt": "The bookstore had been on the corner of Fifth and Maple for forty-two years. I passed it every morning on my way to work and never once went inside. There was always an app for that.",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "约 200 词",
+      "exprs": 5
+    },
+    "is_today": false
+  },
+  {
+    "track": "reading",
+    "file": "days/reading-2026-09-08.html",
+    "date": "2026-09-08",
+    "label": "2026-09-08",
+    "title": "Anthony Bourdain: From Line Cook to the World's Table",
+    "sub": "",
+    "excerpt": "",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B2",
+      "minutes": 15,
+      "words": "200 词",
+      "exprs": 10
+    },
+    "is_today": false
+  },
+  {
+    "track": "drama",
+    "file": "days/drama-2026-09-08.html",
+    "date": "2026-09-08",
+    "label": "2026-09-08",
+    "title": "《绝命毒师》S01E02 · 善后风波",
+    "sub": "6 个高频实用词块，从第二集顺手攒下。",
+    "excerpt": "6 个高频实用词块，从第二集顺手攒下。",
+    "preview": [
+      "go our separate ways",
+      "that goes double for me",
+      "I haven't been myself (lately)"
+    ],
+    "exprs": [
+      {
+        "en": "go our separate ways",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "that goes double for me",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "I haven't been myself (lately)",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "mad props",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "loose ends（tie up loose ends）",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "wear the pants（in the family）",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      }
+    ],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "6 个词块",
+      "exprs": 6
+    },
+    "is_today": false
+  },
+  {
+    "track": "speaking",
+    "file": "days/speaking-2026-09-08.html",
+    "date": "2026-09-08",
+    "label": "2026-09-08",
+    "title": "The Song I Skipped for Three Years",
+    "sub": "那首歌，我跳过了三年",
+    "excerpt": "My ex and I had a song. Not our song — we weren't that couple. It was just a track that happened to be playing the first time we drove to the coast together. \"This is nice,\" she said, and that was it.",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "约 200 词",
+      "exprs": 5
+    },
+    "is_today": false
+  },
+  {
+    "track": "reading",
+    "file": "days/reading-2026-09-09.html",
+    "date": "2026-09-09",
+    "label": "2026-09-09",
+    "title": "How \"Parasite\" Broke the Subtitle Barrier — and What Came After",
+    "sub": "Daily English Reading · 2026-09-09 · ~950 words · based on real reporting",
+    "excerpt": "Daily English Reading · 2026-09-09 · ~950 words · based on real reporting",
+    "preview": [],
+    "exprs": [],
+    "meta": {
+      "level": "B2",
+      "minutes": 15,
+      "words": "200 词",
+      "exprs": 10
+    },
+    "is_today": true
+  },
+  {
+    "track": "drama",
+    "file": "days/drama-2026-09-09.html",
+    "date": "2026-09-09",
+    "label": "2026-09-09",
+    "title": "《老友记》S01E03 · 断指疑云",
+    "sub": "6 个高频实用词块，从第三集顺手攒下。",
+    "excerpt": "6 个高频实用词块，从第三集顺手攒下。",
+    "preview": [
+      "let it go",
+      "the bottom line is",
+      "there's no easy way to say this"
+    ],
+    "exprs": [
+      {
+        "en": "let it go",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "the bottom line is",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "there's no easy way to say this",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "let your guard down",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "can't stand someone / something",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      },
+      {
+        "en": "we should see other people",
+        "zh": "",
+        "scene": "",
+        "example": ""
+      }
+    ],
+    "meta": {
+      "level": "B1-B2",
+      "minutes": 5,
+      "words": "6 个词块",
+      "exprs": 6
+    },
+    "is_today": true
+  },
+  {
+    "track": "speaking",
+    "file": "days/speaking-2026-09-09.html",
+    "date": "2026-09-09",
+    "label": "2026-09-09",
+    "title": "The Yogurt I Couldn't Return",
+    "sub": "那罐我退不掉的酸奶",
+    "excerpt": "I had been in Lyon for exactly nine days when I walked into a Carrefour and made the most embarrassing purchase of my life. I wanted plain yogurt. Just plain. But the labels were all in French, and so",
     "preview": [],
     "exprs": [],
     "meta": {
@@ -4733,6 +5414,7 @@ function renderGoalList(){
 }
 function goalTaskClick(track){
   if(track === "review") startReview();
+  else if(track === "newconcept") ncOpenTodayReview();
   else openTodayReader(track);
 }
 
@@ -5116,7 +5798,10 @@ const CATS = [
   {v:"emotion",   name:"情绪表达", ic:"❤️"},
   {v:"work",      name:"工作沟通", ic:"💼"},
   {v:"hobby",     name:"兴趣爱好", ic:"🎯"},
-  {v:"habit",     name:"习惯变化", ic:"🔄"}
+  {v:"habit",     name:"习惯变化", ic:"🔄"},
+  {v:"relationship", name:"关系表达", ic:"💞"},
+  {v:"humor",     name:"幽默表达", ic:"😄"},
+  {v:"startup",   name:"商业创业", ic:"🚀"}
 ];
 function catName(v){
   const c = CATS.filter(function(x){ return x.v === v; })[0];
@@ -5256,8 +5941,18 @@ function renderExprStats(){
   const items = vaultItems();
   const set = function(id,v){ const el = document.getElementById(id); if(el) el.textContent = v; };
   set("esTotal", items.length);
-  set("esMine", items.filter(function(x){ return (x.note && x.note.trim()) || (x.mine && x.mine.trim()); }).length);
+  set("esTodo", items.filter(function(x){ return x.status !== "mastered"; }).length);
   set("esMastered", items.filter(function(x){ return x.status === "mastered"; }).length);
+  updateKindCounts(items);
+}
+/* 分类 Tab 上的数量徽标：我的表达 = 我收藏的表达，分类 = 它的来源归属 */
+function updateKindCounts(items){
+  const cnt = {all:items.length};
+  BUCKETS.forEach(function(b){ cnt[b.v] = items.filter(function(x){ return x.bucket === b.v; }).length; });
+  [["all","knAll"],["reading","knReading"],["drama","knDrama"],["daily","knDaily"],["writing","knWriting"]].forEach(function(pair){
+    const el = document.getElementById(pair[1]);
+    if(el) el.textContent = cnt[pair[0]] || "";
+  });
 }
 function exprStatusLabel(s){
   const o = STATUS_OPTS.filter(function(x){ return x.v === s; })[0] || STATUS_OPTS[0];
@@ -5315,8 +6010,61 @@ function exprToast(msg){
   }catch(_){}
 }
 
+/* —— 内容级模式：我的表达（收藏管理）/ 核心句型（骨架练习） —— */
+let EXPR_MODE = "mine";   // mine | core
+function setExprMode(m){
+  EXPR_MODE = (m === "core") ? "core" : "mine";
+  const tabs = document.getElementById("exprModeTabs");
+  if(tabs) tabs.querySelectorAll("button").forEach(function(b){
+    b.classList.toggle("on", b.getAttribute("data-m") === EXPR_MODE);
+  });
+  const minePane = document.getElementById("exprMinePane");
+  const corePane = document.getElementById("exprCorePane");
+  const acts = document.getElementById("exprHeroActions");
+  const ey = document.getElementById("exprEyebrow");
+  const tt = document.getElementById("exprTitle");
+  const su = document.getElementById("exprSub");
+  if(EXPR_MODE === "core"){
+    if(minePane) minePane.style.display = "none";
+    if(corePane){ corePane.style.display = ""; renderCorePane(); }
+    if(acts) acts.style.display = "none";
+    if(ey) ey.textContent = "Core Patterns";
+    if(tt) tt.textContent = "核心句型";
+    if(su) su.textContent = "系统整理的高频表达骨架，不是收藏。挑一条做替换练习——把可变部分换成你的真实情况，练到顺口，再决定要不要收进「我的表达」。";
+  }else{
+    if(minePane) minePane.style.display = "";
+    if(corePane) corePane.style.display = "none";
+    if(acts) acts.style.display = "";
+    if(ey) ey.textContent = "My Expressions";
+    if(tt) tt.textContent = "我的表达";
+    if(su) su.textContent = "收藏值得记住的表达，通过练习和替换，让它们成为自己的语言。";
+    renderExpressions();
+  }
+}
+function renderCorePane(){
+  const modesEl = document.getElementById("sbModes");
+  if(!modesEl) return;
+  flushCpInputs();
+  if(!modesEl.children.length){
+    SB_MODE = "pattern";
+    DRM_SCENE = "all";
+    DRM_SHOW = "all";
+  }
+  renderSbModes();
+  setModeVis();
+  updateSbTitle();
+  if(SB_MODE === "drama"){
+    renderDrmChips();
+    renderDrmList();
+  }else{
+    renderSeedGroups();
+    setSeedGroup(SEED_GROUP);
+  }
+}
+
 /* —— 列表渲染 —— */
 function renderExpressions(){
+  if(EXPR_MODE === "core"){ renderExprStats(); renderCorePane(); return; }
   renderExprStats();
   renderToday();
   const items = vaultItems().filter(function(x){
@@ -5381,6 +6129,7 @@ function exprCardHTML(x){
   if(x.note) h += '<div class="x-note"><b>我的理解</b>' + esc(x.note) + '</div>';
   if(x.mine) h += '<div class="x-mine"><b>我的例句</b>' + esc(x.mine) + '</div>';
   h += '<div class="x-meta">';
+  h += '<button class="x-practice" onclick="event.stopPropagation(); openExprDetail(\'' + keyAttr + '\',\'practice\')">✍ 开始练习</button>';
   h += '<span class="x-cat">' + catName(x.cat) + '</span>';
   h += '<span class="x-star ' + (x.starred ? "" : "off") + '" onclick="event.stopPropagation(); toggleStar(\'' + keyAttr + '\')">' + (x.starred ? "★ 重点" : "☆ 加重点") + '</span>';
   if(x.source) h += '<span class="x-src">' + esc(x.source) + '</span>';
@@ -5412,7 +6161,7 @@ function toggleStar(key){
 
 /* —— 详情抽屉：原句 → 理解 → 场景 → 例句 → 我的沉淀 → 状态 —— */
 let ED_KEY = null;
-function openExprDetail(key){
+function openExprDetail(key, mode){
   ED_KEY = key;
   const item = vaultItems().filter(function(x){ return x.key === key; })[0];
   if(!item) return;
@@ -5445,7 +6194,7 @@ function openExprDetail(key){
   const tagBtns = TAGS_POOL.map(function(t){
     return '<button class="ed-tag ' + (item.tags.indexOf(t) >= 0 ? "on" : "") + '" onclick="edToggleTag(\'' + t + '\')">' + t + '</button>';
   }).join("");
-  const srcOpts = SOURCES.map(function(s){
+  const srcOpts = (SOURCES.concat(item.source && SOURCES.indexOf(item.source) < 0 ? [item.source] : [])).map(function(s){
     return '<option value="' + s + '" ' + (item.source === s ? "selected" : "") + '>' + s + '</option>';
   }).join("");
   const stBtns = STATUS_OPTS.map(function(o){
@@ -5485,8 +6234,22 @@ function openExprDetail(key){
       '<div class="ed-statusbar">' + stBtns + '</div>' +
       '<div class="ed-hint">写下自己的理解后可以先标「学习中」；能在真实对话里自然说出来，再标「已掌握」。</div>' +
     '</div></div>';
+  const saveBtn = document.getElementById("edSave");
+  if(saveBtn){
+    const hasOwn = (item.note && item.note.trim()) || (item.mine && item.mine.trim());
+    saveBtn.textContent = hasOwn ? "✓ 保存我的表达" : "加入我的表达";
+  }
   el.classList.add("show");
   document.body.style.overflow = "hidden";
+  if(mode === "practice"){
+    setTimeout(function(){
+      const mi = document.getElementById("edMineInput");
+      if(mi){
+        mi.scrollIntoView({behavior:"smooth", block:"center"});
+        setTimeout(function(){ try{ mi.focus({preventScroll:true}); }catch(_){ mi.focus(); } }, 320);
+      }
+    }, 160);
+  }
 }
 function closeExprDetail(){
   document.getElementById("exprDetail").classList.remove("show");
@@ -5577,7 +6340,8 @@ function edSaveMine(){
   if(item && (item.note || item.mine) && item.status === "collected") writeExprField(ED_KEY, "status", "learning");
   closeExprDetail();
   renderExpressions();
-  exprToast("✓ 已加入我的表达");
+  const hasOwn = item && ((item.note && item.note.trim()) || (item.mine && item.mine.trim()));
+  exprToast(hasOwn ? "✓ 已保存到我的表达" : "✓ 已加入我的表达");
 }
 function edDelete(){
   if(!ED_KEY) return;
@@ -5761,19 +6525,212 @@ const SEED_PATTERNS = [
 {g:4,cat:"emotion",en:"I'm over the moon about …",zh:"我对……欣喜若狂",scene:"表达强烈的喜悦",struct:"I'm over the moon about + 名词",ex:["I'm over the moon about the promotion.","She was over the moon about the surprise party.","We're over the moon about the baby news."]},
 {g:4,cat:"emotion",en:"I didn't mean to …",zh:"我不是故意……的",scene:"为自己造成的误解道歉",struct:"I didn't mean to + 动词原形",ex:["I didn't mean to interrupt — please continue.","I didn't mean to hurt your feelings.","I didn't mean to leave you waiting; I lost track of time."]}
 ];
+/* —— 🎬 美剧台词库：剧集清单 —— */
+const SHOW_GROUPS = [
+  {s:0,  ic:"🍸", name:"老爸老妈的浪漫史", short:"How I Met Your Mother", full:"《老爸老妈的浪漫史》"},
+  {s:1,  ic:"🖥️", name:"办公室",           short:"The Office",            full:"《办公室》"},
+  {s:2,  ic:"🚀", name:"硅谷",             short:"Silicon Valley",        full:"《硅谷》"},
+  {s:3,  ic:"🎤", name:"了不起的麦瑟尔夫人", short:"Mrs. Maisel",          full:"《了不起的麦瑟尔夫人》"},
+  {s:4,  ic:"🧒", name:"小谢尔顿",         short:"Young Sheldon",         full:"《小谢尔顿》"},
+  {s:5,  ic:"🌈", name:"我们这一天",       short:"This Is Us",            full:"《我们这一天》"},
+  {s:6,  ic:"🎙️", name:"柯南脱口秀",       short:"Conan",                 full:"柯南脱口秀"},
+  {s:7,  ic:"🌃", name:"周六夜现场",       short:"SNL",                   full:"《周六夜现场》SNL"},
+  {s:8,  ic:"📰", name:"每日秀",           short:"The Daily Show",        full:"《每日秀》"}
+];
+/* —— 🎬 美剧台词库：表达场景维度顺序（对应 8 个表达场景标签）—— */
+const BANK_SCENES = ["dailychat","work","relationship","humor","opinion","experience","emotion","startup"];
+/* —— 🎬 美剧台词库：台词条目（s=剧集序号 / cat=表达场景 / en=原句 / zh=中文 / scene=使用场景 / struct=可替换 / ex=造句）—— */
+const DRAMA_LINES = [
+{s:0,cat:"humor",en:"It's going to be legen—wait for it—dary! Legendary!",zh:"这会成为——传——你先等着——奇！传奇级的！",scene:"Barney 宣布大事前的经典口癖；预告好消息、给气氛加码时用，插话 wait for it 制造悬念",struct:"核心形容词可替换：epic / amazing / unforgettable / insane",ex:["This party is going to be legen—wait for it—dary!","The launch event will be epic—wait for it—absolutely epic!","Our road trip is going to be legendary, I can already feel it."]},
+{s:0,cat:"dailychat",en:"Suit up!",zh:"把正装穿上！（打起精神、进入状态！）",scene:"Barney 招呼朋友出门赴约的口号；也用来给同伴打气，意为认真对待接下来的场合",struct:"可活用为 Gear up! / Buckle up! / Show time! 表示准备上场",ex:["Come on, suit up, the client meeting is in an hour.","We have a big presentation today — suit up, team!","I always suit up before an important interview."]},
+{s:0,cat:"dailychat",en:"Have you met Ted?",zh:"你认识 Ted 吗？",scene:"在社交场合向陌生人引荐朋友的万能开场白（Robin 的名场面）",struct:"Have you met + 人名 / 称呼？是口语里最自然的引荐句式",ex:["Have you met my roommate Lisa?","Have you met the new designer yet?","You haven't met our dog — his name is Buster."]},
+{s:0,cat:"opinion",en:"Nothing good ever happens after 2:00 a.m.",zh:"凌晨两点之后，不会发生什么好事。",scene:"Ted 用亲身教训总结的道理；劝人深夜别冲动做决定、别给前任发消息",struct:"Nothing good ever happens after + 时间点 / 某个临界条件",ex:["Nothing good ever happens after midnight, so I called it a night.","Nothing good happens after the third slice of cake.","Nothing good ever happens when I check my inbox before coffee."]},
+{s:0,cat:"emotion",en:"When I get sad, I stop being sad and be awesome instead.",zh:"我难过的时候，就停止难过，改走超棒路线。",scene:"Barney 的自嘲式正能量哲学；朋友低落时用来轻松劝解，或拿自己开涮",struct:"When I get + 情绪, I stop being + 情绪 and + 动词 instead（用行动反转情绪）",ex:["When I get nervous, I stop being nervous and focus on my breathing instead.","When I get tired, I stop scrolling and take a walk instead.","When I feel stuck, I stop overthinking and just start writing."]},
+{s:0,cat:"humor",en:"Challenge accepted.",zh:"挑战，接受。",scene:"对任何挑衅秒回的口头禅；朋友互怼、打赌时爽快应战",struct:"可替换为 Deal! / Count me in! / You're on! 表示我接招",ex:["You bet I can finish this report tonight — challenge accepted.","A week without sugar? Challenge accepted.","He dared me to sing karaoke, and I said challenge accepted."]},
+{s:0,cat:"dailychat",en:"Wait for it…",zh:"你先等着——好戏来了。",scene:"揭晓惊喜前制造悬念的万能插入语，可放在句中断开节奏",struct:"I have news—wait for it—… 结构：把 wait for it 插进句子里卖关子",ex:["I got the job—wait for it—in Paris!","And then, wait for it, he walked in wearing a dinosaur costume.","The answer is—wait for it—a hundred and one."]},
+{s:0,cat:"experience",en:"And that, kids, is how I met your mother.",zh:"孩子们，这就是我遇见你们妈妈的故事。",scene:"Ted 向孩子们讲往事的框架收尾句；讲完一段回忆后可用",struct:"And that's how I + 动词过去式（故事收尾万能框架）",ex:["And that, team, is how we closed the deal.","And that's how I learned never to microwave metal.","And that's how we became friends — she was my seatmate."]},
+{s:0,cat:"relationship",en:"I'm going to marry that girl someday.",zh:"总有一天我要娶那个女孩。",scene:"一见钟情后笃定表达心意的话（Ted 初遇 Robin 的心声）",struct:"I'm going to + 重大决定 someday（表达笃定的未来打算）",ex:["I'm going to open a bookshop someday.","She's going to run a marathon someday, I'm sure of it.","We're going to start our own studio someday."]},
+{s:0,cat:"relationship",en:"You're the one.",zh:"你就是那个人。",scene:"确定对的人时的经典告白；恋爱或表白场合直接可用",struct:"可在后面加 for me：You're the one for me，强调唯一性",ex:["After all these years, I still know you're the one.","He never doubted she was the one for him.","When you know, you know — she's the one."]},
+{s:0,cat:"experience",en:"Kids, I'm going to tell you an amazing story.",zh:"孩子们，我要给你们讲一个超棒的故事。",scene:"Ted 旁白常用的讲故事开场；想开启一段长篇讲述时先抛钩子",struct:"I'm going to tell you + 一件事 / a story（讲故事开场白）",ex:["Sit down, I'm going to tell you a story about my first job.","I'm going to tell you exactly what happened, no filters.","Let me tell you something funny that happened today."]},
+{s:0,cat:"humor",en:"Lawyered!",zh:"律师碾压，辩论终结！",scene:"Marshall 用律师逻辑赢下争论时的胜利宣言；朋友拌嘴时给出决定性反驳后的俏皮收尾",struct:"可替换为 Owned! / Got you! / Case closed! 表示这局我赢了",ex:["I checked the rules first — lawyered!","The data is on my side, so, lawyered.","You forgot we already tried that — got you!"]},
+{s:0,cat:"dailychat",en:"Have you ever had a moment where everything just clicks?",zh:"你有没有过那种一切都豁然开朗的时刻？",scene:"带哲思的闲聊提问，适合深夜长谈、拉近距离",struct:"Have you ever had a moment where + 句子？追问共同体验的万能提问",ex:["Have you ever had a moment where you knew the answer instantly?","Have you ever had a day where everything goes wrong at once?","Have you ever had a conversation that changed your mind?"]},
+{s:0,cat:"opinion",en:"A lie is just a great story that someone ruined with the truth.",zh:"谎言，不过是一个被真相毁掉的好故事。",scene:"Barney 的歪理金句；聊到谎言与讲故事边界时的俏皮观点",struct:"…is just a great … that someone ruined with …（俏皮定义的句式）",ex:["Monday is just a good weekend that work ruined with meetings.","A deadline is just a great idea that reality ruined with time.","This diet is just a great meal plan that snacks ruined with sugar."]},
+{s:0,cat:"relationship",en:"Sometimes love means knowing when to let go.",zh:"有时候，爱意味着知道什么时候该放手。",scene:"剧中的感悟型台词；安慰朋友或讨论放下与分手话题时用",struct:"Sometimes + 名词 means knowing when to + 动词（懂得……是一种……）",ex:["Sometimes growth means knowing when to quit a job.","Being a good friend means knowing when to speak up.","Success sometimes means knowing when to say no."]},
+{s:1,cat:"humor",en:"That's what she said.",zh:"她就是那么说的。（这可是她说的哦～）",scene:"Michael 的招牌双关梗，接在带歧义的句子后面；只适合熟人之间开玩笑",struct:"固定回梗，无替换；正式场合切勿使用",ex:["The report is really long — that's what she said!","This printer is so fast today — that's what she said.","We're going to need a bigger meeting room — that's what she said."]},
+{s:1,cat:"humor",en:"Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",zh:"我想被怕还是被爱？简单——两者都要。我要他们爱我爱到害怕。",scene:"Michael 自恋式管理哲学；调侃领导风格时的幽默自答",struct:"Would I rather + A or B? Easy. Both.（自问自答制造幽默）",ex:["Would I rather be efficient or popular? Easy. Both.","Do I want a raise or more freedom? Both, obviously.","Would you rather be right or be happy? That is the real question."]},
+{s:1,cat:"work",en:"I declare bankruptcy!",zh:"我宣布破产！",scene:"Michael 以为喊一句就生效的幼稚回应；可调侃面对账单装傻的人",struct:"I declare + 名词！是夸张宣言句式；真要表达破产应说 I'm filing for bankruptcy",ex:["I declare this meeting over — wait, we haven't started.","I declare today a pajama day.","I declare that this error was not my fault."]},
+{s:1,cat:"work",en:"Sometimes I'll start a sentence and I don't even know where it's going.",zh:"有时候我一句话开了头，却不知道它会走向哪里。",scene:"Michael 的自嘲金句；发言跑题、思路混乱时的幽默自嘲",struct:"Sometimes I'll + 动作 and I don't even know + 疑问从句（自嘲式坦白）",ex:["Sometimes I'll open my laptop and I don't even know what I wanted to do.","Sometimes I start a task and I don't even know why.","I'll begin an email and I don't even know who it's for."]},
+{s:1,cat:"humor",en:"Bears. Beets. Battlestar Galactica.",zh:"熊。甜菜。太空堡垒卡拉狄加。",scene:"Jim 用三个词恶搞 Dwight 的名场面；被问喜好时的故意无厘头回答",struct:"A. B. C. 三连名词 = 我的三件套式回答，制造荒诞笑点",ex:["Coffee. Cats. Coding — that's my whole personality.","Meetings. Emails. Spreadsheets — welcome to corporate life.","Pizza. Rainy days. Old movies — perfect weekend."]},
+{s:1,cat:"humor",en:"I'm not superstitious, but I am a little stitious.",zh:"我不迷信，但我有一点点迷之信。",scene:"Michael 的双关俏皮话；表示对某事将信将疑时的幽默回应",struct:"I'm not + 原词, but I am a little + 谐音变体（谐音自嘲句式）",ex:["I'm not a perfectionist, but I am a little perfectish.","I'm not an optimist, but I am a little optimish.","I'm not lazy, but I am a little lazystic."]},
+{s:1,cat:"work",en:"Identity theft is not a joke, Jim!",zh:"身份盗用可不是闹着玩的，Jim！",scene:"Dwight 被整蛊后的经典抗议；同事之间假装受害者的搞笑台词",struct:"X is not a joke! 用于强调某事不是儿戏（半严肃半玩笑皆可）",ex:["Running out of coffee is not a joke in this office.","Missing the deadline is not a joke — the client is waiting.","Skipping backups is not a joke until it's too late."]},
+{s:1,cat:"work",en:"Whenever I'm about to do something, I think, would an idiot do that? And if they would, I do not do that thing.",zh:"每当我准备做什么，我会先想：傻瓜会这么做吗？如果会，我就不做。",scene:"Dwight 的处世准则；说明自己会先判断再行动，常被网友引用",struct:"Would an idiot do that? 可作为行动前自我检查的口头禅",ex:["Before I send that angry email, I ask: would an idiot do that?","Would an idiot skip the test? Then I won't either.","I always ask what an idiot would do here — and do the opposite."]},
+{s:1,cat:"humor",en:"I love inside jokes. I'd love to be a part of one someday.",zh:"我爱内部梗。真希望有一天我也能参与一个。",scene:"Michael 想融入同事圈子的心酸幽默；自嘲总接不上大家的梗时用",struct:"I'd love to + 动词（带一点向往与自嘲的表达）",ex:["I love morning runs. I'd love to enjoy one someday.","I love board games. I'd love to win one someday.","I love their group chat. I'd love to be added someday."]},
+{s:1,cat:"humor",en:"The worst thing about prison was the dementors.",zh:"坐牢最可怕的是摄魂怪。",scene:"Michael 扮演 Prison Mike 把哈利波特混进监狱梗的名场面；故意讲错细节制造笑点",struct:"The worst thing about + 场景 was + 风马牛不相及的名词（错位梗句式）",ex:["The worst thing about working from home is the sharks.","The worst thing about dieting was the dragons.","The worst thing about that seminar was the zombies."]},
+{s:1,cat:"work",en:"Did I stutter?",zh:"我说得不够清楚吗？",scene:"Stanley 对 Michael 的硬核反问；表达我已经说得很清楚了，别再让我重复",struct:"Did I stutter? 语气较强硬，只适合对熟人或对方明显装傻时用",ex:["I said the meeting is at nine. Did I stutter?","I already told you my answer. Did I stutter?","Read the email again — did I stutter?"]},
+{s:1,cat:"work",en:"You miss 100% of the shots you don't take. — Wayne Gretzky — Michael Scott",zh:"你没出手的球，百分之百不会进。——韦恩·格雷茨基（迈克尔·斯科特引用）",scene:"Michael 引用名言给自己打气还署上自己名字；鼓励别人尝试时用的名梗",struct:"You miss 100% of the shots you don't take，口语可简化为 You miss every shot you don't take",ex:["Just apply for the role — you miss every shot you don't take.","I asked anyway; you miss 100% of the shots you don't take.","Send the pitch. You miss 100% of the shots you don't take."]},
+{s:1,cat:"dailychat",en:"Oh, how the turntables…",zh:"哈，风水轮流转了……",scene:"Michael 想说 how the tables have turned 却说错成 turntables 的经典口误；可自嘲引用",struct:"正确说法 How the tables have turned! 表达形势反转、角色互换",ex:["Last year I was the intern; how the tables have turned!","You used to beat me at chess — how the tables have turned.","Now you ask me for help? How the tables have turned."]},
+{s:1,cat:"humor",en:"False.",zh:"错误。（一本正经否定脸）",scene:"Dwight 用单字硬核否定别人的名场面；争论时一字否决制造喜感",struct:"可替换为 Incorrect! / Nope. 完整说法是 That's false",ex:["You think pineapple belongs on pizza? False.","He says he's always on time — false, I've seen the logs.","I'm the best driver here? False. That's Dwight."]},
+{s:1,cat:"emotion",en:"There's a lot of beauty in ordinary things. Isn't that kind of the point?",zh:"平凡的事物里有很多美好。这不正是生活的意义吗？",scene:"Pam 在剧终的感悟旁白；日常感慨平凡生活之美时引用",struct:"There's a lot of beauty in + 名词. Isn't that kind of the point?（反问式升华）",ex:["There's a lot of beauty in ordinary mornings. Isn't that the point?","There's a lot of joy in tiny routines — that's the point.","Isn't that the point — finding magic in the mundane?"]},
+{s:2,cat:"startup",en:"This guy fucks.",zh:"这哥们儿是真牛。",scene:"Russ Hanneman 对实力派的粗俗赞叹（出了圈的梗）；非正式场合表达这人确实有本事",struct:"俚语感叹结构；正式场合可换成 This guy really delivers / really knows his stuff",ex:["This dev really delivers — the app is flawless.","This guy really knows his stuff.","This founder can actually sell — respect."]},
+{s:2,cat:"startup",en:"Make the world a better place.",zh:"让世界变得更美好。",scene:"剧中用来嘲讽硅谷空话的万能口号；正经用法是描述公司使命，剧里用法自带反讽",struct:"使命宣言模板：To + 动词，so that + 结果；别只喊口号，要接具体动作",ex:["Our mission is to make developers more productive.","We're not just selling software — we're making work better.","Every startup claims to make the world better; few do."]},
+{s:2,cat:"startup",en:"We're going to disrupt the entire industry.",zh:"我们要颠覆整个行业。",scene:"创业者们爱挂在嘴边的豪言；讨论创新、改变格局时用（serious 或调侃皆可）",struct:"We're going to disrupt + 行业 / 领域",ex:["They claim their battery will disrupt the entire auto industry.","Small studios are disrupting the film business.","Disrupting an industry is easier said than done."]},
+{s:2,cat:"humor",en:"I'm not a businessman — I'm a business, man.",zh:"我不是个生意人——我本身就是一桩生意，老兄。",scene:"Erlich 的自恋宣言，玩 business 与 business man 的文字游戏；自我抬高时的幽默说法",struct:"I'm not a + 名词 — I'm a + 拆词（文字游戏句式）",ex:["He thinks he's not just an actor but a franchise, man.","She treats her own name like a company — she's a business, man.","I'm not in the app business; I am the app business."]},
+{s:2,cat:"startup",en:"We're pivoting to a new business model.",zh:"我们正在转向新的商业模式。",scene:"创业圈高频词 pivot（转型）；公司战略调整时的标准说法",struct:"We pivoted from A to B：从 A 转型到 B；pivot 也常作名词 a pivot",ex:["The team pivoted from a game to an education app.","Sometimes a startup has to pivot to survive.","We didn't fail — we pivoted."]},
+{s:2,cat:"startup",en:"Let's ship the MVP first and iterate.",zh:"先把最小可行产品做出来，再迭代。",scene:"硅谷产品方法论核心表达：小步快跑、快速验证（剧里产品讨论高频）",struct:"Ship the MVP / iterate on + 产品：产品开发两件套黑话",ex:["Don't build everything — ship an MVP and learn from users.","We iterated on the design after the beta feedback.","An MVP should be ugly but useful."]},
+{s:2,cat:"work",en:"We need to figure out how to monetize this.",zh:"我们得想想怎么把这个变现。",scene:"创业公司谈商业模式的高频动词 monetize；讨论如何赚钱",struct:"Monetize + 产品 / 流量 / 用户：把……变现",ex:["The app has millions of users but no way to monetize them.","Ads are the easiest way to monetize free content.","They monetized the newsletter with a premium tier."]},
+{s:2,cat:"humor",en:"Optimal tip-to-tip efficiency.",zh:"最佳端到端效率。（压缩算法梗）",scene:"剧中 middle-out 压缩算法的名场面术语；可用来调侃把简单事包装得很高深",struct:"optimal A-to-B + 名词：戏仿技术黑话给事物起高深的名字",ex:["We need optimal cup-to-mouth efficiency to save coffee time.","His synergistic lunch-to-nap workflow is just a nap.","Call it optimal click-to-convert efficiency if you must."]},
+{s:2,cat:"work",en:"That seems like a terrible idea.",zh:"这听起来像是个馊主意。",scene:"Richard 式低调反对：不直接说不，用平静语气泼冷水",struct:"That seems like a terrible / risky idea（委婉否定建议）",ex:["Posting that publicly seems like a terrible idea.","Running ads before testing seems risky.","That deadline seems impossible — can we push it?"]},
+{s:2,cat:"humor",en:"Making the world a better place through minimal message-oriented transport layers.",zh:"通过极简消息传输层让世界变得更美好。（假大空使命宣言）",scene:"Gavin Belson 用技术名词堆砌的伪使命感宣言；讽刺用术语包装的废话",struct:"Making the world a better place through + 冷门术语（反讽使命宣言模板）",ex:["Making the world a better place through synced spreadsheets.","Their slogan is pure jargon — through AI-powered synergy.","Making teams better through agile lunch breaks."]},
+{s:2,cat:"startup",en:"We need more runway before the next round.",zh:"在下一轮融资前，我们需要更长的现金流跑道。",scene:"创投黑话 runway（烧钱存活期），剧里融资戏高频；聊资金规划时用",struct:"runway / burn rate / next round：融资三件套词汇",ex:["With this burn rate we have six months of runway.","Cutting costs extends our runway by a quarter.","We raised to extend the runway to eighteen months."]},
+{s:2,cat:"work",en:"We can't ship this until we fix the edge cases.",zh:"边界情况没修完之前不能上线。",scene:"技术团队上线前的典型争执；edge case（边界情况）是工程师高频词",struct:"We can't ship until + 条件（上线把关句式）",ex:["We can't ship until the payment edge cases are covered.","Fix the edge cases first, then we talk launch.","The demo works, but edge cases will kill us."]},
+{s:2,cat:"emotion",en:"I honestly have no idea what I'm doing.",zh:"说实话，我根本不知道自己在干什么。",scene:"Richard 式创业焦虑自白；被赶鸭子上架、心里没底时用",struct:"I have no idea + 疑问从句（坦承没把握）",ex:["I have no idea how to lead a team, but I'm learning.","She has no idea what she signed up for.","Honestly? I have no idea why this app went viral."]},
+{s:2,cat:"opinion",en:"The demo always works. It's the real world that breaks things.",zh:"演示永远没问题。会搞砸一切的是现实世界。",scene:"技术圈经典吐槽；项目在真实环境翻车后的自嘲总结（剧里 demo 翻车名场面精神）",struct:"The demo always works; it's + 现实因素 that breaks things",ex:["The plan works on paper; it's people that break things.","My code passes tests; it's the users who break it.","The demo was perfect — until the wifi died."]},
+{s:3,cat:"humor",en:"Tits up!",zh:"昂首挺胸，撑住别垮！",scene:"Midge 上台表演的招牌结束语（乳房上提的戏谑双关=别泄气）；朋友打气时的狂野版",struct:"正式场合可换成 Chin up! / Keep your head up!",ex:["You bombed the interview? Tits up, babe — next one's yours.","Chin up — the first draft is always the worst.","She walked off stage and whispered tits up to the next comic."]},
+{s:3,cat:"experience",en:"You want to know a secret?",zh:"想听个秘密吗？",scene:"脱口秀开讲的经典钩子（Midge 惯用悬念开场）；日常聊天里制造好奇心",struct:"You want to know + 名词 / 从句？（比 Do you want to… 更口语）",ex:["You want to know a secret? I never went to college.","You want to know the real reason I quit?","Want to know something funny? My boss thinks I'm shy."]},
+{s:3,cat:"opinion",en:"Let me tell you something about marriage.",zh:"让我跟你说说婚姻这回事。",scene:"Midge 段子常用的开场切入（以过来人口吻谈婚恋）；分享犀利观点的铺垫句式",struct:"Let me tell you something about + 话题（预告要爆料的开场）",ex:["Let me tell you something about working from home.","Let me tell you something about my mother-in-law.","Let me tell you something about public speaking."]},
+{s:3,cat:"opinion",en:"You think you know someone.",zh:"你以为你很了解一个人。",scene:"讲述婚姻/关系翻车故事的反转开头；引出意想不到的爆料",struct:"You think you know someone, and then + 转折（叙事先抑后扬）",ex:["You think you know someone, and then you find their playlist.","You think you know a city until you get lost in it.","You think you know your code until you refactor it."]},
+{s:3,cat:"opinion",en:"I'm not saying it's easy. I'm saying it's worth it.",zh:"我不是说这很容易。我是说它值得。",scene:"观点输出里的让步结构：先承认难度再亮立场（Midge 式干脆利落）",struct:"I'm not saying A. I'm saying B（先否后肯的强调句式）",ex:["I'm not saying the course is short. I'm saying it pays off.","I'm not saying the plan is perfect. I'm saying we need it.","I'm not saying it was fun. I'm saying it was worth it."]},
+{s:3,cat:"humor",en:"My mother has an opinion about everything.",zh:"我妈对一切都有意见。",scene:"拿家人开涮的经典脱口秀素材；吐槽家人的安全开场（人人都能共鸣）",struct:"My mother / father has an opinion about + 一切",ex:["My mother has an opinion about my haircut, always.","My aunt has an opinion about how I fold laundry.","My dad has an opinion about every car on the road."]},
+{s:3,cat:"emotion",en:"I'm not the woman I used to be.",zh:"我不再是从前的我了。",scene:"Midge 从主妇蜕变为喜剧人的人物主题句；表达自我成长与变化",struct:"I'm not the + 名词 I used to be（今昔对比的自我陈述）",ex:["I'm not the shy girl I used to be.","She's not the employee who used to stay quiet.","I'm not the person I was a year ago — and that's okay."]},
+{s:3,cat:"opinion",en:"Why is it that when a woman is funny, she's still asked to be pretty?",zh:"为什么女人幽默，却还是被要求漂亮？",scene:"Midge 喜剧的核心议题之一（女性与幽默）；讨论性别刻板印象时的观点句",struct:"Why is it that + 现象？（质疑不合理规则的疑问句式）",ex:["Why is it that introverts always get asked to speak up?","Why is it that the loudest person wins the meeting?","Why is it that we celebrate busy over bored?"]},
+{s:3,cat:"opinion",en:"Get out there and be great.",zh:"走出去，把它做好。",scene:"经纪人式打气（Susie 对 Midge 的期望精神）；朋友上台/面试/路演前的强力鼓励",struct:"Get out there and + 动词（行动式打气句式）",ex:["Get out there and give the talk your best shot.","Get out there and ask for the raise.","She told me to get out there and just try."]},
+{s:3,cat:"experience",en:"So there I was, standing in front of a hundred people…",zh:"然后我就站在一百个人面前……",scene:"脱口秀/讲故事的标准场景铺垫（Midge 常讲登台糗事）；开启一段尴尬经历叙述",struct:"So there I was, + 状态描述（叙事时空定格句式）",ex:["So there I was, holding the wrong suitcase at the airport.","So there she was, about to give the toast without notes.","So there I was, in a meeting with no slides."]},
+{s:3,cat:"opinion",en:"I'd rather laugh than cry about it.",zh:"我宁愿笑着讲，也不愿哭着说。",scene:"把糟心事讲成段子的底层逻辑（Midge 的喜剧人生观）；自嘲化解尴尬时用",struct:"I'd rather + A than + B（宁可……也不……的偏好表达）",ex:["I'd rather laugh at my mistakes than cry about them.","I'd rather try and fail than never try.","She'd rather walk than take the crowded bus."]},
+{s:3,cat:"dailychat",en:"Ladies and gentlemen, thank you for having me.",zh:"女士们先生们，谢谢你们邀请我。",scene:"上台/受邀发言的标准开场白；正式场合致谢听众的礼貌句式",struct:"Thank you for having me / for the warm welcome（受邀致谢模板）",ex:["Thank you for having me — it's an honor to speak here.","Thanks for having me on the show.","Thank you all for the warm welcome tonight."]},
+{s:3,cat:"emotion",en:"I don't need anyone to complete me.",zh:"我不需要谁来让我完整。",scene:"Midge 式独立宣言（女性成长主题）；表达自我完整、不依附他人",struct:"I don't need anyone to + 动词（独立的边界表达）",ex:["I don't need anyone to approve my choices.","She doesn't need a title to feel confident.","You don't need an audience to do good work."]},
+{s:4,cat:"relationship",en:"I'm not crazy. My mother had me tested.",zh:"我没疯。我妈带我测过。",scene:"Sheldon 的经典自辩（大小谢尔顿通用名句）；别人说你怪、说你较真时的俏皮回击",struct:"I'm not + 形容词. My mother had me tested.（用荒谬证据反驳指控）",ex:["I'm not difficult. My mother had me tested.","I'm not boring — I'm just consistent.","I'm not stubborn; I'm committed to my position."]},
+{s:4,cat:"emotion",en:"Change is difficult for me.",zh:"对我来说，改变很难。",scene:"Sheldon 抗拒变化的直白告白；承认自己不喜欢被打乱节奏时的坦诚表达",struct:"Change is difficult for me / I don't handle change well",ex:["Change is hard for me, so I need time to adjust.","I don't handle sudden changes well.","New routines take me a while to get used to."]},
+{s:4,cat:"dailychat",en:"I don't like surprises.",zh:"我不喜欢惊喜。",scene:"Sheldon 式直球表达偏好（提前说清规矩）；委婉拒绝被安排的惊喜时可用",struct:"I don't like + 名词；更礼貌可说 I'd rather know in advance",ex:["I don't like surprises, so please tell me the plan early.","He doesn't like surprise guests.","I don't like sudden changes to the schedule."]},
+{s:4,cat:"work",en:"I'm not arguing. I'm explaining why I'm right.",zh:"我不是在争论。我是在解释为什么我是对的。",scene:"Sheldon 式狡辩金句；讨论中坚持己见时的幽默说法",struct:"I'm not + A. I'm + B（纠正对方的定性：我不是……而是……）",ex:["I'm not complaining. I'm offering constructive feedback.","I'm not late. I'm precisely on my own schedule.","I'm not shouting. I'm projecting."]},
+{s:4,cat:"emotion",en:"My life is over.",zh:"我的人生完了。",scene:"小孩子式夸张崩溃（谢尔顿式小题大做）；朋友用夸张语气吐槽小挫折时用",struct:"My life is over! 夸张自嘲；正常表达可用 It's not the end of the world（安慰别人）",ex:["I lost my notes and my life is over.","He spilled coffee on his keyboard — life over.","My weekend plans fell through and my life is over."]},
+{s:4,cat:"dailychat",en:"Can I ask you a question?",zh:"我能问你个问题吗？",scene:"谢尔顿式礼貌开场（铺垫后接古怪问题）；美国家庭日常对话高频句",struct:"Can I ask you a question? 后可接 any question / something personal",ex:["Can I ask you a question about your project?","Can I ask you something personal?","Can I ask you a weird question?"]},
+{s:4,cat:"dailychat",en:"Because I said so.",zh:"我说不行就不行。（家长式终结回答）",scene:"美国家长终结孩子追问的经典回答（该剧家庭戏高频）；也可用于开玩笑地拒绝解释",struct:"Because I said so 固定；带幽默时可换成 Because reasons",ex:["Why can't I have dessert? Because I said so.","Why do we have to leave now? Because I said so.","He asked again, and I said because I said so."]},
+{s:4,cat:"relationship",en:"I love you more than anything in the world.",zh:"我爱你胜过世间一切。",scene:"Mary 对孩子们直白告白；美国家庭里表达无条件的爱的高频句",struct:"I love you more than + 最高级比较对象（比……更爱）",ex:["I love you more than anything, even more than coffee.","She loves that dog more than anything in the world.","I love you more than words can say."]},
+{s:4,cat:"relationship",en:"Be nice to your brother.",zh:"对弟弟好一点。",scene:"家长居中调停兄妹吵架的口头禅；让某人善待家人或同伴时用",struct:"Be nice to + 某人；升级版 Be kind / Play fair",ex:["Be nice to your brother — he looks up to you.","Be nice to the new kid in class.","She told me to be nice to our cousin."]},
+{s:4,cat:"experience",en:"And that's when I realized I was in trouble.",zh:"就在那时，我意识到我麻烦大了。",scene:"谢尔顿旁白式叙事转折；讲一件搞砸的往事的标准句式",struct:"And that's when I realized + 句子（叙事反转点）",ex:["And that's when I realized I was in the wrong building.","And that's when she realized she forgot the tickets.","And that's when I realized the meeting was today."]},
+{s:4,cat:"emotion",en:"I don't understand why everyone is so emotional.",zh:"我不明白为什么大家都这么情绪化。",scene:"Sheldon 对人情世故的困惑式吐槽；表达自己理性过头、跟不上氛围时自嘲",struct:"I don't understand why + 现象（带着困惑的直球疑问）",ex:["I don't understand why everyone panics about deadlines.","I don't understand why this movie makes people cry.","I don't understand why small talk is mandatory."]},
+{s:4,cat:"dailychat",en:"That's a very good question.",zh:"这是个非常好的问题。",scene:"谢尔顿式认真肯定提问（随后长篇大论）；想赢得思考时间或真诚夸对方问题时用",struct:"That's a very good question + let me think about that（夸问题拖时间两件套）",ex:["That's a very good question — let me check the data.","That's a great question, and here's my honest answer.","That's a good question, but I don't have the answer yet."]},
+{s:4,cat:"humor",en:"I'm going to pretend I didn't hear that.",zh:"我打算假装没听到那句话。",scene:"面对不想接的调侃或八卦时的逃避式幽默（谢尔顿式）；玩笑性地拒绝回应",struct:"I'm going to pretend I didn't + 动词过去式（选择性失聪）",ex:["I'm going to pretend I didn't hear that suggestion.","She pretended she didn't see the message.","I'm going to pretend I didn't notice the typo."]},
+{s:4,cat:"emotion",en:"I don't like it when people touch me.",zh:"我不喜欢别人碰我。",scene:"谢尔顿式边界宣言；表达个人空间需求，礼貌设定身体界限",struct:"I don't like it when + 他人行为（温和表达不喜欢的事）",ex:["I don't like it when people read over my shoulder.","She doesn't like it when people are late.","I don't like it when plans change at the last minute."]},
+{s:5,cat:"emotion",en:"You took the sourest lemon that life has to offer and turned it into something resembling lemonade.",zh:"你接住生活递来的最酸的柠檬，把它酿成了近乎柠檬汁的甜。",scene:"Jack 对 Randall 的经典告白；安慰刚经历重挫的朋友、夸人把苦难变成力量时用",struct:"You took the sourest … and turned it into …（把最糟的经历酿成……）",ex:["You took the sourest breakup and turned it into a bestselling novel.","She turned the sourest rejection into a brand-new career.","He took the sourest childhood and turned it into patience for his kids."]},
+{s:5,cat:"emotion",en:"I've been waiting my whole life to feel like I belong somewhere.",zh:"我这辈子都在等一个能让我有归属感的地方。",scene:"Randall 袒露身世的独白；表达孤独、寻找认同，或终于找到归属时的深度表达",struct:"I've been waiting my whole life to + 动词（我一生都在等待……）",ex:["I've been waiting my whole life to be truly seen.","She waited her whole life to hear those words.","I've been waiting my whole life for a place like this."]},
+{s:5,cat:"emotion",en:"I know life doesn't always turn out the way we planned.",zh:"我知道，生活不总是按我们计划的样子来。",scene:"剧中长辈式宽慰；人生受挫、计划落空时安抚别人也安抚自己",struct:"Life doesn't always turn out the way we planned（生活不会总按计划来）",ex:["Life didn't turn out the way we planned, and that's okay.","My career didn't turn out the way I planned, but I love it anyway.","Things rarely turn out the way you plan — learn to enjoy the detour."]},
+{s:5,cat:"relationship",en:"You're my brother. Nothing is ever going to change that.",zh:"你是我兄弟，什么都不会改变这一点。",scene:"Kevin 对 Randall 的兄弟告白；修复关系、表达无条件的亲情与友情时用",struct:"You're my + 称谓. Nothing is ever going to change that.（无条件宣告）",ex:["You're my best friend — nothing will ever change that.","She's my sister; distance won't change that.","You're my family, no matter what happens."]},
+{s:5,cat:"emotion",en:"It's okay to not be okay. It's okay to ask for help.",zh:"允许自己状态不好，也允许自己开口求助。",scene:"剧集贯穿的心理疗愈主题；安慰崩溃的朋友、鼓励对方求助时的真诚表达",struct:"It's okay to not be okay / It's okay to + 动词（允许自己做……）",ex:["It's okay to not be okay — talking about it helps.","It's okay to ask for help; you don't have to carry it alone.","It's okay to rest. You're not a machine."]},
+{s:5,cat:"dailychat",en:"How was your day, really?",zh:"今天到底过得怎么样？（想听真话）",scene:"Jack 认真问家人一天的方式——加一个 really 表示想听真实感受；走心关心别人时用",struct:"How was your day, really?（加 really 追问真实感受）",ex:["How was your day, really? You look tired.","Tell me about your day — the real version.","How was the meeting, really? Don't sugarcoat it."]},
+{s:5,cat:"opinion",en:"Being a parent isn't about being perfect. It's about showing up.",zh:"做父母不在于完美，而在于始终在场。",scene:"剧集核心主题的提炼表达；谈育儿观、责任感时的观点句",struct:"… isn't about being perfect. It's about + 动名词（不在于……而在于……）",ex:["Good leadership isn't about being perfect — it's about showing up.","Friendship isn't about being right; it's about being there.","Learning isn't about being smart; it's about showing up every day."]},
+{s:5,cat:"emotion",en:"Sometimes the people we love the most hurt us the most.",zh:"有时候，伤我们最深的，恰恰是最爱的人。",scene:"剧中对家庭伤痕的洞察；谈论亲情中的伤害与和解时的深度表达",struct:"Sometimes the people we love the most + 动词最级（最爱的往往最……）",ex:["Sometimes the people we love the most know our weakest spots.","The people we trust the most can disappoint us the hardest.","Sometimes the ones closest to us see us least clearly."]},
+{s:5,cat:"experience",en:"We were always meant to be in each other's lives.",zh:"我们注定要出现在彼此的生命里。",scene:"Randall 与生父相认后的和解台词；重逢、缘分话题时的感性表达",struct:"We were always meant to be in each other's lives（宿命感的表达）",ex:["I think we were always meant to cross paths.","Some people are meant to stay in your life.","Meeting you felt less like luck and more like fate."]},
+{s:5,cat:"dailychat",en:"Tell me something good that happened today.",zh:"跟我说说，今天发生的一件好事是什么。",scene:"Jack 家的餐桌惯例——每人分享一件好事；家庭聚餐、团队破冰的温暖开场",struct:"Tell me something good that happened today（用具体问题打开话匣子）",ex:["Tell me something good that happened today — no pressure.","Share one good thing from your week, anyone?","Before bed, tell me the highlight of your day."]},
+{s:5,cat:"emotion",en:"Grief is just love with no place to go.",zh:"悲伤，不过是无处安放的爱。",scene:"剧中对丧亲之痛的诠释名句；安慰失去亲人的人时的温柔表达",struct:"Grief is just love with no place to go（用比喻重构痛苦）",ex:["Grief is love with nowhere to go, so it aches.","Missing you is just love that hasn't found its way back.","His anger was really grief with no place to go."]},
+{s:5,cat:"relationship",en:"I choose you. Every day, I choose you.",zh:"我选择你。每一天，我都选择你。",scene:"夫妻间的深情告白（呼应剧集婚姻观）；把爱定义为持续承诺而非一时冲动",struct:"I choose you / I'd choose you again（把爱定义为持续的选择）",ex:["I choose you — today and every day after.","After all these years, I'd still choose you.","Love isn't a feeling; it's choosing someone daily."]},
+{s:5,cat:"opinion",en:"You can't fast-forward through the hard parts of life.",zh:"人生的艰难时刻，没有快进键。",scene:"剧集讨论如何面对痛苦时光；劝人别逃避、直面困难时的观点句",struct:"You can't fast-forward through + 名词（没有捷径绕过……）",ex:["You can't fast-forward through grief; you have to walk through it.","There's no skipping the hard parts of building a business.","You can't fast-forward through healing — be patient with yourself."]},
+{s:5,cat:"experience",en:"I used to think the best part of my life was behind me. I was wrong.",zh:"我曾以为人生最好的部分已经过去了——我错了。",scene:"中年角色重新出发的感悟；人到中年仍相信未来、鼓励走出低谷时用",struct:"I used to think … I was wrong.（推翻旧信念的转折句式）",ex:["I used to think I was too old to start over. I was wrong.","I used to think this city had nothing left for me. I was wrong.","I used to think asking for help was weak. I was so wrong."]},
+{s:5,cat:"emotion",en:"I'm not leaving you. Not now, not ever.",zh:"我不会离开你。现在不会，永远都不会。",scene:"Jack 对家人的守护宣言；郑重承诺陪伴的场合用",struct:"I'm not leaving you / I'm not going anywhere（不走开，我在）",ex:["I'm not leaving you to deal with this alone.","I'm not going anywhere — we'll figure it out together.","Whatever happens, I'm staying."]},
+{s:6,cat:"dailychat",en:"Thank you very much. Please, have a seat.",zh:"非常感谢。请坐，请坐。",scene:"Conan 开场迎嘉宾的固定客套；主持活动、接待访客时的自然套语",struct:"Thank you very much. Please, have a seat（迎客标准两步）",ex:["Thanks for coming — please, have a seat.","Thank you very much for having me on the show.","Please, make yourself comfortable."]},
+{s:6,cat:"humor",en:"I have no idea what I'm doing, but I'm doing it with confidence.",zh:"我不知道自己在干嘛，但我干得很有底气。",scene:"Conan 式自嘲哲学；自我调侃能力不足却气势拉满的场合",struct:"I have no idea what I'm doing, but I'm doing it with confidence（自嘲金句式）",ex:["I have no idea how this app works, but I click with confidence.","He has no idea what he's cooking, but he plates it like a chef.","I don't know the answer, but I'll say it with confidence."]},
+{s:6,cat:"dailychat",en:"So, what brings you here today?",zh:"那今天是什么风把你吹来了？",scene:"访谈与寒暄的万能开场提问；引导对方进入话题的轻松问法",struct:"What brings you here today? / What brings you to + 地点？",ex:["So what brings you to this city?","What brings you to our office today?","What brings you here — work or pleasure?"]},
+{s:6,cat:"humor",en:"That's the most interesting thing I've heard all week.",zh:"这是我这一周听到的最有意思的事。",scene:"Conan 接嘉宾话茬的夸张捧场；朋友讲了趣事后的幽默肯定",struct:"That's the most interesting … I've heard all week（夸张式捧场）",ex:["That's the best excuse I've heard all month.","That's the weirdest thing you've said all day.","That's the smartest idea you've had all year."]},
+{s:6,cat:"dailychat",en:"Let me stop you right there.",zh:"我先打断你一下。",scene:"主持人控场用语；礼貌打断对方、要插话澄清时用",struct:"Let me stop you right there / Hold on a second（礼貌打断）",ex:["Let me stop you right there — I need to ask something.","Hold on, let me stop you there — is that legal?","Wait, stop right there — how much did you pay?"]},
+{s:6,cat:"opinion",en:"The secret to a good interview is making the other person feel interesting.",zh:"好访谈的秘诀，是让对方觉得自己很有趣。",scene:"Conan 谈访谈心法；总结沟通、待人技巧时的智慧表达",struct:"The secret to + 名词 is + 动名词（……的秘诀是……）",ex:["The secret to good conversation is genuine curiosity.","The secret to teaching is making students feel capable.","The secret to sales is making the client feel heard."]},
+{s:6,cat:"humor",en:"I've made a huge mistake.",zh:"我犯了个巨大的错误。",scene:"Conan 反复使用自嘲梗；搞砸一件事后夸张认错、缓解气氛时用",struct:"I've made a huge mistake（戏剧化承认失误）",ex:["I've made a huge mistake — I deleted the file.","We've made a huge mistake trusting that shortcut.","I made a huge mistake: I said yes to everything."]},
+{s:6,cat:"dailychat",en:"You have to come back and tell us more.",zh:"你一定要再来，把故事讲完。",scene:"访谈收尾的挽留客套；聊得投缘、期待再聚时用",struct:"You have to come back and tell us more（期待再叙的表达）",ex:["You have to come back and tell us how it ends.","We should grab dinner and you can finish the story.","Come back anytime — there's more to discuss."]},
+{s:6,cat:"opinion",en:"The first rule of comedy is that you have to be willing to look foolish.",zh:"喜剧的第一条规则：你得敢于出丑。",scene:"Conan 谈喜剧与人生；鼓励别人尝试新事物、不怕丢脸时引用",struct:"The first rule of + 名词 is that you have to be willing to + 动词（……的第一规则是敢于……）",ex:["The first rule of learning a language is being willing to sound silly.","The first rule of improv is saying yes.","The first rule of public speaking is being willing to be nervous."]},
+{s:6,cat:"humor",en:"Nobody's watching me, so I'll just do whatever I want.",zh:"又没人看我，那我就随便来了。",scene:"Conan 自嘲独处的俏皮话；四下无人时放飞自我的幽默说法",struct:"Nobody's watching, so I'll just + 动词（反正没人看见，那就……）",ex:["Nobody's watching, so I'll just sing terribly.","No one's looking — just sneak a cookie.","Nobody's watching this meeting, so let's end it early."]},
+{s:6,cat:"dailychat",en:"We were just talking about you.",zh:"我们正说到你呢。",scene:"被撞见议论时的标准救场语；尴尬场合的万能解围句",struct:"We were just talking about you（解围/热场常用）",ex:["We were just talking about you — great timing!","Speak of the devil — we were just talking about you.","We were just talking about your presentation."]},
+{s:6,cat:"humor",en:"It's a good thing I'm handsome, because I have no talent.",zh:"幸好我长得帅，因为我毫无才华。",scene:"Conan 拿自己开涮的自嘲；被夸奖后用自贬化解的幽默回应",struct:"It's a good thing I'm + 优点, because I + 缺点（用优点补锅的自嘲）",ex:["It's a good thing I'm charming, because I can't cook.","Good thing I'm patient, because I'm slow.","It's a good thing she's funny, because she's always late."]},
+{s:6,cat:"dailychat",en:"That went better than I expected.",zh:"比我想象中顺利多了。",scene:"节目或活动结束后的如释重负；任何忐忑之后意外顺利的场合",struct:"That went better than I expected / than expected",ex:["The presentation went better than I expected.","The interview went way better than expected.","My first day went better than I expected."]},
+{s:6,cat:"opinion",en:"Don't take yourself too seriously — nobody else does.",zh:"别太把自己当回事——反正别人也没当回事。",scene:"Conan 的人生态度金句；劝朋友放松、别玻璃心时的调侃式开解",struct:"Don't take yourself too seriously（别太较真/别端架子）",ex:["Don't take yourself too seriously — laugh at your own mistakes.","Life is easier when you don't take yourself too seriously.","He takes himself so seriously it's exhausting."]},
+{s:7,cat:"dailychat",en:"Live from New York, it's Saturday Night!",zh:"纽约现场直播——这里是周六夜现场！",scene:"SNL 每集开场的固定开场白；宣布一场大活动开始的仪式感金句",struct:"Live from + 地点, it's + 节目名/事件!（现场直播报幕句式）",ex:["Live from the office, it's our quarterly review!","Live from Shenzhen, it's the product launch!","Live from my kitchen, it's dinner time!"]},
+{s:7,cat:"humor",en:"I'm not a doctor, but I play one on TV.",zh:"我不是医生，但我在电视上演过医生。",scene:"SNL 经典喜剧套路句；对某领域不懂装懂时的自嘲",struct:"I'm not a + 职业, but I play one on TV（自嘲不专业）",ex:["I'm not a chef, but I play one on TV.","I'm not a lawyer, but I stayed at a Holiday Inn once.","I'm not a therapist, but I'm a good listener."]},
+{s:7,cat:"dailychat",en:"And the audience goes wild!",zh:"观众瞬间沸腾！",scene:"SNL 现场转播的经典描述；形容现场反应炸裂的夸张说法",struct:"The audience goes wild / the crowd goes wild（全场沸腾）",ex:["When she appeared, the crowd went wild.","The audience went wild after that solo.","Say that line and the crowd will go wild."]},
+{s:7,cat:"humor",en:"Can we talk about the elephant in the room?",zh:"我们能谈谈房间里的大象吗？（大家都回避的话题）",scene:"SNL 段子常用来引出尴尬话题；委婉指出大家都避开的问题",struct:"the elephant in the room（心照不宣却没人提的大问题）",ex:["Let's address the elephant in the room: the budget.","The elephant in the room is that nobody trusts the plan.","We can't ignore the elephant in the room any longer."]},
+{s:7,cat:"opinion",en:"It's not a party until something gets spilled.",zh:"不出点乱子，就不算真正的派对。",scene:"SNL 式对生活小混乱的调侃；事情搞砸时的乐观自嘲",struct:"It's not a + 名词 until + 句子（不发生……就不算真正的……）",ex:["It's not a road trip until someone gets lost.","It's not a family dinner until politics comes up.","It's not a launch until something breaks in production."]},
+{s:7,cat:"humor",en:"What if I told you...",zh:"如果我告诉你……（要开始装深沉了）",scene:"SNL 恶搞预告片的标志句式；故作高深揭真相的幽默铺垫",struct:"What if I told you + 句子（故作神秘的假设开场）",ex:["What if I told you the shortcut actually takes longer?","What if I told you meetings could be emails?","What if I told you the secret is just sleep?"]},
+{s:7,cat:"dailychat",en:"I'm gonna need you to be a little more specific.",zh:"麻烦你说得再具体一点。",scene:"SNL 职场段子里的经典半怼句；对方含糊其辞时的半开玩笑回击",struct:"I'm gonna need you to + 动词（我需要你……的口语表达）",ex:["I'm gonna need you to be a bit more specific.","I'm gonna need you to stop saying 'synergy'.","We're gonna need you to confirm by Friday."]},
+{s:7,cat:"humor",en:"Honestly, I'm just here for the food.",zh:"说实话，我就是来蹭饭的。",scene:"SNL 嘉宾或角色的躺平宣言；被问参会动机时的玩笑式回答",struct:"I'm just here for the + 名词（我纯粹为了……而来）",ex:["I'm just here for the free coffee.","Honestly, I only came for the cake.","She's just here for the networking — or the snacks."]},
+{s:7,cat:"dailychat",en:"This is going to be a thing.",zh:"这事儿要火了/要成气候了。",scene:"SNL 时代的流行语；预测某个梗或趋势会流行起来",struct:"This is going to be a thing（要成潮流）",ex:["This trend is going to be a thing, mark my words.","AI memes are going to be a thing this year.","If it works, this product is going to be a thing."]},
+{s:7,cat:"humor",en:"I saw this coming from a mile away.",zh:"我早八百年就预料到了。",scene:"SNL 事后诸葛亮式吐槽；对意料之中的结果表示不屑",struct:"I saw it coming from a mile away（早料到）",ex:["I saw that plot twist coming from a mile away.","The boss saw the failure coming from a mile away.","We saw this issue coming a mile away — why didn't we fix it?"]},
+{s:7,cat:"opinion",en:"The bit is dead. Let it go.",zh:"这个梗已经过气了，放下吧。",scene:"SNL 圈内吐槽玩烂的梗；朋友还揪着老梗不放时的劝告",struct:"The … is dead / Let it go（过气、翻篇的说法）",ex:["That meme is dead — let it go.","This catchphrase is dead, stop using it.","The trend is dead; move on to something new."]},
+{s:7,cat:"dailychat",en:"I'm dying. I'm literally dying.",zh:"我要笑死了，真的笑死了。",scene:"SNL 现场好笑程度的口语表达；夸张表示某事极好笑",struct:"I'm dying / I'm dead（笑死我了的口语化说法）",ex:["That sketch was so funny, I'm literally dying.","Stop it — I'm dying laughing here.","She's hilarious; I was dead the whole set."]},
+{s:7,cat:"humor",en:"This is fine. Everything is fine.",zh:"没事，一切都很好。（火都烧起来了）",scene:"SNL 强装镇定的名梗（源自网络流行 meme）；局面失控却硬撑场面时用",struct:"This is fine. Everything is fine.（强装淡定的反讽）",ex:["The server is on fire — but this is fine, everything is fine.","My to-do list is endless — but this is fine.","He missed the deadline again — but everything is fine, right?"]},
+{s:7,cat:"experience",en:"I stayed up way too late last night.",zh:"我昨晚熬太晚了。",scene:"SNL 演员周一早的日常吐槽（直播后遗症）；描述熬夜的口语说法",struct:"I stayed up way too late / I pulled an all-nighter",ex:["I stayed up way too late binging that show.","She pulled an all-nighter before the launch.","I stayed up way too late — today is rough."]},
+{s:7,cat:"opinion",en:"The best comedy comes from a place of truth.",zh:"最好的喜剧，都源于真实。",scene:"SNL 老演员谈喜剧的共识；评价一个段子为何好笑又扎心时的观点",struct:"The best + 名词 comes from a place of + 名词（最好的……源于……）",ex:["The best marketing comes from a place of honesty.","Great comedy comes from a place of truth.","The best apology comes from a place of understanding."]},
+{s:8,cat:"opinion",en:"Here's the thing: nobody asked for this.",zh:"重点是：没人想要这个。",scene:"每日秀吐槽政策或产品时的标志开场；点出大家真正不买账的地方",struct:"Here's the thing: + 句子（引出关键观点的口语开场）",ex:["Here's the thing: we already tried that and it failed.","Here's the thing — nobody reads the manual.","Here's the thing: the plan doesn't work without users."]},
+{s:8,cat:"humor",en:"You can't make this stuff up.",zh:"这种剧情，编都编不出来。",scene:"主播播报离谱新闻后的感叹；现实比段子还魔幻时的口头禅",struct:"You can't make this stuff up（现实太离奇）",ex:["A robot filed the lawsuit? You can't make this up.","The meeting got cancelled by the person who scheduled it — you can't make this up.","You can't make this stuff up — he proposed via a QR code."]},
+{s:8,cat:"opinion",en:"Now, I'm no expert, but I'm pretty sure that's wrong.",zh:"我不是专家，但我敢肯定这不对。",scene:"Jon Stewart 用谦辞开怼的标志句式；委婉否定别人的说法",struct:"I'm no expert, but + 观点（谦辞之后给出判断）",ex:["I'm no doctor, but that looks infected.","I'm no accountant, but those numbers don't add up.","I'm no lawyer, but I'm pretty sure that's illegal."]},
+{s:8,cat:"opinion",en:"Let's unpack that for a second.",zh:"我们把这个展开细说两句。",scene:"新闻评论员引导深度分析的说法；觉得某句话有蹊跷、要细品时用",struct:"Let's unpack that for a second（拆解某个说法）",ex:["Let's unpack that claim for a second.","Before we move on, let's unpack that decision.","Unpack that for me — what do you actually mean?"]},
+{s:8,cat:"humor",en:"I have so many questions right now.",zh:"我现在满脑子都是问号。",scene:"主播对荒诞发言的无语回应；对方逻辑混乱时的吐槽",struct:"I have so many questions / I have questions",ex:["You did what? I have so many questions.","She changed the design three times — I have questions.","I have so many questions about this decision."]},
+{s:8,cat:"opinion",en:"Correction: it's not a solution, it's a band-aid.",zh:"更正一下：这不是解决办法，是创可贴。",scene:"每日秀的 Correction 环节风格；指出某个做法治标不治本",struct:"Correction: it's not a …, it's a …（纠正定义的句式）",ex:["Correction: it's not a discount, it's a price increase.","That's not a fix, it's a band-aid.","Correction: we didn't save money, we delayed the cost."]},
+{s:8,cat:"opinion",en:"The problem isn't the technology. The problem is us.",zh:"问题不在技术，在于我们自己。",scene:"主播评科技新闻的常见论点；分析系统性问题时的观点框架",struct:"The problem isn't … The problem is …（转移归因的句式）",ex:["The problem isn't the tool — it's how we use it.","The problem isn't the team; it's the process.","The problem isn't AI; it's the rules we give it."]},
+{s:8,cat:"humor",en:"That's a bold strategy. Let's see if it pays off.",zh:"好大胆的策略，我们就看看它会不会奏效。",scene:"每日秀播报高风险决策时的阴阳点评；评价赌徒式操作时的幽默怀疑",struct:"That's a bold strategy. Let's see if it pays off（看戏式点评）",ex:["Shipping on Friday is a bold strategy — let's see if it pays off.","Ignoring user feedback is bold. Let's see if it pays off.","A bold strategy — we'll see if it pays off."]},
+{s:8,cat:"opinion",en:"I want to be fair and balanced here.",zh:"我想尽量公允一点。（接下来要开怼）",scene:"主播假装客观后立刻开火的反讽用法；预告自己要开始批评",struct:"I want to be fair and balanced here / to give credit where it's due",ex:["I want to be fair here — the design is great, the logic is not.","To be fair, the idea was good; the execution was terrible.","I want to be balanced: one good thing, then three problems."]},
+{s:8,cat:"dailychat",en:"What are we even talking about right now?",zh:"我们到底在聊什么啊？",scene:"新闻太离谱时的迷茫吐槽；对话跑偏之后的无语质问",struct:"What are we even talking about?（对话失焦的吐槽）",ex:["What are we even talking about? This meeting has no point.","I've lost the thread — what are we even discussing?","What are we even doing here?"]},
+{s:8,cat:"opinion",en:"If you repeat a lie often enough, people start to believe it.",zh:"谎言重复足够多次，就会有人开始相信。",scene:"主播评假新闻现象的引述观点；提醒别人勿轻信谣言时的表达",struct:"If you repeat … often enough, …（重复造就认知的句式）",ex:["If you repeat a rumor often enough, it becomes 'fact'.","Repeat a joke enough and it becomes a catchphrase.","If you say an idea is dead often enough, the team will stop trying."]},
+{s:8,cat:"humor",en:"Sir, with all due respect — and I mean zero respect —",zh:"先生，恕我直言——而且我真的一点都没在尊敬——",scene:"每日秀怼政客的开场梗；要开喷之前的礼貌式预告",struct:"With all due respect + 转折（礼貌性开怼）",ex:["With all due respect, that plan ignores the data.","With all due respect, this deadline is unrealistic.","With all due respect — none intended — that take is wrong."]},
+{s:8,cat:"dailychat",en:"Talk about timing.",zh:"这时机也太巧（或太糟）了。",scene:"主播点评新闻发生时机；事情来得恰到好处或糟透时的感叹",struct:"Talk about + 名词（口语感叹：说起……真是……）",ex:["The update crashed during the demo — talk about timing.","He quit on Monday and they announced layoffs Tuesday — talk about timing.","Rain on your wedding day? Talk about timing."]},
+{s:8,cat:"humor",en:"It's funny because it's true.",zh:"这事儿好笑，是因为它真实。",scene:"评论讽刺段子戳中现实时的点评；好笑的背后是共鸣",struct:"It's funny because it's true（笑点在于真实）",ex:["That sketch about meetings is funny because it's true.","The meme hits because it's true.","It's funny because it's true — we've all been that person."]},
+{s:8,cat:"opinion",en:"In the end, the truth always comes out.",zh:"真相最终总会浮出水面。",scene:"新闻评论收尾的信念表达；安慰被谣言困扰的人时用",struct:"In the end, + 句子（兜底结论的开场）",ex:["In the end, the data will show who was right.","In the end, quality wins.","In the end, the truth always surfaces."]},
+];
 let SEED_GROUP = 0;
-function openSeedBrowser(){
-  const b = document.getElementById("seedBrowser");
-  if(!b) return;
-  b.classList.add("show");
-  document.body.style.overflow = "hidden";
-  renderSeedGroups();
-  setSeedGroup(SEED_GROUP);
+
+/* —— 替换练习 · 我的造句存储（核心句型/台词卡内联练习区） —— */
+const CP_KEY = "lululab_coreprac_v1";
+function loadCp(){ try { return JSON.parse(localStorage.getItem(CP_KEY) || "{}") || {}; } catch(_){ return {}; } }
+function saveCpStore(o){ try { localStorage.setItem(CP_KEY, JSON.stringify(o)); } catch(_){} }
+function cpMineOf(k){ const o = loadCp(); return (o[k] && o[k].mine) || ""; }
+function cpHasMine(k){ const v = cpMineOf(k); return !!(v && v.trim()); }
+function cpBoxOf(btn){ return btn ? btn.parentElement.querySelector(".cp-box") : null; }
+function cpTextareaOf(btn){ const b = cpBoxOf(btn); return b ? b.querySelector(".cp-in") : null; }
+function flushCpOne(btn){
+  const k = btn ? btn.getAttribute("data-k") : null;
+  const ta = cpTextareaOf(btn);
+  if(!k || !ta) return;
+  const v = ta.value.trim();
+  const o = loadCp();
+  o[k] = o[k] || {};
+  if(String(o[k].mine || "") !== v){
+    o[k].mine = v;
+    o[k].ts = Date.now();
+    saveCpStore(o);
+  }
 }
-function closeSeedBrowser(){
-  const b = document.getElementById("seedBrowser");
-  if(b) b.classList.remove("show");
-  document.body.style.overflow = "";
+function flushCpInputs(){
+  document.querySelectorAll("#exprCorePane .sc-pbtn").forEach(function(btn){
+    const b = cpBoxOf(btn);
+    if(b && b.style.display !== "none") flushCpOne(btn);
+  });
+}
+function toggleCp(btn){
+  const b = cpBoxOf(btn);
+  if(!b) return;
+  if(b.style.display !== "none"){
+    flushCpOne(btn);
+    b.style.display = "none";
+    btn.classList.remove("on");
+    return;
+  }
+  const k = btn.getAttribute("data-k");
+  const ta = cpTextareaOf(btn);
+  if(ta){ ta.value = cpMineOf(k); }
+  b.style.display = "";
+  btn.classList.add("on");
+}
+function saveCp(btn){
+  flushCpOne(btn);
+  const k = btn ? btn.getAttribute("data-k") : null;
+  const mine = cpHasMine(k);
+  const box = btn ? btn.closest(".cp-box") : null;
+  if(box && mine){
+    const savedEl = box.querySelector(".cp-mine-saved");
+    if(savedEl) savedEl.classList.add("show");
+  }
+  const card = btn ? btn.closest(".scard") : null;
+  if(card){
+    const pb = card.querySelector(".sc-pbtn");
+    if(pb) pb.classList.toggle("saved", mine);
+  }
+  exprToast(mine ? "✓ 我的造句已保存" : "先写下你自己的句子，再点保存");
 }
 function renderSeedGroups(){
   const el = document.getElementById("seedGroups");
@@ -5793,7 +6750,7 @@ function setSeedGroup(v){
   const arr = SEED_PATTERNS.filter(function(p){ return p.g === v; });
   if(count){
     count.textContent = g
-      ? g.ic + " " + g.name + " · " + arr.length + " 个句型 · " + g.desc + " · 已加入的会留在「我的表达」里"
+      ? g.ic + " " + g.name + " · " + arr.length + " 个句型 · " + g.desc + " · 每个都先替换造句，练顺口再考虑收藏"
       : "";
   }
   if(!list) return;
@@ -5804,17 +6761,28 @@ function seedSlot(en){
 }
 function seedCardHTML(p){
   const added = seedAdded(p.en);
-  return '<div class="scard" data-seed="' + esc(p.en) + '">' +
+  const mine = cpHasMine(p.en);
+  const keyAttr = esc(p.en);
+  return '<div class="scard" data-seed="' + keyAttr + '">' +
     '<div class="sc-top"><span class="x-kind pattern">🧩 句型</span><span class="x-cat">' + catName(p.cat) + '</span></div>' +
     '<div class="sc-en">' + seedSlot(p.en) + '</div>' +
     '<div class="sc-zh">' + esc(p.zh) + '</div>' +
     '<div class="sc-scene">📌 用在哪：' + esc(p.scene) + '</div>' +
-    '<div class="sc-struct">可替换：' + esc(p.struct) + '</div>' +
+    '<div class="sc-struct">句型结构：' + esc(p.struct) + '</div>' +
     '<ol class="sc-ex">' + p.ex.map(function(e){ return "<li>" + esc(e) + "</li>"; }).join("") + "</ol>" +
     '<div class="sc-foot">' +
-      '<span class="sc-note">' + (added ? "已在你的表达里 ✓" : "加入后可标记掌握、写下自己的理解") + '</span>' +
-      '<button class="sc-add' + (added ? " done" : "") + '" onclick="addSeedToMine(\'' + esc(p.en).replace(/'/g,"\\'") + '\')"' + (added ? " disabled" : "") + ">" + (added ? "✓ 已加入" : "＋ 加入我的表达") + "</button>" +
+      '<span class="sc-note">' + (added ? "✓ 已收藏在你的表达里" : "替换造句练顺口后，再收藏也不迟") + '</span>' +
+      '<button class="sc-add' + (added ? " done" : "") + '" onclick="addSeedToMine(\'' + keyAttr.replace(/'/g,"\\'") + '\')"' + (added ? " disabled" : "") + ">" + (added ? "✓ 已加入" : "＋ 加入我的表达") + "</button>" +
     "</div>" +
+    '<div class="sc-pact">' +
+      '<button class="sc-pbtn' + (mine ? " saved" : "") + '" data-k="' + keyAttr + '" onclick="toggleCp(this)">✍ 替换练习</button>' +
+      '<div class="cp-box" style="display:none;">' +
+        '<div class="cp-guide">把 <b>' + esc(p.struct) + '</b> 里的可变部分换成你自己的真实情况，写一句你明天就能用上的英语。</div>' +
+        '<textarea class="cp-in" placeholder="把 … 部分换成你自己的真实情况，写一整句"></textarea>' +
+        '<div class="cp-row"><button class="cp-save" data-k="' + keyAttr + '" onclick="saveCp(this)">保存我的造句</button><span class="cp-hint">保存后留在这条下面，随时回来改</span></div>' +
+        '<div class="cp-mine-saved">✓ 已保存。多替换几次直到能自然说出来——这就是把句型变成自己语言的方式。</div>' +
+      '</div>' +
+    '</div>' +
   "</div>";
 }
 function seedAdded(en){
@@ -5839,6 +6807,153 @@ function addSeedToMine(en){
   saveManual(list);
   exprToast("✓ 已加入我的表达（学习中）");
   setSeedGroup(SEED_GROUP);
+  renderExprStats();
+  renderExpressions();
+}
+
+/* ===== 🎬 美剧台词库（与核心句型库共用弹窗，二选一模式） ===== */
+let SB_MODE = "pattern";   // pattern | drama
+let DRM_SCENE = "all";     // 表达场景筛选
+let DRM_SHOW = "all";      // 剧集筛选
+function sbBankCount(m){
+  return m === "pattern" ? SEED_PATTERNS.length : DRAMA_LINES.length;
+}
+function sceneLabel(v){
+  return v === "all" ? "全部场景" : catName(v);
+}
+function showLabel(v){
+  if(v === "all") return "全部剧集";
+  const g = SHOW_GROUPS.filter(function(x){ return x.s === v; })[0];
+  return g ? g.name : "全部剧集";
+}
+function renderSbModes(){
+  const el = document.getElementById("sbModes");
+  if(!el) return;
+  el.innerHTML = ["pattern","drama"].map(function(m){
+    const nm = m === "pattern" ? "🧩 核心句型" : "🎬 美剧台词库";
+    return '<button class="sg' + (SB_MODE === m ? " on" : "") + '" onclick="setSbMode(\'' + m + '\')">' + nm + " <em>" + sbBankCount(m) + "</em></button>";
+  }).join("");
+}
+function updateSbTitle(){
+  const t = document.getElementById("sbtt");
+  const s = document.getElementById("sbst");
+  if(SB_MODE === "drama"){
+    if(t) t.textContent = "🎬 美剧台词库";
+    if(s) s.textContent = "从 9 部美剧与脱口秀里精选的高频原句：先看语境与用法，用「造句练习」把它搬进自己的真实场景；真正想留下的，再加入「我的表达」。";
+  }else{
+    if(t) t.textContent = "🧩 核心句型 · Core Patterns";
+    if(s) s.textContent = "100 个母语者在日常交流里反复使用的高频表达骨架，不是收藏。挑一条先做「替换练习」——把可变部分换成你自己的真实情况；练到顺口，再决定要不要加入「我的表达」。";
+  }
+}
+function setModeVis(){
+  const m = SB_MODE === "drama";
+  const a = document.getElementById("seedGroups");
+  const b = document.getElementById("drmScenes");
+  const c = document.getElementById("drmShows");
+  if(a) a.style.display = m ? "none" : "";
+  if(b) b.style.display = m ? "" : "none";
+  if(c) c.style.display = m ? "" : "none";
+}
+function setSbMode(m){
+  SB_MODE = m;
+  DRM_SCENE = "all";
+  DRM_SHOW = "all";
+  renderSbModes();
+  setModeVis();
+  updateSbTitle();
+  if(m === "pattern"){
+    renderSeedGroups();
+    setSeedGroup(SEED_GROUP);
+  }else{
+    renderDrmChips();
+    renderDrmList();
+  }
+}
+function renderDrmChips(){
+  const sEl = document.getElementById("drmScenes");
+  const hEl = document.getElementById("drmShows");
+  if(!sEl || !hEl) return;
+  const cntS = {};
+  const cntH = {};
+  DRAMA_LINES.forEach(function(p){
+    cntS[p.cat] = (cntS[p.cat]||0) + 1;
+    cntH[p.s] = (cntH[p.s]||0) + 1;
+  });
+  let hs = '<button class="sg' + (DRM_SCENE === "all" ? " on" : "") + '" onclick="setDrmScene(\'all\')">全部场景 <em>' + DRAMA_LINES.length + "</em></button>";
+  BANK_SCENES.forEach(function(c){
+    hs += '<button class="sg' + (DRM_SCENE === c ? " on" : "") + '" onclick="setDrmScene(\'' + c + '\')">' + catName(c) + " <em>" + (cntS[c]||0) + "</em></button>";
+  });
+  let hh = '<button class="sg' + (DRM_SHOW === "all" ? " on" : "") + '" onclick="setDrmShow(\'all\')">全部剧集 <em>' + DRAMA_LINES.length + "</em></button>";
+  SHOW_GROUPS.forEach(function(g){
+    hh += '<button class="sg' + (DRM_SHOW === g.s ? " on" : "") + '" onclick="setDrmShow(' + g.s + ')">' + g.ic + " " + g.name + " <em>" + (cntH[g.s]||0) + "</em></button>";
+  });
+  sEl.innerHTML = hs;
+  hEl.innerHTML = hh;
+}
+function setDrmScene(v){ DRM_SCENE = v; renderDrmChips(); renderDrmList(); }
+function setDrmShow(v){ DRM_SHOW = v; renderDrmChips(); renderDrmList(); }
+function renderDrmList(){
+  const count = document.getElementById("seedCount");
+  const list = document.getElementById("seedList");
+  const arr = DRAMA_LINES.filter(function(p){
+    return (DRM_SCENE === "all" || p.cat === DRM_SCENE) && (DRM_SHOW === "all" || p.s === DRM_SHOW);
+  });
+  if(count){
+    count.textContent = "🎬 美剧台词库 · " + sceneLabel(DRM_SCENE) + " · " + showLabel(DRM_SHOW) + " · " + arr.length + " 条 · 造句搬到自己的场景里练，想留下再收藏";
+  }
+  if(!list) return;
+  list.innerHTML = arr.map(function(p){ return lineCardHTML(p); }).join("");
+  if(!arr.length){
+    list.innerHTML = '<div class="empty">这个组合下还没有台词，换个场景或剧集看看。</div>';
+  }
+}
+function lineCardHTML(p){
+  const g = SHOW_GROUPS.filter(function(x){ return x.s === p.s; })[0] || {short:"", ic:"🎬"};
+  const added = seedAdded(p.en);
+  const mine = cpHasMine(p.en);
+  const enHtml = esc(p.en).replace(/(\.\.\.|…|___)/g, ' <span class="slot">…</span>');
+  const keyAttr = esc(p.en);
+  return '<div class="scard" data-line="' + keyAttr + '">' +
+    '<div class="sc-top"><span class="x-kind scene">🎬 台词</span><span class="x-cat">' + catName(p.cat) + '</span><span class="x-src">' + esc(g.ic + " " + g.short) + '</span></div>' +
+    '<div class="sc-en">' + enHtml + '</div>' +
+    '<div class="sc-zh">' + esc(p.zh) + '</div>' +
+    '<div class="sc-scene">📌 用在哪：' + esc(p.scene) + '</div>' +
+    '<div class="sc-struct">可替换：' + esc(p.struct) + '</div>' +
+    '<ol class="sc-ex">' + p.ex.map(function(e){ return "<li>" + esc(e) + "</li>"; }).join("") + "</ol>" +
+    '<div class="sc-foot">' +
+      '<span class="sc-note">' + (added ? "✓ 已收藏在你的表达里" : "把台词搬进自己的场景，练顺口后收藏") + '</span>' +
+      '<button class="sc-add' + (added ? " done" : "") + '" onclick="addLineToMine(\'' + keyAttr.replace(/'/g,"\\'") + '\')"' + (added ? " disabled" : "") + ">" + (added ? "✓ 已加入" : "＋ 加入我的表达") + "</button>" +
+    "</div>" +
+    '<div class="sc-pact">' +
+      '<button class="sc-pbtn' + (mine ? " saved" : "") + '" data-k="' + keyAttr + '" onclick="toggleCp(this)">✍ 造句练习</button>' +
+      '<div class="cp-box" style="display:none;">' +
+        '<div class="cp-guide">把这句话搬进你自己的真实场景——人物换成你，情节换成你的日常，写一句你也会说出口的英语。</div>' +
+        '<textarea class="cp-in" placeholder="把 … 换成你的真实情况，写一整句"></textarea>' +
+        '<div class="cp-row"><button class="cp-save" data-k="' + keyAttr + '" onclick="saveCp(this)">保存我的造句</button><span class="cp-hint">保存后留在这条下面，随时回来改</span></div>' +
+        '<div class="cp-mine-saved">✓ 已保存。场景迁移也是一种练习，下次遇到相似场合直接用它。</div>' +
+      '</div>' +
+    '</div>' +
+  "</div>";
+}
+function addLineToMine(en){
+  const p = DRAMA_LINES.filter(function(x){ return x.en === en; })[0];
+  if(!p){ return; }
+  if(seedAdded(p.en)){ exprToast("它已经在你的表达里了"); return; }
+  const g = SHOW_GROUPS.filter(function(x){ return x.s === p.s; })[0] || {full:""};
+  const list = loadManual();
+  list.unshift({
+    key: "manual::" + Date.now(),
+    en:p.en, zh:p.zh, scene:p.scene,
+    example:p.ex[0], examples:p.ex.slice(0),
+    structure:p.struct,
+    kind:"scene", bucket:"drama", cat:p.cat,
+    seed:false, starred:false, tags:[], note:"", mine:"",
+    status:"learning", source:g.full
+  });
+  saveManual(list);
+  exprToast("✓ 已加入我的表达（学习中）");
+  renderDrmChips();
+  renderDrmList();
   renderExprStats();
   renderExpressions();
 }
@@ -5885,6 +7000,656 @@ function renderGrowth(){
   document.getElementById("growthCal").innerHTML = html;
 }
 
+/* =================== New Concept · 新概念英语 =================== */
+const NC_KEY = "lululab_nce_v1";
+
+const NC_BOOKS = [
+  {id:1, name:"Book 1", title:"First Things First",  level:"Beginner → Elementary",              total:144, c:"var(--accent)",  ic:"🌱"},
+  {id:2, name:"Book 2", title:"Practice & Progress", level:"Pre-intermediate → Intermediate",    total:96,  c:"var(--blue)",    ic:"🌿"},
+  {id:3, name:"Book 3", title:"Developing Skills",   level:"Intermediate → Upper-intermediate",  total:60,  c:"var(--purple)",  ic:"🌳"},
+  {id:4, name:"Book 4", title:"Fluency in English",  level:"Advanced",                           total:48,  c:"var(--orange)",  ic:"🎓"}
+];
+
+/* —— 示例 Lesson（第一阶段：少量样本验证页面与数据结构；课文为正课占位结构）—— */
+const NC_SEED_LESSONS = [
+{b:1,n:1,title:"Excuse Me!",topic:"礼貌引起注意 · 确认物品归属",
+ reading:"Excuse me. Is this your bag?\n\nYes, it is. Thank you very much.\n\nYou're welcome. Is this your umbrella, too?\n\nNo, it isn't. My umbrella is black.\n\nThis one is blue. Maybe it belongs to the woman over there.\n\nI see. Thank you for your help.\n\nNot at all. Have a nice day.",
+ zh:"打扰一下。这是你的包吗？\n\n是的，是我的。非常感谢。\n\n不客气。这把雨伞也是你的吗？\n\n不是。我的伞是黑色的。\n\n这把是蓝色的，也许是那边那位女士的。\n\n我明白了。谢谢你的帮忙。\n\n别客气，祝你今天愉快。",
+ vocab:[
+  {w:"excuse",   ph:"/ɪkˈskjuːz/", en:"to politely get someone's attention, or to ask to be forgiven", zh:"v. 原谅；打扰一下", eg:"Excuse me, is this seat taken?"},
+  {w:"umbrella", ph:"/ʌmˈbrelə/",  en:"a thing you hold over your head to keep the rain off",         zh:"n. 雨伞",           eg:"Don't forget your umbrella — it's going to rain."},
+  {w:"belong",   ph:"/bɪˈlɒŋ/",    en:"to be owned by someone (always used with to)",                 zh:"v. 属于（搭配 to）", eg:"This notebook belongs to Anna, not me."},
+  {w:"welcome",  ph:"/ˈwelkəm/",   en:"accepted or gladly received; 'You're welcome' = no thanks needed", zh:"adj. 受欢迎的", eg:"You're welcome — it was nothing."},
+  {w:"maybe",    ph:"/ˈmeɪbi/",    en:"used when you are not certain about something",                zh:"adv. 也许；大概",   eg:"Maybe we should ask someone else."}
+ ],
+ exprs:[
+  {en:"Excuse me.",zh:"打扰一下；借过。",scene:"引起陌生人注意、借过、打断别人时的万能开场。",struct:"固定短句，句尾语调上扬更礼貌",ex:["Excuse me, could you tell me the way to the station?","Excuse me, I think you dropped this."],cat:"dailychat"},
+  {en:"Thank you very much.",zh:"非常感谢。",scene:"比 Thanks 更正式一档，适合陌生人与服务场合。",struct:"Thank you + very much / so much / a lot",ex:["Thank you very much for your time.","Thank you so much — you saved my morning."],cat:"dailychat"},
+  {en:"You're welcome.",zh:"不客气。",scene:"回应感谢的标准说法。",struct:"You're welcome / Not at all / No problem",ex:["You're welcome — happy to help.","Not at all, it only took a minute."],cat:"dailychat"},
+  {en:"It belongs to …",zh:"它属于……",scene:"说明物品归属，避免直接说「是谁的」造成尴尬。",struct:"It belongs to + 名词 / 代词",ex:["This key belongs to the flat next door.","That idea belongs to her, not the team."],cat:"dailychat"},
+  {en:"I see.",zh:"我明白了。",scene:"听懂解释后的自然回应，语气中性。",struct:"I see / Got it / That makes sense",ex:["I see — so the meeting moved to Friday.","Got it, thanks for explaining."],cat:"dailychat"}
+ ],
+ pats:[
+  {en:"Is this your …?",zh:"这是你的……吗？",scene:"确认某物是否属于对方，最基础的一般疑问句。",struct:"Is this your + 名词？",ex:["Is this your phone? It was on the table.","Is this your first time in Shenzhen?"],cat:"dailychat"},
+  {en:"No, it isn't.",zh:"不，不是。",scene:"对一般疑问句的简短否定回答。",struct:"No, it isn't / Yes, it is",ex:["Is that your car? — No, it isn't.","Is the shop open? — Yes, it is."],cat:"dailychat"}
+ ],
+ quiz:{v:{q:"哪个词表示「属于」？",opts:["borrow","belong","bring"],a:1},
+       e:{q:"想从人群中「借过」，最自然的说法是：",opts:["Excuse me.","I see.","Not at all."],a:0},
+       p:{q:"______ this your umbrella?",opts:["Is","Are","Does"],a:0}},
+ speak:"假设你在咖啡馆捡到一只黑色钱包，用 3–4 句英文向周围的人询问。尽量用到 Excuse me / Is this your …? / It belongs to …"},
+
+{b:1,n:9,title:"How Are You Today?",topic:"日常问候 · 询问近况",
+ reading:"Hello, Anna. How are you today?\n\nI'm very well, thank you. And you?\n\nI'm fine, thanks. How is Peter?\n\nHe's fine, thanks. How's Lucy?\n\nShe's very well, too, thank you.\n\nGoodbye, Anna. It's nice to see you.\n\nNice to see you, too. See you soon!",
+ zh:"你好，安娜。你今天好吗？\n\n我很好，谢谢。你呢？\n\n我挺好的，谢谢。彼得怎么样？\n\n他很好，谢谢。露西呢？\n\n她也很好，谢谢。\n\n再见，安娜。很高兴见到你。\n\n我也很高兴见到你。回头见！",
+ vocab:[
+  {w:"well",    ph:"/wel/",        en:"in good health (used as an adjective after be/feel)", zh:"adj. 身体好的", eg:"I don't feel very well today."},
+  {w:"fine",    ph:"/faɪn/",       en:"all right; good enough",                              zh:"adj. 不错的；挺好的", eg:"Thanks, I'm fine — just a bit tired."},
+  {w:"today",   ph:"/təˈdeɪ/",     en:"on this day; this present day",                        zh:"adv./n. 今天", eg:"How are you today? You look great."},
+  {w:"nice",    ph:"/naɪs/",       en:"pleasant, enjoyable or friendly",                      zh:"adj. 令人愉快的", eg:"It's nice to see you again."},
+  {w:"goodbye", ph:"/ˌɡʊdˈbaɪ/",   en:"used when you leave someone",                          zh:"int. 再见", eg:"She said goodbye and walked out."}
+ ],
+ exprs:[
+  {en:"How are you today?",zh:"你今天好吗？",scene:"日常见面最稳妥的问候，加 today 显得更关心当下。",struct:"How are you + 时间/地点？",ex:["How are you today? You sound tired.","How are you this morning — ready for the meeting?"],cat:"dailychat"},
+  {en:"I'm very well, thank you.",zh:"我很好，谢谢。",scene:"比 I'm fine 更正式一档的回应。",struct:"I'm + 程度副词 + 形容词",ex:["I'm very well, thanks — and you?","She's quite well now, thank you."],cat:"dailychat"},
+  {en:"And you?",zh:"你呢？",scene:"回问对方，避免对话变成单方面问答。",struct:"And you? / How about you? / What about you?",ex:["I'm good — and you?","I had a long week. How about you?"],cat:"dailychat"},
+  {en:"It's nice to see you.",zh:"很高兴见到你。",scene:"见面寒暄或告别时的礼貌收尾。",struct:"It's nice to + 动词",ex:["It's nice to see you again after so long.","It was nice to finally meet you in person."],cat:"dailychat"},
+  {en:"See you soon!",zh:"回头见！",scene:"比 Goodbye 更轻松的告别。",struct:"See you + 时间（soon / later / tomorrow）",ex:["See you tomorrow at ten.","See you later — thanks for the coffee."],cat:"dailychat"}
+ ],
+ pats:[
+  {en:"How is + 某人?",zh:"……怎么样？",scene:"问候第三方，注意第三人称用 is。",struct:"How is + 第三人称单数？",ex:["How is your sister these days?","How is the new project going?"],cat:"dailychat"},
+  {en:"It's nice to + 动词",zh:"做……真好",scene:"表达愉悦的万能框架。",struct:"It's nice to + 动词原形",ex:["It's nice to finally have some quiet.","It's nice to work with people who listen."],cat:"dailychat"}
+ ],
+ quiz:{v:{q:"「身体好的」形容词是：",opts:["well","good","nice"],a:0},
+       e:{q:"朋友问你近况，你想回问对方，应该说：",opts:["And you?","See you.","Not at all."],a:0},
+       p:{q:"______ is Peter?",opts:["How","What","Who"],a:0}},
+ speak:"写一段 6 句的英文问候对话：遇到一位老同事，问候他本人、他的家人，并以自然的方式告别。"},
+
+{b:3,n:1,title:"A Puma at Large",topic:"描述未证实的事物 · 客观叙事",
+ reading:"Reports of a wild animal near the village began to arrive last month. Most of them described a large cat moving quickly and silently between the fields. Several people said they had seen it at dusk, but none of them could produce a photograph.\n\nThe reports were similar, yet no one could explain where the animal had come from. Experts were called in. They examined the footprints and agreed that the creature was a big cat, but they refused to say which kind.\n\nFor the villagers, the uncertainty was the hardest part. They locked their doors earlier and stopped walking home after dark. One farmer put it simply: 'It is not the animal I fear. It is the not knowing.'",
+ zh:"上个月，关于村子附近有野兽的报告开始陆续传来。大多数目击者都描述说，那是一只大猫，在田野间迅速而无声地移动。有几个人说他们是在黄昏时看见的，但没有一个人拿得出照片。\n\n这些描述彼此相似，然而没人能解释这只动物从何而来。专家被请到了现场。他们检查了脚印，一致认为那是一只大型猫科动物，却拒绝说明具体是哪一种。\n\n对村民来说，最难受的是「不确定」。他们提早锁门，天黑后不再走夜路回家。一位农夫说得很直白：「我怕的不是那只动物，是不知道。」",
+ vocab:[
+  {w:"report",     ph:"/rɪˈpɔːt/",   en:"an account of something that happened, often unofficial", zh:"n./v. 报告；报道", eg:"Reports of the incident spread quickly online."},
+  {w:"describe",   ph:"/dɪˈskraɪb/", en:"to say what someone or something is like",                zh:"v. 描述",         eg:"Witnesses described a tall man in a dark coat."},
+  {w:"expert",     ph:"/ˈekspɜːt/",  en:"a person with special knowledge or skill",                zh:"n. 专家",         eg:"We brought in an expert to check the numbers."},
+  {w:"examine",    ph:"/ɪɡˈzæmɪn/",  en:"to look at something very carefully",                     zh:"v. 检查；细看",   eg:"The team examined every line of the report."},
+  {w:"uncertainty",ph:"/ʌnˈsɜːtnti/",en:"the state of not being sure about something",             zh:"n. 不确定",       eg:"The uncertainty bothered people more than the news itself."},
+  {w:"refuse",     ph:"/rɪˈfjuːz/",  en:"to say that you will not do or accept something",         zh:"v. 拒绝",         eg:"He refused to comment before the meeting."}
+ ],
+ exprs:[
+  {en:"Reports of … began to arrive",zh:"关于……的报告陆续传来",scene:"正式叙事开场，营造「消息不断」的感觉。",struct:"Reports of + 名词 + began to arrive",ex:["Reports of delays began to arrive within an hour.","Reports of the outage reached us late last night."],cat:"experience"},
+  {en:"none of them could",zh:"他们中没有一个人能够……",scene:"强调「集体都没做到」，语气比 nobody 更书面。",struct:"None of + 复数 + could + 动词",ex:["None of them could explain the error.","None of us could remember the password."],cat:"opinion"},
+  {en:"call in the experts",zh:"请专家来",scene:"问题超出能力范围时的处理说法。",struct:"call in + 人（专家/顾问/警方）",ex:["We had to call in a specialist.","They called in an engineer to look at the roof."],cat:"work"},
+  {en:"It is not … I fear. It is …",zh:"我怕的不是……而是……",scene:"强调式对照句，适合演讲与写作收尾。",struct:"It is not A (that) 主语 动词. It is B.",ex:["It's not failure I fear — it's regret.","It's not the cost that worries me; it's the timeline."],cat:"opinion"},
+  {en:"put it simply",zh:"说得直白些",scene:"引出一个精炼总结。",struct:"主语 + put it simply: '…'",ex:["She put it simply: 'Do less, better.'","He put it simply — we can't afford to wait."],cat:"opinion"}
+ ],
+ pats:[
+  {en:"Most of them described …",zh:"他们大多描述……",scene:"用群体视角转述，避免绝对化。",struct:"Most of + 复数 + 动词过去式",ex:["Most of them mentioned the same problem.","Most of the guests arrived before eight."],cat:"opinion"},
+  {en:"No one could explain …",zh:"没人能解释……",scene:"表达集体性的未知。",struct:"No one could + 动词原形",ex:["No one could explain why the system failed.","No one could tell where the sound came from."],cat:"opinion"},
+  {en:"They agreed that …",zh:"他们一致认为……",scene:"转述共识，正式语体常用。",struct:"主语 + agreed that + 从句",ex:["We agreed that the deadline was unrealistic.","They agreed that more data was needed."],cat:"work"}
+ ],
+ quiz:{v:{q:"「不确定性」是：",opts:["uncertainty","uncomfortable","unemployment"],a:0},
+       e:{q:"「请专家来」应说：",opts:["call in the experts","call off the experts","call up the experts"],a:0},
+       p:{q:"None of them ______ produce a photograph.",opts:["could","can","were"],a:0}},
+ speak:"用 5 句英文描述一件「大家都说见过、却没人能证实」的事。用到 Reports of … / none of them could / no one could explain。"},
+
+{b:4,n:1,title:"Finding Fossil Man",topic:"说明文 · 考古与时间深度",
+ reading:"We can read of things that happened five thousand years ago, but we know very little about the people who lived then. They had no written language, so they left no records behind. Everything we know about them comes from the objects they made and the places where they were buried.\n\nArchaeologists work slowly. A single bone may take months to lift out of the ground, and every layer of soil has to be recorded before it is disturbed. What looks like a dull grey stone may turn out to be a tool, a piece of jewellery, or the oldest evidence of a human hand at work.\n\nThis is why the work matters. Each fragment recovered restores a little of what time has taken away.",
+ zh:"我们能读到五千年前发生的事，可对当时生活的人却所知甚少。他们没有书面语言，因此没有留下任何记录。我们对他们的全部了解，都来自他们制作的器物，以及他们被安葬的地方。\n\n考古学家的工作很慢。一根骨头可能要花上几个月才能从土里取出，每一层土壤在被扰动之前都必须记录下来。一块看起来灰扑扑、毫不起眼的石头，最后可能会被证明是一件工具、一件首饰，或是一只人手劳作过的最古老证据。\n\n这正是这项工作的意义所在。每找回一块碎片，就从时间手里讨回一点点失去的东西。",
+ vocab:[
+  {w:"archaeologist",ph:"/ˌɑːkiˈɒlədʒɪst/",en:"a person who studies ancient societies through objects", zh:"n. 考古学家",   eg:"Archaeologists found pottery under the old road."},
+  {w:"record",       ph:"/ˈrekɔːd/",       en:"a written or stored account of the past",                 zh:"n. 记录",       eg:"There is no written record of that period."},
+  {w:"fragment",     ph:"/ˈfræɡmənt/",     en:"a small broken piece of something",                        zh:"n. 碎片；残片", eg:"Only a fragment of the letter survived."},
+  {w:"disturb",      ph:"/dɪˈstɜːb/",      en:"to move or change something that should be left alone",    zh:"v. 扰乱；扰动", eg:"Please don't disturb the soil around the find."},
+  {w:"evidence",     ph:"/ˈevɪdəns/",      en:"facts or objects that make you believe something is true",  zh:"n. 证据",       eg:"This is the earliest evidence of farming here."},
+  {w:"restore",      ph:"/rɪˈstɔː(r)/",    en:"to bring something back to an earlier or better state",     zh:"v. 恢复；修复", eg:"The museum restored the broken bowl."}
+ ],
+ exprs:[
+  {en:"read of",zh:"读到；从书里得知",scene:"比 read about 更书面，常用于历史类文字。",struct:"read of + 名词",ex:["We read of the fire in an old letter.","I had read of this place long before I visited."],cat:"experience"},
+  {en:"leave … behind",zh:"留下；遗留",scene:"说某人/某时代留下的痕迹。",struct:"leave + 名词 + behind",ex:["They left no records behind.","Every generation leaves something behind."],cat:"experience"},
+  {en:"turn out to be",zh:"结果证明是；原来是",scene:"事实与外表相反时的常用表达。",struct:"主语 + turn out to be + 名词/形容词",ex:["The dull stone turned out to be a tool.","The delay turned out to be a blessing."],cat:"opinion"},
+  {en:"What looks like A may turn out to be B",zh:"看似 A 的东西，结果可能是 B",scene:"说明文里引出反转的万能框架。",struct:"What looks like + 名词 + may turn out to be + 名词",ex:["What looks like a bug may turn out to be a feature.","What looks like silence may turn out to be disagreement."],cat:"opinion"},
+  {en:"a piece of jewellery",zh:"一件首饰",scene:"不可数名词的量词用法（a piece of）。",struct:"a piece of + 不可数名词",ex:["She kept a piece of advice in mind.","He gave me a piece of information I didn't expect."],cat:"dailychat"}
+ ],
+ pats:[
+  {en:"We know very little about …",zh:"我们对……所知甚少",scene:"正式地承认认知有限。",struct:"主语 + know very little about + 名词",ex:["We know very little about how it started.","Scientists know little about the deep ocean."],cat:"opinion"},
+  {en:"Everything we know about … comes from …",zh:"我们对……的全部了解都来自……",scene:"说明知识来源，说明文核心句式。",struct:"Everything we know about + 名词 + comes from + 名词",ex:["Everything we know about them comes from two letters.","All we know about the plan comes from that email."],cat:"opinion"},
+  {en:"Every … has to be + 过去分词",zh:"每一……都必须被……",scene:"说明流程的严格要求，被动语态。",struct:"Every + 名词 + has to be + 过去分词",ex:["Every file has to be checked before release.","Every layer has to be recorded first."],cat:"work"}
+ ],
+ quiz:{v:{q:"「证据」是：",opts:["evidence","experience","experiment"],a:0},
+       e:{q:"「结果证明是」应说：",opts:["turn out to be","turn into being","turn on to be"],a:0},
+       p:{q:"Everything we know about them ______ from the objects they made.",opts:["comes","come","coming"],a:0}},
+ speak:"用 5–6 句英文说明一项「慢工出细活」的工作为什么重要。用到 We know very little about … / turn out to be / every … has to be …"}
+];
+/* 外置课程数据（nc-data-book1/2/3/4.js）合并；
+   同一 册+课号 以**外置全量数据**为准，内置示例课仅在数据文件缺失该课时兜底 */
+const NC_EXTERNAL_LESSONS = [].concat(
+  ((typeof window !== "undefined" && window.NC_LESSONS_B1) ? window.NC_LESSONS_B1 : []),
+  ((typeof window !== "undefined" && window.NC_LESSONS_B2) ? window.NC_LESSONS_B2 : []),
+  ((typeof window !== "undefined" && window.NC_LESSONS_B3) ? window.NC_LESSONS_B3 : []),
+  ((typeof window !== "undefined" && window.NC_LESSONS_B4) ? window.NC_LESSONS_B4 : [])
+);
+const NC_LESSONS = NC_EXTERNAL_LESSONS.concat(
+  NC_SEED_LESSONS.filter(function(s){
+    return !NC_EXTERNAL_LESSONS.some(function(x){ return x.b === s.b && x.n === s.n; });
+  })
+);
+
+let NC_VIEW = "home";      // home | book | lesson
+let NC_BOOK = 0;
+let NC_LESSON = 0;
+let NC_TAB = "reading";
+
+/* —— 状态存储 —— */
+function ncLoad(){ try { return JSON.parse(localStorage.getItem(NC_KEY) || "{}") || {}; } catch(_){ return {}; } }
+function ncSave(s){ try { localStorage.setItem(NC_KEY, JSON.stringify(s)); } catch(_){} }
+function ncSeedOnce(){
+  if(localStorage.getItem(NC_KEY)) return;
+  const s = {v:1, books:{}, active:null};
+  const b2 = {done:[], doing:{}, doneAt:{}, last:25};
+  for(let i=1;i<=24;i++) b2.done.push(i);
+  b2.doing[25] = todayKey();
+  s.books["2"] = b2;
+  s.active = {b:2, n:25};
+  ncSave(s);
+}
+function ncBookState(bid){
+  const s = ncLoad();
+  s.books = s.books || {};
+  if(!s.books[bid]) s.books[bid] = {done:[], doing:{}, doneAt:{}, last:0};
+  return s.books[bid];
+}
+/* 统一的状态写入口：保证 books[bid] 一定存在，避免外部数据异常时崩溃 */
+function ncUpdate(bid, fn){
+  const s = ncLoad();
+  s.books = s.books || {};
+  if(!s.books[bid]) s.books[bid] = {done:[], doing:{}, doneAt:{}, last:0};
+  fn(s.books[bid], s);
+  ncSave(s);
+}
+function ncBook(id){ return NC_BOOKS.filter(function(x){ return x.id === id; })[0] || NC_BOOKS[0]; }
+function ncLesson(b,n){ return NC_LESSONS.filter(function(x){ return x.b === b && x.n === n; })[0] || null; }
+function ncDoneCount(st){ return (st.done || []).length; }
+function ncStatusOf(st, n){
+  if((st.done || []).indexOf(n) >= 0) return "done";
+  if(st.doing && st.doing[n]) return "doing";
+  return "todo";
+}
+function ncLastDateOf(st, n){
+  if((st.done || []).indexOf(n) >= 0) return (st.doneAt || {})[n] || "";
+  return (st.doing || {})[n] || "";
+}
+function ncContinueNo(bid){
+  const st = ncBookState(bid);
+  const doing = Object.keys(st.doing || {}).map(Number).sort(function(a,b){ return a-b; });
+  if(doing.length) return doing[0];
+  const total = ncBook(bid).total;
+  for(let i=1;i<=total;i++){ if((st.done||[]).indexOf(i) < 0) return i; }
+  return 1;
+}
+
+/* —— 导航 —— */
+function ncGoHome(){ NC_VIEW = "home"; renderNC(); }
+function ncOpenBook(id){ NC_BOOK = id; NC_VIEW = "book"; renderNC(); }
+function ncOpenLesson(b, n, tab){
+  NC_BOOK = b; NC_LESSON = n; NC_VIEW = "lesson"; NC_TAB = tab || "reading";
+  ncUpdate(b, function(st, s){
+    st.done = st.done || [];
+    st.doing = st.doing || {};
+    if(st.done.indexOf(n) < 0) st.doing[n] = todayKey();
+    st.last = n;
+    s.active = {b:b, n:n};
+  });
+  renderNC();
+}
+function ncOpenTodayReview(){
+  const s = ncLoad();
+  const a = s.active;
+  if(!a){ showView("newconcept"); return; }
+  ncOpenLesson(a.b, a.n, "practice");
+  showView("newconcept");
+}
+function setNcTab(t){ NC_TAB = t; renderNC(); }
+
+/* —— 渲染入口 —— */
+function renderNC(){
+  ncSeedOnce();
+  const h = document.getElementById("ncHome");
+  const b = document.getElementById("ncBook");
+  const l = document.getElementById("ncLesson");
+  if(h) h.style.display = NC_VIEW === "home" ? "" : "none";
+  if(b) b.style.display = NC_VIEW === "book" ? "" : "none";
+  if(l) l.style.display = NC_VIEW === "lesson" ? "" : "none";
+  if(NC_VIEW === "home") ncRenderHome();
+  else if(NC_VIEW === "book") ncRenderBook();
+  else ncRenderLesson();
+  window.scrollTo(0,0);
+}
+
+/* —— ① 四册首页 —— */
+function ncRenderHome(){
+  const wrap = document.getElementById("ncBooks");
+  const sum = document.getElementById("ncSummary");
+  const acts = document.getElementById("ncHeroActions");
+  const ttl = document.getElementById("ncTitle");
+  const sub = document.getElementById("ncSub");
+  if(ttl) ttl.textContent = "New Concept English";
+  if(sub) sub.textContent = "Build your English foundation, one lesson at a time.";
+
+  let totalAll = 0, doneAll = 0, doingAll = 0;
+  NC_BOOKS.forEach(function(bk){ totalAll += bk.total; const st = ncBookState(bk.id); doneAll += ncDoneCount(st); doingAll += Object.keys(st.doing||{}).length; });
+  const s = ncLoad();
+  const a = s.active;
+
+  if(sum){
+    let h = '<div class="nc-summary-item"><b>' + totalAll + '</b><span>总课程</span></div>';
+    h += '<div class="nc-summary-sep"></div>';
+    h += '<div class="nc-summary-item"><b>' + doneAll + '</b><span>已完成</span></div>';
+    h += '<div class="nc-summary-sep"></div>';
+    h += '<div class="nc-summary-item"><b>' + doingAll + '</b><span>进行中</span></div>';
+    h += '<div class="nc-summary-sep"></div>';
+    h += '<div class="nc-summary-item"><b>' + NC_LESSONS.length + '</b><span>已录入内容</span></div>';
+    h += '<div class="nc-summary-tip">示例阶段：已录入 ' + NC_LESSONS.length + ' 课内容用于验证页面与数据结构，其余课程可正常标记状态与复习。<button class="nc-crumb-btn" onclick="ncResetDemo()" style="margin-left:6px;text-decoration:underline;">重置示例进度</button></div>';
+    sum.innerHTML = h;
+  }
+  if(acts){
+    acts.innerHTML = a
+      ? '<button class="btn btn-green" onclick="ncOpenTodayReview()">继续 ' + esc(ncBook(a.b).name) + ' · Lesson ' + a.n + ' →</button>'
+      : '';
+  }
+  if(!wrap) return;
+  wrap.innerHTML = NC_BOOKS.map(function(bk){
+    const st = ncBookState(bk.id);
+    const done = ncDoneCount(st);
+    const pct = Math.max(0, Math.min(100, Math.round(done / bk.total * 100)));
+    const cont = ncContinueNo(bk.id);
+    const last = st.last || 0;
+    return '<div class="nc-book-card" style="--nc-c:' + bk.c + '">' +
+      '<div class="nc-book-top"><span class="nc-book-badge">' + bk.name + '</span><span class="nc-book-tag">' + esc(bk.level) + '</span></div>' +
+      '<h3 class="nc-book-title">' + esc(bk.title) + '</h3>' +
+      '<div class="nc-book-level">' + esc(bk.level) + '</div>' +
+      '<div class="nc-book-range">Lessons 1–' + bk.total + ' · ' + bk.ic + '</div>' +
+      '<div class="nc-bar"><div class="nc-bar-fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="nc-book-prow"><span class="nc-book-pnum">' + done + ' / ' + bk.total + ' <em>Lessons completed</em></span><span class="nc-book-pct">' + pct + '%</span></div>' +
+      '<div class="nc-book-last">' + (last ? 'Last studied: <b>Lesson ' + last + '</b>' : '还没有开始学习') + '</div>' +
+      '<button class="nc-book-go" onclick="ncOpenBook(' + bk.id + ')">Continue Learning →</button>' +
+      '</div>';
+  }).join("");
+}
+function ncResetDemo(){
+  try { localStorage.removeItem(NC_KEY); } catch(_){}
+  ncSeedOnce();
+  NC_VIEW = "home";
+  renderNC();
+  exprToast("示例进度已重置");
+}
+
+/* —— ② 单册课程列表 —— */
+function ncRenderBook(){
+  const bk = ncBook(NC_BOOK);
+  const st = ncBookState(bk.id);
+  const done = ncDoneCount(st);
+  const pct = Math.round(done / bk.total * 100);
+  const crumb = document.getElementById("ncBookCrumb");
+  if(crumb){
+    crumb.innerHTML = '<button onclick="ncGoHome()">New Concept</button><span class="nc-sep">/</span><span>' + esc(bk.name + " · " + bk.title) + '</span>';
+  }
+  const head = document.getElementById("ncBookHead");
+  if(head){
+    head.innerHTML = '<div><h2>' + esc(bk.name + " · " + bk.title) + '</h2><div class="nc-sub">' + esc(bk.level) + ' · Lessons 1–' + bk.total + '</div></div>' +
+      '<div class="nc-page-meta">' +
+        '<div><b>' + done + ' / ' + bk.total + '</b><span>Lessons completed</span></div>' +
+        '<div><b>' + pct + '%</b><span>Progress</span></div>' +
+        '<div><b>' + Object.keys(st.doing||{}).length + '</b><span>In progress</span></div>' +
+      '</div>';
+  }
+  const list = document.getElementById("ncLessonList");
+  if(!list) return;
+  let html = "";
+  for(let n=1;n<=bk.total;n++){
+    const L = ncLesson(bk.id, n);
+    const stt = ncStatusOf(st, n);
+    const dt = ncLastDateOf(st, n);
+    const label = stt === "done" ? "Completed ✓" : (stt === "doing" ? "In Progress" : "Not Started");
+    html += '<div class="nc-lesson" onclick="ncOpenLesson(' + bk.id + ',' + n + ')">' +
+      '<div class="nc-lesson-no">Lesson ' + n + '</div>' +
+      '<div class="nc-lesson-main">' +
+        '<div class="nc-lesson-title">' + (L ? esc(L.title) : "Lesson " + n) + '</div>' +
+        '<div class="nc-lesson-topic">' + (L ? esc(L.topic) : "内容待录入") + '</div>' +
+      '</div>' +
+      '<div class="nc-lesson-side">' +
+        '<span class="nc-lesson-last">' + (dt ? "复习 " + esc(dt.slice(5)) : "—") + '</span>' +
+        '<span class="nc-status ' + stt + '">' + label + '</span>' +
+      '</div>' +
+      '<span class="nc-lesson-arrow">›</span>' +
+      '</div>';
+  }
+  list.innerHTML = html;
+}
+
+/* —— ③ Lesson 详情 —— */
+function ncRenderLesson(){
+  const bk = ncBook(NC_BOOK);
+  const n = NC_LESSON;
+  const L = ncLesson(bk.id, n);
+  const st = ncBookState(bk.id);
+  const stt = ncStatusOf(st, n);
+
+  const crumb = document.getElementById("ncLessonCrumb");
+  if(crumb){
+    crumb.innerHTML = '<button onclick="ncGoHome()">New Concept</button><span class="nc-sep">/</span>' +
+      '<button onclick="ncOpenBook(' + bk.id + ')">' + esc(bk.name) + '</button><span class="nc-sep">/</span>' +
+      '<span>Lesson ' + n + '</span>';
+  }
+  const head = document.getElementById("ncLessonHead");
+  if(head){
+    const done = stt === "done";
+    head.innerHTML = '<div class="nc-lhead-top">' +
+      '<div><h2>Lesson ' + n + ' · ' + esc(L ? L.title : "") + '</h2>' +
+      '<div class="nc-lsub">' + esc(bk.name + " · " + bk.title) + (L ? ' · ' + esc(L.topic) : ' · 内容待录入') + '</div></div>' +
+      '<div class="nc-lhead-actions">' +
+        '<span class="nc-status ' + stt + '">' + (done ? "Completed ✓" : (stt === "doing" ? "In Progress" : "Not Started")) + '</span>' +
+        '<button class="btn ' + (done ? "btn-ghost" : "btn-green") + '" onclick="ncToggleDone()">' + (done ? "↩ 撤销完成" : "✓ 标记完成") + '</button>' +
+      '</div></div>' +
+      (L ? '' : '<div class="nc-note">本课内容尚未录入。你可以先把它标记为完成或进行中，页面结构与数据结构已就绪。</div>');
+  }
+  const te = document.getElementById("ncTabExprN");
+  const tp = document.getElementById("ncTabPatN");
+  if(te) te.textContent = L && L.exprs ? L.exprs.length : "";
+  if(tp) tp.textContent = L && L.pats ? L.pats.length : "";
+  document.querySelectorAll("#ncTabs .fbtn").forEach(function(b){
+    b.classList.toggle("active", b.getAttribute("data-t") === NC_TAB);
+  });
+  const panel = document.getElementById("ncPanel");
+  if(!panel) return;
+  if(!L){ panel.innerHTML = '<div class="nc-empty">本课内容待录入。<br>第一阶段已打通页面结构与数据关联，正式课文可批量导入。</div>'; return; }
+  if(NC_TAB === "reading") panel.innerHTML = ncReadingHTML(L, bk);
+  else if(NC_TAB === "vocab") panel.innerHTML = ncVocabHTML(L);
+  else if(NC_TAB === "expr") panel.innerHTML = ncExprHTML(L, bk);
+  else if(NC_TAB === "pattern") panel.innerHTML = ncPatHTML(L, bk);
+  else panel.innerHTML = ncPracticeHTML(L, bk);
+}
+function ncToggleDone(){
+  let finished = false;
+  ncUpdate(NC_BOOK, function(st, s){
+    st.done = st.done || [];
+    st.doing = st.doing || {};
+    st.doneAt = st.doneAt || {};
+    const i = st.done.indexOf(NC_LESSON);
+    if(i >= 0){
+      st.done.splice(i,1);
+      delete st.doneAt[NC_LESSON];
+      st.doing[NC_LESSON] = todayKey();
+    } else {
+      st.done.push(NC_LESSON);
+      st.doneAt[NC_LESSON] = todayKey();
+      delete st.doing[NC_LESSON];
+      finished = true;
+    }
+    st.last = NC_LESSON;
+    s.active = {b:NC_BOOK, n:NC_LESSON};
+  });
+  if(finished) exprToast("✓ 已完成 Lesson " + NC_LESSON);
+  renderNC();
+  if(typeof renderDashboard === "function"){ try{ renderDashboard(); }catch(_){} }
+}
+
+/* —— Reading —— */
+function ncEmptyBlock(ic, html){
+  return '<div class="nc-empty"><span class="nc-empty-ic">' + ic + '</span><div>' + html + '</div></div>';
+}
+function ncReady(L){
+  return {
+    reading: !!(L.reading && L.reading.trim()),
+    vocab: !((L.vocab || []).length === 0),
+    expr: !((L.exprs || []).length === 0),
+    pat: !((L.pats || []).length === 0),
+    quiz: !!(L.quiz && (L.quiz.v || L.quiz.e || L.quiz.p))
+  };
+}
+
+function ncReadingHTML(L, bk){
+  const rd = !!(L.reading && L.reading.trim());
+  if(!rd){
+    return '<div class="nc-block">' +
+      '<div class="nc-block-h">📖 Text</div>' +
+      ncEmptyBlock("📖", "<b>本课课文尚未录入。</b><br>导入新概念电子版后，这里会显示课文正文、中文翻译与朗读。当前可先查看本课语法重点：<b>" + esc(L.topic || "") + "</b>") +
+      '</div>';
+  }
+  return '<div class="nc-block">' +
+    '<div class="nc-block-h">📖 Text</div>' +
+    '<div class="nc-text">' + esc(L.reading) + '</div>' +
+    '<div class="nc-text-tools">' +
+      '<button class="nc-tool" onclick="ncPlayAudio()">🔊 课文音频</button>' +
+      '<button class="nc-tool" id="ncZhBtn" onclick="ncToggleZh()">中文翻译</button>' +
+      '<button class="nc-tool" onclick="ncSpeak()">🎙 Read Aloud</button>' +
+      '<button class="nc-tool" onclick="ncStopSpeak()">⏹ 停止</button>' +
+    '</div>' +
+    '<div class="nc-zh" id="ncZh">' + esc(L.zh) + '</div>' +
+    '</div>' +
+    '<div class="nc-note">示例文本：为保证版权合规，第一阶段使用原创示例课文；正式课文可按同一数据结构批量导入。</div>';
+}
+function ncToggleZh(){
+  const el = document.getElementById("ncZh");
+  const btn = document.getElementById("ncZhBtn");
+  if(!el) return;
+  el.classList.toggle("show");
+  if(btn) btn.classList.toggle("on", el.classList.contains("show"));
+}
+function ncPlayAudio(){ exprToast("音频入口已预留，接入 mp3 后即可播放"); }
+function ncSpeak(){
+  const L = ncLesson(NC_BOOK, NC_LESSON);
+  if(!L) return;
+  try{
+    if(!window.speechSynthesis){ exprToast("当前浏览器不支持朗读"); return; }
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(L.reading.replace(/\n+/g, " "));
+    u.lang = "en-GB"; u.rate = 0.92;
+    window.speechSynthesis.speak(u);
+    exprToast("🎙 正在朗读…");
+  }catch(_){ exprToast("当前浏览器不支持朗读"); }
+}
+function ncStopSpeak(){ try{ if(window.speechSynthesis) window.speechSynthesis.cancel(); }catch(_){} }
+
+/* —— Key Vocabulary —— */
+function ncVocabHTML(L){
+  if((L.vocab || []).length === 0){
+    return '<div class="nc-block"><div class="nc-block-h">🔑 Key Vocabulary</div>' +
+      ncEmptyBlock("🔑", "<b>词汇待生成。</b><br>课文导入后，会自动提炼本课核心词汇（英文释义 / 中文 / 例句）。") + '</div>';
+  }
+  let h = '<div class="nc-block"><div class="nc-block-h">🔑 Key Vocabulary</div><div class="nc-vocab">';
+  (L.vocab||[]).forEach(function(v, i){
+    h += '<div class="nc-vrow">' +
+      '<div><div class="nc-vword">' + esc(v.w) + '</div><div class="nc-vph">' + esc(v.ph) + '</div></div>' +
+      '<div><div class="nc-vdef-en">' + esc(v.en) + '</div><div class="nc-vdef-zh">' + esc(v.zh) + '</div>' +
+      '<div class="nc-veg">' + esc(v.eg) + '</div>' +
+      '<div style="margin-top:8px;"><button class="sc-add" data-ncv="' + i + '" onclick="ncAddVocab(' + i + ')">＋ Add to My Expressions</button></div>' +
+      '</div></div>';
+  });
+  h += '</div></div>';
+  return h;
+}
+
+/* —— Useful Expressions / Sentence Patterns（复用 .scard 组件） —— */
+function ncCardHTML(p, bk, n, type, i){
+  const added = seedAdded(p.en);
+  const hasCp = type === "pattern";
+  const k = "nce::b" + bk.id + "::l" + n + "::" + type + "::" + i;
+  return '<div class="scard">' +
+    '<div class="sc-top"><span class="x-kind ' + (type === "pattern" ? "pattern" : "chunk") + '">' + (type === "pattern" ? "🧩 句型" : "🔗 表达") + '</span>' +
+    '<span class="x-cat">' + catName(p.cat) + '</span></div>' +
+    '<div class="sc-en">' + esc(p.en) + '</div>' +
+    '<div class="sc-zh">' + esc(p.zh) + '</div>' +
+    '<div class="sc-scene">📌 用在哪：' + esc(p.scene) + '</div>' +
+    (p.struct ? '<div class="sc-struct">可替换：' + esc(p.struct) + '</div>' : '') +
+    '<ol class="sc-ex">' + (p.ex||[]).map(function(e){ return "<li>" + esc(e) + "</li>"; }).join("") + "</ol>" +
+    '<div class="sc-foot">' +
+      '<span class="sc-note">' + (added ? "已在你的表达里 ✓" : "加入后可标记掌握、写下自己的理解") + '</span>' +
+      '<button class="sc-add' + (added ? " done" : "") + '" id="ncadd-' + type + '-' + i + '" onclick="ncAdd(\'' + type + '\',' + i + ')"' + (added ? " disabled" : "") + '>' + (added ? "✓ 已加入" : "＋ Add to My Expressions") + '</button>' +
+    '</div>' +
+    (hasCp ? '<div class="sc-pact">' +
+      '<button class="sc-pbtn" data-k="' + esc(k) + '" onclick="ncToggleCp(this)">✍ 替换关键词造句</button>' +
+      '<div class="cp-box" style="display:none;">' +
+        '<div class="cp-guide">把句型里的可变部分换成你自己的真实情况，写一整句。<b>先练顺口，再决定要不要收进我的表达。</b></div>' +
+        '<textarea class="cp-in" placeholder="' + esc(p.struct || p.en) + '"></textarea>' +
+        '<div class="cp-row"><span class="cp-hint">保存后可在「我的表达」里继续复习</span>' +
+        '<button class="cp-save" data-k="' + esc(k) + '" onclick="ncSaveCp(this)">保存我的造句</button></div>' +
+        '<div class="cp-mine-saved">✓ 我的造句已保存</div>' +
+      '</div></div>' : '') +
+    '</div>';
+}
+function ncExprHTML(L, bk){
+  if((L.exprs||[]).length === 0){
+    return '<div class="nc-block"><div class="nc-block-h">💬 Useful Expressions</div>' +
+      ncEmptyBlock("💬", "<b>表达待生成。</b><br>课文导入后，会提炼本课高频搭配与词块，可直接加入 My Expressions。") + '</div>';
+  }
+  return '<div class="nc-block"><div class="nc-block-h">💬 Useful Expressions</div>' +
+    (L.exprs||[]).map(function(p, i){ return ncCardHTML(p, bk, L.n, "expr", i); }).join("") + '</div>';
+}
+function ncPatHTML(L, bk){
+  if((L.pats||[]).length === 0){
+    return '<div class="nc-block"><div class="nc-block-h">🧩 Sentence Patterns</div>' +
+      ncEmptyBlock("🧩", "<b>句型待生成。</b><br>课文导入后，会提炼本课核心句型，支持替换关键词造句练习。") + '</div>';
+  }
+  return '<div class="nc-block"><div class="nc-block-h">🧩 Sentence Patterns</div>' +
+    (L.pats||[]).map(function(p, i){ return ncCardHTML(p, bk, L.n, "pattern", i); }).join("") + '</div>';
+}
+
+/* —— 替换练习（复用核心句型练习存储 CP_KEY） —— */
+function ncBoxOf(btn){ return btn ? btn.parentElement.querySelector(".cp-box") : null; }
+function ncToggleCp(btn){
+  const b = ncBoxOf(btn);
+  if(!b) return;
+  if(b.style.display !== "none"){
+    ncFlushCp(btn);
+    b.style.display = "none"; btn.classList.remove("on"); return;
+  }
+  const ta = b.querySelector(".cp-in");
+  if(ta) ta.value = cpMineOf(btn.getAttribute("data-k"));
+  b.style.display = ""; btn.classList.add("on");
+}
+function ncFlushCp(btn){
+  const k = btn ? btn.getAttribute("data-k") : null;
+  const b = ncBoxOf(btn);
+  const ta = b ? b.querySelector(".cp-in") : null;
+  if(!k || !ta) return;
+  const v = ta.value.trim();
+  const o = loadCp();
+  o[k] = o[k] || {};
+  if(String(o[k].mine || "") !== v){ o[k].mine = v; o[k].ts = Date.now(); saveCpStore(o); }
+}
+function ncSaveCp(btn){
+  ncFlushCp(btn);
+  const k = btn ? btn.getAttribute("data-k") : null;
+  const box = btn ? btn.closest(".cp-box") : null;
+  const mine = cpHasMine(k);
+  if(box && mine){ const s = box.querySelector(".cp-mine-saved"); if(s) s.classList.add("show"); }
+  const card = btn ? btn.closest(".scard") : null;
+  if(card){ const pb = card.querySelector(".sc-pbtn"); if(pb) pb.classList.toggle("saved", mine); }
+  exprToast(mine ? "✓ 我的造句已保存" : "先写下你自己的句子，再点保存");
+}
+
+/* —— Practice —— */
+function ncPracticeHTML(L, bk){
+  const q = L.quiz || {};
+  if(!q.v && !q.e && !q.p){
+    return '<div class="nc-block"><div class="nc-block-h">✍️ Practice</div>' +
+      ncEmptyBlock("✍️", "<b>练习待生成。</b><br>课文导入后，会生成词汇 / 表达 / 句型选择题与口语输出任务。") + '</div>';
+  }
+  const blocks = [
+    {t:"vocab", ic:"🔑", h:"Vocabulary", tip:"选出正确答案，检验本课核心词汇。", q:q.v},
+    {t:"expr",  ic:"💬", h:"Expressions", tip:"选出最符合语境的表达。", q:q.e},
+    {t:"pat",   ic:"🧩", h:"Sentence Patterns", tip:"补全句型结构。", q:q.p}
+  ];
+  let h = '<div class="nc-prac-grid">';
+  blocks.forEach(function(b){
+    if(!b.q) return;
+    h += '<div class="nc-prac-box"><h4>' + b.ic + " " + b.h + '</h4><p class="nc-prac-tip">' + b.tip + '</p>' +
+      '<p class="nc-q"><b>Q.</b> ' + esc(b.q.q) + '</p><div class="nc-opts">' +
+      b.q.opts.map(function(o, i){ return '<button class="nc-opt" data-a="' + (i === b.q.a ? "1" : "0") + '" onclick="ncPick(this)">' + esc(o) + '</button>'; }).join("") +
+      '</div></div>';
+  });
+  h += '<div class="nc-prac-box"><h4>🎙 Speaking</h4><p class="nc-prac-tip">用自己的话完成下面的输出任务，写下来再开口说一遍。</p>' +
+    '<p class="nc-q"><b>Task.</b> ' + esc(L.speak || "") + '</p>' +
+    '<textarea class="nc-open" id="ncSpeakIn" placeholder="写下你的回答…"></textarea>' +
+    '<div class="nc-prac-foot"><span class="nc-prac-hint">提示：先用本课的 3 个表达，再补充细节</span>' +
+    '<button class="cp-save" onclick="ncSaveSpeak()">保存练习</button></div></div>';
+  h += '</div>';
+  return h;
+}
+function ncPick(btn){
+  const box = btn.closest(".nc-opts");
+  if(!box) return;
+  box.querySelectorAll(".nc-opt").forEach(function(b){ b.classList.remove("right","wrong"); });
+  const ok = btn.getAttribute("data-a") === "1";
+  btn.classList.add(ok ? "right" : "wrong");
+  exprToast(ok ? "✓ 答对了" : "再试一次，看看句型结构");
+}
+function ncSaveSpeak(){
+  const ta = document.getElementById("ncSpeakIn");
+  if(!ta) return;
+  const v = ta.value.trim();
+  const o = loadCp();
+  const k = "nce::b" + NC_BOOK + "::l" + NC_LESSON + "::speak";
+  o[k] = {mine:v, ts:Date.now()};
+  saveCpStore(o);
+  exprToast(v ? "✓ 口语练习已保存" : "先写下你的回答，再点保存");
+}
+
+/* —— 加入 My Expressions（复用现有 MANUAL_KEY 数据结构） —— */
+function ncSrcLabel(bk, L){ return "新概念英语 " + bk.name + " · Lesson " + (L ? L.n : ""); }
+function ncAdd(type, i){
+  const bk = ncBook(NC_BOOK);
+  const L = ncLesson(bk.id, NC_LESSON);
+  if(!L) return;
+  const arr = type === "pattern" ? (L.pats||[]) : (L.exprs||[]);
+  const p = arr[i];
+  if(!p) return;
+  if(seedAdded(p.en)){ exprToast("它已经在你的表达里了"); return; }
+  const list = loadManual();
+  list.unshift({
+    key: "manual::" + Date.now(),
+    en: p.en, zh: p.zh, scene: p.scene,
+    example: (p.ex && p.ex[0]) || "", examples: (p.ex || []).slice(0),
+    structure: p.struct || "",
+    kind: type === "pattern" ? "pattern" : "chunk",
+    bucket: "daily", cat: p.cat || "dailychat",
+    seed: false, starred: false, tags: [], note: "", mine: "",
+    status: "learning",
+    source: ncSrcLabel(bk, L)
+  });
+  saveManual(list);
+  exprToast("✓ 已加入我的表达（学习中）");
+  renderExprStats();
+  renderExpressions();
+  renderNC();
+}
+function ncAddVocab(i){
+  const bk = ncBook(NC_BOOK);
+  const L = ncLesson(bk.id, NC_LESSON);
+  if(!L) return;
+  const v = (L.vocab||[])[i];
+  if(!v) return;
+  if(seedAdded(v.w)){ exprToast("它已经在你的表达里了"); return; }
+  const list = loadManual();
+  list.unshift({
+    key: "manual::" + Date.now(),
+    en: v.w, zh: v.zh, scene: v.en,
+    example: v.eg, examples: [v.eg],
+    structure: v.ph || "",
+    kind: "chunk", bucket: "daily", cat: "dailychat",
+    seed: false, starred: false, tags: [], note: "", mine: "",
+    status: "learning",
+    source: ncSrcLabel(bk, L)
+  });
+  saveManual(list);
+  exprToast("✓ 已加入我的表达（学习中）");
+  renderExprStats();
+  renderExpressions();
+  renderNC();
+}
+
+/* —— Today's Practice 联动：已按用户要求移除首页 New Concept Review 任务项（NC 模块入口保留在导航） —— */
+
 function showView(v){
   document.querySelectorAll(".view").forEach(function(s){ s.classList.remove("active"); });
   document.getElementById("view-" + v).classList.add("active");
@@ -5895,6 +7660,7 @@ function showView(v){
   if(v === "expressions") renderExpressions();
   else if(v === "library") renderLibrary();
   else if(v === "today") renderDashboard();
+  else if(v === "newconcept") renderNC();
   window.scrollTo(0,0);
 }
 

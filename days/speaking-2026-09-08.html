@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Song I Skipped for Three Years</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.friend { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  .vocab-item .sample .zh-trans {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .container { padding: 18px 14px 60px; }
+    .topic-banner { padding: 24px 18px; }
+    .topic-banner h2 { font-size: 22px; }
+    .section { padding: 20px 16px; }
+    .story { font-size: 15.5px; padding: 16px; }
+  }
+  .expr-fav{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; border:1.5px solid #d9c9ef; background:#fff; color:#C9B6E0; font-size:16px; line-height:1; cursor:pointer; transition:.15s; padding:0; flex:0 0 auto; }
+  .expr-fav:hover{ border-color:#b79be0; color:#9b6fd0; }
+  .expr-fav.on{ color:#e0a83c; border-color:#f0c869; background:#fff7e6; }
+  .fav-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(12px); background:rgba(40,30,60,.92); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:.28s; z-index:9999; pointer-events:none; }
+  .fav-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .exp-row{ display:inline-flex; align-items:center; gap:8px; }
+  .en-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .en-row > :first-child{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="topic-banner">
+<h2>The Song I Skipped for Three Years</h2>
+<div class="zh">那首歌，我跳过了三年</div>
+<div class="en">"Some songs aren't just music. They're time machines with a skip button you don't know you're afraid to press."</div>
+<div class="meta">
+<span>📅 Day 42 · 2026-09-08</span>
+<span>🎯 B1–B2</span>
+<span>🏷 Entertainment &amp; Culture</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">B</span> Short Story · 短故事</h3>
+<div class="story">
+<p>My ex and I had a song. Not our song — we weren't that couple. It was just a track that happened to be playing the first time we drove to the coast together. "This is nice," she said, and that was it. The song became invisible, part of the background, until it wasn't.</p>
+<p>We broke up three years ago. It wasn't dramatic. No screaming, no broken plates. Just two people realizing they had become excellent roommates and terrible lovers. After she moved out, I deleted the playlist but forgot about the song itself. It lived everywhere — coffee shops, grocery stores, Uber rides. Every time it came on, I hit skip within two seconds. I told myself I just didn't like the beat.</p>
+<p>Last month, it played at a friend's wedding. I was three drinks in and too slow to reach my phone. So I let it finish. And something strange happened: I didn't think about her. I thought about the drive, the salt air, the way sunlight hit the dashboard at 4 PM. The song was just a song again.</p>
+<p>On the way home, I played it twice. Not because I missed her. Because I was tired of letting a three-minute track decide what I was allowed to feel.</p>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">C</span> Key Expressions · 核心表达</h3>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">hit skip</div><button aria-label="收藏表达" class="expr-fav" data-en="hit skip" data-example="Every time the song came on, I hit skip within two seconds. 每次那首歌响起，我两秒内就点了跳过。" data-zh="点跳过（按钮）" type="button">☆</button></div>
+<div class="zh-expr">点跳过（按钮）</div>
+<div class="example">
+        Every time it came on, I hit skip within two seconds. I told myself I just didn't like the beat.
+        <span class="zh-trans">每次响起，我两秒内就点了跳过。我告诉自己只是不喜欢这个节奏。</span>
+</div>
+<div class="note">流媒体时代的专属动词搭配。hit play / pause / skip / repeat 都是地道说法，不用 press 或 click。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">excellent roommates and terrible lovers</div><button aria-label="收藏表达" class="expr-fav" data-en="excellent roommates and terrible lovers" data-example="We had become excellent roommates and terrible lovers. 我们成了绝佳的室友，糟糕的爱人。" data-zh="绝佳的室友，糟糕的爱人" type="button">☆</button></div>
+<div class="zh-expr">绝佳的室友，糟糕的爱人</div>
+<div class="example">
+        No screaming, no broken plates. Just two people realizing they had become excellent roommates and terrible lovers.
+        <span class="zh-trans">没有争吵，没有摔盘子。只是两个人意识到，他们成了绝佳的室友，糟糕的爱人。</span>
+</div>
+<div class="note">平行对比结构（excellent X and terrible Y），用日常词汇制造强烈反差。描述关系变质时非常精准，比 "we fell out of love" 更有画面感。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">three drinks in</div><button aria-label="收藏表达" class="expr-fav" data-en="three drinks in" data-example="I was three drinks in and too slow to reach my phone. 我已经喝了三杯，手慢得够不到手机。" data-zh="已经喝了三杯（之后）" type="button">☆</button></div>
+<div class="zh-expr">已经喝了三杯（之后）</div>
+<div class="example">
+        I was three drinks in and too slow to reach my phone. So I let it finish.
+        <span class="zh-trans">我已经喝了三杯，手慢得够不到手机。于是我就让它放完了。</span>
+</div>
+<div class="note">数字 + drinks in = 喝了 N 杯后的状态。in 表示"已进入某种状态"，类似 two hours in（已经两小时后）。口语高频，写作中也自然。</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">let it finish</div><button aria-label="收藏表达" class="expr-fav" data-en="let it finish" data-example="So I let it finish. And something strange happened. 于是我就让它放完了。然后奇怪的事发生了。" data-zh"让它（自然）结束/放完" type="button">☆</button></div>
+<div class="zh-expr">让它（自然）结束/放完</div>
+<div class="example">
+        I was too slow to reach my phone. So I let it finish. And something strange happened.
+        <span class="zh-trans">我手太慢够不到手机。于是我就让它放完了。然后奇怪的事发生了。</span>
+</div>
+<div class="note">let it finish 表面是"让它放完"，深层是"不再抵抗"。对比 hit skip，构成叙事张力。也可用于对话、电影、情绪：Just let it finish.</div>
+</div>
+<div class="expr-card">
+<div class="en-row"><div class="en-expr">decide what I was allowed to feel</div><button aria-label="收藏表达" class="expr-fav" data-en="decide what I was allowed to feel" data-example="I was tired of letting a song decide what I was allowed to feel. 我厌倦了让一首歌来决定我可以感受什么。" data-zh="决定我可以感受什么" type="button">☆</button></div>
+<div class="zh-expr">决定我可以感受什么</div>
+<div class="example">
+        I played it twice. Not because I missed her. Because I was tired of letting a three-minute track decide what I was allowed to feel.
+        <span class="zh-trans">我放了两遍。不是因为我想她。因为我厌倦了让一首三分钟的曲子决定我可以感受什么。</span>
+</div>
+<div class="note">allowed to feel 把情绪写成有权限的东西，精准表达"被某物束缚"的心理状态。可用于歌曲、地点、回忆等触发物。</div>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">D</span> Real Conversation · 真实对话</h3>
+<div class="stage">Saturday night, a crowded bar. Your friend notices you didn't skip the song this time. The jukebox is playing that track.</div>
+<div class="conv-line">
+<span class="speaker friend">Friend:</span>
+<span class="en">Wait — did you just... not skip it? I haven't seen you let this song play since, like, 2023.</span>
+<span class="zh">等等——你刚才……没跳过？我从 2023 年起就没见你让这首歌放完过。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">[laughs] Yeah, I guess I'm... I don't know. Tired of running from my own playlist?</span>
+<span class="zh">[笑] 是啊，我想我是……不知道。厌倦了自己的歌单都要躲着走？</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Friend:</span>
+<span class="en">Honestly? I never got it. It's a good song. What was the big deal?</span>
+<span class="zh">说实话？我一直不懂。这是首好歌啊。至于吗？</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">It wasn't the song. It was — okay, this sounds stupid — but it felt like if I let it play, I was... letting her win, or something.</span>
+<span class="zh">不是歌的问题。是——好吧，这听起来很蠢——但我觉得如果我让它放完，就像是在……让她赢了，之类的。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Friend:</span>
+<span class="en">[raises glass] Dude. She moved to Denver. She's not competing in your Spotify Wrapped.</span>
+<span class="zh">[举杯] 老兄。她搬去丹佛了。她又不参与你的 Spotify 年度总结排名。</span>
+</div>
+<div class="conv-line">
+<span class="speaker you">You:</span>
+<span class="en">[smiles] Fair point. You know what? Play it again. I want to see if I still flinch.</span>
+<span class="zh">[微笑] 有道理。知道吗？再放一遍。我想看看我还会不会条件反射地躲。</span>
+</div>
+<div class="conv-line">
+<span class="speaker friend">Friend:</span>
+<span class="en">[grins] That's the spirit. But if you cry, I'm posting this.</span>
+<span class="zh">[咧嘴笑] 这才对。但你要是哭了，我就发出去。</span>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">E</span> Speaking Practice · 口语练习</h3>
+<div class="practice-task">
+<div class="task-title">Task 1 · Retell the Story</div>
+<div class="task-prompt">用自己的话复述这个故事（60-90秒）。重点讲清三件事：这首歌最初是怎么和"她"联系在一起的、分手后"我"怎么对待这首歌、以及最后为什么改变了。不要逐句翻译原文。</div>
+<ul class="samples">
+<li>The song wasn't special at first — it was just playing during a drive to the coast. But after the breakup, I started hitting skip every time it came on.<span class="zh">这首歌一开始没什么特别的——只是去海边路上刚好在放。但分手后，每次响起我都点跳过。</span></li>
+<li>I told myself I didn't like the beat, but really I just didn't want to feel what the song would make me feel.<span class="zh">我告诉自己不喜欢这个节奏，但其实我只是不想感受这首歌会让我感受到的东西。</span></li>
+<li>At the wedding, I was too slow to skip it. And I realized the song was just a song — not a memory I had to hide from.<span class="zh">在婚礼上，我手太慢没跳过。然后我意识到这首歌只是一首歌——不是一段我必须躲避的回忆。</span></li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 2 · Express Your Opinion</div>
+<div class="task-prompt">回答这个问题（60秒）：你有没有一首"跳过了很久"的歌、电影、或地方？是什么让你最终不再躲避它？如果还没有，你觉得是什么在阻碍你？</div>
+<ul class="samples">
+<li>For me it was a coffee shop we used to go to. I avoided it for a year, then one day I just walked in. Nothing happened. The coffee was still too expensive. That was it.<span class="zh">对我来说是我们常去的一家咖啡店。我躲了一年，然后有一天我就走进去了。什么都没发生。咖啡还是太贵。就这样。</span></li>
+<li>I don't think I'm ready yet. There's a neighborhood in Tokyo we walked through for hours, and I know if I go back, I'll expect to see her around every corner.<span class="zh">我觉得我还没准备好。东京有个街区我们曾走了好几个小时，我知道如果我回去，我会在每个拐角都期待看到她。</span></li>
+</ul>
+</div>
+<div class="practice-task">
+<div class="task-title">Task 3 · Simulate a Real Scenario</div>
+<div class="task-prompt">你的朋友刚分手，你注意到她/他还在跳过某首歌/避开某个地方。用自然口语安慰对方：先承认感受合理，再分享你自己的类似经历，最后给一个不过度乐观的建议。</div>
+<ul class="samples">
+<li>Hey, I get it. I did the exact same thing with a song for three years. You're not being dramatic — your brain is just trying to protect you.<span class="zh">嘿，我懂。我对一首歌做了完全一样的事，做了三年。你不是在演——你的大脑只是在试图保护你。</span></li>
+<li>But here's the thing: one day you'll hear it and realize the song outlasted the pain. And that's when you know you're actually okay.<span class="zh">但关键是：有一天你会听到它，然后意识到这首歌比痛苦更长久。那时候你就知道你真的没事了。</span></li>
+<li>Don't force it, though. Let it happen when it happens. There's no deadline for getting over someone.<span class="zh">不过别强迫自己。该发生的时候自然会发生。走出一段感情没有截止日期。</span></li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h3><span class="tag">F</span> Useful Vocabulary · 高频词汇</h3>
+<div class="vocab-grid">
+<div class="vocab-item">
+<span class="word">invisible</span>
+<span class="ipa">/ɪnˈvɪzəbl/</span>
+<div class="meaning">adj. 看不见的；不被注意的（文中指"融入背景、不被察觉"）</div>
+<div class="sample">The song became invisible, part of the background.<span class="zh-trans">这首歌变得隐形了，成了背景的一部分。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">flinch</span>
+<span class="ipa">/flɪntʃ/</span>
+<div class="meaning">v. （因疼痛、恐惧而）退缩、畏缩；文中指"条件反射式地逃避"</div>
+<div class="sample">I want to see if I still flinch.<span class="zh-trans">我想看看我还会不会条件反射地躲。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">dashboard</span>
+<span class="ipa">/ˈdæʃbɔːrd/</span>
+<div class="meaning">n. （汽车）仪表盘</div>
+<div class="sample">The way sunlight hit the dashboard at 4 PM.<span class="zh-trans">下午四点阳光照在仪表盘上的样子。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">outlast</span>
+<span class="ipa">/ˌaʊtˈlæst/</span>
+<div class="meaning">v. 比……更持久；比……活得更久</div>
+<div class="sample">You'll realize the song outlasted the pain.<span class="zh-trans">你会意识到这首歌比痛苦更长久。</span></div>
+</div>
+<div class="vocab-item">
+<span class="word">get over</span>
+<span class="ipa">/ɡet ˈoʊvər/</span>
+<div class="meaning">phr. v. 从（感情、疾病、震惊）中恢复；走出</div>
+<div class="sample">There's no deadline for getting over someone.<span class="zh-trans">走出一段感情没有截止日期。</span></div>
+</div>
+</div>
+</div>
+<div class="footer">
+Speaking Practice · Day 42 · 2026-09-08 · B1–B2 · Entertainment &amp; Culture<br/>
+Learn something real today.
+</div>
+</div>
+<script>
+(function(){
+  var favKey='expr-favs';
+  var favs={};
+  try{ favs=JSON.parse(localStorage.getItem(favKey)||'{}'); }catch(e){}
+  document.querySelectorAll('.expr-fav').forEach(function(btn){
+    var en=btn.getAttribute('data-en');
+    if(favs[en]){ btn.classList.add('on'); btn.textContent='★'; }
+    btn.addEventListener('click',function(){
+      if(btn.classList.contains('on')){
+        btn.classList.remove('on'); btn.textContent='☆'; delete favs[en];
+        showToast('已取消收藏');
+      }else{
+        btn.classList.add('on'); btn.textContent='★';
+        favs[en]={ zh:btn.getAttribute('data-zh'), example:btn.getAttribute('data-example') };
+        showToast('已收藏到「我的表达」');
+      }
+      try{ localStorage.setItem(favKey,JSON.stringify(favs)); }catch(e){}
+    });
+  });
+  function showToast(msg){
+    var t=document.querySelector('.fav-toast');
+    if(!t){ t=document.createElement('div'); t.className='fav-toast'; document.body.appendChild(t); }
+    t.textContent=msg; t.classList.add('show');
+    clearTimeout(t._timer); t._timer=setTimeout(function(){ t.classList.remove('show'); },1800);
+  }
+})();
+</script>
+</body>
+</html>

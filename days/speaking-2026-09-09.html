@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Yogurt I Couldn't Return</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.clerk { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===== TOPIC BANNER ===== -->
+<div class="topic-banner">
+  <h2>The Yogurt I Couldn't Return</h2>
+  <div class="zh">那罐我退不掉的酸奶</div>
+  <div class="en">Sometimes the hardest conversation in a foreign language isn't about politics or philosophy — it's about four euros and a receipt you didn't keep.</div>
+  <div class="meta">
+    <span>📅 Day 43 · 2026-09-09</span>
+    <span>📏 难度：<b>B1-B2</b></span>
+    <span>⏱ 时长：<b>5 min</b></span>
+    <span>📂 人物与社会</span>
+  </div>
+</div>
+
+<!-- ===== A. SHORT STORY ===== -->
+<div class="section">
+  <h3><span class="tag">A</span> Short Story</h3>
+  <div class="story">
+    <p>I had been in Lyon for exactly nine days when I walked into a Carrefour and made the most embarrassing purchase of my life. I wanted plain yogurt. Just plain. But the labels were all in French, and somewhere between "nature" and "vanille" and "soja," I grabbed something that turned out to be lemon-flavored kefir with active probiotic cultures. It tasted like medicine mixed with regret.</p>
+
+    <p>So the next morning, I put on my jacket, took the yogurt and the receipt, and walked back to the store with the quiet confidence of someone who has watched enough YouTube tutorials to believe they can handle a return in French. I had even practiced: <em>"Je voudrais retourner ce produit."</em></p>
+
+    <p>The woman at the counter was maybe sixty, with short grey hair and the kind of expression that said she had seen everything and was not impressed by any of it. She looked at the yogurt. She looked at me. She picked it up, opened the lid, sniffed it, and then said something fast that I did not catch at all.</p>
+
+    <p>"Pardon?" I said.</p>
+
+    <p>She repeated it. Still nothing. I felt my face get warm. She sighed, pointed to the lid — which I had already opened — and said, slowly, in the tone of someone explaining gravity: <em>"Ouvert."</em></p>
+
+    <p>Opened. The yogurt was opened. You cannot return an opened yogurt in France, or probably anywhere. I knew this. I had always known this. And yet I had walked fifteen minutes holding a half-eaten dairy product like it was a refundable airline ticket.</p>
+
+    <p>I said <em>"Désolé"</em> about four times, put the yogurt in my bag, and left. On the walk home I ate it. It was still terrible. But somehow, after the embarrassment, it tasted a little less like medicine and a little more like a lesson about pretending you understand less than you do — and more than you think.</p>
+  </div>
+</div>
+
+<!-- ===== B. KEY EXPRESSIONS ===== -->
+<div class="section">
+  <h3><span class="tag">B</span> Key Expressions</h3>
+
+  <div class="expr-card">
+    <div class="en-expr">to make the most embarrassing [noun] of my life</div>
+    <div class="zh-expr">做出了我这辈子最尴尬的……</div>
+    <div class="example">I made the most embarrassing purchase of my life at that supermarket.
+      <span class="zh-trans">我在那家超市做出了我这辈子最尴尬的一次购物。</span>
+    </div>
+    <div class="note">用 "the most + 形容词 + 名词 + of my life" 结构来夸张讲述个人经历，非常口语化。比单纯说 "it was embarrassing" 有画面感得多。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">with the quiet confidence of someone who…</div>
+    <div class="zh-expr">带着一种……的从容自信</div>
+    <div class="example">She walked into the meeting with the quiet confidence of someone who had done this a hundred times.
+      <span class="zh-trans">她带着一种做过上百次这事的从容自信走进了会议室。</span>
+    </div>
+    <div class="note">这是极好的叙事句式——用 "of someone who…" 给某个动作加一层反讽或铺垫，暗示这份自信可能并无依据。杂志和播客里很常见。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">I did not catch [something] at all</div>
+    <div class="zh-expr">我完全没听懂（某句话/某个词）</div>
+    <div class="example">He said something about the schedule, but I didn't catch it at all.
+      <span class="zh-trans">他说了什么关于日程安排的事，但我完全没听懂。</span>
+    </div>
+    <div class="note">"catch" 在口语中表示"听清/听懂"，比 "understand" 更日常，尤其用于对方语速太快或有口音时。"didn't catch" 是最自然的表达，不暗示智力问题，只暗示信息丢失。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">in the tone of someone explaining [抽象概念]</div>
+    <div class="zh-expr">用一种像在解释……的语气</div>
+    <div class="example">She told me the password in the tone of someone explaining color to a toddler.
+      <span class="zh-trans">她用一种像在给三岁小孩解释颜色一样的语气告诉我密码。</span>
+    </div>
+    <div class="note">和第2条同属"叙事性比喻"句式——用比喻描述对方说话方式，立刻传达出对方的不耐烦或居高临下感。写作和聊天都好用。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">pretending you understand less / more than you do</div>
+    <div class="zh-expr">假装自己懂的比实际少 / 多</div>
+    <div class="example">He got through three years of meetings by pretending he understood more than he did.
+      <span class="zh-trans">他靠假装自己懂的比实际多，撑过了三年的会议。</span>
+    </div>
+    <div class="note">"less than you do" = 装傻（策略性示弱）；"more than you do" = 硬撑（怕被看穿）。两个方向都是跨文化生存中的核心策略，可以单独使用，也可以对比着说。</div>
+  </div>
+</div>
+
+<!-- ===== C. REAL CONVERSATION ===== -->
+<div class="section">
+  <h3><span class="tag">C</span> Real Conversation</h3>
+  <div class="stage">— 场景：里昂某超市退换货柜台，上午 10:17 —</div>
+
+  <div class="conv-line">
+    <span class="speaker you">You</span>
+    <span class="en">Um, bonjour… I, uh — je voudrais retourner… this. Ce produit.</span>
+    <div class="zh">呃，你好……我想——je voudrais retourner……这个。这个产品。</div>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker clerk">Clerk</span>
+    <span class="en">Oui… un instant. (picks up the yogurt, looks at it) C'est ouvert, ça.</span>
+    <div class="zh">好的……等一下。（拿起酸奶看了看）这个已经打开了。</div>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker you">You</span>
+    <span class="en">Pardon? I'm — sorry, my French is… je ne — I didn't catch that.</span>
+    <div class="zh">什么？我很——抱歉，我的法语……我没——我没听清。</div>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker clerk">Clerk</span>
+    <span class="en">(slowly, pointing at the lid) It's. O. pen. Ouvert. You cannot return — non — un produit ouvert.</span>
+    <div class="zh">（慢慢地，指着盖子）它。已。打开。Ouvert。你不能退——non——一个打开了的产品。</div>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker you">You</span>
+    <span class="en">Oh. Oh, right — yeah, I — I see. I'm sorry, I didn't, uh… I didn't think about that. Désolé.</span>
+    <div class="zh">哦。哦，对——对，我——我明白了。对不起，我没有，呃……我没想过这个。Désolé。</div>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker clerk">Clerk</span>
+    <span class="en">(small sigh, then softer) C'est pas grave. Next time, check before you open, hmm?</span>
+    <div class="zh">（轻轻叹气，然后语气柔和了些）没事的。下次打开之前先检查一下，嗯？</div>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker you">You</span>
+    <span class="en">Yeah. I will. Thank you. Merci beaucoup.</span>
+    <div class="zh">好的。我会的。谢谢。Merci beaucoup。</div>
+  </div>
+
+  <div class="stage">— 你拎着那罐酸奶走出超市。阳光很好。你觉得自己是个白痴，但也在某种意义上活过来了。 —</div>
+</div>
+
+<!-- ===== D. SPEAKING PRACTICE ===== -->
+<div class="section">
+  <h3><span class="tag">D</span> Speaking Practice</h3>
+
+  <div class="practice-task">
+    <div class="task-title">Task 1 · Retell the Story</div>
+    <div class="task-prompt">用你自己的话复述这个故事，控制在 8-10 句话。重点不是背单词，而是讲清楚：他买了什么、为什么想退、发生了什么、最后的感受。</div>
+    <ul class="samples">
+      <li>So this guy in Lyon buys the wrong yogurt and tries to return it the next day.
+        <span class="zh">这个在里昂的人买错了酸奶，第二天去退货。</span>
+      </li>
+      <li>The problem is, he already opened it — and you can't return food once it's opened.
+        <span class="zh">问题是，他已经打开了——而食物一旦打开就不能退了。</span>
+      </li>
+      <li>The clerk basically explains it like she's talking to a child, and he just apologizes and leaves.
+        <span class="zh">店员基本上像跟小孩说话一样解释给他听，他只好道歉然后走了。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="practice-task">
+    <div class="task-title">Task 2 · Personal Opinion</div>
+    <div class="task-prompt">你觉得在异国生活时，"装傻"（pretending you understand less than you do）是一种聪明策略，还是一种逃避？给出你的观点，至少给出一个理由。</div>
+    <ul class="samples">
+      <li>I think it depends. In a return situation like this, it's smarter to just admit you didn't understand.
+        <span class="zh">我觉得要看情况。在退货这种场合，直接承认自己没听懂更聪明。</span>
+      </li>
+      <li>Pretending can buy you time, but if you do it too often, people stop taking you seriously.
+        <span class="zh">装一装能给你争取时间，但如果总这样，别人就不把你当回事了。</span>
+      </li>
+      <li>Honestly, I'd rather look stupid for five minutes than stay confused for five months.
+        <span class="zh">说实话，我宁可当五分钟的傻子，也不想当五个月的糊涂蛋。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="practice-task">
+    <div class="task-title">Task 3 · Simulate a Real Scene</div>
+    <div class="task-prompt">你在国外一家超市，买到了不想要的东西（没拆封）。走过去跟退换货柜台说你想退货。注意用上今天学到的句式，语速可以慢，要有停顿和犹豫。</div>
+    <ul class="samples">
+      <li>Hi, um — I bought this yesterday, and I was wondering if I could… return it? It's unopened.
+        <span class="zh">你好，呃——我昨天买了这个，我在想能不能……退货？它没有打开过。</span>
+      </li>
+      <li>I have the receipt, here. I just — I got the wrong thing, I think.
+        <span class="zh">我有小票，在这里。我只是——我好像买错了。</span>
+      </li>
+      <li>Is that… okay? I mean, is there a policy I should know about?
+        <span class="zh">这个……可以吗？我是说，有没有什么我该知道的退货政策？</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== E. USEFUL VOCABULARY ===== -->
+<div class="section">
+  <h3><span class="tag">E</span> Useful Vocabulary</h3>
+  <div class="vocab-grid">
+
+    <div class="vocab-item">
+      <span class="word">refund</span><span class="ipa">/ˈriːfʌnd/</span>
+      <div class="meaning">n. 退款 / v. 退还（钱款）</div>
+      <div class="sample">I'd like a refund for this, please.（我想要这个的退款，谢谢。）</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">receipt</span><span class="ipa">/rɪˈsiːt/</span>
+      <div class="meaning">n. 收据，小票</div>
+      <div class="sample">Do you still have the receipt?（你还留着小票吗？）</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">catch</span><span class="ipa">/kætʃ/</span>
+      <div class="meaning">v. 听清，听懂（口语高频用法）</div>
+      <div class="sample">Sorry, I didn't catch what she said.（抱歉，我没听清她说了什么。）</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">pretend</span><span class="ipa">/prɪˈtend/</span>
+      <div class="meaning">v. 假装，装作</div>
+      <div class="sample">Don't pretend you understand if you don't.（不懂就别装懂。）</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">embarrassing</span><span class="ipa">/ɪmˈbærəsɪŋ/</span>
+      <div class="meaning">adj. 令人尴尬的，让人难堪的</div>
+      <div class="sample">It was the most embarrassing moment of my trip.（那是整趟旅行中最尴尬的时刻。）</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</body>
+</html>
