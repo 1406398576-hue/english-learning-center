@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaking Practice · The Day My Calendar Replaced My Memory</title>
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --card: #ffffff;
+    --primary: #4a7dbf;
+    --accent: #2c4a63;
+    --warm: #8b6f47;
+    --warm-soft: #8b5a47;
+    --line: #e7e2d8;
+    --muted: #6b6759;
+    --shadow: 0 2px 10px rgba(44, 74, 99, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .topic-banner {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  .topic-banner h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .topic-banner .zh {
+    font-size: 18px;
+    color: var(--warm);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .topic-banner .en {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 14px;
+  }
+  .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .meta span {
+    background: var(--bg);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .section h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h3 .tag {
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+  .section p {
+    margin: 0 0 12px 0;
+    color: #3a3a3a;
+  }
+  .story {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #2c4a63;
+    background: var(--bg);
+    padding: 22px 22px;
+    border-radius: 10px;
+    border-left: 3px solid var(--warm);
+  }
+  .expr-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .expr-card .en-expr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .expr-card .zh-expr {
+    font-size: 14.5px;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .expr-card .example {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-left: 2px solid var(--warm);
+  }
+  .expr-card .example .zh-trans {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .expr-card .note {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 4px;
+  }
+  .expr-card .note::before {
+    content: "💡 ";
+  }
+  .conv-line {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .conv-line .speaker {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .conv-line .speaker.dev { color: var(--warm); }
+  .conv-line .speaker.assistant { color: var(--warm); }
+  .conv-line .speaker.you { color: var(--accent); }
+  .conv-line .en {
+    color: #2c4a63;
+    font-size: 15.5px;
+  }
+  .conv-line .zh {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .stage {
+    color: var(--muted);
+    font-size: 12.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 14px 0;
+    letter-spacing: 0.3px;
+  }
+  .practice-task {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .practice-task .task-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 15.5px;
+  }
+  .practice-task .task-prompt {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .practice-task .samples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .practice-task .samples li {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+    border-left: 2px solid var(--warm);
+  }
+  .practice-task .samples li .zh {
+    display: block;
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    background: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--warm);
+  }
+  .vocab-item .word {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .vocab-item .ipa {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .vocab-item .meaning {
+    color: var(--warm);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .vocab-item .sample {
+    color: var(--accent);
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===== TOPIC BANNER ===== -->
+<div class="topic-banner">
+  <h2>The Day My Calendar Replaced My Memory</h2>
+  <div class="zh">日历接管我记忆的那一天</div>
+  <div class="en">I didn't lose my mind — I just lost the habit of remembering on my own. And then one quiet Tuesday, my phone died, and I couldn't remember a single thing.</div>
+  <div class="meta">
+    <span>📅 Day 44 · 2026-09-10</span>
+    <span>📏 难度：<b>B1-B2</b></span>
+    <span>⏱ 时长：<b>5 min</b></span>
+    <span>📂 科技未来</span>
+  </div>
+</div>
+
+<!-- ===== A. SHORT STORY ===== -->
+<div class="section">
+  <h3><span class="tag">A</span> Short Story</h3>
+  <div class="story">
+    <p>For about two years, I have not really tried to remember anything. I do not mean I have amnesia. I mean something smaller and, in some ways, more embarrassing: I let my phone remember for me. The dentist is at 4:15. The flight is on the 19th. My sister's birthday is next Thursday — but only because the calendar app sends me a polite little ping, not because I have ever thought about it on my own.</p>
+
+    <p>It was a Tuesday, the kind of Tuesday that does not announce itself. I was on the subway, reading something on my phone, when the screen went black. The battery was dead. I laughed at first. Then I tried to remember the time. I could not. I tried to remember which stop was mine. I could not, either. For maybe thirty seconds, I was a stranger inside my own routine.</p>
+
+    <p>When I got to the office, the security guard waved at me and asked, with a small smile, "How was the dentist?" I had completely forgotten. I checked in with my mouth — yes, my gums were still numb. So it had happened. I had gone, and I had come back, and I had no memory of either. That was the part that scared me a little.</p>
+
+    <p>That night, I did a small experiment. I turned the phone off, opened a notebook, and tried to write down everything I could remember from the day without looking. Three meetings. A coffee that was too hot. A short argument with my partner about a chair. I got maybe half of it, and the details I missed felt strangely important — the color of the sky, the way the barista said my name, the fact that it had started to rain around four.</p>
+
+    <p>I do not think I am going to throw away my calendar. Honestly, I cannot. My life would collapse in a week. But I am starting to believe that offloading every small thing is not the same as being efficient. It is more like slowly forgetting that I am a person who can think. And that, I think, is a small loss that no app is going to remind me about.</p>
+  </div>
+</div>
+
+<!-- ===== B. KEY EXPRESSIONS ===== -->
+<div class="section">
+  <h3><span class="tag">B</span> Key Expressions</h3>
+
+  <div class="expr-card">
+    <div class="en-expr">offload something (onto a tool / a person)</div>
+    <div class="zh-expr">把……外包出去（让别的人/工具替你做）</div>
+    <div class="example">
+      I offload all my appointments onto my phone so I don't have to think.
+      <span class="zh-trans">我把所有的约会都丢给手机，这样我就不用自己记了。</span>
+    </div>
+    <div class="note">neutral / slightly negative — often used when you stop doing the work yourself, sometimes with a hint of self-criticism.</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">ping someone</div>
+    <div class="zh-expr">（系统）给某人发个提醒 / 戳一下某人</div>
+    <div class="example">
+      The app will ping you 10 minutes before the meeting.
+      <span class="zh-trans">App 会在开会前 10 分钟给你发个提醒。</span>
+    </div>
+    <div class="note">originally a tech/network word, now used for any small notification; also means to message someone briefly to get their attention.</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">go blank</div>
+    <div class="zh-expr">脑子里一片空白 / 突然想不起来</div>
+    <div class="example">
+      My mind went blank when the interviewer asked me about my weakness.
+      <span class="zh-trans">面试官问我缺点的时候，我脑子里一片空白。</span>
+    </div>
+    <div class="note">used for sudden memory loss, panic moments, or a screen suddenly turning off — very flexible in real conversation.</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">a stranger in your own routine</div>
+    <div class="zh-expr">在自己熟悉的日常里像个陌生人</div>
+    <div class="example">
+      After ten years abroad, I felt like a stranger in my own city.
+      <span class="zh-trans">在海外生活了十年之后，我在自己城市里像个陌生人。</span>
+    </div>
+    <div class="note">poetic but natural — used when the familiar suddenly feels foreign, often because of stress, jet lag, or over-dependence on something.</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="en-expr">the way someone says your name</div>
+    <div class="zh-expr">某人念你名字的方式 / 语气</div>
+    <div class="example">
+      I still remember the way my grandmother said my name.
+      <span class="zh-trans">我仍然记得我奶奶念我名字的样子。</span>
+    </div>
+    <div class="note">a soft, reflective phrase — common in essays and good conversation; signals you are paying attention to small human details.</div>
+  </div>
+
+</div>
+
+<!-- ===== C. REAL CONVERSATION ===== -->
+<div class="section">
+  <h3><span class="tag">C</span> Real Conversation</h3>
+
+  <div class="stage">— A Tuesday evening, you and your partner are talking about the phone dying earlier —</div>
+
+  <div class="conv-line">
+    <span class="speaker you">You:</span>
+    <span class="en">Okay, so... today was kind of weird. My phone died on the subway, and I — I literally could not remember what stop to get off at.</span>
+    <span class="zh">今天有点怪。手机在地铁上没电了，我下哪一站我居然真的不记得了。</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker partner">Partner:</span>
+    <span class="en">Wait, seriously? You take that line every day.</span>
+    <span class="zh">等等，真的假的？你每天都坐那一趟啊。</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker you">You:</span>
+    <span class="en">I know, I know. But I always... I always look at the map on my phone. And the next stop, and the time. So I never actually <em>learn</em> it. I just follow the screen.</span>
+    <span class="zh">我知道我知道。但我每次都是看手机上的地图，下一站、时间什么的。所以我从来都没真的"记"过，就是跟着屏幕走。</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker partner">Partner:</span>
+    <span class="en">Hmm. But... isn't that just, like, efficient?</span>
+    <span class="zh">嗯……但这不就是……更高效吗？</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker you">You:</span>
+    <span class="en">I used to think so. But then I got to the office, and the guard asked how the dentist was. And I had... I had no idea. My mouth was numb, so I knew it happened. But I could not remember a single thing about it.</span>
+    <span class="zh">我以前也这么想。但后来到公司，门卫问我看牙怎么样。我整个人是懵的。嘴巴是麻的，所以我确实去了，但具体细节一点都想不起来。</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker partner">Partner:</span>
+    <span class="en">Okay that's... actually a little creepy. What did you do?</span>
+    <span class="zh">好吧……这有点瘆人。你怎么办的？</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker you">You:</span>
+    <span class="en">I turned the phone off tonight and tried to write down my day from memory. And I — I got maybe half of it. And the stuff I missed... that was the good stuff. Like the color of the sky. The way the barista said my name.</span>
+    <span class="zh">我今晚把手机关了，试着用脑子把今天过一遍。我只记得大概一半。但我漏掉的那些……都是好细节啊。比如天空的颜色，比如那个咖啡师叫我名字的语气。</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker partner">Partner:</span>
+    <span class="en">...okay, that's actually kind of sad. Maybe we should — I don't know — have one phone-free evening a week?</span>
+    <span class="zh">……好吧，这确实有点难过。要不我们——我也不晓得——每周有一个晚上不用手机？</span>
+  </div>
+
+  <div class="conv-line">
+    <span class="speaker you">You:</span>
+    <span class="en">Mm. Yeah. Maybe. Just... one evening. Let's see if we survive.</span>
+    <span class="zh">嗯，可以啊。就一个晚上。看看我们能不能活下来。</span>
+  </div>
+
+</div>
+
+<!-- ===== D. SPEAKING PRACTICE ===== -->
+<div class="section">
+  <h3><span class="tag">D</span> Speaking Practice</h3>
+
+  <div class="practice-task">
+    <div class="task-title">Task 1 · Retell the story 复述故事</div>
+    <div class="task-prompt">Try to retell the story in your own words. Aim for 60–90 seconds. Don't try to be perfect — just keep going.</div>
+    <ul class="samples">
+      <li>The story is about a person who has been using their phone to remember everything — appointments, even which subway stop to get off at. One day, their phone dies, and they realize they can't remember anything. <span class="zh">故事讲的是一个人一直让手机帮她记所有事——约会、地铁站。有一天手机没电了，她发现自己什么都想不起来了。</span></li>
+      <li>The worst part is at the office, when someone asks how the dentist visit went, and she has no idea — except her mouth is still numb, so she knows she went. <span class="zh">最难受的是到公司之后，有人问她看牙怎么样，她完全不记得，只有嘴巴还麻着，证明她确实去了。</span></li>
+      <li>That night, she turns off her phone and tries to write down the day from memory, and she notices she missed all the small, beautiful details — the sky, the way someone said her name. <span class="zh">那天晚上她关掉手机，试着用脑子把今天过一遍，发现所有细微但美好的细节——天空、别人叫她名字的方式——都被她漏掉了。</span></li>
+    </ul>
+  </div>
+
+  <div class="practice-task">
+    <div class="task-title">Task 2 · Share your opinion 表达观点</div>
+    <div class="task-prompt">Do you think we remember less than people did 20 years ago? Why or why not? Give one personal example.</div>
+    <ul class="samples">
+      <li>I think we do, honestly — I used to know maybe fifteen phone numbers by heart, and now I don't even know my own partner's number without checking. <span class="zh">老实说，我觉得是的。我以前能背下来大概十五个电话号码，现在我连自己伴侣的号码都背不出。</span></li>
+      <li>But I'm not sure it's a bad thing. Like, my brain has more space for other stuff now — I read more, I notice more feelings. It's just... different. <span class="zh">但我不确定这一定是坏事。我的大脑现在有了更多空间做别的事——读更多书，注意更多情绪。只是……不一样了。</span></li>
+      <li>Where I draw the line is with people. I don't want to forget the way someone says my name. That's the kind of thing I want to keep for myself, not let an app store for me. <span class="zh">我的底线是人。我不想忘记别人叫我名字的方式。这种事我想自己留着，不想让 App 替我记。</span></li>
+    </ul>
+  </div>
+
+  <div class="practice-task">
+    <div class="task-title">Task 3 · Real-life scenario 真实场景</div>
+    <div class="task-prompt">A friend says: <em>"I don't see the problem. Phones make life easier. Why would anyone go back?"</em> Respond naturally — you can agree, push back, or ask a question.</div>
+    <ul class="samples">
+      <li>I hear you, and honestly, I'm not going back either. But — can I ask you something? What do you actually remember from yesterday? Like, the small stuff, not the meetings. <span class="zh">我懂你，老实说我自己也不打算退回去。但我能问你个问题吗？昨天你真正记得什么？小细节，不算开会那些。</span></li>
+      <li>Yeah, they're convenient. I just don't want "convenient" to quietly become "forgetful." There's a line somewhere, and I think a lot of us are already past it. <span class="zh">嗯，确实方便。我只是不想让"方便"悄悄变成"健忘"。那条线就在那儿，我觉得我们很多人已经过了。</span></li>
+      <li>That's fair. But maybe try this for one evening — turn it off, just one evening, and see what you remember. If nothing else, it's kind of interesting. <span class="zh">你说得也有道理。但你可以试一个晚上——就一个晚上——关掉手机，看看你能记住什么。起码，挺有意思的。</span></li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ===== E. USEFUL VOCABULARY ===== -->
+<div class="section">
+  <h3><span class="tag">E</span> Useful Vocabulary</h3>
+  <div class="vocab-grid">
+
+    <div class="vocab-item">
+      <span class="word">routine</span><span class="ipa">/ruːˈtiːn/</span>
+      <div class="meaning">n. 日常；惯例</div>
+      <div class="sample">After two years, the job had become pure routine — every day looked the same.</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">numb</span><span class="ipa">/nʌm/</span>
+      <div class="meaning">adj. 麻木的；失去感觉的</div>
+      <div class="sample">My leg went numb from sitting on the floor for so long.</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">collapse</span><span class="ipa">/kəˈlæps/</span>
+      <div class="meaning">v. 崩溃；垮掉；突然失败</div>
+      <div class="sample">Without my notes, the whole presentation would have collapsed in five minutes.</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">offline</span><span class="ipa">/ˌɒfˈlaɪn/</span>
+      <div class="meaning">adj. / adv. 离线的；不联网的</div>
+      <div class="sample">I'm going offline for the weekend — don't expect a reply until Monday.</div>
+    </div>
+
+    <div class="vocab-item">
+      <span class="word">reflective</span><span class="ipa">/rɪˈflektɪv/</span>
+      <div class="meaning">adj. 沉思的；反思的</div>
+      <div class="sample">She was in a quiet, reflective mood after the long walk.</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</body>
+</html>

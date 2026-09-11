@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 45 — The Phone Number I Never Dialed</title>
+<style>
+:root {
+  --bg: #f5f3ef;
+  --card: #ffffff;
+  --primary: #4a7dbf;
+  --dark: #2c4a63;
+  --warm: #8b6f47;
+  --text: #3a3a3a;
+  --text-soft: #6b6b6b;
+  --border: #e8e4dd;
+  --wrong: #8b5a47;
+  --tag: #e3edf6;
+  --tag-text: #4a7dbf;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  line-height: 1.75;
+  padding: 0 0 40px 0;
+}
+
+.topic-banner {
+  background: var(--card);
+  border-bottom: 3px solid var(--border);
+  padding: 36px 24px 28px;
+  text-align: center;
+}
+.topic-banner .day-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--tag-text);
+  background: var(--tag);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.topic-banner h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.topic-banner .zh {
+  font-size: 17px;
+  color: var(--warm);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.topic-banner .en {
+  font-size: 14px;
+  color: var(--text-soft);
+  font-style: italic;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  background: var(--card);
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 28px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.section-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.story-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text);
+}
+.story-text p { margin-bottom: 12px; }
+.story-text p:last-child { margin-bottom: 0; }
+
+.expr-card {
+  border-left: 3px solid var(--primary);
+  background: #fafbfc;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.expr-card .eng {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.expr-card .zh-meaning {
+  font-size: 14px;
+  color: var(--warm);
+  margin-bottom: 8px;
+}
+.expr-card .example {
+  font-size: 14px;
+  color: var(--text);
+  font-style: italic;
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+.expr-card .note {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.conv {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.conv .line { margin-bottom: 14px; }
+.conv .speaker {
+  font-weight: 700;
+  color: var(--primary);
+  margin-right: 6px;
+}
+.conv .speaker.b { color: var(--warm); }
+.conv .text { color: var(--text); }
+.conv .stage {
+  font-size: 13px;
+  color: var(--text-soft);
+  font-style: italic;
+  display: block;
+  margin-top: 2px;
+}
+
+.practice-item {
+  background: #fafbfc;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+.practice-item .num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.practice-item .task {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.practice-item .sample {
+  font-size: 13px;
+  color: var(--text-soft);
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.vocab-grid {
+  display: grid;
+  gap: 12px;
+}
+.vocab-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.vocab-item .word {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+}
+.vocab-item .ipa {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-left: 6px;
+}
+.vocab-item .meaning {
+  font-size: 14px;
+  color: var(--warm);
+  margin: 4px 0 6px;
+}
+.vocab-item .example {
+  font-size: 13px;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+</style>
+</head>
+<body>
+
+<div class="topic-banner">
+  <div class="day-tag">Day 45 · People &amp; Society</div>
+  <h2>The Phone Number I Never Dialed</h2>
+  <div class="zh">那个我始终没有拨出去的电话</div>
+  <div class="en">Some numbers stay in your notebook longer than the person stays in your life.</div>
+</div>
+
+<div class="container">
+
+<!-- A. Short Story -->
+<div class="section">
+  <div class="section-label">B · Short Story</div>
+  <div class="section-title">The Notebook</div>
+  <div class="story-text">
+    <p>I was cleaning out a drawer when I found it — a small notebook I hadn't opened in maybe six years. Most pages were grocery lists and half-finished to-do lists. But on page 34, in my handwriting from a different era, there was a phone number with one word next to it: "Dad."</p>
+    <p>My parents split up when I was nine. I saw my father on weekends, then once a month, then less. By the time I was seventeen, we'd stopped calling each other entirely. It wasn't a fight. It was just — silence that thickened until neither of us could cut through it.</p>
+    <p>I stared at the number for a long time. My thumb hovered over the screen. I could call. I could hear his voice. He'd probably pick up. He'd probably say my name in that way that used to make me feel like the only person in the room.</p>
+    <p>But I didn't. I closed the notebook, put it back in the drawer, and went to make coffee. Not because I don't care. Because I'm afraid that if I call and he's changed — or worse, if he hasn't — I'll have to feel everything I've been keeping quiet for fifteen years.</p>
+  </div>
+</div>
+
+<!-- B. Key Expressions -->
+<div class="section">
+  <div class="section-label">C · Key Expressions</div>
+  <div class="section-title">5 Expressions Worth Learning</div>
+
+  <div class="expr-card">
+    <div class="eng">cut through (something)</div>
+    <div class="zh-meaning">穿透、打破（沉默/隔阂/障碍）</div>
+    <div class="example">"She tried to cut through the awkwardness with a joke, but nobody laughed."</div>
+    <div class="note">常用于抽象语境：cut through the noise / the silence / the tension。比 break 更有"穿透一层厚东西"的画面感。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="eng">hover over</div>
+    <div class="zh-meaning">悬停在……上方（犹豫不决）</div>
+    <div class="example">"My cursor hovered over the send button for two full minutes."</div>
+    <div class="note">物理意义是"悬浮在上方"，日常口语常用来描述犹豫时刻——手指悬着、鼠标悬着、目光悬着。暗示"差一点就做了但没做"。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="eng">thicken</div>
+    <div class="zh-meaning">变浓、变厚（可形容沉默、气氛、雾等）</div>
+    <div class="example">"The silence between them thickened until someone had to leave the room."</div>
+    <div class="note">silent/thick 的进阶用法。说 silence thickened 比 saying it was awkward 更有身体感——像液体慢慢凝固。也用于 fog / plot。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="eng">in a different era</div>
+    <div class="zh-meaning">在完全不同的时期/时代（比喻"过去的自己"）</div>
+    <div class="example">"I found old journal entries from 2015 — it feels like they were written in a different era."</div>
+    <div class="note">不一定是历史时代。日常用来感叹"那时候的我跟现在的我差太多"。比 saying "a long time ago" 多了一层"人变了"的唏嘘。</div>
+  </div>
+
+  <div class="expr-card">
+    <div class="eng">keep (something) quiet</div>
+    <div class="zh-meaning">把某事压在心里不说、不表露</div>
+    <div class="example">"He'd kept his doubts about the marriage quiet for three years before finally telling her."</div>
+    <div class="note">比 hide 更温和——不是刻意隐瞒，而是"一直没提"。常用于情感、意见、不满。口语比 suppress / conceal 自然得多。</div>
+  </div>
+</div>
+
+<!-- D. Real Conversation -->
+<div class="section">
+  <div class="section-label">D · Real Conversation</div>
+  <div class="section-title">"You Could Just... Call Him"</div>
+  <div class="conv">
+    <div class="line">
+      <span class="speaker">Maya:</span>
+      <span class="text">So I found this old notebook, right? And there's — there's his number. Just... sitting there.</span>
+    </div>
+    <div class="line">
+      <span class="speaker b">Jonah:</span>
+      <span class="text">Your dad's?</span>
+    </div>
+    <div class="line">
+      <span class="speaker">Maya:</span>
+      <span class="text">Yeah. With "Dad" next to it. In my handwriting from — god, I don't even know, college maybe?</span>
+      <span class="stage">pause</span>
+    </div>
+    <div class="line">
+      <span class="speaker b">Jonah:</span>
+      <span class="text">Are you gonna call it?</span>
+    </div>
+    <div class="line">
+      <span class="speaker">Maya:</span>
+      <span class="text">That's the thing. I — I sat there with my thumb over the screen for like... I don't know, five minutes? And then I just put it back.</span>
+      <span class="stage">laughs nervously</span>
+    </div>
+    <div class="line">
+      <span class="speaker b">Jonah:</span>
+      <span class="text">Why?</span>
+    </div>
+    <div class="line">
+      <span class="speaker">Maya:</span>
+      <span class="text">Because what if he picks up and — and it's just... the same? Or what if he's, like, a completely different person now? I wouldn't even know what version of him I'd be talking to.</span>
+    </div>
+    <div class="line">
+      <span class="speaker b">Jonah:</span>
+      <span class="text">Yeah, but... isn't that kind of the point? Like, you'd finally know.</span>
+      <span class="stage">beat</span>
+    </div>
+    <div class="line">
+      <span class="speaker">Maya:</span>
+      <span class="text">Maybe. Or maybe some doors you just... leave closed. On purpose.</span>
+    </div>
+  </div>
+</div>
+
+<!-- E. Speaking Practice -->
+<div class="section">
+  <div class="section-label">E · Speaking Practice</div>
+  <div class="section-title">3 Tasks to Try Out Loud</div>
+
+  <div class="practice-item">
+    <div class="num">Task 1 · Retell the Story</div>
+    <div class="task">用自己的话复述 Maya 找到电话号码的故事，至少提到 3 个情绪转折点。</div>
+    <div class="sample">"She found the number, hesitated, and then chose not to call. The reason wasn't anger — it was fear of feeling everything she'd been holding back."</div>
+  </div>
+
+  <div class="practice-item">
+    <div class="num">Task 2 · Express Your Opinion</div>
+    <div class="task">Do you think Maya should call? Or is she right to leave it alone? Explain your view in 4-5 sentences.</div>
+    <div class="sample">"I think she should call, but not yet. She needs to be ready for any outcome — silence, rejection, or a conversation that changes everything. Calling from fear usually leads to more fear."</div>
+  </div>
+
+  <div class="practice-item">
+    <div class="num">Task 3 · Real-World Scenario</div>
+    <div class="task">Imagine you found an old friend's contact info you haven't spoken to in 10 years. Role-play the moment you decide whether to reach out — talk through your thought process out loud.</div>
+    <div class="sample">"Okay, so I haven't talked to her in a decade. If I text now, it might seem random. But — she might be happy to hear from me. Or she might not even have this number anymore. I think I'd just... try. A short message. No pressure."</div>
+  </div>
+</div>
+
+<!-- F. Useful Vocabulary -->
+<div class="section">
+  <div class="section-label">F · Useful Vocabulary</div>
+  <div class="section-title">5 High-Frequency Words</div>
+  <div class="vocab-grid">
+    <div class="vocab-item">
+      <span class="word">estranged</span><span class="ipa">/ɪˈstreɪndʒd/</span>
+      <div class="meaning">adj. 疏远的，不再来往的（亲属关系）</div>
+      <div class="example">"She'd been estranged from her brother for over a decade before they reconnected at their mother's funeral."</div>
+    </div>
+    <div class="vocab-item">
+      <span class="word">hover</span><span class="ipa">/ˈhʌvər/</span>
+      <div class="meaning">v. 悬停、犹豫（在……上方）</div>
+      <div class="example">"He hovered near the door, unsure whether to walk in or leave."</div>
+    </div>
+    <div class="vocab-item">
+      <span class="word">thicken</span><span class="ipa">/ˈθɪkən/</span>
+      <div class="meaning">v. 变浓、变厚、变得沉重</div>
+      <div class="example">"The fog thickened as they drove further into the valley."</div>
+    </div>
+    <div class="vocab-item">
+      <span class="word">unresolved</span><span class="ipa">/ˌʌnrɪˈzɒlvd/</span>
+      <div class="meaning">adj. 未解决的、悬而未决的</div>
+      <div class="example">"She carried unresolved feelings about her childhood for years without realizing it."</div>
+    </div>
+    <div class="vocab-item">
+      <span class="word">reconnect</span><span class="ipa">/ˌriːkəˈnekt/</span>
+      <div class="meaning">v. 重新联系、重新建立关系</div>
+      <div class="example">"After the reunion, they reconnected online and started talking every week."</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  Day 45 · The Phone Number I Never Dialed · People &amp; Society<br>
+  Generated 2026-09-11
+</div>
+
+</body>
+</html>
